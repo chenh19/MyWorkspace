@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # enter password for root & set promot color
-sudo echo "==========================================================="
+sudo echo "===================================================================================="
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
 
@@ -15,7 +15,7 @@ echo -e "${TEXT_YELLOW}Internet is connected!${TEXT_RESET}" && sleep 1
 else 
 echo -e "${TEXT_YELLOW}No internet connection, please first connect to internet then hit [Enter] to continue${TEXT_RESET}" # to be updated
 fi
-echo "==========================================================="
+echo "===================================================================================="
 
 
 # download setup scripts
@@ -26,13 +26,13 @@ cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
 cd ./myworkspace-main && rm LICENSE README.md && sleep 1
 echo -e "${TEXT_YELLOW}All scripts downloaded!${TEXT_RESET}" && sleep 1
-echo "==========================================================="
+echo "===================================================================================="
 
 # update
 echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
 bash ./scripts/update.sh && sleep 1
 echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
-echo "==========================================================="
+echo "===================================================================================="
 
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
