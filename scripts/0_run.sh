@@ -5,6 +5,7 @@ TEXT_YELLOW='\e[0;33m'
 TEXT_RED_B='\e[1;31m'
 
 # check internet connection
+echo -e $TEXT_YELLOW
 wget -q --spider http://google.com
 if [ $? -eq 0 ]
 then 
