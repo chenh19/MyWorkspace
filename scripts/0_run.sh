@@ -1,7 +1,7 @@
 #!bin/bash
 
 TEXT_RESET='\e[0m'
-TEXT_GREEN='\e[1;22m'
+TEXT_GREEN='\e[1;32m'
 TEXT_YELLOW='\e[1;33m'
 
 # check internet connection
