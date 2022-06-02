@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # enter password for root
-sudo echo ""
+        sudo echo ""
 
 
 # set promot color
-TEXT_RESET='\e[0m'
-TEXT_YELLOW='\e[1;33m'
+        TEXT_RESET='\e[0m'
+        TEXT_YELLOW='\e[1;33m'
 
 
 # check internet connection
@@ -17,9 +17,9 @@ wget -q --spider http://google.com
         echo -e $TEXT_YELLOW
 if [ $? -eq 0 ]
 then 
-  echo "Internet is connected!"
+        echo "Internet is connected!"
 else 
-  echo "No internet connection, please first connect to internet then hit [Enter] to continue" # to be updated
+        echo "No internet connection, please first connect to internet then hit [Enter] to continue" # to be updated
 fi
         echo -e $TEXT_RESET
 
@@ -44,10 +44,10 @@ bash 0_run.sh
 
 
 # cleanup
-echo -e $TEXT_YELLOW
-echo "Cleaning up..." && sleep 1
+        echo -e $TEXT_YELLOW
+        echo "Cleaning up..." && sleep 1
 cd ../../../ && rm -rf ./.setup_cache
-echo -e $TEXT_RESET
-echo -e $TEXT_YELLOW
-echo "All done!"
-echo -e $TEXT_RESET
+        echo -e $TEXT_RESET
+        echo -e $TEXT_YELLOW
+        echo "All done!"
+        echo -e $TEXT_RESET
