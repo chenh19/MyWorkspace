@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# enter password for root
+sudo apt-get update
+
 # set promot color
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
@@ -25,6 +28,9 @@ cd ./.setup_cache
 cd ./myworkspace-main && rm LICENSE README.md setup.sh && cd ./scripts
 
 # run
+echo -e $TEXT_YELLOW
+echo "System packages updating..."
+echo -e $TEXT_RESET
 bash 0_run.sh
 echo -e $TEXT_YELLOW
 echo "System packages update finished"
