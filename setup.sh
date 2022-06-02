@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# download setup.sh
-
-
 # create cache directory and download setup scripts
 cd ~
 [ ! -d .setup_cache ] && mkdir .setup_cache
@@ -17,4 +14,4 @@ bash 1_update.sh
 
 
 # cleanup
-cd ../../../ && rm -rf ./.setup_cache
+# cd ../../../ && rm -rf ./.setup_cache
