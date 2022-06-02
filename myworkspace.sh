@@ -38,15 +38,22 @@ cd ./myworkspace-main && rm LICENSE README.md myworkspace.sh && sleep 1
         echo -e $TEXT_RESET
 
 
-# run
-cd ./scripts && bash 00_setup.sh
+# update
+        echo -e $TEXT_YELLOW
+        echo "Updating system packages..."
+        echo -e $TEXT_RESET
+bash ./scripts/update.sh && sleep 1
+        echo -e $TEXT_YELLOW
+        echo "All system packages updated!"
+        echo -e $TEXT_RESET
+
 
 
 # cleanup
         echo -e $TEXT_YELLOW
         echo "Cleaning up..." && sleep 1
         echo -e $TEXT_RESET
-#cd ../../../ && rm -rf ./.setup_cache
+#cd ../../ && rm -rf ./.setup_cache
         echo -e $TEXT_YELLOW
         echo "All done!"
         echo -e $TEXT_RESET
