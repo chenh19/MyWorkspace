@@ -30,7 +30,7 @@ echo ""
 
 # update
 echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
-bash ./scripts/01_update.sh && sleep 1
+bash ./scripts/update.sh && sleep 1
 echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
 echo ""
 
@@ -38,7 +38,7 @@ echo ""
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
 #cd ../../ && rm -rf ./.setup_cache
 echo -e $TEXT_YELLOW
-read -n1 -s -r -p $'All done! Reboot the system now? [y/n/c]\n' choice
+read -n1 -s -r -p $'All done! Reboot the system now? [y/n/c]\n' choice # to be updated
 echo ""
 case "$choice" in
   y|Y ) echo "Rebooting in 5..." && sleep 5 && reboot;;
