@@ -8,4 +8,4 @@ cd ./myworkspace-main && rm LICENSE README.md && cd ./scripts
 # update
 bash 1_update.sh
 # cleanup
-# cd ../../../ && rm -rf ./.setup_cache
+cd ../../../ && rm -rf ./.setup_cache
