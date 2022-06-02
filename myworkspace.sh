@@ -45,8 +45,8 @@ cd ./scripts && bash 00_setup.sh
 # cleanup
         echo -e $TEXT_YELLOW
         echo "Cleaning up..." && sleep 1
-#cd ../../../ && rm -rf ./.setup_cache
         echo -e $TEXT_RESET
+#cd ../../../ && rm -rf ./.setup_cache
         echo -e $TEXT_YELLOW
         echo "All done!"
         echo -e $TEXT_RESET
