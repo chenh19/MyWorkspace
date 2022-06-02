@@ -39,8 +39,7 @@ cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 1
 
 
 # run
-cd ./scripts
-bash 0_run.sh
+cd ./scripts && bash 0_run.sh
 
 
 # cleanup
