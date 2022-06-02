@@ -18,7 +18,7 @@ if [ $? -eq 0 ]
 then 
   echo "Internet is connected!"
 else 
-  echo "No internet connection, please first connect to internet then hit [Enter] to continue"
+  echo "No internet connection, please first connect to internet then hit [Enter] to continue" # to be updated
 fi
 echo -e $TEXT_RESET
 
