@@ -26,9 +26,15 @@ cd ./myworkspace-main && rm LICENSE README.md setup.sh && cd ./scripts
 
 # run
 echo -e $TEXT_YELLOW
-echo "Update packages"
+echo "Updating packages..."
 echo -e $TEXT_RESET
 bash 0_run.sh
+echo -e $TEXT_YELLOW
+echo "Update finished"
+echo -e $TEXT_RESET
 
 # cleanup
 #cd ../../../ && rm -rf ./.setup_cache
+echo -e $TEXT_YELLOW
+echo "All done!"
+echo -e $TEXT_RESET
