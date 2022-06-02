@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get update
-
 # set promot color
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
