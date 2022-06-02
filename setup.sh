@@ -2,12 +2,11 @@
 
 # set promot color
 TEXT_RESET='\e[0m'
-TEXT_GREEN='\e[1;32m'
 TEXT_YELLOW='\e[1;33m'
 
 # check internet connection
 wget -q --spider http://google.com
-echo -e $TEXT_GREEN
+echo -e $TEXT_YELLOW
 if [ $? -eq 0 ]
 then 
   echo "Internet is connected, continue..."
