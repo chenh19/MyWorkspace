@@ -2,7 +2,7 @@
 *v0.0.1*  
 
 ## Introduction
-This is an automated setup script after installing [Kubuntu](https://kubuntu.org/getkubuntu/){:target="_blank"}, which is my wife's favorite linux distro.
+This is an automated setup script after installing <a href="https://kubuntu.org/getkubuntu/" target="_blank">Hello, world!</a>, which is my wife's favorite linux distro.
 
 ## How to use
 **Simply copy and run:**  
