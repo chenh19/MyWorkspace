@@ -1,59 +1,48 @@
 #!/bin/bash
 
-# enter password for root
-        sudo echo ""
-
-
-# set promot color
-        TEXT_RESET='\e[0m'
-        TEXT_YELLOW='\e[1;33m'
+# enter password for root & set promot color
+sudo echo ""
+TEXT_RESET='\e[0m'
+TEXT_YELLOW='\e[1;33m'
 
 
 # check internet connection
-        echo -e $TEXT_YELLOW
-        echo "Checking internet connection..." && sleep 1
-        echo -e $TEXT_RESET
+echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET}" && sleep 1
 wget -q --spider http://google.com
-        echo -e $TEXT_YELLOW
 if [ $? -eq 0 ]
 then 
-        echo "Internet is connected!"
+echo -e "${TEXT_YELLOW}Internet is connected!${TEXT_RESET}" && sleep 1
 else 
-        echo "No internet connection, please first connect to internet then hit [Enter] to continue" # to be updated
+echo -e "${TEXT_YELLOW}No internet connection, please first connect to internet then hit [Enter] to continue${TEXT_RESET}" # to be updated
 fi
-        echo -e $TEXT_RESET
+echo ""
 
 
 # download setup scripts
 cd ~
-[ ! -d .setup_cache ] && mkdir .setup_cache
-        echo -e $TEXT_YELLOW
-        echo "Downloading setup scripts..." && sleep 1
-        echo -e $TEXT_RESET
+[ ! -d .setup_cache ] && mkdir ./.setup_cache
+echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET}" && sleep 1
 cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
-cd ./myworkspace-main && rm LICENSE README.md myworkspace.sh && sleep 1
-        echo -e $TEXT_YELLOW
-        echo "All scripts downloaded!" && sleep 1
-        echo -e $TEXT_RESET
-
+cd ./myworkspace-main && rm LICENSE README.md && sleep 1
+echo -e "${TEXT_YELLOW}All scripts downloaded!${TEXT_RESET}" && sleep 1
+echo ""
 
 # update
-        echo -e $TEXT_YELLOW
-        echo "Updating system packages..."
-        echo -e $TEXT_RESET
+echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
 bash ./scripts/01_update.sh && sleep 1
-        echo -e $TEXT_YELLOW
-        echo "All system packages updated!"
-        echo -e $TEXT_RESET
+echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
+echo ""
 
-
-
-# cleanup
-        echo -e $TEXT_YELLOW
-        echo "Cleaning up..." && sleep 1
-        echo -e $TEXT_RESET
+# cleanup & reboot
+echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
 #cd ../../ && rm -rf ./.setup_cache
-        echo -e $TEXT_YELLOW
-        echo "All done!"
-        echo -e $TEXT_RESET
+echo -e $TEXT_YELLOW
+read -n1 -s -r -p $'All done! Reboot the system now? [y/n/c]\n' choice
+echo ""
+case "$choice" in
+  y|Y ) echo "Rebooting in 5..." && sleep 5 && reboot;;
+  n|N ) echo "Please manually reboot the system later.";;
+  * ) echo "Please manually reboot the system later.";;
+esac
+echo -e $TEXT_RESET
