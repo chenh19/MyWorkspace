@@ -1,12 +1,12 @@
 #!bin/bash
 
 TEXT_RESET='\e[0m'
-TEXT_YELLOW='\e[0;33m'
-TEXT_RED_B='\e[1;31m'
+TEXT_GREEN='\e[1;22m'
+TEXT_YELLOW='\e[1;33m'
 
 # check internet connection
-echo -e $TEXT_YELLOW
 wget -q --spider http://google.com
+echo -e $TEXT_GREEN
 if [ $? -eq 0 ]
 then 
   echo "Internet is connected, continue..."
