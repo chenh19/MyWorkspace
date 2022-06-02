@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # enter password for root
-sudo apt-get update
+sudo echo "test"
 
 # set promot color
 TEXT_RESET='\e[0m'
