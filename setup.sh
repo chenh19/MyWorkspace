@@ -8,7 +8,7 @@ cd ./.setup_cache
 cd ./myworkspace-main && rm LICENSE README.md setup.sh && cd ./scripts
 
 # update
-bash 1_update.sh
+bash 0_run.sh
 
 # cleanup
-cd ../../../ && rm -rf ./.setup_cache
+#cd ../../../ && rm -rf ./.setup_cache
