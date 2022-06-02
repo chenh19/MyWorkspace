@@ -9,7 +9,7 @@
         echo -e $TEXT_YELLOW
         echo "Updating system packages..."
         echo -e $TEXT_RESET
-bash 1_update.sh && sleep 1
+bash 01_update.sh && sleep 1
         echo -e $TEXT_YELLOW
         echo "All system packages updated!"
         echo -e $TEXT_RESET
