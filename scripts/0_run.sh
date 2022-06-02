@@ -9,9 +9,9 @@ echo -e $TEXT_YELLOW
 wget -q --spider http://google.com
 if [ $? -eq 0 ]
 then 
-  echo "Online"
+  echo "Internet is connected, continue..."
 else 
-  echo "Offline"
+  echo "No internet connection, please first connect to internet then hit [Enter] to continue..."
 fi
 echo -e $TEXT_RESET
 
