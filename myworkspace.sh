@@ -39,7 +39,7 @@ cd ./myworkspace-main && rm LICENSE README.md myworkspace.sh && sleep 1
 
 
 # run
-cd ./scripts && bash 0_setup.sh
+cd ./scripts && bash 00_setup.sh
 
 
 # cleanup
