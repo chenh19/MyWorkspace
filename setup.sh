@@ -16,7 +16,7 @@ wget -q --spider http://google.com
 echo -e $TEXT_YELLOW
 if [ $? -eq 0 ]
 then 
-  echo "Internet is connected"
+  echo "Internet is connected!"
 else 
   echo "No internet connection, please first connect to internet then hit [Enter] to continue"
 fi
@@ -30,10 +30,12 @@ cd ~
 echo -e $TEXT_YELLOW
 echo "Downloading setup scripts..." && sleep 1
 echo -e $TEXT_RESET
-
 cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
 cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 1
+echo -e $TEXT_YELLOW
+echo "All scripts downloaded!" && sleep 1
+echo -e $TEXT_RESET
 
 # run
 cd ./scripts
