@@ -4,6 +4,8 @@
 ## Introduction
 This is an automated setup script after installing [Kubuntu](https://kubuntu.org/getkubuntu/){target="_blank"} , which is my wife's favorite linux distro.
 
+<a href="http://stackoverflow.com" target="_blank">Go</a>
+
 ## How to use
 **Simply copy and run:**  
 ```
