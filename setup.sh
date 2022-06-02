@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# remember password for later steps
+sudo su
+exit
+
 # set promot color
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
@@ -9,9 +13,9 @@ wget -q --spider http://google.com
 echo -e $TEXT_YELLOW
 if [ $? -eq 0 ]
 then 
-  echo "Internet is connected, continue..."
+  echo "Internet is connected"
 else 
-  echo "No internet connection, please first connect to internet then hit [Enter] to continue..."
+  echo "No internet connection, please first connect to internet then hit [Enter] to continue"
 fi
 echo -e $TEXT_RESET
 
