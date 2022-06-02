@@ -2,7 +2,7 @@
 *v0.0.1*  
 
 ## Introduction
-This script is intended to configure [Kubuntu](https://kubuntu.org/getkubuntu/) after a fresh install, which is my wife's favorite linux distro.
+This script is intended to configure [Kubuntu](https://kubuntu.org/getkubuntu/) after a fresh install, which is my wife's least hated linux distro.
 
 ## How to use
 Simply copy the below command and run in [Konsole](https://konsole.kde.org/): 
