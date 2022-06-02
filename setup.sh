@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # remember password for later steps
-sudo su
-exit
+sudo eche ""
 
 # set promot color
 TEXT_RESET='\e[0m'
