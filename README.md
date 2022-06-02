@@ -2,10 +2,10 @@
 *v0.0.1*  
 
 ## Introduction
-This is an automated setup script after a fresh install of [Kubuntu](https://kubuntu.org/getkubuntu/), which is my wife's favorite linux distro.
+This script is intended to configure [Kubuntu](https://kubuntu.org/getkubuntu/) after a fresh install, which is my wife's favorite linux distro.
 
 ## How to use
-**Simply copy and run:**  
+Simply copy the below command and run in [Konsole](https://konsole.kde.org/): 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/myworkspace/main/setup.sh)" 
 ```
