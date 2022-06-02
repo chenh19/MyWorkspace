@@ -2,7 +2,7 @@
 *v0.0.1*  
 
 ## Introduction
-This is an automated setup script after installing [Kubuntu](https://kubuntu.org/getkubuntu/), which is my wife's favorite linux distro.
+This is an automated setup script after a fresh install of [Kubuntu](https://kubuntu.org/getkubuntu/), which is my wife's favorite linux distro.
 
 ## How to use
 **Simply copy and run:**  
