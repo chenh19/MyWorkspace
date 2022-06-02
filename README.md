@@ -1,2 +1,2 @@
-# myworkspace
+# MyWorkspace
 Automatic working environment setup
