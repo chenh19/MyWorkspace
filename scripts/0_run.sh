@@ -2,7 +2,7 @@
 
 # check internet connection
 wget -q --spider http://google.com
-if [ $? -eq 0 ]; then echo "Online"; else echo "Offline" fi
+if [ $? -eq 0 ]; then echo "Online"; else echo "Offline"; fi
 
 # update
 bash 1_update.sh
