@@ -31,8 +31,8 @@ cd ./myworkspace-main && rm LICENSE README.md setup.sh && cd ./scripts
 bash 0_run.sh
 
 # cleanup
-sleep 10
-cd ../../../ && rm -rf ./.setup_cache
 echo -e $TEXT_YELLOW
+echo "Cleaning up..."
+cd ../../../ && rm -rf ./.setup_cache
 echo "All done!"
 echo -e $TEXT_RESET
