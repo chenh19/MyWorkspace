@@ -32,7 +32,7 @@ cd ~
         echo -e $TEXT_RESET
 cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
-cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 1
+cd ./myworkspace-main && rm LICENSE README.md myworkspace.sh && sleep 1
         echo -e $TEXT_YELLOW
         echo "All scripts downloaded!" && sleep 1
         echo -e $TEXT_RESET
