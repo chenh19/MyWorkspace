@@ -36,7 +36,7 @@ echo "==========================================================================
 
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
-#cd ../../ && rm -rf ./.setup_cache
+cd ../../ && rm -rf ./.setup_cache
 echo -e $TEXT_YELLOW
 read -n1 -s -r -p $'All done! Reboot the system now? [y/n/c]\n' choice # to be updated
 echo ""
