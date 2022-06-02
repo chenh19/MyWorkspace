@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # enter password for root
-sudo echo "test"
+sudo echo "test2"
 
 # set promot color
 TEXT_RESET='\e[0m'
