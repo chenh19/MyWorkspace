@@ -33,7 +33,7 @@ bash 0_run.sh
 # cleanup
 echo -e $TEXT_YELLOW
 echo "Cleaning up..."
-sleep 5
+sleep 10
 cd ../../../ && rm -rf ./.setup_cache
 echo -e $TEXT_RESET
 
