@@ -9,7 +9,7 @@ TEXT_YELLOW='\e[1;33m'
 
 # check internet connection
 echo -e $TEXT_YELLOW
-echo "Checking internet connection..." && sleep 3
+echo "Checking internet connection..." && sleep 1
 echo -e $TEXT_RESET
 
 wget -q --spider http://google.com
@@ -29,7 +29,7 @@ cd ~
 # download setup scripts
 cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
-cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 3
+cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 1
 
 # run
 cd ./scripts
@@ -37,7 +37,7 @@ bash 0_run.sh
 
 # cleanup
 echo -e $TEXT_YELLOW
-echo "Cleaning up..." && sleep 3
+echo "Cleaning up..." && sleep 1
 cd ../../../ && rm -rf ./.setup_cache
 echo -e $TEXT_RESET
 
