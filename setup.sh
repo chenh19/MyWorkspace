@@ -27,6 +27,10 @@ cd ~
 [ ! -d .setup_cache ] && mkdir .setup_cache
 
 # download setup scripts
+echo -e $TEXT_YELLOW
+echo "Downloading setup scripts..." && sleep 1
+echo -e $TEXT_RESET
+
 cd ./.setup_cache
 [ ! -d master ] && wget https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
 cd ./myworkspace-main && rm LICENSE README.md setup.sh && sleep 1
