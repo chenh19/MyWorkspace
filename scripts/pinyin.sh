@@ -12,5 +12,5 @@ echo -e '[Desktop Entry] \nCategories=System;Utility; \nComment=Start Input Meth
 sudo chmod +x ~/.config/autostart/fcitx.desktop
 
 ## config fcitx
-#sudo sed -i 's+TriggerKey=SUPER_SPACE+TriggerKey=SUPER_SPACE+g' ~/.config/fcitx/config
-#sudo sed -i 's+sunpinyin:FALSE+sunpinyin:True+g' ~/.config/fcitx/profile
+#sed -i 's+TriggerKey=SUPER_SPACE+TriggerKey=SUPER_SPACE+g' ~/.config/fcitx/config
+#sed -i 's+sunpinyin:FALSE+sunpinyin:True+g' ~/.config/fcitx/profile
