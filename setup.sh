@@ -53,9 +53,9 @@ echo -e "${TEXT_YELLOW}WeChat installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
 # R & RStudio
-echo -e "${TEXT_YELLOW}WeChat installing...${TEXT_RESET}" && sleep 1
+echo -e "${TEXT_YELLOW}R & RStudio installing...${TEXT_RESET}" && sleep 1
 #bash ./scripts/rstudio.sh && sleep 1
-echo -e "${TEXT_YELLOW}WeChat installed!${TEXT_RESET}" && sleep 1
+echo -e "${TEXT_YELLOW}R & RStudio installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
 # 2nd update
