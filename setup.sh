@@ -70,6 +70,16 @@ bash ./scripts/update.sh && sleep 1
 echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# grub
+echo -e $TEXT_YELLOW
+read -n1 -s -r -p $'Are you using ThinkPad? [y/n/c]\n' choice
+case "$choice" in
+  y|Y ) echo "Configuring grub for ThinkPad..." && bash ./scripts/grub.sh;;
+  n|N ) echo "No need to configure grub.";;
+  * ) echo "No need to configure grub.";;
+esac
+echo -e $TEXT_RESET
+
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
 #cd ../../ && rm -rf ./.setup_cache
