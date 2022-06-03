@@ -34,6 +34,12 @@ bash ./scripts/update.sh && sleep 1
 echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# flathub
+echo -e "${TEXT_YELLOW}Installing Flathub...${TEXT_RESET}" && sleep 1
+bash ./scripts/flathub.sh && sleep 1
+echo -e "${TEXT_YELLOW}Flat installed!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
+
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
 #cd ../../ && rm -rf ./.setup_cache
