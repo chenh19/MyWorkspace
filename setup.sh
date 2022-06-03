@@ -48,7 +48,7 @@ echo "==========================================================================
 
 # pinyin input
 echo -e "${TEXT_YELLOW}Chinese Pinyin Input Method installing...${TEXT_RESET}" && sleep 1
-bash ./scripts/pinyin.sh && sleep 1
+bash ./scripts/fcitx.sh && sleep 1
 echo -e "${TEXT_YELLOW}Chinese Pinyin Input Method installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
