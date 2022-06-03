@@ -14,7 +14,7 @@ sudo R CMD javareconf
 
 # install R packages and download web scraping driver using R scripts
 [ ! -d ./rscript ] && mkdir ./rscript
-echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap')) \nBiocManager::install(c('GenomicRanges','qvalue'))\n" > ./rscript/packages.R
+echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
 echo "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
 sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
