@@ -9,5 +9,5 @@ sudo ln -sf /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1.0 /usr/lib/i386-lin
 sudo update-locale LANG=zh_CN.UTF-8
 sudo dpkg -i ./deepin-wine-ubuntu-master/deepin.com.wechat_2.6.8.65deepin0_i386.deb
 sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v2.sh
-"/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 30 && killall -9 WeChat.exe
+"/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 20 && killall -9 WeChat.exe
 sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/user.reg
