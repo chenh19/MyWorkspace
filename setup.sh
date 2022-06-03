@@ -70,6 +70,12 @@ echo -e "${TEXT_YELLOW}SnapGene/IGV/PyMOL installing...${TEXT_RESET}" && sleep 1
 echo -e "${TEXT_YELLOW}SnapGene/IGV/PyMOL installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# ukuu
+echo -e "${TEXT_YELLOW}UKUU installing...${TEXT_RESET}" && sleep 1
+#bash ./scripts/ukuu.sh && sleep 1
+echo -e "${TEXT_YELLOW}UKUU installed!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
+
 # grub
 echo -e $TEXT_YELLOW
 read -n1 -s -r -p $'Are you using ThinkPad? [y/n/c]\n' choice
