@@ -1,5 +1,5 @@
 # MyWorkspace
-*v0.0.1 (under heavy development)*  
+*v0.1.0 (under heavy development)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/getkubuntu/), which is my wife's least hated linux distro.
