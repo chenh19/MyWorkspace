@@ -40,6 +40,12 @@ bash ./scripts/flathub.sh && sleep 1
 echo -e "${TEXT_YELLOW}Flat installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# apt install
+echo -e "${TEXT_YELLOW}Apt-get installing...${TEXT_RESET}" && sleep 1
+bash ./scripts/apt.sh && sleep 1
+echo -e "${TEXT_YELLOW}Apt-get pacakges installed!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
+
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
 #cd ../../ && rm -rf ./.setup_cache
