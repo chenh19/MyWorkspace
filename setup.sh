@@ -86,6 +86,12 @@ case "$choice" in
 esac
 echo -e $TEXT_RESET
 
+# debloating
+echo -e "${TEXT_YELLOW}Debloating...${TEXT_RESET}" && sleep 1
+bash ./scripts/debloat.sh && sleep 1
+echo -e "${TEXT_YELLOW}Debloated!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
+
 # 2nd update
 echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
 bash ./scripts/update.sh && sleep 1
