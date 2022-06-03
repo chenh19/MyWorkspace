@@ -64,10 +64,10 @@ echo -e "${TEXT_YELLOW}R & RStudio installing...${TEXT_RESET}" && sleep 1
 echo -e "${TEXT_YELLOW}R & RStudio installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
-# 2nd update
-echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
-bash ./scripts/update.sh && sleep 1
-echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
+# SnapGene/IGV/PyMOL
+echo -e "${TEXT_YELLOW}SnapGene/IGV/PyMOL installing...${TEXT_RESET}" && sleep 1
+#bash ./scripts/rstudio.sh && sleep 1
+echo -e "${TEXT_YELLOW}SnapGene/IGV/PyMOL installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
 # grub
@@ -79,6 +79,12 @@ case "$choice" in
   * ) echo "No need to configure grub.";;
 esac
 echo -e $TEXT_RESET
+
+# 2nd update
+echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
+bash ./scripts/update.sh && sleep 1
+echo -e "${TEXT_YELLOW}All system packages updated!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
 
 # cleanup & reboot
 echo -e "${TEXT_YELLOW}Cleaning up...${TEXT_RESET}" && sleep 1
