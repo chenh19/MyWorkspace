@@ -52,6 +52,12 @@ bash ./scripts/fcitx.sh && sleep 1
 echo -e "${TEXT_YELLOW}Chinese Pinyin Input Method installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# AppImages (EuDic/Etcher/Tropy)
+echo -e "${TEXT_YELLOW}AppImages deploying...${TEXT_RESET}" && sleep 1
+bash ./scripts/appimage.sh && sleep 1
+echo -e "${TEXT_YELLOW}AppImages deployed!${TEXT_RESET}" && sleep 1
+echo "===================================================================================="
+
 # wechat
 echo -e "${TEXT_YELLOW}WeChat installing...${TEXT_RESET}" && sleep 1
 #bash ./scripts/wechat.sh && sleep 1
