@@ -46,6 +46,14 @@ bash ./scripts/apt.sh && sleep 1
 echo -e "${TEXT_YELLOW}Apt-get pacakges installed!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
+# install wechat
+#wget -q https://www.dropbox.com/s/t43dz4ws6576r58/deepin-wine-ubuntu-master.zip?dl=0 && unzip -o -q deepin-wine-ubuntu-master.zip?dl=0 && rm deepin-wine-ubuntu-master.zip?dl=0
+#sudo bash ./deepin-wine-ubuntu-master/deepin-wine-setup.sh
+#sudo bash ./deepin-wine-ubuntu-master/KDE-install.sh
+#sudo ln -sf /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1.0 /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1
+#sudo dpkg-reconfigure locales
+#sudo dpkg -i ./deepin-wine-ubuntu-master/deepin.com.wechat_2.6.8.65deepin0_i386.deb
+
 # 2nd update
 echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET}" && sleep 1
 bash ./scripts/update.sh && sleep 1
