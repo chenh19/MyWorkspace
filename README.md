@@ -6,12 +6,12 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
   
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
-- [EuDic](https://www.eudic.net/v4/en/app/eudic)
+- [EuDic](https://www.eudic.net/)
 - [SnapGene](https://www.snapgene.com/)
-- [IGV](https://software.broadinstitute.org/software/igv/home)
+- [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
 - [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/)
-- [Krita](https://krita.org/en/)
+- [Krita](https://krita.org/)
 - and more
 
 ## How to use
