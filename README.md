@@ -2,7 +2,7 @@
 *v0.1.0 (under heavy development)*  
 
 ## Introduction
-This is an automated configuration tool for freshly [installed](https://chenh19.github.io/myworkspace/) [**Kubuntu**](https://kubuntu.org/getkubuntu/), which is my wife's least hated linux distro.
+This is an automated configuration tool for freshly [installed](https://chenh19.github.io/MyWorkspace/) [**Kubuntu**](https://kubuntu.org/getkubuntu/), which is my wife's least hated linux distro.
 
 ## How to use
 Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal): 
