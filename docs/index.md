@@ -50,7 +50,6 @@ Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/)
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)" 
 ```
-Note:
+### Note:
 - It will ask a few questions in terms of **configuration preferences**. If you didn't notice immediately, it will simply wait for your choice.
 - It will automatically reboot a few times during the process, please **log in** and it will automatically continue. When all configuration is finished, it will remove cache and reboot.
-- 
