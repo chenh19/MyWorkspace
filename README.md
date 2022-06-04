@@ -7,7 +7,7 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
 - [EuDic](https://www.eudic.net/v4/en/app/eudic)
-- [SnapGene Viewer](https://www.snapgene.com/snapgene-viewer/)
+- [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/home)
 - [PyMOL](https://pymol.org/)
 - [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/)
