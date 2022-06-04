@@ -8,8 +8,8 @@ This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
 - [EuDic](https://www.eudic.net/v4/en/app/eudic)
 - [SnapGene Viewer](https://www.snapgene.com/snapgene-viewer/)
-- [IGV](https://software.broadinstitute.org/software/igv/)
-- [PyMOL](https://github.com/schrodinger/pymol-open-source)
+- [IGV](https://software.broadinstitute.org/software/igv/home)
+- [PyMOL](https://pymol.org/)
 - [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/)
 - [Krita](https://krita.org/en/)
 - and more
