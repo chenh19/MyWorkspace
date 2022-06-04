@@ -1,4 +1,4 @@
-## Fresh Install and Automated Configuration of Kubuntu
+## Fresh Install and Configuration of My Workspace
 
 ### [1/5] Create a bootable USB drive
 - Download [**balenaEtcher**](https://www.balena.io/etcher/)  
