@@ -3,6 +3,7 @@
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/getkubuntu/), which is my wife's least hated linux distro.  
+  
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
 - [EuDic](https://www.eudic.net/v4/en/app/eudic)
