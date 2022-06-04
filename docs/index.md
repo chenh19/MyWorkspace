@@ -50,6 +50,7 @@ Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/)
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)" 
 ```
+- 
 ![](./images/11.png)
 
 #### Note:
