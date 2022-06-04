@@ -1,8 +1,8 @@
 ## How to: Perform a Clean Install of Kubuntu
 
 ### [1/4] Create a bootable USB drive
-- Download [balenaEtcher](https://www.balena.io/etcher/)  
-- Download [Kubuntu](https://kubuntu.org/getkubuntu/)  
+- Download [**balenaEtcher**](https://www.balena.io/etcher/)  
+- Download [**Kubuntu**](https://kubuntu.org/getkubuntu/)  
 - Flash a USB drive with the Kubuntu iso image:  
 ![](./images/0.png)
 
@@ -43,4 +43,4 @@
 ![](./images/10.png)
 
 ### [4/4] Reboot the system
-- Once log out, it will prompt "**Please remove the bootable USB flash drive and press Enter**", simply unplug the USB drive and press ```Enter```  
+- Once log out, it will prompt "**Please remove the installation meduim, then press ENTER**", simply unplug the USB drive and press ```Enter```  
