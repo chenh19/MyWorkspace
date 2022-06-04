@@ -10,6 +10,7 @@ This tool will install and configure:
 - [SnapGene Viewer](https://www.snapgene.com/snapgene-viewer/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/)
+- [Krita](https://krita.org/en/)
 - and more
 
 ## How to use
