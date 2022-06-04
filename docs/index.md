@@ -1,4 +1,4 @@
-## How to: Clean Install and Automated Configuration of Kubuntu for Work
+## Fresh Install and Automated Configuration of Kubuntu
 
 ### [1/5] Create a bootable USB drive
 - Download [**balenaEtcher**](https://www.balena.io/etcher/)  
