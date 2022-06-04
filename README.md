@@ -9,6 +9,7 @@ This tool will install and configure:
 - [EuDic](https://www.eudic.net/v4/en/app/eudic)
 - [SnapGene Viewer](https://www.snapgene.com/snapgene-viewer/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
+- [PyMOL](https://github.com/schrodinger/pymol-open-source)
 - [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/)
 - [Krita](https://krita.org/en/)
 - and more
