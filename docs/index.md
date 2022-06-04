@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## How to: Perform a Clean Install of Kubuntu
 
 ### [1/4] Create a bootable USB flash drive
 ![](./images/0.png)
