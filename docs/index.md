@@ -46,11 +46,11 @@
 - Once log out, it will prompt "**Please remove the installation meduim, then press ENTER**", simply unplug the USB drive and press ```Enter```  
 
 ### [5/5] Configuration
-Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal): 
+- Simply copy the below command and paste in [**Konsole**](https://konsole.kde.org/) (terminal):  
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)" 
 ```
-- 
+- Input user password and press ```Enter``` to run:  
 ![](./images/11.png)
 
 #### Note:
