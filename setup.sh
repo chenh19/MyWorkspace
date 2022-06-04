@@ -23,8 +23,8 @@ cd ~
 [ ! -d .setup_cache ] && mkdir ./.setup_cache
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET}" && sleep 1
 cd ./.setup_cache
-[ ! -d master ] && wget -q https://codeload.github.com/chenh19/myworkspace/zip/refs/heads/main && unzip -o -q main && rm main
-cd ./myworkspace-main && rm -rf ./docs && rm LICENSE README.md && sleep 1
+[ ! -d master ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
+cd ./MyWorkspace-main && rm -rf ./docs && rm LICENSE README.md && sleep 1
 echo -e "${TEXT_YELLOW}All scripts downloaded!${TEXT_RESET}" && sleep 1
 echo "===================================================================================="
 
