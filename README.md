@@ -10,7 +10,7 @@ This tool will install and configure:
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/home)
 - [PyMOL](https://pymol.org/)
-- [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/)
+- [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/)
 - [Krita](https://krita.org/en/)
 - and more
 
