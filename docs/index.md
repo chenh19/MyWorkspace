@@ -46,7 +46,7 @@
 - Once log out, it will prompt "**Please remove the installation meduim, then press ENTER**", simply unplug the USB drive and press ```Enter```  
 
 ### [5/5] Configuration
-- Simply copy the below command and paste in [**Konsole**](https://konsole.kde.org/) (terminal):  
+- Copy the below command and paste in [**Konsole**](https://konsole.kde.org/) (terminal):  
 ```
 wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh | bash
 ```
