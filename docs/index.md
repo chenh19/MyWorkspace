@@ -48,7 +48,7 @@
 ### [5/5] Configuration
 - Simply copy the below command and paste in [**Konsole**](https://konsole.kde.org/) (terminal):  
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)" 
+wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh | bash
 ```
 - Input user password and press ```Enter``` to run:  
 ![](./images/11.png)
