@@ -2,7 +2,7 @@
 *v0.1.0 (under heavy development)*  
 
 ## Introduction
-This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/getkubuntu/), which is my wife's least hated linux distro.  
+This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
   
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
