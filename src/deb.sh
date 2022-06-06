@@ -12,7 +12,8 @@ cd ~/.setup_cache/
 
 
 # notify start
-echo -e " \n${TEXT_YELLOW}Deb packages installing...${TEXT_RESET} \n" && sleep 1
+sudo echo ""
+echo -e "${TEXT_YELLOW}Deb packages installing...${TEXT_RESET} \n" && sleep 1
 
 # install updates
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
