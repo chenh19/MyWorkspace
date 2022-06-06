@@ -18,9 +18,7 @@ echo -e " \n${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep
 
 # download setup scripts
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
-cp -rf ./MyWorkspace-main/setup.sh ./
-cp -rf ./MyWorkspace-main/src/ ./
-rm -rf ./MyWorkspace-main
+cp -rf ./MyWorkspace-main/setup.sh ./ && cp -rf ./MyWorkspace-main/src/ ./ && rm -rf ./MyWorkspace-main
 
 
 # notify end
