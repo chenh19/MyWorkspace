@@ -12,7 +12,8 @@ cd ~/.setup_cache/
 
 
 # notify start
-echo -e " \n${TEXT_YELLOW}Installing R/RStudio/R packages...${TEXT_RESET} \n" && sleep 1
+sudo echo ""
+echo -e "${TEXT_YELLOW}Installing R/RStudio/R packages...${TEXT_RESET} \n" && sleep 1
 
 # update system and install packages required by R and R packages installing
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev texlive-latex-extra -y
