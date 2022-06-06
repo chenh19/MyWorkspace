@@ -18,7 +18,7 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
-mv -rf ./MyWorkspace-main/setup.sh ./ && mv -rf ./MyWorkspace-main/src/ ./ && rm -rf ./MyWorkspace-main/
+mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/ ./ && rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 
