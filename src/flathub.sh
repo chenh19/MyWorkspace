@@ -23,5 +23,9 @@ sudo apt-get install plasma-discover-backend-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 
+# cleanup
+sudo apt-get autoremove -y && sudo apt-get clean
+
+
 # notify end
 echo -e " \n${TEXT_GREEN}Flathub installed!${TEXT_RESET} \n" && sleep 1
