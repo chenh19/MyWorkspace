@@ -42,7 +42,7 @@ sudo chmod +x /usr/share/applications/rstudio.desktop
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
-rm -rf ./rscript ./rstudio
+rm -rf ./rscript/ ./rstudio/
 
 # notify end
 echo -e " \n${TEXT_GREEN}R developing enviroment ready!${TEXT_RESET} \n" && sleep 1
