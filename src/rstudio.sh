@@ -7,8 +7,8 @@ TEXT_YELLOW='\e[1;33m'
 TEXT_GREEN='\e[1;32m'
 
 # set working directory
-[ ! -d ~/.setup_cache ] && mkdir ~/.setup_cache
-cd ~/.setup_cache
+[ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
+cd ~/.setup_cache/
 
 
 # notify start
@@ -24,7 +24,7 @@ sudo apt-get update && sudo apt-get install r-base -y
 sudo R CMD javareconf
 
 # install R packages and download web scraping driver using R scripts
-[ ! -d ./rscript ] && mkdir ./rscript
+[ ! -d ./rscript/ ] && mkdir ./rscript/
 echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
 echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
 sudo Rscript ./rscript/packages.R
