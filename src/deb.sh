@@ -24,7 +24,7 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evolution-ews xdotool kdocker curl -y
 
 #wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#sudo apt-get install -f -y ./
+#sudo apt-get install -f -y ./*.deb
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
