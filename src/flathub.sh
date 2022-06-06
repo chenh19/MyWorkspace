@@ -12,7 +12,8 @@ cd ~/.setup_cache/
 
 
 # notify start
-echo -e " \n${TEXT_YELLOW}Installing Flathub...${TEXT_RESET} \n" && sleep 1
+sudo echo ""
+echo -e "${TEXT_YELLOW}Installing Flathub...${TEXT_RESET} \n" && sleep 1
 
 # add flathub to discover (KDE app store)
 sudo apt-get update && sudo apt-get install flatpak plasma-discover-backend-flatpak -y
