@@ -27,7 +27,7 @@ sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evol
 # install apps (downloaded
 [ ! -d ./deb/ ] && mkdir ./deb/
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb
+wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
 mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./*.deb
 
 # cleanup
