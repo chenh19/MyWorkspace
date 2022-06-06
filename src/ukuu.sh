@@ -12,7 +12,8 @@ cd ~/.setup_cache/
 
 
 # notify start
-echo -e " \n${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
+sudo echo ""
+echo -e "${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
 
 # download and install UKUU
 wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
