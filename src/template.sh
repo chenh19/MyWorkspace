@@ -7,8 +7,8 @@ TEXT_YELLOW='\e[1;33m'
 TEXT_GREEN='\e[1;32m'
 
 # set working directory
-[ ! -d ~/.setup_cache ] && mkdir ~/.setup_cache
-cd ~/.setup_cache
+[ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
+cd ~/.setup_cache/
 
 
 # notify start
