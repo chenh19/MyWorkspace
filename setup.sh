@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script downloads all scripts for setup
 
+
 # set terminal font color
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
@@ -29,3 +30,6 @@ bash ./src/flathub.sh
 bash ./src/ukuu.sh
 #bash ./src/rstudio.sh
 bash ./src/update.sh
+
+
+# cleanup
