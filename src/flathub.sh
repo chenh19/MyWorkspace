@@ -18,6 +18,9 @@ echo -e " \n${TEXT_YELLOW}Installing Flathub...${TEXT_RESET} \n" && sleep 1
 sudo apt-get update && sudo apt-get install flatpak plasma-discover-backend-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# install apps
+sudo flatpak install flathub com.github.joseexposito.touche com.usebottles.bottles -y
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 
