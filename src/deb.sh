@@ -17,6 +17,10 @@ cd ~/.setup_cache
 echo -e " \n${TEXT_YELLOW}Deb packages installing...${TEXT_RESET} \n" && sleep 1
 
 
+# install updates
+sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y 
+
+
 # install java
 sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
