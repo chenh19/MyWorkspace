@@ -22,6 +22,7 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps
 sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evolution-ews xdotool kdocker curl -y
+#sudo apt-get install -f -y ./
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
