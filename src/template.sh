@@ -16,5 +16,7 @@ echo -e " \n${TEXT_YELLOW}Starting...${TEXT_RESET} \n" && sleep 1
 
 # xxx
 
+# cleanup
+
 # notify end
 echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 1
