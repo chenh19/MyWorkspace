@@ -31,3 +31,4 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 
 # final cleanup
+#rm -rf ~/.setup_cache ~/setup.sh
