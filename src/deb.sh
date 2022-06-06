@@ -25,5 +25,9 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evolution-ews xdotool kdocker curl -y
 
 
+# cleanup
+sudo apt-get autoremove -y && sudo apt-get clean
+
+
 # notify end
 echo -e " \n${TEXT_GREEN}Deb pacakges installed!${TEXT_RESET} \n" && sleep 1
