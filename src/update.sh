@@ -15,13 +15,16 @@ cd ~/.setup_cache
 echo -e " \n${TEXT_YELLOW}Updating system packages...${TEXT_RESET} \n" && sleep 1
 
 # apt update & cleanup
-sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean
+sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 
 # flatpak update
 sudo flatpak update -y
 
 # snap update
 sudo snap refresh
+
+# cleanup
+sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 1
