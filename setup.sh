@@ -12,14 +12,19 @@ TEXT_GREEN='\e[1;32m'
 cd ~/.setup_cache
 
 
-# notify start
-echo -e " \n${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
+# check internet
 
 
 # download setup scripts
+echo -e " \n${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./ && cp -rf ./MyWorkspace-main/src/ ./ && rm -rf ./MyWorkspace-main
-
-
-# notify end
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
+
+
+# setup
+bash ./src/deb.sh
+bash ./src/flathub.sh
+bash ./src/ukuu.sh
+#bash ./src/rstudio.sh
+bash ./src/update.sh
