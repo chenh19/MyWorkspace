@@ -32,8 +32,9 @@ sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
 
 # install RStudio and dependency that no longer provided by ubuntu 22.04
+[ ! -d ./rstudio/ ] && mkdir ./rstudio/
 wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
-sudo dpkg -i ./rstudio-*-amd64.deb
+mv -f ./rstudio-*-.deb ./rstudio/ && sudo dpkg -i ./rstudio/rstudio-*-amd64.deb
 
 # configure RStudio exec command in the desktop file so that it will not show a blank window
 sudo sed -i 's+Exec=/usr/lib/rstudio/bin/rstudio %F+Exec=/usr/lib/rstudio/bin/rstudio --no-sandbox %F+g' /usr/share/applications/rstudio.desktop
@@ -41,7 +42,7 @@ sudo chmod +x /usr/share/applications/rstudio.desktop
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
-rm -rf ./rscript/ ./rstudio-*-amd64.deb
+rm -rf ./rscript/ ./rstudio/
 
 # notify end
 echo -e " \n${TEXT_GREEN}R developing enviroment ready!${TEXT_RESET} \n" && sleep 1
