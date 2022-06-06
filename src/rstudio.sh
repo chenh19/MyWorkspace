@@ -15,8 +15,7 @@ cd ~/.setup_cache
 echo -e " \n${TEXT_YELLOW}Installing R/RStudio/R packages...${TEXT_RESET} \n" && sleep 1
 
 # update system and install packages required by R and R packages installing
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev texlive-latex-extra -y
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev texlive-latex-extra -y
 
 # install R from cran
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
