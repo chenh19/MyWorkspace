@@ -32,6 +32,9 @@ sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
 
 # install RStudio and dependency that no longer provided by ubuntu 22.04
+#wget -q http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+#wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb
+
 wget -q https://www.dropbox.com/s/xhj6uk5sfr1ldgo/rstudio.zip?dl=0 && unzip -o -q rstudio.zip?dl=0 && rm rstudio.zip?dl=0
 sudo apt-get install -f -y ./rstudio/libssl1.1_1.1.0g-2ubuntu4_amd64.deb ./rstudio/rstudio-2022.02.2-485-amd64.deb
 [ ! -d ~/.config/rstudio/ ] && mkdir ~/.config/rstudio/
