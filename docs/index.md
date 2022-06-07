@@ -52,7 +52,7 @@
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
 - Input user password and press ```Enter``` to run:  
-![](./images/11.png)
+![](./images/12.png)
 
 #### Note:
 - It will ask a few questions in terms of **configuration preferences**. If you didn't notice immediately, it will simply wait for your choice.
