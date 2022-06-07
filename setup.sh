@@ -32,5 +32,5 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 read -p "Your Friendly Message here y/n/cancel" CONDITION;
 if [ "$CONDITION" == "y" ]; then
-   echo "do something here"!
+   echo "do something here"
 fi
