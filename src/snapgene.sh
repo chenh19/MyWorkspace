@@ -12,7 +12,7 @@ cd ~/.setup_cache/
 
 
 # ask whether to install SnapGene/IGV/PyMOL
-read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]'${TEXT_RESET})"$(echo -e ' \n') choice
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]'${TEXT_RESET})" choice
 case "$choice" in
   y|Y ) # notify start;
         sudo echo "";
