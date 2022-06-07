@@ -27,13 +27,13 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 #"$(echo -e $TEXT_YELLOW'Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n'
 read -p "yes?" RESP
-if [ "$RESP" = "y" ]; then
+if [ "$RESP" = "y" ] 
+then
   bash ./src/snapgene.sh
 else
   echo "skip"
 fi
 
-bash ./src/snapgene.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
