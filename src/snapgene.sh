@@ -12,6 +12,7 @@ cd ~/.setup_cache/
 
 
 # ask whether to install SnapGene/IGV/PyMOL
+sudo echo ""
 read -p "Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]? " choice
 #read -p "$(echo -e $TEXT_YELLOW'Would you like to install SnapGene, IGV, and PyMOL?'$TEXT_RESET)" choice
 case "$choice" in
