@@ -11,9 +11,6 @@ TEXT_GREEN='\e[1;32m'
 cd ~/.setup_cache/
 
 
-# check internet connection
-
-
 # download all setup scripts
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
