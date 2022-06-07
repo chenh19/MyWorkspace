@@ -26,4 +26,4 @@ echo -e "SGFuZyBDaGVufGNoZW5faEBvdXRsb29rLmNvbXwzUE9NLURMWkEtVFdIRy1ITzgwLUM2Nlg
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}UKUU activated!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}UKUU activated!${TEXT_RESET} \n" && sleep 5
