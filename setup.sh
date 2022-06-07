@@ -19,14 +19,12 @@ echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ && rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
-
 # setup
 bash ./src/deb.sh
 bash ./src/flathub.sh
 bash ./src/ukuu.sh
 bash ./src/rstudio.sh
 bash ./src/update.sh
-
 
 # final cleanup
 #rm -rf ~/.setup_cache ~/setup.sh
