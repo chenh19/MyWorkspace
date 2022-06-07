@@ -23,7 +23,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
-bash ./src/snapgene_igv_pymol.sh
+#bash ./src/snapgene_igv_pymol.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
