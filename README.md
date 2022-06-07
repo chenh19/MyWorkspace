@@ -17,5 +17,5 @@ This tool will install and configure:
 ## How to use
 Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal) or refer to the [**tutorial**](https://chenh19.github.io/MyWorkspace/): 
 ```
-wget -qO- --no-cache https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh | bash
+sudo apt install curl -y && bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
