@@ -20,8 +20,8 @@ sudo apt-get update && sudo apt-get install flatpak plasma-discover-backend-flat
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install apps
-sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche 
-sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
+sudo flatpak install -y flathub com.github.joseexposito.touche 
+sudo flatpak install -y flathub com.usebottles.bottles
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
