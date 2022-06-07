@@ -31,6 +31,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #rm -rf ~/.setup_cache ~/setup.sh
 
 read -p "Your Friendly Message here y/n/cancel" CONDITION;
-if [ "$CONDITION" == "y" ]; then
+if [ "$CONDITION" == "y" ]
+then
    echo "do something here"
 fi
