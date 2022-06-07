@@ -29,8 +29,6 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 read -p "yes?" RESP
 if [ "$RESP -eq "y" ]; then
   bash ./src/snapgene.sh
-else
-  echo "skip"
 fi
 
 #bash ./src/rstudio.sh
