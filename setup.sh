@@ -27,10 +27,10 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
-read -p "<Your Friendly Message here> : y/n/cancel" CONDITION;
-if [ "$CONDITION" == "y" ]; then
-   # do something here!
-fi
-
 # final cleanup
 #rm -rf ~/.setup_cache ~/setup.sh
+
+read -p "Your Friendly Message here y/n/cancel" CONDITION;
+if [ "$CONDITION" == "y" ]; then
+   echo "do something here"!
+fi
