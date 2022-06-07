@@ -23,15 +23,10 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
-#bash ./src/snapgene.sh
+chmod +x ./src/snapgene.sh
+bash ./src/snapgene.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
 # final cleanup
 #rm -rf ~/.setup_cache ~/setup.sh
-
-read -p "Your Friendly Message here y/n/cancel" CONDITION;
-if [ "$CONDITION" == "y" ]
-then
-   echo "do something here"
-fi
