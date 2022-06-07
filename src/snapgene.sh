@@ -10,6 +10,11 @@ TEXT_GREEN='\e[1;32m'
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
+read -p "Your Friendly Message here y/n/cancel" CONDITION;
+if [ "$CONDITION" == "y" ]
+then
+   echo "do something here"
+fi
 
 # notify start
 sudo echo ""
