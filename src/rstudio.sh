@@ -41,4 +41,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./rscript/ ./rstudio/
 
 # notify end
-echo -e " \n${TEXT_GREEN}R developing enviroment ready!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}R developing enviroment ready!${TEXT_RESET} \n" && sleep 5
