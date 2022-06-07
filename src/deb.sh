@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps (directly)
-sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evolution-ews xdotool kdocker curl -y
+sudo apt-get install kwrite kcalc krita partitionmanager seahorse evolution evolution-ews xdotool kdocker curl python3-pip -y
 
 # install apps (downloaded
 [ ! -d ./deb/ ] && mkdir ./deb/
