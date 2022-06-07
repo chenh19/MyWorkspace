@@ -16,13 +16,12 @@ sudo echo ""
 echo -e "${TEXT_YELLOW}Installing Flathub...${TEXT_RESET} \n" && sleep 1
 
 # add flathub to discover (KDE app store)
-sudo apt-get update
-sudo apt-get install flatpak -y
-sudo apt-get install plasma-discover-backend-flatpak -y
+sudo apt-get update && sudo apt-get install flatpak plasma-discover-backend-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install apps
-sudo flatpak install flathub com.github.joseexposito.touche com.usebottles.bottles -y
+sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche 
+sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
