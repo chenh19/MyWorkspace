@@ -35,4 +35,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./deb/
 
 # notify end
-echo -e " \n${TEXT_GREEN}Deb pacakges installed!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}Deb pacakges installed!${TEXT_RESET} \n" && sleep 5
