@@ -20,4 +20,4 @@ echo -e "${TEXT_YELLOW}Starting...${TEXT_RESET} \n" && sleep 1
 # cleanup
 
 # notify end
-echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 5
