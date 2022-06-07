@@ -50,4 +50,3 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}SnapGene, IGV, and PyMOL not installed.${TEXT_RESET} \n" && sleep 5;;
         
 esac
-done
