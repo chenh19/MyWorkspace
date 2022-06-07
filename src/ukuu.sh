@@ -22,6 +22,9 @@ wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 [ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
 echo -e "SGFuZyBDaGVufGNoZW5faEBvdXRsb29rLmNvbXwzUE9NLURMWkEtVFdIRy1ITzgwLUM2Nlg=" > ~/.config/ukuu/license.dat
 
+# install latest kernel
+sudo ukuu --scripted --install 5.18.0 # --install-latested
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 
