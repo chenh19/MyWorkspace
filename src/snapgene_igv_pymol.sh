@@ -15,8 +15,12 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Installing SnapGene, IGV, and PyMOL...${TEXT_RESET} \n" && sleep 1
 
-# install IGV, PyMOL, and snapgene font
-sudo apt-get update && sudo apt-get install ttf-mscorefonts-installer igv pymol -y
+# install IGV and PyMOL
+sudo apt-get update && sudo apt-get install igv pymol -y
+
+# install snapgene font
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+sudo apt-get install ttf-mscorefonts-installer -y
 
 # install snapgene
 [ ! -d ./snapgene/ ] && mkdir ./snapgene/
