@@ -23,6 +23,14 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
+
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in 
+  y|Y ) bash ./src/snapgene.sh;;
+  n|N ) echo "skip";;
+  * ) echo "skip";;
+esac
+
 bash ./src/snapgene.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
