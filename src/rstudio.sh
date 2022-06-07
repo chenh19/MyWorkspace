@@ -24,7 +24,7 @@ echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.
 sudo apt-get update && sudo apt-get install r-base -y
 sudo R CMD javareconf
 
-# install R packages and download web scraping driver using R scripts
+# install R packages and web driver
 [ ! -d ./rscript/ ] && mkdir ./rscript/
 echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R # for testing
 #echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
