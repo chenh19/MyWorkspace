@@ -19,7 +19,7 @@ echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ && rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
-chmod +x ~/.setup_cache/src/install.sh
+chmod u+x ~/.setup_cache/src/install.sh
 bash ~/.setup_cache/src/install.sh
 
 # setup
