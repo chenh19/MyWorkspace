@@ -28,4 +28,4 @@ sudo flatpak install flathub com.github.joseexposito.touche com.usebottles.bottl
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}Flathub installed!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}Flathub installed!${TEXT_RESET} \n" && sleep 5
