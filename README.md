@@ -19,4 +19,4 @@ Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/)
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
-Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) available.
+Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/).
