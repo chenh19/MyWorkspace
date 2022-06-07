@@ -32,6 +32,7 @@ sudo apt-get -f -y install
 # configure
 sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
 sudo sed -i 's+send=true+send=false+g' ~/.snapgene-viewer/settings.ini
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./snapgene/
