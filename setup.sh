@@ -36,5 +36,15 @@ fi
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
+read -p "Is this a good question (y/n)? " answer
+case ${answer:0:1} in
+    y|Y )
+        echo Yes
+    ;;
+    * )
+        echo No
+    ;;
+esac
+
 # final cleanup
 #rm -rf ~/.setup_cache ~/setup.sh
