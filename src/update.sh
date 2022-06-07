@@ -28,4 +28,4 @@ sudo snap refresh
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 5
