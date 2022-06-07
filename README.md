@@ -15,7 +15,8 @@ This tool will install and configure:
 - and more
 
 ## How to use
-Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal) or refer to the [**tutorial**](https://chenh19.github.io/MyWorkspace/): 
+Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
+Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) available.
