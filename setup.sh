@@ -23,24 +23,17 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
-
-
-#"$(echo -e $TEXT_YELLOW'Would you like to install SnapGene, IGV, and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n'
-read -p "yes?" RESP
-if [ "$RESP -eq "y" ]; then
-  bash ./src/snapgene.sh
-fi
-
+#bash ./src/snapgene.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
 
 read -p "Is this a good question (y/n)? " answer
 case ${answer:0:1} in
     y|Y )
-        echo Yes
+        echo "Yes"
     ;;
     * )
-        echo No
+        echo "No"
     ;;
 esac
 
