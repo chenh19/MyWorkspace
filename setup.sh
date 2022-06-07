@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/expect -f
 # This script downloads all scripts for setup
 
 # set terminal font color
