@@ -34,8 +34,8 @@ Rscript ./rscript/webdriver.R
 
 # install RStudio
 [ ! -d ./rstudio/ ] && mkdir ./rstudio/
-wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
-mv -f ./*.deb ./rstudio/ && sudo dpkg -i ./rstudio/*.deb
+wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb && sleep 1 #_to_be_updated
+mv -f ./*.deb ./rstudio/ && sudo dpkg -i ./rstudio/*.deb && sleep 1
 sudo apt-get -f -y install
 
 # cleanup
