@@ -23,7 +23,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
-chmod +x ./src/snapgene.sh
+sudo chmod +x ./src/snapgene.sh
 bash ./src/snapgene.sh
 #bash ./src/rstudio.sh
 #bash ./src/update.sh
