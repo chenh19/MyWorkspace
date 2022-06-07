@@ -43,9 +43,9 @@ case "$choice" in
         echo -e " \n${TEXT_GREEN}SnapGene, IGV, and PyMOL installed!${TEXT_RESET} \n" && sleep 5;;
 
   n|N ) # notify cancellation
-        echo -e " \n${TEXT_GREEN}SnapGene, IGV, and PyMOL is not installed.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}SnapGene, IGV, or PyMOL not installed.${TEXT_RESET} \n" && sleep 5;;
 
   * ) # notify cancellation
-        echo -e " \n${TEXT_GREEN}SnapGene, IGV, and PyMOL is not installed.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}SnapGene, IGV, or PyMOL not installed.${TEXT_RESET} \n" && sleep 5;;
 
 esac
