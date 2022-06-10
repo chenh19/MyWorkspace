@@ -33,7 +33,7 @@ sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
 
 # install RStudio and Jupyter Lab
-[ ! -d ./rstudio/ ] && mkdir ./rstudio/
+[ ! -d ./devdeb/ ] && mkdir ./devdeb/
 wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
 wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb #_to_be_updated
 sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
