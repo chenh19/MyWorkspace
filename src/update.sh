@@ -24,8 +24,13 @@ sudo flatpak update -y
 # snap update
 sudo snap refresh
 
+# R packges update
+echo -e "update.packages(ask = FALSE, checkBuilt = TRUE)" > ./update.R
+sudo Rscript ./update.R
+
+
 # cleanup
-sudo apt-get autoremove -y && sudo apt-get clean
+rm update.R && sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 5
