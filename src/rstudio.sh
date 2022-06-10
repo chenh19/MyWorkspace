@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Installing R/RStudio/R packages...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Installing R/RStudio/R packages/Jupyter Lab...${TEXT_RESET} \n" && sleep 1
 
 # update system and install packages required by R and R packages installing
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
@@ -32,15 +32,16 @@ echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
 sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
 
-# install RStudio
+# install RStudio and Jupyter Lab
 [ ! -d ./rstudio/ ] && mkdir ./rstudio/
-wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb && sleep 1 #_to_be_updated
-mv -f ./*.deb ./rstudio/ && sudo dpkg -i ./rstudio/*.deb && sleep 1
+wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
+wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb #_to_be_updated
+sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
 sudo apt-get -f -y install
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
-rm -rf ./rscript/ ./rstudio/
+rm -rf ./rscript/ ./devdeb/
 
 # notify end
 echo -e " \n${TEXT_GREEN}R developing enviroment ready!${TEXT_RESET} \n" && sleep 5
