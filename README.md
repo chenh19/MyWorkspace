@@ -1,5 +1,5 @@
 # MyWorkspace
-*v0.1.1 (under heavy development)*  
+*v0.1.2 (under heavy development)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -10,7 +10,9 @@ This tool will install and configure:
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
+- [Jyputer Lab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [RStudio](https://www.rstudio.com/)
+- [RKWard](https://rkward.kde.org/)
 - [Krita](https://krita.org/)
 - and more
 
