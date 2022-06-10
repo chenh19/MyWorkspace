@@ -16,6 +16,12 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - and more
 
+**To be tested:**  
+
+- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
+- [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
+- [ ] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
+
 ## How to use
 Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
