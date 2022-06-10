@@ -23,8 +23,8 @@ This tool will install and configure:
 - [ ] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
 
 ## How to use
-Simply copy the below command and run in [**Konsole**](https://konsole.kde.org/) (terminal): 
+Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
-Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/).
+Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for reference.
