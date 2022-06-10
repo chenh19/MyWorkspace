@@ -27,7 +27,7 @@ sudo R CMD javareconf
 # install R packages and web driver
 [ ! -d ./rscript/ ] && mkdir ./rscript/
 echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R # for testing
-#echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'workflowr', 'blogdown')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
+#echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
 echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
 sudo Rscript ./rscript/packages.R
 Rscript ./rscript/webdriver.R
