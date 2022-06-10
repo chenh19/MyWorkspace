@@ -14,6 +14,8 @@ This tool will install and configure:
 - [RStudio](https://www.rstudio.com/)
 - [RKWard](https://rkward.kde.org/)
 - [Krita](https://krita.org/)
+- [Bottles](https://usebottles.com/)
+- [Touchegg](https://github.com/JoseExposito/touchegg)
 - and more
 
 **To be tested:**  
