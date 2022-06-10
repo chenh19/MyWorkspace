@@ -24,7 +24,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
 bash ./src/snapgene.sh
-#bash ./src/devenv.sh
+#bash ./src/biodev.sh
 bash ./src/update.sh
 
 # final cleanup
