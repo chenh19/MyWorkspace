@@ -16,7 +16,7 @@ sudo echo ""
 echo -e "${TEXT_YELLOW}Installing R/RStudio/R packages/Jupyter Lab...${TEXT_RESET} \n" && sleep 1
 
 # update system and install packages required by R and R packages installing
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra kate kbibtex rkward -y
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra kbibtex rkward fastqc -y
 
 # install R from cran
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
