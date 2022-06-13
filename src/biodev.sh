@@ -42,7 +42,6 @@ case "$choice" in
         sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get -f -y install
 
-
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
         rm -rf ./rscript/ ./devdeb/
