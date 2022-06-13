@@ -33,7 +33,7 @@ case "$choice" in
 
         # configure language
         sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v2.sh
-        "/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 10 && killall -9 WeChat.exe
+        "/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 10 && killall -9 WeChat.exe && sleep 5
         
         # configure scaling
         echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
