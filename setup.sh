@@ -28,5 +28,8 @@ bash ./src/biodev.sh
 bash ./src/fix.sh
 bash ./src/update.sh
 
+#bash ./src/grub.sh
+#bash ./src/settings.sh
+
 # final cleanup
 #rm -rf ~/.setup_cache ~/setup.sh
