@@ -41,7 +41,7 @@ cp -rf ./squashfs-root/*.png ./eudic/ && sudo rm -rf ./squashfs-root/
 mv $(ls ./eudic/*.png) ./eudic/eudic.png && sleep 1
 
 # move to /opt folder
-sudo mv -f -t /opt/ ./etcher/ ./tropy/ ./eudic/
+sudo cp -rf ./etcher/ ./tropy/ ./eudic/ /opt/
 
 # create desktop icons
 # Etcher
@@ -52,10 +52,11 @@ echo -e "[Desktop Entry] \nCategories=Graphics; \nComment=Image Manager \nExec=/
 echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage \nGenericName= \nIcon=/opt/eudic/eudic.png \nMimeType= \nName=EuDic \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./eudic.desktop
 
 # move to /usr/share/applications folder
-sudo mv -f -t /usr/share/applications/ ./*desktop
+sudo cp -rf ./*.desktop /usr/share/applications/
 
 
 # cleanup
+rm -rf ./etcher/ ./tropy/ ./eudic/ && rm ./*.desktop
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
