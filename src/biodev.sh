@@ -36,6 +36,7 @@ case "$choice" in
         Rscript ./rscript/webdriver.R
         
         # install RKWard and fastqc
+        # rkward is dependent on kate, which is installed by Kubuntu by defauly
         sudo apt-get install rkward kbibtex fastqc -y
 
         # install RStudio and Jupyter Lab
