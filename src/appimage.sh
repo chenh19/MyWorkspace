@@ -31,10 +31,7 @@ cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && slee
 # Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
 wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && sleep 1 #_to_be_updated
-unzip -o -q *.zip?dl=0 && rm *.zip?dl=0 && mv -f ./*.AppImage ./eudic/ && sleep 1
-sudo ./eudic/eudic.AppImage --appimage-extract && sleep 1
-cp -rf ./squashfs-root/*.png ./eudic/ && sudo rm -rf ./squashfs-root/
-mv $(ls ./eudic/*.png) ./eudic/eudic.png && sleep 1
+unzip -o -q *.zip?dl=0 && rm *.zip?dl=0 && sleep 1
 
 # move to /opt folder
 sudo cp -rf ./etcher/ ./tropy/ ./eudic/ /opt/
