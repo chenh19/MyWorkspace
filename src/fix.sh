@@ -26,3 +26,6 @@ sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}All dependencies fulfilled!${TEXT_RESET} \n" && sleep 5
+
+# mark setup.sh
+sed -i 's+bash ./src/fix.sh+#bash ./src/fix.sh+g' ~/.setup_cache/setup.sh
