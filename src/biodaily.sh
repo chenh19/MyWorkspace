@@ -51,4 +51,4 @@ case "$choice" in
 esac
 
 # mark setup.sh
-sed -i 's+bash ./src/snapgene.sh+#bash ./src/snapgene.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./src/biodaily.sh+#bash ./src/biodaily.sh+g' ~/.setup_cache/setup.sh
