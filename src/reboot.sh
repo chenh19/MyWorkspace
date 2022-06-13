@@ -24,10 +24,10 @@ if [ -f /var/run/reboot-required ]; then
 	reboot;;
         	
   n|N ) # notify cancellation
-	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
+	echo -e " \n${TEXT_YELLOW}Please manually reboot later.${TEXT_RESET} \n" && sleep 5;;
 
   * ) 	# notify cancellation
-	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
+	echo -e " \n${TEXT_YELLOW}Please manually reboot later.${TEXT_RESET} \n" && sleep 5;;
 
 	esac
 fi
