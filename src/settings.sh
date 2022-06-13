@@ -175,6 +175,11 @@ chmod +x ~/Desktop/*.desktop
 
 ######################################################################################
 
+# label the /root
+sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}KDE plasma configured!${TEXT_RESET} \n" && sleep 5
 
