@@ -21,7 +21,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # setup automatic resuming after rebooting
 [ ! -d /opt/Startup/ ] && sudo mkdir /opt/Startup/
-echo -e "#!bin/bash \nkonsole -e 'bash ~/.setup_cache/setup.sh'" > ~/.setup_cache/myworkspace.sh
+echo -e "#!/bin/bash \nkonsole -e 'bash ~/.setup_cache/setup.sh'" > ~/.setup_cache/myworkspace.sh
 sudo mv -f ~/.setup_cache/myworkspace.sh /opt/Startup/
 echo -e "[Desktop Entry] \nExec=/opt/Startup/myworkspace.sh \nIcon=dialog-scripts \nName=myworkspace.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/myworkspace.sh.desktop
 
@@ -53,6 +53,5 @@ sed -i '17,30d' ~/.setup_cache/setup.sh
 
 
 # final cleanup
-#rm /opt/myworkspace.sh ~/.config/autostart/myworkspace.sh.desktop && rm -rf ~/.setup_cache/
-
+rm -rf ~/.setup_cache/ && rm ~/.config/autostart/myworkspace.sh.desktop && sudo rm /opt/Startup/myworkspace.sh
 
