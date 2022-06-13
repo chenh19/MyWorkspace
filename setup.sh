@@ -20,7 +20,8 @@ mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ &&
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # avoid re-downloading
-sed -i 's+Downloading setup scripts+Continue setting up+g' '17,23d' ~/.setup_cache/setup.sh
+sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
+sed -i '17,24d' ~/.setup_cache/setup.sh
 
 # setup
 #bash ./src/deb.sh
