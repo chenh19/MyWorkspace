@@ -24,7 +24,7 @@ echo -e "[Desktop Entry] \nExec=~/.setup_cache/src/autostart.sh \nIcon=dialog-sc
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-sed -i '17,30d' ~/.setup_cache/setup.sh
+sed -i '17,27d' ~/.setup_cache/setup.sh
 
 
 # setup
