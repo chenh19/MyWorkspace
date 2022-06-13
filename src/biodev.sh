@@ -48,4 +48,4 @@ rm -rf ./rscript/ ./devdeb/
 echo -e " \n${TEXT_GREEN}R/python developing enviroment ready!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sed -i 's+bash ./src/biodev.sh+#bash ./src/biodev.sh+g' ~/.setup_cache/
+sed -i 's+bash ./src/biodev.sh+#bash ./src/biodev.sh+g' ~/.setup_cache/setup.sh
