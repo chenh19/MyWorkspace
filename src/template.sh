@@ -25,4 +25,4 @@ echo -e "${TEXT_YELLOW}Starting...${TEXT_RESET} \n" && sleep 1
 echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sudo sed -i 's+bash ./src/template.sh+#bash ./src/template.sh+g' ~/.setup_cache/
+sed -i 's+bash ./src/template.sh+#bash ./src/template.sh+g' ~/.setup_cache/
