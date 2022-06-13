@@ -49,3 +49,6 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}SnapGene, IGV, or PyMOL not installed.${TEXT_RESET} \n" && sleep 5;;
 
 esac
+
+# mark setup.sh
+sed -i 's+bash ./src/snapgene.sh+#bash ./src/snapgene.sh+g' ~/.setup_cache/setup.sh
