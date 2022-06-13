@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installes Chinese input
+# This script installs Chinese Pinyin input method
 
 # set terminal font color
 TEXT_RESET='\e[0m'
