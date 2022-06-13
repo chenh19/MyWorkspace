@@ -51,7 +51,7 @@ case "$choice" in
         rm -rf ./rscript/ ./devdeb/
 
         # notify end
-        echo -e " \n${TEXT_GREEN}Bioinformatic developing ready!${TEXT_RESET} \n" && sleep 5
+        echo -e " \n${TEXT_GREEN}Bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5
 
   n|N ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}Bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
