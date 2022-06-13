@@ -11,8 +11,8 @@ TEXT_GREEN='\e[1;32m'
 cd ~/.setup_cache/
 
 
-# ask whether to set up the environment for bioinfomatic developing
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up the environment for bioinfomatic developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+# ask whether to set up the environment for Bioinformatic developing
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up the environment for bioinformatic developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
@@ -47,13 +47,13 @@ case "$choice" in
         rm -rf ./rscript/ ./devdeb/
 
         # notify end
-        echo -e " \n${TEXT_GREEN}Bioinfomatic developing ready!${TEXT_RESET} \n" && sleep 5
+        echo -e " \n${TEXT_GREEN}Bioinformatic developing ready!${TEXT_RESET} \n" && sleep 5
 
   n|N ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Bioinfomatics tools not installed.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}Bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
 
   * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Bioinfomatics tools not installed.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}Bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
 
 esac
 
