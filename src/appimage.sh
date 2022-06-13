@@ -34,10 +34,10 @@ tar -xjf *.tar.bz2 -C ./tropy/ && rm *tar.bz2 && sleep 3
 cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
 # Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
-axel -n 64 http://static-main.frdic.com/pkg/eudic.AppImage?v=2022-05-26 && sleep 5
-mv -f ./eudic.AppImage ./eudic/
-sudo ./eudic/eudic.AppImage --appimage-extract && sleep 3
+axel -n 64 http://static-main.frdic.com/pkg/eudic.AppImage?v=2022-05-26 && sleep 10
+sudo ./eudic.AppImage --appimage-extract && sleep 5
 cp -rf ./squashfs-root/*.png ./eudic/ && sudo rm -rf ./squashfs-root/
+mv -f ./eudic.AppImage ./eudic/
 mv $(ls ./eudic/*.png) ./eudic/eudic.png && sleep 1
 
 # move to /opt folder
