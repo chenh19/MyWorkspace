@@ -20,11 +20,12 @@ mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ &&
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # setup
-#bash ./src/deb.sh
-#bash ./src/flathub.sh
-#bash ./src/ukuu.sh
+bash ./src/deb.sh
+bash ./src/flathub.sh
+bash ./src/ukuu.sh
 bash ./src/snapgene.sh
-#bash ./src/biodev.sh
+bash ./src/biodev.sh
+bash ./src/fix.sh
 bash ./src/update.sh
 
 # final cleanup
