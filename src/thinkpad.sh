@@ -15,26 +15,26 @@ cd ~/.setup_cache/
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up a ThinkPad? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
-		echo -e "${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
 
-		# configure grub
-		sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub
-		sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub
-		sudo update-grub
+        # configure grub
+        sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub
+        sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub
+        sudo update-grub
 
-		# configure undervolt
-		sudo apt-get update && sudo apt-get install -y python3-pip && sudo pip3 install undervolt
-		[ ! -f /etc/systemd/system/undervolt.service ] && sudo touch /etc/systemd/system/undervolt.service
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Unit --key Description "undervolt"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Service --key Type "oneshot"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Service --key ExecStart "/usr/local/bin/undervolt -v --core -95 --cache -95 --gpu -95 -t 95"
-		[ ! -f /etc/systemd/system/undervolt.timer ] && sudo touch /etc/systemd/system/undervolt.timer
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Unit --key Description "Apply undervolt settings"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key Unit "undervolt.service"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnBootSec "30"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnUnitActiveSec "10min"
-		sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Install --key WantedBy "multi-user.target"
-		sudo systemctl enable undervolt.timer && sudo systemctl start undervolt.timer
+        # configure undervolt
+        sudo apt-get update && sudo apt-get install -y python3-pip && sudo pip3 install undervolt
+        [ ! -f /etc/systemd/system/undervolt.service ] && sudo touch /etc/systemd/system/undervolt.service
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Unit --key Description "undervolt"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Service --key Type "oneshot"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Service --key ExecStart "/usr/local/bin/undervolt -v --core -95 --cache -95 --gpu -95 -t 95"
+        [ ! -f /etc/systemd/system/undervolt.timer ] && sudo touch /etc/systemd/system/undervolt.timer
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Unit --key Description "Apply undervolt settings"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key Unit "undervolt.service"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnBootSec "30"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnUnitActiveSec "10min"
+        sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Install --key WantedBy "multi-user.target"
+        sudo systemctl enable undervolt.timer && sudo systemctl start undervolt.timer
 
   n|N ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}ThinkPad configuration skipped.${TEXT_RESET} \n" && sleep 5;;
