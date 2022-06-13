@@ -23,10 +23,17 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 sed -i '17,24d' ~/.setup_cache/setup.sh
 
+# setup automatic resuming after rebooting
+sudo echo -e "#!bin/bash \nkonsole -e 'bash ~/.setup_cache/setup.sh'" > /opt/myworkspace.sh
+echo -e "[Desktop Entry] \nExec=/opt/Startup/myworkspace.sh \nIcon=dialog-scripts \nName=myworkspace.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/myworkspace.sh.desktop
+
+
 # setup
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
+
+#bash ./src/reboot.sh
 
 #bash ./src/biodaily.sh
 #bash ./src/biodev.sh
@@ -35,8 +42,15 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/fix.sh
 #bash ./src/update.sh
 
+#bash ./src/reboot.sh
+
 #bash ./src/thinkpad.sh
 #bash ./src/settings.sh
 
+#bash ./src/reboot.sh
+
+
 # final cleanup
-#rm -rf ~/.setup_cache ~/setup.sh
+#rm /opt/myworkspace.sh ~/.config/autostart/myworkspace.sh.desktop && rm -rf ~/.setup_cache/
+
+
