@@ -12,11 +12,11 @@ cd ~/.setup_cache/
 
 
 # ask whether to install SnapGene/IGV/PyMOL
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install daily biological tools, such as SnapGene, IGV, and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install daily biological tools, such as SnapGene and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing daily biological tools...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL)...${TEXT_RESET} \n" && sleep 1
 
         # install IGV and PyMOL
         sudo apt-get update && sudo apt-get install igv pymol -y
