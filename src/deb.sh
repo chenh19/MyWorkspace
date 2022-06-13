@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps (directly)
-#installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
+# installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
 sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl axel python3-pip -y
 
 # install apps (downloaded
