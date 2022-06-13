@@ -12,11 +12,11 @@ cd ~/.setup_cache/
 
 
 # ask whether to set up the environment for Bioinformatic developing
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up the environment for bioinformatic developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up the environment for bioinformatic developing, such as R and Python? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Installing bioinfomatics developing enviroment (R/Python)...${TEXT_RESET} \n" && sleep 1
 
         # update system and install packages required by R and R packages installing
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
