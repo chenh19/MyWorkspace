@@ -42,4 +42,4 @@ sed -i '17,25d' ~/.setup_cache/setup.sh
 
 
 # final cleanup
-#rm ~/.config/autostart/myworkspace.sh.desktop && rm -rf ~/.setup_cache/
+#rm -rf ~/.setup_cache/
