@@ -19,15 +19,9 @@ echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 5
 mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ && rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
-# setup automatic resuming after rebooting
-[ ! -d /opt/Startup/ ] && sudo mkdir /opt/Startup/
-echo -e '#!/bin/bash \nkonsole -e "bash ~/.setup_cache/setup.sh"' > ./myworkspace.sh
-sudo mv -f ./myworkspace.sh /opt/Startup/
-echo -e "[Desktop Entry] \nExec=/opt/Startup/myworkspace.sh \nIcon=dialog-scripts \nName=myworkspace.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/myworkspace.sh.desktop
-
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-sed -i '17,30d' ~/.setup_cache/setup.sh
+sed -i '17,25d' ~/.setup_cache/setup.sh
 
 
 # setup
