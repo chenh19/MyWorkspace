@@ -14,21 +14,20 @@ cd ~/.setup_cache/
 # detect whether reboot is required
 if [ -f /var/run/reboot-required ]; then
 
-	# ask whether reboot
-	read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to reboot the system now? [y/n/c]'$TEXT_RESET)"$' \n' choice
-	case "$choice" in
+  # ask whether reboot
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to reboot the system now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
 	
-		y|Y ) # notify reboot
-        	sudo echo ""
-        	echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET} \n" && sleep 5
-        	reboot;;
+  y|Y ) # notify reboot
+	sudo echo ""
+	echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET} \n" && sleep 5
+	reboot;;
         	
-		n|N ) # notify cancellation
-        	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
+  n|N ) # notify cancellation
+	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
 
-  		* ) # notify cancellation
-        	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
+  * ) 	# notify cancellation
+	echo -e " \n${TEXT_YELLOW}Please manually reboot later. The setup process will automatically continuce on next login.${TEXT_RESET} \n" && sleep 5;;
 
 	esac
-	
 fi
