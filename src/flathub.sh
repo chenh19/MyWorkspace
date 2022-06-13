@@ -23,6 +23,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche 
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 
