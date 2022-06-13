@@ -27,7 +27,7 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
-#bash ./src/snapgene.sh
+#bash ./src/biodaily.sh
 #bash ./src/biodev.sh
 #bash ./src/fix.sh
 #bash ./src/update.sh
