@@ -22,7 +22,7 @@ This tool will install and configure:
 
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
-- [ ] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
+- [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
 
 ## How to use
 Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
