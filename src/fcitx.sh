@@ -45,7 +45,7 @@ case "$choice" in
   n|N ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}Chinese Pinyin input method not installed.${TEXT_RESET} \n" && sleep 5;;
 
-  * ) # notify cancellation
+  * )   # notify cancellation
         echo -e " \n${TEXT_YELLOW}Chinese Pinyin input method not installed.${TEXT_RESET} \n" && sleep 5;;
 
 esac
