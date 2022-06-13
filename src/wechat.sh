@@ -31,12 +31,15 @@ case "$choice" in
         # install wechat
         sudo dpkg -i ./deepin-wine-ubuntu-master/deepin.com.wechat_2.6.8.65deepin0_i386.deb
 
-        # configure (take effect after rebooting)
+        # configure
         sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v2.sh
         "/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 10 && killall -9 WeChat.exe
-        #env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg # Graphics: 200dpi
-        sudo sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/system.reg
-        sudo sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/user.reg
+        
+        # Graphics: 200dpi
+        echo -e "${TEXT_YELLOW}In the popup window, please navigate to "Graphics" tab, set "Screen resolution" to 200dpi, then click "OK" to exit${TEXT_RESET} \n"
+        env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
+        #sudo sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/system.reg
+        #sudo sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/user.reg
 
         # cleanup
         rm -rf ./deepin-wine-ubuntu-master/ && sudo apt-get autoremove -y && sudo apt-get clean
