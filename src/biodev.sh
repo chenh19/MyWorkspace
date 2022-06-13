@@ -19,7 +19,7 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Installing bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
 
         # update system and install packages required by R and R packages installing
-        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra kbibtex rkward fastqc -y
+        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
 
         # install R from cran
         wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
@@ -34,6 +34,9 @@ case "$choice" in
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         sudo Rscript ./rscript/packages.R
         Rscript ./rscript/webdriver.R
+        
+        # install RKWard and fastqc
+        sudo apt-get install rkward kbibtex fastqc -y
 
         # install RStudio and Jupyter Lab
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
