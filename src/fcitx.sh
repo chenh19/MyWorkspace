@@ -25,7 +25,7 @@ sudo mv -f ./environment /etc/environment
 ## setup autostart
 cp -rf /usr/share/applications/fcitx.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/fcitx.desktop
 
-## start once
+## start once to generate the config files
 fcitx && sleep 10 && killall -9 fcitx
 
 ## config fcitx (takes effect after rebooting)
