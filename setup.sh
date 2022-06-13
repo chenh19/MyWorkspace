@@ -53,5 +53,5 @@ sed -i '17,30d' ~/.setup_cache/setup.sh
 
 
 # final cleanup
-rm -rf ~/.setup_cache/ && rm ~/.config/autostart/myworkspace.sh.desktop && sudo rm /opt/Startup/myworkspace.sh
+#rm -rf ~/.setup_cache/ && rm ~/.config/autostart/myworkspace.sh.desktop && sudo rm /opt/Startup/myworkspace.sh
 
