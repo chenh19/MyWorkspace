@@ -36,3 +36,6 @@ rm -rf ./deb/
 
 # notify end
 echo -e " \n${TEXT_GREEN}Deb pacakges installed!${TEXT_RESET} \n" && sleep 5
+
+# mark setup.sh
+sed -i 's+bash ./src/deb.sh+#bash ./src/deb.sh+g' ~/.setup_cache/setup.sh
