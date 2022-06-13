@@ -24,6 +24,7 @@ sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.
 sed -i '17,24d' ~/.setup_cache/setup.sh
 
 # setup automatic resuming after rebooting
+[ ! -d /opt/Startup/ ] && sudo mkdir /opt/Startup/
 sudo echo -e "#!bin/bash \nkonsole -e 'bash ~/.setup_cache/setup.sh'" > /opt/myworkspace.sh
 echo -e "[Desktop Entry] \nExec=/opt/Startup/myworkspace.sh \nIcon=dialog-scripts \nName=myworkspace.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/myworkspace.sh.desktop
 
