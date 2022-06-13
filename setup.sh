@@ -35,7 +35,7 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/fix.sh
 #bash ./src/update.sh
 
-#bash ./src/grub.sh
+#bash ./src/thinkpad.sh
 #bash ./src/settings.sh
 
 # final cleanup
