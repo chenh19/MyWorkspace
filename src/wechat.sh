@@ -36,6 +36,7 @@ case "$choice" in
         "/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 10 && killall -9 WeChat.exe
         
         # configure scaling
+        echo ""
         echo -e "${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
         echo -e "${TEXT_YELLOW}Set [Screen resolution] to 200dpi, then click [OK] to exit.${TEXT_RESET} \n"
         env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
