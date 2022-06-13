@@ -19,6 +19,7 @@ echo -e "${TEXT_YELLOW}Debloating...${TEXT_RESET} \n" && sleep 1
 sudo snap remove firefox && sudo rm -r ~/snap/
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 
+
 # cleanup
 sudo apt-get update && sudo apt autoremove -y && sudo apt clean
 
