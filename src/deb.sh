@@ -25,7 +25,7 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
 sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl axel python3-pip -y
 
-# install apps (downloaded
+# install apps (downloaded)
 [ ! -d ./deb/ ] && mkdir ./deb/
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
