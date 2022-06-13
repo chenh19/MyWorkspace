@@ -26,14 +26,13 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 # setup
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
+#bash ./src/appimage.sh
 #bash ./src/ukuu.sh
 #bash ./src/thinkpad.sh
-
 #bash ./src/fcitx.sh
 #bash ./src/wechat.sh
 #bash ./src/biodaily.sh
 #bash ./src/biodev.sh
-
 #bash ./src/debloat.sh
 #bash ./src/update.sh
 #bash ./src/settings.sh
