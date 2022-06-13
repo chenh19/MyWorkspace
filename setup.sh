@@ -34,16 +34,16 @@ sed -i '17,30d' ~/.setup_cache/setup.sh
 #bash ./src/deb.sh
 #bash ./src/flathub.sh
 #bash ./src/ukuu.sh
+#bash ./src/thinkpad.sh
 
+#bash ./src/fcitx.sh
+#bash ./src/wechat.sh
 #bash ./src/biodaily.sh
 #bash ./src/biodev.sh
 
 #bash ./src/debloat.sh
 #bash ./src/update.sh
-
-#bash ./src/thinkpad.sh
 #bash ./src/settings.sh
-
 #bash ./src/reboot.sh
 
 
