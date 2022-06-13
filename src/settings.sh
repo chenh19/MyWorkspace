@@ -214,51 +214,7 @@ echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 
 
 
 
+#-------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# mark setup.sh
+sed -i 's+bash ./src/settings.sh+#bash ./src/settings.sh+g' ~/.setup_cache/setup.sh
