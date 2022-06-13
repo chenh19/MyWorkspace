@@ -1,5 +1,5 @@
 # MyWorkspace
-*v0.1.2 (under heavy development, not recommended for productive purposes until v1.0)*  
+*v0.1.3 (under heavy development, not recommended for productive purposes until v1.0)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -20,9 +20,10 @@ This tool will install and configure:
 
 **To be tested:**  
 
-- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
-- [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
 - [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
+- [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
+- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
+
 
 ## How to use
 Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
