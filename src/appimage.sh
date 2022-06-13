@@ -15,29 +15,25 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 
-# install multithreaded downloader
-sudo apt-get update && sudo apt-get install -y axel
-
 # download appimages
-#wget -q https://www.dropbox.com/s/oi8ffh9ogsir4ac/appimage.zip?dl=0 && unzip -o -q appimage.zip?dl=0 && rm appimage.zip?dl=0 #_backup_link
 # Etcher
 [ ! -d ~/.setup_cache/etcher/ ] && mkdir ~/.setup_cache/etcher/
-wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && sleep 3
-unzip -o -q *.zip && rm *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && sleep 3
-./etcher/balenaEtcher.AppImage --appimage-extract && sleep 3
+wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && sleep 1
+unzip -o -q *.zip && rm *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && sleep 1
+./etcher/balenaEtcher.AppImage --appimage-extract && sleep 1
 cp -rf ./squashfs-root/usr/share/icons/hicolor/512x512/apps/balena-etcher-electron.png ./etcher/ && rm -rf ./squashfs-root/
 mv $(ls ./etcher/*.png) ./etcher/balenaEtcher.png && sleep 1
 # Tropy
 [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
-wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x64.tar.bz2 && sleep 3
-tar -xjf *.tar.bz2 -C ./tropy/ && rm *tar.bz2 && sleep 3
+wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x64.tar.bz2 && sleep 1
+tar -xjf *.tar.bz2 -C ./tropy/ && rm *tar.bz2 && sleep 1
 cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
 # Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
-axel -n 64 http://static-main.frdic.com/pkg/eudic.AppImage?v=2022-05-26 && sleep 10
-sudo ./eudic.AppImage --appimage-extract && sleep 5
+wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && sleep 1
+unzip -o -q *.zip && rm *.zip && mv $(ls *.AppImage) eudic.AppImage && mv -f ./*.AppImage ./eudic/ && sleep 1
+./eudic/eudic.AppImage --appimage-extract && sleep 1
 cp -rf ./squashfs-root/*.png ./eudic/ && sudo rm -rf ./squashfs-root/
-mv -f ./eudic.AppImage ./eudic/
 mv $(ls ./eudic/*.png) ./eudic/eudic.png && sleep 1
 
 # move to /opt folder
