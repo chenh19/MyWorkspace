@@ -38,7 +38,6 @@ case "$choice" in
         sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/system.reg
         sed -i 's+"LogPixels"=dword:00000060+"LogPixels"=dword:000000c8+g' ~/.deepinwine/Deepin-WeChat/user.reg
 
-
         # cleanup
         rm -rf ./deepin-wine-ubuntu-master/ && sudo apt-get autoremove -y && sudo apt-get clean
 
