@@ -50,6 +50,8 @@ case "$choice" in
         [ ! -d ./shscript/ ] && mkdir ./shscript/
         wget -q -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh
+        # uninstall anaconda
+        # rm -rf ~/anaconda3/
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
