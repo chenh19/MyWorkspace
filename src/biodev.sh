@@ -45,6 +45,9 @@ case "$choice" in
         wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb #_to_be_updated
         sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get -f -y install
+        
+        # install anaconda
+        bash <(wget -qO- https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh)
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
