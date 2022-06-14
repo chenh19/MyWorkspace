@@ -10,7 +10,7 @@ This tool will install and configure:
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
-- [Jupyter Lab](https://github.com/jupyterlab/jupyterlab-desktop)
+- [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [RStudio](https://www.rstudio.com/)
 - [RKWard](https://rkward.kde.org/)
 - [Krita](https://krita.org/)
