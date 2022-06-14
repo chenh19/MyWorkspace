@@ -52,9 +52,13 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Please press Space key to scroll the license${TEXT_RESET} \n" && sleep 1
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
         conda update anaconda -y && conda update --all -y
+        conda config --add channels defaults
+        conda config --add channels bioconda
+        conda config --add channels conda-forge
+        #conda install kallisto
         conda config --set auto_activate_base false # disable auto activate base in terminal
-        # conda activate # activate base when needed
-        # rm -rf ~/anaconda3/ # uninstall anaconda
+        #conda activate # activate base when needed
+        #rm -rf ~/anaconda3/ # uninstall anaconda
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
