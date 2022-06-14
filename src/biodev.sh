@@ -55,7 +55,7 @@ case "$choice" in
         conda config --add channels defaults
         conda config --add channels bioconda
         conda config --add channels conda-forge
-        #conda install kallisto
+        #conda install kallisto -y
         conda config --set auto_activate_base false # disable auto activate base in terminal
         #conda activate # activate base when needed
         #rm -rf ~/anaconda3/ # uninstall anaconda
