@@ -52,7 +52,8 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Please press Space key to scroll the license${TEXT_RESET} \n" && sleep 1
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
         conda update anaconda -y && conda update --all -y
-        conda config --set auto_activate_base false
+        conda config --set auto_activate_base false # disable auto activate base in terminal
+        # conda activate # activate base when needed
         # rm -rf ~/anaconda3/ # uninstall anaconda
 
         # cleanup
