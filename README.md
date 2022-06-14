@@ -23,7 +23,7 @@ This tool will install and configure:
 - [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
-- [x] [wayland](https://wayland.freedesktop.org/): not stable and compatible enough, maybe wait for 24.04 LTS
+- [x] kde on [wayland](https://wayland.freedesktop.org/): supports multiple monitors slightly better, but not stable and compatible enough, maybe wait for 24.04 LTS
 
 
 ## How to use
