@@ -31,6 +31,9 @@ sudo snap refresh
 echo -e "update.packages(ask = FALSE, checkBuilt = TRUE)" > ./update.R
 sudo Rscript ./update.R
 
+# Conda update
+conda update anaconda & conda update --all
+
 
 # cleanup
 rm update.R && sudo apt-get autoremove -y && sudo apt-get clean
