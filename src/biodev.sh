@@ -47,11 +47,13 @@ case "$choice" in
         sudo apt-get -f -y install
         
         # install anaconda
-        bash <(wget -qO- https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh)
+        [ ! -d ./shscript/ ] && mkdir ./shscript/
+        wget -q -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
+        bash ./shscript/Anaconda-latest-Linux-x86_64.sh
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
-        rm -rf ./rscript/ ./devdeb/
+        rm -rf ./rscript/ ./devdeb/ ./shscript/
 
         # notify end
         echo -e " \n${TEXT_GREEN}Bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5
