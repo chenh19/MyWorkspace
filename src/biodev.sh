@@ -48,7 +48,8 @@ case "$choice" in
         
         # install anaconda
         [ ! -d ./shscript/ ] && mkdir ./shscript/
-        wget -q -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
+        wget -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
+        echo -e "${TEXT_YELLOW}Please press Space key to scroll the agreement${TEXT_RESET} \n"
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh
         # uninstall anaconda
         # rm -rf ~/anaconda3/
