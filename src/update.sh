@@ -32,7 +32,7 @@ echo -e "update.packages(ask = FALSE, checkBuilt = TRUE)" > ./update.R
 sudo Rscript ./update.R
 
 # Conda update
-conda update anaconda -y & conda update --all -y
+conda update anaconda -y && conda update --all -y
 
 
 # cleanup
