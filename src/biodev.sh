@@ -50,8 +50,9 @@ case "$choice" in
         [ ! -d ./shscript/ ] && mkdir ./shscript/
         wget -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
         echo -e "${TEXT_YELLOW}Please press Space key to scroll the license${TEXT_RESET} \n" && sleep 1
-        bash ./shscript/Anaconda-latest-Linux-x86_64.sh
-        conda update anaconda -y && conda update --all -y && conda config --set auto_activate_base false
+        bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
+        conda update anaconda -y && conda update --all -y
+        conda config --set auto_activate_base false
         # rm -rf ~/anaconda3/ # uninstall anaconda
 
         # cleanup
