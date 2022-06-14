@@ -23,8 +23,8 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps (directly)
 # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
-# not installed: axel
 sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl python3-pip -y
+#sudo apt-get install axel -y
 
 # install apps (downloaded)
 [ ! -d ./deb/ ] && mkdir ./deb/
