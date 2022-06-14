@@ -20,7 +20,7 @@ This tool will install and configure:
 
 **To be tested:**  
 
-- [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files)
+- [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files): ```kwriteconfig5```
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): not stable and compatible enough, maybe wait for 24.04 LTS
