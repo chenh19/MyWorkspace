@@ -23,6 +23,7 @@ This tool will install and configure:
 - [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files): ```kwriteconfig5``` very helpful
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin)
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
+- [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 
 
