@@ -2,9 +2,9 @@
 # This script downloads all scripts for setup
 
 # set terminal font color
-TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[1;33m'
 TEXT_GREEN='\e[1;32m'
+TEXT_RESET='\e[0m'
 
 # set working directory
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
