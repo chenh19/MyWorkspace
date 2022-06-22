@@ -137,6 +137,7 @@ echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=tr
 
 ## KDE right click issue
 sudo apt-get update && sudo apt-get install sxhkd -y && mv -f ./src/sxhkd/ ~/.config/
+echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/usr/bin/sxhkd \nTerminal=false \nType=Application" > ~/.config/autostart/sxhkd.desktop
 
 ######################################################################################
 
