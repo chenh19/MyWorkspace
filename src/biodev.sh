@@ -37,14 +37,7 @@ case "$choice" in
         
         # install RKWard and fastqc
         # rkward is dependent on kate, which is installed by Kubuntu by defauly
-        sudo apt-get install rkward kbibtex fastqc -y
-
-        # install RStudio and Jupyter Lab
-        [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-        wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
-        wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb #_to_be_updated
-        sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
-        sudo apt-get -f -y install
+        #sudo apt-get install rkward kbibtex fastqc -y
         
         # install anaconda
         [ ! -d ./shscript/ ] && mkdir ./shscript/
@@ -59,6 +52,13 @@ case "$choice" in
         conda config --set auto_activate_base false # disable auto activate base in terminal
         #conda activate # activate base when needed
         #rm -rf ~/anaconda3/ # uninstall anaconda
+        
+        # install RStudio and Jupyter Lab
+        [ ! -d ./devdeb/ ] && mkdir ./devdeb/
+        wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.02.3-492-amd64.deb #_to_be_updated
+        wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb #_to_be_updated
+        sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
+        sudo apt-get -f -y install
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
