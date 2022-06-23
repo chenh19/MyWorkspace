@@ -16,6 +16,7 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - [Bottles](https://usebottles.com/)
 - [Touchegg](https://github.com/JoseExposito/touchegg)
+- [alt_rm](https://github.com/chenh19/alt_rm)
 - and more
 
 **To be tested:**  
