@@ -37,6 +37,7 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/update.sh
 #bash ./src/settings.sh
 #bash ./src/reboot.sh
+#bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
 
 
 # final cleanup
