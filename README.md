@@ -26,7 +26,7 @@ This tool will install and configure:
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools)
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
-- [ ] fcitx input when renaming folders
+- [ ] fcitx input for Chinese when renaming folders
 
 
 ## How to use
