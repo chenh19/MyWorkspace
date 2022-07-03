@@ -27,7 +27,7 @@ This tool will install and configure:
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 - [ ] fcitx input for Chinese when renaming folders
-- [ ] [slack start minimized](https://www.reddit.com/r/Slack/comments/qq6pjn/how_to_start_slack_minimized_on_linux/) (```sed``` in ```[settings.sh](https://github.com/chenh19/MyWorkspace/blob/main/src/settings.sh)```)
+- [ ] [slack start minimized](https://www.reddit.com/r/Slack/comments/qq6pjn/how_to_start_slack_minimized_on_linux/) (```sed``` in [settings.sh](https://github.com/chenh19/MyWorkspace/blob/main/src/settings.sh))
 
 
 ## How to use
