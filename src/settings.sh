@@ -262,7 +262,7 @@ cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 ######################################################################################
 
 # windows fonts
-wget -q https://www.dropbox.com/s/xt3afpzqdemxs6z/windows-fonts.zip?dl=0 && sleep 1
+wget -q https://www.dropbox.com/s/nsfxnl3tt1md56u/windows-fonts.zip?dl=0 && sleep 1
 unzip -o -q windows-fonts.zip?dl=0 && sleep 1 && rm windows-fonts.zip?dl=0 && sleep 1
 sudo cp -rf ./fonts/windows/ /usr/share/fonts/
 
