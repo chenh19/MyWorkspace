@@ -252,7 +252,7 @@ kwriteconfig5 --file ~/.config/okularpartrc --group 'Dlg Presentation' --key 'Sl
 # Open and close multiple PDF files, uncheck "Warn me when I attempt to close multiple tabs"
 kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
 
-# Customized toolbars
+# Configure Toolbars
 [ -d ~/.local/share/kxmlgui5/okular/ ] && rm -rf ~/.local/share/kxmlgui5/okular/
 cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 
