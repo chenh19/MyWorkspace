@@ -34,14 +34,18 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
 
 # install apps (downloaded)
   [ ! -d ./deb/ ] && mkdir ./deb/
-  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  wget -q https://zoom.us/client/latest/zoom_amd64.deb
-  wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-  wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
-  wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
-  wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb #_to_be_updated
-  wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb #_to_be_updated
-  mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
+  
+  # redirecting links
+    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    wget -q https://zoom.us/client/latest/zoom_amd64.deb
+    wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+  
+  # direct links
+    wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
+    wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
+    wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb #_to_be_updated
+    wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb #_to_be_updated
+    mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # config
   # Start Slack minimized
