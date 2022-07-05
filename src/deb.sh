@@ -69,6 +69,8 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
     # do not check update notification when first open
+    
+  # config fdm manually (haven't found config files so far)
 
 
 # cleanup
