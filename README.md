@@ -17,7 +17,8 @@ This tool will install and configure:
 - [Bottles](https://usebottles.com/)
 - [Touchegg](https://github.com/JoseExposito/touchegg)
 - [alt_rm](https://github.com/chenh19/alt_rm)
-- and more
+- [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
+- and a lot more
 
 **To be checked/tested:**  
 
