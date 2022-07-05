@@ -30,8 +30,12 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
 [ ! -d ./deb/ ] && mkdir ./deb/
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
+wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
 mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
+# config
+# Start Slack minimized
+sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
