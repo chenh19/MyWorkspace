@@ -34,6 +34,7 @@ wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 
 wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
 wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
+wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb #_to_be_updated
 mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # config
@@ -45,7 +46,8 @@ kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "fals
 # teamviewer wallpaper
 [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/
 cp -rf ./src/teamviewer/ ~/.config/
-
+# simplenote quites unexpectedly
+sudo sed -i 's+Exec=/opt/Simplenote/simplenote %U+Exec=/opt/Simplenote/simplenote --no-sandbox %U+g' /usr/share/applications/simplenote.desktop
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
