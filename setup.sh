@@ -35,6 +35,7 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/wechat.sh
 #bash ./src/biodaily.sh
 #bash ./src/biodev.sh
+#bash ./src/game.sh
 #bash ./src/debloat.sh
 #bash ./src/update.sh
 #bash ./src/settings.sh
