@@ -258,6 +258,11 @@ cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 
 ######################################################################################
 
+# Start Slack minimized
+sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
