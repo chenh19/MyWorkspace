@@ -11,6 +11,8 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
+# check internet connection
+
 # download all setup scripts
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 3
@@ -41,4 +43,5 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 
 
 # final cleanup
+#ask whether to delete cache
 #rm -rf ~/.setup_cache/
