@@ -57,12 +57,10 @@ kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmo
 # do not check update notification when first open
 
 # Enpass
-sudo -i
-echo "deb https://apt.enpass.io/ stable main" > \
+sudo echo "deb https://apt.enpass.io/ stable main" > \
   /etc/apt/sources.list.d/enpass.list
-wget -O - https://apt.enpass.io/keys/enpass-linux.key | tee /etc/apt/trusted.gpg.d/enpass.asc
-apt-get update && apt-get install enpass -y
-exit
+wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
+sudo apt-get update && sudo apt-get install enpass -y
 
 
 # cleanup
