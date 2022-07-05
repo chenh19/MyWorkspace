@@ -42,6 +42,9 @@ sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/ap
 # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
 # zoom auto scaling
 kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
+# teamviewer wallpaper
+[ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/
+cp -rf ./src/teamviewer/ ~/.config/
 
 
 # cleanup
