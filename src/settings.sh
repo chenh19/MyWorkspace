@@ -227,6 +227,19 @@ kwriteconfig5 --file $HOME/.config/spectaclerc --group GuiConfig --key 'quitAfte
 
 ######################################################################################
 
+# okular
+[ -f ~/.config/okularpartrc ] && rm ~/.config/okularpartrc && touch ~/.config/okularpartrc
+[ -f ~/.config/okularrc ] && rm ~/.config/okularrc && touch ~/.config/okularrc
+kwriteconfig5 --file $HOME/.config/okularpartrc --group General --key 'ShellOpenFileInTabs' "true"
+kwriteconfig5 --file $HOME/.config/okularpartrc --group 'Core Performance' --key 'MemoryLevel' "Greedy"
+kwriteconfig5 --file $HOME/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' "false"
+kwriteconfig5 --file $HOME/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
+[ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
+[ -f ~/.local/share/kxmlgui5/okular/part.rc ] && rm ~/.local/share/kxmlgui5/okular/part.rc
+mv -f ./src/okular/ ~/.local/share/kxmlgui5/
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
