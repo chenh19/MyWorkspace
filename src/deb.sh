@@ -41,6 +41,7 @@ sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/ap
 # zoom auto scaling
 kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./deb/
