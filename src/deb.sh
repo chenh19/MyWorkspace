@@ -36,6 +36,7 @@ mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 # config
 # Start Slack minimized
 sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
+# right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
