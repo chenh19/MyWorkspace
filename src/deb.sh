@@ -49,6 +49,13 @@ kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "fals
 cp -rf ./src/teamviewer/ ~/.config/
 # simplenote quites unexpectedly
 sudo sed -i 's+Exec=/opt/Simplenote/simplenote %U+Exec=/opt/Simplenote/simplenote --no-sandbox %U+g' /usr/share/applications/simplenote.desktop
+# qView
+[ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
+kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
+kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
+kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
+# do not check update notification when first open
+
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
