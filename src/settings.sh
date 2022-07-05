@@ -159,6 +159,11 @@ kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Pane
 
 ######################################################################################
 
+# Clipboard > uncheck "Save clipboard contents on exit"
+kwriteconfig5 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' "false"
+
+######################################################################################
+
 ## Clean up Application Launcher's favorite
 favorites=$(grep 'Favorites-org.kde.plasma.kickoff.favorites.' ~/.config/kactivitymanagerd-statsrc | sed 's/\[//g' | sed 's/\]//g')
 for favorite in $favorites
@@ -234,10 +239,20 @@ kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSav
 [ -f ~/.config/okularpartrc ] && rm ~/.config/okularpartrc
 [ -f ~/.config/okularrc ] && rm ~/.config/okularrc
 touch ~/.config/okularpartrc ~/.config/okularrc
+
+# Settings > Configure Okular > General > check "Open new files in tabs"
 kwriteconfig5 --file ~/.config/okularpartrc --group General --key 'ShellOpenFileInTabs' "true"
+
+# Settings > Configure Okular > Performance > Memory usage > select "Greedy"
 kwriteconfig5 --file ~/.config/okularpartrc --group 'Core Performance' --key 'MemoryLevel' "Greedy"
+
+# Settings > Configure Okular > Presentation > uncheck "Show progress indicator"
 kwriteconfig5 --file ~/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' "false"
+
+# Open and close multiple PDF files, uncheck "Warn me when I attempt to close multiple tabs"
 kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
+
+# Customized toolbars
 [ -d ~/.local/share/kxmlgui5/okular/ ] && rm -rf ~/.local/share/kxmlgui5/okular/
 cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 
