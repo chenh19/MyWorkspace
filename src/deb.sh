@@ -39,6 +39,7 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     wget -q https://zoom.us/client/latest/zoom_amd64.deb
     wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+    wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
   
   # direct links
     wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
