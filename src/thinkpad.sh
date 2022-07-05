@@ -18,8 +18,8 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
 
         # configure grub
-        sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub
-        sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub
+        sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub #_this_is_neither_required_or_effective_for_Dell_XPS15
+        sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub #_might_not_be_necessary_for_models_besides_X1E2
         sudo update-grub
 
         # configure undervolt
