@@ -263,7 +263,7 @@ cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 
 # windows fonts
 wget -q https://www.dropbox.com/s/xt3afpzqdemxs6z/windows-fonts.zip?dl=0 && sleep 1
-unzip -o -q windows-fonts.zip?dl=0 && rm windows-fonts.zip?dl=0 && sleep 1
+unzip -o -q windows-fonts.zip?dl=0 && sleep 1 && rm windows-fonts.zip?dl=0 && sleep 1
 sudo cp -rf ./windows/ /usr/share/fonts/
 
 ######################################################################################
@@ -276,6 +276,10 @@ echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 
 
 
 #-------------------------------------------------------------------------------------
+
+# cleanup
+sudo apt-get autoremove -y && sudo apt-get clean
+rm -rf ./windows/
 
 # mark setup.sh
 sed -i 's+bash ./src/settings.sh+#bash ./src/settings.sh+g' ~/.setup_cache/setup.sh
