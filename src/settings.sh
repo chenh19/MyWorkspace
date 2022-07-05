@@ -136,7 +136,7 @@ sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=true \npointerAcceleration=0.6 \ntapToClick=true" | tee -a ~/.config/touchpadxlibinputrc
 
 ## KDE right click issue
-sudo apt-get update && sudo apt-get install sxhkd -y && mv -f ./src/sxhkd/ ~/.config/
+sudo apt-get update && sudo apt-get install sxhkd -y && cp -rf ./src/sxhkd/ ~/.config/
 echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/usr/bin/sxhkd \nTerminal=false \nType=Application" > ~/.config/autostart/sxhkd.desktop
 
 ######################################################################################
@@ -228,15 +228,15 @@ kwriteconfig5 --file $HOME/.config/spectaclerc --group GuiConfig --key 'quitAfte
 ######################################################################################
 
 # okular
-[ -f ~/.config/okularpartrc ] && rm ~/.config/okularpartrc && touch ~/.config/okularpartrc
-[ -f ~/.config/okularrc ] && rm ~/.config/okularrc && touch ~/.config/okularrc
+[ -f ~/.config/okularpartrc ] && rm ~/.config/okularpartrc
+[ -f ~/.config/okularrc ] && rm ~/.config/okularrc
+touch ~/.config/okularpartrc ~/.config/okularrc
 kwriteconfig5 --file $HOME/.config/okularpartrc --group General --key 'ShellOpenFileInTabs' "true"
 kwriteconfig5 --file $HOME/.config/okularpartrc --group 'Core Performance' --key 'MemoryLevel' "Greedy"
 kwriteconfig5 --file $HOME/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' "false"
 kwriteconfig5 --file $HOME/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
-[ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
-[ -f ~/.local/share/kxmlgui5/okular/part.rc ] && rm ~/.local/share/kxmlgui5/okular/part.rc
-mv -f ./src/okular/ ~/.local/share/kxmlgui5/
+[ -d ~/.local/share/kxmlgui5/okular/ ] && rm -rf ~/.local/share/kxmlgui5/okular/
+cp -rf ./src/okular/ ~/.local/share/kxmlgui5/
 
 ######################################################################################
 
