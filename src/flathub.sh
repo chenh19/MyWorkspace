@@ -22,7 +22,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # install apps
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche 
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
-sudo flatpak install -y --noninteractive flathub org.zotero.Zotero
 
 
 # cleanup
