@@ -26,17 +26,17 @@ sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.
 sed -i '17,24d' ~/.setup_cache/setup.sh
 
 # setup
-#bash ./src/deb.sh
-#bash ./src/flathub.sh
-#bash ./src/appimage.sh
-#bash ./src/ukuu.sh
-#bash ./src/fcitx.sh
-#bash ./src/wechat.sh
+#bash ./src/deb.sh #checked
+#bash ./src/flathub.sh #checked
+#bash ./src/appimage.sh #checked
+#bash ./src/ukuu.sh #checked
+#bash ./src/fcitx.sh #checked
+#bash ./src/wechat.sh #checked
+#bash ./src/game.sh #checked
 #bash ./src/biodaily.sh
 #bash ./src/biodev.sh
-#bash ./src/game.sh
-#bash ./src/debloat.sh
-#bash ./src/update.sh
+#bash ./src/debloat.sh #checked
+#bash ./src/update.sh #checked
 #bash ./src/settings.sh
 #bash ./src/reboot.sh
 #bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
