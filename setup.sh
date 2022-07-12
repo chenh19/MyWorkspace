@@ -30,7 +30,6 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/flathub.sh
 #bash ./src/appimage.sh
 #bash ./src/ukuu.sh
-#bash ./src/thinkpad.sh
 #bash ./src/fcitx.sh
 #bash ./src/wechat.sh
 #bash ./src/biodaily.sh
