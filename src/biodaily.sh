@@ -31,12 +31,12 @@ case "$choice" in
         wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb'
         mv -f ./*.deb ./snapgene/ && sudo dpkg -i ./snapgene/*.deb
         sudo apt-get -f -y install
-
-        # configure
-        sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         
         # install zotero
         sudo flatpak install -y --noninteractive flathub org.zotero.Zotero
+        
+        # configure
+        sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
