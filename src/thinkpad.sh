@@ -11,14 +11,29 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# ask whether it's thinkpad
+# ask whether it's a thinkpad
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up a ThinkPad? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
-
+        
         # configure grub
         sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub #_this_is_neither_required_or_effective_for_Dell_XPS15
+        sudo update-grub;;
+        
+  n|N ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}ThinkPad configuration skipped.${TEXT_RESET} \n" && sleep 5;;
+
+  * ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}ThinkPad configuration skipped.${TEXT_RESET} \n" && sleep 5;;
+
+esac
+
+# ask whether it's X1E2
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up the ThinkPad Extreme Gen 2? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        echo -e " \n${TEXT_YELLOW}Configuring specifically for the ThinkPad Extreme Gen 2...${TEXT_RESET} \n" && sleep 1
         sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub #_might_not_be_necessary_for_models_besides_X1E2
         sudo update-grub
 
@@ -35,7 +50,7 @@ case "$choice" in
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnUnitActiveSec "10min"
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Install --key WantedBy "multi-user.target"
         sudo systemctl enable undervolt.timer && sudo systemctl start undervolt.timer
-        # Note: Dell has disabled undervolt in BIOS in the newer models.
+        # Note: Dell has disabled undervolt in BIOS in the newer models; 12th gen intel doesn't seem to allow undervolt
         ;;
         
   n|N ) # notify cancellation
@@ -44,7 +59,6 @@ case "$choice" in
   * ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}ThinkPad configuration skipped.${TEXT_RESET} \n" && sleep 5;;
 
-esac
 
 # mark setup.sh
 sed -i 's+bash ./src/thinkpad.sh+#bash ./src/thinkpad.sh+g' ~/.setup_cache/setup.sh
