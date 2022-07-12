@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v0.3.0 (under heavy development, **not** recommended for productive purposes until v1.0)*  
+*Current version: v0.3.2 (under heavy development, **not** recommended for productive purposes until v1.0)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -24,7 +24,7 @@ This tool will install and configure:
 
 - [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files): ```kwriteconfig5``` very helpful
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin) for newer version of WeChat
-- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (**Having trouble undervolting x1yoga7**)
+- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (**currently having trouble undervolting x1yoga7**)
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 - [ ] fcitx input for Chinese when renaming folders
