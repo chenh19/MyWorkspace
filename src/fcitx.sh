@@ -26,6 +26,7 @@ case "$choice" in
         sudo mv -f ./environment /etc/environment
 
         ## setup autostart
+        [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
         cp -rf /usr/share/applications/fcitx.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/fcitx.desktop
 
         ## start once to generate the config files
