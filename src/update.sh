@@ -16,7 +16,7 @@ sudo echo ""
 echo -e "${TEXT_YELLOW}Updating system packages...${TEXT_RESET} \n" && sleep 1
 
 # fix missings
-sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sduo apt-get install -f -y
+sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
 # apt update & cleanup
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
