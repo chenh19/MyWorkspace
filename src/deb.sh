@@ -48,6 +48,9 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
     wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb #_to_be_updated
     sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
+# fix missings
+sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sduo apt-get install -f -y
+
 # config
   # Start Slack minimized
     sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
