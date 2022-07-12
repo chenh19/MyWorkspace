@@ -49,7 +49,7 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
     sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # fix missings
-sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sduo apt-get install -f -y
+sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
 # config
   # Start Slack minimized
