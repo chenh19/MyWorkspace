@@ -193,6 +193,12 @@ sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
 ######################################################################################
 
+# config grub if the timeout is 10s
+sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub #_this_is_neither_required_or_effective_for_Dell_XPS15
+sudo update-grub
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}KDE plasma configured!${TEXT_RESET} \n" && sleep 5
 
