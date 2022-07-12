@@ -36,7 +36,8 @@ case "$choice" in
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Install --key WantedBy "multi-user.target"
         sudo systemctl enable undervolt.timer && sudo systemctl start undervolt.timer
         # Note: Dell has disabled undervolt in BIOS in the newer models.
-
+        ;;
+        
   n|N ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}ThinkPad configuration skipped.${TEXT_RESET} \n" && sleep 5;;
 
