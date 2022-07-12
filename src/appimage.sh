@@ -35,6 +35,7 @@ unzip -o -q *.zip?dl=0 && rm *.zip?dl=0 && sleep 1
 
 # move to /opt folder
 sudo cp -rf ./etcher/ ./tropy/ ./eudic/ /opt/
+sleep 1 && sudo chmod +x /opt/etcher/balenaEtcher.AppImage /opt/tropy/tropy /opt/eudic/eudic.AppImage
 
 # create desktop icons
 # Etcher
