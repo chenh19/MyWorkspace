@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up a ThinkPad? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
-        echo -e "${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
+        echo -e " \n${TEXT_YELLOW}Configuring specifically for ThinkPad...${TEXT_RESET} \n" && sleep 1
 
         # configure grub
         sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub #_this_is_neither_required_or_effective_for_Dell_XPS15
