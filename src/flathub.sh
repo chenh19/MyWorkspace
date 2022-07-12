@@ -31,4 +31,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 echo -e " \n${TEXT_GREEN}Flathub installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sed -i 's+bash ./src/falthub.sh+#bash ./src/flathub.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./src/flathub.sh+#bash ./src/flathub.sh+g' ~/.setup_cache/setup.sh
