@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v0.3.2 (under heavy development, **not** recommended for productive purposes until v1.0)*  
+*Current version: v0.3.3 (under heavy development, **not** recommended for productive purposes until v1.0)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -27,7 +27,9 @@ This tool will install and configure:
 - [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (i7-1270P does not support undervolting)
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
-- [ ] fcitx input for Chinese when renaming folders
+- [ ] fcitx input for Chinese when renaming folders (not fcitx issue)
+- [ ] break ```biodev.sh``` into R and Python parts
+- [ ] break ```settings.sh``` into smaller scripts
 
 
 ## How to use
