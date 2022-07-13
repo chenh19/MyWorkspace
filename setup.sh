@@ -38,7 +38,7 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/debloat.sh #checked
 #bash ./src/update.sh #checked
 #bash ./src/settings.sh
-#bash ./src/reboot.sh
+#bash ./src/reboot.sh #checked
 #bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
 
 
