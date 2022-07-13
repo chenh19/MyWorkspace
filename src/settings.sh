@@ -156,13 +156,6 @@ echo -e "RcFileLocale = C \nDisplayStatusBar = Yes \nSliderTextEntries = Yes \nI
 
 ######################################################################################
 
-# Change taskbar settings
-# Right click on Taskbar, change height to 88
-kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "88"
-kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
-
-######################################################################################
-
 # Clipboard > uncheck "Save clipboard contents on exit"
 kwriteconfig5 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' "false"
 
