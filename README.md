@@ -24,7 +24,7 @@ This tool will install and configure:
 
 - [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files): ```kwriteconfig5``` very helpful
 - [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin) for newer version of WeChat
-- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (**currently having trouble undervolting x1yoga7**)
+- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (i7-1270P does not support undervolting)
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 - [ ] fcitx input for Chinese when renaming folders
