@@ -19,8 +19,11 @@ echo -e "${TEXT_YELLOW}Installing games...${TEXT_RESET} \n" && sleep 1
 wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && sleep 5
 unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm HumanResourceMachine.zip?dl=0 && sleep 1
 mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./src/ && sleep 1
-bash ./src/HumanResourceMachine-Linux-2016-03-23.sh # change install path if needed
+bash ./src/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5 # change install path if needed
 
+
+# cleanup
+rm ./src/HumanResourceMachine-Linux-2016-03-23.sh
 
 # notify end
 echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 5
