@@ -146,10 +146,6 @@ echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/u
 
 # Display and Monitor
 
-# Nvidia
-#sudo ubuntu-drivers autoinstall # Nvidia driver should has been automatically installed by Kubuntu
-echo -e "RcFileLocale = C \nDisplayStatusBar = Yes \nSliderTextEntries = Yes \nIncludeDisplayNameInConfigFile = No \nShowQuitDialog = No \nUpdateRulesOnProfileNameChange = Yes" > ~/.nvidia-settings-rc
-
 ######################################################################################
 
 # Power Management
