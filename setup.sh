@@ -34,8 +34,8 @@ bash ./src/fcitx.sh #tested
 bash ./src/wechat.sh #tested
 bash ./src/game.sh #tested
 bash ./src/biodaily.sh #tested
-bash ./src/biodev.sh #to_be_split
-#bash ./src/debloat.sh #tested
+#bash ./src/biodev.sh #to_be_split
+bash ./src/debloat.sh #tested
 bash ./src/update.sh #tested
 #bash ./src/settings.sh #to_be_split
 bash ./src/reboot.sh #tested
