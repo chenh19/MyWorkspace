@@ -26,20 +26,20 @@ sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.
 sed -i '17,24d' ~/.setup_cache/setup.sh
 
 # setup
-#bash ./src/deb.sh #checked
-#bash ./src/flathub.sh #checked
-#bash ./src/appimage.sh #checked
-#bash ./src/ukuu.sh #checked
-#bash ./src/fcitx.sh #checked
-#bash ./src/wechat.sh #checked
-#bash ./src/game.sh #checked
-#bash ./src/biodaily.sh
+#bash ./src/deb.sh #tested
+#bash ./src/flathub.sh #tested
+#bash ./src/appimage.sh #tested
+#bash ./src/ukuu.sh #tested
+#bash ./src/fcitx.sh #tested
+#bash ./src/wechat.sh #tested
+#bash ./src/game.sh #tested
+#bash ./src/biodaily.sh #tested
 #bash ./src/biodev.sh
-#bash ./src/debloat.sh #checked
-#bash ./src/update.sh #checked
+#bash ./src/debloat.sh #tested
+#bash ./src/update.sh #tested
 #bash ./src/settings.sh
-#bash ./src/reboot.sh #checked
-#bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
+#bash ./src/reboot.sh #tested
+#bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh) #tested
 
 
 # final cleanup
