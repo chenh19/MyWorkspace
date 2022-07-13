@@ -34,10 +34,10 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/wechat.sh #tested
 #bash ./src/game.sh #tested
 #bash ./src/biodaily.sh #tested
-#bash ./src/biodev.sh
+#bash ./src/biodev.sh #to_be_split
 #bash ./src/debloat.sh #tested
 #bash ./src/update.sh #tested
-#bash ./src/settings.sh
+#bash ./src/settings.sh #to_be_split
 #bash ./src/reboot.sh #tested
 #bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh) #tested
 
