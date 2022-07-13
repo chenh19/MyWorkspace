@@ -37,7 +37,7 @@ bash ./src/biodaily.sh #tested
 #bash ./src/biodev.sh #to_be_split
 bash ./src/debloat.sh #tested
 bash ./src/update.sh #tested
-#bash ./src/settings.sh #to_be_split
+bash ./src/settings.sh #to_be_split
 bash ./src/reboot.sh #tested
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh) #tested
 
