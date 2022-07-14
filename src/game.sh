@@ -11,22 +11,27 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# notify start
-sudo echo ""
-echo -e "${TEXT_YELLOW}Installing games...${TEXT_RESET} \n" && sleep 1
+# ask whether to install games
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install some programming games? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Installing programming games...${TEXT_RESET} \n" && sleep 1
+        
+        # human resource machine
+        wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && sleep 5
+        unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm HumanResourceMachine.zip?dl=0 && sleep 1
+        mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./src/ && sleep 1
+        bash ./src/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5 # change install path if needed
+        rm ./src/HumanResourceMachine-Linux-2016-03-23.sh
 
-# human resource machine
-wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && sleep 5
-unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm HumanResourceMachine.zip?dl=0 && sleep 1
-mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./src/ && sleep 1
-bash ./src/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5 # change install path if needed
+        # notify end
+        echo -e " \n${TEXT_GREEN}Programming games installed!${TEXT_RESET} \n" && sleep 5;;
 
+  * ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Programming games not installed.${TEXT_RESET} \n" && sleep 5;;
+esac
 
-# cleanup
-rm ./src/HumanResourceMachine-Linux-2016-03-23.sh
-
-# notify end
-echo -e " \n${TEXT_GREEN}Done!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
 sed -i 's+bash ./src/game.sh+#bash ./src/game.sh+g' ~/.setup_cache/setup.sh
