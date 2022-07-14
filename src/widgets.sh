@@ -18,7 +18,7 @@ echo -e "${TEXT_YELLOW}Installing widgets...${TEXT_RESET} \n" && sleep 1
 # install plasma widgets
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
 wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && sleep 1 #_to_be_updated
-unzip -o -q *.zip?dl=0 && sleep 1 && rm *.zip?dl=0
+unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
 [ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
