@@ -20,7 +20,7 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Installing R bioinfomatics developing enviroment (this might take a while)...${TEXT_RESET} \n" && sleep 1
 
         # update system and install packages required by R and R packages installing
-        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk openssl libclang libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
+        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install default-jre default-jdk curl openssl libclang libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
 
         # install R from cran
         wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
