@@ -145,6 +145,7 @@ sudo ufw enable
 cat /proc/bus/input/devices | grep -i syna > ~/.config/touchpadxlibinputrc # detect touchpad name
 sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
 sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
+sed -i '2,200d' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=true \npointerAcceleration=0.6 \ntapToClick=true" | tee -a ~/.config/touchpadxlibinputrc
 
 ## KDE right click issue
