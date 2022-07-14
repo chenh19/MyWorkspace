@@ -52,7 +52,9 @@ sudo cp -rf ./*.desktop /usr/share/applications/
 # Etcher
 [ ! -d ~/.config/balena-etcher-electron/ ] && mkdir ~/.config/balena-etcher-electron/
 echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher-electron/config.json
-
+# Eudic
+echo -e " \n${TEXT_YELLOW}Please close EuDic to continue.${TEXT_RESET} \n" && sleep 1
+XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
 
 # cleanup
 rm -rf ./etcher/ ./tropy/ ./eudic/ && rm ./*.desktop
