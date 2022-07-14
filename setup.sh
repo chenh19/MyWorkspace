@@ -49,6 +49,7 @@ bash ./src/wechat.sh
 bash ./src/game.sh
 bash ./src/biodaily.sh
 bash ./src/biodevr.sh
+bash ./src/biodevpy.sh
 bash ./src/settings.sh
 bash ./src/update.sh
 bash ./src/reboot.sh
