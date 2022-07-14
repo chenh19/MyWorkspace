@@ -72,6 +72,11 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}RKWard not installed.${TEXT_RESET} \n" && sleep 5;;
         esac
         
+        # cleanup
+        sudo apt-get autoremove -y && sudo apt-get clean
+        [ -d ./rscript/ ] && rm -rf ./rscript/
+        [ -d ./devdeb/ ] && rm -rf ./devdeb/
+
         # notify end
         echo -e " \n${TEXT_GREEN}R bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5;;
         
@@ -79,11 +84,6 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
 esac
 
-
-# cleanup
-sudo apt-get autoremove -y && sudo apt-get clean
-[ -d ./rscript/ ] && rm -rf ./rscript/
-[ -d ./devdeb/ ] && rm -rf ./devdeb/
 
 # mark setup.sh
 sed -i 's+bash ./src/biodevr.sh+#bash ./src/biodevr.sh+g' ~/.setup_cache/setup.sh
