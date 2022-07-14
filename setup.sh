@@ -41,7 +41,6 @@ bash ./src/settings.sh
 bash ./src/reboot.sh
 
 
-
 # final cleanup
 #ask whether to delete cache
 #rm -rf ~/.setup_cache/
