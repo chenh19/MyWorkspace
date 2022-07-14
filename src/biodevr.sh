@@ -91,4 +91,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 [ -d ./devdeb/ ] && rm -rf ./devdeb/
 
 # mark setup.sh
-sed -i 's+bash ./src/biodev.sh+#bash ./src/biodev.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./src/biodevr.sh+#bash ./src/biodevr.sh+g' ~/.setup_cache/setup.sh
