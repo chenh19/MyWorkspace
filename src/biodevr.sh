@@ -35,9 +35,27 @@ case "$choice" in
         sudo Rscript ./rscript/packages.R
         Rscript ./rscript/webdriver.R
         
+        # notify end
+        echo -e " \n${TEXT_GREEN}R bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5;;
+
+  n|N ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
+
+  * ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
+
+esac
+
+# ask whether to set up R environment for Bioinformatic developing
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up R environment for bioinformatic developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Installing R bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
+        
         # install RKWard and fastqc
         # rkward is dependent on kate, which is installed by Kubuntu by default but usually uninstalled by me
-        #sudo apt-get install kate kbibtex rkward -y
+        sudo apt-get install kate kbibtex rkward -y
         
         # install RStudio
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
@@ -48,17 +66,6 @@ case "$choice" in
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
         rm -rf ./rscript/ ./devdeb/ ./shscript/
-
-        # notify end
-        echo -e " \n${TEXT_GREEN}R bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5
-
-  n|N ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
-
-  * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
-
-esac
 
 # mark setup.sh
 sed -i 's+bash ./src/biodev.sh+#bash ./src/biodev.sh+g' ~/.setup_cache/setup.sh
