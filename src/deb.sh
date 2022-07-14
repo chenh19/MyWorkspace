@@ -61,7 +61,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   
   # teamviewer wallpaper
     [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/
-    cp -rf ./src/teamviewer/ ~/.config/
+    cp -rf ./cfg/teamviewer/ ~/.config/
   
   # simplenote quites unexpectedly
     sudo sed -i 's+Exec=/opt/Simplenote/simplenote %U+Exec=/opt/Simplenote/simplenote --no-sandbox %U+g' /usr/share/applications/simplenote.desktop
