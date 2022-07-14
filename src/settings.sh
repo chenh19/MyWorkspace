@@ -139,7 +139,7 @@ sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=true \npointerAcceleration=0.6 \ntapToClick=true" | tee -a ~/.config/touchpadxlibinputrc
 
 ## KDE right click issue
-sudo apt-get update && sudo apt-get install sxhkd -y && cp -rf ./src/sxhkd/ ~/.config/
+sudo apt-get update && sudo apt-get install sxhkd -y && cp -rf ./cfg/sxhkd/ ~/.config/
 echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/usr/bin/sxhkd \nTerminal=false \nType=Application" > ~/.config/autostart/sxhkd.desktop
 
 ######################################################################################
