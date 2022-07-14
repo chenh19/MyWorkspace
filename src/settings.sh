@@ -146,6 +146,14 @@ echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/u
 
 # Display and Monitor
 
+# Nvidia
+#sudo ubuntu-drivers autoinstall # Nvidia driver should has been automatically installed by Kubuntu
+sudo lshw -C display > ./gpu.txt
+if grep -q NVIDIA ./gpu.txt; then
+    echo -e "RcFileLocale = C \nDisplayStatusBar = Yes \nSliderTextEntries = Yes \nIncludeDisplayNameInConfigFile = No \nShowQuitDialog = No \nUpdateRulesOnProfileNameChange = Yes" > ~/.nvidia-settings-rc
+fi
+rm ./gpu.txt
+
 ######################################################################################
 
 # Power Management
