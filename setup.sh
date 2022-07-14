@@ -32,7 +32,7 @@ cp -rf ./MyWorkspace-main/src/* ./src/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
-echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
