@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs R, RStudio, and R packages
+# This script installs R developing environment
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
