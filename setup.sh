@@ -42,6 +42,7 @@ sed -i '27,39d' ~/.setup_cache/setup.sh
 bash ./src/deb.sh
 bash ./src/flathub.sh
 bash ./src/appimage.sh
+bash ./src/widgets.sh
 bash ./src/ukuu.sh
 bash ./src/fcitx.sh
 bash ./src/wechat.sh
