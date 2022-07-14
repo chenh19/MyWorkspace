@@ -16,8 +16,8 @@ sudo echo ""
 echo -e "${TEXT_YELLOW}Installing widgets...${TEXT_RESET} \n" && sleep 1
 
 # install plasma widgets
-sudo add-apt-repository ppa:kubuntu-ppa/backports && sudo apt-get dist-upgrade -y
-/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 # text command
+#sudo add-apt-repository ppa:kubuntu-ppa/backports && sudo apt-get dist-upgrade -y
+#/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 # text command
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1245902 # better inline clock
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274218 # Window Title Applet
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 # Window AppMenu Applet (unity like)
