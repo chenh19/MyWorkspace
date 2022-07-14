@@ -39,15 +39,3 @@ sed -i '17,24d' ~/.setup_cache/setup.sh
 #bash ./src/settings.sh
 #bash ./src/update.sh
 #bash ./src/reboot.sh
-
-
-# final cleanup
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the setup scripts in ~/.setup-cache/ folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
-case "$choice" in
-  y|Y ) rm -rf ~/.setup_cache/
-        echo -e " \n${TEXT_GREEN}All setup scripts removed!${TEXT_RESET} \n" && sleep 1;;
-  * )   echo -e " \n${TEXT_YELLOW}Setup scripts kept in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
-esac
-
-# notify end
-echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
