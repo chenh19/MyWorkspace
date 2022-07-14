@@ -31,7 +31,7 @@ cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && slee
 # Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
 wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && sleep 5 #_to_be_updated
-unzip -o -q eudic.zip?dl=0 && sleep 1 && rm eudic.zip?dl=0
+unzip -o -q eudic.zip?dl=0 && sleep 1 && rm eudic.zip?dl=0 && sleep 5
 
 # move to /opt folder
 sudo cp -rf ./etcher/ ./tropy/ ./eudic/ /opt/
