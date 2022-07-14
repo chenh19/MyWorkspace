@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v0.6.1 (under heavy development, **not** recommended for productive purposes until v1.0)*  
+*Current version: v0.6.3 (under heavy development, **not** recommended for productive purposes until v1.0)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
