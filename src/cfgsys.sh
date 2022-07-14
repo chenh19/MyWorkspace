@@ -156,7 +156,26 @@ echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/u
 
 # Display and Monitor
 
-# Nvidia
+## Taskbar
+# Change taskbar height
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Which height would you like to set to the taskbar, 104 (a), 88 (b), or default 44 (c)? [a/b/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  a|A ) # Right click on Taskbar, change height to 104
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "104"
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "104"
+        ;;
+  b|B ) # Right click on Taskbar, change height to 88
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "88"
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
+        ;;
+  * )   # Right click on Taskbar, change height to 88
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "44"
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "44"
+        ;;
+esac
+
+## Nvidia
 #sudo ubuntu-drivers autoinstall # Nvidia driver should has been automatically installed by Kubuntu
 sudo lshw -C display > ./gpu.txt
 if grep -q NVIDIA ./gpu.txt; then
