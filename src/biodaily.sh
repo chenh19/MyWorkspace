@@ -24,7 +24,7 @@ case "$choice" in
 
         # install snapgene font
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-        sudo apt-get install ttf-mscorefonts-installer -y
+        sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
 
         # install snapgene
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
