@@ -28,7 +28,7 @@ This tool will install and configure:
 - [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 - [ ] fcitx input for Chinese when renaming folders (not fcitx issue)
-- [ ] break ```biodev.sh``` into R and Python parts
+- [x] break ```biodev.sh``` into R and Python parts
 - [ ] break ```settings.sh``` into smaller scripts, detect Nvidia hardware before writing config file
 
 
