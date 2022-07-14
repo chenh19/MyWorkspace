@@ -21,7 +21,7 @@ wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && s
 unzip -o -q *.zip?dl=0 && sleep 1 && rm *.zip?dl=0
 [ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
-cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && rm -rf ./adhe.textcommand/
+cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
 
 # install dolphin widgets
 [ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
