@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script does xxx
+# This script intsall programming games
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
