@@ -87,8 +87,8 @@ esac
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
-[ ! -d ./rscript/ ] && rm -rf ./rscript/
-[ ! -d ./devdeb/ ] && rm -rf ./devdeb/
+[ -d ./rscript/ ] && rm -rf ./rscript/
+[ -d ./devdeb/ ] && rm -rf ./devdeb/
 
 # mark setup.sh
 sed -i 's+bash ./src/biodev.sh+#bash ./src/biodev.sh+g' ~/.setup_cache/setup.sh
