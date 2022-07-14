@@ -123,6 +123,12 @@ kwriteconfig5 --file ~/.config/krunnerrc --group General --key RetainPriorSearch
 ## System Settings > Notification > Configure > Other Applications > uncheck "Show popups"
 kwriteconfig5 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' "false"
 
+## Notification > Configure > Network Management > Confirgure Events > uncheck "Show a message in a popup" for "Connection Activated"
+echo -e '[Event/ConnectionActivated] \nAction= \nExecute= \nLogfile= \nSound= \nTTS= \n \n[Event/NoLongerConnected] \nExecute= \nLogfile= \nSound= \nTTS=' > ~/.config/networkmanagement.notifyrc
+
+## Notification > Configure > Discover > Confirgure Events > uncheck "Show a message in a popup" for "Updates Are Available"
+echo -e '[Event/Update] \nAction= \nExecute= \Logfile= \nSound= \nTTS= \n \n[Event/UpdateResart] \nExecute= \nLogfile= \nSound= \nTTS=' > ~/.config/discoverabstractnotifier.notifyrc
+
 ######################################################################################
 
 # Firewall
