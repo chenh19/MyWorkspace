@@ -30,7 +30,7 @@ sudo ukuu --scripted --install-latest
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}UKUU installed!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}Latest Linux kernel installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
 sed -i 's+bash ./src/ukuu.sh+#bash ./src/ukuu.sh+g' ~/.setup_cache/setup.sh
