@@ -35,7 +35,6 @@ case "$choice" in
         sudo Rscript ./rscript/packages.R
         Rscript ./rscript/webdriver.R
         
-        
         # ask whether to install RStudio
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
@@ -53,7 +52,6 @@ case "$choice" in
                 
           * ) # notify cancellation
                 echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;;
-        
         esac
         
         # ask whether to install RKWard
@@ -72,16 +70,13 @@ case "$choice" in
                 
           * ) # notify cancellation
                 echo -e " \n${TEXT_YELLOW}RKWard not installed.${TEXT_RESET} \n" && sleep 5;;
-        
         esac
-        
         
         # notify end
         echo -e " \n${TEXT_GREEN}R bioinformatic developing environment ready!${TEXT_RESET} \n" && sleep 5;;
-
+        
   * ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
-
 esac
 
 
