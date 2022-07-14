@@ -77,6 +77,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
 
 
 # cleanup
+sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./deb/
 
