@@ -215,6 +215,9 @@ rm ./gpu.txt
 ######################################################################################
 
 # Power Management
+#Power Management > Energy Saving > On AC Power: 10min, 15min (disable screen energy saving)
+#Power Management > Energy Saving > On Battery: 5min, 10min (disable screen energy saving)
+cp -rf ./cfg/power/powermanagementprofilesrc ~/.config/
 
 ######################################################################################
 
