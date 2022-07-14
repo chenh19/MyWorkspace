@@ -38,7 +38,6 @@ bash ./src/biodevr.sh
 bash ./src/debloat.sh
 bash ./src/update.sh
 bash ./src/settings.sh
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
 bash ./src/reboot.sh
 
 
