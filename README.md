@@ -15,6 +15,7 @@ This tool will install and configure:
 - [NumPy](https://numpy.org/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [Krita](https://krita.org/)
+- [Inkscape](https://inkscape.org/)
 - [Bottles](https://usebottles.com/)
 - [Touchegg](https://github.com/JoseExposito/touchegg)
 - [alt_rm](https://github.com/chenh19/alt_rm)
