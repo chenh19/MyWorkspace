@@ -63,7 +63,7 @@ case "$choice" in
                 
                 # install RKWard
                 # rkward is dependent on kate, which is installed by Kubuntu by default but usually uninstalled by me
-                sudo apt-get install kate kbibtex rkward -y;;
+                sudo apt-get install kate kbibtex rkward -y
                 
                 # notify end
                 echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 5;;
