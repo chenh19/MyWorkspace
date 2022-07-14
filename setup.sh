@@ -28,7 +28,7 @@ echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./src/ ] && mkdir ./src/
-cp -rf ./MyWorkspace-main/src/* ./src/ 
+cp -rf ./MyWorkspace-main/src/*.sh ./src/ 
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
