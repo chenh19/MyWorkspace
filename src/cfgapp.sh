@@ -38,6 +38,11 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key State "AAAA/wA
 
 ######################################################################################
 
+# kwrite hide minimap
+kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
+
+######################################################################################
+
 ## System Monitor
 #Edit or remove pages: uncheck "Applications" and list in this order: "Overview", "Processes", "History"
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' "applications.page"
