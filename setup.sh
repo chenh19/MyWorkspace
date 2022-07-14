@@ -50,4 +50,4 @@ case "$choice" in
 esac
 
 # notify end
-echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n";;
+echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
