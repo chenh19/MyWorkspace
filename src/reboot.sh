@@ -27,4 +27,5 @@ if [ -f /var/run/reboot-required ]; then
 	  echo -e " \n${TEXT_YELLOW}Please manually reboot later.${TEXT_RESET} \n" && sleep 5;;
 	  
   esac
+
 fi
