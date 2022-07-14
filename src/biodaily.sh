@@ -18,8 +18,8 @@ case "$choice" in
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL)...${TEXT_RESET} \n" && sleep 1
 
-        # install IGV and PyMOL
-        sudo apt-get update && sudo apt-get install igv pymol -y
+        # install IGV/PyMOL/FastQC
+        sudo apt-get update && sudo apt-get install igv pymol fastqc -y
 
         # install snapgene font
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
