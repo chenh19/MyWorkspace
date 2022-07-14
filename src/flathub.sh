@@ -25,6 +25,8 @@ sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
 
 # cleanup
+sudo snap remove firefox
+[ -d ~/snap/ ] && sudo rm -rf ~/snap/
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
