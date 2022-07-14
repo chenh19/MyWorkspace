@@ -46,7 +46,7 @@ echo -e "[Desktop Entry] \nCategories=Graphics; \nComment=Image Manager \nExec=/
 echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage \nGenericName= \nIcon=/opt/eudic/eudic.png \nMimeType= \nName=EuDic \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./eudic.desktop
 
 # move to /usr/share/applications folder
-sudo cp -rf ./*.desktop /usr/share/applications/
+sudo cp -rf ./*.desktop /usr/share/applications/ && sleep 5
 
 # config
 # Etcher
