@@ -96,6 +96,11 @@ inkscape
 
 ######################################################################################
 
+# kde browser integration reminder hide
+kwriteconfig5 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' "false"
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
