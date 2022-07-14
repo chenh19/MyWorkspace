@@ -24,18 +24,10 @@ case "$choice" in
         wget -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh #_to_be_updated
         echo -e "${TEXT_YELLOW}Please press Space key to scroll the license${TEXT_RESET} \n" && sleep 1
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
-        conda update anaconda -y && conda update --all -y
-        conda config --add channels defaults
-        conda config --add channels bioconda
-        conda config --add channels conda-forge
-        conda install numpy -y
-        #conda install kallisto -y
         
-        # config
-        conda config --set auto_activate_base false # disable auto activate base in terminal
-        #conda activate # activate base when needed
-        #rm -rf ~/anaconda3/ # uninstall anaconda
-        # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
+        # config conda
+        echo -e "${TEXT_YELLOW}bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/src/conda.sh)${TEXT_RESET} \n" && sleep 1
+        konsole
         
         # ask whether to install Jupyter Lab
         sudo echo ""
