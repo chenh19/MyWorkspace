@@ -48,6 +48,10 @@ echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CU
 # move to /usr/share/applications folder
 sudo cp -rf ./*.desktop /usr/share/applications/
 
+# config
+[ ! -d ~/.config/balena-etcher-electron/ ] && mkdir ~/.config/balena-etcher-electron/
+echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher-electron/config.json
+
 
 # cleanup
 rm -rf ./etcher/ ./tropy/ ./eudic/ && rm ./*.desktop
