@@ -34,6 +34,7 @@ case "$choice" in
         #echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         sudo Rscript ./rscript/packages.R
+        echo ""
         Rscript ./rscript/webdriver.R
         
         # ask whether to install RStudio
