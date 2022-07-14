@@ -50,13 +50,7 @@ case "$choice" in
                 wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.0-548-amd64.deb #_to_be_updated
                 sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get -f -y install
-                
-                # config
-                [ ! -d ~/.config/rstudio/ ] && mkdir ~/.config/rstudio/
-                echo -e 'crash-handling-enabled="0"' > ~/.config/rstudio/crash-handler.conf
-                echo -e '{ \n    "initial_working_directory": "~", \n    "posix_terminal_shell": "bash", \n    "pdf_previewer": "none" \n}' > ~/.config/rstudio/rstudio-prefs.json
-                #echo -e '{ \n    "initial_working_directory": "~", \n    "posix_terminal_shell": "bash", \n    "editor_theme": "Tomorrow Night", \n    "pdf_previewer": "none" \n}' > ~/.config/rstudio/rstudio-prefs.json
-                
+                                
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;;
                 
