@@ -30,7 +30,7 @@ cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./src/ ] && mkdir ./src/
 cp -rf ./MyWorkspace-main/src/* ./src/ 
 [ ! -d ./cfg/ ] && mkdir ./cfg/
-cp -rf ./MyWorkspace-main/cfg/* ./cfg/ 
+cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
 echo -e "${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
