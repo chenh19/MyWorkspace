@@ -50,7 +50,11 @@ case "$choice" in
                 wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.0-548-amd64.deb #_to_be_updated
                 sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get -f -y install
-                                
+                
+                # config
+                echo -e "${TEXT_YELLOW}Please close RStudio.${TEXT_RESET} \n" && sleep 1
+                rstudio
+                
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;;
                 
