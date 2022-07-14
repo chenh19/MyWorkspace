@@ -29,7 +29,7 @@ This tool will install and configure:
 - [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
 - [ ] fcitx input for Chinese when renaming folders (not fcitx issue)
 - [x] break ```biodev.sh``` into R and Python parts
-- [ ] break ```settings.sh``` into smaller scripts, detect Nvidia hardware before writing config file
+- [ ] maybe break ```settings.sh``` into smaller scripts
 
 
 ## How to use
