@@ -42,9 +42,6 @@ esac
 kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft "M"
 kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight "IAX"
 
-## System Settings > Appearance > Cursors > Size > 48 (take effect after rebooting)
-kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
-
 ######################################################################################
 
 # Workspace Behavior
@@ -156,37 +153,45 @@ echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/u
 
 # Display and Monitor
 
-## Scaling
+## Scaling (take effect after rebooting)
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the scaling factor, 2.5 (a), 2.0 (b), 1.5 (c) or default 1.0 (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
-        # Right click on Taskbar, change height to 104
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2.5"
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2.5;HDMI-1=2.5;DP-1=2.5;DP-2=2.5;DP3=2.5;DP4=2.5;"
+        # Right click on Taskbar, change height to 104
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "104"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "104"
+        # System Settings > Appearance > Cursors > Size > 48
+        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
         ;;
   b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
-        # Right click on Taskbar, change height to 88
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2"
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2;HDMI-1=2;DP-1=2;DP-2=2;DP3=2;DP4=2;"
+        # Right click on Taskbar, change height to 88
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "88"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
+        # System Settings > Appearance > Cursors > Size > 48
+        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
         ;;
-  c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
-        # Right click on Taskbar, change height to 70
+  c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150% 
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1.5"
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1.5;HDMI-1=1.5;DP-1=1.5;DP-2=1.5;DP3=1.5;DP4=1.5;"
+        # Right click on Taskbar, change height to 70
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "70"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "70"
+        # System Settings > Appearance > Cursors > Size > 36
+        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "36"
         ;;
   * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
-        # Right click on Taskbar, change height to 44
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1"
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1;HDMI-1=1;DP-1=1;DP-2=1;DP3=1;DP4=1;"
+        # Right click on Taskbar, change height to 44
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "44"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "44"
+        # System Settings > Appearance > Cursors > Size > 24
+        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "24"
         ;;
 esac
 
