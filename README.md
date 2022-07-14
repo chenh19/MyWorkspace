@@ -12,6 +12,7 @@ This tool will install and configure:
 - [PyMOL](https://pymol.org/)
 - [RStudio](https://www.rstudio.com/)
 - [RKWard](https://rkward.kde.org/)
+- [NumPy](https://numpy.org/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [Krita](https://krita.org/)
 - [Bottles](https://usebottles.com/)
