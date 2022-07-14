@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # check internet connection
 sudo echo ""
-echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n"
 wget -q --spider http://google.com
 until [[ $? -eq 0 ]] ; do
     read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$' \n'
