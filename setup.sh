@@ -26,11 +26,11 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
-mv -f ./MyWorkspace-main/setup.sh ./
+cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./src/ ] && mkdir ./src/
-mv -f ./MyWorkspace-main/src/* ./src/ 
+cp -rf ./MyWorkspace-main/src/* ./src/ 
 [ ! -d ./cfg/ ] && mkdir ./cfg/
-mv -f ./MyWorkspace-main/cfg/* ./cfg/ 
+cp -rf ./MyWorkspace-main/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
