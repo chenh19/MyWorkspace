@@ -264,6 +264,11 @@ sudo cp -rf ./fonts/windows/ /usr/share/fonts/
 
 ######################################################################################
 
+# alt_rm
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
