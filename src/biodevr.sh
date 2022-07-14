@@ -37,7 +37,7 @@ case "$choice" in
         
         # install RKWard and fastqc
         # rkward is dependent on kate, which is installed by Kubuntu by default but usually uninstalled by me
-        #sudo apt-get install kate rkward kbibtex fastqc -y
+        #sudo apt-get install kate kbibtex rkward -y
         
         # install RStudio
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
