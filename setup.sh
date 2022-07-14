@@ -12,8 +12,17 @@ cd ~/.setup_cache/
 
 
 # check internet connection
+sudo echo ""
+echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n" && sleep 1
+wget -q --spider http://google.com
+until [[ $? -eq 0 ]] ; do
+    read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$' \n'
+    echo ""
+    wget -q --spider http://google.com
+done
+echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
-# download all setup scripts
+# prepare setup scripts
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 3
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
