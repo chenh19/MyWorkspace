@@ -257,6 +257,10 @@ sudo update-grub
 
 ######################################################################################
 
+# System Update: Manually, and make sure "Use offline updates" is uncheck
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}KDE plasma configured!${TEXT_RESET} \n" && sleep 5
 
