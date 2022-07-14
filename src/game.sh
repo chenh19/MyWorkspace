@@ -22,7 +22,7 @@ case "$choice" in
         wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && sleep 5
         unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm HumanResourceMachine.zip?dl=0 && sleep 1
         mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./src/ && sleep 1
-        echo -e "${TEXT_YELLOW}Change Human Resource Machine installing path if needed.${TEXT_RESET} \n"
+        echo -e "${TEXT_YELLOW}Change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
         bash ./src/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
         rm ./src/HumanResourceMachine-Linux-2016-03-23.sh
 
