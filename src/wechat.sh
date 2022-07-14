@@ -46,9 +46,6 @@ case "$choice" in
         # notify end
         echo -e " \n${TEXT_GREEN}WeChat installed!${TEXT_RESET} \n" && sleep 5;;
 
-  n|N ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}WeChat not installed.${TEXT_RESET} \n" && sleep 5;;
-
   * )   # notify cancellation
         echo -e " \n${TEXT_YELLOW}WeChat not installed.${TEXT_RESET} \n" && sleep 5;;
 
