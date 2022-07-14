@@ -37,12 +37,12 @@ case "$choice" in
         
         
         # ask whether to install Jupyter Lab
+        sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Jupyter Lab? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing Jupyter Lab...${TEXT_RESET} \n" && sleep 1
-                
                 
                 # install Jupyter Lab
                 [ ! -d ./devdeb/ ] && mkdir ./devdeb/
