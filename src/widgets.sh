@@ -7,6 +7,9 @@
 /usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 # Window AppMenu Applet (unity like)
 
 # install dolphin widgets
+[ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
+[ ! -d ~/.local/share/kservices5/ServiceMenus/ ] && mkdir ~/.local/share/kservices5/ServiceMenus/
+
 echo -e "[Desktop Entry] \nType=Service \n#ServiceTypes=application/x-cd-image;model/x.stl-binary \n#MimeType=all/all; \nServiceTypes=KonqPopupMenu/Plugin \nMimeType=application/x-cd-image;model/x.stl-binary \nX-KDE-StartupNotify=false \nX-KDE-Priority=TopLevel \nActions=mountiso; \nInitialPreference=99 \nVersion=1.0 \n \n[Desktop Action mountiso] \nName=Mount the image
 Name[ru]=Смонтировать образ \nExec=udisksctl loop-setup -r -f %u \nIcon=media-optical" > ~/.local/share/kservices5/ServiceMenus/mountiso.desktop
 
