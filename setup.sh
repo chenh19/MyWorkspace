@@ -20,7 +20,7 @@ echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 3
 [ ! -d ./src/ ] && mkdir ./src/
 mv -f ./MyWorkspace-main/setup.sh ./ && mv -f ./MyWorkspace-main/src/* ./src/ 
 [ ! -d ./cfg/ ] && mkdir ./cfg/
-mv -f ./MyWorkspace-main/cfg/* ./src/ 
+mv -f ./MyWorkspace-main/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
