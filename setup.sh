@@ -50,8 +50,8 @@ bash ./src/game.sh
 bash ./src/biodaily.sh
 bash ./src/biodevr.sh
 bash ./src/biodevpy.sh
+bash ./src/cfgapp.sh
 bash ./src/cfgmdl.sh
 bash ./src/cfgsys.sh
-bash ./src/cfgapp.sh
 bash ./src/update.sh
 bash ./src/reboot.sh
