@@ -52,7 +52,7 @@ case "$choice" in
                 sudo apt-get -f -y install
                 
                 # config
-                echo -e "${TEXT_YELLOW}Please close RStudio.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please close RStudio to continue.${TEXT_RESET} \n" && sleep 1
                 rstudio
                 
                 # notify end
