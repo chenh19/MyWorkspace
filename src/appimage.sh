@@ -49,6 +49,7 @@ echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CU
 sudo cp -rf ./*.desktop /usr/share/applications/
 
 # config
+# Etcher
 [ ! -d ~/.config/balena-etcher-electron/ ] && mkdir ~/.config/balena-etcher-electron/
 echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher-electron/config.json
 
