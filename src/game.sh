@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # ask whether to install games
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install some programming games? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install programming games? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
