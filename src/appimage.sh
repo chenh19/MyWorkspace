@@ -18,20 +18,20 @@ echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 # download appimages
 # Etcher
 [ ! -d ~/.setup_cache/etcher/ ] && mkdir ~/.setup_cache/etcher/
-wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && sleep 1 #_to_be_updated
+wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && sleep 5 #_to_be_updated
 unzip -o -q *.zip && sleep 1 && rm *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && sleep 1
 ./etcher/balenaEtcher.AppImage --appimage-extract && sleep 1
 cp -rf ./squashfs-root/usr/share/icons/hicolor/512x512/apps/balena-etcher-electron.png ./etcher/ && rm -rf ./squashfs-root/
 mv $(ls ./etcher/*.png) ./etcher/balenaEtcher.png && sleep 1
 # Tropy
 [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
-wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x64.tar.bz2 && sleep 1 #_to_be_updated
+wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x64.tar.bz2 && sleep 5 #_to_be_updated
 tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm *tar.bz2
 cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
 # Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
-wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && sleep 1 #_to_be_updated
-unzip -o -q *.zip?dl=0 && sleep 1 && rm *.zip?dl=0
+wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && sleep 5 #_to_be_updated
+unzip -o -q eudic.zip?dl=0 && sleep 1 && rm eudic.zip?dl=0
 
 # move to /opt folder
 sudo cp -rf ./etcher/ ./tropy/ ./eudic/ /opt/
