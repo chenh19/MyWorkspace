@@ -34,6 +34,7 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
 
 # install apps (downloaded)
   [ ! -d ./deb/ ] && mkdir ./deb/
+  echo -e "${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
   
   # redirecting links
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
