@@ -23,8 +23,9 @@ done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
 # prepare setup scripts
-echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 3
-[ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && unzip -o -q main && rm main
+echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
+[ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
+unzip -o -q main && rm main
 mv -f ./MyWorkspace-main/setup.sh ./
 [ ! -d ./src/ ] && mkdir ./src/
 mv -f ./MyWorkspace-main/src/* ./src/ 
@@ -35,7 +36,7 @@ echo -e " \n${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-sed -i '27,38d' ~/.setup_cache/setup.sh
+sed -i '27,39d' ~/.setup_cache/setup.sh
 
 # setup
 #bash ./src/deb.sh
