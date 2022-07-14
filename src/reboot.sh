@@ -11,6 +11,7 @@ TEXT_RESET='\e[0m'
 if [ -d ~/.setup_cache/ ]; then
 
   # ask whether to delete setup scripts
+  sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the setup scripts in ~/.setup-cache/ folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
   
