@@ -26,6 +26,11 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl python3-pip -y
 #sudo apt-get install axel -y
 
+# install apps (ppa)
+  # Inkscape
+  sudo add-apt-repository ppa:inkscape.dev/stable
+  sudo apt-get update && sudo apt-get install inkscape -y
+
 # install apps (source list)
   # enpass
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
