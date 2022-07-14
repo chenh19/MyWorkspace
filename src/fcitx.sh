@@ -12,6 +12,7 @@ cd ~/.setup_cache/
 
 
 # ask whether to install Chinese Pinyin input method
+sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Chinese Pinyin input method? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
