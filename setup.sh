@@ -53,6 +53,5 @@ bash ./src/biodevpy.sh
 bash ./src/cfgmdl.sh
 bash ./src/cfgsys.sh
 bash ./src/cfgapp.sh
-bash ./src/settings.sh
 bash ./src/update.sh
 bash ./src/reboot.sh
