@@ -156,20 +156,35 @@ echo -e "[Desktop Entry] \nName=sxhkd \nComment=Simple X hotkey daemon \nExec=/u
 
 # Display and Monitor
 
-## Taskbar
-# Change taskbar height
+## Scaling
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Which height would you like to set to the taskbar, 104 (a), 88 (b), or default 44 (c)? [a/b/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the scaling factor, 2.5 (a), 2.0 (b), 1.5 (c) or default 1.0 (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
-  a|A ) # Right click on Taskbar, change height to 104
+  a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
+        # Right click on Taskbar, change height to 104
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2.5"
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2.5;HDMI-1=2.5;DP-1=2.5;DP-2=2.5;DP3=2.5;DP4=2.5;"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "104"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "104"
         ;;
-  b|B ) # Right click on Taskbar, change height to 88
+  b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
+        # Right click on Taskbar, change height to 88
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2"
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2;HDMI-1=2;DP-1=2;DP-2=2;DP3=2;DP4=2;"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "88"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
         ;;
-  * )   # Right click on Taskbar, change height to 88
+  c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
+        # Right click on Taskbar, change height to 70
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1.5"
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1.5;HDMI-1=1.5;DP-1=1.5;DP-2=1.5;DP3=1.5;DP4=1.5;"
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "70"
+        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "70"
+        ;;
+  * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
+        # Right click on Taskbar, change height to 44
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1"
+        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1;HDMI-1=1;DP-1=1;DP-2=1;DP3=1;DP4=1;"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "44"
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "44"
         ;;
