@@ -12,6 +12,7 @@ cd ~/.setup_cache/
 
 
 # ask whether to install SnapGene/IGV/PyMOL
+sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install daily biological tools, such as SnapGene and PyMOL? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
