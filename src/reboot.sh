@@ -6,21 +6,27 @@ TEXT_YELLOW='\e[1;33m'
 TEXT_GREEN='\e[1;32m'
 TEXT_RESET='\e[0m'
 
-# set working directory
-[ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
-cd ~/.setup_cache/
-
 
 # final cleanup
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the setup scripts in ~/.setup-cache/ folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
-case "$choice" in
-  y|Y ) rm -rf ~/.setup_cache/
-        echo -e " \n${TEXT_GREEN}All setup scripts removed!${TEXT_RESET} \n" && sleep 1;;
-  * )   echo -e " \n${TEXT_YELLOW}Setup scripts kept in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
-esac
+if [ -d ~/.setup_cache/ ]; then
+
+  # ask whether to delete setup scripts
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the setup scripts in ~/.setup-cache/ folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+  
+    y|Y ) rm -rf ~/.setup_cache/
+          echo -e " \n${TEXT_GREEN}All setup scripts removed!${TEXT_RESET} \n" && sleep 1;;
+	  
+    * )   echo -e " \n${TEXT_YELLOW}Setup scripts kept in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
+    
+  esac
+
+fi
+
 
 # notify end
 echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
+
 
 # detect whether reboot is required
 if [ -f /var/run/reboot-required ]; then
