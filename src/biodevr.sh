@@ -83,6 +83,7 @@ case "$choice" in
         
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
+        [ -f ./Rhistory ] && rm ./Rhistory
         [ -d ./rscript/ ] && rm -rf ./rscript/
         [ -d ./devdeb/ ] && rm -rf ./devdeb/
 
