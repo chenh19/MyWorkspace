@@ -26,7 +26,9 @@ case "$choice" in
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
         
         # config conda
-        echo -e "${TEXT_YELLOW}bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/src/conda.sh)${TEXT_RESET} \n" && sleep 1
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Paste below command in a new terminal window and execute. Once finished, please close the new terminal window to continue.${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_GREEN}bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/src/conda.sh)${TEXT_RESET} \n" && sleep 1
         konsole
         
         # ask whether to install Jupyter Lab
