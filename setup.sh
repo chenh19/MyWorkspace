@@ -38,15 +38,15 @@ sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.
 sed -i '27,38d' ~/.setup_cache/setup.sh
 
 # setup
-bash ./src/deb.sh
-bash ./src/flathub.sh
-bash ./src/appimage.sh
-bash ./src/ukuu.sh
-bash ./src/fcitx.sh
-bash ./src/wechat.sh
-bash ./src/game.sh
-bash ./src/biodaily.sh
-bash ./src/biodevr.sh
-bash ./src/settings.sh
-bash ./src/update.sh
-bash ./src/reboot.sh
+#bash ./src/deb.sh
+#bash ./src/flathub.sh
+#bash ./src/appimage.sh
+#bash ./src/ukuu.sh
+#bash ./src/fcitx.sh
+#bash ./src/wechat.sh
+#bash ./src/game.sh
+#bash ./src/biodaily.sh
+#bash ./src/biodevr.sh
+#bash ./src/settings.sh
+#bash ./src/update.sh
+#bash ./src/reboot.sh
