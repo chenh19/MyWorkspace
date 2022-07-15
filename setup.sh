@@ -49,6 +49,7 @@ bash ./src/game.sh
 bash ./src/biodaily.sh
 bash ./src/biodevr.sh
 bash ./src/biodevpy.sh
+bash ./src/gitssh.sh
 bash ./src/cfgmdl.sh
 bash ./src/cfgsys.sh
 bash ./src/cfgapp.sh
