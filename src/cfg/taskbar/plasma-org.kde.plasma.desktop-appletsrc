@@ -13,6 +13,10 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][1][General]
+arrangement=1
+iconSize=2
+
 [Containments][2]
 activityId=
 formfactor=2
