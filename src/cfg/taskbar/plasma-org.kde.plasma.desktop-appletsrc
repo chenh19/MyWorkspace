@@ -41,6 +41,7 @@ fontSize=56
 paddingLeft=12
 paddingRight=12
 textLabel=⛶
+
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
@@ -64,6 +65,7 @@ plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
 launchers=preferred://filemanager,applications:google-chrome.desktop
+
 [Containments][2][Applets][6]
 immutability=1
 plugin=org.kde.plasma.marginsseparator
