@@ -54,8 +54,9 @@ case "$choice" in
                 unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm anyconnect.zip?dl=0 && sleep 5
                 cd ./anyconnect-linux64-4.10.04065/vpn
                 sudo bash vpn_install.sh && sleep 5
-                rm -rf ./anyconnect-linux64-4.10.04065/vpn
                 cd ~/.setup_cache/
+                rm -rf ./anyconnect-linux64-4.10.04065/
+                
                 
                 # notify end
                 echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5
