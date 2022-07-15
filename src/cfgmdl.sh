@@ -11,7 +11,7 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# ask whether it's a thinkpad
+# ask whether it's a thinkpad x1e
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up ThinkPad X1 Extreme Gen 2? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
