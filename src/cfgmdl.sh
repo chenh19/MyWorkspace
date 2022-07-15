@@ -33,7 +33,7 @@ case "$choice" in
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Timer --key OnUnitActiveSec "10min"
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.timer --group Install --key WantedBy "multi-user.target"
         sudo systemctl enable undervolt.timer && sudo systemctl start undervolt.timer
-        # Note: Dell has disabled undervolt in BIOS in the newer models; 12th gen intel doesn't seem to allow undervolt
+        # Note: Dell has disabled undervolt in BIOS in the newer models; 12th gen intel doesn't seem to allow undervolt, either
 
         # notify end
         echo -e " \n${TEXT_YELLOW}ThinkPad X1 Extreme Gen 2 configuration finished!${TEXT_RESET} \n" && sleep 5;;
