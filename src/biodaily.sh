@@ -41,9 +41,9 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
         XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
         
-        # ask whether to install UIUC VPN
+        # ask whether to install University VPN
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install UIUC VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
                 sudo echo ""
@@ -58,12 +58,12 @@ case "$choice" in
                 cd ~/.setup_cache/
                 
                 # notify end
-                echo -e " \n${TEXT_GREEN}UIUC VPN installed!${TEXT_RESET} \n" && sleep 5
+                echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5
                 echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} once and then close the VPN to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/cisco/anyconnect/bin/vpnui;;
                 
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}UIUC VPN not installed.${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_YELLOW}University VPN not installed.${TEXT_RESET} \n" && sleep 5;;
           
           esac
                 
