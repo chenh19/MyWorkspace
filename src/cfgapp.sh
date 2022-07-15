@@ -188,6 +188,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 cp -f ./cfg/touchegg/* ~/.config/touchegg/
 
 ######################################################################################
+# aske whether to configure apps manually
+######################################################################################
 
 # fdm
 echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
