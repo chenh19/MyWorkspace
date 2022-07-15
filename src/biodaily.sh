@@ -36,18 +36,37 @@ case "$choice" in
         # install zotero
         sudo flatpak install -y --noninteractive flathub org.zotero.Zotero
         
-        # install UIUC VPN
-        wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
-        unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm anyconnect.zip?dl=0 && sleep 5
-        cd ./anyconnect-linux64-4.10.04065/vpn
-        sudo bash vpn_install.sh && sleep 5
-        rm -rf ./anyconnect-linux64-4.10.04065/vpn
-        
         # configure
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
         XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
         
+        # ask whether to install RStudio
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install UIUC VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                sudo echo ""
+                echo -e "${TEXT_YELLOW}Installing UIUC VPN...${TEXT_RESET} \n" && sleep 1
+                
+                # install UIUC VPN
+                wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
+                unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm anyconnect.zip?dl=0 && sleep 5
+                cd ./anyconnect-linux64-4.10.04065/vpn
+                sudo bash vpn_install.sh && sleep 5
+                rm -rf ./anyconnect-linux64-4.10.04065/vpn
+                cd ~/.setup_cache/
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}UIUC VPN installed!${TEXT_RESET} \n" && sleep 5
+                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} once and then close the VPN to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/cisco/anyconnect/bin/vpnui;;
+                
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}UIUC VPN not installed.${TEXT_RESET} \n" && sleep 5;;
+          
+          esac
+                
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
         rm -rf ./snapgene/
