@@ -170,6 +170,10 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "104"
         # System Settings > Appearance > Cursors > Size > 48
         kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
+        # Overview button size: 60, 14, 14
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "60"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "14"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
         ;;
   b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2"
@@ -180,6 +184,10 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
         # System Settings > Appearance > Cursors > Size > 48
         kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
+        # Overview button size: 56, 12, 12
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "56"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "12"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "12"
         ;;
   c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1.5"
@@ -190,6 +198,10 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "70"
         # System Settings > Appearance > Cursors > Size > 36
         kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "36"
+        # Overview button size: 45, 8, 8
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "45"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "8"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "8"
         ;;
   * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1"
@@ -200,6 +212,10 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "44"
         # System Settings > Appearance > Cursors > Size > 24
         kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "24"
+        # Overview button size: 30, 6, 6
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "30"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "6"
+        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
         ;;
 esac
 
