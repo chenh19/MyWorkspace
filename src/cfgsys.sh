@@ -203,8 +203,6 @@ case "$choice" in
         ;;
 esac
 
-
-
 ## Nvidia
 #sudo ubuntu-drivers autoinstall # Nvidia driver should has been automatically installed by Kubuntu
 sudo lshw -C display > ./gpu.txt
