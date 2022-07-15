@@ -151,6 +151,18 @@ cp -f ./cfg/touchegg/* ~/.config/touchegg/
 
 ######################################################################################
 
+# Inkscape
+echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+inkscape
+
+######################################################################################
+
+# libreoffice
+echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+libreoffice
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
