@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Configuring KDE plasma...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
 
@@ -276,7 +276,7 @@ sudo update-grub
 ######################################################################################
 
 # notify end
-echo -e " \n${TEXT_GREEN}KDE plasma configured!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 5
 
 
 #-------------------------------------------------------------------------------------
