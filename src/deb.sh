@@ -52,7 +52,6 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
     wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
     wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb #_to_be_updated
     wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb #_to_be_updated
-    wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
     sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # fix missings
@@ -85,11 +84,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   # fdm
     echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
     /opt/freedownloadmanager/fdm
-    
-  # ask whether to install expandrive
-    echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_YELLOW} to activate ExpanDrive and close the client to continue.${TEXT_RESET} \n" && sleep 1
-    /opt/ExpanDrive/expandrive
-    
+        
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 sudo apt-get autoremove -y && sudo apt-get clean
