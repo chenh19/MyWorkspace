@@ -45,12 +45,12 @@ case "$choice" in
                 sudo apt-get -f -y install
                 
                 # config Jupyter Lab
+                echo -e " \n${TEXT_YELLOW}Please config and then close Jupyter Lab to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/JupyterLab/jupyterlab-desktop %U
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/
                 echo -e '{ \n    "theme": "JupyterLab Light", \n    "theme-scrollbars": false, \n    "overrides": { \n        "code-font-family": null, \n        "code-font-size": null, \n        "content-font-family": null, \n        "content-font-size1": null, \n        "ui-font-family": null, \n        "ui-font-size1": null \n    } \n}' > ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
-                echo -e " \n${TEXT_YELLOW}Please config and then close Jupyter Lab to continue.${TEXT_RESET} \n" && sleep 1
-                /opt/JupyterLab/jupyterlab-desktop %U
                 
                 # notify end
                 echo -e " \n${TEXT_GREEN}Jupyter Lab installed!${TEXT_RESET} \n" && sleep 5;;
