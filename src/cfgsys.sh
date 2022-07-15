@@ -93,6 +93,9 @@ kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview"
 sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
 
+### spectacle region: Alt+P
+# to be written
+
 ######################################################################################
 
 # Startup and Shutdown
