@@ -48,6 +48,8 @@ kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll
 #Edit or remove pages: uncheck "Applications" and list in this order: "Overview", "Processes", "History"
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' "applications.page"
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,process.page,history.page,application.page"
+echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET} \n" && sleep 1
+plasma-systemmonitor
 
 ######################################################################################
 
