@@ -12,7 +12,7 @@
 
 ### [3/5] Install Kubuntu
 
-- Once it boots into Kubuntu installer, select **"Install Kubuntu"**:  
+- Once it logs in to Kubuntu installer, select **"Install Kubuntu"**:  
 ![](./images/1.png)
 
 - **"Continue"** with default keyboard setting:  
@@ -43,7 +43,7 @@
 ![](./images/10.png)
 
 ### [4/5] Reboot the system
-- Once log out, it will prompt "**"Please remove the installation meduim, then press ENTER"**", simply unplug the USB drive and press ```Enter```  
+- Once it logs out, it will prompt "**"Please remove the installation meduim, then press ENTER"**", simply unplug the USB drive and press ```Enter```  
 
 ### [5/5] Configuration
 - Connect to internet
