@@ -37,7 +37,6 @@ case "$choice" in
           y|Y ) # write R script of packages
                 echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp')) \nBiocManager::install(c('GenomicRanges','qvalue'))" > ./rscript/packages.R
                 ;;
-                
           * )   # write R script of packages
                 echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R
                 ;;
