@@ -44,6 +44,11 @@ case "$choice" in
                 sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get -f -y install
                 
+                # pre config
+                [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/
+                [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/
+                [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/
+                
                 # notify end
                 echo -e " \n${TEXT_GREEN}Jupyter Lab installed!${TEXT_RESET} \n" && sleep 5;;
                 
