@@ -47,7 +47,7 @@ case "$choice" in
         case "$choice" in
           y|Y ) # notify start
                 sudo echo ""
-                echo -e "${TEXT_YELLOW}Installing UIUC VPN...${TEXT_RESET} \n" && sleep 1
+                echo -e "${TEXT_YELLOW}Installing University VPN...${TEXT_RESET} \n" && sleep 1
                 
                 # install UIUC VPN
                 wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
