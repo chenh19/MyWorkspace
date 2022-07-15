@@ -19,7 +19,7 @@ echo -e "${TEXT_YELLOW}Configuring apps and widgets...${TEXT_RESET} \n" && sleep
 
 ######################################################################################
 
-# Plasma taskbar
+# Plasma desktop and taskbar
 
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
