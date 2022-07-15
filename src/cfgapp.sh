@@ -74,9 +74,6 @@ done
 
 # Dolphin
 
-# label the /root
-sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
-
 ## install widgets
 # Context Menu > Download New Services... > Open as root (by loup) and Mount ISO (by loup)
 [ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
@@ -88,6 +85,16 @@ echo -e '[Desktop Entry] \nType=Service \nIcon=system-file-manager \nActions=Ope
 kbuildsycoca5
 kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 "root"
 kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key mountiso "true"
+
+## Configure Dolphin
+General > uncheck "show selection marker"
+Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
+Right click and hide unnecessary shortcuts in the left panel
+
+## hide the unnecessary folders on the left panel
+
+## label the /root
+sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
 ######################################################################################
 
