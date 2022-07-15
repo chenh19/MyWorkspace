@@ -90,12 +90,6 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 
 ######################################################################################
 
-# Inkscape
-echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
-inkscape
-
-######################################################################################
-
 # Plasma widgets
 
 ## install widgets
