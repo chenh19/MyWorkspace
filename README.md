@@ -20,6 +20,7 @@ This tool will install and configure:
 - [Touchegg](https://github.com/JoseExposito/touchegg)
 - [alt_rm](https://github.com/chenh19/alt_rm)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
+- [Cisco AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
 - and a lot more
 
 ## How to use
