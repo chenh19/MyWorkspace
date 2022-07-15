@@ -24,7 +24,7 @@
 - Select **Normal installation** and check **Install third-party software for graphics and Wi-Fi hardware and additional media formats** option, then **Continue**:   
 ![](./images/4.png)
 
-- Select **Guided - use entire disk** and **Install Now**:  
+- Select **Guided - use entire disk** and **Install Now** (if you plan to install multiple OS on a single physical drive, you might select **Manual**):  
 ![](./images/5.png)
 
 - **Continue** to confirm partition formatting:  
