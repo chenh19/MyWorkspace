@@ -12,7 +12,7 @@
 
 ### [3/5] Install Kubuntu
 
-- Once boot into Kubuntu installer, select **Install Kubuntu**":  
+- Once it boots into Kubuntu installer, select **Install Kubuntu**":  
 ![](./images/1.png)
 
 - **Continue** with default keyboard setting:  
