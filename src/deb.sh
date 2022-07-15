@@ -77,8 +77,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
-    # do not check update notification when first open    
-        
+            
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 sudo apt-get autoremove -y && sudo apt-get clean
