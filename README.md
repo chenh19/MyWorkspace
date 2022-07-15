@@ -22,18 +22,6 @@ This tool will install and configure:
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - and a lot more
 
-**To be checked/tested:**  
-
-- [x] [kde-configuration-files](https://github.com/shalva97/kde-configuration-files): ```kwriteconfig5``` very helpful
-- [ ] [singularity-deepin](https://github.com/brighill/singularity-deepin) for newer version of WeChat
-- [ ] [thinkpad-tools](https://github.com/devksingh4/thinkpad-tools) (i7-1270P does not support undervolting)
-- [ ] [arch wiki for thinkpad](https://wiki.archlinux.org/index.php?search=Lenovo+ThinkPad+X1&title=Special%3ASearch&fulltext=Search)
-- [x] kde on [wayland](https://wayland.freedesktop.org/): still not stable and compatible enough, maybe wait for 24.04 LTS
-- [ ] fcitx input for Chinese when renaming folders (not fcitx issue)
-- [x] break ```biodev.sh``` into R and Python parts
-- [ ] maybe break ```settings.sh``` into smaller scripts
-
-
 ## How to use
 Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
