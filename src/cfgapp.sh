@@ -100,7 +100,7 @@ unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
 
-## config taskbar widgets
+## config taskbar widgets (take effect after rebooting)
 # Change desktop icon settings
 # Right click on Desktop > Icon Size > Small; Arrange In > Columns
 # Right click on Taskbar > Configure Icon-only Task Manager... > Behavior > uncheck "Cycle through tasks"
