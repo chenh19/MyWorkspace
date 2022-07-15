@@ -105,6 +105,8 @@ unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
 
 ## config taskbar widgets (take effect after rebooting)
+# start menu only show file manager and web browser
+# pinned apps only show file manager and web browser
 # Change desktop icon settings
 # Right click on Desktop > Icon Size > Small; Arrange In > Columns
 # Right click on Taskbar, Configure Icon-only Task Manager > Behavior > uncheck "Cycles through tasks"
