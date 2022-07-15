@@ -8,7 +8,7 @@
 
 ### [2/5] Boot into the USB drive
 - Press ```F12``` when the computer is booting up  
-- Select the corresponding UEFI boot option (e.g., USB HDD: SanDisk) and hit ```Enter```  
+- Select the corresponding UEFI boot option (e.g., USB HDD: SanDisk) and press ```Enter```  
 
 ### [3/5] Install Kubuntu
 
