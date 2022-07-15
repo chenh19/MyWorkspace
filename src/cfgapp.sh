@@ -100,7 +100,11 @@ unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
 
-# config taskbar widgets
+## config taskbar widgets
+# Change desktop icon settings
+# Right click on Desktop > Icon Size > Small; Arrange In > Columns
+#kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'arrangement' "1"
+#kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' "2"
 cp -rf ./cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc ~/.config/
 
 ######################################################################################
