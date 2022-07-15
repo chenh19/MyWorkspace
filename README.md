@@ -18,7 +18,7 @@ This tool will install and configure:
 - [Inkscape](https://inkscape.org/)
 - [Bottles](https://usebottles.com/)
 - [Touchegg](https://github.com/JoseExposito/touchegg)
-- [Alt <rm>](https://github.com/chenh19/alt_rm)
+- [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Cisco AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - and a lot more
