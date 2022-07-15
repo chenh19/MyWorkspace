@@ -120,6 +120,7 @@ line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 unset line
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Please config start menu favorites manually. Once done, press [Enter] to continue.'$TEXT_RESET)"$' \n'
 
 ######################################################################################
 
