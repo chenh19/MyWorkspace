@@ -39,6 +39,7 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key State "AAAA/wA
 ######################################################################################
 
 # kwrite hide minimap
+# Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
 kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
 
 ######################################################################################
@@ -93,6 +94,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 # Plasma taskbar widgets
 
 ## install widgets
+# taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
 wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && sleep 1 #_to_be_updated
 unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
@@ -103,9 +105,12 @@ cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf
 ## config taskbar widgets (take effect after rebooting)
 # Change desktop icon settings
 # Right click on Desktop > Icon Size > Small; Arrange In > Columns
-# Right click on Taskbar > Configure Icon-only Task Manager... > Behavior > uncheck "Cycle through tasks"
+# Right click on Taskbar, Configure Icon-only Task Manager > Behavior > uncheck "Cycles through tasks"
 # Right click on Taskbar > Add Widgets... > add "Text Command" and config with a symbol
 # Configure System Tray > Entries > set always hidden and shown apps
+# System Tray
+# Always shown: "Audio Volume", "Battery and Brightness", "Networks"
+# Shown when relevant: "Disk & Devices", "KDE Connect", "Printers"
 line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
 line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
