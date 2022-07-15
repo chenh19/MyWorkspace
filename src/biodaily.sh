@@ -59,7 +59,7 @@ case "$choice" in
                 
                 # notify end
                 echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5
-                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} once and then close the VPN to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} and disconnect, then close the VPN client to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/cisco/anyconnect/bin/vpnui;;
                 
           * )   # notify cancellation
