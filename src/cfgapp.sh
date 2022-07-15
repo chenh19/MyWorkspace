@@ -90,7 +90,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 
 ######################################################################################
 
-# Plasma widgets
+# Plasma taskbar widgets
 
 ## install widgets
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
@@ -100,7 +100,8 @@ unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
 
-# config widgets
+# config taskbar widgets
+cp -rf ./cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc ~/.config/
 
 ######################################################################################
 
