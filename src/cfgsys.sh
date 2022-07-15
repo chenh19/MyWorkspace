@@ -38,6 +38,10 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Set global theme: Breeze Light (default)${TEXT_RESET} \n" && sleep 1;;
 esac
 
+# Inkscape
+echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+inkscape
+
 ## System Settings > Appearance > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
 kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft "M"
 kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight "IAX"
