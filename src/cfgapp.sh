@@ -103,9 +103,14 @@ cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf
 ## config taskbar widgets
 # Change desktop icon settings
 # Right click on Desktop > Icon Size > Small; Arrange In > Columns
-#kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'arrangement' "1"
-#kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' "2"
-cp -rf ./cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc ~/.config/
+# Right click on Taskbar > Configure Icon-only Task Manager... > Behavior > uncheck "Cycle through tasks"
+# Right click on Taskbar > Add Widgets... > add "Text Command" and config with a symbol
+# Configure System Tray > Entries > set always hidden and shown apps
+line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
+line=$((line+2))
+sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+unset line
 
 ######################################################################################
 
