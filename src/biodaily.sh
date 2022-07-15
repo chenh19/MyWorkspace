@@ -41,7 +41,7 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
         XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
         
-        # ask whether to install RStudio
+        # ask whether to install UIUC VPN
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install UIUC VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
