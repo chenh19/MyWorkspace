@@ -54,6 +54,7 @@ case "$choice" in
                 # config
                 echo -e " \n${TEXT_YELLOW}Please config and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
                 rstudio
+                [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
                 kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
                 
                 # notify end
