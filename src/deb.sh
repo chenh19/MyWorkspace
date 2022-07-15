@@ -77,13 +77,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
-    # do not check update notification when first open
-    echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
-    qview
-    
-  # fdm
-    echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
-    /opt/freedownloadmanager/fdm
+    # do not check update notification when first open    
         
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
