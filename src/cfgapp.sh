@@ -201,6 +201,10 @@ echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chr
 
 ######################################################################################
 
+# evolution
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
 
