@@ -49,7 +49,7 @@ case "$choice" in
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing University VPN...${TEXT_RESET} \n" && sleep 1
                 
-                # install UIUC VPN
+                # install University VPN
                 wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
                 unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm anyconnect.zip?dl=0 && sleep 5
                 cd ./anyconnect-linux64-4.10.04065/vpn
