@@ -203,10 +203,7 @@ case "$choice" in
         ;;
 esac
 
-## Change desktop icon settings
-# Right click on Desktop > Icon Size > Small; Arrange In > Columns
-kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'arrangement' "1"
-kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' "2"
+
 
 ## Nvidia
 #sudo ubuntu-drivers autoinstall # Nvidia driver should has been automatically installed by Kubuntu
