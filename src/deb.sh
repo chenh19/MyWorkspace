@@ -86,7 +86,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
     echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
     /opt/freedownloadmanager/fdm
     
-  # expandrive
+  # ask whether to install expandrive
     echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_YELLOW} to activate ExpanDrive and close the client to continue.${TEXT_RESET} \n" && sleep 1
     /opt/ExpanDrive/expandrive
     
