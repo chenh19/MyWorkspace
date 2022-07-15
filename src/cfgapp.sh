@@ -120,11 +120,30 @@ line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 unset line
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Please config start menu favorites manually. Once done, press [Enter] to continue.'$TEXT_RESET)"$' \n'
+
+## create desktop shortcuts
+echo -e "[Desktop Entry] \nCategories=Qt;KDE;System;FileTools;FileManager; \nComment= \nExec=dolphin %u \nGenericName=File Manager \nIcon=system-file-manager \nInitialPreference=10 \nMimeType=inode/directory; \nName=Dolphin \nPath= \nStartupNotify=true \nStartupWMClass=dolphin \nTerminal=false \nTerminalOptions= \nType=Application" > ~/Desktop/dolphin.desktop
+sleep 1
+echo -e "[Desktop Action new-private-window] \nExec=/usr/bin/google-chrome-stable --incognito \nName=New Incognito Window \n \n[Desktop Action new-window] \nExec=/usr/bin/google-chrome-stable \nName=New Window \n \n[Desktop Entry] \nActions=new-window;new-private-window; \nCategories=Network;WebBrowser; \nComment=Access the Internet \nExec=/usr/bin/google-chrome-stable %U \nGenericName=Web Browser \nIcon=google-chrome \nMimeType=text/html;image/webp;image/png;image/jpeg;image/gif;application/xml;application/xml;application/xhtml+xml;application/rss+xml;application/rdf+xml;application/pdf; \nName=Chrome \nNoDisplay=false \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application \nVersion=1.0" > ~/Desktop/chrome.desktop
+sleep 1
+echo -e "[Desktop Entry] \nEmptyIcon=user-trash \nIcon=user-trash-full \nName=Trash \nType=Link \nURL[$e]=trash:/" > ~/Desktop/trash:⁄.desktop
+sleep 1
+chmod +x ~/Desktop/*.desktop
+
+## Clean up Application Launcher's favorite
+#read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Please config start menu favorites manually. Once done, press [Enter] to continue.'$TEXT_RESET)"$' \n'
+favorites=$(grep 'Favorites-org.kde.plasma.kickoff.favorites.' ~/.config/kactivitymanagerd-statsrc | sed 's/\[//g' | sed 's/\]//g')
+for favorite in $favorites
+do
+    kwriteconfig5 --file ~/.config/kactivitymanagerd-statsrc --group $favorite --key ordering "applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop"
+done
 
 ######################################################################################
 
 # Dolphin
+
+# label the /root
+sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
 ## install widgets
 # Context Menu > Download New Services... > Open as root (by loup) and Mount ISO (by loup)
