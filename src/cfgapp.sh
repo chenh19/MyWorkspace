@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Configuring applications...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Configuring apps and widgets...${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
 
@@ -164,7 +164,7 @@ libreoffice
 ######################################################################################
 
 # notify end
-echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
 
 
 #-------------------------------------------------------------------------------------
