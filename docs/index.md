@@ -12,28 +12,28 @@
 
 ### [3/5] Install Kubuntu
 
-- Once it boots into Kubuntu installer, select **Install Kubuntu**:  
+- Once it boots into Kubuntu installer, select **"Install Kubuntu"**:  
 ![](./images/1.png)
 
-- **Continue** with default keyboard setting:  
+- **"Continue"** with default keyboard setting:  
 ![](./images/2.png)
 
-- **Continue** without connecting to internet:  
+- **"Continue"** without connecting to internet:  
 ![](./images/3.png)
 
-- Select **Normal installation** and check **Install third-party software for graphics and Wi-Fi hardware and additional media formats** option, then **Continue**:   
+- Select **"Normal installation"** and check **"Install third-party software for graphics and Wi-Fi hardware and additional media formats"** option, then **"Continue"**:   
 ![](./images/4.png)
 
-- Select **Guided - use entire disk** and **Install Now** (if you plan to install multiple OS on a single physical drive, you might select **Manual**):  
+- Select **"Guided - use entire disk"** and **"Install Now"** (if you plan to install multiple OS on a single physical drive, you might select **"Manual"**):  
 ![](./images/5.png)
 
-- **Continue** to confirm partition formatting:  
+- **"Continue"** to confirm partition formatting:  
 ![](./images/6.png)
 
-- Set **Region** and **Time Zone**, then **Continue**:  
+- Set **"Region"** and **"Time Zone"**, then **"Continue"**:  
 ![](./images/7.png)
 
-- Set user account, then **Continue**:  
+- Set user account, then **"Continue"**:  
 ![](./images/8.png)
 
 - Installation might take some time:  
@@ -43,7 +43,7 @@
 ![](./images/10.png)
 
 ### [4/5] Reboot the system
-- Once log out, it will prompt "**Please remove the installation meduim, then press ENTER**", simply unplug the USB drive and press ```Enter```  
+- Once log out, it will prompt "**"Please remove the installation meduim, then press ENTER"**", simply unplug the USB drive and press ```Enter```  
 
 ### [5/5] Configuration
 - Connect to internet
