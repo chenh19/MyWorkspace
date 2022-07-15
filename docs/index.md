@@ -43,7 +43,7 @@
 ![](./images/10.png)
 
 ### [4/5] Reboot the system
-- Once it logs out, it will prompt "**"Please remove the installation meduim, then press ENTER"**", simply unplug the USB drive and press ```Enter```  
+- Once it logs out, it will prompt **"Please remove the installation meduim, then press ENTER"**, simply unplug the USB drive and press ```Enter```  
 
 ### [5/5] Configuration
 - Connect to internet
