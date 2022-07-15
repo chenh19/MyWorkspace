@@ -140,6 +140,12 @@ kwriteconfig5 --file ~/.config/kded5rc --group 'Module-browserintegrationreminde
 
 ######################################################################################
 
+# touchegg
+[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
+cp -f ./cfg/touchegg/* ~/.config/touchegg/
+
+######################################################################################
+
 # notify end
 echo -e " \n${TEXT_GREEN}All applications configured!${TEXT_RESET} \n" && sleep 5
 
