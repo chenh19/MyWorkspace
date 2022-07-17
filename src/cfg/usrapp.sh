@@ -56,5 +56,7 @@ Terminal=false
 ######################################################################################
 
 # slack
+#config
+/usr/bin/slack
 
 # ask whether to set as autostart
