@@ -22,8 +22,8 @@ until [[ $? -eq 0 ]] ; do
 done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
-# prepare setup scripts
-echo -e "${TEXT_YELLOW}Downloading setup scripts...${TEXT_RESET} \n" && sleep 1
+# download and organize setup scripts
+echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
