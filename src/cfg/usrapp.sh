@@ -33,5 +33,7 @@ echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chr
 ######################################################################################
 
 # evolution
+# restore backup
+# ask whether set evolution as autostart
 
 ######################################################################################
