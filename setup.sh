@@ -28,35 +28,34 @@ echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./src/ ] && mkdir ./src/
-cp -rf ./MyWorkspace-main/src/*.sh ./src/ 
+cp -rf ./MyWorkspace-main/src/inst/* ./src/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
-cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/ 
+cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
+# https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number
 sed -i '39,43d' ~/.setup_cache/inst/wechat.sh # save wechat sacling config for later
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh && sed -i '27,40d' ~/.setup_cache/setup.sh # avoid re-downloading
 echo -e "${TEXT_GREEN}All setup scripts ready${TEXT_RESET} \n" && sleep 1
 
-# https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number
-
 # setup
-bash ./inst/deb.sh
-bash ./inst/flathub.sh
-bash ./inst/appimage.sh
-bash ./inst/ukuu.sh
-bash ./inst/fcitx.sh
-bash ./inst/wechat.sh
-bash ./inst/game.sh
-bash ./inst/biodaily.sh
-bash ./inst/biodevr.sh
-bash ./inst/biodevpy.sh
+#bash ./inst/deb.sh
+#bash ./inst/flathub.sh
+#bash ./inst/appimage.sh
+#bash ./inst/ukuu.sh
+#bash ./inst/fcitx.sh
+#bash ./inst/wechat.sh
+#bash ./inst/game.sh
+#bash ./inst/biodaily.sh
+#bash ./inst/biodevr.sh
+#bash ./inst/biodevpy.sh
 
 # config
-bash ./cfg/gitssh.sh
-bash ./cfg/sysmdl.sh
-bash ./cfg/sysstg.sh
-bash ./cfg/sysapp.sh
-bash ./cfg/sysdsp.sh
-bash ./cfg/usrapp.sh
-bash ./cfg/update.sh
-bash ./cfg/reboot.sh
+#bash ./cfg/gitssh.sh
+#bash ./cfg/sysmdl.sh
+#bash ./cfg/sysstg.sh
+#bash ./cfg/sysapp.sh
+#bash ./cfg/sysdsp.sh
+#bash ./cfg/usrapp.sh
+#bash ./cfg/update.sh
+#bash ./cfg/reboot.sh
