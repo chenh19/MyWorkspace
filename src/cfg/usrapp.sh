@@ -37,3 +37,24 @@ echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chr
 # ask whether set evolution as autostart
 
 ######################################################################################
+
+# expandrive
+
+~/.config/autostart/expandrive --autorun.desktop
+
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=expandrive --autorun
+Comment=expandrive --autorunstartup script
+Exec=/opt/ExpanDrive/expandrive --autorun
+StartupNotify=false
+Terminal=false
+
+# ask whether set evolution as autostart
+
+######################################################################################
+
+# slack
+
+# ask whether to set as autostart
