@@ -39,7 +39,22 @@ sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.
 sed -i '27,39d' ~/.setup_cache/setup.sh
 
 # setup
-#bash ./inst/xxx.sh
+bash ./inst/deb.sh
+bash ./inst/flathub.sh
+bash ./inst/appimage.sh
+bash ./inst/ukuu.sh
+bash ./inst/fcitx.sh
+bash ./inst/wechat.sh
+bash ./inst/game.sh
+bash ./inst/biodaily.sh
+bash ./inst/biodevr.sh
+bash ./inst/biodevpy.sh
 
 # config
 #bash ./cfg/xxx.sh
+bash ./src/gitssh.sh
+bash ./src/cfgmdl.sh
+bash ./src/cfgsys.sh
+bash ./src/cfgapp.sh
+bash ./src/update.sh
+bash ./src/reboot.sh
