@@ -27,12 +27,12 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
 #sudo apt-get install axel -y
 
 # install apps (ppa)
-# Inkscape
+## Inkscape
 sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt-get update && sudo apt-get install inkscape -y
 
 # install apps (source list)
-# enpass
+## enpass
 echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
 wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
 sudo apt-get update && sudo apt-get install enpass -y
@@ -41,13 +41,13 @@ sudo apt-get update && sudo apt-get install enpass -y
 [ ! -d ./deb/ ] && mkdir ./deb/
 echo -e " \n${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
   
-# redirecting links
+## redirecting links
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget -q https://zoom.us/client/latest/zoom_amd64.deb
 wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
 
-# direct links
+## direct links
 wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb #_to_be_updated
 wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb #_to_be_updated
 wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb #_to_be_updated
@@ -59,25 +59,25 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
 
 # auto config
 
-# default open with Discovery
+## default open with Discovery
 #if grep -q "alias rm='bash ~/.rm.sh >/dev/null 2>&1'" ~/.bashrc ; then sed -i '/alias rm=/d' ~/.bashrc ; fi
 #mimeapps
 
-# Start Slack minimized
+## Start Slack minimized
 sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
 # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
 
-# zoom auto scaling
+## zoom auto scaling
 kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
-# teamviewer wallpaper
+## teamviewer wallpaper
 [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/
 cp -rf ./cfg/teamviewer/ ~/.config/
 
-# simplenote quites unexpectedly
+## simplenote quites unexpectedly
 sudo sed -i 's+Exec=/opt/Simplenote/simplenote %U+Exec=/opt/Simplenote/simplenote --no-sandbox %U+g' /usr/share/applications/simplenote.desktop
 
-# qView
+## qView
 [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
 kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
 kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
@@ -87,44 +87,44 @@ kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmo
 # aske whether to configure apps manually
 ######################################################################################
 
-# fdm
+## fdm
 echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
 /opt/freedownloadmanager/fdm
 
 ######################################################################################
 
-# Inkscape
+## Inkscape
 echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
 inkscape
 
 ######################################################################################
 
-# qView
+## qView
 # do not check update notification when first open 
 echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
 qview
 
 ######################################################################################
 
-# libreoffice
+## libreoffice
 echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
 libreoffice
 
 ######################################################################################
 
-# chrome
+## chrome
 echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
 /usr/bin/google-chrome-stable
 
 ######################################################################################
 
-# evolution
+## evolution
 # restore backup
 # ask whether set evolution as autostart
 
 ######################################################################################
 
-# expandrive
+## expandrive
 
 ~/.config/autostart/expandrive --autorun.desktop
 
@@ -141,7 +141,7 @@ Terminal=false
 
 ######################################################################################
 
-# slack
+## slack
 #config
 /usr/bin/slack
 
