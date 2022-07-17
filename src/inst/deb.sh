@@ -57,7 +57,7 @@ sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdock
 # fix missings
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
-# config
+# auto config
   # Start Slack minimized
     sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
     # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
@@ -77,7 +77,71 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
     kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
-            
+
+# manual config
+######################################################################################
+
+# fdm
+echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
+/opt/freedownloadmanager/fdm
+
+######################################################################################
+
+# Inkscape
+echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+inkscape
+
+######################################################################################
+
+# qView
+# do not check update notification when first open 
+echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
+qview
+
+######################################################################################
+
+# libreoffice
+echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+libreoffice
+
+######################################################################################
+
+# chrome
+echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
+/usr/bin/google-chrome-stable
+
+######################################################################################
+
+# evolution
+# restore backup
+# ask whether set evolution as autostart
+
+######################################################################################
+
+# expandrive
+
+~/.config/autostart/expandrive --autorun.desktop
+
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=expandrive --autorun
+Comment=expandrive --autorunstartup script
+Exec=/opt/ExpanDrive/expandrive --autorun
+StartupNotify=false
+Terminal=false
+
+# ask whether set evolution as autostart
+
+######################################################################################
+
+# slack
+#config
+/usr/bin/slack
+
+# ask whether to set as autostart
+
+
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 sudo apt-get autoremove -y && sudo apt-get clean
