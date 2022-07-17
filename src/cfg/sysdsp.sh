@@ -79,3 +79,9 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
         ;;
 esac
+
+# wechat
+        # configure scaling
+        echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
+        echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 200 or 250, then click [OK] to exit.${TEXT_RESET} \n"
+        env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
