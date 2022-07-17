@@ -32,12 +32,13 @@ cp -rf ./MyWorkspace-main/src/*.sh ./src/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/ 
 rm -rf ./MyWorkspace-main/
-echo -e "${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 
 # modify setup scripts
 sed -i '39,43d' ~/.setup_cache/inst/wechat.sh # save wechat sacling config for later
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh # avoid re-downloading
 sed -i '27,40d' ~/.setup_cache/setup.sh # avoid re-downloading
+
+echo -e "${TEXT_GREEN}All setup scripts ready${TEXT_RESET} \n" && sleep 1
 
 # setup
 bash ./inst/deb.sh
