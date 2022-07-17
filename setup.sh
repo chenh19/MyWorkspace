@@ -51,10 +51,11 @@ bash ./inst/biodevr.sh
 bash ./inst/biodevpy.sh
 
 # config
-#bash ./cfg/xxx.sh
-bash ./src/gitssh.sh
-bash ./src/cfgmdl.sh
-bash ./src/cfgsys.sh
-bash ./src/cfgapp.sh
-bash ./src/update.sh
-bash ./src/reboot.sh
+bash ./cfg/gitssh.sh
+bash ./cfg/sysmdl.sh
+bash ./cfg/sysstg.sh
+bash ./cfg/sysapp.sh
+bash ./cfg/sysdsp.sh
+bash ./cfg/usrapp.sh
+bash ./cfg/update.sh
+bash ./cfg/reboot.sh
