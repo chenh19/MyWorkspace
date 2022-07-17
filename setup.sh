@@ -37,6 +37,7 @@ echo -e "${TEXT_GREEN}All scripts downloaded${TEXT_RESET} \n" && sleep 1
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 sed -i '27,39d' ~/.setup_cache/setup.sh
+sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
 
 # setup
 bash ./inst/deb.sh
