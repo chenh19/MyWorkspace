@@ -27,8 +27,8 @@ echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
-[ ! -d ./src/ ] && mkdir ./src/
-cp -rf ./MyWorkspace-main/src/inst/* ./src/
+[ ! -d ./inst/ ] && mkdir ./inst/
+cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
