@@ -7,6 +7,9 @@ TEXT_GREEN='\e[1;32m'
 TEXT_RESET='\e[0m'
 
 
+# mark setup.sh
+sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
+
 # final cleanup
 if [ -d ~/.setup_cache/ ]; then
 
@@ -24,12 +27,8 @@ if [ -d ~/.setup_cache/ ]; then
 
 fi
 
-# mark setup.sh
-sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
-
 # notify end
 echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
-
 
 # detect whether reboot is required
 if [ -f /var/run/reboot-required ]; then
