@@ -93,7 +93,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager to continue (from system tray).${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
