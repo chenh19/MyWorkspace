@@ -24,6 +24,8 @@ if [ -d ~/.setup_cache/ ]; then
 
 fi
 
+# mark setup.sh
+sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
 
 # notify end
 echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
