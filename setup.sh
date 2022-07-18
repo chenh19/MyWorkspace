@@ -47,6 +47,8 @@ rm -rf ./MyWorkspace-main/
 #sed -i 's/^/          /' ./cfg/usrapp.sh
 #sed -i 's/^/                /' ./cfg/usrapp.sh
 
+# ./cfg.cache
+
 # add end
 #echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
