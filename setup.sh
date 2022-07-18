@@ -38,22 +38,22 @@ cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
 ## modfiy deb.sh
-start1="$(grep -wn "###>>>sed-i-d-start-1" ./inst/deb.sh | head -n 1 | cut -d: -f1)"
-end1="$(grep -wn "###>>>sed-i-d-end-1" ./inst/deb.sh | tail -n 1 | cut -d: -f1)"
 start2="$(grep -wn "###>>>sed-i-d-start-2" ./inst/deb.sh | head -n 1 | cut -d: -f1)"
 end2="$(grep -wn "###>>>sed-i-d-end-2" ./inst/deb.sh | tail -n 1 | cut -d: -f1)"
 echo "" >> ./cfg.cache
+start1="$(grep -wn "###>>>sed-i-d-start-1" ./inst/deb.sh | head -n 1 | cut -d: -f1)"
+end1="$(grep -wn "###>>>sed-i-d-end-1" ./inst/deb.sh | tail -n 1 | cut -d: -f1)"
 sed -n "$start2,$end2"'p' ./inst/deb.sh >> ./cfg.cache
 sed -i "$start1,$end1"'d' ./inst/deb.sh
 unset start1 end1 start2 end2
 
 ## modify appimage.sh
-start1="$(grep -wn "###>>>sed-i-d-start-1" ./inst/appimage.sh | head -n 1 | cut -d: -f1)"
-end1="$(grep -wn "###>>>sed-i-d-end-1" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
 start2="$(grep -wn "###>>>sed-i-d-start-2" ./inst/appimage.sh | head -n 1 | cut -d: -f1)"
 end2="$(grep -wn "###>>>sed-i-d-end-2" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
 echo "" >> ./cfg.cache
 sed -n "$start2,$end2"'p' ./inst/appimage.sh >> ./cfg.cache
+start1="$(grep -wn "###>>>sed-i-d-start-1" ./inst/appimage.sh | head -n 1 | cut -d: -f1)"
+end1="$(grep -wn "###>>>sed-i-d-end-1" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
 sed -i "$start1,$end1"'d' ./inst/appimage.sh
 unset start1 end1 start2 end2
 
