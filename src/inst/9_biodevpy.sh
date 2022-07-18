@@ -45,8 +45,6 @@ case "$choice" in
                 sudo apt-get -f -y install
                 
                 # config Jupyter Lab
-                echo -e " \n${TEXT_YELLOW}Please config and then close Jupyter Lab to continue.${TEXT_RESET} \n" && sleep 1
-                /opt/JupyterLab/jupyterlab-desktop %U
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/
@@ -73,8 +71,40 @@ case "$choice" in
 esac
 
 ###>>>sed-i-d-start-1
-###>>>sed-i-d-start-2
-###>>>sed-i-d-end-2
+# manual config
+if [ -d /opt/JupyterLab/ ] 
+then
+
+# aske whether to configure Python dev env manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Python developing environment now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # ask for individual apps
+        
+        ###>>>sed-i-d-start-2
+        ## eudic
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure JupyterLab? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then close Jupyter Lab to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/JupyterLab/jupyterlab-desktop
+                # notify end
+                echo -e " \n${TEXT_GREEN}JupyterLab configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}JupyterLab not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        ###>>>sed-i-d-end-2
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Python developing environment Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Python developing environment not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
+
+fi
 ###>>>sed-i-d-end-1
 
 # mark setup.sh
