@@ -37,7 +37,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
-# modify scripts with manual configuration
+# move manual configuration to the end if not using individual scripts
 scripts="./inst/*.sh"
 for script in $scripts
 do
