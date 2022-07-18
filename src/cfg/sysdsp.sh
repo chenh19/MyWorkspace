@@ -81,7 +81,11 @@ case "$choice" in
 esac
 
 # wechat
+if [ -d ~/.deepinwine/Deepin-WeChat/drive_c/Program Files/Tencent/WeChat/ ] 
+then
         # configure scaling
         echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
         echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 200 or 250, then click [OK] to exit.${TEXT_RESET} \n"
         env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
+fi
+
