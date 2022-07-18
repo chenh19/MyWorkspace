@@ -97,7 +97,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
@@ -110,7 +110,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
                 inkscape
                 # notify end
                 echo -e " \n${TEXT_GREEN}Inkscape configured!${TEXT_RESET} \n" && sleep 1;;
@@ -137,7 +137,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure LibreOffice? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
                 libreoffice
                 # notify end
                 echo -e " \n${TEXT_GREEN}LibreOffice configured!${TEXT_RESET} \n" && sleep 1;;
