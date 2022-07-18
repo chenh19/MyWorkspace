@@ -9,6 +9,7 @@ TEXT_RESET='\e[0m'
 
 # mark setup.sh
 sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
+cp ./cfg/8_personalization.md ~/Desktop/personalization.md
 
 # final cleanup
 if [ -d ~/.setup_cache/ ]; then
