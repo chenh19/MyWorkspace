@@ -35,11 +35,6 @@ case "$choice" in
         # configure language
         sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v2.sh
         "/opt/deepinwine/apps/Deepin-WeChat/run.sh" -u %u && sleep 10 && killall -9 WeChat.exe && sleep 5
-        
-        # configure scaling
-        echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
-        echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 200 or 250, then click [OK] to exit.${TEXT_RESET} \n"
-        env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
 
         # cleanup
         rm -rf ./deepin-wine-ubuntu-master/ && sudo apt-get autoremove -y && sudo apt-get clean
@@ -52,10 +47,6 @@ case "$choice" in
 
 esac
 
-###>>>sed-i-d-start-1
-###>>>sed-i-d-start-2
-###>>>sed-i-d-end-2
-###>>>sed-i-d-end-1
 
 # mark setup.sh
 sed -i 's+bash ./src/wechat.sh+#bash ./src/wechat.sh+g' ~/.setup_cache/setup.sh
