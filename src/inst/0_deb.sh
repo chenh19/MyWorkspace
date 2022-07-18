@@ -163,7 +163,7 @@ case "$choice" in
                 # restore backup
                 # ask whether set evolution as autostart
                 # notify end
-                echo -e " \n${TEXT_GREEN}Evolution (email client) onfigured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}Evolution (email client) configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Evolution (email client) not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
