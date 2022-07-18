@@ -62,11 +62,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   ## default open with Discovery
   #if grep -q "alias rm='bash ~/.rm.sh >/dev/null 2>&1'" ~/.bashrc ; then sed -i '/alias rm=/d' ~/.bashrc ; fi
   #mimeapps
-
-  ## Start Slack minimized
-  sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
-  # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
-
+  
   ## zoom auto scaling
   kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
@@ -192,6 +188,9 @@ case "$choice" in
                 #config
                 /usr/bin/slack
                 # ask whether to set as autostart
+                ## Start Slack minimized
+                sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
+                # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
                 # notify end
                 echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
