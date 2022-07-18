@@ -24,7 +24,7 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
 # download and organize setup scripts
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
-####>>>>sed-i-d-start<<<<####
+###>>>sed-i-d-start
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
@@ -58,10 +58,11 @@ rm -rf ./MyWorkspace-main/
 #sed -i '27,40d' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 
-#start="$(grep -wn "####>>>>sed-i-d-start<<<<####" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
-#end="$(grep -wn "####>>>>sed-i-d-end<<<<####" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
-#sed -i "$start,$end"'d' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-####>>>>sed-i-d-end<<<<####
+#start="$(grep -wn "###>>>sed-i-d-start" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
+#end="$(grep -wn "###>>>sed-i-d-end" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
+#sed -i "$start,$end"'d' ~/.setup_cache/setup.sh
+#unset start end
+###>>>sed-i-d-end
 
 # setup
 #bash ./inst/deb.sh
