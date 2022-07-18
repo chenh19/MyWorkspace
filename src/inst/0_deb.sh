@@ -54,6 +54,23 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb #_to_be_updated
   sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
+# install apps (licensed)
+  ## expandrive
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Installing ExpanDrive...${TEXT_RESET} \n" && sleep 1
+                # download
+                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb
+                # install
+                sleep 1 && mv -f ./ExpanDrive*.deb ./deb/ && sudo apt-get install -f -y ./deb/ExpanDrive*.deb
+                # notify end
+                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;;
+          * ) # notify cancellation
+                echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;;
+  esac
+
 # fix missings
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
