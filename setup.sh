@@ -61,7 +61,7 @@ if grep -q "sed-i-d-" ./cfg/usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/usrapp.s
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 #start0="$(grep -wn "###>>>sed-i-d-start-0" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
 #end0="$(grep -wn "###>>>sed-i-d-end-0" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
 #sed -i "$start0,$end0"'d' ~/.setup_cache/setup.sh
