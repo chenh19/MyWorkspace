@@ -114,7 +114,7 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
-        ## eudic
+        ## RStudio
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
