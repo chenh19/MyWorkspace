@@ -60,8 +60,6 @@ case "$choice" in
                 sudo apt-get -f -y install
                 
                 # config
-                echo -e " \n${TEXT_YELLOW}Please config and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
-                rstudio
                 [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
                 kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
                 
@@ -105,8 +103,40 @@ case "$choice" in
 esac
 
 ###>>>sed-i-d-start-1
-###>>>sed-i-d-start-2
-###>>>sed-i-d-end-2
+# manual config
+if [ -d ~/.config/RStudio/ ] 
+then
+
+# aske whether to configure R dev env manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure R developing environment now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # ask for individual apps
+        
+        ###>>>sed-i-d-start-2
+        ## eudic
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
+                rstudio
+                # notify end
+                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        ###>>>sed-i-d-end-2
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}AppImage apps Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}AppImage apps not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
+
+fi
 ###>>>sed-i-d-end-1
 
 # mark setup.sh
