@@ -42,6 +42,7 @@ sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
 sed -i -e 's/[ \t]*//' ./cfg/usrapp.sh
 
 # add tabs
+sed -i 's/^/  /' ./cfg/usrapp.sh
 sed -i 's/^/        /' ./cfg/usrapp.sh
 
 # add end
