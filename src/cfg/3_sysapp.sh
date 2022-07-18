@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script configures KDE plasma settings
+# This script configures KDE plasma system apps and widgets
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
