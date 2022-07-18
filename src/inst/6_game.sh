@@ -22,10 +22,10 @@ case "$choice" in
         # human resource machine
         wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && sleep 5
         unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm HumanResourceMachine.zip?dl=0 && sleep 1
-        mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./src/ && sleep 1
+        mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./inst/ && sleep 1
         echo -e "${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
-        bash ./src/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
-        rm ./src/HumanResourceMachine-Linux-2016-03-23.sh
+        bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
+        rm ./inst/HumanResourceMachine-Linux-2016-03-23.sh
 
         # notify end
         echo -e " \n${TEXT_GREEN}Programming games installed!${TEXT_RESET} \n" && sleep 5;;
