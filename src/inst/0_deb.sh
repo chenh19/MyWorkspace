@@ -110,7 +110,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager to continue (from system tray).${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
@@ -176,9 +176,19 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your email account(s) or restore previous Evolution backup, then close Evolution to continue.${TEXT_RESET} \n" && sleep 1
                 evolution
-                # restore backup
-                # ask whether set evolution as autostart
+                # ask whether set as autostart
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Evolution to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) #write script: sleep 10 && (LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evolution$|awk {'print $1;'})
+                        #write .desktop
+                        echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                # edit .desktop
+                #(LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evolution$|awk {'print $1;'}) 
                 # notify end
                 echo -e " \n${TEXT_GREEN}Evolution (email client) configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -192,8 +202,16 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your cloud driver account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/ExpanDrive/expandrive
                 # ask whether set expandrive as autostart
-                echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like ExpanDrive to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
+                        echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
                 # notify end
                 echo -e " \n${TEXT_GREEN}ExpanDrive configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -206,12 +224,18 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Slack? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                #config
+                echo -e " \n${TEXT_YELLOW}Please login to your Slack workspace(s) and quit Slack (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /usr/bin/slack
                 # ask whether to set as autostart
-                ## Start Slack minimized
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Slack to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) #write .desktop
+                        echo -e " \n${TEXT_GREEN}Slack will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Slack will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                # Start Slack minimized
                 sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
-                # right click on the Slack icon on the bottom right, click "Check for Updates..." to open login interface, check "Launch on Login" if preferred
                 # notify end
                 echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
