@@ -24,6 +24,7 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
 # download and organize setup scripts
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
+####>>>>sed-i-d-start<<<<####
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
@@ -56,6 +57,7 @@ rm -rf ./MyWorkspace-main/
 #sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 #sed -i '27,40d' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
+####>>>>sed-i-d-end<<<<####
 
 # setup
 #bash ./inst/deb.sh
