@@ -87,11 +87,14 @@ kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 
 kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key mountiso "true"
 
 ## Configure Dolphin
-General > uncheck "show selection marker"
-Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
-Right click and hide unnecessary shortcuts in the left panel
+# General > uncheck "show selection marker"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCalledFolderInNewTab "false"
+# Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
+# Right click and hide unnecessary shortcuts in the left panel
 
-## hide the unnecessary folders on the left panel
+# hide the unnecessary folders on the left panel
 
 ## label the /root
 sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
