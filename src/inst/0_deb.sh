@@ -214,7 +214,7 @@ case "$choice" in
                 case "$choice" in
                   y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
                         echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > ~/.config/autostart/'expandrive --autorun.desktop'
-                        sudo chmod +x '~/.config/autostart/expandrive --autorun.desktop'
+                        sudo chmod +x ~/.config/autostart/'expandrive --autorun.desktop'
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
