@@ -64,7 +64,7 @@ case "$choice" in
         ###>>>sed-i-d-start-2
         ## eudic
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure EuDic? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
