@@ -112,6 +112,7 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
+                [ -f ~/.config/autostart/FDM.desktop ] && rm ~/.config/autostart/FDM.desktop
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -183,6 +184,7 @@ case "$choice" in
                 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Evolution to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
                 case "$choice" in
                   y|Y ) sudo cp -rf ./cfg/Startup/ /opt/
+                        sudo chmod +x /opt/Startup/evolution.sh
                         [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
                         echo -e "[Desktop Entry] \nExec=/opt/Startup/evolution.sh \nIcon=dialog-scripts \nName=evolution.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
                         sudo chmod +x ~/.config/autostart/evolution.sh.desktop
