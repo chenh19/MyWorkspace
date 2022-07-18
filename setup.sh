@@ -37,7 +37,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
-#
+# modify scripts with manual configuration
 scripts="./inst/*.sh"
 for script in $scripts
 do
@@ -46,15 +46,16 @@ do
         start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
         end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
         echo "" >> ./cfg.cache
-        sed -n "$start2,$end2"'p' $script >> ./cfg.cache
+        sed -n "$start2,$end2"'p' $script >> ./cfg/usrapp.sh
         unset start2 end2
         start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
         end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
         sed -i "$start1,$end1"'d' $script
         unset start1 end1
-        echo "Manual configuration part of $script is moved to the end."
+        echo "Manual configuration part of $script is moved to the end of this setup process."
     fi
 done
+echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
 ## modify usrapp.sh
 #sed -i -e 's/[ \t]*//' ./cfg.cache
@@ -63,8 +64,6 @@ done
 #sed -i 's/^/        /' ./cfg.cache
 #sed -i 's/^/          /' ./cfg.cache
 #sed -i 's/^/                /' ./cfg.cache
-# add end
-#echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
