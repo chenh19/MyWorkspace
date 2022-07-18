@@ -183,12 +183,6 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 
 ######################################################################################
 
-# touchegg
-[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
-cp -f ./cfg/touchegg/* ~/.config/touchegg/
-
-######################################################################################
-
 
 # notify end
 echo -e " \n${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
