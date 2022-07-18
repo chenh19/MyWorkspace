@@ -114,6 +114,15 @@ echo -e '[Event/Update] \nAction= \nExecute= \Logfile= \nSound= \nTTS= \n \n[Eve
 
 ######################################################################################
 
+# Default applications
+[Added Associations]
+application/vnd.debian.binary-package=org.kde.discover.desktop;qapt-deb-installer.desktop;org.kde.ark.desktop;
+
+[Default Applications]
+application/vnd.debian.binary-package=org.kde.discover.desktop;
+
+######################################################################################
+
 # Firewall
 
 ## System Settings > Firewall > check "Enabled"
