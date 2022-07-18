@@ -82,11 +82,11 @@ unset start0 end0
 #bash ./inst/9_biodevpy.sh
 
 # config
-#bash ./cfg/gitssh.sh
-#bash ./cfg/sysmdl.sh
-#bash ./cfg/sysstg.sh
-#bash ./cfg/sysapp.sh
-#bash ./cfg/sysdsp.sh
-#bash ./cfg/usrapp.sh
-#bash ./cfg/update.sh
-#bash ./cfg/reboot.sh
+#bash ./cfg/0_gitssh.sh
+#bash ./cfg/1_sysmdl.sh
+#bash ./cfg/2_sysstg.sh
+#bash ./cfg/3_sysapp.sh
+#bash ./cfg/4_sysdsp.sh
+#bash ./cfg/5_usrapp.sh
+#bash ./cfg/6_update.sh
+#bash ./cfg/7_reboot.sh
