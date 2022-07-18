@@ -251,6 +251,19 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Slack not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
+        ## zoom
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Zoom? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please use ${TEXT_GREEN}SSO${TEXT_YELLOW} to login Zoom: ${TEXT_GREEN}[uchicago.zoom.us]${TEXT_YELLOW} or ${TEXT_GREEN}[illinois.zoom.us]${TEXT_YELLOW}. Then, please quit Zoom (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/zoom
+                # notify end
+                echo -e " \n${TEXT_GREEN}Zoom configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Zoom not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## expandrive
         if [ -d /opt/ExpanDrive/ ]
         then
