@@ -86,15 +86,15 @@ case "$choice" in
         ###>>>sed-i-d-start-2
         ## eudic
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Snapgene Viewer? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure SnapGene Viewer? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
                 XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
                 # notify end
-                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}SnapGene Viewer configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}SnapGene Viewer not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         ###>>>sed-i-d-start-2
@@ -106,9 +106,9 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} and disconnect, then close the VPN client to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/cisco/anyconnect/bin/vpnui
                 # notify end
-                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}University VPN configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}University VPN not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         ###>>>sed-i-d-end-2
