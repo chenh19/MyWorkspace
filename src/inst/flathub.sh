@@ -23,6 +23,11 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche 
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
+# config
+## touchegg
+[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
+cp -f ./cfg/touchegg/* ~/.config/touchegg/
+
 
 # cleanup
 sudo snap remove firefox
