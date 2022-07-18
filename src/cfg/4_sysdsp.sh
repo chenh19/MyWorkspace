@@ -89,3 +89,6 @@ then
         env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
 fi
 
+
+# mark setup.sh
+sed -i 's+bash ./cfg/4_sysdsp.sh+#bash ./cfg/4_sysdsp.sh+g' ~/.setup_cache/setup.sh
