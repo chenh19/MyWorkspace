@@ -94,8 +94,6 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTab
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
 # Right click and hide unnecessary shortcuts in the left panel
 
-# hide the unnecessary folders on the left panel
-
 ## label the /root
 sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
