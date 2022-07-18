@@ -175,6 +175,7 @@ if grep -q "GRUB_TIMEOUT=10" /etc/default/grub ; then sudo sed -i 's+GRUB_TIMEOU
 ######################################################################################
 
 # System Update: Manually, and make sure "Use offline updates" is uncheck
+kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdates "false"
 
 ######################################################################################
 
