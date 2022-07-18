@@ -185,6 +185,7 @@ case "$choice" in
                   y|Y ) sudo cp -rf ./cfg/Startup/ /opt/
                         [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
                         echo -e "[Desktop Entry] \nExec=/opt/Startup/evolution.sh \nIcon=dialog-scripts \nName=evolution.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
+                        sudo chmod +x ~/.config/autostart/evolution.sh.desktop
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
@@ -202,13 +203,15 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_RESET} to activate ExpanDrive.Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_YELLOW} to activate ExpanDrive.Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/ExpanDrive/expandrive
                 # ask whether set expandrive as autostart
                 sudo echo ""
                 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like ExpanDrive to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
                 case "$choice" in
-                  y|Y ) echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
+                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
+                        sudo chmod +x '~/.config/autostart/expandrive --autorun.desktop'
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
@@ -230,7 +233,9 @@ case "$choice" in
                 sudo echo ""
                 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Slack to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
                 case "$choice" in
-                  y|Y ) #write .desktop
+                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e "[Desktop Entry] \nCategories=GNOME;GTK;Network;InstantMessaging; \nComment=Slack Desktop \nExec=/usr/bin/slack -u %U \nGenericName=Slack Client for Linux \nIcon=/usr/share/pixmaps/slack.png \nMimeType=x-scheme-handler/slack; \nName=Slack \nNoDisplay=false \nPath= \nStartupNotify=true \nStartupWMClass=Slack \nTerminal=false \nTerminalOptions= \nType=Application \nX-KDE-SubstituteUID=false \nX-KDE-Username= \n" > ~/.config/autostart/slack.desktop
+                        sudo chmod +x ~/.config/autostart/slack.desktop
                         echo -e " \n${TEXT_GREEN}Slack will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Slack will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
