@@ -53,14 +53,38 @@ sudo cp -rf ./*.desktop /usr/share/applications/ && sleep 5
 [ ! -d ~/.config/balena-etcher-electron/ ] && mkdir ~/.config/balena-etcher-electron/
 echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher-electron/config.json
 
+###>>>sed-i-d-start-1
 # manual config
-######################################################################################
-
-# eudic
-/opt/eudic/eudic.AppImage
-echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
-XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
-
+# aske whether to configure appimages manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure AppImage apps now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # ask for individual apps
+        
+        ###>>>sed-i-d-start-2
+        ## eudic
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
+                XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        ###>>>sed-i-d-end-2
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Apt installed apps Not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
+###>>>sed-i-d-end-1
 
 # cleanup
 rm -rf ./etcher/ ./tropy/ ./eudic/ && rm ./*.desktop
