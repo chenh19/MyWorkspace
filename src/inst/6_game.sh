@@ -36,4 +36,4 @@ esac
 
 
 # mark setup.sh
-sed -i 's+bash ./src/game.sh+#bash ./src/game.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/6_game.sh+#bash ./inst/6_game.sh+g' ~/.setup_cache/setup.sh
