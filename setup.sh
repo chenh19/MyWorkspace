@@ -38,7 +38,7 @@ cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
 #
-script="./inst/*.sh"
+scripts="./inst/*.sh"
 for script in $scripts
 do
     start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
