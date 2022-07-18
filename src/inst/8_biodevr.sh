@@ -104,6 +104,10 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}R bioinformatic tools not installed.${TEXT_RESET} \n" && sleep 5;;
 esac
 
+###>>>sed-i-d-start-1
+###>>>sed-i-d-start-2
+###>>>sed-i-d-end-2
+###>>>sed-i-d-end-1
 
 # mark setup.sh
 sed -i 's+bash ./src/biodevr.sh+#bash ./src/biodevr.sh+g' ~/.setup_cache/setup.sh
