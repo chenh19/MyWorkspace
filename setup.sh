@@ -41,16 +41,19 @@ rm -rf ./MyWorkspace-main/
 scripts="./inst/*.sh"
 for script in $scripts
 do
-    start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
-    end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
-    echo "" >> ./cfg.cache
-    sed -n "$start2,$end2"'p' $script >> ./cfg.cache
-    unset start2 end2
-    start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
-    end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
-    sed -i "$start1,$end1"'d' $script
-    unset start1 end1
-    echo "Processing $script"
+    if grep -q "###>>>sed-i-d-start" $script
+    then 
+        start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
+        end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
+        echo "" >> ./cfg.cache
+        sed -n "$start2,$end2"'p' $script >> ./cfg.cache
+        unset start2 end2
+        start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
+        end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
+        sed -i "$start1,$end1"'d' $script
+        unset start1 end1
+        echo "Processing $script"
+    fi
 done
 
 ## modify usrapp.sh
