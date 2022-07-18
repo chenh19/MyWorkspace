@@ -44,6 +44,8 @@ rm -rf ./MyWorkspace-main/
 # add tabs
 #sed -i 's/^/  /' ./cfg/usrapp.sh
 #sed -i 's/^/        /' ./cfg/usrapp.sh
+#sed -i 's/^/          /' ./cfg/usrapp.sh
+#sed -i 's/^/                /' ./cfg/usrapp.sh
 
 # add end
 #echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
