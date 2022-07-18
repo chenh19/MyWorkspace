@@ -99,7 +99,6 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -113,7 +112,6 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
                 inkscape
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}Inkscape configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -128,7 +126,6 @@ case "$choice" in
                   # do not check update notification when first open 
                   echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
                   qview
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}qView configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -142,7 +139,6 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
                 libreoffice
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}LibreOffice configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -156,7 +152,6 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
                 /usr/bin/google-chrome-stable
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}Google Chrome configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -170,7 +165,6 @@ case "$choice" in
           y|Y ) # notify start
                 # restore backup
                 # ask whether set evolution as autostart
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}Evolution (email client) onfigured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -184,7 +178,6 @@ case "$choice" in
           y|Y ) # notify start
                 # ask whether set evolution as autostart
                 echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}ExpanDrive configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -199,7 +192,6 @@ case "$choice" in
                 #config
                 /usr/bin/slack
                 # ask whether to set as autostart
-  
                 # notify end
                 echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
