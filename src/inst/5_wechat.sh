@@ -52,5 +52,10 @@ case "$choice" in
 
 esac
 
+###>>>sed-i-d-start-1
+###>>>sed-i-d-start-2
+###>>>sed-i-d-end-2
+###>>>sed-i-d-end-1
+
 # mark setup.sh
 sed -i 's+bash ./src/wechat.sh+#bash ./src/wechat.sh+g' ~/.setup_cache/setup.sh
