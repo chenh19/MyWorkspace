@@ -19,3 +19,6 @@ ssh-add ~/.ssh/ed25519
 # get the key
 cat ~/.ssh/ed25519.pub
 echo 'copy the above key, then navigate to Github account and add the ssh key'
+
+# mark setup.sh
+sed -i 's+bash ./cfg/0_gitssh.sh+#bash ./cfg/0_gitssh.sh+g' ~/.setup_cache/setup.sh
