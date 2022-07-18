@@ -28,7 +28,7 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps (ppa)
   ## Inkscape
-  sudo add-apt-repository ppa:inkscape.dev/stable
+  sudo add-apt-repository ppa:inkscape.dev/stable -y
   sudo apt-get update && sudo apt-get install inkscape -y
 
 # install apps (source list)
