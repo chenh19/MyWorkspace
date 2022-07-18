@@ -34,6 +34,10 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Programming games not installed.${TEXT_RESET} \n" && sleep 5;;
 esac
 
+###>>>sed-i-d-start-1
+###>>>sed-i-d-start-2
+###>>>sed-i-d-end-2
+###>>>sed-i-d-end-1
 
 # mark setup.sh
 sed -i 's+bash ./src/game.sh+#bash ./src/game.sh+g' ~/.setup_cache/setup.sh
