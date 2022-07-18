@@ -217,4 +217,4 @@ rm -rf ./deb/
 echo -e " \n${TEXT_GREEN}Deb pacakges installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sed -i 's+bash ./src/0_deb.sh+#bash ./src/0_deb.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/0_deb.sh+#bash ./inst/0_deb.sh+g' ~/.setup_cache/setup.sh
