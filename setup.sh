@@ -52,7 +52,7 @@ do
         end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
         sed -i "$start1,$end1"'d' $script
         unset start1 end1
-        echo "Processing $script"
+        echo "Manual configuration part of $script is moved to the end."
     fi
 done
 
