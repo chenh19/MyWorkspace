@@ -182,8 +182,9 @@ case "$choice" in
                 sudo echo ""
                 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Evolution to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
                 case "$choice" in
-                  y|Y ) #write script: sleep 10 && (LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evolution$|awk {'print $1;'})
-                        #write .desktop
+                  y|Y ) sudo cp -rf ./cfg/Startup/ /opt/
+                        [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e "[Desktop Entry] \nExec=/opt/Startup/evolution.sh \nIcon=dialog-scripts \nName=evolution.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
