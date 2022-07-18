@@ -56,7 +56,7 @@ case "$choice" in
                 rm -rf ./anyconnect-linux64-4.10.04065/
                 
                 # notify end
-                echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5
+                echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5;;
                 
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}University VPN not installed.${TEXT_RESET} \n" && sleep 5;;
