@@ -25,10 +25,6 @@ echo -e "SGFuZyBDaGVufGNoZW5faEBvdXRsb29rLmNvbXwzUE9NLURMWkEtVFdIRy1ITzgwLUM2Nlg
 # install latest kernel
 sudo ukuu --scripted --install-latest
 
-###>>>sed-i-d-start-1
-###>>>sed-i-d-start-2
-###>>>sed-i-d-end-2
-###>>>sed-i-d-end-1
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
