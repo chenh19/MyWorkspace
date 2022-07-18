@@ -51,4 +51,4 @@ esac
 
 
 # mark setup.sh
-sed -i 's+bash ./src/fcitx.sh+#bash ./src/fcitx.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/4_fcitx.sh+#bash ./inst/4_fcitx.sh+g' ~/.setup_cache/setup.sh
