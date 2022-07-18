@@ -38,6 +38,9 @@ echo "" >> ./cfg/usrapp.sh
 sed -n 39,43p ~/.setup_cache/inst/wechat.sh >> ./cfg/usrapp.sh
 sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
 
+# remove tabs
+sed -i -e 's/[ \t]*//' ./cfg/usrapp.sh
+
 # avoid re-downloading
 #sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 #sed -i '27,40d' ~/.setup_cache/setup.sh
