@@ -55,15 +55,8 @@ do
         echo "Manual configuration part of $script is moved to the end of this setup process."
     fi
 done
-echo -e " \n        # notify end \n        echo -e ' \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n' && sleep 5;; \n         \n         \n  * ) # notify cancellation \n        echo -e ' \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac" >> ./cfg/usrapp.sh
-
-## modify usrapp.sh
-#sed -i -e 's/[ \t]*//' ./cfg.cache
-# add tabs
-#sed -i 's/^/  /' ./cfg.cache
-#sed -i 's/^/        /' ./cfg.cache
-#sed -i 's/^/          /' ./cfg.cache
-#sed -i 's/^/                /' ./cfg.cache
+cat ./cfg/usrapp_tail.sh >> ./cfg/usrapp.sh
+rm ./cfg/usrapp_tail.sh
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
