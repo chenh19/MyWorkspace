@@ -83,6 +83,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
 
+# manual config
 
   # aske whether to configure apps manually
   ######################################################################################
