@@ -7,6 +7,7 @@ TEXT_GREEN='\e[1;32m'
 TEXT_RESET='\e[0m'
 
 # set working directory
+[ ! -d ~/.ssh/ ] && mkdir ~/.ssh/
 cd ~
 
 
