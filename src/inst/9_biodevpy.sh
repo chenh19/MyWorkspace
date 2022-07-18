@@ -45,6 +45,8 @@ case "$choice" in
                 sudo apt-get -f -y install
                 
                 # config Jupyter Lab
+                [ ! -d ~/.config/jupyterlab-desktop/ ] && mkdir ~/.config/jupyterlab-desktop/
+                [ ! -d ~/.config/jupyterlab-desktop/lab/ ] && mkdir ~/.config/jupyterlab-desktop/lab/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/
                 [ ! -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/ ] && mkdir ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/
