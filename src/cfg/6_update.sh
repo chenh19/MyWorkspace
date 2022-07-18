@@ -40,3 +40,6 @@ rm update.R && sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 5
+
+# mark setup.sh
+sed -i 's+bash ./cfg/6_update.sh+#bash ./cfg/6_update.sh+g' ~/.setup_cache/setup.sh
