@@ -35,6 +35,7 @@ cp -rf ./MyWorkspace-main/setup.sh ./
 cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
+cp -rf ./cfg/System/ ~/Pictures/
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
