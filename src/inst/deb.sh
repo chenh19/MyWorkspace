@@ -85,6 +85,22 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
 
 # manual config
 
+# aske whether to configure .deb apps manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apps manually? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
+
+        # notify end
+        echo -e " \n${TEXT_GREEN}WeChat installed!${TEXT_RESET} \n" && sleep 5;;
+
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}WeChat not installed.${TEXT_RESET} \n" && sleep 5;;
+
+esac
+
   # aske whether to configure apps manually
   ######################################################################################
 
