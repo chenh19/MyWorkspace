@@ -16,4 +16,4 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apps manua
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Configuring user apps...${TEXT_RESET} \n" && sleep 1
