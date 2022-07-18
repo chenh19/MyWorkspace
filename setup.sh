@@ -24,7 +24,7 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
 # download and organize setup scripts
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
-###>>>sed-i-d-start
+###>>>sed-i-d-start-0
 unset start end
 
 ## download all
@@ -68,14 +68,13 @@ unset start1 end1 start2 end2
 #echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
 # avoid re-downloading
-#sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-#sed -i '27,40d' ~/.setup_cache/setup.sh
+sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
-#start="$(grep -wn "###>>>sed-i-d-start" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
-#end="$(grep -wn "###>>>sed-i-d-end" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
-#sed -i "$start,$end"'d' ~/.setup_cache/setup.sh
-#unset start end
-###>>>sed-i-d-end
+#start-0="$(grep -wn "###>>>sed-i-d-start-0" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
+#end-0="$(grep -wn "###>>>sed-i-d-end-0" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
+#sed -i "$start-0,$end-0"'d' ~/.setup_cache/setup.sh
+#unset start-0 end-0
+###>>>sed-i-d-end-0
 
 # setup
 #bash ./inst/deb.sh
