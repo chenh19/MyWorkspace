@@ -18,7 +18,7 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Starting...${TEXT_RESET} \n" && sleep 1
 
-# command(s)
+# install
 
 # configure
 
