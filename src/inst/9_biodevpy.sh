@@ -108,4 +108,4 @@ fi
 ###>>>sed-i-d-end-1
 
 # mark setup.sh
-sed -i 's+bash ./src/biodevpy.sh+#bash ./src/biodevpy.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/9_biodevpy.sh+#bash ./inst/9_biodevpy.sh+g' ~/.setup_cache/setup.sh
