@@ -132,19 +132,6 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Enpass not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
-        ## inkscape
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
-                inkscape
-                # notify end
-                echo -e " \n${TEXT_GREEN}Inkscape configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Inkscape not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        
         ## qview
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure qView? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -172,6 +159,19 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}LibreOffice not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
+        ## inkscape
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+                inkscape
+                # notify end
+                echo -e " \n${TEXT_GREEN}Inkscape configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Inkscape not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+                
         ## fdm
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -212,6 +212,31 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Evolution (email client) not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
+                
+        ## slack
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Slack? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your Slack workspace(s) and quit Slack (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/slack
+                # ask whether to set as autostart
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Slack to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e "[Desktop Entry] \nCategories=GNOME;GTK;Network;InstantMessaging; \nComment=Slack Desktop \nExec=/usr/bin/slack -u %U \nGenericName=Slack Client for Linux \nIcon=/usr/share/pixmaps/slack.png \nMimeType=x-scheme-handler/slack; \nName=Slack \nNoDisplay=false \nPath= \nStartupNotify=true \nStartupWMClass=Slack \nTerminal=false \nTerminalOptions= \nType=Application \nX-KDE-SubstituteUID=false \nX-KDE-Username= \n" > ~/.config/autostart/slack.desktop
+                        sudo chmod +x ~/.config/autostart/slack.desktop
+                        echo -e " \n${TEXT_GREEN}Slack will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Slack will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                # Start Slack minimized
+                sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
+                # notify end
+                echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Slack not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
         
         ## expandrive
         if [ -d /opt/ExpanDrive/ ]
@@ -238,31 +263,6 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}ExpanDrive not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         fi
-        
-        ## slack
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Slack? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please login to your Slack workspace(s) and quit Slack (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
-                /usr/bin/slack
-                # ask whether to set as autostart
-                sudo echo ""
-                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Slack to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
-                case "$choice" in
-                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
-                        echo -e "[Desktop Entry] \nCategories=GNOME;GTK;Network;InstantMessaging; \nComment=Slack Desktop \nExec=/usr/bin/slack -u %U \nGenericName=Slack Client for Linux \nIcon=/usr/share/pixmaps/slack.png \nMimeType=x-scheme-handler/slack; \nName=Slack \nNoDisplay=false \nPath= \nStartupNotify=true \nStartupWMClass=Slack \nTerminal=false \nTerminalOptions= \nType=Application \nX-KDE-SubstituteUID=false \nX-KDE-Username= \n" > ~/.config/autostart/slack.desktop
-                        sudo chmod +x ~/.config/autostart/slack.desktop
-                        echo -e " \n${TEXT_GREEN}Slack will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
-                   * )  echo -e " \n${TEXT_YELLOW}Slack will not autostart.${TEXT_RESET} \n" && sleep 1;;
-                esac
-                # Start Slack minimized
-                sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
-                # notify end
-                echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Slack not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
         ###>>>sed-i-d-end-2
         
         # notify end
