@@ -44,4 +44,4 @@ esac
 
 
 # mark setup.sh
-sed -i 's+bash ./src/model.sh+#bash ./src/model.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./cfg/1_sysmdl.sh+#bash ./cfg/1_sysmdl.sh+g' ~/.setup_cache/setup.sh
