@@ -187,8 +187,7 @@ case "$choice" in
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
-                # edit .desktop
-                #(LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evolution$|awk {'print $1;'}) 
+                sudo sed -i 's+Exec=evolution %U+Exec=(LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evolution$|awk {'print $1;'})+g' /usr/share/applications/org.gnome.Evolution.desktop
                 # notify end
                 echo -e " \n${TEXT_GREEN}Evolution (email client) configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
