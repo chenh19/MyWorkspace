@@ -74,7 +74,8 @@ kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' 
 sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
 
 ### spectacle region: Alt+P
-# to be written
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key 'RectangularRegionScreenShot' "Alt+P,Meta+Shift+Print,Capture Rectangular Region"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key '_launch' "Print,Print,Spectacle"
 
 ######################################################################################
 
