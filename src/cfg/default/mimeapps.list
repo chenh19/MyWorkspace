@@ -40,6 +40,5 @@ x-scheme-handler/magnet=freedownloadmanager_magnet_up.desktop
 x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 x-scheme-handler/simplenote=simplenote.desktop
 x-scheme-handler/slack=slack.desktop
-x-scheme-handler/tropy=Tropy.desktop
 x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
-
+x-scheme-handler/tropy=Tropy.desktop
