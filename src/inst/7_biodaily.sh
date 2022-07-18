@@ -80,5 +80,10 @@ case "$choice" in
 
 esac
 
+###>>>sed-i-d-start-1
+###>>>sed-i-d-start-2
+###>>>sed-i-d-end-2
+###>>>sed-i-d-end-1
+
 # mark setup.sh
 sed -i 's+bash ./src/biodaily.sh+#bash ./src/biodaily.sh+g' ~/.setup_cache/setup.sh
