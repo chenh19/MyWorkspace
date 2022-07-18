@@ -88,7 +88,7 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
-        ## eudic
+        ## snapgene
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure SnapGene Viewer? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
@@ -104,7 +104,6 @@ case "$choice" in
         # university vpn
         if [ -d  /opt/cisco/anyconnect/bin/ ] 
         then
-        ## eudic
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
