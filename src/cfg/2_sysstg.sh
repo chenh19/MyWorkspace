@@ -192,4 +192,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./fonts/
 
 # mark setup.sh
-sed -i 's+bash ./src/cfgsys.sh+#bash ./src/cfgsys.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./cfg/2_sysstg.sh+#bash ./cfg/2_sysstg.sh+g' ~/.setup_cache/setup.sh
