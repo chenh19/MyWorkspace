@@ -116,15 +116,9 @@ echo -e '[Event/Update] \nAction= \nExecute= \Logfile= \nSound= \nTTS= \n \n[Eve
 ######################################################################################
 
 # Default applications
-
-~/.config/mimeapps.list
-
-[Added Associations]
-application/vnd.debian.binary-package=org.kde.discover.desktop;qapt-deb-installer.desktop;org.kde.ark.desktop;
-
-[Default Applications]
-application/vnd.debian.binary-package=org.kde.discover.desktop;
-text/html=google-chrome.desktop
+kwriteconfig5 --file ~/.config/mimeapps.list --group "Added Associations" --key 'application/vnd.debian.binary-package' "org.kde.discover.desktop;qapt-deb-installer.desktop;org.kde.ark.desktop;"
+kwriteconfig5 --file ~/.config/mimeapps.list --group "Default Applications" --key 'application/vnd.debian.binary-package' "org.kde.discover.desktop;"
+kwriteconfig5 --file ~/.config/mimeapps.list --group "Default Applications" --key 'text/html' "google-chrome.desktop"
 
 ######################################################################################
 
