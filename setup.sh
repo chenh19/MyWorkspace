@@ -7,12 +7,12 @@ TEXT_GREEN='\e[1;32m'
 TEXT_RESET='\e[0m'
 
 # set working directory
+sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
 
 # check internet connection
-sudo echo ""
 echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n"
 wget -q --spider http://google.com
 until [[ $? -eq 0 ]] ; do
