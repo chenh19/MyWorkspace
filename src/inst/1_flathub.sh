@@ -28,6 +28,10 @@ sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
 cp -f ./cfg/touchegg/* ~/.config/touchegg/
 
+###>>>sed-i-d-start-1
+###>>>sed-i-d-start-2
+###>>>sed-i-d-end-2
+###>>>sed-i-d-end-1
 
 # cleanup
 sudo snap remove firefox
