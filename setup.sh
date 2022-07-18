@@ -57,6 +57,10 @@ rm -rf ./MyWorkspace-main/
 #sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 #sed -i '27,40d' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
+
+#start="$(grep -wn "####>>>>sed-i-d-start<<<<####" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
+#end="$(grep -wn "####>>>>sed-i-d-end<<<<####" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
+#sed -i "$start,$end"'d' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 ####>>>>sed-i-d-end<<<<####
 
 # setup
