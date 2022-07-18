@@ -119,20 +119,20 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
                 rstudio
                 # notify end
-                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}RStudio configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}RStudio not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         ###>>>sed-i-d-end-2
         
         # notify end
-        echo -e " \n${TEXT_GREEN}AppImage apps Configured!${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_GREEN}R developing environment Configured!${TEXT_RESET} \n" && sleep 5;;
         
   * )   # notify cancellation
-        echo -e " \n${TEXT_YELLOW}AppImage apps not configured.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}R developing environment not configured.${TEXT_RESET} \n" && sleep 5;;
         
 esac
 
