@@ -57,6 +57,7 @@ do
 done
 cat ./cfg/usrapp_tail.sh >> ./cfg/usrapp.sh
 rm ./cfg/usrapp_tail.sh
+if grep -q "sed-i-d-" ./cfg/usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/usrapp.sh ; fi
 
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
