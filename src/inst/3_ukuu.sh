@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs Ubuntu Kernel Update Utility (UKUU)
+# This script installs Ubuntu Kernel Update Utility (UKUU) and latest Linux kernel
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
