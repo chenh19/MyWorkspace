@@ -82,12 +82,12 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
-        ## eudic
+        ## Jupyter Lab
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure JupyterLab? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close Jupyter Lab to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please config and then close JupyterLab to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/JupyterLab/jupyterlab-desktop
                 # notify end
                 echo -e " \n${TEXT_GREEN}JupyterLab configured!${TEXT_RESET} \n" && sleep 1;;
