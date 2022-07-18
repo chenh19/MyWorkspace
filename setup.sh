@@ -44,7 +44,7 @@ start2="$(grep -wn "###>>>sed-i-d-start-2" ./inst/deb.sh | head -n 1 | cut -d: -
 end2="$(grep -wn "###>>>sed-i-d-end-2" ./inst/deb.sh | tail -n 1 | cut -d: -f1)"
 echo "" >> ./cfg.cache
 sed -n "$start2,$end2"'p' ./inst/deb.sh >> ./cfg.cache
-sed -i "$start,$end"'d' ./inst/deb.sh
+sed -i "$start1,$end1"'d' ./inst/deb.sh
 unset start1 end1 start2 end2
 
 ## modify appimage.sh
@@ -54,7 +54,7 @@ start2="$(grep -wn "###>>>sed-i-d-start-2" ./inst/appimage.sh | head -n 1 | cut 
 end2="$(grep -wn "###>>>sed-i-d-end-2" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
 echo "" >> ./cfg.cache
 sed -n "$start2,$end2"'p' ./inst/appimage.sh >> ./cfg.cache
-sed -i "$start,$end"'d' ./inst/appimage.sh
+sed -i "$start1,$end1"'d' ./inst/appimage.sh
 unset start1 end1 start2 end2
 
 ## modify usrapp.sh
@@ -70,10 +70,10 @@ unset start1 end1 start2 end2
 # avoid re-downloading
 sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
-#start-0="$(grep -wn "###>>>sed-i-d-start-0" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
-#end-0="$(grep -wn "###>>>sed-i-d-end-0" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
-#sed -i "$start-0,$end-0"'d' ~/.setup_cache/setup.sh
-#unset start-0 end-0
+#start0="$(grep -wn "###>>>sed-i-d-start-0" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
+#end0="$(grep -wn "###>>>sed-i-d-end-0" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
+#sed -i "$start0,$end0"'d' ~/.setup_cache/setup.sh
+#unset start0 end0
 ###>>>sed-i-d-end-0
 
 # setup
