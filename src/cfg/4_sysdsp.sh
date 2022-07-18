@@ -1,3 +1,21 @@
+#!/bin/bash
+# This script configures display options
+
+# set terminal font color
+TEXT_YELLOW='\e[1;33m'
+TEXT_GREEN='\e[1;32m'
+TEXT_RESET='\e[0m'
+
+# set working directory
+[ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
+cd ~/.setup_cache/
+
+
+# notify start
+sudo echo ""
+echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET} \n" && sleep 1
+
+# global theme
 ## System Settings > Appearance > Global Theme > Breeze
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark theme? [l/d/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
@@ -18,7 +36,7 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Set global theme: Breeze Light (default)${TEXT_RESET} \n" && sleep 1;;
 esac
 
-## Scaling (take effect after rebooting)
+# Scaling (take effect after rebooting)
 echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the scaling factor, 2.5 (a), 2.0 (b), 1.5 (c) or default 1.0 (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
