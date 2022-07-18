@@ -55,5 +55,5 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setu
 ![](./images/12.png)
 
 #### Note:
-- If the text is too small in the Konsole (Terminal) before scaling configuration, you may press ```Ctrl++``` to make the text larger (this temporary setting will not be saved).
+- If the text is too small in the Konsole (Terminal) before scaling configuration, you may press ```Ctrl``` and ```+``` to make the text larger (this temporary setting will not be saved).
 - It will ask a few questions in terms of **configuration preferences**. If you didn't notice immediately, it will simply pause and wait for your input.
