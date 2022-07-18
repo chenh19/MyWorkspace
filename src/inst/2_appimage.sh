@@ -67,7 +67,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure EuDic? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
                 XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
