@@ -120,6 +120,19 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
+        ## enpass
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Enpass? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please create or log in to your vault, then quit Enpass (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/enpass/Enpass
+                # notify end
+                echo -e " \n${TEXT_GREEN}Enpass configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Enpass not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## inkscape
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
