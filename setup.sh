@@ -41,6 +41,10 @@ sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
 # remove tabs
 sed -i -e 's/[ \t]*//' ./cfg/usrapp.sh
 
+# add end
+
+echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
+
 # avoid re-downloading
 #sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 #sed -i '27,40d' ~/.setup_cache/setup.sh
