@@ -183,16 +183,17 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.s
 
 ######################################################################################
 
+# cleanup
+sudo apt-get autoremove -y && sudo apt-get clean
+rm -rf ./fonts/
+
+######################################################################################
 
 # notify end
 echo -e " \n${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
 
-
 #-------------------------------------------------------------------------------------
 
-# cleanup
-sudo apt-get autoremove -y && sudo apt-get clean
-rm -rf ./fonts/
 
 # mark setup.sh
 sed -i 's+bash ./cfg/3_sysapp.sh+#bash ./cfg/3_sysapp.sh+g' ~/.setup_cache/setup.sh
