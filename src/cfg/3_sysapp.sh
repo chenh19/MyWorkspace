@@ -195,4 +195,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./fonts/
 
 # mark setup.sh
-sed -i 's+bash ./src/settings.sh+#bash ./src/settings.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./cfg/3_sysapp.sh+#bash ./cfg/3_sysapp.sh+g' ~/.setup_cache/setup.sh
