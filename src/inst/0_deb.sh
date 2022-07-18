@@ -112,6 +112,7 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/freedownloadmanager/fdm
+                # disable autostart
                 [ -f ~/.config/autostart/FDM.desktop ] && rm ~/.config/autostart/FDM.desktop
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
