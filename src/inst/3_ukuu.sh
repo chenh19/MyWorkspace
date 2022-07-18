@@ -33,4 +33,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 echo -e " \n${TEXT_GREEN}UKUU and latest Linux kernel installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sed -i 's+bash ./src/ukuu.sh+#bash ./src/ukuu.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
