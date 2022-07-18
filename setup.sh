@@ -70,16 +70,16 @@ echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 ###>>>sed-i-d-end-0
 
 # setup
-#bash ./inst/deb.sh
-#bash ./inst/flathub.sh
-#bash ./inst/appimage.sh
-#bash ./inst/ukuu.sh
-#bash ./inst/fcitx.sh
-#bash ./inst/wechat.sh
-#bash ./inst/game.sh
-#bash ./inst/biodaily.sh
-#bash ./inst/biodevr.sh
-#bash ./inst/biodevpy.sh
+#bash ./inst/0_deb.sh
+#bash ./inst/1_flathub.sh
+#bash ./inst/2_appimage.sh
+#bash ./inst/3_ukuu.sh
+#bash ./inst/4_fcitx.sh
+#bash ./inst/5_wechat.sh
+#bash ./inst/6_game.sh
+#bash ./inst/7_biodaily.sh
+#bash ./inst/8_biodevr.sh
+#bash ./inst/9_biodevpy.sh
 
 # config
 #bash ./cfg/gitssh.sh
