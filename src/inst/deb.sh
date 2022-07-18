@@ -83,7 +83,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
 
-###>>>sed-i-d-start
+###>>>sed-i-d-start-1
 # manual config
 # aske whether to configure apt installed apps manually
 sudo echo ""
@@ -91,7 +91,7 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt instal
 case "$choice" in
   y|Y ) # ask for individual apps
         
-        
+        ###>>>sed-i-d-start-2
         ## fdm
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -205,7 +205,7 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Slack not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
+        ###>>>sed-i-d-end-2
         
         # notify end
         echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
@@ -214,7 +214,7 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Apt installed apps Not configured.${TEXT_RESET} \n" && sleep 5;;
         
 esac
-###>>>sed-i-d-end
+###>>>sed-i-d-end-1
 
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
