@@ -30,9 +30,10 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/ed25519
 
 # get the key
-echo -e " \n${TEXT_GREEN}Git SSH key: ${TEXT_RESET} \n"
+echo -e " \n${TEXT_GREEN}All done! Git SSH key: ${TEXT_RESET} \n"
 cat ~/.ssh/ed25519.pub
 echo -e " \n${TEXT_GREEN}Please copy the above key, then navigate to Github account and add the ssh key.${TEXT_RESET} \n"
+
 
 # mark setup.sh
 sed -i 's+bash ./cfg/0_gitssh.sh+#bash ./cfg/0_gitssh.sh+g' ~/.setup_cache/setup.sh
