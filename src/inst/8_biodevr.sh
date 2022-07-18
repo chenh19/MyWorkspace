@@ -43,6 +43,7 @@ case "$choice" in
         esac
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         sudo Rscript ./rscript/packages.R
+        echo ""
         Rscript ./rscript/webdriver.R
                 
         # ask whether to install RStudio
