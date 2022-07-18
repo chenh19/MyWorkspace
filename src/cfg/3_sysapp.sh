@@ -123,8 +123,6 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key State "AAAA/wA
 # Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
 kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
 
-## set as default text editor
-
 ######################################################################################
 
 ## System Monitor
