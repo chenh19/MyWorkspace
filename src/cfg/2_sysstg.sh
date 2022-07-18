@@ -173,15 +173,17 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 
 ######################################################################################
 
-# notify end
-echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 5
-
-
-#-------------------------------------------------------------------------------------
-
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./fonts/
+
+######################################################################################
+
+# notify end
+echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 5
+
+#-------------------------------------------------------------------------------------
+
 
 # mark setup.sh
 sed -i 's+bash ./cfg/2_sysstg.sh+#bash ./cfg/2_sysstg.sh+g' ~/.setup_cache/setup.sh
