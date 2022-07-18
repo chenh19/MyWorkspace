@@ -17,3 +17,4 @@ case "$choice" in
   y|Y ) # notify start
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
+
