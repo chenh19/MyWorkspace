@@ -43,7 +43,7 @@ for script in $scripts
 do
     start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
     end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
-	echo "" >> ./cfg.cache
+    echo "" >> ./cfg.cache
     sed -n "$start2,$end2"'p' $script >> ./cfg.cache
     unset start2 end2
     start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
