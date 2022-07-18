@@ -203,7 +203,7 @@ case "$choice" in
         echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
         
   * )   # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Apt installed apps Not configured.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}Apt installed apps not configured.${TEXT_RESET} \n" && sleep 5;;
         
 esac
 ###>>>sed-i-d-end-1
