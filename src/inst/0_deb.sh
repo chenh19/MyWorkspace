@@ -132,6 +132,19 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Enpass not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
+        ## simplenote
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Simplenote? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please create or log in to your Simplenote account, then close Simplenote to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/Simplenote/simplenote --no-sandbox
+                # notify end
+                echo -e " \n${TEXT_GREEN}Simplenote configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Simplenote not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## qview
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure qView? [y/n/c]'$TEXT_RESET)"$' \n' choice
