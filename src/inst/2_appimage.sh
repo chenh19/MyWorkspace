@@ -93,4 +93,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 echo -e " \n${TEXT_GREEN}AppImages Deployed!${TEXT_RESET} \n" && sleep 1
 
 # mark setup.sh
-sed -i 's+bash ./src/appimage.sh+#bash ./src/appimage.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/2_appimage.sh+#bash ./inst/2_appimage.sh+g' ~/.setup_cache/setup.sh
