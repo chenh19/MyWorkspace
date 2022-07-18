@@ -43,5 +43,6 @@ case "$choice" in
 
 esac
 
+
 # mark setup.sh
 sed -i 's+bash ./src/model.sh+#bash ./src/model.sh+g' ~/.setup_cache/setup.sh
