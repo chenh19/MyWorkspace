@@ -21,6 +21,14 @@ echo -e "${TEXT_YELLOW}Configuring apps and widgets...${TEXT_RESET} \n" && sleep
 
 # Plasma desktop and taskbar
 
+## Clean up Application Launcher's favorite
+#read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Please config start menu favorites manually. Once done, press [Enter] to continue.'$TEXT_RESET)"$' \n'
+favorites=$(grep 'Favorites-org.kde.plasma.kickoff.favorites.' ~/.config/kactivitymanagerd-statsrc | sed 's/\[//g' | sed 's/\]//g')
+for favorite in $favorites
+do
+    kwriteconfig5 --file ~/.config/kactivitymanagerd-statsrc --group $favorite --key ordering "applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop"
+done
+
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
@@ -61,14 +69,6 @@ sleep 1
 echo -e "[Desktop Entry] \nEmptyIcon=user-trash \nIcon=user-trash-full \nName=Trash \nType=Link \nURL[$e]=trash:/" > ~/Desktop/trash:⁄.desktop
 sleep 1
 chmod +x ~/Desktop/*.desktop
-
-## Clean up Application Launcher's favorite
-#read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Please config start menu favorites manually. Once done, press [Enter] to continue.'$TEXT_RESET)"$' \n'
-favorites=$(grep 'Favorites-org.kde.plasma.kickoff.favorites.' ~/.config/kactivitymanagerd-statsrc | sed 's/\[//g' | sed 's/\]//g')
-for favorite in $favorites
-do
-    kwriteconfig5 --file ~/.config/kactivitymanagerd-statsrc --group $favorite --key ordering "applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop"
-done
 
 ######################################################################################
 
