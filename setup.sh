@@ -55,7 +55,7 @@ do
         echo "Manual configuration part of $script is moved to the end of this setup process."
     fi
 done
-echo -e ' \n        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n         \n         \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
+echo -e " \n        # notify end \n        echo -e ' \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n' && sleep 5;; \n         \n         \n  * ) # notify cancellation \n        echo -e ' \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac" >> ./cfg/usrapp.sh
 
 ## modify usrapp.sh
 #sed -i -e 's/[ \t]*//' ./cfg.cache
