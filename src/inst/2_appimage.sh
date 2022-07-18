@@ -70,9 +70,9 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Please configure and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
                 XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
                 # notify end
-                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}EuDic configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}EuDic not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         ###>>>sed-i-d-end-2
         
