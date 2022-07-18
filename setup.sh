@@ -33,15 +33,22 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
+#unset start end
+
+# save apt installed apps config for later
+#start="$(grep -wn "###>>>sed-i-d-start" ~/.inst/deb.sh | head -n 1 | cut -d: -f1)"
+#end="$(grep -wn "###>>>sed-i-d-end" ~/.inst/deb.sh | tail -n 1 | cut -d: -f1)"
+#sed -i "$start,$end"'d' ~/.inst/deb.sh
+#unset start end
 
 # save wechat sacling config for later
 #echo "" >> ./cfg/usrapp.sh
 #sed -n 39,43p ~/.setup_cache/inst/wechat.sh >> ./cfg/usrapp.sh
 #sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
 
+
 # remove tabs
 #sed -i -e 's/[ \t]*//' ./cfg/usrapp.sh
-
 # add tabs
 #sed -i 's/^/  /' ./cfg/usrapp.sh
 #sed -i 's/^/        /' ./cfg/usrapp.sh
