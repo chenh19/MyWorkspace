@@ -99,7 +99,7 @@ case "$choice" in
 esac
 
 # wechat
-if [ -d ~/.deepinwine/Deepin-WeChat/drive_c/Program Files/Tencent/WeChat/ ] 
+if [ -d ~/.deepinwine/Deepin-WeChat/ ] 
 then
         # configure scaling
         echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
