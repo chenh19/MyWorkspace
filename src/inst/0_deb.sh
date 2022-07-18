@@ -66,9 +66,9 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
                 # install
                 sleep 1 && mv -f ./ExpanDrive*.deb ./deb/ && sudo apt-get install -f -y ./deb/ExpanDrive*.deb
                 # notify end
-                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_GREEN}ExpanDrive installed!${TEXT_RESET} \n" && sleep 5;;
           * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_YELLOW}ExpanDrive not installed.${TEXT_RESET} \n" && sleep 5;;
   esac
 
 # fix missings
