@@ -84,7 +84,6 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
 
 # manual config
-
 # aske whether to configure apt installed apps manually
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
