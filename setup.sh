@@ -45,8 +45,8 @@ do
     then 
         start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
         end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
-        echo "" >> ./cfg/usrapp.sh
-        sed -n "$start2,$end2"'p' $script >> ./cfg/usrapp.sh
+        echo "" >> ./cfg/5_usrapp.sh
+        sed -n "$start2,$end2"'p' $script >> ./cfg/5_usrapp.sh
         unset start2 end2
         start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
         end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
@@ -55,9 +55,9 @@ do
         echo "Manual configuration part of $script is moved to the end of this setup process."
     fi
 done
-cat ./cfg/usrapp_tail.sh >> ./cfg/usrapp.sh
-rm ./cfg/usrapp_tail.sh
-if grep -q "sed-i-d-" ./cfg/usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/usrapp.sh ; fi
+cat ./cfg/5_usrapp_tail.sh >> ./cfg/5_usrapp.sh
+rm ./cfg/5_usrapp_tail.sh
+if grep -q "sed-i-d-" ./cfg/5_usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/5_usrapp.sh ; fi
 
 # avoid re-downloading
 echo ""
