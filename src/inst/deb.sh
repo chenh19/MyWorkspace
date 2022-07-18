@@ -83,6 +83,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
 
+###>>>sed-i-d-start
 # manual config
 # aske whether to configure apt installed apps manually
 sudo echo ""
@@ -213,7 +214,7 @@ case "$choice" in
         echo -e " \n${TEXT_YELLOW}Apt installed apps Not configured.${TEXT_RESET} \n" && sleep 5;;
         
 esac
-
+###>>>sed-i-d-end
 
 # cleanup
 sudo apt-get remove thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
