@@ -38,8 +38,6 @@ case "$choice" in
         
         # configure
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
-        echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
-        XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
         
         # ask whether to install University VPN
         sudo echo ""
@@ -57,11 +55,8 @@ case "$choice" in
                 cd ~/.setup_cache/
                 rm -rf ./anyconnect-linux64-4.10.04065/
                 
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5
-                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} and disconnect, then close the VPN client to continue.${TEXT_RESET} \n" && sleep 1
-                /opt/cisco/anyconnect/bin/vpnui;;
                 
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}University VPN not installed.${TEXT_RESET} \n" && sleep 5;;
@@ -91,11 +86,11 @@ case "$choice" in
         ###>>>sed-i-d-start-2
         ## eudic
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Snapgene Viewer? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
-                XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
+                echo -e " \n${TEXT_YELLOW}Please config and then close SnapGene to continue.${TEXT_RESET} \n" && sleep 1
+                XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
@@ -105,11 +100,11 @@ case "$choice" in
         ###>>>sed-i-d-start-2
         ## eudic
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then close EuDic to continue.${TEXT_RESET} \n" && sleep 1
-                XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage
+                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} and disconnect, then close the VPN client to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/cisco/anyconnect/bin/vpnui
                 # notify end
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
