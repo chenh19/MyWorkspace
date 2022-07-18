@@ -122,6 +122,8 @@ case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please configure and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
                 rstudio
+                #cleanup
+                [ -f ./.Rhistory ] && rm ./.Rhistory
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
