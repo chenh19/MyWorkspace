@@ -45,7 +45,7 @@ do
     then 
         start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
         end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
-        echo "" >> ./cfg.cache
+        echo "" >> ./cfg/usrapp.sh
         sed -n "$start2,$end2"'p' $script >> ./cfg/usrapp.sh
         unset start2 end2
         start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
@@ -55,7 +55,7 @@ do
         echo "Manual configuration part of $script is moved to the end of this setup process."
     fi
 done
-echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
+echo -e ' \n        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n         \n         \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
 ## modify usrapp.sh
 #sed -i -e 's/[ \t]*//' ./cfg.cache
