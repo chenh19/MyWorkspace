@@ -85,74 +85,135 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
 
 # manual config
 
-# aske whether to configure .deb apps manually
+# aske whether to configure apt installed apps manually
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apps manually? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
-  y|Y ) # notify start
+  y|Y ) # ask for individual apps
+        
+        
+        ## fdm
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
-
-        # notify end
-        echo -e " \n${TEXT_GREEN}WeChat installed!${TEXT_RESET} \n" && sleep 5;;
-
-  * )   # notify cancellation
-        echo -e " \n${TEXT_YELLOW}WeChat not installed.${TEXT_RESET} \n" && sleep 5;;
-
-esac
-
-  # aske whether to configure apps manually
-  ######################################################################################
-
-  ## fdm
-  echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
-  /opt/freedownloadmanager/fdm
-
-  ######################################################################################
-
-  ## Inkscape
-  echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
-  inkscape
-
-  ######################################################################################
-
-  ## qView
-  # do not check update notification when first open 
-  echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
-  qview
-
-  ######################################################################################
-
-  ## libreoffice
-  echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
-  libreoffice
-
-  ######################################################################################
-
-  ## chrome
-  echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
-  /usr/bin/google-chrome-stable
-
-  ######################################################################################
-
-  ## evolution
-  # restore backup
-  # ask whether set evolution as autostart
-
-  ######################################################################################
-
-  ## expandrive
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then close Free Donwload Manager to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/freedownloadmanager/fdm
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## inkscape
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+                inkscape
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## qview
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                  # do not check update notification when first open 
+                  echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
+                  qview
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## libreoffice
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+                libreoffice
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## chrome
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/google-chrome-stable
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## evolution
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                # restore backup
+                # ask whether set evolution as autostart
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## expandrive
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                # ask whether set evolution as autostart
+                echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac        
+        
+        ## slack
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                #config
+                /usr/bin/slack
+                # ask whether to set as autostart
   
-  # ask whether set evolution as autostart
-  echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
-
-  ######################################################################################
-
-  ## slack
-  #config
-  /usr/bin/slack
-
-  # ask whether to set as autostart
+                # notify end
+                echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
 
 
 # cleanup
