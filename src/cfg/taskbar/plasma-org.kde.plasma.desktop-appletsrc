@@ -39,7 +39,7 @@ plugin=org.kde.plasma.kickoff
 showAppsByName=true
 
 [Containments][2][Applets][3][Configuration][General]
-favorites=preferred://filemanager,preferred://browser
+favorites=preferred://browser,org.kde.discover.desktop,org.kde.kontact.desktop,org.kde.kate.desktop,libreoffice-startcenter.desktop,org.kde.dolphin.desktop,org.kde.plasma-systemmonitor.desktop,systemsettings.desktop,org.kde.konsole.desktop
 favoritesPortedToKAstats=true
 
 [Containments][2][Applets][3][Configuration][Shortcuts]
