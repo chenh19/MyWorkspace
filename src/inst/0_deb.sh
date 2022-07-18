@@ -202,7 +202,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please login to your cloud driver account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_RESET} to activate ExpanDrive.Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/ExpanDrive/expandrive
                 # ask whether set expandrive as autostart
                 sudo echo ""
