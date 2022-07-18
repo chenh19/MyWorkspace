@@ -36,6 +36,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
+cp -rf ./cfg/libreoffice/ ~/Documents/
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
