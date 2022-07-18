@@ -105,21 +105,20 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
-        ## fdm
+        
+        ## chrome
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Google Chrome? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
-                /opt/freedownloadmanager/fdm
-                # disable autostart
-                [ -f ~/.config/autostart/FDM.desktop ] && rm ~/.config/autostart/FDM.desktop
+                echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/google-chrome-stable
                 # notify end
-                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}Google Chrome configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}Google Chrome not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
+                
         ## enpass
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Enpass? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -173,19 +172,21 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}LibreOffice not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
-        ## chrome
+        ## fdm
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Google Chrome? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
-                /usr/bin/google-chrome-stable
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/freedownloadmanager/fdm
+                # disable autostart
+                [ -f ~/.config/autostart/FDM.desktop ] && rm ~/.config/autostart/FDM.desktop
                 # notify end
-                echo -e " \n${TEXT_GREEN}Google Chrome configured!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Google Chrome not configured.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
+                
         ## evolution
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
