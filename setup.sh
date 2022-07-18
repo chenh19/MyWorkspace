@@ -70,7 +70,7 @@ unset start0 end0
 ###>>>sed-i-d-end-0
 
 # setup
-#bash ./inst/0_deb.sh
+bash ./inst/0_deb.sh
 #bash ./inst/1_flathub.sh
 #bash ./inst/2_appimage.sh
 #bash ./inst/3_ukuu.sh
