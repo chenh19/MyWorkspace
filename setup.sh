@@ -71,16 +71,16 @@ unset start0 end0
 ###>>>sed-i-d-end-0
 
 # setup
-bash ./inst/0_deb.sh
-bash ./inst/1_flathub.sh
-bash ./inst/2_appimage.sh
-bash ./inst/3_ukuu.sh
-bash ./inst/4_fcitx.sh
-bash ./inst/5_wechat.sh
-bash ./inst/6_game.sh
-bash ./inst/7_biodaily.sh
-bash ./inst/8_biodevr.sh
-bash ./inst/9_biodevpy.sh
+#bash ./inst/0_deb.sh
+#bash ./inst/1_flathub.sh
+#bash ./inst/2_appimage.sh
+#bash ./inst/3_ukuu.sh
+#bash ./inst/4_fcitx.sh
+#bash ./inst/5_wechat.sh
+#bash ./inst/6_game.sh
+#bash ./inst/7_biodaily.sh
+#bash ./inst/8_biodevr.sh
+#bash ./inst/9_biodevpy.sh
 
 # config
 #bash ./cfg/0_gitssh.sh
