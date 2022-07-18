@@ -17,9 +17,8 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up ThinkPad X1 Extreme
 case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for ThinkPad X1 EXtreme Gen 2...${TEXT_RESET} \n" && sleep 1
-        sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub
-        sudo update-grub
-
+        if ! grep -q GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0" /etc/default/grub ; then sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub && sudo update-grub ; fi
+        
         # configure undervolt
         sudo apt-get update && sudo apt-get install -y python3-pip && sudo pip3 install undervolt
         [ ! -f /etc/systemd/system/undervolt.service ] && sudo touch /etc/systemd/system/undervolt.service
