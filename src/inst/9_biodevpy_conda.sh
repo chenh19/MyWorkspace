@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script installs conda packages in a new terminal window
 
 # config conda in a new terminal window
 conda update anaconda -y && conda update --all -y
