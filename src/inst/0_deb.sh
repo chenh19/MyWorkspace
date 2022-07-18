@@ -159,6 +159,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
+                evolution
                 # restore backup
                 # ask whether set evolution as autostart
                 # notify end
