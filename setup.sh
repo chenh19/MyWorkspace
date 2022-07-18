@@ -33,9 +33,14 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
 
-# https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number
-#sed -i '39,43d' ~/.setup_cache/inst/wechat.sh # save wechat sacling config for later
-#sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh && sed -i '27,40d' ~/.setup_cache/setup.sh # avoid re-downloading
+# save wechat sacling config for later
+echo "" >> ./cfg/usrapp.sh
+sed -n 39,43p ~/.setup_cache/inst/wechat.sh >> ./cfg/usrapp.sh
+sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
+
+# avoid re-downloading
+#sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
+#sed -i '27,40d' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 
 # setup
