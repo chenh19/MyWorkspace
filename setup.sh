@@ -48,6 +48,14 @@ sed -i "$start,$end"'d' ./inst/deb.sh
 unset start1 end1 start2 end2
 
 ## modify appimage.sh
+start1="$(grep -wn "###>>>sed-i-d-start-1" ./inst/appimage.sh | head -n 1 | cut -d: -f1)"
+end1="$(grep -wn "###>>>sed-i-d-end-1" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
+start2="$(grep -wn "###>>>sed-i-d-start-2" ./inst/appimage.sh | head -n 1 | cut -d: -f1)"
+end2="$(grep -wn "###>>>sed-i-d-end-2" ./inst/appimage.sh | tail -n 1 | cut -d: -f1)"
+echo "" >> ./cfg.cache
+sed -n "$start2,$end2"'p' ./inst/appimage.sh >> ./cfg.cache
+sed -i "$start,$end"'d' ./inst/appimage.sh
+unset start1 end1 start2 end2
 
 ## modify usrapp.sh
 #sed -i -e 's/[ \t]*//' ./cfg.cache
