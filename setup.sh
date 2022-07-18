@@ -25,6 +25,9 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 # download and organize setup scripts
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 ###>>>sed-i-d-start
+unset start end
+
+## download all
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
@@ -33,30 +36,24 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 rm -rf ./MyWorkspace-main/
-#unset start end
 
-# save apt installed apps config for later
+## modfiy deb.sh
 #start="$(grep -wn "###>>>sed-i-d-start" ~/.inst/deb.sh | head -n 1 | cut -d: -f1)"
 #end="$(grep -wn "###>>>sed-i-d-end" ~/.inst/deb.sh | tail -n 1 | cut -d: -f1)"
+#echo "" >> ./cfg.cache
+#sed -n "$start,$end"'d' ~/.inst/deb.sh >> ./cfg.cache
 #sed -i "$start,$end"'d' ~/.inst/deb.sh
 #unset start end
 
-# save wechat sacling config for later
-#echo "" >> ./cfg/usrapp.sh
-#sed -n 39,43p ~/.setup_cache/inst/wechat.sh >> ./cfg/usrapp.sh
-#sed -i '39,43d' ~/.setup_cache/inst/wechat.sh
+## modify appimage.sh
 
-
-# remove tabs
-#sed -i -e 's/[ \t]*//' ./cfg/usrapp.sh
+## modify usrapp.sh
+#sed -i -e 's/[ \t]*//' ./cfg.cache
 # add tabs
-#sed -i 's/^/  /' ./cfg/usrapp.sh
-#sed -i 's/^/        /' ./cfg/usrapp.sh
-#sed -i 's/^/          /' ./cfg/usrapp.sh
-#sed -i 's/^/                /' ./cfg/usrapp.sh
-
-# ./cfg.cache
-
+#sed -i 's/^/  /' ./cfg.cache
+#sed -i 's/^/        /' ./cfg.cache
+#sed -i 's/^/          /' ./cfg.cache
+#sed -i 's/^/                /' ./cfg.cache
 # add end
 #echo -e '        # notify end \n        echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;; \n                 \n  * ) # notify cancellation \n        echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;; \nesac' >> ./cfg/usrapp.sh
 
@@ -64,7 +61,6 @@ rm -rf ./MyWorkspace-main/
 #sed -i 's+Downloading setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 #sed -i '27,40d' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
-
 #start="$(grep -wn "###>>>sed-i-d-start" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
 #end="$(grep -wn "###>>>sed-i-d-end" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
 #sed -i "$start,$end"'d' ~/.setup_cache/setup.sh
