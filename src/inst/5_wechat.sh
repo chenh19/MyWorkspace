@@ -49,4 +49,4 @@ esac
 
 
 # mark setup.sh
-sed -i 's+bash ./src/wechat.sh+#bash ./src/wechat.sh+g' ~/.setup_cache/setup.sh
+sed -i 's+bash ./inst/5_wechat.sh+#bash ./inst/5_wechat.sh+g' ~/.setup_cache/setup.sh
