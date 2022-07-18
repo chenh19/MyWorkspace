@@ -186,17 +186,20 @@ case "$choice" in
         esac
         
         ## expandrive
+        if [ -d /opt/ExpanDrive/ ]
+        then
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                # ask whether set evolution as autostart
+                # ask whether set expandrive as autostart
                 echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > '~/.config/autostart/expandrive --autorun.desktop'
                 # notify end
                 echo -e " \n${TEXT_GREEN}ExpanDrive configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}ExpanDrive not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac        
+        esac
+        fi
         
         ## slack
         sudo echo ""
