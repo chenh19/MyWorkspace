@@ -96,12 +96,6 @@ Right click and hide unnecessary shortcuts in the left panel
 ## label the /root
 sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
-# ask whether to install expandrive
-wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
-sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
-echo -e " \n${TEXT_YELLOW}Please enter ${TEXT_GREEN}[quzc-mkaz-tbw1-44xq-itev]${TEXT_YELLOW} to activate ExpanDrive and close the client to continue.${TEXT_RESET} \n" && sleep 1
-/opt/ExpanDrive/expandrive
-
 ######################################################################################
 
 # Konsole
