@@ -11,7 +11,7 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# ask whether to set up R environment for Bioinformatic developing
+# ask whether to set up R environment for bioinformatic developing
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up R environment for bioinformatic developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
