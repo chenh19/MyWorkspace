@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs deb packages by apt
+# This script installs deb packages by apt and dpkg
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
