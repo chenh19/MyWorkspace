@@ -59,6 +59,25 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Jupyter Lab not installed.${TEXT_RESET} \n" && sleep 5;;
         esac
         
+        # ask whether to install kdevelop
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install KDevelop for the C++ and Python developing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                sudo echo ""
+                echo -e " \n${TEXT_YELLOW}Installing KDevelop...${TEXT_RESET} \n" && sleep 1
+                
+                # install kdevelop
+                # FYI, kdevelop is not dependent on kate
+                sudo apt-get install kate kdevelop -y
+                sudo apt-get install -f -y
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}KDevelop installed!${TEXT_RESET} \n" && sleep 5;;
+                
+          * ) # notify cancellation
+                echo -e " \n${TEXT_YELLOW}KDevelop not installed.${TEXT_RESET} \n" && sleep 5;;
+        esac
+        
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
         [ -d ./devdeb/ ] && rm -rf ./devdeb/
