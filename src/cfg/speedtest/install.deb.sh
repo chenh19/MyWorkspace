@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # edited from: https://install.speedtest.net/app/cli/install.deb.sh
 
 OS_RELEASE_ID=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2- | sed 's|"||g')
