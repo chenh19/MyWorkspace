@@ -18,7 +18,7 @@ case "$choice" in
   y|Y ) # notify start
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing Python bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
-        sudo apt-get update
+        sudo apt-get update && sudo apt-get upgrade -y
         
         # install anaconda
         [ ! -d ./shscript/ ] && mkdir ./shscript/
