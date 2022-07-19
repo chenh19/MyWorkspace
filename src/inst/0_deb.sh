@@ -37,6 +37,21 @@ sudo apt-get install default-jre default-jdk -y
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
   wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
   sudo apt-get update && sudo apt-get install enpass -y
+  
+  ## speedtest
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Installing Speedtest...${TEXT_RESET} \n" && sleep 1
+                #install
+                bash <(wget -qO- https://install.speedtest.net/app/cli/install.deb.sh)
+                sudo apt-get update && sudo apt-get install speedtest -y
+                # notify end
+                echo -e " \n${TEXT_GREEN}Speedtest installed!${TEXT_RESET} \n" && sleep 5;;
+          * ) # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Speedtest not installed.${TEXT_RESET} \n" && sleep 5;;
+  esac
 
 # install apps (downloaded)
   [ ! -d ./deb/ ] && mkdir ./deb/
