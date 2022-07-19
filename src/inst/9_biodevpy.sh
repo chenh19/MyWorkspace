@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs Python developing environment
+# This script installs Python developing environment and IDE
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
