@@ -13,6 +13,7 @@ This tool will install and configure:
 - [RStudio](https://www.rstudio.com/)
 - [RKWard](https://rkward.kde.org/)
 - [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [KDevelop](https://www.kdevelop.org/)
 - [Krita](https://krita.org/)
