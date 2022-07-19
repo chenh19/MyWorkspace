@@ -18,9 +18,10 @@ case "$choice" in
   y|Y ) # notify start
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing Chinese Pinyin input method...${TEXT_RESET} \n" && sleep 1
-
+        sudo apt-get update && sudo apt-get upgrade -y
+        
         ## install fcitx
-        sudo apt-get update && sudo apt-get install fcitx kde-config-fcitx fcitx-sunpinyin -y
+        sudo apt-get install fcitx kde-config-fcitx fcitx-sunpinyin -y
 
         ## setup environment
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" \nXMODIFIERS=@im=fcitx \nQT_IM_MODULE=fcitx \nGTK_IM_MODULE=fcitx' > ./environment
