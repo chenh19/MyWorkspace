@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs Chinese Pinyin input method
+# This script installs Chinese Pinyin input method (fcitx)
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
