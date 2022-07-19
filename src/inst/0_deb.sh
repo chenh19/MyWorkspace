@@ -71,6 +71,19 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
                 echo -e " \n${TEXT_YELLOW}ExpanDrive not installed.${TEXT_RESET} \n" && sleep 5;;
   esac
 
+# install apps (general IDE)
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install KDevelop for developing of C++, Python, and more? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+    y|Y ) # notify start
+          echo -e " \n${TEXT_YELLOW}Installing KDevelop...${TEXT_RESET} \n" && sleep 1
+          sudo apt-get update && sudo apt-get install kdevelop -y
+          # notify end
+          echo -e " \n${TEXT_GREEN}KDevelop installed!${TEXT_RESET} \n" && sleep 1;;
+    * )   # notify cancellation
+          echo -e " \n${TEXT_YELLOW}KDevelop not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
+
 # fix missings
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
