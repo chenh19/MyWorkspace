@@ -40,7 +40,7 @@ sudo apt-get install default-jre default-jdk -y
   
   ## speedtest
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest-CLI by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing Speedtest...${TEXT_RESET} \n" && sleep 1
