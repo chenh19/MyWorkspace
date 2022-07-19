@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script configures git ssh
+# This script configures git ssh (ref: https://youtu.be/YnSMYgIybFU)
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
