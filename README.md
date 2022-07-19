@@ -14,6 +14,7 @@ This tool will install and configure:
 - [RKWard](https://rkward.kde.org/)
 - [NumPy](https://numpy.org/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
+- [KDevelop](https://www.kdevelop.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [Bottles](https://usebottles.com/)
