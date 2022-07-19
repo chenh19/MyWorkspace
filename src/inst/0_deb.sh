@@ -47,6 +47,9 @@ sudo apt-get install default-jre default-jdk -y
                 #install
                 sudo bash ./cfg/speedtest/install.deb.sh
                 sleep 5 && sudo apt-get update && sudo apt-get install speedtest-cli -y
+                sleep 5 && sudo rm /etc/apt/sources.list.d/ookla_speedtest-cli.list
+                sleep 1 && sudo apt-get update
+                speedtest
                 # notify end
                 echo -e " \n${TEXT_GREEN}Speedtest-CLI installed!${TEXT_RESET} \n" && sleep 5;;
           * ) # notify cancellation
