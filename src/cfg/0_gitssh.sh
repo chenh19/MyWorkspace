@@ -28,7 +28,7 @@ ssh-keygen -t ed25519 -C $email
 
 # add SSH key to ssh-agent-
 eval `ssh-agent -s`
-ssh-add ~/.ssh/ed25519
+ssh-add ~/.ssh/id_ed25519
 
 # get the key
 echo -e " \n${TEXT_GREEN}All done! Git SSH key: ${TEXT_RESET} \n"
