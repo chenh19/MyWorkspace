@@ -73,7 +73,7 @@ sudo apt-get update && sudo apt-get install default-jre default-jdk -y
 
 # install apps (general IDE)
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install KDevelop for developing of C++, Python, and more? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install KDevelop for the development of C++, Python, and more? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
     y|Y ) # notify start
           echo -e " \n${TEXT_YELLOW}Installing KDevelop...${TEXT_RESET} \n" && sleep 1
