@@ -45,7 +45,7 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing Speedtest...${TEXT_RESET} \n" && sleep 1
                 #install
-                bash <(wget -qO- https://install.speedtest.net/app/cli/install.deb.sh)
+                bash <(https://raw.githubusercontent.com/chenh19/MyWorkspace/main/src/cfg/speedtest/install.deb.sh)
                 sudo apt-get update && sudo apt-get install speedtest -y
                 # notify end
                 echo -e " \n${TEXT_GREEN}Speedtest installed!${TEXT_RESET} \n" && sleep 5;;
