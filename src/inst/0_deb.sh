@@ -37,7 +37,8 @@ sudo apt-get install default-jre default-jdk -y
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
   wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
   sudo apt-get update && sudo apt-get install enpass -y
-  
+
+# install apps (pip)
   ## speedtest
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest-CLI by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -45,10 +46,8 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing Speedtest-CLI...${TEXT_RESET} \n" && sleep 1
                 #install
-                sudo bash ./cfg/speedtest/install.deb.sh
-                sleep 5 && sudo apt-get update && sudo apt-get install speedtest-cli -y
-                sleep 5 && sudo rm /etc/apt/sources.list.d/ookla_speedtest-cli.list
-                sleep 1 && sudo apt-get update
+                sudo pip install speedtest-cli
+                echo -e " \n${TEXT_GREEN}Testing internet speed...${TEXT_RESET} \n" && sleep 1
                 speedtest
                 # notify end
                 echo -e " \n${TEXT_GREEN}Speedtest-CLI installed!${TEXT_RESET} \n" && sleep 5;;
