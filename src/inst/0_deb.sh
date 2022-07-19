@@ -43,14 +43,14 @@ sudo apt-get install default-jre default-jdk -y
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest-CLI by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Installing Speedtest...${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Installing Speedtest-CLI...${TEXT_RESET} \n" && sleep 1
                 #install
                 sudo bash ./cfg/speedtest/install.deb.sh
                 sudo apt-get update && sudo apt-get install speedtest-cli -y
                 # notify end
-                echo -e " \n${TEXT_GREEN}Speedtest installed!${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_GREEN}Speedtest-CLI installed!${TEXT_RESET} \n" && sleep 5;;
           * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Speedtest not installed.${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_YELLOW}Speedtest-CLI not installed.${TEXT_RESET} \n" && sleep 5;;
   esac
 
 # install apps (downloaded)
