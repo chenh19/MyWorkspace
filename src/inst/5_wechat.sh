@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs WeChat
+# This script installs deepin-wine WeChat
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
