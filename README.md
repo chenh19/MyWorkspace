@@ -17,11 +17,11 @@ This tool will install and configure:
 - [KDevelop](https://www.kdevelop.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
-- [Bottles](https://usebottles.com/)
-- [Touchegg](https://github.com/JoseExposito/touchegg)
-- [Alt_rm](https://github.com/chenh19/alt_rm)
 - [AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
 - [ExpanDrive](https://www.expandrive.com/)
+- [Alt_rm](https://github.com/chenh19/alt_rm)
+- [Bottles](https://usebottles.com/)
+- [Touchegg](https://github.com/JoseExposito/touchegg)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - and more
 
