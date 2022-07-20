@@ -110,7 +110,7 @@ if [ -d ~/.deepinwine/Deepin-WeChat/ ]
 then
         # configure scaling
         echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
-        echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 200 or 250, then click [OK] to exit.${TEXT_RESET} \n"
+        echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 250 or 200, then click [OK] to exit and continue.${TEXT_RESET} \n"
         env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
 fi
 
