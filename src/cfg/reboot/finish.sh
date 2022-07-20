@@ -15,4 +15,4 @@ sleep 1
 plasmashell --replace
 sleep 1
 rm ~/.config/autostart/finish.sh.desktop
-rm ~/finish.sh
+sudo rm /opt/finish.sh
