@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # config conda in a new terminal window
-conda config --set auto_activate_base false
 #conda config --add channels conda-forge
 conda config --add channels bioconda
 conda config --add channels defaults
+conda config --set auto_activate_base false
 
 # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
 conda update --all -y
