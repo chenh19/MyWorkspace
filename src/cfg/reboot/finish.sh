@@ -12,5 +12,7 @@ chmod +x ~/Desktop/*.desktop
 sleep 1
 kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key 'State' "AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAfsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAA/////wAAANUBAAADAAADIwAAAiUAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAgAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAAAAAAcAHMAZQBzAHMAaQBvAG4AVABvAG8AbABiAGEAcgEAAADo/////wAAAAAAAAAA"
 sleep 1
+plasmashell --replace
+sleep 1
 rm ~/.config/autostart/finish.sh.desktop
 rm ~/finish.sh
