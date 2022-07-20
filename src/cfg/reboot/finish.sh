@@ -14,4 +14,4 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key 'State' "AAAA/
 sleep 1
 plasmashell --replace
 sleep 3
-rm ~/.config/autostart/finish.sh.desktop
+rm -f ~/.config/autostart/finish.sh.desktop
