@@ -7,8 +7,8 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 conda install -c anaconda numpy pandas -y
 #conda install kallisto -y
-conda config --set auto_activate_base false # disable auto activate base in terminal
 conda install -n base -c conda-forge mamba
+conda config --set auto_activate_base false # disable auto activate base in terminal
 mamba create -c conda-forge -c bioconda -n snakemake snakemake
 #conda activate # activate base when needed
 #conda activate snakemake # activate base when needed
