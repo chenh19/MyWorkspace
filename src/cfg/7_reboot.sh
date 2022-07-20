@@ -11,9 +11,10 @@ TEXT_RESET='\e[0m'
 ## mark ./setup.sh
 sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
 ## config after rebooting
-cp -f ./cfg/reboot/finish.sh ~
+cp -f ./cfg/reboot/finish.sh /opt/
+sudo chmod +x /opt/finish.sh
 [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
-echo -e "[Desktop Entry] \nExec=~/finish.sh \nIcon=dialog-scripts \nName=finish.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/finish.sh.desktop
+echo -e "[Desktop Entry] \nExec=/opt/finish.sh \nIcon=dialog-scripts \nName=finish.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/finish.sh.desktop
 chmod +x ~/.config/autostart/finish.sh.desktop
 
 # final cleanup
