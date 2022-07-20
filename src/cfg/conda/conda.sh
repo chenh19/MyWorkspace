@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # config conda in a new terminal window
-conda update anaconda -y && conda update --all -y
+conda update conda && conda update anaconda -y && conda update --all -y
 conda config --add channels conda-forge
 conda config --add channels bioconda
 conda config --add channels defaults
