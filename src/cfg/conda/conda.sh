@@ -8,7 +8,7 @@ conda config --add channels defaults
 
 # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
 conda update --all -y
-conda install -c anaconda numpy pandas -y
+conda install -c anaconda numpy pandas scipy matplotlib -y
 conda install -c bioconda snakemake kallisto bustools -y
 
 #conda activate # activate base when needed
