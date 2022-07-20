@@ -18,7 +18,7 @@ This tool will install and configure:
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
-- and more
+- and a lot more
 
 ## How to use
 Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
