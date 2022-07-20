@@ -26,7 +26,7 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Please press Space key to scroll the license${TEXT_RESET} \n" && sleep 1
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
         
-        # config conda
+        # conda config and install
         echo -e " \n${TEXT_YELLOW}Paste below command in the new terminal window and execute. Once finished, please close the new terminal window to continue.${TEXT_RESET} \n" && sleep 1
         echo -e " \n${TEXT_GREEN}bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/src/cfg/conda/conda.sh)${TEXT_RESET} \n" && sleep 1
         konsole
