@@ -9,7 +9,7 @@ conda config --add channels conda-forge
 # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
 conda install -c anaconda numpy pandas -y
 #conda install kallisto -y
-conda install -n base -c conda-forge mamba
+conda install -c conda-forge mamba
 mamba create -c conda-forge -c bioconda -n snakemake snakemake
 
 # disable auto activate base in terminal
