@@ -2,7 +2,7 @@
 
 # config conda in a new terminal window
 #conda config --add channels conda-forge
-conda config --add channels bioconda
+#conda config --add channels bioconda
 conda config --add channels defaults
 conda config --set auto_activate_base false
 
