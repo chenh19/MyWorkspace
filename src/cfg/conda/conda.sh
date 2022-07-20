@@ -9,7 +9,7 @@ conda config --set auto_activate_base false
 # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
 conda update --all -y
 conda install -c anaconda numpy pandas scipy matplotlib -y
-conda install -c bioconda snakemake kallisto bustools -y
+#conda install -c bioconda snakemake kallisto bustools -y
 
 #conda activate # activate base when needed
 #conda activate snakemake # activate base when needed
