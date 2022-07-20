@@ -8,7 +8,9 @@ TEXT_RESET='\e[0m'
 
 
 # final config
+## mark ./setup.sh
 sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
+## config after rebooting
 sudo cp -f ./cfg/reboot/finish.sh ~
 [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
 echo -e "[Desktop Entry] \nExec=~/finish.sh \nIcon=dialog-scripts \nName=finish.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/finish.sh.desktop
