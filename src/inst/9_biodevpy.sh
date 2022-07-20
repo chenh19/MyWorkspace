@@ -94,7 +94,7 @@ esac
 
 ###>>>sed-i-d-start-1
 # manual config
-if [ -d ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/ ] 
+if [ -d /opt/JupyterLab/ ] 
 then
 
 # aske whether to configure Python dev env manually
