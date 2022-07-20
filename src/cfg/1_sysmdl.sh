@@ -20,7 +20,7 @@ case "$choice" in
         if ! grep -q GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0" /etc/default/grub ; then sudo sed -i 's+GRUB_CMDLINE_LINUX=""+GRUB_CMDLINE_LINUX="psmouse.synaptics_intertouch=0"+g' /etc/default/grub && sudo update-grub ; fi
         
         # configure undervolt
-        sudo apt-get update && sudo apt-get install -y python3-pip && sudo pip3 install undervolt
+        sudo apt-get update && sudo apt-get install -y python3-pip && sudo pip install undervolt
         [ ! -f /etc/systemd/system/undervolt.service ] && sudo touch /etc/systemd/system/undervolt.service
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Unit --key Description "undervolt"
         sudo kwriteconfig5 --file /etc/systemd/system/undervolt.service --group Service --key Type "oneshot"
