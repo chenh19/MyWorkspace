@@ -2,9 +2,9 @@
 
 # config conda in a new terminal window
 conda update anaconda -y && conda update --all -y
-conda config --add channels defaults
-conda config --add channels bioconda
 conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --add channels defaults
 
 # note: conda installed packages are constrained to the conda environment, while pip3 installed packages might affect system environment
 conda install -c anaconda numpy pandas -y
