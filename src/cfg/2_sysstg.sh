@@ -129,14 +129,6 @@ sudo ufw enable
 
 # Input Devices (take effect after rebooting)
 
-## System Settings > Input Devices > Touchpad > Pointer acceleration: 0.6-1.0
-## System Settings > Input Devices > Touchpad > check "Tap-to-click", "Tap-and-drag", "Right-click", "Two fingers", "Invert scroll direction", "Press anywhere with two fingers"
-cat /proc/bus/input/devices | grep -i syna > ~/.config/touchpadxlibinputrc # detect touchpad name
-sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
-sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
-sed -i '2,200d' ~/.config/touchpadxlibinputrc
-echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=true \npointerAcceleration=0.6 \ntapToClick=true" | tee -a ~/.config/touchpadxlibinputrc
-
 ## KDE right click issue
 sudo apt-get update && sudo apt-get install sxhkd -y && cp -rf ./cfg/sxhkd/ ~/.config/
 [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
