@@ -91,4 +91,4 @@ bash ./cfg/3_sysapp.sh
 bash ./cfg/4_sysdsp.sh
 bash ./cfg/5_usrapp.sh
 bash ./cfg/6_update.sh
-#bash ./cfg/7_reboot.sh
+bash ./cfg/7_reboot.sh
