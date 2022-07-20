@@ -38,7 +38,7 @@ esac
 
 # Scaling (take effect after rebooting)
 echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the scaling factor, 2.5 (a), 2.0 (b), 1.5 (c) or default 1.0 (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2.5"
@@ -53,6 +53,7 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "60"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "14"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
+        echo -e " \n${TEXT_GREEN}System scaling factor set to 250%.${TEXT_RESET} \n"
         ;;
   b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2"
@@ -67,6 +68,7 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "56"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "12"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "12"
+        echo -e " \n${TEXT_GREEN}System scaling factor set to 200%.${TEXT_RESET} \n"
         ;;
   c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1.5"
@@ -81,6 +83,7 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "45"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "8"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "8"
+        echo -e " \n${TEXT_GREEN}System scaling factor set to 150%.${TEXT_RESET} \n"
         ;;
   * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
         kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1"
@@ -95,6 +98,7 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "30"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "6"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
+        echo -e " \n${TEXT_GREEN}System scaling factor set to 100%.${TEXT_RESET} \n"
         ;;
 esac
 
