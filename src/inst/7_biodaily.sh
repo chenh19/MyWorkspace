@@ -29,10 +29,9 @@ case "$choice" in
 
         # install snapgene
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
-        wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb
         wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb'
-        echo '"SnapGene" deb package is downloaded.' && sleep 1
-        mv -f ./*.deb ./snapgene/ && sudo dpkg -i ./snapgene/*.deb
+        wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb && echo '"SnapGene" deb package is downloaded.'
+        sleep 1 && mv -f ./*.deb ./snapgene/ && sudo dpkg -i ./snapgene/*.deb
         sudo apt-get -f -y install
         
         # install zotero
