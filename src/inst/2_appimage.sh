@@ -15,7 +15,9 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 
+
 # download appimages
+
 ## Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
 wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
@@ -35,11 +37,14 @@ wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x6
 tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm *tar.bz2
 cp -rf ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
 
+
 # move to /opt folder
 sudo cp -rf ./eudic/ ./etcher/ ./tropy/ /opt/
 sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage /opt/etcher/balenaEtcher.AppImage /opt/tropy/tropy
 
+
 # create desktop icons
+
 ## Eudic
 echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage \nGenericName= \nIcon=/opt/eudic/eudic.png \nMimeType= \nName=EuDic \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./eudic.desktop
 
@@ -51,6 +56,7 @@ echo -e "[Desktop Entry] \nCategories=Graphics; \nComment=Image Manager \nExec=/
 
 # move to /usr/share/applications folder
 sudo cp -rf ./*.desktop /usr/share/applications/ && sleep 5
+
 
 # auto config
 # Etcher
