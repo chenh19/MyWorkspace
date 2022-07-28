@@ -99,7 +99,7 @@ sudo apt-get install default-jre default-jdk -y
   esac
   
   ## install
-  sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
+  mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
   
 # fix missings
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
