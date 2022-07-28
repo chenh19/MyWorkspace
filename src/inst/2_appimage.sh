@@ -16,18 +16,20 @@ sudo echo ""
 echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 
 # download appimages
-# Eudic
+## Eudic
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
 wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
 unzip -o -q eudic.zip?dl=0 && sleep 1 && rm eudic.zip?dl=0 && sleep 5
-# Etcher
+
+## Etcher
 [ ! -d ~/.setup_cache/etcher/ ] && mkdir ~/.setup_cache/etcher/
 wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && echo '"Etcher" AppImage package is downloaded.' && sleep 5 #_to_be_updated
 unzip -o -q *.zip && sleep 1 && rm *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && sleep 1
 ./etcher/balenaEtcher.AppImage --appimage-extract && sleep 1
 cp -rf ./squashfs-root/usr/share/icons/hicolor/512x512/apps/balena-etcher-electron.png ./etcher/ && rm -rf ./squashfs-root/
 mv $(ls ./etcher/*.png) ./etcher/balenaEtcher.png && sleep 1
-# Tropy
+
+## Tropy
 [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
 wget -q https://github.com/tropy/tropy/releases/download/v1.11.1/tropy-1.11.1-x64.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
 tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm *tar.bz2
@@ -38,11 +40,13 @@ sudo cp -rf ./eudic/ ./etcher/ ./tropy/ /opt/
 sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage /opt/etcher/balenaEtcher.AppImage /opt/tropy/tropy
 
 # create desktop icons
-# Eudic
+## Eudic
 echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage \nGenericName= \nIcon=/opt/eudic/eudic.png \nMimeType= \nName=EuDic \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./eudic.desktop
-# Etcher
+
+## Etcher
 echo -e "[Desktop Entry] \nCategories=Utility; \nComment=Bootable USB Creator \nExec=/opt/etcher/balenaEtcher.AppImage \nGenericName= \nIcon=/opt/etcher/balenaEtcher.png \nMimeType= \nName=Etcher \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./etcher.desktop
-# Tropy
+
+## Tropy
 echo -e "[Desktop Entry] \nCategories=Graphics; \nComment=Image Manager \nExec=/opt/tropy/tropy \nGenericName= \nIcon=/opt/tropy/tropy.png \nMimeType= \nName=Tropy \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./tropy.desktop
 
 # move to /usr/share/applications folder
