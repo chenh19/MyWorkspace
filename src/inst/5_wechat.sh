@@ -23,8 +23,8 @@ case "$choice" in
         sudo apt-get update && sudo apt-get install fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy libjpeg62:i386 -y
 
         # install deepin-wine
-        wget -q https://www.dropbox.com/s/t43dz4ws6576r58/deepin-wine-ubuntu-master.zip?dl=0 && echo '"Deepin-wine WeChat" packages downloaded.' && sleep 5
-        unzip -o -q deepin-wine-ubuntu-master.zip?dl=0 && rm deepin-wine-ubuntu-master.zip?dl=0 && sleep 1
+        wget -q https://www.dropbox.com/s/t43dz4ws6576r58/deepin-wine-ubuntu-master.zip?dl=0 && echo '"Deepin-wine WeChat" packages downloaded.' && sleep 5 #_to_be_updated
+        unzip -o -q deepin-wine-ubuntu-master.zip?dl=0 && sleep 1 && rm deepin-wine-ubuntu-master.zip?dl=0 && sleep 5
         sudo bash ./deepin-wine-ubuntu-master/deepin-wine-setup.sh
         sudo bash ./deepin-wine-ubuntu-master/KDE-install.sh
         sudo ln -sf /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1.0 /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1
