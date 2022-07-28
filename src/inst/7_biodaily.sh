@@ -50,7 +50,7 @@ case "$choice" in
                 
                 # install University VPN
                 wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
-                unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm anyconnect.zip?dl=0 && sleep 5
+                unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm -f anyconnect.zip?dl=0 && sleep 1
                 cd ./anyconnect-linux64-4.10.04065/vpn
                 sudo bash vpn_install.sh && sleep 5
                 cd ~/.setup_cache/
