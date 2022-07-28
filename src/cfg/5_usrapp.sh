@@ -17,3 +17,4 @@ case "$choice" in
   y|Y ) # notify start
         sudo echo ""
         echo -e "${TEXT_YELLOW}Configuring user apps...${TEXT_RESET} \n" && sleep 1
+        
