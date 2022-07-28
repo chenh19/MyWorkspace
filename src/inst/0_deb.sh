@@ -64,16 +64,16 @@ sudo apt-get install default-jre default-jdk -y
   echo -e " \n${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
   
   ## redirecting links
-  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && echo "Google Chrome package is downloaded." && sleep 1
-  wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo "Zoom package is downloaded." && sleep 1
-  wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo "Teamviewer package is downloaded." && sleep 1
-  wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo "Free Download Manager package is downloaded." && sleep 1
+  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
+  wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
+  wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
+  wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo '"Free Download Manager" deb package is downloaded.' && sleep 1
 
   ## direct links #_to_be_updated
-  wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb && echo "Touchegg package is downloaded." && sleep 1
-  wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb && echo "Teamviewer package is downloaded." && sleep 1
-  wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo "Simplenote package is downloaded." && sleep 1
-  wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo "qView package is downloaded." && sleep 1
+  wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
+  wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
+  wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
+  wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1
   sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # install apps (licensed)
@@ -84,7 +84,7 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing ExpanDrive...${TEXT_RESET} \n" && sleep 1
                 # download
-                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb
+                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo '"ExpanDrive" deb package is downloaded.' && sleep 1
                 # install
                 sleep 1 && mv -f ./ExpanDrive*.deb ./deb/ && sudo apt-get install -f -y ./deb/ExpanDrive*.deb
                 # notify end
