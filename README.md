@@ -17,6 +17,7 @@ This tool will install and configure:
 - [AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
+- [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - and a lot more
 
