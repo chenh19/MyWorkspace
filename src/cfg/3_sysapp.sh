@@ -32,8 +32,8 @@ done
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
-wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && sleep 1 #_to_be_updated
-unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm adhe.textcommand.zip?dl=0
+wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && echo '"Overview button" installing package is downloaded.' && sleep 1 #_to_be_updated
+unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm -f adhe.textcommand.zip?dl=0
 [ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
 [ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
 cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
@@ -130,8 +130,8 @@ kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSav
 ######################################################################################
 
 # okular
-[ -f ~/.config/okularpartrc ] && rm ~/.config/okularpartrc
-[ -f ~/.config/okularrc ] && rm ~/.config/okularrc
+[ -f ~/.config/okularpartrc ] && rm -f ~/.config/okularpartrc
+[ -f ~/.config/okularrc ] && rm -f ~/.config/okularrc
 touch ~/.config/okularpartrc ~/.config/okularrc
 
 # Settings > Configure Okular > General > check "Open new files in tabs"
@@ -153,8 +153,8 @@ cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
 ######################################################################################
 
 # windows fonts
-wget -q https://www.dropbox.com/s/nsfxnl3tt1md56u/windows-fonts.zip?dl=0 && sleep 1
-unzip -o -q windows-fonts.zip?dl=0 && sleep 1 && rm windows-fonts.zip?dl=0 && sleep 1
+wget -q https://www.dropbox.com/s/nsfxnl3tt1md56u/windows-fonts.zip?dl=0 && echo 'Windows Fonts are downloaded.' && sleep 1
+unzip -o -q windows-fonts.zip?dl=0 && sleep 1 && rm -f windows-fonts.zip?dl=0 && sleep 1
 sudo cp -rf ./fonts/windows/ /usr/share/fonts/
 
 ######################################################################################
