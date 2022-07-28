@@ -130,7 +130,6 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
-        
         ## chrome
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Google Chrome? [y/n/c]'$TEXT_RESET)"$' \n' choice
