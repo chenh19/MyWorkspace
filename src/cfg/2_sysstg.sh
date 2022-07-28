@@ -144,7 +144,7 @@ sudo lshw -C display > ./gpu.txt
 if grep -q NVIDIA ./gpu.txt; then
     echo -e "RcFileLocale = C \nDisplayStatusBar = Yes \nSliderTextEntries = Yes \nIncludeDisplayNameInConfigFile = No \nShowQuitDialog = No \nUpdateRulesOnProfileNameChange = Yes" > ~/.nvidia-settings-rc
 fi
-rm ./gpu.txt
+rm -f ./gpu.txt
 
 ######################################################################################
 
