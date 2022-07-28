@@ -57,8 +57,8 @@ case "$choice" in
                 
                 # install RStudio
                 [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-                wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.1-554-amd64.deb #_to_be_updated
-                sleep 1 && mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
+                wget -q https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.1-554-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
+                mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get -f -y install
                 
                 # config
