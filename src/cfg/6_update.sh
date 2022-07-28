@@ -36,7 +36,7 @@ conda update --all -y
 
 
 # cleanup
-rm update.R && sudo apt-get autoremove -y && sudo apt-get clean
+rm -f update.R && sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}All system packages updated!${TEXT_RESET} \n" && sleep 5
