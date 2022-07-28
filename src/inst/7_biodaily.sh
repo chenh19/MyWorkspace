@@ -31,6 +31,7 @@ case "$choice" in
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
         wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb
         wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb'
+        echo '"SnapGene" deb package is downloaded.' && sleep 1
         mv -f ./*.deb ./snapgene/ && sudo dpkg -i ./snapgene/*.deb
         sudo apt-get -f -y install
         
@@ -49,7 +50,7 @@ case "$choice" in
                 echo -e "${TEXT_YELLOW}Installing University VPN...${TEXT_RESET} \n" && sleep 1
                 
                 # install University VPN
-                wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && sleep 5 #_to_be_updated
+                wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && echo '"Cisco Anyconnet client" deb package is downloaded.' && sleep 5 #_to_be_updated
                 unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm -f anyconnect.zip?dl=0 && sleep 1
                 cd ./anyconnect-linux64-4.10.04065/vpn
                 sudo bash vpn_install.sh && sleep 5
