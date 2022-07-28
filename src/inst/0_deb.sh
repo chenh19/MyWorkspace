@@ -84,7 +84,7 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing ExpanDrive...${TEXT_RESET} \n" && sleep 1
                 # download
-                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo '"ExpanDrive" deb package is downloaded.' && sleep 1
+                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo '"ExpanDrive" deb package is downloaded.' && sleep 1 #_to_be_updated
                 # install
                 sleep 1 && mv -f ./ExpanDrive*.deb ./deb/ && sudo apt-get install -f -y ./deb/ExpanDrive*.deb
                 # notify end
