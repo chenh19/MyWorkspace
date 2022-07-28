@@ -31,6 +31,10 @@ sudo apt-get install default-jre default-jdk -y
   ## Inkscape
   sudo add-apt-repository ppa:inkscape.dev/stable -y
   sudo apt-get update && sudo apt-get install inkscape -y
+  
+  ## WiFi Hotspot
+  sudo add-apt-repository ppa:lakinduakash/lwh -y
+  sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
 
 # install apps (source list)
   ## enpass
