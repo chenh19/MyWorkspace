@@ -71,7 +71,7 @@ sudo apt-get install default-jre default-jdk -y
 
   ## direct links #_to_be_updated
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
-  wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
+  wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1
   sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
