@@ -93,7 +93,7 @@ case "$choice" in
         
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
-        [ -f ./.Rhistory ] && rm ./.Rhistory
+        [ -f ./.Rhistory ] && rm -f ./.Rhistory
         [ -d ./rscript/ ] && rm -rf ./rscript/
         [ -d ./devdeb/ ] && rm -rf ./devdeb/
 
@@ -124,7 +124,7 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Please configure and then close RStudio to continue.${TEXT_RESET} \n" && sleep 1
                 rstudio
                 #cleanup
-                [ -f ./.Rhistory ] && rm ./.Rhistory
+                [ -f ./.Rhistory ] && rm -f ./.Rhistory
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
