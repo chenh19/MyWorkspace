@@ -67,32 +67,41 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
   wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
   wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
-  wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo '"Free Download Manager" deb package is downloaded.' && sleep 1
 
-  ## direct links
+  ## absolute links
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.14/touchegg_2.0.14_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://downloads.slack-edge.com/releases/linux/4.27.154/prod/x64/slack-desktop-4.27.154-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
-  sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
-
-# install apps (licensed)
-  ## expandrive
+    
+  ## ask whether to download
+  ### fdm
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Installing ExpanDrive...${TEXT_RESET} \n" && sleep 1
-                # download
-                wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo '"ExpanDrive" deb package is downloaded.' && sleep 1 #_to_be_updated
-                # install
-                sleep 1 && mv -f ./ExpanDrive*.deb ./deb/ && sudo apt-get install -f -y ./deb/ExpanDrive*.deb
-                # notify end
-                echo -e " \n${TEXT_GREEN}ExpanDrive installed!${TEXT_RESET} \n" && sleep 5;;
+        y|Y ) # download
+              wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
+              # notify end
+              echo '"Free Download Manager" deb package is downloaded.' && sleep 1;;
           * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}ExpanDrive not installed.${TEXT_RESET} \n" && sleep 5;;
+              echo '"Free Download Manager" deb package not downloaded.' && sleep 1;;
   esac
-
+  
+  ### expandrive
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # download
+              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
+              # notify end
+              echo '"ExpanDrive" deb package is downloaded.' && sleep 1;;
+          * ) # notify cancellation
+              echo '"ExpanDrive" deb package not downloaded.' && sleep 1;;
+  esac
+  
+  ## install
+  sleep 1 && mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
+  
 # fix missings
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
