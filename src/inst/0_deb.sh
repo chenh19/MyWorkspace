@@ -221,7 +221,20 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-                
+        
+        ## wifi hotspot
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi Hotspot? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then close WiFi Hotspot to continue.${TEXT_RESET} \n" && sleep 1
+                wihotspot
+                # notify end
+                echo -e " \n${TEXT_GREEN}WiFi Hotspot configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}WiFi Hotspot not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## evolution
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
