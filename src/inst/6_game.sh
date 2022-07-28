@@ -25,7 +25,7 @@ case "$choice" in
         mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./inst/ && sleep 1
         echo -e "${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
         bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
-        rm ./inst/HumanResourceMachine-Linux-2016-03-23.sh
+        rm -f ./inst/HumanResourceMachine-Linux-2016-03-23.sh
 
         # notify end
         echo -e " \n${TEXT_GREEN}Programming games installed!${TEXT_RESET} \n" && sleep 5;;
