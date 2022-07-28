@@ -1,4 +1,4 @@
-
+        
         # notify end
         echo -e " \n${TEXT_GREEN}All apps Configured!${TEXT_RESET} \n" && sleep 5;;
         
