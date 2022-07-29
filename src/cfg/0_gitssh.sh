@@ -13,7 +13,7 @@ cd ~
 
 # ask whether to set up an ssh key for github
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up an SSH key for GitHub? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up an SSH key for your GitHub account? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
