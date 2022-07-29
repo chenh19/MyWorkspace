@@ -78,8 +78,7 @@ esac
 
 ###>>>sed-i-d-start-1
 # manual config
-# wechat
-if [ -d /opt/gslbiotech/snapgene-viewer/ ] 
+if [ ! -z "$(dpkg -l | grep snapgene)" ]
 then
 
 # aske whether to configure daily biological software manually
@@ -103,7 +102,7 @@ case "$choice" in
         esac
         
         # university vpn
-        if [ -d  /opt/cisco/anyconnect/bin/ ] 
+        if [ -f /opt/cisco/anyconnect/bin/vpnui ] 
         then
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
