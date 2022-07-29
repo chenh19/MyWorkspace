@@ -27,7 +27,7 @@ case "$choice" in
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
         sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
 
-        # install snapgene
+        # install snapgene-viewer
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
         wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb'
         wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
