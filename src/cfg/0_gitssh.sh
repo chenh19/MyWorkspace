@@ -11,6 +11,10 @@ TEXT_RESET='\e[0m'
 cd ~
 
 
+# detect ssh keys
+if [ ! -z "$(ls -al ~/.ssh | grep id_ed25519)" ]; 
+then
+
 # ask whether to set up an ssh key for github
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to set up an SSH key for your GitHub account? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -45,6 +49,8 @@ case "$choice" in
   * ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}Git SSH not configured.${TEXT_RESET} \n" && sleep 5;;
 esac
+
+fi
 
 # mark setup.sh
 sed -i 's+bash ./cfg/0_gitssh.sh+#bash ./cfg/0_gitssh.sh+g' ~/.setup_cache/setup.sh
