@@ -26,13 +26,13 @@ if [ -d ~/.setup_cache/ ]; then
 fi
 
 if [ -f ~/Documents/gitssh.txt ]; then
-  # ask whether to delete github ssh key
+  # ask whether to delete git ssh key
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete your GitHub SSH key saved in ~/Documents/gitssh.txt file? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete your Git SSH key saved in ~/Documents/gitssh.txt file? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
     y|Y ) rm -f ~/Documents/gitssh.txt
-          echo -e " \n${TEXT_GREEN}Your GitHub SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Your GitHub SSH Key remains in ~/Documents/gitssh.txt file.${TEXT_RESET} \n" && sleep 1;;
+          echo -e " \n${TEXT_GREEN}Your Git SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}Your Git SSH Key remains in ~/Documents/gitssh.txt file.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
 
