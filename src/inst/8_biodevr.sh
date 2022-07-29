@@ -106,7 +106,7 @@ esac
 
 ###>>>sed-i-d-start-1
 # manual config
-if [ -d ~/.config/RStudio/ ] 
+if [ ! -z "$(dpkg -l | grep rstudio)" ]
 then
 
 # aske whether to configure R dev env manually
