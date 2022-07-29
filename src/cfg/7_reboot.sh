@@ -32,7 +32,7 @@ if [ -f ~/Documents/gitssh.txt ]; then
   case "$choice" in
     y|Y ) rm -f ~/Documents/gitssh.txt
           echo -e " \n${TEXT_GREEN}GitHub SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}GitHub SSH Key kept in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}GitHub SSH Key kept in ~/Documents/gitssh.txt file.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
 
