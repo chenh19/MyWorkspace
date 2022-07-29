@@ -94,7 +94,7 @@ esac
 
 ###>>>sed-i-d-start-1
 # manual config
-if [ -d /opt/JupyterLab/ ] 
+if [ ! -z "$(dpkg -l | grep jupyterlab-desktop)" ]
 then
 
 # aske whether to configure Python dev env manually
