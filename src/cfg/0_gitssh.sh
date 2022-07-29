@@ -12,7 +12,7 @@ cd ~
 
 
 # detect ssh keys
-if [ ! -z "$(ls -al ~/.ssh | grep id_ed25519)" ]; 
+if [ ! -z "$(ls -al ~/.ssh | grep id_ed25519)" ]
 then
 
 # ask whether to set up an ssh key for github
