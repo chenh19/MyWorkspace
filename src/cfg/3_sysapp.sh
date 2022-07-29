@@ -129,9 +129,7 @@ plasma-systemmonitor
 kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSaveCopyExport' "true"
 ## Default Save Location
 [ ! -d ~/Pictures/Screenshots/ ] && mkdir ~/Pictures/Screenshots/
-defaultSaveLocation=file:///home/$USER/Pictures/Screenshots/
-kwriteconfig5 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation $defaultSaveLocation
-unset defaultSaveLocation
+kwriteconfig5 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation file:///home/$USER/Pictures/Screenshots/
 
 ######################################################################################
 
