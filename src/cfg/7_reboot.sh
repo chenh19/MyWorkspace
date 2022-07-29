@@ -21,18 +21,18 @@ if [ -d ~/.setup_cache/ ]; then
   case "$choice" in
     y|Y ) rm -rf ~/.setup_cache/
           echo -e " \n${TEXT_GREEN}All setup scripts removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Setup scripts kept in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}Setup scripts remain in ~/.setup-cache/ folder.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
 
 if [ -f ~/Documents/gitssh.txt ]; then
   # ask whether to delete github ssh key
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the GitHub SSH key saved in ~/Documents/gitssh.txt file? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete your GitHub SSH key saved in ~/Documents/gitssh.txt file? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
     y|Y ) rm -f ~/Documents/gitssh.txt
-          echo -e " \n${TEXT_GREEN}GitHub SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}GitHub SSH Key kept in ~/Documents/gitssh.txt file.${TEXT_RESET} \n" && sleep 1;;
+          echo -e " \n${TEXT_GREEN}Your GitHub SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}Your GitHub SSH Key remains in ~/Documents/gitssh.txt file.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
 
