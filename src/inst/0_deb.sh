@@ -188,7 +188,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure LibreOffice? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please configure ${TEXT_GREEN}[themes/if [ ! -z "$(dpkg -l | grep rstudio)" ]fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
                 libreoffice
                 # notify end
                 echo -e " \n${TEXT_GREEN}LibreOffice configured!${TEXT_RESET} \n" && sleep 1;;
@@ -302,7 +302,7 @@ case "$choice" in
         esac
         
         ## expandrive
-        if [ -d /opt/ExpanDrive/ ]
+        if [ ! -z "$(dpkg -l | grep expandrive)" ]
         then
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
