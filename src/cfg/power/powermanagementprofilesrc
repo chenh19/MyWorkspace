@@ -33,7 +33,7 @@ suspendType=1
 icon=battery-low
 
 [LowBattery][BrightnessControl]
-value=30
+value=10
 
 [LowBattery][DPMSControl]
 idleTime=120
