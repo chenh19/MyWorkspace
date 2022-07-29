@@ -33,7 +33,8 @@ ssh-add ~/.ssh/id_ed25519
 # get the key
 echo -e " \n${TEXT_GREEN}All done! Git SSH key: ${TEXT_RESET} \n"
 cat ~/.ssh/id_ed25519.pub
-echo -e " \n${TEXT_GREEN}Please copy the above key, then navigate to Github account and add the ssh key.${TEXT_RESET} \n"
+cat ~/.ssh/id_ed25519.pub > ~/Documents/gitssh.txt
+echo -e " \n${TEXT_GREEN}You may copy the above SSH key and add it to your GitHub. Or, it's also save in [~/Documents/gitssh.txt] and you may work on it later.${TEXT_RESET} \n"
 
 
 # mark setup.sh
