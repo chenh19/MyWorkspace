@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.3.4*  
+*Current version: v1.3.6*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
