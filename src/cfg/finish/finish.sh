@@ -20,4 +20,7 @@ sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
 sed -i '2,200d' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false \nclickMethodClickfinger=true \nnaturalScroll=true \npointerAcceleration=0.6 \ntapToClick=true" | tee -a ~/.config/touchpadxlibinputrc
 sleep 1
+kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' "applications.page"
+kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,process.page,history.page,application.page"
+sleep 1
 rm -f .finish.sh
