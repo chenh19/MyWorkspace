@@ -87,7 +87,6 @@ sudo apt-get install default-jre default-jdk -y
               echo -e ' \n"Free Download Manager" deb package not downloaded. \n' && sleep 1;;
   esac
   ### expandrive
-  sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # download
