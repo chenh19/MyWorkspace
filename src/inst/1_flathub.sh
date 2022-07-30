@@ -34,6 +34,7 @@ cp -f ./cfg/touchegg/* ~/.config/touchegg/
 # cleanup
 sudo snap remove firefox
 [ -d ~/snap/ ] && sudo rm -rf ~/snap/
+[ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
