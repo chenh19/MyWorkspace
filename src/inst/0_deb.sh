@@ -82,9 +82,9 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # download
               wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
               # notify end
-              echo -e " \n"Free Download Manager" deb package is downloaded. \n" && sleep 1;;
+              echo -e ' \n"Free Download Manager" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
-              echo -e " \n"Free Download Manager" deb package not downloaded. \n" && sleep 1;;
+              echo -e ' \n"Free Download Manager" deb package not downloaded. \n' && sleep 1;;
   esac
   ### expandrive
   sudo echo ""
@@ -93,9 +93,9 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # download
               wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
               # notify end
-              echo -e " \n"ExpanDrive" deb package is downloaded. \n" && sleep 1;;
+              echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
-              echo -e " \n"ExpanDrive" deb package not downloaded. \n" && sleep 1;;
+              echo -e ' \n"ExpanDrive" deb package not downloaded. \n' && sleep 1;;
   esac
   
   ## install
