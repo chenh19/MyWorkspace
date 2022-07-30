@@ -21,7 +21,7 @@ case "$choice" in
         
         # human resource machine
         wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && echo '"Human Resource Machine" installing package is downloaded.' && sleep 5
-        unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm -f HumanResourceMachine.zip?dl=0 && sleep 1
+        unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm -f HumanResourceMachine.zip?dl=0 && echo "" && sleep 1
         mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./inst/ && sleep 1
         echo -e "${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
         bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
