@@ -26,7 +26,7 @@ unzip -o -q eudic.zip?dl=0 && sleep 1 && rm -f eudic.zip?dl=0 && sleep 5
 ## Etcher
 [ ! -d ~/.setup_cache/etcher/ ] && mkdir ~/.setup_cache/etcher/
 wget -q https://github.com/balena-io/etcher/releases/download/v1.7.9/balena-etcher-electron-1.7.9-linux-x64.zip && echo '"Etcher" AppImage package is downloaded.' && sleep 5 #_to_be_updated
-unzip -o -q *.zip && sleep 1 && rm -f *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && sleep 1
+unzip -o -q *.zip && sleep 1 && rm -f *.zip && mv $(ls *.AppImage) balenaEtcher.AppImage && mv -f ./*.AppImage ./etcher/ && echo "" && sleep 1
 ./etcher/balenaEtcher.AppImage --appimage-extract && sleep 1
 cp -rf ./squashfs-root/usr/share/icons/hicolor/512x512/apps/balena-etcher-electron.png ./etcher/ && rm -rf ./squashfs-root/
 mv $(ls ./etcher/*.png) ./etcher/balenaEtcher.png && sleep 1
