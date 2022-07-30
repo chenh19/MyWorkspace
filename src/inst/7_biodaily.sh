@@ -29,7 +29,7 @@ case "$choice" in
 
         # install snapgene-viewer
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
-        #wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb'
+        #wget -q 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1_amd64.deb' #no longer accessible
         wget -q 'https://www.dropbox.com/s/tthumrfhdhb5zz9/libssl1.1_1.1.1l-1ubuntu1.3_amd64.zip?dl=0' && sleep 1
         unzip -o -q libssl1.1_1.1.1l-1ubuntu1.3_amd64.zip?dl=0 && sleep 1 && rm -f libssl1.1_1.1.1l-1ubuntu1.3_amd64.zip?dl=0 && sleep 1
         wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
