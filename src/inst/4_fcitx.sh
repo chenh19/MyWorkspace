@@ -24,8 +24,7 @@ case "$choice" in
         sudo apt-get install fcitx kde-config-fcitx fcitx-sunpinyin -y
 
         ## setup environment
-        echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" \nXMODIFIERS=@im=fcitx \nQT_IM_MODULE=fcitx \nGTK_IM_MODULE=fcitx' > ./environment
-        sudo mv -f ./environment /etc/environment
+        sudo cp -f ./cfg/environment/environment /etc/
 
         ## setup autostart
         [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
