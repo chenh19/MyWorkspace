@@ -88,6 +88,9 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionTogg
 ## label the /root
 sudo e2label $(blkid | cut -f1 -d":") KubuntuHD
 
+## hide folders
+echo snap >> ~/.hidden
+
 ######################################################################################
 
 # Konsole
