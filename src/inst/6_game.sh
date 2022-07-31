@@ -19,6 +19,9 @@ case "$choice" in
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing programming games...${TEXT_RESET} \n" && sleep 1
         
+        # 2048
+        sudo snap install qt-2048-snap
+        
         # human resource machine
         wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && echo '"Human Resource Machine" installing package is downloaded.' && sleep 5
         unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm -f HumanResourceMachine.zip?dl=0 && echo "" && sleep 1
