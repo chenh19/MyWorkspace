@@ -22,6 +22,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # install apps
 sudo flatpak install -y --noninteractive flathub org.kde.kclock
+sudo flatpak install -y --noninteractive flathub org.kde.kweather
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
