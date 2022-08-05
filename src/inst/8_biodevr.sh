@@ -45,7 +45,11 @@ case "$choice" in
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         echo "" && sudo Rscript ./rscript/packages.R
         echo "" && Rscript ./rscript/webdriver.R
-                
+        
+        ## this issue will be fixed by RStudio 2022.11 (https://github.com/rstudio/rstudio/issues/11552#issuecomment-1194609342)
+        echo -e "remotes::install_version("rlang", "1.0.2")" > ./rscript/rlang.R
+        echo "" && sudo Rscript ./rscript/rlang.R
+        
         # ask whether to install RStudio
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
