@@ -34,6 +34,9 @@ sudo Rscript ./update.R
 # Conda update
 conda update --all -y
 
+# kernel update
+sudo ukuu --scripted --install-latest
+
 
 # cleanup
 rm -f update.R && sudo apt-get autoremove -y && sudo apt-get clean
