@@ -84,6 +84,7 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCal
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
 # Dolphin toolbar
+[ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
 [ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
 cp -f ./cfg/dolphin/dolphinui.rc ~/.local/share/kxmlgui5/dolphin/
 # Right click and hide unnecessary shortcuts in the left panel
