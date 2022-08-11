@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.4.5*  
+*Current version: v1.4.6*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -15,6 +15,7 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
+- [Syncthing](https://syncthing.net/)
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
