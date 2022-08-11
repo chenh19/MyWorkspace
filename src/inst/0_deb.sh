@@ -24,7 +24,7 @@ sudo apt-get install default-jre default-jdk -y
 
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
-  sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl python3-pip -y
+  sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl python3-pip syncthing-gtk -y
   #sudo apt-get install axel -y
 
 # install apps (ppa)
