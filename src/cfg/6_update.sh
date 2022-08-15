@@ -37,6 +37,9 @@ conda update --all -y
 # kernel update
 sudo ukuu --scripted --install-latest
 
+# grub update
+sudo update-grub
+
 
 # cleanup
 rm -f update.R && sudo apt-get autoremove -y && sudo apt-get clean
