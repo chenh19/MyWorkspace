@@ -96,6 +96,16 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
               echo -e ' \n"ExpanDrive" deb package not downloaded. \n' && sleep 1;;
   esac
+  ### angry IP scanner
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Angry IP Scanner? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # download
+              wget -q https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb #_to_be_updated
+              # notify end
+              echo -e ' \n"Angry IP Scanner" deb package is downloaded. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"Angry IP Scanner" deb package not downloaded. \n' && sleep 1;;
+  esac
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
