@@ -19,6 +19,7 @@ This tool will install and configure:
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
+- [Angry IP Scanner](https://angryip.org/)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - and a lot more
 
