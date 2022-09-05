@@ -59,6 +59,8 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
         # SDDM DPI
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 240" | sudo tee /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/environment/environment /etc/
+        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
         # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
@@ -77,6 +79,8 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "12"
         # SDDM DPI
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 192" | sudo tee /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/environment/environment /etc/
+        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
         # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
@@ -95,6 +99,8 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "8"
         # SDDM DPI
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 144" | sudo tee /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/environment/environment /etc/
+        echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
         # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
@@ -113,6 +119,8 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
         # SDDM DPI
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 96" | sudo tee /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/environment/environment /etc/
+        echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
         # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
