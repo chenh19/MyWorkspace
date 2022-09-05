@@ -128,6 +128,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
+  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key saverecents "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
   
   ## Syncthing
