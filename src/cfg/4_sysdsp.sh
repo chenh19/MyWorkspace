@@ -41,6 +41,7 @@ esac
 
 # Scaling (take effect after rebooting)
 echo ""
+echo -e "[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true" | sudo tee /etc/sddm.conf.d/hidpi.conf
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
@@ -56,6 +57,9 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "60"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "14"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
+        # SDDM DPI
+        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 240" | sudo tee /etc/sddm.conf.d/dpi.conf
+        # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
   b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
@@ -71,6 +75,9 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "56"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "12"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "12"
+        # SDDM DPI
+        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 192" | sudo tee /etc/sddm.conf.d/dpi.conf
+        # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
   c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
@@ -86,6 +93,9 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "45"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "8"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "8"
+        # SDDM DPI
+        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 144" | sudo tee /etc/sddm.conf.d/dpi.conf
+        # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
   * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
@@ -101,6 +111,9 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "30"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "6"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
+        # SDDM DPI
+        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 96" | sudo tee /etc/sddm.conf.d/dpi.conf
+        # Grub
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
 esac
