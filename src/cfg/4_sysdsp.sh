@@ -39,7 +39,7 @@ case "$choice" in
         ;;
 esac
 
-# Scaling (take effect after rebooting)
+# scaling (take effect after rebooting)
 echo ""
 echo -e "[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true" | sudo tee /etc/sddm.conf.d/hidpi.conf
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
