@@ -126,7 +126,7 @@ case "$choice" in
         ;;
 esac
 
-# wechat
+# wechat scaling
 if [ -d ~/.deepinwine/Deepin-WeChat/ ] 
 then
         # configure scaling
@@ -134,6 +134,9 @@ then
         echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 250 or 200, then click [OK] to exit and continue.${TEXT_RESET} \n"
         env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
 fi
+
+# grub menu scaling
+if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's+#GRUB_GFXMODE=640x480+GRUB_GFXMODE=1024x768+g' /etc/default/grub && sudo update-grub ; fi
 
 
 # mark setup.sh
