@@ -137,7 +137,7 @@ fi
 
 # grub menu scaling
 if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's+#GRUB_GFXMODE=640x480+GRUB_GFXMODE=1024x768+g' /etc/default/grub && sudo update-grub ; fi
-
+# If GRUB_TIMEOUT=10, press Shift+Esc at bootup to enter grub menu
 
 # mark setup.sh
 sed -i 's+bash ./cfg/4_sysdsp.sh+#bash ./cfg/4_sysdsp.sh+g' ~/.setup_cache/setup.sh
