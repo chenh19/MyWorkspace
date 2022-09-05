@@ -130,6 +130,8 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key saverecents "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
+  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#ffffff"
+  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
   
   ## Syncthing
   [ ! -d ~/Sync/ ] && mkdir ~/Sync/
