@@ -61,7 +61,7 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 240" | sudo tee /etc/sddm.conf.d/dpi.conf
         sudo cp -f ./cfg/environment/environment /etc/
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
-        # echo end
+        # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
   b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
@@ -81,7 +81,7 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 192" | sudo tee /etc/sddm.conf.d/dpi.conf
         sudo cp -f ./cfg/environment/environment /etc/
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
-        # echo end
+        # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
   c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
@@ -101,7 +101,7 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 144" | sudo tee /etc/sddm.conf.d/dpi.conf
         sudo cp -f ./cfg/environment/environment /etc/
         echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
-        # echo end
+        # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
   * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
@@ -121,7 +121,7 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 96" | sudo tee /etc/sddm.conf.d/dpi.conf
         sudo cp -f ./cfg/environment/environment /etc/
         echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
-        # echo end
+        # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
 esac
