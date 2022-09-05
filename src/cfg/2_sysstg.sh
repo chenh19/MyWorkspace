@@ -157,6 +157,7 @@ cp -rf ./cfg/power/powermanagementprofilesrc ~/.config/
 
 # config grub if the timeout is 10s #_this_is_neither_required_or_effective_for_Dell_XPS15
 if grep -q "GRUB_TIMEOUT=10" /etc/default/grub ; then sudo sed -i 's+GRUB_TIMEOUT=10+GRUB_TIMEOUT=2+g' /etc/default/grub && sudo update-grub ; fi
+# If grub timeout is 0, press Shift+Esc only once at startup to enter grub menu
 
 ######################################################################################
 
