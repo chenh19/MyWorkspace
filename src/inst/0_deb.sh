@@ -132,9 +132,6 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
-  
-  ## Syncthing
-  [ ! -d ~/Sync/ ] && mkdir ~/Sync/
 
 ###>>>sed-i-d-start-1
 # manual config
@@ -314,19 +311,6 @@ case "$choice" in
                 echo -e " \n${TEXT_GREEN}Zoom configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Zoom not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        
-        ## syncthing
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Syncthing? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then quit Syncthing (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
-                syncthing-gtk
-                # notify end
-                echo -e " \n${TEXT_GREEN}Syncthing configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Syncthing not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         ## expandrive
