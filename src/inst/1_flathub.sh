@@ -32,6 +32,42 @@ sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
 cp -f ./cfg/touchegg/* ~/.config/touchegg/
 
+## Syncthing
+[ ! -d ~/Sync/ ] && mkdir ~/Sync/
+
+
+###>>>sed-i-d-start-1
+# manual config
+# aske whether to configure apt installed apps manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure flatpak apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # ask for individual apps
+        
+        ###>>>sed-i-d-start-2
+        ## syncthing
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Syncthing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please config and then quit Syncthing (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                flatpak run com.github.zocker_160.SyncThingy
+                # notify end
+                echo -e " \n${TEXT_GREEN}Syncthing configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Syncthing not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        ###>>>sed-i-d-end-2
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Apt installed apps not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
+###>>>sed-i-d-end-1
+
 
 # cleanup
 sudo snap remove firefox
