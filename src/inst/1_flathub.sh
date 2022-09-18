@@ -27,7 +27,7 @@ sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche
 sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 
-# config
+# auto config
 ## touchegg
 [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
 cp -f ./cfg/touchegg/* ~/.config/touchegg/
