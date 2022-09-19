@@ -106,6 +106,19 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
               echo -e ' \n"Angry IP Scanner" deb package not downloaded. \n' && sleep 1;;
   esac
+  ### 4k video downloader
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # download
+              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.4-1_amd64.deb?source=website -O 4kvideodownloader.deb #_to_be_updated
+              # notify end
+              echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"4K Video Downloader" deb package not downloaded. \n' && sleep 1;;
+  esac
+  
+  
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
