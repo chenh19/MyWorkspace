@@ -1,7 +1,7 @@
 [Added Associations]
 application/biosequence.embl=org.kde.kwrite.desktop;snapgene-viewer.desktop;
 application/javascript=org.kde.kwrite.desktop;rstudio.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;
-application/pdf=okularApplication_pdf.desktop;google-chrome.desktop;krita_pdf.desktop;org.inkscape.Inkscape.desktop;libreoffice-draw.desktop;display-im6.q16.desktop;
+application/pdf=okularApplication_pdf.desktop;google-chrome.desktop;zotero.desktop;krita_pdf.desktop;org.inkscape.Inkscape.desktop;
 application/vnd.debian.binary-package=org.kde.discover.desktop;qapt-deb-installer.desktop;org.kde.ark.desktop;
 image/gif=com.interversehq.qView.desktop;krita_gif.desktop;org.kde.gwenview.desktop;google-chrome.desktop;okularApplication_kimgio.desktop;
 image/jpeg=com.interversehq.qView.desktop;krita_jpeg.desktop;org.kde.gwenview.desktop;google-chrome.desktop;okularApplication_kimgio.desktop;
@@ -46,3 +46,6 @@ x-scheme-handler/simplenote=simplenote.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 x-scheme-handler/tropy=Tropy.desktop
+
+[Removed Associations]
+application/pdf=libreoffice-draw.desktop;display-im6.q16.desktop;
