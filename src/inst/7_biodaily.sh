@@ -97,7 +97,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Zotero? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please log in to Zotero acount and set default PDF viewer, then close Zotero to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please log in to Zotero acount, set default PDF viewer, and enable LibreOffice plugin. Then, please close Zotero to continue.${TEXT_RESET} \n" && sleep 1
                 /usr/lib/zotero/zotero
                 # notify end
                 echo -e " \n${TEXT_GREEN}Zotero configured!${TEXT_RESET} \n" && sleep 1;;
