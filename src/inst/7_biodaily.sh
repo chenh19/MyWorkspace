@@ -37,7 +37,9 @@ case "$choice" in
         sudo apt-get -f -y install
         
         # install zotero
-        sudo flatpak install -y --noninteractive flathub org.zotero.Zotero
+        wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
+        sudo apt-get update
+        sudo apt-get install zotero -y
         
         # configure
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
