@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.5.7*  
+*Current version: v1.5.9*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -7,10 +7,10 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
 - [EuDic](https://www.eudic.net/)
-- [Zotero](https://github.com/retorquere/zotero-deb)
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
+- [Zotero](https://github.com/retorquere/zotero-deb)
 - [RStudio](https://www.rstudio.com/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [Krita](https://krita.org/)
