@@ -92,6 +92,19 @@ case "$choice" in
   y|Y ) # ask for individual apps
         
         ###>>>sed-i-d-start-2
+        ## zotero
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Zotero? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please log in to Zotero acount and set default PDF viewer, then close Zotero to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/lib/zotero/zotero
+                # notify end
+                echo -e " \n${TEXT_GREEN}Zotero configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Zotero not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## snapgene
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure SnapGene Viewer? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -105,7 +118,7 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}SnapGene Viewer not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
-        # university vpn
+        ## university vpn
         if [ -f /opt/cisco/anyconnect/bin/vpnui ] 
         then
         sudo echo ""
