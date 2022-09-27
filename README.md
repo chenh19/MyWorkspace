@@ -7,6 +7,7 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
 This tool will install and configure:
 - [WeChat](https://www.wechat.com/)
 - [EuDic](https://www.eudic.net/)
+- [Zotero](https://github.com/retorquere/zotero-deb)
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
