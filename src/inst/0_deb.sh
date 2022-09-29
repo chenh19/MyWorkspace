@@ -41,6 +41,15 @@ sudo apt-get install default-jre default-jdk -y
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
   wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
   sudo apt-get update && sudo apt-get install enpass -y
+  
+  ## resilio sync
+  echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
+  curl -L https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add
+  sudo apt-get update && sudo apt-get install resilio-sync -y
+  sudo systemctl disable resilio-sync
+  sudo kwriteconfig5 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy "default.target"
+  systemctl --user enable resilio-sync
+  systemctl --user start resilio-sync
 
 # install apps (pip)
   ## speedtest
