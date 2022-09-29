@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.5.9*  
+*Current version: v1.6.0*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -17,6 +17,7 @@ This tool will install and configure:
 - [Inkscape](https://inkscape.org/)
 - [qView](https://interversehq.com/qview/)
 - [AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
+- [Resilio Sync](https://www.resilio.com/)
 - [Syncthing](https://syncthing.net/)
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
