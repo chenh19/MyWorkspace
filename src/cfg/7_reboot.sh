@@ -12,17 +12,6 @@ TEXT_RESET='\e[0m'
 sed -i 's+bash ./cfg/7_reboot.sh+#bash ./cfg/7_reboot.sh+g' ~/.setup_cache/setup.sh
 ## config after rebooting
 cp -f ./cfg/finish/finish.sh ~/Desktop/ && chmod +x ~/Desktop/finish.sh
-## resilio sync
-  # ask whether to config resilio sync
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sync? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-    y|Y ) # notify start
-          echo -e " \n${TEXT_YELLOW}Please set the username and password for Resilio Sync. The Resilio Sync pro license is in [~/Documents/resilio/]. After confirguation, please close Google Chrome to continue. ${TEXT_RESET} \n" && sleep 1
-          google-chrome https://localhost:8888
-          echo -e " \n${TEXT_GREEN}Resilio Sync configured!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
-  esac
 
 # final cleanup
 if [ -d ~/.setup_cache/ ]; then
@@ -47,16 +36,6 @@ if [ -f ~/Documents/gitssh.txt ]; then
   esac
 fi
 
-if [ -d ~/Documents/resilio/ ]; then
-  # ask whether to delete resilio sync pro license key
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the Resilio Sync pro license in [~/Documents/resilio/] folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-    y|Y ) rm -rf ~/Documents/resilio/
-          echo -e " \n${TEXT_GREEN}Resilio Sync pro license removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Resilio Sync pro license remains in [~/Documents/resilio/] folder.${TEXT_RESET} \n" && sleep 1;;
-  esac
-fi
 
 # notify end
 echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
