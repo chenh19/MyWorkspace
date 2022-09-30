@@ -43,7 +43,7 @@ case "$choice" in
         # auto configure
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Exec "env GTK_THEME=breeze-light /usr/lib/zotero/zotero --url %u"
-        #sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Exec "env QT_QPA_PLATFORMTHEME=breeze-dark /usr/lib/zotero/zotero --url %u"
+        #sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Exec "env QT_QPA_PLATFORMTHEME=breeze-light /usr/lib/zotero/zotero --url %u"  # doesn't work
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
         
         # ask whether to install University VPN
