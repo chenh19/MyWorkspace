@@ -1,7 +1,9 @@
 [Added Associations]
+application/application.vnd.snapgene.dna=snapgene-viewer.desktop;snapgene.desktop;
 application/biosequence.embl=org.kde.kwrite.desktop;snapgene-viewer.desktop;
 application/javascript=org.kde.kwrite.desktop;rstudio.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;
 application/pdf=okularApplication_pdf.desktop;google-chrome.desktop;zotero.desktop;krita_pdf.desktop;org.inkscape.Inkscape.desktop;libreoffice-draw.desktop;display-im6.q16.desktop;
+application/vnd.apple.keynote=org.kde.kwrite.desktop;libreoffice-impress.desktop;org.kde.ark.desktop;
 application/vnd.debian.binary-package=org.kde.discover.desktop;qapt-deb-installer.desktop;org.kde.ark.desktop;
 application/x-mimearchive=google-chrome.desktop;org.kde.kwrite.desktop;
 image/gif=com.interversehq.qView.desktop;krita_gif.desktop;org.kde.gwenview.desktop;google-chrome.desktop;okularApplication_kimgio.desktop;
@@ -20,9 +22,11 @@ x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 
 [Default Applications]
+application/application.vnd.snapgene.dna=snapgene-viewer.desktop;
 application/biosequence.embl=org.kde.kwrite.desktop;
 application/javascript=org.kde.kwrite.desktop;
 application/pdf=okularApplication_pdf.desktop;
+application/vnd.apple.keynote=org.kde.kwrite.desktop;
 application/vnd.debian.binary-package=org.kde.discover.desktop;
 application/x-bittorrent=freedownloadmanager_torrent.desktop
 application/x-mimearchive=google-chrome.desktop;
