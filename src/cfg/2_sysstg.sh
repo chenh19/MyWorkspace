@@ -170,7 +170,7 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 echo -e " \n${TEXT_GREEN}Transferring legacy gpg.${TEXT_RESET} \n" && sleep 1
 echo -e "${TEXT_YELLOW}Please manually assign the IDs (last 8 characters, no space) , then save and close the script file to continue.${TEXT_RESET} \n"
 sudo apt-key list >> ./cfg/apt/apt_warning.sh && kwrite ./cfg/apt/apt_warning.sh
-sleep 1 && sed -i "32,500d" ./cfg/apt/apt_warning.sh
+sleep 1 && sed -i "25,500d" ./cfg/apt/apt_warning.sh
 sleep 1 && bash ./cfg/apt/apt_warning.sh && sleep 1
 sudo apt-get update
 echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
