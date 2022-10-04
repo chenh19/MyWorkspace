@@ -26,9 +26,6 @@ unset resilio_id
 unset fdm_id
 unset slack_id
 
-# check apt
-sudo apt update
-
 
 
 
