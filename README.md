@@ -11,6 +11,7 @@ This tool will install and configure:
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/)
 - [Zotero](https://github.com/retorquere/zotero-deb)
+- [Tropy](https://tropy.org/)
 - [RStudio](https://www.rstudio.com/)
 - [JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
 - [Krita](https://krita.org/)
