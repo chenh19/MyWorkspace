@@ -17,7 +17,7 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [qView](https://interversehq.com/qview/)
-- [AnyConnect](https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client)
+- [AnyConnect](https://www.cisco.com/site/us/en/products/security/secure-client/index.html)
 - [Resilio Sync](https://www.resilio.com/)
 - [Syncthing](https://syncthing.net/)
 - [ExpanDrive](https://www.expandrive.com/)
