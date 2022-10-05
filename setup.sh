@@ -12,6 +12,9 @@ sudo echo ""
 cd ~/.setup_cache/
 
 
+# font size
+read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$' \n'
+
 # check internet connection
 echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n"
 wget -q --spider http://google.com
