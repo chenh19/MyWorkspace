@@ -25,6 +25,8 @@ This tool will install and configure:
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [Angry IP Scanner](https://angryip.org/)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
+- [Laptop Mode Tools](https://github.com/rickysarraf/laptop-mode-tools)
+- [Bottles](https://usebottles.com/)
 - and a lot more
 
 ## How to use
