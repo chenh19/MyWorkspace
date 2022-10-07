@@ -10,6 +10,26 @@ TEXT_RESET='\e[0m'
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
+# ask whether it's a laptop
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up a laptop? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop power saving...${TEXT_RESET} \n" && sleep 1
+        
+        # install laptop-mode-tools
+        wget -q https://codeload.github.com/rickysarraf/laptop-mode-tools/zip/refs/heads/lmt-upstream && sleep 1
+        unzip -o -q lmt-upstream && sleep 1 && rm lmt-upstream
+        mv -f ./laptop-mode-tools-lmt-upstream/ ./cfg/
+        sudo bash ./cfg/laptop-mode-tools-lmt-upstream/install.sh
+  
+        # notify end
+        echo -e " \n${TEXT_YELLOW}Laptop power saving configuration finished!${TEXT_RESET} \n" && sleep 5;;
+  
+  * ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Laptop power saving configuration skipped.${TEXT_RESET} \n" && sleep 5;;
+
+esac
 
 # ask whether it's a thinkpad x1e
 sudo echo ""
