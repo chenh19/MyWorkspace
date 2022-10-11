@@ -30,6 +30,14 @@ echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 ###>>>sed-i-d-start-0
 unset start end
 
+## ask for password
+unset password
+until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
+    echo ""
+    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$' \n' password
+done
+echo ""
+
 ## download all scripts
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
@@ -40,7 +48,8 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
 cp -rf ./cfg/libreoffice/ ~/Documents/
-cp -rf ./cfg/resilio/ ~/Documents/
+7z x ./cfg/license/license.zip -p$password && sleep 1 && rm ./cfg/license/license.zip
+cp -rf ./cfg/license/ ~/Documents/
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
