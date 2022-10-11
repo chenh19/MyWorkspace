@@ -12,10 +12,10 @@ cd ~/.setup_cache/
 
 # ask whether it's a laptop
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up a laptop? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Laptop-Mode-Tools (might not be stable)? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
-        echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop power saving...${TEXT_RESET} \n" && sleep 1
+        echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop mode power saving...${TEXT_RESET} \n" && sleep 1
         
         # install laptop-mode-tools
         wget -q https://codeload.github.com/rickysarraf/laptop-mode-tools/zip/refs/heads/lmt-upstream && sleep 1
@@ -24,10 +24,10 @@ case "$choice" in
         sudo bash ./cfg/laptop-mode-tools-lmt-upstream/install.sh
   
         # notify end
-        echo -e " \n${TEXT_YELLOW}Laptop power saving configuration finished!${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}Laptop mode power saving configuration finished!${TEXT_RESET} \n" && sleep 5;;
   
   * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Laptop power saving configuration skipped.${TEXT_RESET} \n" && sleep 5;;
+        echo -e " \n${TEXT_YELLOW}Laptop mode power saving configuration skipped.${TEXT_RESET} \n" && sleep 5;;
 
 esac
 
