@@ -188,11 +188,6 @@ echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
 
-# sysupdate
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
-
-######################################################################################
-
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./fonts/
