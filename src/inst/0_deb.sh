@@ -335,6 +335,19 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}Zoom not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
+        ## resilio sync
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sync? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please create a user for Resilio Sync and apply the license (license file is [~/Documents/license/Resilio_Sync_Personal_2zJbv2h.btskey]). Then, please close the web browser to continue.${TEXT_RESET} \n" && sleep 1
+                google-chrome http://localhost:8888
+                # notify end
+                echo -e " \n${TEXT_GREEN}Resilio Sync configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
         ## expandrive
         if [ ! -z "$(dpkg -l | grep expandrive)" ]
         then
@@ -342,7 +355,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please enter the license to activate ExpanDrive (license code is in [~/Documents/license/ExpanDrive.license]).Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                echo -e " \n${TEXT_YELLOW}Please enter the license key to activate ExpanDrive (license key is in [~/Documents/license/ExpanDrive.license]).Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
                 /opt/ExpanDrive/expandrive
                 # ask whether set expandrive as autostart
                 sudo echo ""
