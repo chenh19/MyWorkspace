@@ -37,10 +37,10 @@ done
     #[ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
     #[ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
     #cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
-    #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 #Window AppMenu Applet #doesn't work
 /usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 #Text Command
 /usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1245902 #Better inline clock
 /usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274218 #Window Title Applet
+#/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 #Window AppMenu Applet #doesn't work
 sudo apt-get install latte-dock -y
 
 ## config taskbar widgets (take effect after rebooting)
