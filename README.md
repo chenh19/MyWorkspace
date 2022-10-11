@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.6.6 (for X11 only)*  
+*Current version: v1.6.8 (for X11 only)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -22,6 +22,7 @@ This tool will install and configure:
 - [Syncthing](https://syncthing.net/)
 - [ExpanDrive](https://www.expandrive.com/)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
+- [Sysupdate](https://github.com/chenh19/sysupdate)
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [Angry IP Scanner](https://angryip.org/)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
