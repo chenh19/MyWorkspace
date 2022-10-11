@@ -186,6 +186,12 @@ sleep 1 && bash ./cfg/apt/apt_warning.sh && sleep 1
 sudo apt-get update
 echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
 
+# full update
+echo -e "update.packages(ask = FALSE, checkBuilt = TRUE)" > ./.update.R
+cp -rf ./cfg/update/update.sh ~/.update.sh
+[ ! -f ~/.bashrc] ] && touch ~/.bashrc
+if ! grep -q "alias update='bash ~/.update.sh'" ~/.bashrc ; then echo -e "alias update='bash ~/.update.sh'" >> ~/.bashrc ; fi
+
 ######################################################################################
 
 # cleanup
