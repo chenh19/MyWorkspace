@@ -213,7 +213,7 @@ echo -e 'echo "System up to date." && echo ""' >> ~/.update.sh
 [ ! -f ~/.bashrc] ] && touch ~/.bashrc
 if ! grep -q "alias sysupdate='bash ~/.update.sh'" ~/.bashrc ; then echo -e "alias sysupdate='bash ~/.update.sh'" >> ~/.bashrc ; fi
 # notify end
-echo -e " \n${TEXT_GREEN}System update command configured.${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}System update command configured. To perform full update, simply type [sysupdate] in terminal and execute. ${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
 
