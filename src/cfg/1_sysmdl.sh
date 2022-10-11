@@ -12,7 +12,7 @@ cd ~/.setup_cache/
 
 # ask whether it's a laptop
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Laptop-Mode-Tools (might not be stable or useful)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Laptop-Mode-Tools (Warning: this tool might not be stable or helpful on some models)? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop mode power saving...${TEXT_RESET} \n" && sleep 1
@@ -33,7 +33,7 @@ esac
 
 # ask whether it's a thinkpad x1e
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up ThinkPad X1 Extreme Gen 2? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Are you setting up ThinkPad X1 Extreme Gen 2 with potential trackpad issues? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for ThinkPad X1 EXtreme Gen 2...${TEXT_RESET} \n" && sleep 1
