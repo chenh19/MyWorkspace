@@ -31,12 +31,16 @@ done
 
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
-#/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/id #id=1704465/1245902/1274218/1274975 (test in the future)
-wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && echo '"Overview button" installing package is downloaded.' && sleep 1 #_to_be_updated
-unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm -f adhe.textcommand.zip?dl=0
-[ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
-[ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
-cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
+#wget -q https://www.dropbox.com/s/6n5g9a8q5etvtx5/adhe.textcommand.zip?dl=0 && echo '"Overview button" installing package is downloaded.' && sleep 1 #_to_be_updated
+#unzip -o -q adhe.textcommand.zip?dl=0 && sleep 1 && rm -f adhe.textcommand.zip?dl=0
+#[ ! -d ~/.local/share/plasma/ ] && mkdir ~/.local/share/plasma/
+#[ ! -d ~/.local/share/plasma/plasmoids/ ] && mkdir ~/.local/share/plasma/plasmoids/
+#cp -rf ./adhe.textcommand/ ~/.local/share/plasma/plasmoids/ && sleep 1 && rm -rf ./adhe.textcommand/
+/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 #Text Command
+/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1245902 #Better inline clock
+/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274218 #Window Title Applet
+sudo apt-get install latte-dock -y
+#/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 #Window AppMenu Applet
 
 ## config taskbar widgets (take effect after rebooting)
 # start menu only show file manager and web browser
