@@ -11,7 +11,7 @@ sudo flatpak update -y && echo ""
 sudo snap refresh && echo ""
 
 # R packges update
-sudo Rscript ./.update.R && echo ""
+sudo Rscript ~/.update.R && echo ""
 
 # Conda update
 conda update --all -y && echo ""
@@ -24,4 +24,3 @@ sudo apt-get autoremove -y && sudo apt-get clean && echo ""
 
 # notify end
 echo "System up to date." && echo ""
-
