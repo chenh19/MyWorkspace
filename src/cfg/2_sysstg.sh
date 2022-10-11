@@ -192,7 +192,7 @@ echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
 echo -e "update.packages(ask = FALSE, checkBuilt = TRUE)" > ./.update.R
 cp -rf ./cfg/update/update.sh ~/.update.sh
 [ ! -f ~/.bashrc] ] && touch ~/.bashrc
-if ! grep -q "alias update='bash ~/.update.sh'" ~/.bashrc ; then echo -e "alias update='bash ~/.update.sh'" >> ~/.bashrc ; fi
+if ! grep -q "alias sysupdate='bash ~/.update.sh'" ~/.bashrc ; then echo -e "alias sysupdate='bash ~/.update.sh'" >> ~/.bashrc ; fi
 
 ######################################################################################
 
