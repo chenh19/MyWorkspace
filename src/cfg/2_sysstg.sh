@@ -19,6 +19,17 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET} \n
 
 ######################################################################################
 
+# wifi
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi connections? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+    y|Y ) nmtui
+          echo -e " \n${TEXT_GREEN}WiFi configuration finished!${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}WiFi configuration skipped.${TEXT_RESET} \n" && sleep 1;;
+esac
+
+######################################################################################
+
 # Appearance
 
 ## System Settings > Appearance > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
