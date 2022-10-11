@@ -176,6 +176,8 @@ sudo cp -rf ./fonts/windows/ /usr/share/fonts/
 
 ######################################################################################
 
+# sysupdate
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
 # alt_rm
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
 
