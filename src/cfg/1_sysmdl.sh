@@ -12,7 +12,7 @@ cd ~/.setup_cache/
 
 # ask whether it's a laptop
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Laptop-Mode-Tools (might not be stable)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Laptop-Mode-Tools (might not be stable or useful)? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop mode power saving...${TEXT_RESET} \n" && sleep 1
