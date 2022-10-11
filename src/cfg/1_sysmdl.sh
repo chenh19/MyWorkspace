@@ -17,7 +17,7 @@ case "$choice" in
   y|Y ) # notify start
         echo -e " \n${TEXT_YELLOW}Configuring specifically for laptop mode power saving...${TEXT_RESET} \n" && sleep 1
         
-        # install laptop-mode-tools
+        # install laptop-mode-tools (https://github.com/rickysarraf/laptop-mode-tools)
         wget -q https://codeload.github.com/rickysarraf/laptop-mode-tools/zip/refs/heads/lmt-upstream && sleep 1
         unzip -o -q lmt-upstream && sleep 1 && rm lmt-upstream
         mv -f ./laptop-mode-tools-lmt-upstream/ ./cfg/
