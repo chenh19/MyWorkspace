@@ -42,6 +42,7 @@ done
 /usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274218 #Window Title Applet
 #/usr/lib/x86_64-linux-gnu/libexec/kf5/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1274975 #Window AppMenu Applet #doesn't work
 sudo apt-get install latte-dock -y
+[ -f ~/.config/autostart/org.kde.latte-dock.desktop ] && rm ~/.config/autostart/org.kde.latte-dock.desktop
 
 ## config taskbar widgets (take effect after rebooting)
 # start menu only show file manager and web browser
