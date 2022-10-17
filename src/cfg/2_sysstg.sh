@@ -190,7 +190,6 @@ echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
-rm -rf ./fonts/
 
 ######################################################################################
 
