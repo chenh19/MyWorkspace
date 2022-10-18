@@ -30,8 +30,7 @@ case "$choice" in
         read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
         
         # create a key if does not exist
-        echo -e " \n${TEXT_YELLOW}When asked "Enter a file in which to save the key", please press [Enter] (default file location)${TEXT_RESET} \n"
-        echo -e " \n${TEXT_YELLOW}Then, please input a passphrase (anything you can remember).${TEXT_RESET} \n"
+        echo -e " \n${TEXT_YELLOW}When asked "Enter a file in which to save the key", please ${TEXT_GREEN}press [Enter]${TEXT_YELLOW} (default file location). Then, please ${TEXT_GREEN}input a passphrase${TEXT_YELLOW} (anything you can remember).${TEXT_RESET} \n"
         ssh-keygen -t ed25519 -C $email
         
         # add SSH key to ssh-agent-
