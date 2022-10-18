@@ -44,7 +44,6 @@ sleep 1
     * )   echo -e " \n${TEXT_YELLOW}Resilio Sync pro license remains in [~/Documents/resilio/] folder.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
-
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sync? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
     y|Y ) # notify start
@@ -55,5 +54,5 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sy
     * )   # notify cancellation
           echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
 esac
-        
+echo -e "igv\nPublic\nR\nTemplates\nZotero" > ~/.hidden
 rm -f .finish.sh
