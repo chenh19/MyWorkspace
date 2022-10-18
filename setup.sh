@@ -48,7 +48,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
 cp -rf ./cfg/libreoffice/ ~/Documents/
-7z x ./cfg/license/license.zip -p$password && sleep 1 && rm ./cfg/license/license.zip
+7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1 && rm ./cfg/license/license.zip
 cp -rf ./cfg/license/ ~/Documents/
 [ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
 cp -rf ~/Documents/license/license.dat ~/.config/ukuu/
