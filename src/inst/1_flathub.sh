@@ -34,8 +34,8 @@ sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Installing SyncThing...${TEXT_RESET} \n" && sleep 1
               # install
-              sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
               [ ! -d ~/Sync/ ] && mkdir ~/Sync/
+              sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
               # notify end
               echo -e ' \n"SyncThing installed. \n' && sleep 1;;
           * ) # notify cancellation
