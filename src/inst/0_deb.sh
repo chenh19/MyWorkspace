@@ -97,6 +97,18 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
               echo -e ' \n"Free Download Manager" deb package not downloaded. \n' && sleep 1;;
   esac
+  ### expandrive
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading ExpanDrive...${TEXT_RESET} \n" && sleep 1
+              # download
+              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
+              # notify end
+              echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"ExpanDrive" deb package not downloaded. \n' && sleep 1;;
+  esac
   ### baiduyun
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -109,18 +121,6 @@ sudo apt-get install default-jre default-jdk -y
               echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
               echo -e ' \n"BaiduYun" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### expandrive
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading ExpanDrive...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"ExpanDrive" deb package not downloaded. \n' && sleep 1;;
   esac
   ### angry IP scanner
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Angry IP Scanner? [y/n/c]'$TEXT_RESET)"$' \n' choice
