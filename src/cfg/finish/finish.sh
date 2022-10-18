@@ -44,4 +44,16 @@ sleep 1
     * )   echo -e " \n${TEXT_YELLOW}Resilio Sync pro license remains in [~/Documents/resilio/] folder.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
+
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sync? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+    y|Y ) # notify start
+          echo -e " \n${TEXT_YELLOW}Please create a user for Resilio Sync and apply the license (license file is [~/Documents/license/Resilio_Sync_Personal_2zJbv2h.btskey]). Then, please close the web browser to continue.${TEXT_RESET} \n" && sleep 1
+          google-chrome http://localhost:8888
+          # notify end
+          echo -e " \n${TEXT_GREEN}Resilio Sync configured!${TEXT_RESET} \n" && sleep 1;;
+    * )   # notify cancellation
+          echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
+esac
+        
 rm -f .finish.sh
