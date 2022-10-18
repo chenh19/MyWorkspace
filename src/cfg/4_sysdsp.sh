@@ -40,8 +40,9 @@ case "$choice" in
 esac
 
 # scaling (take effect after rebooting)
-echo ""
+[ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e "[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true" | sudo tee /etc/sddm.conf.d/hidpi.conf
+echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
