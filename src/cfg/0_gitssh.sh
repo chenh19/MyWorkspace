@@ -31,7 +31,7 @@ case "$choice" in
         git config --global user.name $fullname
         
         # ask for email
-        read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
+        read -p " \n$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
         git config --global user.email $email
                 
         # create a key if does not exist
