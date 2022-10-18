@@ -97,6 +97,19 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
               echo -e ' \n"Free Download Manager" deb package not downloaded. \n' && sleep 1;;
   esac
+  ### baiduyun
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading BaiduYun...${TEXT_RESET} \n" && sleep 1
+              # download
+              wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb #_to_be_updated
+              # notify end
+              echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"BaiduYun" deb package not downloaded. \n' && sleep 1;;
+  esac
   ### expandrive
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
@@ -133,9 +146,7 @@ sudo apt-get install default-jre default-jdk -y
               echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
               echo -e ' \n"4K Video Downloader" deb package not downloaded. \n' && sleep 1;;
-  esac
-  
-  
+  esac  
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
@@ -264,6 +275,19 @@ case "$choice" in
                 echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## baiduyun
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit BaiduYun (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/baidunetdisk/baidunetdisk --no-sandbox
+                # notify end
+                echo -e " \n${TEXT_GREEN}BaiduYun configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}BaiduYun not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         ## wifi hotspot
