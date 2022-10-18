@@ -88,7 +88,9 @@ sudo apt-get install default-jre default-jdk -y
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) # download
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading Free Download Manager...${TEXT_RESET} \n" && sleep 1
+              # download
               wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
               # notify end
               echo -e ' \n"Free Download Manager" deb package is downloaded. \n' && sleep 1;;
@@ -98,7 +100,9 @@ sudo apt-get install default-jre default-jdk -y
   ### expandrive
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) # download
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading ExpanDrive...${TEXT_RESET} \n" && sleep 1
+              # download
               wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
               # notify end
               echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1;;
@@ -108,7 +112,9 @@ sudo apt-get install default-jre default-jdk -y
   ### angry IP scanner
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Angry IP Scanner? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) # download
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading Angry IP Scanner...${TEXT_RESET} \n" && sleep 1
+              # download
               wget -q https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb #_to_be_updated
               # notify end
               echo -e ' \n"Angry IP Scanner" deb package is downloaded. \n' && sleep 1;;
@@ -119,7 +125,9 @@ sudo apt-get install default-jre default-jdk -y
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) # download
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading 4K Video Downloader...${TEXT_RESET} \n" && sleep 1
+              # download
               wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.4-1_amd64.deb?source=website -O 4kvideodownloader.deb #_to_be_updated
               # notify end
               echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
