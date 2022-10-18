@@ -34,7 +34,7 @@ sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Installing SyncThing...${TEXT_RESET} \n" && sleep 1
               # install
-              [ ! -d ~/Sync/ ] && mkdir ~/Sync/
+              [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
               sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
               # notify end
               echo -e ' \n"SyncThing installed. \n' && sleep 1;;
