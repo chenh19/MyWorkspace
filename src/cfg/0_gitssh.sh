@@ -31,7 +31,8 @@ case "$choice" in
         git config --global user.name $fullname
         
         # ask for email
-        read -p " \n$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
+        echo ""
+        read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
         git config --global user.email $email
                 
         # create a key if does not exist
@@ -54,7 +55,6 @@ case "$choice" in
   * ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}Git SSH not configured.${TEXT_RESET} \n" && sleep 5;;
 esac
-
 fi
 
 # mark setup.sh
