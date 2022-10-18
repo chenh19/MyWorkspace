@@ -26,8 +26,13 @@ case "$choice" in
         # check for existing keys
         #ls -al ~/.ssh
         
-        # ask for your_email
+        # ask for email
         read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
+        git config --global user.email $email
+        
+        # ask for name
+        read -p "$(echo -e $TEXT_YELLOW'Please enter your full name: '$TEXT_RESET)"$' \n' fullname
+        git config --global user.name $fullname
         
         # create a key if does not exist
         echo -e " \n${TEXT_YELLOW}When asked "Enter a file in which to save the key", please ${TEXT_GREEN}press [Enter]${TEXT_YELLOW} (default file location). Then, please ${TEXT_GREEN}input a passphrase${TEXT_YELLOW} (anything you can remember).${TEXT_RESET} \n"
@@ -43,6 +48,7 @@ case "$choice" in
         cat ~/.ssh/id_ed25519.pub > ~/Documents/gitssh.txt
         
         # notify end
+        unset email fullname
         echo -e " \n${TEXT_GREEN}You may copy the above key and add it to your GitHub. Or, it's also save in ~/Documents/gitssh.txt file, and you may work on it later.${TEXT_RESET} \n" && sleep 5;;
         
   * ) # notify cancellation
