@@ -55,6 +55,7 @@ cp -rf ~/Documents/license/license.dat ~/.config/ukuu/
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
+sudo echo ""
 scripts="./inst/*.sh"
 for script in $scripts
 do
