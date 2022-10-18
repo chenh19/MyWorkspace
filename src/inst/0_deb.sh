@@ -309,7 +309,7 @@ case "$choice" in
         case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Please login to your email account(s) or restore previous Evolution backup, then close Evolution to continue.${TEXT_RESET} \n" && sleep 1
-                evolution
+                timeout 15m evolution
                 # ask whether set as autostart
                 sudo echo ""
                 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Evolution to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
