@@ -26,14 +26,14 @@ case "$choice" in
         # check for existing keys
         #ls -al ~/.ssh
         
-        # ask for email
-        read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
-        git config --global user.email $email
-        
         # ask for name
         read -p "$(echo -e $TEXT_YELLOW'Please enter your full name: '$TEXT_RESET)"$' \n' fullname
         git config --global user.name $fullname
         
+        # ask for email
+        read -p "$(echo -e $TEXT_YELLOW'Please enter your GitHub email address: '$TEXT_RESET)"$' \n' email
+        git config --global user.email $email
+                
         # create a key if does not exist
         echo -e " \n${TEXT_YELLOW}When asked "Enter a file in which to save the key", please ${TEXT_GREEN}press [Enter]${TEXT_YELLOW} (default file location). Then, please ${TEXT_GREEN}input a passphrase${TEXT_YELLOW} (anything you can remember).${TEXT_RESET} \n"
         ssh-keygen -t ed25519 -C $email
