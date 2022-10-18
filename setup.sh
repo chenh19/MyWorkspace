@@ -50,6 +50,8 @@ cp -rf ./cfg/System/ ~/Pictures/
 cp -rf ./cfg/libreoffice/ ~/Documents/
 7z x ./cfg/license/license.zip -p$password && sleep 1 && rm ./cfg/license/license.zip
 cp -rf ./cfg/license/ ~/Documents/
+[ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
+cp -rf ~/Documents/license/license.dat ~/.config/ukuu/
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
