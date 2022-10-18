@@ -24,16 +24,28 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak install -y --noninteractive flathub org.kde.kclock
 sudo flatpak install -y --noninteractive flathub org.kde.kweather
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche
-sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
+
+  ## ask whether to install
+  ### syncthing
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SyncThing? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Installing SyncThing...${TEXT_RESET} \n" && sleep 1
+              # install
+              sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
+              [ ! -d ~/Sync/ ] && mkdir ~/Sync/
+              # notify end
+              echo -e ' \n"SyncThing installed. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"SyncThing not installed. \n' && sleep 1;;
+  esac
 
 # auto config
 ## touchegg
 [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
 cp -f ./cfg/touchegg/* ~/.config/touchegg/
-
-## Syncthing
-[ ! -d ~/Sync/ ] && mkdir ~/Sync/
 
 
 ###>>>sed-i-d-start-1
