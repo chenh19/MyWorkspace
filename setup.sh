@@ -105,5 +105,4 @@ bash ./cfg/1_sysstg.sh
 bash ./cfg/2_sysapp.sh
 bash ./cfg/3_sysdsp.sh
 bash ./cfg/4_usrapp.sh
-bash ./cfg/5_update.sh
-bash ./cfg/6_reboot.sh
+bash ./cfg/5_reboot.sh
