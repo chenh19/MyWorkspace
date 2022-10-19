@@ -11,7 +11,7 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# ask whether to install Chinese Pinyin input method
+# ask whether to install wechat
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install WeChat? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
