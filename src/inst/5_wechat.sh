@@ -28,7 +28,8 @@ case "$choice" in
         sudo bash ./deepin-wine-ubuntu-master/deepin-wine-setup.sh
         sudo bash ./deepin-wine-ubuntu-master/KDE-install.sh
         sudo ln -sf /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1.0 /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1
-        sudo update-locale LANG=zh_CN.UTF-8
+        sudo dpkg-reconfigure locales
+        #sudo update-locale LANG=zh_CN.UTF-8 #doesn't work
 
         # install wechat
         sudo dpkg -i ./deepin-wine-ubuntu-master/deepin.com.wechat_2.6.8.65deepin0_i386.deb
