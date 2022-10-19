@@ -25,9 +25,23 @@ sudo apt-get install default-jre default-jdk -y
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
   # with better alternative option: syncthing-gtk, axel
-  sudo apt-get install kwrite krita seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree -y
+  sudo apt-get install kwrite krita krita-l10n language-pack-gnome-zh-hans-base seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree -y
 
 # install apps (ppa)
+
+  ## libreoffice
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to add PPA for LibreOffice (for KDE neon)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # add ppa
+              sudo add-apt-repository ppa:libreoffice/ppa -y
+              # notify end
+              echo -e " \n${TEXT_GREEN}LibreOffice PPA added!${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+                echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
+  esac
+  sudo apt-get update && sudo apt-get install libreoffice libreoffice-kf5 libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-l10n-zh-cn libreoffice-help-zh-cn -y
+
   ## Inkscape
   sudo add-apt-repository ppa:inkscape.dev/stable -y
   sudo apt-get update && sudo apt-get install inkscape -y
