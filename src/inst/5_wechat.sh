@@ -32,6 +32,7 @@ case "$choice" in
         # configure locale
         echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
         sudo dpkg-reconfigure locales
+        #sudo localectl set-locale LANG=en_US.UTF-8 #doesn't work
         #sudo update-locale LANG=zh_CN.UTF-8 #doesn't work
 
         # install wechat
