@@ -19,6 +19,11 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET} \n
 
 ######################################################################################
 
+# git ssh
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
+
+######################################################################################
+
 # wifi
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi connections? [y/n/c]'$TEXT_RESET)"$' \n' choice
