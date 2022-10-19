@@ -28,6 +28,9 @@ case "$choice" in
         sudo bash ./deepin-wine-ubuntu-master/deepin-wine-setup.sh
         sudo bash ./deepin-wine-ubuntu-master/KDE-install.sh
         sudo ln -sf /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1.0 /usr/lib/i386-linux-gnu/deepin-wine/libwine.so.1
+        
+        # configure locale
+        echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
         sudo dpkg-reconfigure locales
         #sudo update-locale LANG=zh_CN.UTF-8 #doesn't work
 
