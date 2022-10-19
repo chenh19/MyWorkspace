@@ -40,7 +40,7 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
                 echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
   esac
-  sudo apt-get update && sudo apt-get install libreoffice libreoffice-kf5 libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-l10n-zh-cn libreoffice-help-zh-cn -y
+  sudo apt-get update && sudo apt-get install libreoffice libreoffice-kf5 libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-l10n-zh-cn libreoffice-help-zh-cn libreoffice-java-common -y
 
   ## Inkscape
   sudo add-apt-repository ppa:inkscape.dev/stable -y
