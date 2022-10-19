@@ -39,6 +39,7 @@ case "$choice" in
         sed -i 's+#IMName=+IMName=sunpinyin+g' ~/.config/fcitx/profile
 
         # cleanup
+        sudo apt remove fcitx5 kde-config-fcitx5 -y
         sudo apt-get autoremove -y && sudo apt-get clean
 
         # notify end
