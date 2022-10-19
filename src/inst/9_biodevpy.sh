@@ -19,6 +19,7 @@ case "$choice" in
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing Python bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update && sudo apt-get upgrade -y
+        [ ! -d ~/Developing/ ] && mkdir ~/Developing/ && kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
         
         # install anaconda
         [ ! -d ./shscript/ ] && mkdir ./shscript/
