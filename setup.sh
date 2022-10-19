@@ -100,11 +100,10 @@ bash ./inst/8_biodevr.sh
 bash ./inst/9_biodevpy.sh
 
 # config
-bash ./cfg/0_gitssh.sh
-bash ./cfg/1_sysmdl.sh
-bash ./cfg/2_sysstg.sh
-bash ./cfg/3_sysapp.sh
-bash ./cfg/4_sysdsp.sh
-bash ./cfg/5_usrapp.sh
-bash ./cfg/6_update.sh
-bash ./cfg/7_reboot.sh
+bash ./cfg/0_sysmdl.sh
+bash ./cfg/1_sysstg.sh
+bash ./cfg/2_sysapp.sh
+bash ./cfg/3_sysdsp.sh
+bash ./cfg/4_usrapp.sh
+bash ./cfg/5_update.sh
+bash ./cfg/6_reboot.sh
