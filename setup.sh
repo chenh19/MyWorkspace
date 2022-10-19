@@ -75,7 +75,7 @@ do
 done
 cat ./cfg/4_usrapp_tail.sh >> ./cfg/4_usrapp.sh
 rm ./cfg/4_usrapp_tail.sh
-if grep -q "sed-i-d-" ./cfg/5_usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/5_usrapp.sh ; fi
+if grep -q "sed-i-d-" ./cfg/4_usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/4_usrapp.sh ; fi
 
 # avoid re-downloading
 echo ""
