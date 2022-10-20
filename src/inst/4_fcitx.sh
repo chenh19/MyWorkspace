@@ -34,7 +34,8 @@ case "$choice" in
         fcitx && sleep 10 && killall -9 fcitx
 
         ## config fcitx (takes effect after rebooting)
-        sed -i 's+#TriggerKey=CTRL_SPACE+TriggerKey=SUPER_SPACE+g' ~/.config/fcitx/config
+        sed -i 's+#TriggerKey=CTRL_SPACE+TriggerKey=SUPER_SPACE SHIFT_LSHIFT+g' ~/.config/fcitx/config
+        sed -i 's+#SwitchKey=L_SHIFT+SwitchKey=SHIFT Both+g' ~/.config/fcitx/config
         sed -i 's+sunpinyin:False+sunpinyin:True+g' ~/.config/fcitx/profile
         sed -i 's+#IMName=+IMName=sunpinyin+g' ~/.config/fcitx/profile
 
