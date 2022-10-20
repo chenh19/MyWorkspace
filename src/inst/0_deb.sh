@@ -156,7 +156,7 @@ sudo apt-get install default-jre default-jdk -y
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Downloading 4K Video Downloader...${TEXT_RESET} \n" && sleep 1
               # download
-              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.4-1_amd64.deb?source=website -O 4kvideodownloader.deb #_to_be_updated
+              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb #_to_be_updated
               # notify end
               echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
@@ -303,6 +303,19 @@ case "$choice" in
                 echo -e " \n${TEXT_GREEN}BaiduYun configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}BaiduYun not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## 4k download
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please enter the license key to activate 4K Video Downloader (license key is in [~/Documents/license/4kvideodownloader_license_key.txt]).Then, please close 4K Video Downloader to continue.${TEXT_RESET} \n" && sleep 1
+                4kvideodownloader
+                # notify end
+                echo -e " \n${TEXT_GREEN}4K Video Downloader configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}4K Video Downloader not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         ## wifi hotspot
