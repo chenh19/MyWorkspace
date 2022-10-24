@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.7.2 (for X11 only)*  
+*Current version: v1.7.3 (for X11 only)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -17,6 +17,7 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [qView](https://interversehq.com/qview/)
+- [Fluent Reader](https://hyliu.me/fluent-reader/)
 - [AnyConnect](https://www.cisco.com/site/us/en/products/security/secure-client/index.html)
 - [Resilio Sync](https://www.resilio.com/)
 - [ExpanDrive](https://www.expandrive.com/)
