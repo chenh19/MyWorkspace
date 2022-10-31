@@ -50,6 +50,6 @@ if [ -f /var/run/reboot-required ]; then
 	  echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET} \n" && sleep 5
 	  reboot;;
     * )   # notify cancellation
-	  echo -e " \n${TEXT_YELLOW}Please reboot manually later.${TEXT_RESET} \n" && sleep 1;;
+	  echo -e " \n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
