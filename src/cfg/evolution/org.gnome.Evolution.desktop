@@ -9,7 +9,7 @@ Exec=(LANG=en_US.utf8; evolution &) && sleep 5 && kdocker -q -x $(ps -A|grep evo
 Icon=evolution
 Terminal=false
 Type=Application
-Categories=GNOME;GTK;Office;Email;Calendar;ContactManagement;X-Red-Hat-Base;
+Categories=Network;
 StartupNotify=true
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=Evolution
