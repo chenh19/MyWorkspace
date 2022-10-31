@@ -46,13 +46,13 @@ sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage /opt/etcher/balenaEtcher.AppI
 # create desktop icons
 
 ## Eudic
-echo -e "[Desktop Entry] \nCategories=Office; \nComment=Dictionary \nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage \nGenericName= \nIcon=/opt/eudic/eudic.png \nMimeType= \nName=EuDic \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./eudic.desktop
+echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/eudic/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
 
 ## Etcher
-echo -e "[Desktop Entry] \nCategories=Utility; \nComment=Bootable USB Creator \nExec=/opt/etcher/balenaEtcher.AppImage \nGenericName= \nIcon=/opt/etcher/balenaEtcher.png \nMimeType= \nName=Etcher \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./etcher.desktop
+echo -e "[Desktop Entry]\nCategories=Utility;\nComment=Bootable USB Creator\nExec=/opt/etcher/balenaEtcher.AppImage\nGenericName=\nIcon=/opt/etcher/balenaEtcher.png\nMimeType=\nName=Etcher\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./etcher.desktop
 
 ## Tropy
-echo -e "[Desktop Entry] \nCategories=Graphics; \nComment=Image Manager \nExec=/opt/tropy/tropy \nGenericName= \nIcon=/opt/tropy/tropy.png \nMimeType= \nName=Tropy \nPath= \nStartupNotify=true \nTerminal=false \nTerminalOptions= \nType=Application" > ./tropy.desktop
+echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
 
 # move to /usr/share/applications folder
 sudo cp -rf ./*.desktop /usr/share/applications/ && sleep 5
