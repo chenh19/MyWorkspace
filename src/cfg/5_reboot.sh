@@ -43,7 +43,7 @@ echo -e "${TEXT_GREEN}All done!${TEXT_RESET} \n"
 # detect whether reboot is required
 if [ -f /var/run/reboot-required ]; then
   # ask whether reboot
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required! Would you like to reboot the system now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required! Would you like to reboot the system now? [y/n]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
     y|Y ) # notify reboot
 	  sudo echo ""
