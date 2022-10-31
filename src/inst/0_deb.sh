@@ -345,7 +345,7 @@ case "$choice" in
                   y|Y ) sudo cp -rf ./cfg/Startup/ /opt/
                         sudo chmod +x /opt/Startup/evolution.sh
                         [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
-                        echo -e "[Desktop Entry] \nExec=/opt/Startup/evolution.sh \nIcon=dialog-scripts \nName=evolution.sh \nPath= \nType=Application \nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
+                        echo -e "[Desktop Entry]\nExec=/opt/Startup/evolution.sh\nIcon=dialog-scripts\nName=evolution.sh\nPath=\nType=Application\nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
                         sudo chmod +x ~/.config/autostart/evolution.sh.desktop
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
