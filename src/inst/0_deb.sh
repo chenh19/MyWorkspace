@@ -432,7 +432,7 @@ esac
 ###>>>sed-i-d-end-1
 
 # cleanup
-sudo apt-get remove kate thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
+sudo apt-get remove firefox kate thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
 sudo apt-get autoremove -y && sudo apt-get clean
 rm -rf ./deb/
 
