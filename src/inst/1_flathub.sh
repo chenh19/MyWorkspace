@@ -38,9 +38,9 @@ sudo flatpak install -y --noninteractive flathub me.hyliu.fluentreader
               [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
               sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
               # notify end
-              echo -e ' \n"SyncThing installed. \n' && sleep 1;;
+              echo -e " \n${TEXT_GREEN}SyncThing installed.${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
-              echo -e ' \n"SyncThing not installed. \n' && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}SyncThing not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
 
 # auto config
