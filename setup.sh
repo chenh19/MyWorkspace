@@ -47,6 +47,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
+cp -rf ./cfg/icon/ /opt/
 cp -rf ./cfg/libreoffice/ ~/Documents/
 7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1 && rm ./cfg/license/license.zip
 cp -rf ./cfg/license/ ~/Documents/
