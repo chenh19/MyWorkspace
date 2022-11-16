@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.7.4 (for X11 only)*  
+*Current version: v1.7.5 (for X11 only)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
