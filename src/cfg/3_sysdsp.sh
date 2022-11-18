@@ -142,5 +142,8 @@ echo -e "${TEXT_YELLOW}Configuring Grub scaling...${TEXT_RESET} \n" && sleep 1
 if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's+#GRUB_GFXMODE=640x480+GRUB_GFXMODE=1024x768+g' /etc/default/grub && sudo update-grub ; fi
 # If grub timeout is 0, press Shift+Esc only once at startup to enter grub menu
 
+# language
+#kwriteconfig --file kdeglobals --group 'Translations' --key 'LANGUAGE' 'en_US' #https://github.com/nbeaver/config-kde5/blob/master/config-kde.sh
+
 # mark setup.sh
 sed -i 's+bash ./cfg/4_sysdsp.sh+#bash ./cfg/4_sysdsp.sh+g' ~/.setup_cache/setup.sh
