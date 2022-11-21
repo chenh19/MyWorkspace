@@ -18,9 +18,11 @@ sudo apt-get update
 
 # install updates
 sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
+echo -e " \n${TEXT_GREEN}Distribution update completed!${TEXT_RESET} \n" && sleep 1
 
 # install java
 sudo apt-get install default-jre default-jdk -y
+echo -e " \n${TEXT_GREEN}Java environment installed!${TEXT_RESET} \n" && sleep 1
 
 # install complete language packs
 sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
