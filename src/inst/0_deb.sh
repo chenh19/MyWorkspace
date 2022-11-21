@@ -27,7 +27,7 @@ sudo apt-get install default-jre default-jdk -y
   # with better alternative option: syncthing-gtk, axel
   sudo apt-get install kwrite krita krita-l10n seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree -y
   sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
-  sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
+  #sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
 
 # install apps (ppa)
 
