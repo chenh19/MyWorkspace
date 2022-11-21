@@ -22,12 +22,23 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 # install java
 sudo apt-get install default-jre default-jdk -y
 
+# install complete language packs
+sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
+echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET} \n" && sleep 1
+
+  ## ask whether to install Chinese packs
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'安装中文语言包? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
+              echo -e " \n${TEXT_GREEN}中文语言包已安装!${TEXT_RESET} \n" && sleep 1;;
+          * ) echo -e " \n${TEXT_YELLOW}中文语言包未安装!${TEXT_RESET} \n" && sleep 1;;
+  esac
+
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
   # with better alternative option: syncthing-gtk, axel
   sudo apt-get install kwrite krita krita-l10n seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree -y
-  sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
-  #sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
 
 # install apps (ppa)
 
