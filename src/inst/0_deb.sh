@@ -365,7 +365,7 @@ case "$choice" in
                         echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
                    * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
                 esac
-                sudo cp -f ./cfg/evolution/org.gnome.Evolution.desktop /usr/share/applications/
+                sudo cp -f /opt/shortcut/org.gnome.Evolution.desktop /usr/share/applications/
                 # notify end
                 echo -e " \n${TEXT_GREEN}Evolution (email client) configured!${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
