@@ -24,7 +24,7 @@ sudo apt-key del $slack_id
 # unset variables
 unset resilio_id
 unset fdm_id
-unset slack_id=
+unset slack_id
 
 
 
