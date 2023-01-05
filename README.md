@@ -16,6 +16,7 @@ This tool will install and configure:
 - [JupyterLab](https://jupyter.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
+- [Cider](https://cider.sh/)
 - [qView](https://interversehq.com/qview/)
 - [Fluent Reader](https://hyliu.me/fluent-reader/)
 - [AnyConnect](https://www.cisco.com/site/us/en/products/security/secure-client/index.html)
