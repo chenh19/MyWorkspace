@@ -32,6 +32,7 @@ case "$choice" in
               echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
 esac
 
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 
