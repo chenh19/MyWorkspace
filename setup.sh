@@ -39,13 +39,6 @@ done
 echo ""
 
 ## prepare all scripts
-[ ! -d ~/Templates/ ] && mkdir ~/Templates/
-kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
-[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
-kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
-[ ! -d ~/snap/ ] && mkdir ~/snap/
-kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "folder-snap"
-
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
 unzip -o -q main && sleep 1 && rm main
 cp -rf ./MyWorkspace-main/setup.sh ./
@@ -55,12 +48,15 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
 sudo cp -rf ./cfg/icon/ ./cfg/shortcut/ /opt/
-cp -rf ./cfg/templates/* ~/Templates/
+[ ! -d ~/Templates/ ] && mkdir ~/Templates/
+kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
+cp -rf ./cfg/template/* ~/Templates/
+[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
+kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1 && rm ./cfg/license/license.zip
 cp -rf ./cfg/license/* ~/Licenses/
-[ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
-cp -rf ~~/Licenses/license.dat ~/.config/ukuu/
-
+[ ! -d ~/snap/ ] && mkdir ~/snap/
+kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
