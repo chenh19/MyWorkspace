@@ -89,21 +89,21 @@ unset start0 end0
 ###>>>sed-i-d-end-0
 
 # setup
-bash ./inst/0_deb.sh
-bash ./inst/1_flathub.sh
-bash ./inst/2_appimage.sh
-bash ./inst/3_ukuu.sh
-bash ./inst/4_fcitx.sh
-bash ./inst/5_wechat.sh
-bash ./inst/6_game.sh
-bash ./inst/7_biodaily.sh
-bash ./inst/8_biodevr.sh
-bash ./inst/9_biodevpy.sh
+#bash ./inst/0_deb.sh
+#bash ./inst/1_flathub.sh
+#bash ./inst/2_appimage.sh
+#bash ./inst/3_ukuu.sh
+#bash ./inst/4_fcitx.sh
+#bash ./inst/5_wechat.sh
+#bash ./inst/6_game.sh
+#bash ./inst/7_biodaily.sh
+#bash ./inst/8_biodevr.sh
+#bash ./inst/9_biodevpy.sh
 
 # config
-bash ./cfg/0_sysmdl.sh
-bash ./cfg/1_sysstg.sh
-bash ./cfg/2_sysapp.sh
-bash ./cfg/3_sysdsp.sh
-bash ./cfg/4_usrapp.sh
-bash ./cfg/5_reboot.sh
+#bash ./cfg/0_sysmdl.sh
+#bash ./cfg/1_sysstg.sh
+#bash ./cfg/2_sysapp.sh
+#bash ./cfg/3_sysdsp.sh
+#bash ./cfg/4_usrapp.sh
+#bash ./cfg/5_reboot.sh
