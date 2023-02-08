@@ -205,6 +205,247 @@ sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-su
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
 
+###>>>sed-i-d-start-1
+# manual config
+# aske whether to configure apt installed apps manually
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure apt installed apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # ask for individual apps
+        
+        ###>>>sed-i-d-start-2
+        ## chrome
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Google Chrome? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your Google account and then close Chrome to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/google-chrome-stable
+                # notify end
+                echo -e " \n${TEXT_GREEN}Google Chrome configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Google Chrome not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+                
+        ## enpass
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Enpass? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please create or log in to your vault, then quit Enpass (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/enpass/Enpass
+                # notify end
+                echo -e " \n${TEXT_GREEN}Enpass configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Enpass not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## simplenote
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Simplenote? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please create or log in to your Simplenote account, then close Simplenote to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/Simplenote/simplenote --no-sandbox
+                # notify end
+                echo -e " \n${TEXT_GREEN}Simplenote configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Simplenote not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## qview
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure qView? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                  # do not check update notification when first open 
+                  echo -e " \n${TEXT_YELLOW}Please close qViw to continue.${TEXT_RESET} \n" && sleep 1
+                  qview
+                # notify end
+                echo -e " \n${TEXT_GREEN}qView configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}qView not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## libreoffice
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure LibreOffice? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure ${TEXT_GREEN}[themes/fonts/saving formats/toolbars]${TEXT_YELLOW} and then close LibreOffice to continue.${TEXT_RESET} \n" && sleep 1
+                libreoffice
+                # notify end
+                echo -e " \n${TEXT_GREEN}LibreOffice configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}LibreOffice not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## inkscape
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then close Inkscape to continue.${TEXT_RESET} \n" && sleep 1
+                inkscape
+                # notify end
+                echo -e " \n${TEXT_GREEN}Inkscape configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Inkscape not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+                
+        ## fdm
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit Free Donwload Manager (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/freedownloadmanager/fdm
+                # disable autostart
+                [ -f ~/.config/autostart/FDM.desktop ] && rm -f ~/.config/autostart/FDM.desktop
+                # notify end
+                echo -e " \n${TEXT_GREEN}Free Download Manager configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Free Download Manager not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## baiduyun
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then quit BaiduYun (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/baidunetdisk/baidunetdisk --no-sandbox
+                # notify end
+                echo -e " \n${TEXT_GREEN}BaiduYun configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}BaiduYun not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## 4k download
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please enter the license key to activate 4K Video Downloader (license key is in [~/Documents/license/4kvideodownloader_license_key.txt]).Then, please close 4K Video Downloader to continue.${TEXT_RESET} \n" && sleep 1
+                4kvideodownloader
+                # notify end
+                echo -e " \n${TEXT_GREEN}4K Video Downloader configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}4K Video Downloader not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## wifi hotspot
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi Hotspot? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please configure and then close WiFi Hotspot to continue.${TEXT_RESET} \n" && sleep 1
+                wihotspot
+                # notify end
+                echo -e " \n${TEXT_GREEN}WiFi Hotspot configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}WiFi Hotspot not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## evolution
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your email account(s) or restore previous Evolution backup, then close Evolution to continue.${TEXT_RESET} \n" && sleep 1
+                timeout 15m evolution
+                # ask whether set as autostart
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Evolution to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) sudo cp -rf ./cfg/Startup/ /opt/
+                        sudo chmod +x /opt/Startup/evolution.sh
+                        [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e "[Desktop Entry]\nExec=/opt/Startup/evolution.sh\nIcon=dialog-scripts\nName=evolution.sh\nPath=\nType=Application\nX-KDE-AutostartScript=true" > ~/.config/autostart/evolution.sh.desktop
+                        sudo chmod +x ~/.config/autostart/evolution.sh.desktop
+                        echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                sudo cp -f /opt/shortcut/org.gnome.Evolution.desktop /usr/share/applications/
+                # notify end
+                echo -e " \n${TEXT_GREEN}Evolution (email client) configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Evolution (email client) not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+                
+        ## slack
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Slack? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please login to your Slack workspace(s) and quit Slack (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/slack
+                # ask whether to set as autostart
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Slack to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e "[Desktop Entry] \nCategories=GNOME;GTK;Network;InstantMessaging; \nComment=Slack Desktop \nExec=/usr/bin/slack -u %U \nGenericName=Slack Client for Linux \nIcon=/usr/share/pixmaps/slack.png \nMimeType=x-scheme-handler/slack; \nName=Slack \nNoDisplay=false \nPath= \nStartupNotify=true \nStartupWMClass=Slack \nTerminal=false \nTerminalOptions= \nType=Application \nX-KDE-SubstituteUID=false \nX-KDE-Username= \n" > ~/.config/autostart/slack.desktop
+                        sudo chmod +x ~/.config/autostart/slack.desktop
+                        echo -e " \n${TEXT_GREEN}Slack will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Slack will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                # Start Slack minimized
+                sudo sed -i 's+Exec=/usr/bin/slack %U+Exec=/usr/bin/slack -u %U+g' /usr/share/applications/slack.desktop
+                # notify end
+                echo -e " \n${TEXT_GREEN}Slack configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Slack not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## zoom
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Zoom? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please sign in Zoom with SSO: ${TEXT_GREEN}[uchicago.zoom.us]${TEXT_YELLOW} or ${TEXT_GREEN}[illinois.zoom.us]${TEXT_YELLOW}. Then, please quit Zoom (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /usr/bin/zoom
+                # notify end
+                echo -e " \n${TEXT_GREEN}Zoom configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}Zoom not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        
+        ## expandrive
+        if [ ! -z "$(dpkg -l | grep expandrive)" ]
+        then
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) # notify start
+                echo -e " \n${TEXT_YELLOW}Please enter the license key to activate ExpanDrive (license key is in [~/Documents/license/ExpanDrive.license]).Then, please login to your cloud drive account(s) and quit ExpanDrive (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
+                /opt/ExpanDrive/expandrive
+                # ask whether set expandrive as autostart
+                sudo echo ""
+                read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like ExpanDrive to automatically start at login? [y/n/c]'$TEXT_RESET)"$' \n' choice
+                case "$choice" in
+                  y|Y ) [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+                        echo -e '[Desktop Entry] \nType=Application \nVersion=1.0 \nName=expandrive --autorun \nComment=expandrive --autorunstartup script \nExec=/opt/ExpanDrive/expandrive --autorun \nStartupNotify=false \nTerminal=false' > ~/.config/autostart/'expandrive --autorun.desktop'
+                        sudo chmod +x ~/.config/autostart/'expandrive --autorun.desktop'
+                        echo -e " \n${TEXT_GREEN}Evolution will autostart on next login.${TEXT_RESET} \n" && sleep 1;;
+                   * )  echo -e " \n${TEXT_YELLOW}Evolution will not autostart.${TEXT_RESET} \n" && sleep 1;;
+                esac
+                # notify end
+                echo -e " \n${TEXT_GREEN}ExpanDrive configured!${TEXT_RESET} \n" && sleep 1;;
+          * )   # notify cancellation
+                echo -e " \n${TEXT_YELLOW}ExpanDrive not configured.${TEXT_RESET} \n" && sleep 1;;
+        esac
+        fi
+        ###>>>sed-i-d-end-2
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
+        
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Apt installed apps not configured.${TEXT_RESET} \n" && sleep 5;;
+        
+esac
+###>>>sed-i-d-end-1
 
 # cleanup
 sudo apt-get remove firefox kate thunderbird krdc konversation ktorrent skanlite usb-creator-kde kmahjongg kmines kpat ksudoku -y
