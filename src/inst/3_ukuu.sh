@@ -21,8 +21,16 @@ wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 cp -rf ~/Licenses/license.dat ~/.config/ukuu/
 
 # install latest kernel
-sudo ukuu --scripted --install-latest
-
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install the latest Linux kernal now? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+      y|Y ) # add ppa
+            sudo ukuu --scripted --install-latest
+            # notify end
+            echo -e " \n${TEXT_GREEN}LibreOffice PPA added!${TEXT_RESET} \n" && sleep 1;;
+        * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
+esac
 
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
