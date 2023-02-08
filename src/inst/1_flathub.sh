@@ -197,7 +197,7 @@ esac
 
 # cleanup
 sudo snap remove firefox
-[ -d ~/snap/ ] && sudo rm -rf ~/snap/
+[ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
 [ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
 sudo apt-get autoremove -y && sudo apt-get clean
 
