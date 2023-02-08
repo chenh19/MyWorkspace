@@ -200,6 +200,10 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
 # auto config
+  ## Etcher
+  [ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
+  echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher/config.json
+
   ## zoom auto scaling
   kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
