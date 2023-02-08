@@ -17,6 +17,8 @@ echo -e "${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
 
 # download and install UKUU
 wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
+[ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
+cp -rf ~/Licenses/license.dat ~/.config/ukuu/
 
 # install latest kernel
 sudo ukuu --scripted --install-latest
