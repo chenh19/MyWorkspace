@@ -56,7 +56,7 @@ kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "c
 7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1 && rm ./cfg/license/license.zip
 cp -rf ./cfg/license/* ~/Licenses/
 [ ! -d ~/snap/ ] && mkdir ~/snap/
-kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "folder-snap"
+kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
 
 # move manual configuration to the end if not using individual scripts
