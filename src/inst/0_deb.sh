@@ -105,14 +105,15 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   ## redirecting links
   wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
   wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
+  wget -q https://go.microsoft.com/fwlink/p/?linkid=2112886 && echo '"Microsoft Teams" deb package is downloaded.' && sleep 1
   wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
-
+  
   ## absolute links
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.15/touchegg_2.0.15_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb && echo '"Cider" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/balena-io/etcher/releases/download/v1.14.3/balena-etcher_1.14.3_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
   
   ## ask whether to download
   ### fdm
@@ -177,7 +178,20 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
               echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
               echo -e ' \n"4K Video Downloader" deb package not downloaded. \n' && sleep 1;;
-  esac  
+  esac
+  ### cider
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Cider (Apple Music client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Downloading Cider...${TEXT_RESET} \n" && sleep 1
+              # download
+              wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb && echo '"Cider" deb package is downloaded.' && sleep 1 #_to_be_updated
+              # notify end
+              echo -e ' \n"Cider" deb package is downloaded. \n' && sleep 1;;
+          * ) # notify cancellation
+              echo -e ' \n"Cider" deb package not downloaded. \n' && sleep 1;;
+  esac
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
