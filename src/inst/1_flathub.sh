@@ -25,9 +25,21 @@ sudo flatpak install -y --noninteractive flathub org.kde.kclock
 sudo flatpak install -y --noninteractive flathub org.kde.kweather
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
-sudo flatpak install -y --noninteractive flathub me.hyliu.fluentreader
 
   ## ask whether to install
+  ### fluent reader
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Fluent Reader? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+              echo -e " \n${TEXT_YELLOW}Installing Fluent Reader...${TEXT_RESET} \n" && sleep 1
+              # install
+              sudo flatpak install -y --noninteractive flathub me.hyliu.fluentreader
+              # notify end
+              echo -e " \n${TEXT_GREEN}Fluent Reader installed.${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}Fluent Reader not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
   ### syncthing
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SyncThing? [y/n/c]'$TEXT_RESET)"$' \n' choice
