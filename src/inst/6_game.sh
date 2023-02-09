@@ -21,6 +21,26 @@ case "$choice" in
         
         # 2048
         sudo snap install qt-2048-snap
+        [ ! -f ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop ] && touch ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
+        desktop-file-edit \
+            --set-name '2048' --set-key 'Name[en_US]' --set-value '2048s' --set-key 'Name[zh_CN]' --set-value '2048' \
+            --set-generic-name 'Puzzle Game' --set-key 'GenericName[en_US]' --set-value 'Puzzle Game' --set-key 'GenericName[zh_CN]' --set-value '2048小游戏' \
+            --set-comment 'Single player 2d puzzle game' --set-key 'Comment[en_US]' --set-value 'Single player 2d puzzle game' --set-key 'Comment[zh_CN]' --set-value '2048智力拼图小游戏' \
+            --set-key 'Exec' --set-value 'env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/qt-2048-snap_qt-2048-snap.desktop /snap/bin/qt-2048-snap' \
+            --set-icon '/snap/qt-2048-snap/11/meta/gui/icon.png' \
+            --set-key 'NoDisplay' --set-value 'false' \
+            --set-key 'Path' --set-value '' \
+            --set-key 'StartupNotify' --set-value 'true' \
+            --set-key 'Terminal' --set-value 'false' \
+            --set-key 'TerminalOptions' --set-value '' \
+            --set-key 'Type' --set-value 'Application' \
+            --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+            --set-key 'X-KDE-Username' --set-value '' \
+            --set-key 'X-X-SnapInstanceName' --set-value 'qt-2048-snap' \
+            --set-key 'Keywords' --set-value 'Puzzle;2048;game;board' \
+            --set-key 'Version' --set-value '1.0' \
+            --remove-key 'Categories' --add-category 'Game;' \
+        ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
         
         # human resource machine
         wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 && echo '"Human Resource Machine" installing package is downloaded.' && sleep 5
