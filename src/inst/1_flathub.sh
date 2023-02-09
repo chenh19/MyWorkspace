@@ -139,7 +139,7 @@ desktop-file-edit \
 ~/.local/share/applications/com.github.joseexposito.touche.desktop
 ## touchegg
 [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
-cp -f ./cfg/touchegg/* ~/.config/touchegg/
+cp -rf ./cfg/touchegg/* ~/.config/touchegg/
 ##Bottles
 [ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
 desktop-file-edit \
