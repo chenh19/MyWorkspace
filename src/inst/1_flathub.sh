@@ -151,6 +151,26 @@ desktop-file-edit \
               # install
               [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
               sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
+              [ ! -f ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop ] && touch ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop
+              desktop-file-edit \
+                  --set-name 'SyncThingy' --set-key 'Name[en_US]' --set-value 'SyncThingy' --set-key 'Name[zh_CN]' --set-value 'SyncThingy' \
+                  --set-generic-name 'File synchronization' --set-key 'GenericName[en_US]' --set-value 'File synchronization' --set-key 'GenericName[zh_CN]' --set-value '文件同步' \
+                  --set-comment 'SyncThingy = Synthing + simple tray indicator' --set-key 'Comment[en_US]' --set-value 'SyncThingy = Synthing + simple tray indicator' --set-key 'Comment[zh_CN]' --set-value 'SyncThing客户端' \
+                  --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=SyncThingy com.github.zocker_160.SyncThingy' \
+                  --set-icon 'com.github.zocker_160.SyncThingy' \
+                  --set-key 'NoDisplay' --set-value 'false' \
+                  --set-key 'Path' --set-value '' \
+                  --set-key 'StartupNotify' --set-value 'false' \
+                  --set-key 'Terminal' --set-value 'false' \
+                  --set-key 'TerminalOptions' --set-value '' \
+                  --set-key 'Type' --set-value 'Application' \
+                  --set-key 'X-Flatpak' --set-value 'com.github.zocker_160.SyncThingy' \
+                  --set-key 'X-Flatpak-RenamedFrom' --set-value 'SyncThingy.desktop;' \
+                  --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+                  --set-key 'X-KDE-Username' --set-value '' \
+                  --set-key 'Keywords' --set-value 'synchronization;interface;' \
+                  --remove-key 'Categories' --add-category 'Network;' \
+              ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop
               # notify end
               echo -e " \n${TEXT_GREEN}SyncThing installed.${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
