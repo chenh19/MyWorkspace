@@ -27,7 +27,7 @@ case "$choice" in
         unzip -o -q HumanResourceMachine.zip?dl=0 && sleep 1 && rm -f HumanResourceMachine.zip?dl=0 && echo "" && sleep 1
         mv -f ./HumanResourceMachine-Linux-2016-03-23.sh ./inst/ && sleep 1
         echo -e "${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
-        bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
+        sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
         rm -f ./inst/HumanResourceMachine-Linux-2016-03-23.sh
 
         # notify end
