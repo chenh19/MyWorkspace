@@ -55,7 +55,7 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sy
           echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
 esac
 sysupdate
-echo -e "igv\nPublic\nR\nTemplates\nZotero" > ~/.hidden
+echo -e "igv\nPublic\nR\nLicenses\nTemplates\nZotero" > ~/.hidden
 echo -e "Enpass\nWeChat Files" > ~/Documents/.hidden
 echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp" | sudo tee /.hidden
 echo -e "rslsync" | sudo tee /home/.hidden
