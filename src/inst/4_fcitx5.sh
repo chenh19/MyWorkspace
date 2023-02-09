@@ -33,17 +33,15 @@ case "$choice" in
         wget -q https://www.dropbox.com/s/fpnlkogqchbzkua/fcitx5-themes.zip?dl=0 && sleep 1
         unzip -o -q fcitx5-themes.zip?dl=0 -d ~/.setup_cache/cfg/ && sleep 1 && rm -f fcitx5-themes.zip?dl=0 && sleep 5
         cp -rf ~/.setup_cache/cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/
-
-        ## set default im
+        
+        ## config fcitx (takes effect after rebooting)
+        cp -rf /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
+        cp -rf ~/.setup_cache/cfg/fcitx5/* ~/.config/fcitx5/
         echo -e "${TEXT_YELLOW}To set Fcitx5 as the default input method, please:${TEXT_RESET} \n"
         echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} and then ${TEXT_GREEN}[Yes]${TEXT_RESET}"
         echo -e "${TEXT_YELLOW}> select ${TEXT_GREEN}[activate Flexible Input Method Framework v5 (fcitx5) @]${TEXT_YELLOW} and click ${TEXT_GREEN}[OK]${TEXT_RESET}"
         echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} to finish${TEXT_RESET} \n" && sleep 1
         im-config
-
-        ## config fcitx (takes effect after rebooting)
-        cp -rf /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
-        cp -rf ~/.setup_cache/cfg/fcitx5/* ~/.config/fcitx5/
 
         # cleanup
         sudo apt-get autoremove -y && sudo apt-get clean
