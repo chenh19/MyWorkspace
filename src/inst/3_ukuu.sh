@@ -21,7 +21,6 @@ wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 [ -f ~/Licenses/license.dat ] && cp -rf ~/Licenses/license.dat ~/.config/ukuu/
 
 # install latest kernel
-sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install the latest Linux kernal now? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
       y|Y ) # add ppa
@@ -30,15 +29,8 @@ case "$choice" in
             # notify end
             echo -e " \n${TEXT_GREEN}Linux kernel up to date! The latest kernel will be loaded automatically on the next reboot.${TEXT_RESET} \n" && sleep 1;;
         * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Linux kernel remains as default.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Linux kernel remains as default and may be updated manually.${TEXT_RESET} \n" && sleep 1;;
 esac
-
-
-# cleanup
-sudo apt-get autoremove -y && sudo apt-get clean
-
-# notify end
-echo -e " \n${TEXT_GREEN}UKUU installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
 sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
