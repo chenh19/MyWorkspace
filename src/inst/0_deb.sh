@@ -40,31 +40,64 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
   # with better alternative option: syncthing-gtk, axel
-  sudo apt-get install kwrite krita krita-l10n seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper -y
+  sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper -y
 
 # install apps (ppa)
 
+  ## WiFi Hotspot
+  sudo add-apt-repository ppa:lakinduakash/lwh -y
+  sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
+  
   ## libreoffice
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to add PPA for LibreOffice (for KDE neon)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to add ubuntu PPA for LibreOffice (only required for KDE neon)? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # add ppa
               echo "" && sudo add-apt-repository ppa:libreoffice/ppa -y
               # notify end
               echo -e " \n${TEXT_GREEN}LibreOffice PPA added!${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
   esac
   sudo apt-get update && sudo apt-get install libreoffice libreoffice-plasma libreoffice-qt5 libreoffice-kf5 libreoffice-style-breeze libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-help-zh-cn libreoffice-l10n-zh-cn libreoffice-java-common -y
-
-  ## Inkscape
-  sudo add-apt-repository ppa:inkscape.dev/stable -y
-  sudo apt-get update && sudo apt-get install inkscape -y
   
-  ## WiFi Hotspot
-  sudo add-apt-repository ppa:lakinduakash/lwh -y
-  sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
-
+  ## Krita & Inkscape 
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita and Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # add ppa
+              echo "" && sudo add-apt-repository ppa:inkscape.dev/stable -y
+              sudo apt-get update && sudo apt-get install krita krita-l10n inkscape -y
+              # notify end
+              echo -e " \n${TEXT_GREEN}Krita and Inkscape installed!${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}Krita and Inkscape not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
+  
+  ## Kdenlive
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # install
+              echo "" && sudo apt-get install kdenlive -y
+              # notify end
+              echo -e " \n${TEXT_GREEN}Kdenlive installed!${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
+  
+  ## timekpr-next
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # add ppa
+              echo "" && sudo add-apt-repository ppa:mjasnik/ppa -y
+              sudo apt-get update
+              sudo apt-get install timekpr-next -y
+              # notify end
+              echo -e " \n${TEXT_GREEN}Timekpr-nExT installed!${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}Timekpr-nExT not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
+  
 # install apps (source list)
   ## enpass
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
