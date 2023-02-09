@@ -26,6 +26,7 @@ case "$choice" in
         sudo apt-get update && sudo apt-get upgrade -y
 
         ## install fcitx
+        sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
         sudo apt-get install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
         sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
