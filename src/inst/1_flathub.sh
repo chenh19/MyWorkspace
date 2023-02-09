@@ -65,7 +65,7 @@ desktop-file-edit \
     --remove-key 'Categories' --add-category 'Utility;' \
 ~/.local/share/applications/org.kde.kweather.desktop
 
-##Touché
+## touché
 sudo flatpak install -y --noninteractive flathub com.github.joseexposito.touche
 [ ! -f ~/.local/share/applications/com.github.joseexposito.touche.desktop ] && touch ~/.local/share/applications/com.github.joseexposito.touche.desktop
 desktop-file-edit \
@@ -86,11 +86,8 @@ desktop-file-edit \
     --set-key 'X-KDE-Username' --set-value '' \
     --remove-key 'Categories' --add-category 'Utility;' \
 ~/.local/share/applications/com.github.joseexposito.touche.desktop
-##touchegg
-[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
-cp -rf ./cfg/touchegg/* ~/.config/touchegg/
 
-##bottles
+## bottles
 sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
 [ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
 desktop-file-edit \
