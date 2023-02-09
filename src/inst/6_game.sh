@@ -23,7 +23,7 @@ case "$choice" in
         sudo snap install qt-2048-snap
         [ ! -f ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop ] && touch ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
         desktop-file-edit \
-            --set-name '2048' --set-key 'Name[en_US]' --set-value '2048s' --set-key 'Name[zh_CN]' --set-value '2048' \
+            --set-name '2048' --set-key 'Name[en_US]' --set-value '2048' --set-key 'Name[zh_CN]' --set-value '2048' \
             --set-generic-name 'Puzzle Game' --set-key 'GenericName[en_US]' --set-value 'Puzzle Game' --set-key 'GenericName[zh_CN]' --set-value '2048小游戏' \
             --set-comment 'Single player 2d puzzle game' --set-key 'Comment[en_US]' --set-value 'Single player 2d puzzle game' --set-key 'Comment[zh_CN]' --set-value '2048智力拼图小游戏' \
             --set-key 'Exec' --set-value 'env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/qt-2048-snap_qt-2048-snap.desktop /snap/bin/qt-2048-snap' \
