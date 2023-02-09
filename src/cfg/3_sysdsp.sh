@@ -23,18 +23,21 @@ case "$choice" in
         cp -rf ./cfg/teamviewer/ ~/.config/ && echo -e "[int32] ColorScheme = 1" >> ~/.config/teamviewer/client.conf
         [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{ \n    "initial_working_directory": "~", \n    "posix_terminal_shell": "bash", \n    "pdf_previewer": "none" \n}' > ~/.config/rstudio/rstudio-prefs.json
         [ -f ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings ] && echo -e '{ \n    "theme": "JupyterLab Light", \n    "theme-scrollbars": false, \n    "overrides": { \n        "code-font-family": null, \n        "code-font-size": null, \n        "content-font-family": null, \n        "content-font-size1": null, \n        "ui-font-family": null, \n        "ui-font-size1": null \n    } \n}' > ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+        cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
         echo -e " \n${TEXT_GREEN}Set global theme: Breeze Light${TEXT_RESET} \n" && sleep 1
         ;;
   d|D ) plasma-apply-lookandfeel --apply org.kde.breezedark.desktop
         cp -rf ./cfg/teamviewer/ ~/.config/ && echo -e "[int32] ColorScheme = 2" >> ~/.config/teamviewer/client.conf
         [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{ \n    "initial_working_directory": "~", \n    "posix_terminal_shell": "bash", \n    "editor_theme": "Tomorrow Night", \n    "pdf_previewer": "none" \n}' > ~/.config/rstudio/rstudio-prefs.json
         [ -f ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings ] && echo -e '{ \n    "theme": "JupyterLab Dark", \n    "theme-scrollbars": false, \n    "overrides": { \n        "code-font-family": null, \n        "code-font-size": null, \n        "content-font-family": null, \n        "content-font-size1": null, \n        "ui-font-family": null, \n        "ui-font-size1": null \n    } \n}' > ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+        cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui-dark.conf ~/.config/fcitx5/conf/classicui.conf
         echo -e " \n${TEXT_GREEN}Set global theme: Breeze Dark${TEXT_RESET} \n" && sleep 1
         ;;
   * ) 	plasma-apply-lookandfeel --apply org.kde.breeze.desktop
         cp -rf ./cfg/teamviewer/ ~/.config/ && echo -e "[int32] ColorScheme = 1" >> ~/.config/teamviewer/client.conf
         [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{ \n    "initial_working_directory": "~", \n    "posix_terminal_shell": "bash", \n    "pdf_previewer": "none" \n}' > ~/.config/rstudio/rstudio-prefs.json
         [ -f ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings ] && echo -e '{ \n    "theme": "JupyterLab Light", \n    "theme-scrollbars": false, \n    "overrides": { \n        "code-font-family": null, \n        "code-font-size": null, \n        "content-font-family": null, \n        "content-font-size1": null, \n        "ui-font-family": null, \n        "ui-font-size1": null \n    } \n}' > ~/.config/jupyterlab-desktop/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+        cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
         echo -e " \n${TEXT_GREEN}Set global theme: Breeze Light (default)${TEXT_RESET} \n" && sleep 1
         ;;
 esac
@@ -128,12 +131,12 @@ case "$choice" in
 esac
 
 # wechat scaling
-if [ -d ~/.deepinwine/Deepin-WeChat/ ] 
+if [ -f /opt/apps/com.qq.weixin.deepin/files/run.sh ] 
 then
         # configure scaling
         echo -e " \n${TEXT_YELLOW}In the popup window, please navigate to [Graphics] tab.${TEXT_RESET} \n"
         echo -e "${TEXT_YELLOW}Set [Screen resolution] to a comfortable dpi value, such as 240dpi (250%), 192dpi (200%), 144dpi (150%), or default 96dpi (100%), then click [OK] to exit and continue.${TEXT_RESET} \n"
-        env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg 
+        env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine6-stable winecfg
 fi
 
 # grub menu scaling
