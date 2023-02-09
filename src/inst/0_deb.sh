@@ -233,6 +233,10 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
 sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
 # auto config
+  ##touchegg
+  [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
+  cp -rf ./cfg/touchegg/* ~/.config/touchegg/
+  
   ## Etcher
   [ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
   echo -e '{ \n  "errorReporting": false, \n  "updatesEnabled": true, \n  "desktopNotifications": true, \n  "autoBlockmapping": true, \n  "decompressFirst": true \n}' > ~/.config/balena-etcher/config.json
