@@ -36,7 +36,7 @@ case "$choice" in
         cp -rf ~/.setup_cache/cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/
         
         ## config fcitx (takes effect after rebooting)
-        cp -rf /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
+        cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
         cp -rf ~/.setup_cache/cfg/fcitx5/* ~/.config/fcitx5/
         echo -e "${TEXT_YELLOW}To set Fcitx5 as the default input method, please:${TEXT_RESET} \n"
         echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} and then ${TEXT_GREEN}[Yes]${TEXT_RESET}"
