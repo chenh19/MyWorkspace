@@ -96,7 +96,7 @@ esac
 ###>>>sed-i-d-end-1
 
 # cleanup
-rm -rf ./eudic/ ./etcher/ ./tropy/ && rm -f ./*.desktop
+rm -rf ./eudic/ ./tropy/ && rm -f ./*.desktop
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
