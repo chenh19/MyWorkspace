@@ -18,18 +18,19 @@ echo -e "${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
 # download and install UKUU
 wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 [ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
-cp -rf ~/Licenses/license.dat ~/.config/ukuu/
+[ -f ~/Licenses/license.dat ] && cp -rf ~/Licenses/license.dat ~/.config/ukuu/
 
 # install latest kernel
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install the latest Linux kernal now? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
       y|Y ) # add ppa
+            echo -e " \n${TEXT_YELLOW}Installing the latest Linux kernel...${TEXT_RESET} \n"
             sudo ukuu --scripted --install-latest
             # notify end
-            echo -e " \n${TEXT_GREEN}LibreOffice PPA added!${TEXT_RESET} \n" && sleep 1;;
+            echo -e " \n${TEXT_GREEN}Linux kernel up to date! The latest kernel will be loaded automatically on the next reboot.${TEXT_RESET} \n" && sleep 1;;
         * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Linux kernel remains as default.${TEXT_RESET} \n" && sleep 1;;
 esac
 
 
@@ -37,7 +38,7 @@ esac
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}UKUU and latest Linux kernel installed!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}UKUU installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
 sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
