@@ -18,7 +18,7 @@ echo -e "${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
 # download and install UKUU
 wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 [ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
-[ -f ~/Licenses/license.dat ] && cp -rf ~/Licenses/license.dat ~/.config/ukuu/
+[ -f ~/Licenses/license.dat ] && cp -f ~/Licenses/license.dat ~/.config/ukuu/
 
 # install latest kernel
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install the latest Linux kernal now? [y/n/c]'$TEXT_RESET)"$' \n' choice
