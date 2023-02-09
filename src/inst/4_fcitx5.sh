@@ -18,11 +18,11 @@ case "$choice" in
   y|Y ) # notify start
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing Chinese Pinyin input method...${TEXT_RESET} \n" && sleep 1
+        [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
         [ ! -d ~/.config/fcitx5/ ] && mkdir ~/.config/fcitx5/
         [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
         [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
         [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
-        [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
         sudo apt-get update && sudo apt-get upgrade -y
 
         ## install fcitx
