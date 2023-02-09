@@ -28,7 +28,7 @@ case "$choice" in
 
         ## setup autostart
         [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
-        cp -rf /usr/share/applications/fcitx.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/fcitx.desktop
+        cp -f /usr/share/applications/fcitx.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/fcitx.desktop
 
         ## start once to generate the config files
         fcitx && sleep 10 && killall -9 fcitx
