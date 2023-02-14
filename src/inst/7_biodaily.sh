@@ -32,7 +32,8 @@ case "$choice" in
         mv -f ./snapgene.deb ./snapgene/ && sudo dpkg -i ./snapgene/snapgene.deb
         sudo apt-get -f -y install
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
-                
+        rm -rf ./snapgene/
+        
         # install Zotero
         wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
         sudo apt-get update && sudo apt-get install zotero libreoffice-java-common -y
@@ -40,7 +41,7 @@ case "$choice" in
         
         ## install Tropy
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Fluent Reader? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Tropy? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # notify start
                 echo -e " \n${TEXT_YELLOW}Installing Tropy...${TEXT_RESET} \n" && sleep 1
@@ -49,15 +50,14 @@ case "$choice" in
                 wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 -O tropy.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
                 tar -xjf tropy.tar.bz2 -C ./tropy/ && sleep 1 && rm -f tropy.tar.bz2
                 cp -f ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
-                sudo cp -rf ./tropy/ /opt/
-                sleep 1 && sudo chmod +x /opt/tropy/tropy
+                sudo cp -rf ./tropy/ /opt/ && sleep 1 && sudo chmod +x /opt/tropy/tropy
                 echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
                 sudo cp -f ./tropy.desktop /usr/share/applications/ && sleep 5
                 rm -rf ./tropy/ ./tropy.desktop
                 # notify end
-                echo -e " \n${TEXT_GREEN}Fluent Reader installed.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}Tropy installed.${TEXT_RESET} \n" && sleep 1;;
           * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Fluent Reader not installed.${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_YELLOW}Tropy not installed.${TEXT_RESET} \n" && sleep 1;;
         esac
         
         # Fluent Reader
@@ -112,11 +112,7 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}University VPN not installed.${TEXT_RESET} \n" && sleep 5;;
         esac
-                
-        # cleanup
-        sudo apt-get autoremove -y && sudo apt-get clean
-        rm -rf ./snapgene/
-
+        
         # notify end
         echo -e " \n${TEXT_GREEN}Daily biological tools installed!${TEXT_RESET} \n" && sleep 5;;
 
