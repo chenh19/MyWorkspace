@@ -63,12 +63,8 @@ case "$choice" in
               y|Y ) # install
                     echo "" && sudo apt-get update && sudo apt-get install gcompris-qt stellarium -y
                     sudo flatpak install -y --noninteractive flathub com.endlessnetwork.aqueducts
-                    [ ! -d ./humanresourcemachine/ ] && mkdir ./humanresourcemachine/
-                    wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 -O ./humanresourcemachine/HumanResourceMachine.zip && echo '"Human Resource Machine" installing package is downloaded.' && sleep 5
-                    7z x ./humanresourcemachine/HumanResourceMachine.zip -p$password -o./inst/ && sleep 1 && rm -rf ./humanresourcemachine/
                     echo -e " \n${TEXT_YELLOW}Please install HumanResourceMachine to /opt/ direcoory.${TEXT_RESET} \n"
                     sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 5
-                    rm -f ./inst/HumanResourceMachine-Linux-2016-03-23.sh
                     # notify end
                     echo -e " \n${TEXT_GREEN}Educational games installed!${TEXT_RESET} \n" && sleep 1;;
                 * ) # notify cancellation
