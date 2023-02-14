@@ -110,39 +110,6 @@ desktop-file-edit \
 ~/.local/share/applications/com.usebottles.bottles.desktop
 
   ## ask whether to install
-  ### fluent reader
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Fluent Reader? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Installing Fluent Reader...${TEXT_RESET} \n" && sleep 1
-              # install
-              sudo flatpak install -y --noninteractive flathub me.hyliu.fluentreader
-              [ ! -f ~/.local/share/applications/me.hyliu.fluentreader.desktop ] && touch ~/.local/share/applications/me.hyliu.fluentreader.desktop
-              desktop-file-edit \
-                  --set-name 'Fluent Reader' --set-key 'Name[en_US]' --set-value 'Fluent Reader' --set-key 'Name[zh_CN]' --set-value 'RSS阅读器' \
-                  --set-generic-name 'Modern RSS reader' --set-key 'GenericName[en_US]' --set-value 'Modern RSS reader' --set-key 'GenericName[zh_CN]' --set-value '浏览订阅信息' \
-                  --set-comment 'Read RSS Feeds' --set-key 'Comment[en_US]' --set-value 'Read RSS Feeds' --set-key 'Comment[zh_CN]' --set-value '阅读RSS订阅' \
-                  --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=start-fluent-reader --file-forwarding me.hyliu.fluentreader @@u %U @@' \
-                  --set-icon 'me.hyliu.fluentreader' \
-                  --set-key 'NoDisplay' --set-value 'false' \
-                  --set-key 'Path' --set-value '' \
-                  --set-key 'StartupNotify' --set-value 'true' \
-                  --set-key 'Terminal' --set-value 'false' \
-                  --set-key 'TerminalOptions' --set-value '' \
-                  --set-key 'Type' --set-value 'Application' \
-                  --set-key 'X-Flatpak' --set-value 'me.hyliu.fluentreader' \
-                  --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
-                  --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
-                  --set-key 'X-KDE-Username' --set-value '' \
-                  --remove-key 'Categories' --add-category 'Science;' \
-              ~/.local/share/applications/me.hyliu.fluentreader.desktop
-              # notify end
-              echo -e " \n${TEXT_GREEN}Fluent Reader installed.${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Fluent Reader not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-  
   ### syncthing
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SyncThing? [y/n/c]'$TEXT_RESET)"$' \n' choice
