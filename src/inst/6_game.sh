@@ -75,11 +75,9 @@ case "$choice" in
                     echo -e " \n${TEXT_YELLOW}Educational games not installed.${TEXT_RESET} \n" && sleep 1;;
         esac
 
-        # notify end
-        echo -e " \n${TEXT_GREEN}All games installed!${TEXT_RESET} \n" && sleep 5;;
+        ;;
 
-  * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}No games installed.${TEXT_RESET} \n" && sleep 5;;
+    * ) ;;
 esac
 
 
