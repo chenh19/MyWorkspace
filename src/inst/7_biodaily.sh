@@ -17,7 +17,7 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install daily biolog
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL)...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL/FastQC/Tropy)...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update && sudo apt-get upgrade -y
         
         # install IGV/PyMOL/FastQC/Meld
