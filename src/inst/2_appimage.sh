@@ -15,60 +15,30 @@ cd ~/.setup_cache/
 sudo echo ""
 echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 
-
-# download appimages
-
 ## Eudic
-[ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
-wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
-unzip -o -q eudic.zip?dl=0 && sleep 1 && rm -f eudic.zip?dl=0 && sleep 5
-echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/eudic/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
-
-## Tropy
-[ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
-wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
-tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm -f *tar.bz2
-cp -f ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
+[ ! -d ./eudic/ ] && mkdir ./eudic/
+wget -q https://www.dropbox.com/s/s6r5quimfqzhlfn/eudic.AppImage?dl=0 -O ./eudic/eudic.AppImage && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
+sudo cp -rf ./eudic/ /opt/ && sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage
+echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/icon/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
+sudo cp -f ./eudic.desktop /usr/share/applications/ && sleep 5
+rm -rf ./eudic/ ./eudic.desktop
 
 ## MuseScore
-https://github.com/musescore/MuseScore/releases/download/v4.0.1/MuseScore-4.0.1.230121751-x86_64.AppImage
->>>>>>>>>>>>>>
-  ## Kdenlive
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # install
-              echo "" && sudo apt-get install kdenlive -y
-              # notify end
-              echo -e " \n${TEXT_GREEN}Kdenlive installed!${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install MuseScore? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+      y|Y ) # install
+            [ ! -d ./musescore/ ] && mkdir ./musescore/
+            wget -q https://github.com/musescore/MuseScore/releases/download/v4.0.1/MuseScore-4.0.1.230121751-x86_64.AppImage -O ./musescore/musescore.AppImage && echo '"MuseScore" AppImage package is downloaded.' && sleep 5 #_to_be_updated
+            sudo cp -rf ./musescore/ /opt/ && sleep 1 && sudo chmod +x /opt/musescore/musescore.AppImage
+            echo -e "[Desktop Entry]\nCategories=AudioVideo;\nComment=Create, play and print sheet music\nExec=/opt/musescore/musescore.AppImage\nGenericName=Music notation\nIcon=/opt/icon/musescore.png\nMimeType=\nName=MuseScore\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./musescore.desktop
+            sudo cp -f ./musescore.desktop /usr/share/applications/ && sleep 5
+            rm -rf ./musescore/ ./musescore.desktop
+            # notify end
+            echo -e " \n${TEXT_GREEN}MuseScore installed!${TEXT_RESET} \n" && sleep 1;;
+      * )   # notify cancellation
+            echo -e " \n${TEXT_YELLOW}MuseScore not installed.${TEXT_RESET} \n" && sleep 1;;
+esac
 
->>>>>>>>>>>>
-
-
-
-
-
-
-
-
-
-
-# move to /opt folder
-sudo cp -rf ./eudic/ ./tropy/ /opt/
-sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage /opt/tropy/tropy
-
-
-# create desktop icons
-
-## Eudic
-
-## Tropy
-echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
-
-# move to /usr/share/applications folder
-sudo cp -rf ./*.desktop /usr/share/applications/ && sleep 5
 
 ###>>>sed-i-d-start-1
 # manual config
@@ -77,7 +47,7 @@ sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure AppImage apps now? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # ask for individual apps
-        
+
         ###>>>sed-i-d-start-2
         ## eudic
         sudo echo ""
@@ -92,19 +62,16 @@ case "$choice" in
                 echo -e " \n${TEXT_YELLOW}EuDic not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
         ###>>>sed-i-d-end-2
-        
+
         # notify end
         echo -e " \n${TEXT_GREEN}AppImage apps Configured!${TEXT_RESET} \n" && sleep 5;;
-        
+
   * )   # notify cancellation
         echo -e " \n${TEXT_YELLOW}AppImage apps not configured.${TEXT_RESET} \n" && sleep 5;;
-        
+
 esac
 ###>>>sed-i-d-end-1
 
-# cleanup
-rm -rf ./eudic/ ./tropy/ && rm -f ./*.desktop
-sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
 echo -e " \n${TEXT_GREEN}AppImages Deployed!${TEXT_RESET} \n" && sleep 1
