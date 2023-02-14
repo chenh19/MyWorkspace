@@ -84,6 +84,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
           * ) # notify cancellation
               echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
+  
   ## timekpr-next
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
