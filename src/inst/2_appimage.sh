@@ -22,12 +22,37 @@ echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 [ ! -d ~/.setup_cache/eudic/ ] && mkdir ~/.setup_cache/eudic/
 wget -q https://www.dropbox.com/s/i4bvaktkxik5v1x/eudic.zip?dl=0 && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
 unzip -o -q eudic.zip?dl=0 && sleep 1 && rm -f eudic.zip?dl=0 && sleep 5
+echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/eudic/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
 
 ## Tropy
 [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
 wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
 tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm -f *tar.bz2
 cp -f ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
+
+## MuseScore
+https://github.com/musescore/MuseScore/releases/download/v4.0.1/MuseScore-4.0.1.230121751-x86_64.AppImage
+>>>>>>>>>>>>>>
+  ## Kdenlive
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # install
+              echo "" && sudo apt-get install kdenlive -y
+              # notify end
+              echo -e " \n${TEXT_GREEN}Kdenlive installed!${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
+
+>>>>>>>>>>>>
+
+
+
+
+
+
+
+
 
 
 # move to /opt folder
@@ -38,7 +63,6 @@ sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage /opt/tropy/tropy
 # create desktop icons
 
 ## Eudic
-echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/eudic/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
 
 ## Tropy
 echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
