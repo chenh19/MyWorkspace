@@ -30,7 +30,7 @@ case "$choice" in
             [ ! -d ./musescore/ ] && mkdir ./musescore/
             wget -q https://github.com/musescore/MuseScore/releases/download/v4.0.1/MuseScore-4.0.1.230121751-x86_64.AppImage -O ./musescore/musescore.AppImage && echo '"MuseScore" AppImage package is downloaded.' && sleep 5 #_to_be_updated
             sudo cp -rf ./musescore/ /opt/ && sleep 1 && sudo chmod +x /opt/musescore/musescore.AppImage
-            echo -e "[Desktop Entry]\nCategories=AudioVideo;\nComment=Create, play and print sheet music\nExec=/opt/musescore/musescore.AppImage\nGenericName=Music notation\nIcon=/opt/icon/musescore.png\nMimeType=\nName=MuseScore\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./musescore.desktop
+            echo -e "[Desktop Entry]\nCategories=AudioVideo;\nComment=Create, play and print sheet music\nExec=/opt/musescore/musescore.AppImage\nGenericName=Music Notation\nIcon=/opt/icon/musescore.png\nMimeType=\nName=MuseScore\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./musescore.desktop
             sudo cp -f ./musescore.desktop /usr/share/applications/ && sleep 5
             rm -rf ./musescore/ ./musescore.desktop
             # notify end
