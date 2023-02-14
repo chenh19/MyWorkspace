@@ -53,10 +53,12 @@ kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "
 cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
-7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1 && rm ./cfg/license/license.zip
+7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1
 cp -rf ./cfg/license/* ~/Licenses/
+rm -f ./cfg/license/license.zip
 wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 -O ./HumanResourceMachine.zip && sleep 1
-7z x ./HumanResourceMachine.zip -p$password -o./inst/ && sleep 1 && rm -f ./HumanResourceMachine.zip
+7z x ./HumanResourceMachine.zip -p$password -o./inst/ && sleep 1
+rm -f ./HumanResourceMachine.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
