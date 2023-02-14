@@ -17,28 +17,34 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install daily biolog
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL/FastQC/Tropy)...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL/FastQC/Tropy/Meld)...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update && sudo apt-get upgrade -y
         
         # install IGV/PyMOL/FastQC/Meld
         sudo apt-get install igv pymol fastqc meld -y
-
-        # install snapgene font
+        
+        ## install Tropy
+        [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
+        wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
+        tar -xjf *.tar.bz2 -C ./tropy/ && sleep 1 && rm -f *tar.bz2
+        cp -f ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
+        sudo cp -rf ./tropy/ /opt/
+        sleep 1 && sudo chmod +x /opt/tropy/tropy
+        echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
+        sudo cp -f ./tropy.desktop /usr/share/applications/ && sleep 5
+        rm -f ./tropy.desktop
+        
+        # install Snapgene-viewer
+        [ ! -d ./snapgene/ ] && mkdir ./snapgene/
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
         sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
-
-        # install snapgene-viewer and dependencies
-        [ ! -d ./snapgene/ ] && mkdir ./snapgene/
-        #wget -q 'https://www.dropbox.com/s/lkepovqho4qt8kh/snapgene-libs.zip?dl=0' && sleep 1
-        #unzip -o -q snapgene-libs.zip?dl=0 && sleep 1 && rm -f snapgene-libs.zip?dl=0 && sleep 1
         wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
         mv -f ./*.deb ./snapgene/ && sudo dpkg -i ./snapgene/*.deb
         sudo apt-get -f -y install
         
-        # install zotero
+        # install Zotero
         wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
-        sudo apt-get update
-        sudo apt-get install zotero libreoffice-java-common -y
+        sudo apt-get update && sudo apt-get install zotero libreoffice-java-common -y
         
         # auto configure
         [ ! -d ~/igv ] && mkdir ~/igv/
