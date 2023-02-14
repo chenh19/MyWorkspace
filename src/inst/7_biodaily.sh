@@ -26,7 +26,7 @@ case "$choice" in
         ## install Tropy
         [ ! -d ~/.setup_cache/tropy/ ] && mkdir ~/.setup_cache/tropy/
         wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 -O tropy.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
-        tar -xjf tropy.tar.bz2 -C ./tropy/ && sleep 1 && rm -f *tar.bz2
+        tar -xjf tropy.tar.bz2 -C ./tropy/ && sleep 1 && rm -f tropy.tar.bz2
         cp -f ./tropy/resources/icons/hicolor/1024x1024/apps/tropy.png ./tropy/ && sleep 1
         sudo cp -rf ./tropy/ /opt/
         sleep 1 && sudo chmod +x /opt/tropy/tropy
