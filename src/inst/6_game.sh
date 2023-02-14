@@ -82,7 +82,7 @@ case "$choice" in
                         --set-key 'X-KDE-Username' --set-value '' \
                         --set-key 'Keywords' --set-value 'game;programming;puzzle;casual;' \
                         --remove-key 'Categories' --add-category 'Game;' \
-                    ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
+                    ~/.local/share/applications/com.endlessnetwork.aqueducts.desktop
                     echo -e " \n${TEXT_YELLOW}Please install HumanResourceMachine to /opt/ direcoory.${TEXT_RESET} \n"
                     sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh
                     # notify end
