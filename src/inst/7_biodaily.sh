@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 # This script intsalls daily biological tools (SnapGene, PyMOL, etc)
 
 # set terminal font color
