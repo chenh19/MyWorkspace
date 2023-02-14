@@ -76,7 +76,6 @@ case "$choice" in
         esac
 
         ;;
-
     * ) ;;
 esac
 
