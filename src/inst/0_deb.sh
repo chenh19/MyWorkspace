@@ -32,7 +32,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Install Chinese language packs? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
+        y|Y ) echo "" && sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
               echo -e " \n${TEXT_GREEN}Complete Chinese language packs installed!${TEXT_RESET} \n" && sleep 1;;
           * ) echo -e " \n${TEXT_YELLOW}Chinese language packs not installed!${TEXT_RESET} \n" && sleep 1;;
   esac
