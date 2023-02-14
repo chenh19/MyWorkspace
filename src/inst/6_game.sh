@@ -63,6 +63,26 @@ case "$choice" in
               y|Y ) # install
                     echo "" && sudo apt-get update && sudo apt-get install gcompris-qt stellarium -y
                     sudo flatpak install -y --noninteractive flathub com.endlessnetwork.aqueducts
+                    [ ! -f ~/.local/share/applications/com.endlessnetwork.aqueducts.desktop ] && touch ~/.local/share/applications/com.endlessnetwork.aqueducts.desktop
+                    desktop-file-edit \
+                        --set-name 'Aqueducts' --set-key 'Name[en_US]' --set-value 'Aqueducts' --set-key 'Name[zh_CN]' --set-value '水到渠成' \
+                        --set-generic-name 'Programming Game' --set-key 'GenericName[en_US]' --set-value 'Programming Game' --set-key 'GenericName[zh_CN]' --set-value '编程游戏' \
+                        --set-comment 'Bring back the water to the village' --set-key 'Comment[en_US]' --set-value 'Bring back the water to the village' --set-key 'Comment[zh_CN]' --set-value '通过编程将水引回村庄' \
+                        --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.endlessnetwork.aqueducts.sh com.endlessnetwork.aqueducts' \
+                        --set-icon 'com.endlessnetwork.aqueducts' \
+                        --set-key 'NoDisplay' --set-value 'false' \
+                        --set-key 'Path' --set-value '' \
+                        --set-key 'StartupNotify' --set-value 'true' \
+                        --set-key 'Terminal' --set-value 'false' \
+                        --set-key 'TerminalOptions' --set-value '' \
+                        --set-key 'Type' --set-value 'Application' \
+                        --set-key 'X-Flatpak' --set-value 'com.endlessnetwork.aqueducts' \
+                        --set-key 'X-Flatpak-Tags' --set-value 'proprietary;' \
+                        --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+                        --set-key 'X-KDE-Username' --set-value '' \
+                        --set-key 'Keywords' --set-value 'game;programming;puzzle;casual;' \
+                        --remove-key 'Categories' --add-category 'Game;' \
+                    ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
                     echo -e " \n${TEXT_YELLOW}Please install HumanResourceMachine to /opt/ direcoory.${TEXT_RESET} \n"
                     sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh
                     # notify end
