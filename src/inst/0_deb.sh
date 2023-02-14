@@ -85,17 +85,6 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
               echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
   
-  ## MuseScore
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install MuseScore? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # install
-              echo "" && sudo apt-get install musescore3 -y
-              # notify end
-              echo -e " \n${TEXT_GREEN}MuseScore installed!${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}MuseScore not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-  
   ## timekpr-next
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
