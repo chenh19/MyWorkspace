@@ -25,14 +25,14 @@ if [ -d ~/.setup_cache/ ]; then
   esac
 fi
 
-if [ -f ~/Documents/gitssh.txt ]; then
-  # ask whether to delete git ssh key
+if [ -f ~/Licenses/license.dat ]; then
+  # ask whether to delete licenses
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete your Git SSH key saved in [~/Documents/gitssh.txt] file? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the copies of licenses saved in [~/Licenses/] folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-    y|Y ) rm -f ~/Documents/gitssh.txt
-          echo -e " \n${TEXT_GREEN}Your Git SSH Key removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Your Git SSH Key remains in [~/Documents/gitssh.txt] file.${TEXT_RESET} \n" && sleep 1;;
+    y|Y ) rm -rf ~/Licenses/
+          echo -e " \n${TEXT_GREEN}The copies of licenses have been removed!${TEXT_RESET} \n" && sleep 1;;
+    * )   echo -e " \n${TEXT_YELLOW}The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n" && sleep 1;;
   esac
 fi
 
