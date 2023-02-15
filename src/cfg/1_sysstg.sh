@@ -183,8 +183,8 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 ######################################################################################
 
 # apt warning
+read -p "$(echo -e $TEXT_YELLOW'Please quit Slack from system tray to continue.'$TEXT_RESET)"$' \n'
 sleep 10 && slack
-read -p "$(echo -e $TEXT_YELLOW'Please quit Slack (from system tray), then press [Enter] to continue.'$TEXT_RESET)"$' \n'
 echo -e " \n${TEXT_GREEN}Transferring legacy gpg.${TEXT_RESET} \n" && sleep 1
 echo -e "${TEXT_YELLOW}Please manually assign the IDs (last 8 characters, no space) , then save and close the script file to continue.${TEXT_RESET} \n"
 sudo apt-key list >> ./cfg/apt/apt_warning.sh && kwrite ./cfg/apt/apt_warning.sh
