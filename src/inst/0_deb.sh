@@ -220,7 +220,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Downloading Cider...${TEXT_RESET} \n" && sleep 1
               # download
-              wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb && sleep 1 #_to_be_updated
+              wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb #_to_be_updated
               # notify end
               echo -e ' \n"Cider" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
