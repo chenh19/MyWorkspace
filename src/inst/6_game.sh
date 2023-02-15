@@ -16,15 +16,7 @@ sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install games? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
-
-        ## ask for password
-        unset password
-        until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
-            echo ""
-            read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licensed games: '$TEXT_RESET)"$' \n' password
-        done
-        echo ""
-
+        
         # leisure games
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install leisure games? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
