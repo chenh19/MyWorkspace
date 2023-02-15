@@ -18,6 +18,7 @@ case "$choice" in
   y|Y ) # notify start
         
         # leisure games
+        sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install leisure games? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
               y|Y ) # install
