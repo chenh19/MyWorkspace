@@ -62,7 +62,7 @@ case "$choice" in
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "14"
         kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
         # SDDM DPI
-        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 240" | sudo tee /etc/sddm.conf.d/dpi.conf
+        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 239" | sudo tee /etc/sddm.conf.d/dpi.conf
         sudo cp -f ./cfg/environment/environment /etc/
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
         # notify end
