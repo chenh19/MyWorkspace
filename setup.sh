@@ -54,8 +54,8 @@ cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1
-cp -rf ./cfg/license/* ~/Licenses/
 rm -f ./cfg/license/license.zip
+cp -rf ./cfg/license/* ~/Licenses/
 wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 -O ./HumanResourceMachine.zip && sleep 1
 7z x ./HumanResourceMachine.zip -p$password -o./inst/ && sleep 1
 rm -f ./HumanResourceMachine.zip
