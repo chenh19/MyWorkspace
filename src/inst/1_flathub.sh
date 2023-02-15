@@ -87,29 +87,39 @@ desktop-file-edit \
     --remove-key 'Categories' --add-category 'Utility;' \
 ~/.local/share/applications/com.github.joseexposito.touche.desktop
 
-## bottles
-sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
-[ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
-desktop-file-edit \
-    --set-name 'Bottles' --set-key 'Name[en_US]' --set-value 'Bottles' --set-key 'Name[zh_CN]' --set-value 'Bottles' \
-    --set-generic-name 'Wine Config Tool' --set-key 'GenericName[en_US]' --set-value 'Wine Config Tool' --set-key 'GenericName[zh_CN]' --set-value 'Wine编辑工具' \
-    --set-comment 'Run Windows Software' --set-key 'Comment[en_US]' --set-value 'Run Windows Software' --set-key 'Comment[zh_CN]' --set-value '运行Windows程序' \
-    --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles @@u %u @@' \
-    --set-icon 'com.usebottles.bottles' \
-    --set-key 'NoDisplay' --set-value 'false' \
-    --set-key 'Path' --set-value '' \
-    --set-key 'StartupNotify' --set-value 'true' \
-    --set-key 'Terminal' --set-value 'false' \
-    --set-key 'TerminalOptions' --set-value '' \
-    --set-key 'Type' --set-value 'Application' \
-    --set-key 'X-Flatpak' --set-value 'com.usebottles.bottles' \
-    --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
-    --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
-    --set-key 'X-KDE-Username' --set-value '' \
-    --remove-key 'Categories' --add-category 'Utility;' \
-~/.local/share/applications/com.usebottles.bottles.desktop
-
-  ## ask whether to install
+## ask whether to install
+  ### bottles
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Bottles for Wine? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) # notify start
+        echo -e " \n${TEXT_YELLOW}Installing Bottles...${TEXT_RESET} \n" && sleep 1
+        sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
+        [ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
+        desktop-file-edit \
+            --set-name 'Bottles' --set-key 'Name[en_US]' --set-value 'Bottles' --set-key 'Name[zh_CN]' --set-value 'Bottles' \
+            --set-generic-name 'Wine Config Tool' --set-key 'GenericName[en_US]' --set-value 'Wine Config Tool' --set-key 'GenericName[zh_CN]' --set-value 'Wine编辑工具' \
+            --set-comment 'Run Windows Software' --set-key 'Comment[en_US]' --set-value 'Run Windows Software' --set-key 'Comment[zh_CN]' --set-value '运行Windows程序' \
+            --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles @@u %u @@' \
+            --set-icon 'com.usebottles.bottles' \
+            --set-key 'NoDisplay' --set-value 'false' \
+            --set-key 'Path' --set-value '' \
+            --set-key 'StartupNotify' --set-value 'true' \
+            --set-key 'Terminal' --set-value 'false' \
+            --set-key 'TerminalOptions' --set-value '' \
+            --set-key 'Type' --set-value 'Application' \
+            --set-key 'X-Flatpak' --set-value 'com.usebottles.bottles' \
+            --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
+            --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+            --set-key 'X-KDE-Username' --set-value '' \
+            --remove-key 'Categories' --add-category 'Utility;' \
+        ~/.local/share/applications/com.usebottles.bottles.desktop
+                # notify end
+              echo -e " \n${TEXT_GREEN}SyncThing installed.${TEXT_RESET} \n" && sleep 1;;
+          * ) # notify cancellation
+              echo -e " \n${TEXT_YELLOW}SyncThing not installed.${TEXT_RESET} \n" && sleep 1;;
+  esac
+  
   ### syncthing
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SyncThing? [y/n/c]'$TEXT_RESET)"$' \n' choice
