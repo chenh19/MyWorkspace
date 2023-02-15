@@ -23,7 +23,7 @@ case "$choice" in
         
         # install anaconda
         [ ! -d ./shscript/ ] && mkdir ./shscript/
-        wget -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh && echo '"Anaconda" installing package is downloaded.' && sleep 1 #_to_be_updated
+        wget -O ./shscript/Anaconda-latest-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh && echo '"Anaconda" installing package is downloaded.' && sleep 1 #_to_be_updated
         echo -e "${TEXT_YELLOW}Please press ${TEXT_GREEN}[Enter]${TEXT_YELLOW} and then ${TEXT_GREEN}[Space]${TEXT_YELLOW} to scroll the license below: ${TEXT_RESET} \n" && sleep 1
         bash ./shscript/Anaconda-latest-Linux-x86_64.sh && sleep 3
         
@@ -42,7 +42,7 @@ case "$choice" in
                 
                 # install Jupyter Lab
                 [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-                wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.3.4-2/JupyterLab-Setup-Debian.deb && echo '"JupyterLab" deb package is downloaded.' && sleep 1 #_to_be_updated
+                wget -q https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v3.6.1-1/JupyterLab-Setup-Debian.deb && echo '"JupyterLab" deb package is downloaded.' && sleep 1 #_to_be_updated
                 mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get -f -y install
                 
