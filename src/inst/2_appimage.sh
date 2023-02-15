@@ -24,6 +24,7 @@ sudo cp -f ./eudic.desktop /usr/share/applications/ && sleep 5
 rm -rf ./eudic/ ./eudic.desktop
 
 ## MuseScore
+sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install MuseScore? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
       y|Y ) # install
