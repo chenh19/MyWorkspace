@@ -85,7 +85,7 @@ case "$choice" in
         esac
 
         ;;
-    * ) ;;
+    * ) echo -e " \n${TEXT_YELLOW}Games not installed.${TEXT_RESET} \n" && sleep 1;;
 esac
 
 
