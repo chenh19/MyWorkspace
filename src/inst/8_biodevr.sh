@@ -22,8 +22,9 @@ case "$choice" in
         [ ! -d ~/Developing/ ] && mkdir ~/Developing/ && kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 
         # install packages required by R and R packages installing
-        sudo apt-get install default-jre default-jdk curl openssl libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev -y
-
+        sudo apt-get install default-jre default-jdk curl openssl libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
+        sudo apt-get install libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev pandoc pandoc-citeproc -y #_for_devtools
+        
         # install R from cran
         wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
         echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee /etc/apt/sources.list.d/r-project.list
