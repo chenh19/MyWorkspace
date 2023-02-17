@@ -37,7 +37,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install extra R packages (this might take some time)? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # write R script of packages
-                echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp')) \nBiocManager::install(c('GenomicRanges','qvalue','DESeq2'))" > ./rscript/packages.R
+                echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp')) \nBiocManager::install(c('GenomicRanges','qvalue','DESeq2')) \ndevtools::install_github("dieterich-lab/JACUSA2helper", dependencies = TRUE, build_vignettes = TRUE)" > ./rscript/packages.R
                 ;;
           * )   # write R script of packages
                 echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R
@@ -46,10 +46,6 @@ case "$choice" in
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         echo "" && sudo Rscript ./rscript/packages.R
         echo "" && Rscript ./rscript/webdriver.R
-        
-        ## this issue will be fixed by RStudio 2022.11 (https://github.com/rstudio/rstudio/issues/11552#issuecomment-1194609342)
-        echo -e "remotes::install_version('rlang', '1.0.2')" > ./rscript/rlang.R
-        echo "" && sudo Rscript ./rscript/rlang.R
         
         # ask whether to install RStudio
         sudo echo ""
