@@ -183,21 +183,7 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 ######################################################################################
 
 # apt warning
-echo -e " \n${TEXT_YELLOW}Please quit Slack from system tray to continue.${TEXT_RESET} \n" && sleep 10 && slack
-echo -e " \n${TEXT_YELLOW}Transferring legacy gpg.${TEXT_RESET} \n" && sleep 1
-echo -e "${TEXT_YELLOW}Please manually assign the IDs (last 8 characters, no space) , then save and close the script file to continue.${TEXT_RESET} \n"
-sudo apt-key list >> ./cfg/apt/apt_warning.sh && kwrite ./cfg/apt/apt_warning.sh
-sleep 1 && sed -i "30,500d" ./cfg/apt/apt_warning.sh
-sleep 1 && bash ./cfg/apt/apt_warning.sh && sleep 1
-sudo apt-get update
-echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
-
-######################################################################################
-
-# ESM warning
-if grep -q "deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main" /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list ; then sudo sed -i 's+deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main+#deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main+g' /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list  && sudo update-grub ; fi
-if grep -q "deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-updates main" /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list ; then sudo sed -i 's+deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-updates main+#deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-updates main+g' /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list  && sudo update-grub ; fi
-sudo update-grub
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/apt_warning/main/apt_warning.sh)
 
 ######################################################################################
 
