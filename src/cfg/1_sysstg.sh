@@ -194,6 +194,13 @@ echo -e " \n${TEXT_GREEN}All legacy gpg transferred!${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
 
+# ESM warning
+if grep -q "deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main" /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list ; then sudo sed -i 's+deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main+#deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main+g' /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list  && sudo update-grub ; fi
+if grep -q "deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-security main" /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list ; then sudo sed -i 's+deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-updates main+#deb https://esm.ubuntu.com/apps/ubuntu jammy-apps-updates main+g' /var/lib/ubuntu-advantage/apt-esm/etc/apt/sources.list.d/ubuntu-esm-apps.list  && sudo update-grub ; fi
+sudo update-grub
+
+######################################################################################
+
 # cleanup
 sudo apt-get autoremove -y && sudo apt-get clean
 
