@@ -194,7 +194,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Downloading Angry IP Scanner...${TEXT_RESET} \n" && sleep 1
               # download
-              wget -q https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb #_to_be_updated
+              wget -q https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb #_to_be_updated
               # notify end
               echo -e ' \n"Angry IP Scanner" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
