@@ -9,7 +9,8 @@ TEXT_RESET='\e[0m'
 sudo apt-get remove com.qq.weixin.deepin -y
 
 ## remove deepin-wine apt source
-sudo rm -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list /etc/profile.d/deepin-wine.i-m.dev.sh
+[ -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list ] && sudo rm -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list
+[ -f /etc/profile.d/deepin-wine.i-m.dev.sh ] && sudo rm -f /etc/profile.d/deepin-wine.i-m.dev.sh
 if grep -q "deepin-wine" /etc/apt/sources.list ; then sudo sed -i '/deepin-wine/d' /etc/apt/sources.list ; fi
 
 ## cleanup
