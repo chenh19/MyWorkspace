@@ -13,7 +13,7 @@ sudo apt-get remove com.qq.weixin.deepin -y
 [ -f /etc/profile.d/deepin-wine.i-m.dev.sh ] && sudo rm -f /etc/profile.d/deepin-wine.i-m.dev.sh
 if grep -q "deepin-wine" /etc/apt/sources.list ; then sudo sed -i '/deepin-wine/d' /etc/apt/sources.list ; fi
 
-## cleanup
+## cleanup files
 [ -d "~/Documents/WeChat File/" ] && rm -rf "~/Documents/WeChat File/"
 [ -d ~/.deepinwine/ ] && rm -rf ~/.deepinwine/
 
