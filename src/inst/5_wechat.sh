@@ -42,8 +42,10 @@ case "$choice" in
         "/opt/apps/com.qq.weixin.deepin/files/run.sh" -f %f && sleep 10 && killall -9 WeChat.exe && sleep 5
 
         # cleanup
-        #rm -rf ./deepin-wine-ubuntu-master/
-        sudo apt-get autoremove -y && sudo apt-get clean
+        [ -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list ] && sudo rm -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list
+        [ -f /etc/profile.d/deepin-wine.i-m.dev.sh ] && sudo rm -f /etc/profile.d/deepin-wine.i-m.dev.sh
+        if grep -q "deepin-wine" /etc/apt/sources.list ; then sudo sed -i '/deepin-wine/d' /etc/apt/sources.list ; fi
+        sudo apt-get udpate && sudo apt-get autoremove -y && sudo apt-get clean
 
         # notify end
         echo -e " \n${TEXT_GREEN}WeChat installed!${TEXT_RESET} \n" && sleep 1;;
