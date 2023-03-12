@@ -102,7 +102,7 @@ bash ./inst/1_flathub.sh
 bash ./inst/2_appimage.sh
 bash ./inst/3_ukuu.sh
 bash ./inst/4_fcitx5.sh
-#bash ./inst/5_wechat.sh
+bash ./inst/5_wechat.sh
 bash ./inst/6_game.sh
 bash ./inst/7_biodaily.sh
 bash ./inst/8_biodevr.sh
