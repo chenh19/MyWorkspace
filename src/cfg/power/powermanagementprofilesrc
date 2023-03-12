@@ -32,9 +32,6 @@ suspendType=1
 [LowBattery]
 icon=battery-low
 
-[LowBattery][BrightnessControl]
-value=10
-
 [LowBattery][DPMSControl]
 idleTime=120
 lockBeforeTurnOff=0
