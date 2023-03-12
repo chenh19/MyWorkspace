@@ -4,7 +4,7 @@
 Encoding=UTF-8
 Type=Application
 X-Created-By=Deepin WINE Team
-Icon=com.qq.weixin.deepin
+Icon=/opt/icon/wechat.png
 Exec="/opt/apps/com.qq.weixin.deepin/files/run.sh" -f %f
 Name=WeChat
 Comment=Deepin Wine WeChat Client
