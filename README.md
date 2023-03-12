@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.8.3 (for X11 only, not ready for Wayland)*  
+*Current version: v1.8.4 (for X11 only, not ready for Wayland)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
