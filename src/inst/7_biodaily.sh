@@ -22,7 +22,7 @@ case "$choice" in
         
         # install IGV/PyMOL/FastQC/Meld
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install igv pymol fastqc meld -y
+        sudo apt-get install igv pymol fastqc clustalx meld -y
                 
         # install Snapgene-viewer
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
