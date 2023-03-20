@@ -92,24 +92,7 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}Fluent Reader not installed.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
-        # University VPN
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                sudo echo ""
-                echo -e "${TEXT_YELLOW}Installing University VPN...${TEXT_RESET} \n" && sleep 1
-                # install University VPN
-                [ ! -f anyconnect.zip ] && wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 -O anyconnect.zip && echo '"Cisco Anyconnet client" deb package is downloaded.' && sleep 5 #_to_be_updated
-                unzip -o -q anyconnect.zip -d ./anyconnect/ && sleep 1 && rm -f anyconnect.zip && sleep 1
-                sudo apt-get install ./anyconnect/cisco-anyconnect*.deb -y && sleep 1 && rm -rf ./anyconnect/
-                # notify end
-                echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}University VPN not installed.${TEXT_RESET} \n" && sleep 5;;
-        esac
-        
+                
         # notify end
         echo -e " \n${TEXT_GREEN}Daily biological tools installed!${TEXT_RESET} \n" && sleep 5;;
 
