@@ -40,7 +40,7 @@ echo ""
 
 ## prepare all scripts
 [ ! -f main ] && wget -q https://codeload.github.com/chenh19/MyWorkspace/zip/refs/heads/main && sleep 1
-unzip -o -q main && sleep 1 && rm main
+unzip -o -q main.zip && sleep 1 && rm main.zip
 cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./inst/ ] && mkdir ./inst/
 cp -rf ./MyWorkspace-main/src/inst/* ./inst/
