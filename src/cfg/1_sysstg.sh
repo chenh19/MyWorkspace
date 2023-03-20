@@ -24,14 +24,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.s
 
 ######################################################################################
 
-# wifi
-sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi connections? [y/n/c]'$TEXT_RESET)"$' \n' choice
-case "$choice" in
-    y|Y ) nmtui
-          echo -e " \n${TEXT_GREEN}WiFi configuration finished!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}WiFi configuration skipped.${TEXT_RESET} \n" && sleep 1;;
-esac
+# network
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/network_cofig/main/config.sh)
 
 ######################################################################################
 
