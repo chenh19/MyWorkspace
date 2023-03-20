@@ -101,12 +101,9 @@ case "$choice" in
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing University VPN...${TEXT_RESET} \n" && sleep 1
                 # install University VPN
-                wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && echo '"Cisco Anyconnet client" deb package is downloaded.' && sleep 5 #_to_be_updated
-                unzip -o -q anyconnect.zip?dl=0 && sleep 1 && rm -f anyconnect.zip?dl=0 && sleep 1
-                cd ./anyconnect-linux64-4.10.04065/vpn
-                sudo bash vpn_install.sh && sleep 5
-                cd ~/.setup_cache/
-                rm -rf ./anyconnect-linux64-4.10.04065/
+                [ ! -f anyconnect.zip?dl=0 ] && wget -q https://www.dropbox.com/s/o4a5so0at8tev76/anyconnect.zip?dl=0 && echo '"Cisco Anyconnet client" deb package is downloaded.' && sleep 5 #_to_be_updated
+                unzip -o -q anyconnect.zip?dl=0 -d ./anyconnect/ && sleep 1 && rm -f anyconnect.zip?dl=0 && sleep 1
+                sudo apt-get install ./anyconnect/cisco-anyconnect*.deb -y && sleep 1 && rm -rf ./anyconnect/
                 # notify end
                 echo -e " \n${TEXT_GREEN}University VPN installed!${TEXT_RESET} \n" && sleep 5;;
           * )   # notify cancellation
