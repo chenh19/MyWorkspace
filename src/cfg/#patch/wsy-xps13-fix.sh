@@ -19,4 +19,4 @@ sudo cp -rf ./MyWorkspace-main/src/cfg/icon/ /opt/ && sleep 1 && rm -rf ./MyWork
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
 
 # check "sudo apt update" and remove warning if needed
-# sysupdate
+# perform "sysupdate"
