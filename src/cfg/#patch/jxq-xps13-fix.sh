@@ -9,7 +9,7 @@ sudo apt-get update && sudo apt-get autoremove -y && sudo apt-get clean
 
 # icons
 [ ! -f main.zip ] && wget -q https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip && sleep 1
-unzip -o -q main.zip && sleep 1 && rm main.zip
+unzip -o -q main.zip && sleep 1 && rm -f main.zip
 sudo cp -rf ./MyWorkspace-main/src/cfg/icon/ /opt/ && sleep 1 && rm -rf ./MyWorkspace-main/
 
 # sysupdate
