@@ -39,7 +39,7 @@ done
 echo ""
 
 ## prepare all scripts
-[ ! -f main ] && wget -q https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip && sleep 1
+[ ! -f main.zip ] && wget -q https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip && sleep 1
 unzip -o -q main.zip && sleep 1 && rm main.zip
 cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./inst/ ] && mkdir ./inst/
