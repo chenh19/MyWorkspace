@@ -31,8 +31,8 @@ case "$choice" in
         sudo apt-get --fix-missing update && sudo apt-get install -y $(check-language-support) && sudo apt-get install -f -y
 
         ## install themes
-        wget -q https://www.dropbox.com/s/fpnlkogqchbzkua/fcitx5-themes.zip?dl=0 && sleep 1
-        unzip -o -q fcitx5-themes.zip?dl=0 -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip?dl=0 && sleep 5
+        [ ! -f fcitx5-themes.zip ] && wget -q https://www.dropbox.com/s/fpnlkogqchbzkua/fcitx5-themes.zip?dl=0 -O fcitx5-themes.zip && sleep 1
+        unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 5
         cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/
         
         ## config fcitx (takes effect after rebooting)
