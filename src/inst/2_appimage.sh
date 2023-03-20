@@ -17,7 +17,7 @@ echo -e "${TEXT_YELLOW}Deploying AppImages...${TEXT_RESET} \n" && sleep 1
 
 ## Eudic
 [ ! -d ./eudic/ ] && mkdir ./eudic/
-wget -q https://www.dropbox.com/s/s6r5quimfqzhlfn/eudic.AppImage?dl=0 -O ./eudic/eudic.AppImage && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
+[ ! -f ./eudic/eudic.AppImage ] && wget -q https://www.dropbox.com/s/s6r5quimfqzhlfn/eudic.AppImage?dl=0 -O ./eudic/eudic.AppImage && echo '"EuDic" AppImage package is downloaded.' && sleep 5 #_to_be_updated
 sudo cp -rf ./eudic/ /opt/ && sleep 1 && sudo chmod +x /opt/eudic/eudic.AppImage
 echo -e "[Desktop Entry]\nCategories=Office;\nComment=Dictionary\nExec=XDG_CURRENT_DESKTOP=GNOME /opt/eudic/eudic.AppImage\nGenericName=\nIcon=/opt/icon/eudic.png\nMimeType=\nName=EuDic\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./eudic.desktop
 sudo cp -f ./eudic.desktop /usr/share/applications/ && sleep 5
