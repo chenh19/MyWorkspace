@@ -155,22 +155,6 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}SnapGene Viewer not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
-        ## university vpn
-        if [ -f /opt/cisco/anyconnect/bin/vpnui ] 
-        then
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure University VPN? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please connect to ${TEXT_GREEN}[vpn.uchicago.edu]${TEXT_YELLOW} or ${TEXT_GREEN}[vpn.illinois.edu]${TEXT_YELLOW} and disconnect, then close the VPN client to continue.${TEXT_RESET} \n" && sleep 1
-                /opt/cisco/anyconnect/bin/vpnui
-                # notify end
-                echo -e " \n${TEXT_GREEN}University VPN configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}University VPN not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        fi
         ###>>>sed-i-d-end-2
         
         # notify end
