@@ -24,7 +24,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.s
 
 ######################################################################################
 
-# network
+# network config
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/network_cofig/main/config.sh)
 
 ######################################################################################
