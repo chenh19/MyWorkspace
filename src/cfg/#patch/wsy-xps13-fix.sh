@@ -18,5 +18,8 @@ sudo cp -rf ./MyWorkspace-main/src/cfg/icon/ /opt/ && sleep 1 && rm -rf ./MyWork
 # sysupdate
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
 
+# network-config
+bash <(wget -qO- https://raw.githubusercontent.com/chenh19/network_cofig/main/config.sh)
+
 # check "sudo apt update" and remove warning if needed
 # perform "sysupdate"
