@@ -143,6 +143,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
   
   ## absolute links
+  wget -q https://github.com/lencx/ChatGPT/releases/download/v0.12.0/ChatGPT_0.12.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
