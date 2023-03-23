@@ -115,9 +115,9 @@ desktop-file-edit \
             --remove-key 'Categories' --add-category 'Utility;' \
         ~/.local/share/applications/com.usebottles.bottles.desktop
                 # notify end
-              echo -e " \n${TEXT_GREEN}SyncThing installed.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_GREEN}Bottles installed.${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}SyncThing not installed.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Bottles not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
   
   ### syncthing
