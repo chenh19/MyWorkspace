@@ -167,6 +167,12 @@ kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'S
 [ -d ~/.local/share/kxmlgui5/okular/ ] && rm -rf ~/.local/share/kxmlgui5/okular/
 cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
 
+
+######################################################################################
+
+# vlc
+cp -rf ./cfg/vlc/ ~/.config/
+
 ######################################################################################
 
 # windows fonts
