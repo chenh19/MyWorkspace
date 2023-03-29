@@ -38,6 +38,8 @@ This tool will install and configure:
 - [WayDroid](https://waydro.id/)
 - [Balena Etcher](https://www.balena.io/etcher)
 - [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
+- [Htop](https://htop.dev/)
+- [Ranger](https://ranger.github.io/)
 - and more
 
 ## How to use
