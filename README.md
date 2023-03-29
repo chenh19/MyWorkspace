@@ -27,7 +27,7 @@ This tool will install and configure:
 - [Free Download Manager](https://www.freedownloadmanager.org/)
 - [4K Video Downloader](https://www.4kdownload.com/)
 - [ExpanDrive](https://www.expandrive.com/)
-- [BaiduYun](https://yun.baidu.com/)
+- [BaiduYun](https://yun.baidu.com/) ([desktop](https://pan.baidu.com/download))
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Sysupdate](https://github.com/chenh19/sysupdate)
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
