@@ -21,6 +21,7 @@ This tool will install and configure:
 - [qView](https://interversehq.com/qview/)
 - [Fluent Reader](https://hyliu.me/fluent-reader/)
 - [AnyConnect](https://www.cisco.com/site/us/en/products/security/secure-client/index.html)
+- [Eduroam](https://www.securew2.com/solutions/eduroam)
 - [Resilio Sync](https://www.resilio.com/)
 - [ExpanDrive](https://www.expandrive.com/)
 - [BaiduYun](https://yun.baidu.com/)
