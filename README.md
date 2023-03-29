@@ -8,6 +8,9 @@ This tool will install and configure:
 - [WeChat](https://www.wechat.com/) ([deepin-wine](https://github.com/zq1997/deepin-wine))
 - [ChatGPT](https://openai.com/blog/chatgpt) ([desktop](https://github.com/lencx/ChatGPT))
 - [EuDic](https://www.eudic.net/)
+- [Enpass](https://www.enpass.io/)
+- [SimpleNote](https://simplenote.com/)
+- [LibreOffice](https://www.libreoffice.org/)
 - [SnapGene](https://www.snapgene.com/) ([Viewer](https://www.snapgene.com/snapgene-viewer))
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/) ([open-source](https://github.com/schrodinger/pymol-open-source))
@@ -38,8 +41,10 @@ This tool will install and configure:
 - [WayDroid](https://waydro.id/)
 - [Balena Etcher](https://www.balena.io/etcher)
 - [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
+- [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/) 
 - [Htop](https://htop.dev/)
 - [Ranger](https://ranger.github.io/)
+- [Speedtest](https://www.speedtest.net/) ([CLI](https://www.speedtest.net/apps/cli))
 - and more
 
 ## How to use
