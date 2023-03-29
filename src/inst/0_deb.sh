@@ -57,14 +57,17 @@ sudo apt-get install default-jre default-jdk -y
               echo -e " \n${TEXT_YELLOW}Krita, Inkscape, and Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
   
+  ## mainline
+  #sudo add-apt-repository ppa:cappelikan/ppa -y
+  #sudo apt update && sudo apt install mainline -y
+  
   ## timekpr-next
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # add ppa
               echo "" && sudo add-apt-repository ppa:mjasnik/ppa -y
-              sudo apt-get update
-              sudo apt-get install timekpr-next -y
+              sudo apt-get update && sudo apt-get install timekpr-next -y
               # notify end
               echo -e " \n${TEXT_GREEN}Timekpr-nExT installed!${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
