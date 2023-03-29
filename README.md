@@ -51,7 +51,7 @@ This tool will install and configure:
 - [Balena Etcher](https://www.balena.io/etcher) (or [*Flashit*](https://teejeetech.com/product/flashit/))
 - [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
-- [UKUU](https://teejeetech.com/product/ukuu/) (or [mainline](https://github.com/bkw777/mainline))
+- [UKUU](https://teejeetech.com/product/ukuu/) (~~or [mainline](https://github.com/bkw777/mainline)~~)
 - [*Service Manager*](https://teejeetech.com/product/service-manager/)
 - [*Baqpaq*](https://teejeetech.com/product/baqpaq/)/[*Homi*](https://teejeetech.com/product/homi-personal-licence/)/[*Timeshift*](https://teejeetech.com/timeshift/)
 - [Htop](https://htop.dev/)
