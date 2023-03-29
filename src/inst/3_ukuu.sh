@@ -27,9 +27,9 @@ case "$choice" in
             echo -e " \n${TEXT_YELLOW}Installing the latest Linux kernel...${TEXT_RESET} \n"
             sudo ukuu --scripted --install-latest
             # notify end
-            echo -e " \n${TEXT_GREEN}Linux kernel up to date! The latest kernel will be loaded automatically on the next reboot.${TEXT_RESET} \n" && sleep 1;;
+            echo -e " \n${TEXT_GREEN}Linux kernel up to date! The latest kernel will be loaded automatically on the next reboot.${TEXT_RESET} \n" && sleep 5;;
         * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Linux kernel remains as default and may be updated manually.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Linux kernel remains as default and may be updated manually.${TEXT_RESET} \n" && sleep 5;;
 esac
 
 # mark setup.sh
