@@ -15,8 +15,13 @@ cd ~/.setup_cache/
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install games? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
-  y|Y ) # deb
-        sudo apt-get update && sudo apt-get install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso -y
+  y|Y ) # notify start
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Installing games...${TEXT_RESET} \n" && sleep 1
+        sudo apt-get update
+        
+        # deb
+        sudo apt-get install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso -y
         
         # flatpak
         sudo flatpak install -y --noninteractive flathub com.endlessnetwork.aqueducts
