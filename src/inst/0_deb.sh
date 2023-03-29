@@ -23,8 +23,10 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 sudo apt-get install default-jre default-jdk -y
 
 # install language packs
-sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
-sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
+  ## English
+  sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
+  ## Chinese
+  sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
 
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
