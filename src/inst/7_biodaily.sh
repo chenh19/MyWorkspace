@@ -39,13 +39,11 @@ case "$choice" in
         sudo apt-get update && sudo apt-get install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
         
-        ## install Tropy
+        ## install Tropy and Fluent Reader
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Tropy? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Tropy and Fluent Reader? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Installing Tropy...${TEXT_RESET} \n" && sleep 1
-                # install
+          y|Y ) # Tropy
                 [ ! -d ./tropy/ ] && mkdir ./tropy/
                 wget -q https://github.com/tropy/tropy/releases/download/v1.12.0/tropy-1.12.0-x64.tar.bz2 -O tropy.tar.bz2 && echo '"Tropy" tar package is downloaded.' && sleep 5 #_to_be_updated
                 tar -xjf tropy.tar.bz2 -C ./tropy/ && sleep 1 && rm -f tropy.tar.bz2
@@ -54,19 +52,8 @@ case "$choice" in
                 echo -e "[Desktop Entry]\nCategories=Graphics;\nComment=Image Manager\nExec=/opt/tropy/tropy\nGenericName=\nIcon=/opt/tropy/tropy.png\nMimeType=\nName=Tropy\nPath=\nStartupNotify=true\nTerminal=false\nTerminalOptions=\nType=Application" > ./tropy.desktop
                 sudo cp -f ./tropy.desktop /usr/share/applications/ && sleep 5
                 rm -rf ./tropy/ ./tropy.desktop
-                # notify end
-                echo -e " \n${TEXT_GREEN}Tropy installed.${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Tropy not installed.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        
-        # Fluent Reader
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Fluent Reader? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Installing Fluent Reader...${TEXT_RESET} \n" && sleep 1
-                # install
+                
+                # Fluent Reader
                 sudo flatpak install -y --noninteractive flathub me.hyliu.fluentreader
                 [ ! -f ~/.local/share/applications/me.hyliu.fluentreader.desktop ] && touch ~/.local/share/applications/me.hyliu.fluentreader.desktop
                 desktop-file-edit \
@@ -87,12 +74,11 @@ case "$choice" in
                   --set-key 'X-KDE-Username' --set-value '' \
                   --remove-key 'Categories' --add-category 'Science;' \
                 ~/.local/share/applications/me.hyliu.fluentreader.desktop
-                # notify end
-                echo -e " \n${TEXT_GREEN}Fluent Reader installed.${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Fluent Reader not installed.${TEXT_RESET} \n" && sleep 1;;
-        esac
                 
+                ;;
+          * )   ;;
+        esac
+                        
         # notify end
         echo -e " \n${TEXT_GREEN}Daily biological tools installed!${TEXT_RESET} \n" && sleep 5;;
 
