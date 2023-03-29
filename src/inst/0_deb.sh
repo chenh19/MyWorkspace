@@ -46,11 +46,11 @@ sudo apt-get install default-jre default-jdk -y
   
   ## Krita, Inkscape, Kdenlive, Kamoso
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita, Inkscape, Kdenlive and Kamoso? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita, Inkscape, and Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # add ppa
               echo "" && sudo add-apt-repository ppa:inkscape.dev/stable -y
-              sudo apt-get update && sudo apt-get install krita krita-l10n inkscape kdenlive kamoso -y
+              sudo apt-get update && sudo apt-get install krita krita-l10n inkscape kdenlive -y
               # notify end
               echo -e " \n${TEXT_GREEN}Krita, Inkscape, Kdenlive and Kamoso installed!${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
