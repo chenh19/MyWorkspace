@@ -48,7 +48,7 @@ This tool will install and configure:
 - [Steam](https://store.steampowered.com/) ([desktop](https://store.steampowered.com/about/))
 - [Bottles](https://usebottles.com/)
 - [WayDroid](https://waydro.id/)
-- [Balena Etcher](https://www.balena.io/etcher) (or [*Flashit*](https://teejeetech.com/product/flashit/))
+- [Balena Etcher](https://www.balena.io/etcher) (~~or [*Flashit*](https://teejeetech.com/product/flashit/)~~)
 - [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
 - [UKUU](https://teejeetech.com/product/ukuu/) (~~or [mainline](https://github.com/bkw777/mainline)~~)
