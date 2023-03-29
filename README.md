@@ -21,7 +21,7 @@ This tool will install and configure:
 - [qView](https://interversehq.com/qview/)
 - [Tropy](https://tropy.org/)
 - [Fluent Reader](https://hyliu.me/fluent-reader/)
-- [SecureW2](https://www.securew2.com/solutions/eduroam) [Eduroam](https://eduroam.org/)
+- [Eduroam](https://eduroam.org/) ([SecureW2](https://www.securew2.com/solutions/eduroam))
 - [Cisco AnyConnect](https://www.cisco.com/site/us/en/products/security/secure-client/index.html)
 - [Resilio Sync](https://www.resilio.com/)
 - [Free Download Manager](https://www.freedownloadmanager.org/)
