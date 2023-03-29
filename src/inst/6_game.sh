@@ -63,6 +63,8 @@ case "$choice" in
             --set-key 'Version' --set-value '1.0' \
             --remove-key 'Categories' --add-category 'Game;' \
         ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
+        
+        # sh
         echo -e " \n${TEXT_YELLOW}Please install HumanResourceMachine to /opt/ direcoory.${TEXT_RESET} \n"
         sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh
         ;;
