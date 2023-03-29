@@ -18,24 +18,13 @@ sudo apt-get update
 
 # install updates
 sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
-echo -e " \n${TEXT_GREEN}Distribution update completed!${TEXT_RESET} \n" && sleep 1
 
 # install java
 sudo apt-get install default-jre default-jdk -y
-echo -e " \n${TEXT_GREEN}Java environment installed!${TEXT_RESET} \n" && sleep 1
 
-# install complete language packs
+# install language packs
 sudo apt-get install language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en language-pack-kde-en -y
-echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET} \n" && sleep 1
-
-  ## ask whether to install Chinese packs
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Install Chinese language packs? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) echo "" && sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
-              echo -e " \n${TEXT_GREEN}Complete Chinese language packs installed!${TEXT_RESET} \n" && sleep 1;;
-          * ) echo -e " \n${TEXT_YELLOW}Chinese language packs not installed!${TEXT_RESET} \n" && sleep 1;;
-  esac
+sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
 
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
@@ -108,21 +97,9 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
 
 # install apps (pip)
   ## speedtest
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Speedtest-CLI by Ookla? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Installing Speedtest-CLI...${TEXT_RESET} \n" && sleep 1
-                #install
-                sudo pip install speedtest-cli
-                echo -e " \n${TEXT_GREEN}Testing internet speed...${TEXT_RESET} \n" && sleep 1
-                speedtest
-                # notify end
-                echo -e " \n${TEXT_GREEN}Speedtest-CLI installed!${TEXT_RESET} \n" && sleep 5;;
-          * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Speedtest-CLI not installed.${TEXT_RESET} \n" && sleep 5;;
-  esac
-
+  sudo pip install speedtest-cli
+  speedtest
+  
 # install apps (downloaded)
   [ ! -d ./deb/ ] && mkdir ./deb/
   echo -e " \n${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
@@ -135,6 +112,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   
   ## absolute links
   wget -q https://github.com/lencx/ChatGPT/releases/download/v0.12.0/ChatGPT_0.12.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb && echo '"Angry IP Scanner" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
@@ -179,18 +157,6 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
               echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1;;
           * ) # notify cancellation
               echo -e ' \n"BaiduYun" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### angry IP scanner
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Angry IP Scanner? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading Angry IP Scanner...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"Angry IP Scanner" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"Angry IP Scanner" deb package not downloaded. \n' && sleep 1;;
   esac
   ### 4k video downloader
   sudo echo ""
