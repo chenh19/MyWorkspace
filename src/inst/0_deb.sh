@@ -34,7 +34,6 @@ sudo apt-get install default-jre default-jdk -y
   sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper exfatprogs neofetch ranger htop -y
 
 # install apps (ppa)
-
   ## WiFi Hotspot
   sudo add-apt-repository ppa:lakinduakash/lwh -y
   sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
