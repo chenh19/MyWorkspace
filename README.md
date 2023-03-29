@@ -17,7 +17,7 @@ This tool will install and configure:
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [Kdenlive](https://kdenlive.org/)
-- [Apple Music](https://music.apple.com/browse) ([Cider](https://cider.sh/))
+- [Apple Music](https://music.apple.com/browse) ([Cider desktop](https://cider.sh/))
 - [qView](https://interversehq.com/qview/)
 - [Tropy](https://tropy.org/)
 - [Fluent Reader](https://hyliu.me/fluent-reader/)
