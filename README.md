@@ -8,7 +8,7 @@ This tool will install and configure:
 - [WeChat](https://www.wechat.com/) ([deepin-wine](https://github.com/zq1997/deepin-wine))
 - [ChatGPT](https://openai.com/blog/chatgpt) ([desktop](https://github.com/lencx/ChatGPT))
 - [EuDic](https://www.eudic.net/)
-- [SnapGene](https://www.snapgene.com/)
+- [SnapGene](https://www.snapgene.com/) ([Viewer](https://www.snapgene.com/snapgene-viewer))
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/) ([open-source](https://github.com/schrodinger/pymol-open-source))
 - [Zotero](https://www.zotero.org/)
