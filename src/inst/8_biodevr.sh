@@ -48,36 +48,12 @@ case "$choice" in
         echo "" && sudo Rscript ./rscript/packages.R
         echo "" && Rscript ./rscript/webdriver.R
         
-        # ask whether to install RStudio
+        # ask whether to install RStudio or RKward
         sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RStudio? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RStudio (a) or RKWard (b)? [a/b]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
-          y|Y ) # notify start
-                sudo echo ""
-                echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
-                
-                # install RStudio
-                [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-                
-                wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
-                mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
-                sudo apt-get -f -y install
-                
-                # config
-                [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
-                kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
-                
-                # notify end
-                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 5;;
-                
-          * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}RStudio not installed.${TEXT_RESET} \n" && sleep 5;;
-        esac
         
-        # ask whether to install RKWard
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RKWard? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
+          b|B ) # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RKWard...${TEXT_RESET} \n" && sleep 1
                 
@@ -87,10 +63,25 @@ case "$choice" in
                 sudo apt-get install -f -y
                 
                 # notify end
-                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 5;;
+                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1;;
                 
-          * ) # notify cancellation
-                echo -e " \n${TEXT_YELLOW}RKWard not installed.${TEXT_RESET} \n" && sleep 5;;
+           * )  # notify start
+                sudo echo ""
+                echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
+                
+                # install RStudio
+                [ ! -d ./devdeb/ ] && mkdir ./devdeb/
+                wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
+                mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
+                sudo apt-get install -f -y
+                
+                # config
+                [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
+                kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
+                
+                # notify end
+                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1;;
+                
         esac
         
         # cleanup
