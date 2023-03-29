@@ -35,8 +35,8 @@ This tool will install and configure:
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - [Bottles](https://usebottles.com/)
 - [WayDroid](https://waydro.id/)
-- [Etcher](https://www.balena.io/etcher)
-- [UBports](https://ubuntu-touch.io/)
+- [Balena Etcher](https://www.balena.io/etcher)
+- [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
 - and more
 
 ## How to use
