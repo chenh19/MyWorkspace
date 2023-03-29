@@ -106,7 +106,7 @@ bash ./inst/5_wechat.sh
 bash ./inst/6_game.sh
 bash ./inst/7_biodaily.sh
 bash ./inst/8_biodevr.sh
-bash ./inst/9_biodevpy.sh
+#bash ./inst/9_biodevpy.sh
 
 # config
 bash ./cfg/0_sysmdl.sh
