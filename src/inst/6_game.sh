@@ -22,6 +22,9 @@ case "$choice" in
         
         # deb
         sudo apt-get install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso -y
+        #wget -q https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb && echo '"Steam" deb package is downloaded.' && sleep 1
+        #sudo apt-get install ./steam.deb -y && sleep 1
+        #rm -f ./steam.deb
         
         # flatpak
         sudo flatpak install -y --noninteractive flathub com.endlessnetwork.aqueducts
