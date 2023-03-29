@@ -53,7 +53,7 @@ This tool will install and configure:
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
 - [UKUU](https://teejeetech.com/product/ukuu/) (~~or [mainline](https://github.com/bkw777/mainline)~~)
 - [*Service Manager*](https://teejeetech.com/product/service-manager/)
-- [*Baqpaq*](https://teejeetech.com/product/baqpaq/)/[*Homi*](https://teejeetech.com/product/homi-personal-licence/)/[~~*Timeshift*~~](https://teejeetech.com/timeshift/)
+- [*Baqpaq*](https://teejeetech.com/product/baqpaq/)/[~~*Homi*~~](https://teejeetech.com/product/homi-personal-licence/)/[~~*Timeshift*~~](https://teejeetech.com/timeshift/)
 - [Htop](https://htop.dev/)
 - [Ranger](https://ranger.github.io/)
 - [Speedtest](https://www.speedtest.net/) ([CLI](https://www.speedtest.net/apps/cli))
