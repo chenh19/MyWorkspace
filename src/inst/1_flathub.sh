@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs flathub and Discover backend
+# This script installs Flathub, Discover backend for Flathub, and Flatpak applications
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Installing Flatpak packages...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Installing Flatpak applications...${TEXT_RESET} \n" && sleep 1
 [ ! -d ~/.local/share/applications ] && mkdir ~/.local/share/applications
 sudo apt-get update && sudo apt-get upgrade -y
 
@@ -117,7 +117,7 @@ sudo snap remove firefox
 sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}Flatpak packages installed!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}Flatpak applications installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
 sed -i 's+bash ./inst/1_flathub.sh+#bash ./inst/1_flathub.sh+g' ~/.setup_cache/setup.sh
