@@ -22,7 +22,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install leisure games? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
               y|Y ) # install
-                    echo "" && sudo apt-get update && sudo apt-get install kapman kdiamond bovo kigo kamoso -y
+                    echo "" && sudo apt-get update && sudo apt-get install kapman kdiamond bovo kigo -y
                     sudo snap install qt-2048-snap
                     [ ! -f ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop ] && touch ~/.local/share/applications/qt-2048-snap_qt-2048-snap.desktop
                     desktop-file-edit \
@@ -54,7 +54,7 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install educational games? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
               y|Y ) # install
-                    echo "" && sudo apt-get update && sudo apt-get install gcompris-qt stellarium -y
+                    echo "" && sudo apt-get update && sudo apt-get install gcompris-qt stellarium kamoso -y
                     sudo flatpak install -y --noninteractive flathub com.endlessnetwork.aqueducts
                     [ ! -f ~/.local/share/applications/com.endlessnetwork.aqueducts.desktop ] && touch ~/.local/share/applications/com.endlessnetwork.aqueducts.desktop
                     desktop-file-edit \
