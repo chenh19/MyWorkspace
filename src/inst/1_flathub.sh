@@ -87,106 +87,27 @@ desktop-file-edit \
     --remove-key 'Categories' --add-category 'Utility;' \
 ~/.local/share/applications/com.github.joseexposito.touche.desktop
 
-## ask whether to install
-  ### bottles
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Bottles for Wine? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-        echo -e " \n${TEXT_YELLOW}Installing Bottles...${TEXT_RESET} \n" && sleep 1
-        sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
-        [ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
-        desktop-file-edit \
-            --set-name 'Bottles' --set-key 'Name[en_US]' --set-value 'Bottles' --set-key 'Name[zh_CN]' --set-value 'Bottles' \
-            --set-generic-name 'Wine Config Tool' --set-key 'GenericName[en_US]' --set-value 'Wine Config Tool' --set-key 'GenericName[zh_CN]' --set-value 'Wine编辑工具' \
-            --set-comment 'Run Windows Software' --set-key 'Comment[en_US]' --set-value 'Run Windows Software' --set-key 'Comment[zh_CN]' --set-value '运行Windows程序' \
-            --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles @@u %u @@' \
-            --set-icon 'com.usebottles.bottles' \
-            --set-key 'NoDisplay' --set-value 'false' \
-            --set-key 'Path' --set-value '' \
-            --set-key 'StartupNotify' --set-value 'true' \
-            --set-key 'Terminal' --set-value 'false' \
-            --set-key 'TerminalOptions' --set-value '' \
-            --set-key 'Type' --set-value 'Application' \
-            --set-key 'X-Flatpak' --set-value 'com.usebottles.bottles' \
-            --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
-            --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
-            --set-key 'X-KDE-Username' --set-value '' \
-            --remove-key 'Categories' --add-category 'Utility;' \
-        ~/.local/share/applications/com.usebottles.bottles.desktop
-                # notify end
-              echo -e " \n${TEXT_GREEN}Bottles installed.${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Bottles not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-  
-  ### syncthing
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install SyncThing? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Installing SyncThing...${TEXT_RESET} \n" && sleep 1
-              # install
-              [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
-              sudo flatpak install -y --noninteractive flathub com.github.zocker_160.SyncThingy
-              [ ! -f ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop ] && touch ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop
-              desktop-file-edit \
-                  --set-name 'SyncThingy' --set-key 'Name[en_US]' --set-value 'SyncThingy' --set-key 'Name[zh_CN]' --set-value 'SyncThingy' \
-                  --set-generic-name 'File synchronization' --set-key 'GenericName[en_US]' --set-value 'File synchronization' --set-key 'GenericName[zh_CN]' --set-value '文件同步' \
-                  --set-comment 'SyncThingy = Synthing + simple tray indicator' --set-key 'Comment[en_US]' --set-value 'SyncThingy = Synthing + simple tray indicator' --set-key 'Comment[zh_CN]' --set-value 'SyncThing客户端' \
-                  --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=SyncThingy com.github.zocker_160.SyncThingy' \
-                  --set-icon 'com.github.zocker_160.SyncThingy' \
-                  --set-key 'NoDisplay' --set-value 'false' \
-                  --set-key 'Path' --set-value '' \
-                  --set-key 'StartupNotify' --set-value 'false' \
-                  --set-key 'Terminal' --set-value 'false' \
-                  --set-key 'TerminalOptions' --set-value '' \
-                  --set-key 'Type' --set-value 'Application' \
-                  --set-key 'X-Flatpak' --set-value 'com.github.zocker_160.SyncThingy' \
-                  --set-key 'X-Flatpak-RenamedFrom' --set-value 'SyncThingy.desktop;' \
-                  --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
-                  --set-key 'X-KDE-Username' --set-value '' \
-                  --set-key 'Keywords' --set-value 'synchronization;interface;' \
-                  --remove-key 'Categories' --add-category 'Network;' \
-              ~/.local/share/applications/com.github.zocker_160.SyncThingy.desktop
-              # notify end
-              echo -e " \n${TEXT_GREEN}SyncThing installed.${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}SyncThing not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-
-
-###>>>sed-i-d-start-1
-# manual config
-# aske whether to configure apt installed apps manually
-sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure flatpak apps manually now? [y/n/c]'$TEXT_RESET)"$' \n' choice
-case "$choice" in
-  y|Y ) # ask for individual apps
-
-        ###>>>sed-i-d-start-2
-        ## syncthing
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Syncthing? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please config and then quit Syncthing (from system tray) to continue.${TEXT_RESET} \n" && sleep 1
-                flatpak run com.github.zocker_160.SyncThingy
-                # notify end
-                echo -e " \n${TEXT_GREEN}Syncthing configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}Syncthing not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        ###>>>sed-i-d-end-2
-
-        # notify end
-        echo -e " \n${TEXT_GREEN}Apt installed apps Configured!${TEXT_RESET} \n" && sleep 5;;
-
-  * )   # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Apt installed apps not configured.${TEXT_RESET} \n" && sleep 5;;
-
-esac
-###>>>sed-i-d-end-1
+### bottles
+sudo flatpak install -y --noninteractive flathub com.usebottles.bottles
+[ ! -f ~/.local/share/applications/com.usebottles.bottles.desktop ] && touch ~/.local/share/applications/com.usebottles.bottles.desktop
+desktop-file-edit \
+    --set-name 'Bottles' --set-key 'Name[en_US]' --set-value 'Bottles' --set-key 'Name[zh_CN]' --set-value 'Bottles' \
+    --set-generic-name 'Wine Config Tool' --set-key 'GenericName[en_US]' --set-value 'Wine Config Tool' --set-key 'GenericName[zh_CN]' --set-value 'Wine编辑工具' \
+    --set-comment 'Run Windows Software' --set-key 'Comment[en_US]' --set-value 'Run Windows Software' --set-key 'Comment[zh_CN]' --set-value '运行Windows程序' \
+    --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles @@u %u @@' \
+    --set-icon 'com.usebottles.bottles' \
+    --set-key 'NoDisplay' --set-value 'false' \
+    --set-key 'Path' --set-value '' \
+    --set-key 'StartupNotify' --set-value 'true' \
+    --set-key 'Terminal' --set-value 'false' \
+    --set-key 'TerminalOptions' --set-value '' \
+    --set-key 'Type' --set-value 'Application' \
+    --set-key 'X-Flatpak' --set-value 'com.usebottles.bottles' \
+    --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
+    --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+    --set-key 'X-KDE-Username' --set-value '' \
+    --remove-key 'Categories' --add-category 'Utility;' \
+~/.local/share/applications/com.usebottles.bottles.desktop
 
 
 # cleanup
