@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Deb packages installing...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Installing Deb packages...${TEXT_RESET} \n" && sleep 1
 sudo apt-get update
 
 # install updates
