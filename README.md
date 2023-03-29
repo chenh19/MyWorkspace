@@ -51,7 +51,7 @@ This tool will install and configure:
 - [Balena Etcher](https://www.balena.io/etcher)
 - [Ubuntu Touch](https://ubuntu-touch.io/) ([UBports Installer](https://devices.ubuntu-touch.io/installer/))
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
-- [UKUU](https://teejeetech.com/product/ukuu/)
+- [UKUU](https://teejeetech.com/product/ukuu/) ([mainline](https://github.com/bkw777/mainline))
 - [Htop](https://htop.dev/)
 - [Ranger](https://ranger.github.io/)
 - [Speedtest](https://www.speedtest.net/) ([CLI](https://www.speedtest.net/apps/cli))
