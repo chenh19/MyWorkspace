@@ -40,18 +40,9 @@ sudo apt-get install default-jre default-jdk -y
   sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
   
   ## libreoffice
-  # neofetch --off --stdout | strings > ~/.neofetch
-  # [ -f ~/.neofetch ] && rm -f ~/.neofetch
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to add ubuntu PPA for LibreOffice (only required for KDE neon)? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # add ppa
-              echo "" && sudo add-apt-repository ppa:libreoffice/ppa -y
-              # notify end
-              echo -e " \n${TEXT_GREEN}LibreOffice PPA added!${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}LibreOffice PPA not added, using default repository.${TEXT_RESET} \n" && sleep 1;;
-  esac
+  neofetch --off --stdout | strings > ~/.neofetch
+  if grep -q "KDE neon" ~/.neofetch ; then sudo add-apt-repository ppa:libreoffice/ppa -y ; fi
+  [ -f ~/.neofetch ] && rm -f ~/.neofetch
   sudo apt-get update && sudo apt-get install libreoffice libreoffice-plasma libreoffice-qt5 libreoffice-kf5 libreoffice-style-breeze libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-help-zh-cn libreoffice-l10n-zh-cn libreoffice-java-common -y
   
   ## Krita, Inkscape, Kdenlive, Kamoso
