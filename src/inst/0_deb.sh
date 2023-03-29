@@ -49,7 +49,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
   
   ## libreoffice
-  # neofetch --off | ansifilter > ~/.neofetch && sed -i '/^$/d' ~/.neofetch
+  # neofetch --off --stdout | strings > ~/.neofetch
   # [ -f ~/.neofetch ] && rm -f ~/.neofetch
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to add ubuntu PPA for LibreOffice (only required for KDE neon)? [y/n/c]'$TEXT_RESET)"$' \n' choice
