@@ -52,7 +52,6 @@ case "$choice" in
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install RStudio (a) or RKWard (b)? [a/b]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
-        
           b|B ) # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RKWard...${TEXT_RESET} \n" && sleep 1
@@ -81,7 +80,6 @@ case "$choice" in
                 
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1;;
-                
         esac
         
         # cleanup
