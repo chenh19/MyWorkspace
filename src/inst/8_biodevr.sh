@@ -55,29 +55,23 @@ case "$choice" in
           b|B ) # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RKWard...${TEXT_RESET} \n" && sleep 1
-                
                 # install RKWard
                 # rkward is dependent on kate, which is installed by Kubuntu by default but usually uninstalled by me
                 sudo apt-get install kate kbibtex rkward -y
                 sudo apt-get install -f -y
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1;;
-                
            * )  # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
-                
                 # install RStudio
                 [ ! -d ./devdeb/ ] && mkdir ./devdeb/
                 wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
                 mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get install -f -y
-                
                 # config
                 [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
                 kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
-                
                 # notify end
                 echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1;;
         esac
