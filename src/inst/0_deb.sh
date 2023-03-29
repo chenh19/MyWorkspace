@@ -86,6 +86,13 @@ sudo apt-get install default-jre default-jdk -y
   sudo kwriteconfig5 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy "default.target"
   systemctl --user enable resilio-sync
   systemctl --user start resilio-sync
+  
+  ## waydroid
+  sudo apt-get update
+  sudo apt-get install curl ca-certificates -y
+  curl https://repo.waydro.id | sudo bash
+  sudo apt-get install waydroid -y
+  sudo systemctl enable --now waydroid-container
 
 # install apps (pip)
   ## speedtest
