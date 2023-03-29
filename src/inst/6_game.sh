@@ -74,10 +74,10 @@ case "$choice" in
         sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh
         
         # notify end
-        echo -e " \n${TEXT_GREEN}Games installed!${TEXT_RESET} \n" && sleep 1;;
+        echo -e " \n${TEXT_GREEN}Games installed!${TEXT_RESET} \n" && sleep 5;;
         
     * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Games not installed.${TEXT_RESET} \n" && sleep 1;;
+        echo -e " \n${TEXT_YELLOW}Games not installed.${TEXT_RESET} \n" && sleep 5;;
 esac
 
 
