@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script intsall programming games
+# This script intsall games
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
@@ -67,8 +67,12 @@ case "$choice" in
         # sh
         echo -e " \n${TEXT_YELLOW}Please install HumanResourceMachine to /opt/ direcoory.${TEXT_RESET} \n"
         sudo bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh
-        ;;
-    * ) echo -e " \n${TEXT_YELLOW}Games not installed.${TEXT_RESET} \n" && sleep 1;;
+        
+        # notify end
+        echo -e " \n${TEXT_GREEN}Games installed!${TEXT_RESET} \n" && sleep 1;;
+        
+    * ) # notify cancellation
+        echo -e " \n${TEXT_YELLOW}Games not installed.${TEXT_RESET} \n" && sleep 1;;
 esac
 
 
