@@ -40,7 +40,7 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
 # install apps (apt)
   # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
   # with better alternative option: syncthing-gtk, axel
-  sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper kamoso exfatprogs ranger htop -y
+  sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper exfatprogs ranger htop -y
 
 # install apps (ppa)
 
@@ -61,28 +61,17 @@ echo -e " \n${TEXT_GREEN}Complete English language packs installed!${TEXT_RESET}
   esac
   sudo apt-get update && sudo apt-get install libreoffice libreoffice-plasma libreoffice-qt5 libreoffice-kf5 libreoffice-style-breeze libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-help-zh-cn libreoffice-l10n-zh-cn libreoffice-java-common -y
   
-  ## Krita & Inkscape 
+  ## Krita, Inkscape, Kdenlive, Kamoso
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita and Inkscape? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita, Inkscape, Kdenlive and Kamoso? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # add ppa
               echo "" && sudo add-apt-repository ppa:inkscape.dev/stable -y
-              sudo apt-get update && sudo apt-get install krita krita-l10n inkscape -y
+              sudo apt-get update && sudo apt-get install krita krita-l10n inkscape kdenlive kamoso -y
               # notify end
-              echo -e " \n${TEXT_GREEN}Krita and Inkscape installed!${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_GREEN}Krita, Inkscape, Kdenlive and Kamoso installed!${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Krita and Inkscape not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-  
-  ## Kdenlive
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # install
-              echo "" && sudo apt-get install kdenlive -y
-              # notify end
-              echo -e " \n${TEXT_GREEN}Kdenlive installed!${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Krita, Inkscape, Kdenlive and Kamoso not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
   
   ## timekpr-next
