@@ -60,7 +60,8 @@ case "$choice" in
                 sudo apt-get install kate kbibtex rkward -y
                 sudo apt-get install -f -y
                 # notify end
-                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1
+                ;;
            * )  # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
@@ -73,7 +74,8 @@ case "$choice" in
                 [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
                 kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
                 # notify end
-                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1;;
+                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1
+                ;;
         esac
         
         # cleanup
