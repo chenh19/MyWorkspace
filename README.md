@@ -7,7 +7,7 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
 This tool will install and configure:
 - [Tencent WeChat](https://www.wechat.com/) ([deepin-wine](https://github.com/zq1997/deepin-wine))
 - [OpenAI ChatGPT](https://openai.com/blog/chatgpt) ([desktop](https://github.com/lencx/ChatGPT))
-- [Google Chrome](https://www.google.com/chrome/)
+- [Google Chrome](https://www.google.com/chrome/) (and [Brave](https://brave.com/))
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
 - [SimpleNote](https://simplenote.com/)
