@@ -33,6 +33,7 @@ This tool will install and configure:
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [Angry IP Scanner](https://angryip.org/)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
+- [Steam](https://store.steampowered.com/) ([desktop](https://store.steampowered.com/about/))
 - [Bottles](https://usebottles.com/)
 - [WayDroid](https://waydro.id/)
 - [Balena Etcher](https://www.balena.io/etcher)
