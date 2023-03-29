@@ -44,7 +44,7 @@ sudo apt-get install default-jre default-jdk -y
   [ -f ~/.neofetch ] && rm -f ~/.neofetch
   sudo apt-get update && sudo apt-get install libreoffice libreoffice-plasma libreoffice-qt5 libreoffice-kf5 libreoffice-style-breeze libreoffice-sdbc-hsqldb libreoffice-help-en-us libreoffice-help-zh-cn libreoffice-l10n-zh-cn libreoffice-java-common -y
   
-  ## Krita, Inkscape, Kdenlive, Kamoso
+  ## Krita, Inkscape, Kdenlive
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Krita, Inkscape, and Kdenlive? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
@@ -52,9 +52,9 @@ sudo apt-get install default-jre default-jdk -y
               echo "" && sudo add-apt-repository ppa:inkscape.dev/stable -y
               sudo apt-get update && sudo apt-get install krita krita-l10n inkscape kdenlive -y
               # notify end
-              echo -e " \n${TEXT_GREEN}Krita, Inkscape, Kdenlive and Kamoso installed!${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_GREEN}Krita, Inkscape, and Kdenlive installed!${TEXT_RESET} \n" && sleep 1;;
           * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Krita, Inkscape, Kdenlive and Kamoso not installed.${TEXT_RESET} \n" && sleep 1;;
+              echo -e " \n${TEXT_YELLOW}Krita, Inkscape, and Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
   
   ## timekpr-next
