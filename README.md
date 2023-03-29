@@ -12,7 +12,7 @@ This tool will install and configure:
 - [IGV](https://software.broadinstitute.org/software/igv/)
 - [PyMOL](https://pymol.org/) ([open-source](https://github.com/schrodinger/pymol-open-source))
 - [Zotero](https://www.zotero.org/)
-- [RStudio](https://posit.co/products/open-source/rstudio/)
+- [RStudio](https://posit.co/products/open-source/rstudio/) ([desktop](https://posit.co/download/rstudio-desktop/))
 - [JupyterLab](https://jupyter.org/) ([desktop](https://github.com/jupyterlab/jupyterlab-desktop))
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
