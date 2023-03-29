@@ -100,7 +100,7 @@ sudo apt-get install default-jre default-jdk -y
   sudo apt-get update
   sudo apt-get install curl ca-certificates -y
   curl https://repo.waydro.id | sudo bash
-  #sudo apt-get install waydroid -y
+  #sudo apt-get install plasma-workspace-wayland waydroid -y
   #sudo systemctl enable --now waydroid-container
 
 # install apps (pip)
