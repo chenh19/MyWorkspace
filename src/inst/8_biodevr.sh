@@ -38,11 +38,9 @@ case "$choice" in
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install extra R packages (this might take some time)? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
           y|Y ) # write R script of packages
-                echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp'), force = TRUE)\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2'), force = TRUE)" > ./rscript/packages.R
-                ;;
+                echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'workflowr', 'blogdown', 'bookdown', 'svDialogs', 'Rcpp'), force = TRUE)\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2'), force = TRUE)" > ./rscript/packages.R;;
           * )   # write R script of packages
-                echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R
-                ;;
+                echo -e "install.packages(c('RSelenium'))" > ./rscript/packages.R;;
         esac
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         echo "" && sudo Rscript ./rscript/packages.R
@@ -60,8 +58,7 @@ case "$choice" in
                 sudo apt-get install kate kbibtex rkward -y
                 sudo apt-get install -f -y
                 # notify end
-                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1
-                ;;
+                echo -e " \n${TEXT_GREEN}RKWard installed!${TEXT_RESET} \n" && sleep 1;;
            * )  # notify start
                 sudo echo ""
                 echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
@@ -74,8 +71,7 @@ case "$choice" in
                 [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
                 kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
                 # notify end
-                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1
-                ;;
+                echo -e " \n${TEXT_GREEN}RStudio installed!${TEXT_RESET} \n" && sleep 1;;
         esac
         
         # cleanup
