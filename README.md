@@ -5,8 +5,8 @@
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
   
 This tool will install and configure:
-- [ChatGPT](https://github.com/lencx/ChatGPT)
 - [WeChat](https://www.wechat.com/)
+- [ChatGPT](https://github.com/lencx/ChatGPT)
 - [EuDic](https://www.eudic.net/)
 - [SnapGene](https://www.snapgene.com/)
 - [IGV](https://software.broadinstitute.org/software/igv/)
@@ -16,6 +16,7 @@ This tool will install and configure:
 - [JupyterLab](https://jupyter.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
+- [Kdenlive](https://kdenlive.org/)
 - [Cider](https://cider.sh/)
 - [qView](https://interversehq.com/qview/)
 - [Tropy](https://tropy.org/)
@@ -32,7 +33,11 @@ This tool will install and configure:
 - [WiFi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [Angry IP Scanner](https://angryip.org/)
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
-- and a lot more
+- [Bottles](https://usebottles.com/)
+- [WayDroid](https://waydro.id/)
+- [Etcher](https://www.balena.io/etcher)
+- [UBports](https://ubuntu-touch.io/)
+- and more
 
 ## How to use
 Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
