@@ -105,6 +105,7 @@ sudo apt-get install default-jre default-jdk -y
   
   ## absolute links
   wget -q https://github.com/lencx/ChatGPT/releases/download/v0.12.0/ChatGPT_0.12.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb && echo '"Cider" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb && echo '"Angry IP Scanner" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
@@ -113,69 +114,19 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://github.com/balena-io/etcher/releases/download/v1.14.3/balena-etcher_1.14.3_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
   
   ## ask whether to download
-  ### fdm
+  ### 4k video downloader, fdm, baiduyun, expandrive
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Free Download Manager? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) # notify start
               echo -e " \n${TEXT_YELLOW}Downloading Free Download Manager...${TEXT_RESET} \n" && sleep 1
               # download
-              wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb
-              # notify end
-              echo -e ' \n"Free Download Manager" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"Free Download Manager" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### expandrive
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download ExpanDrive? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading ExpanDrive...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"ExpanDrive" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### baiduyun
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading BaiduYun...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"BaiduYun" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### 4k video downloader
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading 4K Video Downloader...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"4K Video Downloader" deb package not downloaded. \n' && sleep 1;;
-  esac
-  ### cider
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Cider (Apple Music client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) # notify start
-              echo -e " \n${TEXT_YELLOW}Downloading Cider...${TEXT_RESET} \n" && sleep 1
-              # download
-              wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb #_to_be_updated
-              # notify end
-              echo -e ' \n"Cider" deb package is downloaded. \n' && sleep 1;;
-          * ) # notify cancellation
-              echo -e ' \n"Cider" deb package not downloaded. \n' && sleep 1;;
+              wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo -e ' \n"Free Download Manager" deb package is downloaded. \n' && sleep 1
+              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb && echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1 #_to_be_updated
+              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1 #_to_be_updated
+              wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb && echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1 #_to_be_updated
+              ;;
+          * ) ;;
   esac
   
   ## install
