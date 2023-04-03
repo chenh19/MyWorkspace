@@ -56,11 +56,7 @@ sudo apt-get install default-jre default-jdk -y
           * ) # notify cancellation
               echo -e " \n${TEXT_YELLOW}Krita, Inkscape, and Kdenlive not installed.${TEXT_RESET} \n" && sleep 1;;
   esac
-  
-  ## mainline
-  #sudo add-apt-repository ppa:cappelikan/ppa -y
-  #sudo apt update && sudo apt install mainline -y
-  
+    
   ## timekpr-next
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -127,7 +123,6 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/balena-io/etcher/releases/download/v1.14.3/balena-etcher_1.14.3_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
-  #wget -q https://github.com/ubports/ubports-installer/releases/download/0.9.10/ubports-installer_0.9.10-beta_linux_amd64.deb && echo '"UBports Installer" deb package is downloaded.' && sleep 1 #_to_be_updated
   
   ## ask whether to download
   ### 4k video downloader, fdm, baiduyun, expandrive
