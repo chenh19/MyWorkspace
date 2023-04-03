@@ -35,7 +35,7 @@ esac
 # download and install Baqpaq
 wget -O - https://packages.teejeetech.com/install-baqpaq.sh | bash -s -- "fU5FRyg3sK"
 [ ! -d ~/.config/baqpaq/ ] && mkdir ~/.config/baqpaq/
-[ -f ~/Licenses/baqpaq.license ] && cp -f ~/Licenses/baqpaq.license ~/.config/ukuu/license.dat
+[ -f ~/Licenses/baqpaq.license ] && cp -f ~/Licenses/baqpaq.license ~/.config/baqpaq/license.dat
 
 
 # mark setup.sh
