@@ -50,7 +50,7 @@ This tool will install and configure:
 - [WayDroid](https://waydro.id/)
 - [Balena Etcher](https://www.balena.io/etcher)
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
-- [UKUU](https://teejeetech.com/product/ukuu/) (~~or [mainline](https://github.com/bkw777/mainline)~~)
+- [UKUU](https://teejeetech.com/product/ukuu/)
 - [Baqpaq](https://teejeetech.com/product/baqpaq/)
 - [Htop](https://htop.dev/)
 - [Ranger](https://ranger.github.io/)
