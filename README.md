@@ -7,7 +7,7 @@ This is an automated configuration tool for freshly installed [**Kubuntu**](http
 This tool will install and configure:
 - [Tencent WeChat](https://www.wechat.com/) ([deepin-wine](https://github.com/zq1997/deepin-wine))
 - [OpenAI ChatGPT](https://openai.com/blog/chatgpt) ([desktop](https://github.com/lencx/ChatGPT))
-- [Google Chrome](https://www.google.com/chrome/) (and [Brave](https://brave.com/))
+- [Google Chrome](https://www.google.com/chrome/)
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
 - [SimpleNote](https://simplenote.com/)
@@ -47,7 +47,6 @@ This tool will install and configure:
 - [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine)
 - [Steam](https://store.steampowered.com/) ([desktop](https://store.steampowered.com/about/))
 - [Bottles](https://usebottles.com/)
-- [WayDroid](https://waydro.id/)
 - [Balena Etcher](https://www.balena.io/etcher)
 - [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
 - [UKUU](https://teejeetech.com/product/ukuu/)
