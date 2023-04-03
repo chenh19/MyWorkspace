@@ -18,7 +18,7 @@ echo -e "${TEXT_YELLOW}Installing UKUU...${TEXT_RESET} \n" && sleep 1
 # download and install UKUU
 wget -O - https://teejeetech.com/install-ukuu-8ALv9hCkUG.sh | bash
 [ ! -d ~/.config/ukuu/ ] && mkdir ~/.config/ukuu/
-[ -f ~/Licenses/license.dat ] && cp -f ~/Licenses/license.dat ~/.config/ukuu/
+[ -f ~/Licenses/ukuu.license ] && cp -f ~/Licenses/ukuu.license ~/.config/ukuu/license.dat
 
 # install latest kernel
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install the latest Linux kernal now? [y/n/c]'$TEXT_RESET)"$' \n' choice
@@ -31,6 +31,12 @@ case "$choice" in
         * ) # notify cancellation
               echo -e " \n${TEXT_YELLOW}Linux kernel remains as default and may be updated manually.${TEXT_RESET} \n" && sleep 5;;
 esac
+
+# download and install Baqpaq
+wget -O - https://packages.teejeetech.com/install-baqpaq.sh | bash -s -- "fU5FRyg3sK"
+[ ! -d ~/.config/baqpaq/ ] && mkdir ~/.config/baqpaq/
+[ -f ~/Licenses/baqpaq.license ] && cp -f ~/Licenses/baqpaq.license ~/.config/ukuu/license.dat
+
 
 # mark setup.sh
 sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
