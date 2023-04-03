@@ -34,10 +34,6 @@ sudo apt-get install default-jre default-jdk -y
   sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper exfatprogs neofetch ranger htop -y
 
 # install apps (ppa)
-  ## WiFi Hotspot
-  sudo add-apt-repository ppa:lakinduakash/lwh -y
-  sudo apt-get update && sudo apt-get install linux-wifi-hotspot -y
-  
   ## libreoffice
   neofetch --off --stdout | strings > ~/.neofetch
   if grep -q "KDE neon" ~/.neofetch ; then sudo add-apt-repository ppa:libreoffice/ppa -y ; fi
@@ -286,20 +282,7 @@ case "$choice" in
           * )   # notify cancellation
                 echo -e " \n${TEXT_YELLOW}4K Video Downloader not configured.${TEXT_RESET} \n" && sleep 1;;
         esac
-        
-        ## wifi hotspot
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure WiFi Hotspot? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) # notify start
-                echo -e " \n${TEXT_YELLOW}Please configure and then close WiFi Hotspot to continue.${TEXT_RESET} \n" && sleep 1
-                wihotspot
-                # notify end
-                echo -e " \n${TEXT_GREEN}WiFi Hotspot configured!${TEXT_RESET} \n" && sleep 1;;
-          * )   # notify cancellation
-                echo -e " \n${TEXT_YELLOW}WiFi Hotspot not configured.${TEXT_RESET} \n" && sleep 1;;
-        esac
-        
+                
         ## evolution
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Evolution (email client)? [y/n/c]'$TEXT_RESET)"$' \n' choice
