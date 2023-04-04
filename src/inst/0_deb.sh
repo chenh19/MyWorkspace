@@ -108,13 +108,21 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://github.com/balena-io/etcher/releases/download/v1.14.3/balena-etcher_1.14.3_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
   
   ## ask whether to download
-  ### 4k video downloader, fdm, baiduyun, expandrive
+  ### 4k video downloader, fdm
   sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Free Download Manager, 4K Video Downloader, ExpanDrive, and BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Free Download Manager and 4K Video Downloader? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
         y|Y ) wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo -e '"Free Download Manager" deb package is downloaded.' && sleep 1
               wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb && echo -e '"4K Video Downloader" deb package is downloaded.' && sleep 1 #_to_be_updated
-              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo -e '"ExpanDrive" deb package is downloaded.' && sleep 1 #_to_be_updated
+              ;;
+          * ) ;;
+  esac
+  
+  ### baiduyun, expandrive
+  sudo echo ""
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install ExpanDrive and BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
+  case "$choice" in
+        y|Y ) wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo -e '"ExpanDrive" deb package is downloaded.' && sleep 1 #_to_be_updated
               wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb && echo -e '"BaiduYun" deb package is downloaded.' && sleep 1 #_to_be_updated
               ;;
           * ) ;;
