@@ -78,7 +78,15 @@ case "$choice" in
                 ;;
           * )   ;;
         esac
-                        
+        
+        # ask whether to download genomes for IGV
+        sudo echo ""
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Hosted Genomes for offline use of IGV (this might take some time)? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        case "$choice" in
+          y|Y ) bash <(wget -qO- https://raw.githubusercontent.com/chenh19/igv_genomes/main/download.sh);;
+          * )   ;;
+        esac
+        
         # notify end
         echo -e " \n${TEXT_GREEN}Daily biological tools installed!${TEXT_RESET} \n" && sleep 5;;
 
