@@ -33,27 +33,7 @@ sleep 1
           echo -e " \n${TEXT_GREEN}Resilio Sync configured!${TEXT_RESET} \n" && sleep 1;;
     * )   echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
   esac
-  
-  if [ -d ~/Documents/resilio/ ]; then
-  # ask whether to delete resilio sync pro license key
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to delete the Resilio Sync pro license in [~/Documents/resilio/] folder? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-    y|Y ) rm -rf ~/Documents/resilio/
-          echo -e " \n${TEXT_GREEN}Resilio Sync pro license removed!${TEXT_RESET} \n" && sleep 1;;
-    * )   echo -e " \n${TEXT_YELLOW}Resilio Sync pro license remains in [~/Documents/resilio/] folder.${TEXT_RESET} \n" && sleep 1;;
-  esac
-fi
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to configure Resilio Sync? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-    y|Y ) # notify start
-          echo -e " \n${TEXT_YELLOW}Please create a user for Resilio Sync and apply the license (license file is [~/Documents/license/Resilio_Sync_Personal_2zJbv2h.btskey]). Then, please close the web browser to continue.${TEXT_RESET} \n" && sleep 1
-          google-chrome http://localhost:8888
-          # notify end
-          echo -e " \n${TEXT_GREEN}Resilio Sync configured!${TEXT_RESET} \n" && sleep 1;;
-    * )   # notify cancellation
-          echo -e " \n${TEXT_YELLOW}Resilio Sync not configured.${TEXT_RESET} \n" && sleep 1;;
-esac
+
 sysupdate
 echo -e "igv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero" > ~/.hidden
 echo -e "Enpass\nWeChat Files" > ~/Documents/.hidden
