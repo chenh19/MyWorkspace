@@ -112,10 +112,10 @@ sudo apt-get install default-jre default-jdk -y
   sudo echo ""
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Free Download Manager, 4K Video Downloader, ExpanDrive, and BaiduYun? [y/n/c]'$TEXT_RESET)"$' \n' choice
   case "$choice" in
-        y|Y ) wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo -e ' \n"Free Download Manager" deb package is downloaded. \n' && sleep 1
-              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb && echo -e ' \n"4K Video Downloader" deb package is downloaded. \n' && sleep 1 #_to_be_updated
-              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo -e ' \n"ExpanDrive" deb package is downloaded. \n' && sleep 1 #_to_be_updated
-              wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb && echo -e ' \n"BaiduYun" deb package is downloaded. \n' && sleep 1 #_to_be_updated
+        y|Y ) wget -q https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb && echo -e '"Free Download Manager" deb package is downloaded.' && sleep 1
+              wget -q https://dl.4kdownload.com/app/4kvideodownloader_4.21.7-1_amd64.deb?source=website -O 4kvideodownloader.deb && echo -e '"4K Video Downloader" deb package is downloaded.' && sleep 1 #_to_be_updated
+              wget -q https://packages.expandrive.com/expandrive/pool/stable/e/ex/ExpanDrive_2022.7.1_amd64.deb && echo -e '"ExpanDrive" deb package is downloaded.' && sleep 1 #_to_be_updated
+              wget -q https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.14.5/baidunetdisk_4.14.5_amd64.deb && echo -e '"BaiduYun" deb package is downloaded.' && sleep 1 #_to_be_updated
               ;;
           * ) ;;
   esac
