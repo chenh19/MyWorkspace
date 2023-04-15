@@ -29,9 +29,11 @@ sudo apt-get install default-jre default-jdk -y
   sudo apt-get install language-pack-zh-hans-base language-pack-zh-hans language-pack-gnome-zh-hans-base language-pack-gnome-zh-hans language-pack-kde-zh-hans -y
 
 # install apps (apt)
-  # installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
-  # with better alternative option: syncthing-gtk, axel, ansifilter
+  ## installed by Kubuntu by defauly: python3, git, kate, kcalc, partitionmanager
+  ## with better alternative option: syncthing-gtk, axel, ansifilter
   sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper exfatprogs neofetch ranger htop -y
+  ## iOS support
+  sudo apt-get install usbmuxd libimobiledevice6 libimobiledevice-utils ifuse -y
 
 # install apps (ppa)
   ## libreoffice
