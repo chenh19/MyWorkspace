@@ -33,7 +33,7 @@ sudo apt-get install default-jre default-jdk -y
   ## with better alternative option: syncthing-gtk, axel, ansifilter
   sudo apt-get install kwrite seahorse evolution evolution-ews xdotool kdocker curl python3-pip tree samba piper exfatprogs neofetch ranger htop -y
   ## iOS support
-  sudo apt-get install usbmuxd libimobiledevice6 libimobiledevice-utils ifuse -y
+  sudo apt-get install libusbmuxd6 libusbmuxd-tools usbmuxd libimobiledevice6 libimobiledevice-utils ifuse -y
 
 # install apps (ppa)
   ## libreoffice
