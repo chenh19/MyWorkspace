@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.9.0 (for X11 only, not ready for Wayland)*  
+*Current version: v1.9.1 (for X11 only, not ready for Wayland)*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
@@ -33,6 +33,7 @@ This tool will install and configure:
 - [Slack](https://slack.com/)
 - [Zoom](https://zoom.us/)
 - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software)
+- [Parsec](https://parsec.app/)
 - [TeamViewer](https://www.teamviewer.com/)
 - [Resilio Sync](https://www.resilio.com/)
 - [Free Download Manager](https://www.freedownloadmanager.org/)
