@@ -98,6 +98,7 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
   wget -q https://go.microsoft.com/fwlink/p/?linkid=2112886 && echo '"Microsoft Teams" deb package is downloaded.' && sleep 1
   wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
+  wget -q https://builds.parsec.app/package/parsec-linux.deb && echo '"Parsec" deb package is downloaded.' && sleep 1
   
   ## absolute links
   wget -q https://github.com/lencx/ChatGPT/releases/download/v0.12.0/ChatGPT_0.12.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
