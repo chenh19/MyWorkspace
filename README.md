@@ -18,6 +18,7 @@ This tool will install and configure:
 - [Zotero](https://www.zotero.org/)
 - [RStudio](https://posit.co/products/open-source/rstudio/) ([desktop](https://posit.co/download/rstudio-desktop/))
 - [JupyterLab](https://jupyter.org/) ([desktop](https://github.com/jupyterlab/jupyterlab-desktop))
+- [Quarto](https://quarto.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [Kdenlive](https://kdenlive.org/)
