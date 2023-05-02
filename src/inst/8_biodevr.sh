@@ -25,6 +25,11 @@ case "$choice" in
         sudo apt-get install default-jre default-jdk curl openssl libxml2-dev libssl-dev libcurl4-openssl-dev libnlopt-dev libgeos-dev texlive-latex-extra -y
         sudo apt-get install libgit2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev pandoc pandoc-citeproc -y #_for_devtools
         
+        # install quarto
+        wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.340/quarto-1.3.340-linux-amd64.deb && echo '"Quarto" deb package is downloaded.' && sleep 1 #_to_be_updated
+        sudo apt-get install ./quarto*.deb -y && sleep 1
+        rm -f ./quarto*.deb
+                
         # install R from cran
         wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
         echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee /etc/apt/sources.list.d/r-project.list
