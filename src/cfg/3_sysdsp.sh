@@ -142,7 +142,7 @@ fi
 # grub menu scaling
 sudo echo ""
 echo -e "${TEXT_YELLOW}Configuring Grub scaling...${TEXT_RESET} \n" && sleep 1
-if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's+#GRUB_GFXMODE=640x480+GRUB_GFXMODE=1024x768+g' /etc/default/grub && sudo update-grub ; fi
+if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's+#GRUB_GFXMODE=640x480+GRUB_GFXMODE=1280x1024+g' /etc/default/grub && sudo update-grub ; fi
 # If grub timeout is 0, press Shift+Esc only once at startup to enter grub menu
 
 # language
