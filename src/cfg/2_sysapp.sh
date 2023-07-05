@@ -124,6 +124,10 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key 'eDP-1 Width 1
 ## hide minimap
 # Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
 kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
+# Setting > Configure KWrite > Open/Save > Fallback encoding > select "Chinese Simplified (GB18030)"
+kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor Editor' --key 'Fallback Encoding' "GB18030"
+# Setting > Configure KWrite > Session > uncheck "Show welcome view for new windows"
+kwriteconfig5 --file ~/.config/kwriterc --group 'General' --key 'Show welcome view for new window' "false"
 
 ######################################################################################
 
