@@ -14,10 +14,7 @@ cd ~/.setup_cache/
 # notify start
 sudo echo ""
 echo -e "${TEXT_YELLOW}Installing Deb packages...${TEXT_RESET} \n" && sleep 1
-sudo apt-get update
-
-# install updates
-sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
 # install java
 sudo apt-get install default-jre default-jdk -y
