@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v1.9.1 (for X11 only, not ready for Wayland)*  
+*Current version: v1.9.2 (x11 only; rebasing to [Debian stable](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/))*  
 
 ## Introduction
 This is an automated configuration tool for freshly installed [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.  
