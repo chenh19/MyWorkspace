@@ -100,14 +100,14 @@ sudo apt-get install default-jre default-jdk -y
   wget -q https://builds.parsec.app/package/parsec-linux.deb && echo '"Parsec" deb package is downloaded.' && sleep 1
   
   ## absolute links
-  wget -q https://github.com/lencx/ChatGPT/releases/download/v0.12.0/ChatGPT_0.12.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/ciderapp/cider-releases/releases/download/v1.5.9/cider_1.5.9_amd64.deb && echo '"Cider" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/lencx/ChatGPT/releases/download/v1.0.0/ChatGPT_1.0.0_linux_x86_64.deb && echo '"ChatGPT" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/ciderapp/Cider/releases/download/v1.6.2/cider_1.6.2_amd64.deb && echo '"Cider" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb && echo '"Angry IP Scanner" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://downloads.slack-edge.com/releases/linux/4.32.127/prod/x64/slack-desktop-4.32.127-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/jurplel/qView/releases/download/5.0/qview_5.0.1-focal4_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/balena-io/etcher/releases/download/v1.14.3/balena-etcher_1.14.3_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q https://github.com/balena-io/etcher/releases/download/v1.18.8/balena-etcher_1.18.8_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
   
   ## ask whether to download
     ### 4k video downloader, fdm
