@@ -57,4 +57,4 @@ esac
 
 
 # mark setup.sh
-sed -i 's+bash ./inst/4_fcitx5.sh+#bash ./inst/4_fcitx5.sh+g' ~/.setup_cache/setup.sh 
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/4_fcitx5.sh+#bash ./inst/4_fcitx5.sh+g' ~/.setup_cache/setup.sh 
