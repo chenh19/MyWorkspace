@@ -146,4 +146,4 @@ fi
 ###>>>sed-i-d-end-1
 
 # mark setup.sh
-sed -i 's+bash ./inst/7_biodaily.sh+#bash ./inst/7_biodaily.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/7_biodaily.sh+#bash ./inst/7_biodaily.sh+g' ~/.setup_cache/setup.sh
