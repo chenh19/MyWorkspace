@@ -78,4 +78,4 @@ esac
 echo -e " \n${TEXT_GREEN}AppImages Deployed!${TEXT_RESET} \n" && sleep 1
 
 # mark setup.sh
-sed -i 's+bash ./inst/2_appimage.sh+#bash ./inst/2_appimage.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/2_appimage.sh+#bash ./inst/2_appimage.sh+g' ~/.setup_cache/setup.sh
