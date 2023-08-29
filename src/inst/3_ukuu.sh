@@ -39,4 +39,4 @@ wget -O - https://packages.teejeetech.com/install-baqpaq.sh | bash -s -- "fU5FRy
 
 
 # mark setup.sh
-sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/3_ukuu.sh+#bash ./inst/3_ukuu.sh+g' ~/.setup_cache/setup.sh
