@@ -26,7 +26,7 @@ case "$choice" in
         sudo apt-get install libgit2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev pandoc pandoc-citeproc -y #_for_devtools
         
         # install quarto
-        wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.340/quarto-1.3.340-linux-amd64.deb && echo '"Quarto" deb package is downloaded.' && sleep 1 #_to_be_updated
+        wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.450/quarto-1.3.450-linux-amd64.deb && echo '"Quarto" deb package is downloaded.' && sleep 1 #_to_be_updated
         sudo apt-get install ./quarto*.deb -y && sleep 1
         rm -f ./quarto*.deb
                 
@@ -69,7 +69,7 @@ case "$choice" in
                 echo -e "${TEXT_YELLOW}Installing RStudio...${TEXT_RESET} \n" && sleep 1
                 # install RStudio
                 [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-                wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
+                wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.06.2-561-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
                 mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
                 sudo apt-get install -f -y
                 # config
