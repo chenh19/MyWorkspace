@@ -120,4 +120,4 @@ sudo apt-get autoremove -y && sudo apt-get clean
 echo -e " \n${TEXT_GREEN}Flatpak applications installed!${TEXT_RESET} \n" && sleep 5
 
 # mark setup.sh
-sed -i 's+bash ./inst/1_flathub.sh+#bash ./inst/1_flathub.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/1_flathub.sh+#bash ./inst/1_flathub.sh+g' ~/.setup_cache/setup.sh
