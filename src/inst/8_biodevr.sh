@@ -132,4 +132,4 @@ fi
 ###>>>sed-i-d-end-1
 
 # mark setup.sh
-sed -i 's+bash ./inst/8_biodevr.sh+#bash ./inst/8_biodevr.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/8_biodevr.sh+#bash ./inst/8_biodevr.sh+g' ~/.setup_cache/setup.sh
