@@ -2,11 +2,14 @@
 *Current version: v1.9.3 (x11 only)*  
 
 ## Introduction
-This is an automated configuration tool for freshly installed [**Debian (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/) or [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro. It will install and configure these [**applications**](https://github.com/chenh19/MyWorkspace/blob/main/list.md).
+
+- This is an automated configuration tool for freshly installed [**Debian (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/) or [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.
+- This tool will install and configure these [**applications**](https://github.com/chenh19/MyWorkspace/blob/main/list.md).
 
 ## How to use
-Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
+
+- Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
-Or, there is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for reference.
+- There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
