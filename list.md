@@ -2,7 +2,6 @@
 
 This tool will install and configure:
 - [Tencent WeChat](https://www.wechat.com/) ([deepin-wine](https://github.com/zq1997/deepin-wine))
-- [OpenAI ChatGPT](https://openai.com/blog/chatgpt) ([desktop](https://github.com/lencx/ChatGPT))
 - [Google Chrome](https://www.google.com/chrome/)
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
