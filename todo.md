@@ -43,6 +43,7 @@ Fix:
 - [ ] 以上两个写入 .hidden
 
 Try:
+- [ ] Keep testing Wayland and looking for apps that work with both X11 and Wayland
 - [ ] 联想bios rom 订制图标
 - [ ] FreeBSD with ```pkg install kde5```
 - [ ] whether [Swipe (gestures for linux)](https://github.com/evuraan/Swipe) can replace [touchegg](https://github.com/JoseExposito/touchegg)
