@@ -43,6 +43,7 @@ Fix:
 - [ ] 以上两个写入 .hidden
 
 Try:
+- [ ]**Wayland** compatibility
 - [ ] 检查/测试 [Stars](https://github.com/chenh19?tab=stars)
 - [ ] Keep testing Wayland and looking for apps that work with both X11 and Wayland
 - [ ] 联想bios rom 订制图标
