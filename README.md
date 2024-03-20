@@ -3,7 +3,7 @@
 
 ## Introduction
 
-- This is an automated configuration tool for freshly installed [**Debian (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/) or [**Kubuntu**](https://kubuntu.org/), which is my wife's least hated linux distro.
+- This is an automated configuration tool for freshly installed [**Debian (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/) ~~or [**Kubuntu**](https://kubuntu.org/)~~, which is my wife's least hated linux distro.
 - This tool will install and configure these [**applications**](https://github.com/chenh19/MyWorkspace/blob/main/list.md).
 
 ## How to use
