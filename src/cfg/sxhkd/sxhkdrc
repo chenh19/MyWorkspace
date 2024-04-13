@@ -1,3 +1,0 @@
-~button3
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 0; done; \
-  for id in `xinput list | grep 'slave  pointer' | grep -v XTEST | sed -e 's/.*id=\([0-9]\+\).*/\1/'`; do xinput set-prop $id "Device Enabled" 1; done
