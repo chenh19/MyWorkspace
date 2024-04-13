@@ -25,7 +25,7 @@ until [[ $? -eq 0 ]] ; do
 done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
-# download and organize setup scripts
+# setup
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 ###>>>sed-i-d-start-0
 unset start end
@@ -47,7 +47,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
-sudo cp -rf ./cfg/icon/ ./cfg/shortcut/ /opt/
+sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
 cp -rf ./cfg/template/* ~/Templates/
@@ -56,35 +56,12 @@ kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "c
 7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1
 rm -f ./cfg/license/license.zip
 cp -rf ./cfg/license/* ~/Licenses/
-[ ! -f HumanResourceMachine.zip ] && wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 -O HumanResourceMachine.zip && sleep 1
-7z x ./HumanResourceMachine.zip -p$password -o./inst/ && sleep 1
-rm -f ./HumanResourceMachine.zip
+#[ ! -f HumanResourceMachine.zip ] && wget -q https://www.dropbox.com/s/4f804e3873e0wq7/HumanResourceMachine.zip?dl=0 -O HumanResourceMachine.zip && sleep 1
+#7z x ./HumanResourceMachine.zip -p$password -o./inst/ && sleep 1
+#rm -f ./HumanResourceMachine.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
-
-# move manual configuration to the end if not using individual scripts
-sudo echo ""
-scripts="./inst/*.sh"
-for script in $scripts
-do
-    if grep -q "###>>>sed-i-d-start" $script
-    then 
-        start2="$(grep -wn "###>>>sed-i-d-start-2" $script | head -n 1 | cut -d: -f1)"
-        end2="$(grep -wn "###>>>sed-i-d-end-2" $script | tail -n 1 | cut -d: -f1)"
-        echo "" >> ./cfg/4_usrapp.sh
-        sed -n "$start2,$end2"'p' $script >> ./cfg/4_usrapp.sh
-        unset start2 end2
-        start1="$(grep -wn "###>>>sed-i-d-start-1" $script | head -n 1 | cut -d: -f1)"
-        end1="$(grep -wn "###>>>sed-i-d-end-1" $script | tail -n 1 | cut -d: -f1)"
-        sed -i "$start1,$end1"'d' $script
-        unset start1 end1
-        echo "Manual configuration part of $script is moved to the end of this setup process."
-    fi
-done
-cat ./cfg/4_usrapp_tail.sh >> ./cfg/4_usrapp.sh
-rm ./cfg/4_usrapp_tail.sh
-if grep -q "sed-i-d-" ./cfg/4_usrapp.sh ; then sed -i '/sed-i-d-/d' ./cfg/4_usrapp.sh ; fi
 
 # avoid re-downloading
 echo ""
@@ -99,19 +76,13 @@ unset start0 end0
 # setup
 bash ./inst/0_deb.sh
 bash ./inst/1_flathub.sh
-bash ./inst/2_appimage.sh
-bash ./inst/3_ukuu.sh
-bash ./inst/4_fcitx5.sh
-bash ./inst/5_wechat.sh
-bash ./inst/6_game.sh
-bash ./inst/7_biodaily.sh
-bash ./inst/8_biodevr.sh
-#bash ./inst/9_biodevpy.sh
+bash ./inst/2_fcitx5.sh
+bash ./inst/3_wechat.sh
+bash ./inst/4_biodaily.sh
+bash ./inst/5_biodevr.sh
 
 # config
-bash ./cfg/0_sysmdl.sh
-bash ./cfg/1_sysstg.sh
-bash ./cfg/2_sysapp.sh
-bash ./cfg/3_sysdsp.sh
-bash ./cfg/4_usrapp.sh
-bash ./cfg/5_reboot.sh
+bash ./cfg/0_sysstg.sh
+bash ./cfg/1_sysapp.sh
+bash ./cfg/2_sysdsp.sh
+bash ./cfg/3_reboot.sh
