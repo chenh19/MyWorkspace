@@ -1,0 +1,74 @@
+#!/bin/bash
+# This script installs deepin-wine WeChat
+
+# set terminal font color
+TEXT_YELLOW='\e[1;33m'
+TEXT_GREEN='\e[1;32m'
+TEXT_RESET='\e[0m'
+
+# set working directory
+[ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
+cd ~/.setup_cache/
+
+
+# ask whether to install wechat
+sudo echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install WeChat? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) # notify start
+        sudo echo ""
+        echo -e "${TEXT_YELLOW}Installing WeChat...${TEXT_RESET} \n" && sleep 1
+        sudo apt-get update -qq && sudo apt-get install fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy libjpeg62:i386 -y
+        
+        # install deepin wine
+        wget -O- https://deepin-wine.i-m.dev/setup.sh | sh
+        
+        # install weixin
+        echo "" && sudo apt-get install com.qq.weixin.deepin -y
+        
+        # configure language
+        echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
+        sudo dpkg-reconfigure locales
+        [ -f /opt/deepinwine/tools/run.sh ] && sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run.sh
+        [ -f /opt/deepinwine/tools/run_v2.sh ] && sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v2.sh
+        [ -f /opt/deepinwine/tools/run_v3.sh ] && sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v3.sh
+        [ -f /opt/deepinwine/tools/run_v4.sh ] && sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v4.sh
+        [ -f /opt/deepinwine/tools/run_v5.sh ] && sudo sed -i 's+WINE_CMD="deepin-wine"+WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"+g' /opt/deepinwine/tools/run_v5.sh
+
+        # create shortcut
+        [ ! -f /usr/share/applications/com.qq.weixin.deepin.desktop ] && sudo touch /usr/share/applications/com.qq.weixin.deepin.desktop
+        sudo desktop-file-edit \
+            --set-name 'WeChat' --set-key 'Name[en_US]' --set-value 'WeChat' --set-key 'Name[zh_CN]' --set-value '微信' \
+            --set-generic-name 'Instant Messaging' --set-key 'GenericName[en_US]' --set-value 'Instant Messaging' --set-key 'GenericName[zh_CN]' --set-value '个人即时通讯' \
+            --set-comment 'Deepin Wine WeChat Client' --set-key 'Comment[en_US]' --set-value 'Deepin Wine WeChat Client' --set-key 'Comment[zh_CN]' --set-value '腾讯微信深度版' \
+            --set-key 'Exec' --set-value '/opt/apps/com.qq.weixin.deepin/files/run.sh -f %f' \
+            --set-icon '/opt/icon/wechat.png' \
+            --set-key 'Encoding' --set-value 'UTF-8' \
+            --set-key 'StartupNotify' --set-value 'true' \
+            --set-key 'StartupWMClass' --set-value 'WeChat.exe' \
+            --set-key 'Terminal' --set-value 'false' \
+            --set-key 'Type' --set-value 'Application' \
+            --remove-key 'Categories' --add-category 'Network;' \
+        /usr/share/applications/com.qq.weixin.deepin.desktop
+
+        # run wechat for once and auto close
+        "/opt/apps/com.qq.weixin.deepin/files/run.sh" -f %f && sleep 10 && killall -9 WeChat.exe && sleep 5
+
+        # cleanup
+        [ -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list ] && sudo rm -f /etc/apt/sources.list.d/deepin-wine.i-m.dev.list
+        [ -f /etc/apt/preferences.d/deepin-wine.i-m.dev.pref ] && sudo rm -f /etc/apt/preferences.d/deepin-wine.i-m.dev.pref
+        [ -f /etc/profile.d/deepin-wine.i-m.dev.sh ] && sudo rm -f /etc/profile.d/deepin-wine.i-m.dev.sh
+        if grep -q "deepin-wine" /etc/apt/sources.list ; then sudo sed -i '/deepin-wine/d' /etc/apt/sources.list ; fi
+        sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
+
+        # notify end
+        echo -e " \n${TEXT_GREEN}WeChat installed!${TEXT_RESET} \n" && sleep 5;;
+
+  * )   # notify cancellation
+        echo -e " \n${TEXT_YELLOW}WeChat not installed.${TEXT_RESET} \n" && sleep 5;;
+
+esac
+
+
+# mark setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/3_wechat.sh+#bash ./inst/3_wechat.sh+g' ~/.setup_cache/setup.sh
