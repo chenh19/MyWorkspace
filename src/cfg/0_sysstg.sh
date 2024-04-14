@@ -202,7 +202,7 @@ sudo ufw enable
 ######################################################################################
 
 # Input Devices (take effect after rebooting)
-cat /proc/bus/input/devices | grep -i syna | grep "Touch"> ~/.config/touchpadxlibinputrc
+cat /proc/bus/input/devices | grep -i syna | grep "Touch" > ~/.config/touchpadxlibinputrc
 sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
 sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
 sed -i '2,200d' ~/.config/touchpadxlibinputrc
