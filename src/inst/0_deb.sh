@@ -74,8 +74,7 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
   wget -q https://github.com/jurplel/qView/releases/download/6.1/qview_6.1-1-focal_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://github.com/balena-io/etcher/releases/download/v1.18.11/balena-etcher_1.18.11_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
   wget -q https://dl.4kdownload.com/app/4kvideodownloaderplus_1.5.1-1_amd64.deb?source=website -O 4kvideodownloader+.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/lakinduakash/linux-wifi-hotspot/releases/download/v4.7.1/linux-wifi-hotspot_4.7.1_amd64.deb && echo '"Linux Wifi Hotspot" deb package is downloaded.' && sleep 1 #_to_be_updated
-
+    
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
