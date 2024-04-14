@@ -21,7 +21,7 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 # install updates
 sudo apt-get update
 if dpkg -l | grep -q "^ii.*raspi-firmware"; then sudo dpkg --purge raspi-firmware; fi
-sudo apt-get remove gimp firefox-esr goldendict akregator kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai -y  && sudo apt-get autoremove -y
+sudo apt-get remove gimp firefox-esr goldendict akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai -y  && sudo apt-get autoremove -y
 sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 
 # install apps (apt)
