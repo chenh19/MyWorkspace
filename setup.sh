@@ -63,6 +63,20 @@ cp -rf ./cfg/license/* ~/Licenses/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
 
+# Power Management
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "300"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DimDisplay --key idleTime --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key idleTime --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key suspendType --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group DimDisplay --key idleTime --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group SuspendSession --key suspendThenHibernate "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group BrightnessControl --key value --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DimDisplay --key idleTime --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key suspendThenHibernate "false"
+
 # avoid re-downloading
 echo ""
 sed -i 's+Preparing setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
