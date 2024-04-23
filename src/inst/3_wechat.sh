@@ -17,6 +17,9 @@ read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install WeChat? [y/n
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
+        
+        #sudo flatpak install -y --noninteractive flathub com.tencent.WeChat
+        
         echo -e "${TEXT_YELLOW}Installing WeChat...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update -qq && sudo apt-get install fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy libjpeg62:i386 -y
         
