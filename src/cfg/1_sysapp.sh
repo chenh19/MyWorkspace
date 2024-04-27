@@ -74,6 +74,8 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCal
 # Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
+# Details view mode > Zoom > set preview size to "22"
+kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"
 
 # Dolphin window size
 [ ! -d ~/.local/share/dolphin/ ] && mkdir ~/.local/share/dolphin/
