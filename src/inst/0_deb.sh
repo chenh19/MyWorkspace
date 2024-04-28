@@ -43,8 +43,8 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 
 # install apps (source list)
   ## enpass
-  echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
-  wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
+  echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
+  wget -qO- "https://apt.enpass.io/keys/enpass-linux.key" | sudo tee /etc/apt/trusted.gpg.d/enpass.asc >/dev/null 2>&1
   sudo apt-get update -qq && sudo apt-get install enpass -y
 
   ## resilio sync
@@ -62,19 +62,19 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
   [ ! -d ./deb/ ] && mkdir ./deb/
   echo -e " \n${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
 
-  ## redirecting links
-  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
-  wget -q https://zoom.us/client/latest/zoom_amd64.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
-  wget -q https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
-  wget -q https://www.eudic.net/download/eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
+  ## official redirecting links
+  wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
+  wget -q "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
+  wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
 
-  ## absolute links
-  wget -q https://downloads.slack-edge.com/desktop-releases/linux/x64/4.37.101/slack-desktop-4.37.101-amd64.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/Automattic/simplenote-electron/releases/download/v2.21.0/Simplenote-linux-2.21.0-amd64.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/jurplel/qView/releases/download/6.1/qview_6.1-1-focal_amd64.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://github.com/balena-io/etcher/releases/download/v1.18.11/balena-etcher_1.18.11_amd64.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q https://dl.4kdownload.com/app/4kvideodownloaderplus_1.5.1-1_amd64.deb?source=website -O 4kvideodownloader+.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #_to_be_updated
-    
+  ## self maintained redirecting links
+  wget -q "https://www.dropbox.com/scl/fi/3m51hdrkp1989c9mkjll5/eudic.deb?rlkey=pxdwvlwjsnwspdfciuodjqcg4&st=8xjibdx1&dl=0" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/sk01puanvrn8i8gnca6vr/slack.deb?rlkey=o6i4zr3h513xvzonr1919zs8g&st=pjeyni43&dl=0" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q "https://www.dropbox.com/scl/fi/op6ap3wk1ajmqor4v1mtv/simplenote.deb?rlkey=ovvgbu5ee0vk35pn6r1ddfp1j&st=ceh8f3pr&dl=0" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q "https://www.dropbox.com/scl/fi/2xydgsf47uucvrag6nmjj/qview.deb?rlkey=bxmxoln91xy09esotvt065o82&st=4eifpqgq&dl=0" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q "https://www.dropbox.com/scl/fi/6xgae1a5fprl3zd00ku7w/etcher.deb?rlkey=8hedsw9amf38icpvwjt28ou9l&st=qi26nv7u&dl=0" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q "https://www.dropbox.com/scl/fi/p6nzk8gygjc3e9ho7n0j3/4kvideodownloader.deb?rlkey=o3c2x4embm2992ioa1alrtpn6&st=clkgfchr&dl=0" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #_to_be_updated
+  
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
