@@ -43,10 +43,14 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}> select ${TEXT_GREEN}[activate Flexible Input Method Framework v5 (fcitx5)]${TEXT_YELLOW} and click ${TEXT_GREEN}[OK]${TEXT_RESET}"
         echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} to finish${TEXT_RESET} \n" && sleep 1
         im-config
-
+        
+        # config locales
+        echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
+        sudo dpkg-reconfigure locales
+        
         # config environment
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
-
+        
         # cleanup
         rm -rf ./cfg/fcitx5-themes/
         sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
