@@ -20,11 +20,11 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Installing daily biological tools (SnapGene/IGV/PyMOL/FastQC)...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update -qq && sudo apt-get upgrade -y
         
-        # install PyMOL/FastQC/Meld
+        ## install PyMOL/FastQC/Meld
         [ ! -d ~/igv ] && mkdir ~/igv/
         sudo apt-get install pymol fastqc clustalx meld -y
 
-        # install Snapgene-viewer
+        ## install Snapgene-viewer
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
         sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
@@ -34,12 +34,12 @@ case "$choice" in
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         rm -rf ./snapgene/
         
-        # install Zotero
+        ## install Zotero
         wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
         sudo apt-get update -qq && sudo apt-get install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
 
-        # install IGV
+        ## install IGV
         wget -q https://data.broadinstitute.org/igv/projects/downloads/2.17/IGV_Linux_2.17.4_WithJava.zip -O ./igv.zip && sleep 1 #_to_be_updated
         unzip -o -q ./igv.zip && sleep 1 && rm -f ./igv.zip
         [ ! -d /opt/igv/ ] && sudo mkdir /opt/igv/
@@ -58,7 +58,7 @@ case "$choice" in
         /usr/share/applications/igv.desktop
         rm -rf ./IGV_Linux_*/
 
-        # ask whether to download genomes for IGV
+        ## ask whether to download genomes for IGV
         sudo echo ""
         read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Hosted Genomes for offline use of IGV (this might take some time)? [y/n/c]'$TEXT_RESET)"$' \n' choice
         case "$choice" in
