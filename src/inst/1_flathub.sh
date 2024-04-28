@@ -65,6 +65,30 @@ desktop-file-edit \
     --remove-key 'Categories' --add-category 'Utility;' \
 ~/.local/share/applications/org.kde.kweather.desktop
 
+## wechat universal
+sudo flatpak install -y --noninteractive flathub com.tencent.WeChat
+[ -f /var/lib/flatpak/app/com.tencent.WeChat/current/active/export/share/applications/com.tencent.WeChat.desktop ] && sudo mv -f /var/lib/flatpak/app/com.tencent.WeChat/current/active/export/share/applications/com.tencent.WeChat.desktop /usr/share/applications/
+[ ! -f /usr/share/applications/com.tencent.WeChat.desktop ] && sudo touch /usr/share/applications/com.tencent.WeChat.desktop
+sudo desktop-file-edit \
+    --set-name 'WeChat' --set-key 'Name[en_US]' --set-value 'WeChat' --set-key 'Name[zh_CN]' --set-value '微信' \
+    --set-generic-name 'Instant Messaging' --set-key 'GenericName[en_US]' --set-value 'Instant Messaging' --set-key 'GenericName[zh_CN]' --set-value '个人即时通讯' \
+    --set-comment 'WeChat Universal' --set-key 'Comment[en_US]' --set-value 'WeChat Universal' --set-key 'Comment[zh_CN]' --set-value '微信统信版' \
+    --set-key 'Exec' --set-value '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=wechat --file-forwarding com.tencent.WeChat @@u %U @@' \
+    --set-icon 'com.tencent.WeChat' \
+    --set-key 'NoDisplay' --set-value 'false' \
+    --set-key 'Path' --set-value '' \
+    --set-key 'StartupNotify' --set-value 'true' \
+    --set-key 'StartupWMClass' --set-value 'WeChat' \
+    --set-key 'Terminal' --set-value 'false' \
+    --set-key 'TerminalOptions' --set-value '' \
+    --set-key 'Type' --set-value 'Application' \
+    --set-key 'X-Flatpak' --set-value 'com.tencent.WeChat' \
+    --set-key 'X-KDE-FormFactor' --set-value 'desktop;tablet;handset;' \
+    --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
+    --set-key 'X-KDE-Username' --set-value '' \
+    --remove-key 'Categories' --add-category 'Network;' \
+/usr/share/applications/com.tencent.WeChat.desktop
+
 # cleanup
 [ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
 [ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
