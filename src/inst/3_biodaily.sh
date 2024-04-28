@@ -79,4 +79,4 @@ esac
 
 
 # mark setup.sh
-[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/4_biodaily.sh+#bash ./inst/4_biodaily.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/3_biodaily.sh+#bash ./inst/3_biodaily.sh+g' ~/.setup_cache/setup.sh
