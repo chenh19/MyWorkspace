@@ -39,7 +39,7 @@ done
 echo ""
 
 ## prepare all scripts
-[ ! -f main.zip ] && wget -q https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip && sleep 1
+[ ! -f main.zip ] && wget -q "https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip" && sleep 1
 unzip -o -q main.zip && sleep 1 && rm -f main.zip
 cp -rf ./MyWorkspace-main/setup.sh ./
 [ ! -d ./inst/ ] && mkdir ./inst/
@@ -53,14 +53,20 @@ kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "
 cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
-7z x ./cfg/license/license.zip -p$password -o./cfg/license/ -y && sleep 1
-rm -f ./cfg/license/license.zip
-cp -rf ./cfg/license/* ~/Licenses/
+[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/g1ishrqzp3hxyep1srb56/license.zip?rlkey=up5mmfxz8huf5f1kqr2cfcq1d&st=p08bfy7u&dl=0" -O ~/Licenses/license.zip && sleep 1
+7z x -p$password ~/Licenses/license.zip -o$HOME/Licenses/
+rm -f ~/Licenses/license.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 rm -rf ./MyWorkspace-main/
 
-# Power Management
+## hide files and folders
+echo -e "igv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping" > ~/.hidden
+echo -e "Enpass\nWeChat Files" > ~/Documents/.hidden
+echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
+echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
+
+## Power Management
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "300"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DimDisplay --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
@@ -74,7 +80,7 @@ kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --gr
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key suspendThenHibernate "false"
 
-# avoid re-downloading
+## for resuming
 echo ""
 sed -i 's+Preparing setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
