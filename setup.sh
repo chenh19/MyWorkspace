@@ -53,7 +53,7 @@ kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "
 cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
-[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/g1ishrqzp3hxyep1srb56/license.zip?rlkey=up5mmfxz8huf5f1kqr2cfcq1d&st=p08bfy7u&dl=0" -O ~/Licenses/license.zip && sleep 1
+[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/v98laa1ogg8rxjhdywgkf/license.zip?rlkey=i50qrc0p74g5oa4defofk005t" -O ~/Licenses/license.zip && sleep 1
 7z x -p$password ~/Licenses/license.zip -o$HOME/Licenses/
 rm -f ~/Licenses/license.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
