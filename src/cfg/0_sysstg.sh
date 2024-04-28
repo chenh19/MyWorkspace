@@ -249,14 +249,6 @@ kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key Requir
 
 ######################################################################################
 
-# hide files and folders
-echo -e "igv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping" > ~/.hidden
-echo -e "Enpass\nWeChat Files" > ~/Documents/.hidden
-echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden
-echo -e "rslsync" | sudo tee /home/.hidden
-
-######################################################################################
-
 # notify end
 echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 5
 
