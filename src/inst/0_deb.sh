@@ -69,11 +69,11 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 
   ## self maintained redirecting links
   wget -q "https://www.dropbox.com/scl/fi/3m51hdrkp1989c9mkjll5/eudic.deb?rlkey=pxdwvlwjsnwspdfciuodjqcg4&st=8xjibdx1&dl=0" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/sk01puanvrn8i8gnca6vr/slack.deb?rlkey=o6i4zr3h513xvzonr1919zs8g&st=pjeyni43&dl=0" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q "https://www.dropbox.com/scl/fi/op6ap3wk1ajmqor4v1mtv/simplenote.deb?rlkey=ovvgbu5ee0vk35pn6r1ddfp1j&st=ceh8f3pr&dl=0" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q "https://www.dropbox.com/scl/fi/2xydgsf47uucvrag6nmjj/qview.deb?rlkey=bxmxoln91xy09esotvt065o82&st=4eifpqgq&dl=0" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q "https://www.dropbox.com/scl/fi/6xgae1a5fprl3zd00ku7w/etcher.deb?rlkey=8hedsw9amf38icpvwjt28ou9l&st=qi26nv7u&dl=0" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #_to_be_updated
-  wget -q "https://www.dropbox.com/scl/fi/p6nzk8gygjc3e9ho7n0j3/4kvideodownloader.deb?rlkey=o3c2x4embm2992ioa1alrtpn6&st=clkgfchr&dl=0" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #_to_be_updated
+  wget -q "https://www.dropbox.com/scl/fi/sk01puanvrn8i8gnca6vr/slack.deb?rlkey=o6i4zr3h513xvzonr1919zs8g&st=pjeyni43&dl=0" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/op6ap3wk1ajmqor4v1mtv/simplenote.deb?rlkey=ovvgbu5ee0vk35pn6r1ddfp1j&st=ceh8f3pr&dl=0" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/2xydgsf47uucvrag6nmjj/qview.deb?rlkey=bxmxoln91xy09esotvt065o82&st=4eifpqgq&dl=0" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/6xgae1a5fprl3zd00ku7w/etcher.deb?rlkey=8hedsw9amf38icpvwjt28ou9l&st=qi26nv7u&dl=0" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/p6nzk8gygjc3e9ho7n0j3/4kvideodownloader.deb?rlkey=o3c2x4embm2992ioa1alrtpn6&st=clkgfchr&dl=0" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
