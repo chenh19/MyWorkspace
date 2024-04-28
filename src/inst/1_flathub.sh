@@ -23,8 +23,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 ## clock
 sudo flatpak install -y --noninteractive flathub org.kde.kclock
-[ ! -f ~/.local/share/applications/org.kde.kclock.desktop ] && touch ~/.local/share/applications/org.kde.kclock.desktop
-desktop-file-edit \
+[ -f ~/.local/share/applications/org.kde.kclock.desktop ] && sudo mv -f ~/.local/share/applications/org.kde.kclock.desktop /usr/share/applications/
+[ ! -f /usr/share/applications/org.kde.kclock.desktop ] && sudo touch /usr/share/applications/org.kde.kclock.desktop
+sudo desktop-file-edit \
     --set-name 'Clock' --set-key 'Name[en_US]' --set-value 'Clock' --set-key 'Name[zh_CN]' --set-value '时钟' \
     --set-generic-name 'Clock Application' --set-key 'GenericName[en_US]' --set-value 'Clock Application' --set-key 'GenericName[zh_CN]' --set-value '时钟应用' \
     --set-comment 'Set alarms and timers, use a stopwatch, and manage world clocks' --set-key 'Comment[en_US]' --set-value 'Set alarms and timers, use a stopwatch, and manage world clocks' --set-key 'Comment[zh_CN]' --set-value '设置闹钟，计时器，和世界时钟' \
@@ -41,12 +42,13 @@ desktop-file-edit \
     --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
     --set-key 'X-KDE-Username' --set-value '' \
     --remove-key 'Categories' --add-category 'Utility;' \
-~/.local/share/applications/org.kde.kclock.desktop
+/usr/share/applications/org.kde.kclock.desktop
 
 ## weather
 sudo flatpak install -y --noninteractive flathub org.kde.kweather
-[ ! -f ~/.local/share/applications/org.kde.kweather.desktop ] && touch ~/.local/share/applications/org.kde.kweather.desktop
-desktop-file-edit \
+[ -f ~/.local/share/applications/org.kde.kweather.desktop ] && sudo mv -f ~/.local/share/applications/org.kde.kweather.desktop /usr/share/applications/
+[ ! -f /usr/share/applications/org.kde.kweather.desktop ] && sudo touch /usr/share/applications/org.kde.kweather.desktop
+sudo desktop-file-edit \
     --set-name 'Weather' --set-key 'Name[en_US]' --set-value 'Weather' --set-key 'Name[zh_CN]' --set-value '天气' \
     --set-generic-name 'Weather Forecast' --set-key 'GenericName[en_US]' --set-value 'Weather Forecast' --set-key 'GenericName[zh_CN]' --set-value '天气预报' \
     --set-comment 'View real-time weather forecasts and other information' --set-key 'Comment[en_US]' --set-value 'View real-time weather forecasts and other information' --set-key 'Comment[zh_CN]' --set-value '查看实时天气预报' \
@@ -63,7 +65,7 @@ desktop-file-edit \
     --set-key 'X-KDE-SubstituteUID' --set-value 'false' \
     --set-key 'X-KDE-Username' --set-value '' \
     --remove-key 'Categories' --add-category 'Utility;' \
-~/.local/share/applications/org.kde.kweather.desktop
+/usr/share/applications/org.kde.kweather.desktop
 
 ## wechat universal
 sudo flatpak install -y --noninteractive flathub com.tencent.WeChat
