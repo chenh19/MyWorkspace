@@ -63,4 +63,4 @@ case "$choice" in
 esac
 
 # mark setup.sh
-[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/5_biodevr.sh+#bash ./inst/5_biodevr.sh+g' ~/.setup_cache/setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/4_biodevr.sh+#bash ./inst/4_biodevr.sh+g' ~/.setup_cache/setup.sh
