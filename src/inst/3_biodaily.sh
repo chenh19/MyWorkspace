@@ -28,19 +28,19 @@ case "$choice" in
         [ ! -d ./snapgene/ ] && mkdir ./snapgene/
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
         sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
-        wget -q 'https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest' -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
+        wget -q "https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest" -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
         mv -f ./snapgene.deb ./snapgene/ && sudo dpkg -i ./snapgene/snapgene.deb
         sudo apt-get -f -y install
         sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
         rm -rf ./snapgene/
         
         ## install Zotero
-        wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
+        wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
         sudo apt-get update -qq && sudo apt-get install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
 
         ## install IGV
-        wget -q https://data.broadinstitute.org/igv/projects/downloads/2.17/IGV_Linux_2.17.4_WithJava.zip -O ./igv.zip && sleep 1 #_to_be_updated
+        wget -q "https://www.dropbox.com/scl/fi/7fs5h4p2i0tckkvqsa3od/igv.zip?rlkey=nb6aopovnu18ssmvri0c6alhz" -O igv.zip && sleep 1
         unzip -o -q ./igv.zip && sleep 1 && rm -f ./igv.zip
         [ ! -d /opt/igv/ ] && sudo mkdir /opt/igv/
         sudo cp -rf ./IGV_Linux_*/* /opt/igv/ && sleep 1
