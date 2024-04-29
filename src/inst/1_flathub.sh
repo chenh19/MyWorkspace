@@ -23,7 +23,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 ## clock
 sudo flatpak install -y --noninteractive flathub org.kde.kclock
-[ -f ~/.local/share/applications/org.kde.kclock.desktop ] && sudo mv -f ~/.local/share/applications/org.kde.kclock.desktop /usr/share/applications/
+[ -f /var/lib/flatpak/app/org.kde.kclock/current/active/export/share/applications/org.kde.kclock.desktop ] && sudo mv -f /var/lib/flatpak/app/org.kde.kclock/current/active/export/share/applications/org.kde.kclock.desktop /usr/share/applications/
 [ ! -f /usr/share/applications/org.kde.kclock.desktop ] && sudo touch /usr/share/applications/org.kde.kclock.desktop
 sudo desktop-file-edit \
     --set-name 'Clock' --set-key 'Name[en_US]' --set-value 'Clock' --set-key 'Name[zh_CN]' --set-value '时钟' \
@@ -46,7 +46,7 @@ sudo desktop-file-edit \
 
 ## weather
 sudo flatpak install -y --noninteractive flathub org.kde.kweather
-[ -f ~/.local/share/applications/org.kde.kweather.desktop ] && sudo mv -f ~/.local/share/applications/org.kde.kweather.desktop /usr/share/applications/
+[ -f /var/lib/flatpak/app/org.kde.kweather/current/active/export/share/applications/org.kde.kweather.desktop ] && sudo mv -f /var/lib/flatpak/app/org.kde.kweather/current/active/export/share/applications/org.kde.kweather.desktop /usr/share/applications/
 [ ! -f /usr/share/applications/org.kde.kweather.desktop ] && sudo touch /usr/share/applications/org.kde.kweather.desktop
 sudo desktop-file-edit \
     --set-name 'Weather' --set-key 'Name[en_US]' --set-value 'Weather' --set-key 'Name[zh_CN]' --set-value '天气' \
