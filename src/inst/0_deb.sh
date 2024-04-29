@@ -68,12 +68,12 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
   wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
 
   ## self maintained redirecting links
-  wget -q "https://www.dropbox.com/scl/fi/mmqvvtkekv9dt92vcmjwo/4kvideodownloader.deb?rlkey=ght3mg7p6ux5r15bindu989zg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/ilnwbugqprbbu4c7xhmkj/etcher.deb?rlkey=3thlqig922b1io3umozi3a0lz" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/l208h6kd97pcqbl6ysua8/eudic.deb?rlkey=mv65emk54ekddg1tes35csxup" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/2angwzr727qdejesamq05/qview.deb?rlkey=ec5hz6u1ltcajwordkv76rt05" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/wkfq5m73p8zh7qix42wka/simplenote.deb?rlkey=uqcpy6csufsol3p1ci185aue4" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/ddi1er0ok4ecsm67rhrad/slack.deb?rlkey=jm9evull2dagh4kqglzd2yvr1" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/i5w10jbmg1a25891castf/etcher.deb?rlkey=bcg1lyuwfo43ejtv6h2nn1htv" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/d55hac9aiwzzc7aq8ky72/simplenote.deb?rlkey=p0lg6vdsefoi16pc04sg1r1n6" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
+  wget -q "https://www.dropbox.com/scl/fi/s0aopqvbu9pz4jxfo23n4/slack.deb?rlkey=2errjlsb9uxl0hkjgfezkczab" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
