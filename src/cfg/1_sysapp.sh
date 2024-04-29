@@ -257,7 +257,7 @@ cp -rf ./cfg/vlc/ ~/.config/
 # windows fonts
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading Windows Fonts...${TEXT_RESET} \n" && sleep 1
-[ ! -f windows-fonts.zip ] && wget -q https://www.dropbox.com/s/nsfxnl3tt1md56u/windows-fonts.zip?dl=0 -O windows-fonts.zip && echo 'Windows Fonts are downloaded.' && sleep 1
+[ ! -f windows-fonts.zip ] && wget -q "https://www.dropbox.com/scl/fi/4zqeirfr8rwjnocnm55yt/windows-fonts.zip?rlkey=bowygskln7z8fx483dy1izer9" -O windows-fonts.zip && echo 'Windows Fonts are downloaded.' && sleep 1
 unzip -o -q windows-fonts.zip && sleep 1 && rm -f windows-fonts.zip && sleep 1
 sudo cp -rf ./fonts/windows/ /usr/share/fonts/ && sleep 1
 rm -rf ./fonts/
