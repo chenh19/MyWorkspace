@@ -30,7 +30,7 @@ case "$choice" in
         sudo apt-get --fix-missing update && sudo apt-get install -f -y
 
         ## install themes
-        [ ! -f fcitx5-themes.zip ] && wget -q https://www.dropbox.com/s/fpnlkogqchbzkua/fcitx5-themes.zip?dl=0 -O fcitx5-themes.zip && sleep 1
+        [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
         unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
         cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
 
