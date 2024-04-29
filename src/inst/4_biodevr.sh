@@ -43,7 +43,7 @@ case "$choice" in
         
         ## install RStudio
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
-        wget -q https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.12.1-402-amd64.deb && echo '"RStudio" deb package is downloaded.' && sleep 1 #_to_be_updated
+        wget -q "https://www.dropbox.com/scl/fi/3j0gkfvl21wsetqeyxf4d/rstudio.deb?rlkey=2lq1ezrjb39yrfl6hxq9qmn2v" -O rstudio.deb && echo '"RStudio" deb package is downloaded.' && sleep 1
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get install -f -y
         [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
