@@ -70,7 +70,11 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCal
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
 # Details view mode > Zoom > set preview size to "22"
-kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"
+kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"#
+# Config > Config Toolbars... > remove "Split", add "Create Folder" and rename to "New"
+[ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
+[ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
+cp -f ./cfg/dolphin/dolphinui.rc ~/.local/share/kxmlgui5/dolphin/
 
 # Dolphin window size
 [ ! -d ~/.local/share/dolphin/ ] && mkdir ~/.local/share/dolphin/
