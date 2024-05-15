@@ -54,7 +54,7 @@ cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 [ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
-7z x -p$password ~/Licenses/license.zip -o$HOME/Licenses/
+7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
 rm -f ~/Licenses/license.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
