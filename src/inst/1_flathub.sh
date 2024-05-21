@@ -91,6 +91,7 @@ sudo desktop-file-edit \
     --remove-key 'Categories' --add-category 'Network;' \
 /usr/share/applications/com.tencent.WeChat.desktop
 #sudo flatpak override com.tencent.WeChat --filesystem=host
+#sudo flatpak override com.tencent.WeChat --filesystem=home
 
 # cleanup
 [ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
