@@ -216,7 +216,11 @@ kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder'
 # System monitor: Overview: move CPU to the left
 #echo -e " \n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET} \n" && sleep 1 && plasma-systemmonitor
 [ ! -d ~/.local/share/plasma-systemmonitor/ ] && mkdir ~/.local/share/plasma-systemmonitor/
-cp -f ./cfg/plasma-systemmonitor/overview.page ~/.local/share/plasma-systemmonitor/
+kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key actionsFace ""
+kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key loadType ""
+kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-0 --group section-0 --key face "Face-94410266684256"
+kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-1 --group section-0 --key face "Face-94410222150464"
+kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-2 --group section-0 --key face "Face-94410261307168"
 
 ######################################################################################
 
