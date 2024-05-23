@@ -214,8 +214,9 @@ kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPage
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,processes.page,history.page,applications.page"
 
 # System monitor: Overview: move CPU to the left
-echo -e " \n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET} \n" && sleep 1
-plasma-systemmonitor
+#echo -e " \n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET} \n" && sleep 1 && plasma-systemmonitor
+[ ! -d ~/.local/share/plasma-systemmonitor/ ] && mkdir ~/.local/share/plasma-systemmonitor/
+cp -f ./cfg/plasma-systemmonitor/overview.page ~/.local/share/plasma-systemmonitor/
 
 ######################################################################################
 
