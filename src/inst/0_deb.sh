@@ -26,7 +26,7 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 
 # install apps (apt)
   ## installed by Debian by defauly: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs
-  sudo apt-get install wget bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse evolution evolution-ews tree samba neofetch krita krita-l10n kdenlive libavcodec-extra vlc elisa plymouth-themes -y
+  sudo apt-get install wget bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse evolution evolution-ews tree samba krita krita-l10n kdenlive libavcodec-extra vlc elisa plymouth-themes -y
 
   ## timekpr-next
   sudo echo ""
