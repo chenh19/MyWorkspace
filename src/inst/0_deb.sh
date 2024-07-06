@@ -46,6 +46,7 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
   wget -qO- "https://apt.enpass.io/keys/enpass-linux.key" | sudo tee /etc/apt/trusted.gpg.d/enpass.asc >/dev/null 2>&1
   sudo apt-get update -qq && sudo apt-get install enpass -y
+  [ ! -d ~/Documents/Enpass/ ] && mkdir ~/Documents/Enpass/
 
   ## resilio sync
   [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
