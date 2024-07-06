@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v2.1.0 ([work-in-progress](https://github.com/chenh19/MyWorkspace/blob/main/todo.md))*  
+*Current version: v2.1.1 ([work-in-progress](https://github.com/chenh19/MyWorkspace/blob/main/todo.md))*  
 
 ## Introduction
 
