@@ -16,6 +16,7 @@ cd ~/.setup_cache/
 # notify start
 sudo echo ""
 echo -e "${TEXT_YELLOW}Configuring apps and widgets...${TEXT_RESET} \n" && sleep 1
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 ######################################################################################
 
@@ -339,10 +340,10 @@ if ! grep -q "alias poweroff='systemctl poweroff'" ~/.bashrc ; then echo -e "ali
 if ! grep -q "alias shutdown='systemctl poweroff'" ~/.bashrc ; then echo -e "alias shutdown='systemctl poweroff'" >> ~/.bashrc ; fi
 
 ## alt_rm
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
 
 ## sysupdate
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
 
 ######################################################################################
 
