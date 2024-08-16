@@ -20,6 +20,7 @@ echo -e "${TEXT_YELLOW}Installing Chinese Pinyin input method...${TEXT_RESET} \n
 [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
 [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
 sudo apt-get update -qq && sudo apt-get upgrade -y
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 ## install fcitx
 sudo apt-get install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
