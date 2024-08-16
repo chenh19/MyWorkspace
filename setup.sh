@@ -28,7 +28,11 @@ echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 # setup
 echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 ###>>>sed-i-d-start-0
-unset start end
+## initialize
+unset start0 end0
+
+## install wget
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 ## ask for password
 unset password
