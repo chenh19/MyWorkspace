@@ -20,7 +20,7 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}" &
 ######################################################################################
 
 # git ssh
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
 
 ######################################################################################
 
