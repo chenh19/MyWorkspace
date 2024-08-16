@@ -19,6 +19,7 @@ case "$choice" in
         sudo echo ""
         echo -e "${TEXT_YELLOW}Installing R bioinfomatics developing enviroment...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update -qq && sudo apt-get upgrade -y
+        if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
         [ ! -d ~/Developing/ ] && mkdir ~/Developing/ && kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 
         ## install dependencies
