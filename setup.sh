@@ -17,11 +17,9 @@ read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the f
 
 # check internet connection
 echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n"
-wget -q --spider "http://google.com"
-until [[ $? -eq 0 ]] ; do
+until curl -s --head  --request GET www.google.com | grep "200 OK" > /dev/null ; do
     read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! Please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$' \n'
     echo ""
-    wget -q --spider "http://google.com"
 done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
 
