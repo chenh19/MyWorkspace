@@ -42,8 +42,10 @@ cp -rf ./cfg/fcitx5/* ~/.config/fcitx5/
 im-config -c -n fcitx5
 
 ## config locales
-echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
-sudo dpkg-reconfigure locales
+#echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
+#sudo dpkg-reconfigure locales
+if grep -q "# zh_CN.UTF-8 UTF-8" /etc/locale.gen ; then sudo sed -i 's+# zh_CN.UTF-8 UTF-8+zh_CN.UTF-8 UTF-8+g' /etc/locale.gen ; fi
+sudo locale-gen
 
 ## config environment
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
