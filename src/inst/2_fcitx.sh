@@ -34,11 +34,12 @@ cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
 ## config fcitx (takes effect after rebooting)
 cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
 cp -rf ./cfg/fcitx5/* ~/.config/fcitx5/
-echo -e "${TEXT_YELLOW}To set Fcitx5 as the default input method, please:${TEXT_RESET} \n"
-echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} and then ${TEXT_GREEN}[Yes]${TEXT_RESET}"
-echo -e "${TEXT_YELLOW}> select ${TEXT_GREEN}[activate Flexible Input Method Framework v5 (fcitx5)]${TEXT_YELLOW} and click ${TEXT_GREEN}[OK]${TEXT_RESET}"
-echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} to finish${TEXT_RESET} \n" && sleep 1
-im-config
+#echo -e "${TEXT_YELLOW}To set Fcitx5 as the default input method, please:${TEXT_RESET} \n"
+#echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} and then ${TEXT_GREEN}[Yes]${TEXT_RESET}"
+#echo -e "${TEXT_YELLOW}> select ${TEXT_GREEN}[activate Flexible Input Method Framework v5 (fcitx5)]${TEXT_YELLOW} and click ${TEXT_GREEN}[OK]${TEXT_RESET}"
+#echo -e "${TEXT_YELLOW}> click ${TEXT_GREEN}[OK]${TEXT_YELLOW} to finish${TEXT_RESET} \n" && sleep 1
+#im-config
+im-config -c -n fcitx5
 
 ## config locales
 echo -e " \n${TEXT_YELLOW}Please use [Space] to select ${TEXT_GREEN}zh_CN.UTF-8${TEXT_YELLOW} and then [Enter] to continue.${TEXT_RESET} \n" && sleep 5
