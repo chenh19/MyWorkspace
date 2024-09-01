@@ -30,17 +30,6 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   ## installed by Debian by defauly: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs
   sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse evolution evolution-ews tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc elisa plymouth-themes -y
 
-  ## timekpr-next
-  sudo echo ""
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install Timekpr-nExT for parent control? [y/n/c]'$TEXT_RESET)"$' \n' choice
-  case "$choice" in
-        y|Y ) echo "" && sudo apt-get install timekpr-next -y
-              # notify end
-              echo -e " \n${TEXT_GREEN}Timekpr-nExT installed!${TEXT_RESET} \n" && sleep 1;;
-          * ) # notify cancellation
-              echo -e " \n${TEXT_YELLOW}Timekpr-nExT not installed.${TEXT_RESET} \n" && sleep 1;;
-  esac
-
 # install apps (ppa)
 
 # install apps (source list)
