@@ -58,14 +58,6 @@ case "$choice" in
             --remove-key 'Categories' --add-category 'Science;' \
         /usr/share/applications/igv.desktop
         rm -rf ./IGV_Linux_*/
-
-        ## ask whether to download genomes for IGV
-        sudo echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to download Hosted Genomes for offline use of IGV (this might take some time)? [y/n/c]'$TEXT_RESET)"$' \n' choice
-        case "$choice" in
-          y|Y ) bash <(wget -qO- https://raw.githubusercontent.com/chenh19/igv_genomes/main/download.sh);;
-          * )   ;;
-        esac
         
         # cleanup
         sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
