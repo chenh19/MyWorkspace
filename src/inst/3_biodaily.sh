@@ -41,6 +41,7 @@ case "$choice" in
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
 
         ## install IGV
+        [ -d /opt/igv/ ] && sudo rm -rf /opt/igv/
         wget -q "https://www.dropbox.com/scl/fi/7fs5h4p2i0tckkvqsa3od/igv.zip?rlkey=nb6aopovnu18ssmvri0c6alhz" -O igv.zip && sleep 1
         unzip -o -q ./igv.zip && sleep 1 && rm -f ./igv.zip
         [ ! -d /opt/igv/ ] && sudo mkdir /opt/igv/
