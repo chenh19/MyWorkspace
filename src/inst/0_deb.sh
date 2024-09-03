@@ -86,6 +86,10 @@ sudo apt-get --fix-missing update && sudo apt-get install -f -y
   sudo timedatectl set-ntp true
   sudo timedatectl status
 
+  ## Touchegg
+  [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
+  cp -f ./cfg/touchegg/touchegg.conf ~/.config/touchegg/
+    
   ## Etcher
   [ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
   echo -e '{\n  "errorReporting": false,\n  "updatesEnabled": true,\n  "desktopNotifications": true,\n  "autoBlockmapping": true,\n  "decompressFirst": true\n}' > ~/.config/balena-etcher/config.json
