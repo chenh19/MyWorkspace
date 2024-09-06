@@ -238,7 +238,7 @@ kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --gr
 if grep -q "#AllowHibernation=yes" /etc/systemd/sleep.conf ; then sudo sed -i 's+#AllowHibernation=yes+AllowHibernation=no+g' /etc/systemd/sleep.conf ; fi
 
 ## Sleep deep
-if ! grep -q "quiet splash mem_sleep_default=deep" /etc/default/grub ; then sudo sed -i 's+quiet splash +quiet splash mem_sleep_default=deep +g' /etc/default/grub && sudo update-grub && echo "" ; fi
+#if ! grep -q "quiet splash mem_sleep_default=deep" /etc/default/grub ; then sudo sed -i 's+quiet splash +quiet splash mem_sleep_default=deep +g' /etc/default/grub && sudo update-grub && echo "" ; fi
 
 ######################################################################################
 
