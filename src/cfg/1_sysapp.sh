@@ -48,6 +48,8 @@ kwriteconfig5 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardC
 # kde browser integration reminder hide
 kwriteconfig5 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' "false"
 
+kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity "2"
+
 ######################################################################################
 
 # Dolphin
