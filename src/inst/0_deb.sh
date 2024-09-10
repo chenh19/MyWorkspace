@@ -90,7 +90,11 @@ sudo apt-get --fix-missing update && sudo apt-get install -f -y
   ## Touchegg
   [ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
   cp -f ./cfg/touchegg/touchegg.conf ~/.config/touchegg/
-    
+  
+  ## Fastfetch
+  [ ! -d ~/.config/fastfetch/ ] && mkdir ~/.config/fastfetch/
+  wget -qO- https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/presets/neofetch.jsonc > ~/.config/fastfetch/config.jsonc
+  
   ## Etcher
   [ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
   echo -e '{\n  "errorReporting": false,\n  "updatesEnabled": true,\n  "desktopNotifications": true,\n  "autoBlockmapping": true,\n  "decompressFirst": true\n}' > ~/.config/balena-etcher/config.json
