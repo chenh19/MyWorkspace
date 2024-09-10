@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v2.2.4 (for X11)*  
+*Current version: v2.2.5 (for X11)*  
 
 ## Introduction
 
