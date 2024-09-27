@@ -27,8 +27,8 @@ sudo apt-get install -t $(lsb_release -cs)-backports linux-image-amd64 -y
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 # install apps (apt)
-  ## installed by Debian by defauly: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse evolution evolution-ews tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc elisa plymouth-themes -y
+  ## installed by Debian by defauly: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews
+  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc elisa plymouth-themes -y
 
 # install apps (ppa)
 
@@ -65,9 +65,9 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/d55hac9aiwzzc7aq8ky72/simplenote.deb?rlkey=p0lg6vdsefoi16pc04sg1r1n6" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/s0aopqvbu9pz4jxfo23n4/slack.deb?rlkey=2errjlsb9uxl0hkjgfezkczab" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/rufzgb528vzg19w45c5vx/touchegg.deb?rlkey=bjp0q9jaf25oo34vuyu0qzzw1" -O touchegg.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/s779gps9u2qkr6o7klwk5/fastfetch.deb?rlkey=036z6hfh42y8j232ptgoyi12w" -O fastfetch.deb && echo '"Fastfetch" deb package is downloaded.' && sleep 1
+  #wget -q "https://www.dropbox.com/scl/fi/s0aopqvbu9pz4jxfo23n4/slack.deb?rlkey=2errjlsb9uxl0hkjgfezkczab" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
