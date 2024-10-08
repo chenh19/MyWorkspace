@@ -94,7 +94,7 @@ unset start0 end0
 
 # setup
 bash ./inst/0_deb.sh
-bash ./inst/1_flathub.sh
+#bash ./inst/1_flathub.sh
 bash ./inst/2_fcitx.sh
 bash ./inst/3_biodaily.sh
 bash ./inst/4_biodevr.sh
