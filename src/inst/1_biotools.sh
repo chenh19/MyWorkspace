@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script intsalls daily biological tools (SnapGene, PyMOL, etc)
+# This script intsalls biological tools
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
