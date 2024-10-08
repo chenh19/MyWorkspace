@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs deb packages by apt-get and dpkg
+# This script installs system packages by apt-get and dpkg
 
 # set terminal font color
 TEXT_YELLOW='\e[1;33m'
@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 # notify start
 sudo echo ""
-echo -e "${TEXT_YELLOW}Installing Deb packages...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Installing system tools...${TEXT_RESET} \n" && sleep 1
 
 # edit sources.list
 echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb http://deb.debian.org/debian $(lsb_release -cs) main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $(lsb_release -cs) main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian $(lsb_release -cs)-updates main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $(lsb_release -cs)-updates main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian-security/ $(lsb_release -cs)-security main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian-security/ $(lsb_release -cs)-security main contrib non-free non-free-firmware\n\n# Backports allow you to install newer versions of software made available for this release\ndeb http://deb.debian.org/debian $(lsb_release -cs)-backports main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $(lsb_release -cs)-backports main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
