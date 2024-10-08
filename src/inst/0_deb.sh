@@ -60,6 +60,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
 
   ## self maintained redirecting links
+  wget -q "https://www.dropbox.com/scl/fi/7ani1m7fs5qng9jboc7sh/wechat.deb?rlkey=2ehcazh42i5iu28m1w7rlbmr4" -O wechat.deb && echo '"WeChat" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/i5w10jbmg1a25891castf/etcher.deb?rlkey=bcg1lyuwfo43ejtv6h2nn1htv" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
@@ -68,14 +69,25 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   wget -q "https://www.dropbox.com/scl/fi/rufzgb528vzg19w45c5vx/touchegg.deb?rlkey=bjp0q9jaf25oo34vuyu0qzzw1" -O touchegg.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/s779gps9u2qkr6o7klwk5/fastfetch.deb?rlkey=036z6hfh42y8j232ptgoyi12w" -O fastfetch.deb && echo '"Fastfetch" deb package is downloaded.' && sleep 1
   #wget -q "https://www.dropbox.com/scl/fi/s0aopqvbu9pz4jxfo23n4/slack.deb?rlkey=2errjlsb9uxl0hkjgfezkczab" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/7ani1m7fs5qng9jboc7sh/wechat.deb?rlkey=2ehcazh42i5iu28m1w7rlbmr4" -O wechat.deb && echo '"WeChat" deb package is downloaded.' && sleep 1
   
   ## install
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
-# fix missings
-sudo apt-get --fix-missing update && sudo apt-get install -f -y
+# install input method
 
+  ## fcitx
+  echo -e " \n${TEXT_YELLOW}Installing input methods...${TEXT_RESET} \n" && sleep 1
+  [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+  [ ! -d ~/.config/fcitx5/ ] && mkdir ~/.config/fcitx5/
+  [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
+  [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
+  [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
+  sudo apt-get install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-mozc fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
+  sudo apt-get --fix-missing update && sudo apt-get install -f -y
+  [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
+  unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
+  cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
+  
 # auto config
 
   ## enable firewall
@@ -121,7 +133,7 @@ sudo apt-get --fix-missing update && sudo apt-get install -f -y
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
 
-  # resilio
+  ## resilio
   if dpkg -l | grep -q "^ii.*resilio-sync" && [ ! -f /usr/share/keyrings/pgdg_resilio.gpg ]; then
       resilio_id=3F171DE2
       sudo apt-key export $resilio_id | sudo gpg --dearmour -o /usr/share/keyrings/pgdg_resilio.gpg
@@ -130,8 +142,19 @@ sudo apt-get --fix-missing update && sudo apt-get install -f -y
       unset resilio_id
   fi
 
+  ## fcitx
+  cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
+  cp -rf ./cfg/fcitx5/* ~/.config/fcitx5/
+  im-config -c -n fcitx5
+  if grep -q "# zh_CN.UTF-8 UTF-8" /etc/locale.gen ; then sudo sed -i 's+# zh_CN.UTF-8 UTF-8+zh_CN.UTF-8 UTF-8+g' /etc/locale.gen ; fi
+  sudo locale-gen
+  echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+
 # cleanup
 rm -rf ./deb/
+rm -rf ./cfg/fcitx5-themes/
+[ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
+[ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
 sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
