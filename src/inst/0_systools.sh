@@ -150,6 +150,9 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   sudo locale-gen
   echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
 
+  ## wechat
+  [ ! -f /etc/lsb-release ] && sudo touch /etc/lsb-release
+
 # cleanup
 rm -rf ./deb/
 rm -rf ./cfg/fcitx5-themes/
