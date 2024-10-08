@@ -13,11 +13,11 @@ cd ~/.setup_cache/
 
 # ask whether to install SnapGene/IGV/PyMOL
 sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install bioinformatics tools? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install biological tools? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing bioinformatics tools...${TEXT_RESET} \n" && sleep 1
+        echo -e "${TEXT_YELLOW}Installing biological tools...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update -qq && sudo apt-get upgrade -y
         if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
         [ ! -d ~/Developing/ ] && mkdir ~/Developing/ && kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
