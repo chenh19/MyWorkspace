@@ -1,58 +1,52 @@
-## Fresh Install and Configuration of Kubuntu for Work
+## Fresh Install and Configuration of Debian (KDE) for Work
 
-### [1/5] Create a bootable USB drive
+### [1/4] Create a bootable USB drive
 - Download [**balenaEtcher**](https://www.balena.io/etcher/)  
-- Download [**Kubuntu**](https://kubuntu.org/getkubuntu/)  
-- Flash a USB drive with the Kubuntu iso image:  
+- Download [**Debian (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/)  
+  - Flash a USB drive with the Debian (KDE) iso image:  
 ![](./images/0.png)
 
-### [2/5] Boot into the USB drive
+### [2/4] Boot into the USB drive
 - Press ```F12``` when the computer is booting up  
-- Select the corresponding UEFI boot option (e.g., USB HDD: SanDisk) and press ```Enter```  
+- Select the corresponding UEFI boot option (e.g., USB HDD: Kingston) and press ```Enter```  
 
-### [3/5] Install Kubuntu
+### [3/4] Install Debian (KDE)
 
-- Once it logs in to Kubuntu installer, select **"Install Kubuntu"**:  
+- Once it logs in to Debian live session, open **"Install Debian"**:  
 ![](./images/1.png)
 
-- **"Continue"** with default keyboard setting:  
+- Set language, then **"Next"**:  
 ![](./images/2.png)
 
-- **"Continue"** without connecting to internet:  
+- Set region and zone, then **"Next"**:  
 ![](./images/3.png)
 
-- Select **"Normal installation"** and check **"Install third-party software for graphics and Wi-Fi hardware and additional media formats"** option, then **"Continue"**:   
+- Set default keyboard, then **"Next"**:   
 ![](./images/4.png)
 
-- Select **"Guided - use entire disk"** and **"Install Now"** (if you plan to install multiple OS on a single physical drive, you might select **"Manual"**):  
+- Select **"Erase disk"**, then **"Next"** (if you plan to install multiple OS on a single physical drive, you might select **"Manual partitioning"**):  
 ![](./images/5.png)
 
-- **"Continue"** to confirm partition formatting:  
+- Set user account, then **"Next"**:  
 ![](./images/6.png)
 
-- Set **"Region"** and **"Time Zone"**, then **"Continue"**:  
+- **"Install"**:  
 ![](./images/7.png)
 
-- Set user account, then **"Continue"**:  
+- Installation might take some time:  
 ![](./images/8.png)
 
-- Installation might take some time:  
+- Once finished, it will prompt a restart:  
 ![](./images/9.png)
 
-- Once finished, it will prompt a restart:  
-![](./images/10.png)
-
-### [4/5] Reboot the system
-- Once it logs out, it will prompt **"Please remove the installation meduim, then press ENTER"**, simply unplug the USB drive and press ```Enter```  
-
-### [5/5] Configuration
+### [4/4] Configuration
 - Connect to internet
 - Copy the below command, paste in [**Konsole**](https://konsole.kde.org/) (terminal) and press ```Enter```:  
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
-- Input user password and press ```Enter``` to run:  
-![](./images/12.png)
+- Enter user password and press ```Enter``` to run:  
+![](./images/10.png)
 
 #### Note:
 - If the text is too small in the Konsole (Terminal) before scaling configuration, you may press ```Ctrl``` + ```+``` to **make the text larger** (this temporary setting will not be saved).
