@@ -33,7 +33,7 @@
 - **"Install"**:  
 ![](./images/7.png)
 
-- Installation might take some time:  
+- Installation might take some time (if it goes to sleep, the username/password for the live session is **"user/live"**):  
 ![](./images/8.png)
 
 - Once finished, it will prompt a restart:  
