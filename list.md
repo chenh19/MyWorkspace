@@ -1,7 +1,7 @@
 # Software List
 
 This tool will install and configure:
-- [Tencent WeChat](https://www.wechat.com/) ([WeChat-Universal-flatpak](https://github.com/web1n/wechat-universal-flatpak))
+- [Tencent WeChat](https://www.wechat.com/)
 - [Google Chrome](https://www.google.com/chrome/)
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
@@ -22,7 +22,7 @@ This tool will install and configure:
 - [Zoom](https://zoom.us/)
 - [TeamViewer](https://www.teamviewer.com/)
 - [Resilio Sync](https://www.resilio.com/)
+- [Balena Etcher](https://www.balena.io/etcher)
 - [Sysupdate](https://github.com/chenh19/sysupdate)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
-- [Balena Etcher](https://www.balena.io/etcher)
-- [Timekpt-nExT](https://mjasnik.gitlab.io/timekpr-next/)
+
