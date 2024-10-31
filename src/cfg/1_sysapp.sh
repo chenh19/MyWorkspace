@@ -112,6 +112,8 @@ kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '
 ### 2160x1350
 kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2160x1350 screen: Width' "900" #1.0
 kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Width' "900" #1.5
+### 2 screens
+kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2 screens: Width' "900"
 
 ## Dolphin window Height 600
 ### 3840x2400
@@ -139,6 +141,8 @@ kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '
 ### 2160x1350
 kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2160x1350 screen: Height' "600" #1.0
 kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Height' "600" #1.5
+### 2 screens
+kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2 screens: Height' "600"
 
 ######################################################################################
 
@@ -170,6 +174,8 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1152x720 scre
 ### 2160x1350
 kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2160x1350 screen: Width' "803" #1.0
 kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Width' "803" #1.5
+### 2 screens
+kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2 screens: Width' "803"
 
 ## Konsole window height 32 charc
 ### 3840x2400
@@ -197,6 +203,8 @@ kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1152x720 scre
 ### 2160x1350
 kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2160x1350 screen: Height' "625" #1.0
 kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Height' "625" #1.5
+### 2 screens
+kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2 screens: Height' "625"
 
 ######################################################################################
 
