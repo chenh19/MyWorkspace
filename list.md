@@ -1,7 +1,7 @@
 # Software List
 
 This tool will install and configure:
-- [Tencent WeChat](https://www.wechat.com/)
+- [Tencent WeChat](https://linux.weixin.qq.com/en)
 - [Google Chrome](https://www.google.com/chrome/)
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
