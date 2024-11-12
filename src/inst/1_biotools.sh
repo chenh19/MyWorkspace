@@ -11,7 +11,7 @@ TEXT_RESET='\e[0m'
 cd ~/.setup_cache/
 
 
-# ask whether to install SnapGene/IGV/PyMOL
+# ask whether to install biological tools
 sudo echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install biological tools? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
@@ -25,16 +25,6 @@ case "$choice" in
         ## install PyMOL/FastQC/Meld
         [ ! -d ~/igv ] && mkdir ~/igv/
         sudo apt-get install pymol fastqc clustalx meld -y
-
-        ## install Snapgene-viewer
-        [ ! -d ./snapgene/ ] && mkdir ./snapgene/
-        echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-        sleep 3 && sudo apt-get install ttf-mscorefonts-installer -y && sleep 3
-        wget -q "https://www.snapgene.com/local/targets/download.php?variant=viewer&os=linux_deb&majorRelease=latest&minorRelease=latest" -O snapgene.deb && echo '"SnapGene" deb package is downloaded.' && sleep 1
-        mv -f ./snapgene.deb ./snapgene/ && sudo dpkg -i ./snapgene/snapgene.deb
-        sudo apt-get -f -y install
-        sudo sed -i 's+Exec=/opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+Exec=XDG_CURRENT_DESKTOP=GNOME /opt/gslbiotech/snapgene-viewer/snapgene-viewer.sh %U+g' /usr/share/applications/snapgene-viewer.desktop
-        rm -rf ./snapgene/
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
