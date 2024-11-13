@@ -81,6 +81,9 @@ case "$choice" in
         sudo apt-get install -f -y
         [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
         kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
+
+        ### config quarto
+        quarto install tinytex
         
         # cleanup
         [ -f ./.Rhistory ] && rm -f ./.Rhistory
