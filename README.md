@@ -13,3 +13,7 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
+
+## To-do
+
+- [ ] Combine ```apt``` (Debian), ```dnf``` (Red Hat), ```pkcon``` (Kde Neon), ```pkg``` (freebsd)，```pacman``` (Arch), ```flatpak```， ```snap```, ```R```, ```python``` updates
