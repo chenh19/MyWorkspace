@@ -24,7 +24,7 @@ case "$choice" in
         
         ## install PyMOL/FastQC/Meld
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install pymol fastqc clustalx meld -y
+        sudo apt-get install pymol fastqc clustalx meld filezilla -y
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
