@@ -27,8 +27,8 @@ sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 # install apps (apt)
-  ## installed by Debian by defauly: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc elisa plymouth-themes -y
+  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa
+  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes -y
 
 # install apps (ppa)
 
