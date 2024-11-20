@@ -60,6 +60,8 @@ kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "c
 rm -f ~/Licenses/license.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
+[ ! -d ~/Developing/ ] && mkdir ~/Developing/
+kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 rm -rf ./MyWorkspace-main/
 
 ## hide files and folders
