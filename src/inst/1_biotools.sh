@@ -29,7 +29,7 @@ case "$choice" in
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
         sudo apt-get update -qq && sudo apt-get install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
-
+        
         ## install IGV
         [ -d /opt/igv/ ] && sudo rm -rf /opt/igv/
         wget -q "https://www.dropbox.com/scl/fi/7fs5h4p2i0tckkvqsa3od/igv.zip?rlkey=nb6aopovnu18ssmvri0c6alhz" -O igv.zip && sleep 1
@@ -83,6 +83,9 @@ case "$choice" in
 
         ### config quarto
         quarto install tinytex
+
+        ## install KDevelop
+        sudo apt-get install kdevelop -y
         
         # cleanup
         [ -f ./.Rhistory ] && rm -f ./.Rhistory
