@@ -11,7 +11,7 @@ This tool will install and configure:
 - [PyMOL](https://pymol.org/) ([open-source](https://github.com/schrodinger/pymol-open-source))
 - [Zotero](https://www.zotero.org/)
 - [RStudio](https://posit.co/products/open-source/rstudio/) ([desktop](https://posit.co/download/rstudio-desktop/))
-- [Jupyter Lab](https://jupyter.org/)([desktop](https://github.com/jupyterlab/jupyterlab-desktop))
+- [JupyterLab](https://jupyter.org/)([desktop](https://github.com/jupyterlab/jupyterlab-desktop))
 - [KDevelop](https://kdevelop.org/)
 - [FileZilla](https://filezilla-project.org/)
 - [Krita](https://krita.org/)
