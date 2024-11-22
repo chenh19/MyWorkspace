@@ -20,7 +20,7 @@ case "$choice" in
         echo -e "${TEXT_YELLOW}Installing biological tools...${TEXT_RESET} \n" && sleep 1
         sudo apt-get update -qq && sudo apt-get upgrade -y
         if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
-                
+        
         ## install PyMOL/FastQC/Meld
         [ ! -d ~/igv ] && mkdir ~/igv/
         sudo apt-get install pymol fastqc clustalx meld filezilla -y
@@ -49,21 +49,21 @@ case "$choice" in
             --remove-key 'Categories' --add-category 'Science;' \
         /usr/share/applications/igv.desktop
         rm -rf ./IGV_Linux_*/
-
+        
         ## install R
         ### install dependencies
         sudo apt-get install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev texlive-latex-extra -y
-
+        
         ### install R from cran
         gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
         gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
         echo -e "deb https://cloud.r-project.org/bin/linux/debian $(lsb_release -cs)-cran40/" | sudo tee /etc/apt/sources.list.d/r-project.list
         sleep 1 && sudo apt-get update -qq && sudo apt-get install r-base littler -y
         sudo R CMD javareconf
-
+        
         ### config posit package manager
         if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi
-
+        
         ### install R packages
         [ ! -d ./rscript/ ] && mkdir ./rscript/
         ## not installing: 'workflowr', 'blogdown', 'bookdown'
@@ -72,18 +72,19 @@ case "$choice" in
         echo "" && sudo Rscript ./rscript/packages.R
         echo "" && Rscript ./rscript/webdriver.R
         
-        ### install RStudio & Quarto
+        ### install RStudio, Jupyter Lab, Quarto
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
         wget -q "https://www.dropbox.com/scl/fi/3j0gkfvl21wsetqeyxf4d/rstudio.deb?rlkey=2lq1ezrjb39yrfl6hxq9qmn2v" -O rstudio.deb && echo '"RStudio" deb package is downloaded.' && sleep 1
         wget -q "https://www.dropbox.com/scl/fi/pq48otnj90g7erg0e3udp/quarto.deb?rlkey=tjfdpxhkpjkfl0yic2plswefp" -O quarto.deb && echo '"Quarto" deb package is downloaded.' && sleep 1
+        wget -q "https://www.dropbox.com/scl/fi/q8lb22rf1f7ng293svh1u/jupyterlab.deb?rlkey=ptjie4pbjbnzso6okju17yseb" -O jupyterlab.deb && echo '"Jupyter Lab" deb package is downloaded.' && sleep 1
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get install -f -y
         [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
         kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
-
-        ### config quarto
+        
+        ### config Quarto
         quarto install tinytex
-
+        
         ## install KDevelop
         sudo apt-get install kdevelop -y
         
@@ -92,13 +93,13 @@ case "$choice" in
         [ -d ./rscript/ ] && rm -rf ./rscript/
         [ -d ./devdeb/ ] && rm -rf ./devdeb/
         sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
-
+        
         # notify end
         echo -e " \n${TEXT_GREEN}Biological tools installed!${TEXT_RESET} \n" && sleep 5;;
-
+        
   * ) # notify cancellation
         echo -e " \n${TEXT_YELLOW}Biological tools not installed.${TEXT_RESET} \n" && sleep 5;;
-
+        
 esac
 
 
