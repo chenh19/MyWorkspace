@@ -353,11 +353,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/alt_rm/main/install.
 ## sysupdate
 bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
 
-######################################################################################
-
-# notify end
-echo -e "${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 3
-
 #-------------------------------------------------------------------------------------
 
 
