@@ -71,6 +71,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   wget -q "https://www.dropbox.com/scl/fi/7ani1m7fs5qng9jboc7sh/wechat.deb?rlkey=2ehcazh42i5iu28m1w7rlbmr4" -O wechat.deb && echo '"WeChat" deb package is downloaded.' && sleep 1
   
   ## install
+  echo ""
   mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
 
 # install input method
