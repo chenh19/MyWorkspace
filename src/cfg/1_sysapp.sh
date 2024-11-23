@@ -356,7 +356,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/insta
 ######################################################################################
 
 # notify end
-echo -e "${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
+echo -e "${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 3
 
 #-------------------------------------------------------------------------------------
 
