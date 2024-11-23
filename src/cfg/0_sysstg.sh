@@ -262,11 +262,6 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 ## ## System Update > Update software > Notification frequency > select "Monthly"
 kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000' #_to_be_updated
 
-######################################################################################
-
-# notify end
-echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 3
-
 #-------------------------------------------------------------------------------------
 
 # mark setup.sh
