@@ -203,13 +203,6 @@ kwriteconfig5 --file ~/.config/kdeglobals --group General --key BrowserApplicati
 
 ######################################################################################
 
-# Firewall
-
-## System Settings > Firewall > check "Enabled"
-sudo ufw enable
-
-######################################################################################
-
 # Input Devices (take effect after rebooting)
 cat /proc/bus/input/devices | grep "Touchpad" > ~/.config/touchpadxlibinputrc
 sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
@@ -256,11 +249,6 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 
 ## ## System Update > Update software > Notification frequency > select "Monthly"
 kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000' #_to_be_updated
-
-######################################################################################
-
-# git ssh
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
 
 #-------------------------------------------------------------------------------------
 
