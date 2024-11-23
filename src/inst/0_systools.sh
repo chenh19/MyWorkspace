@@ -161,7 +161,7 @@ rm -rf ./cfg/fcitx5-themes/
 sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
 
 # notify end
-echo -e " \n${TEXT_GREEN}System tools installed!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}System tools installed!${TEXT_RESET} \n" && sleep 3
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/0_systools.sh+#bash ./inst/0_systools.sh+g' ~/.setup_cache/setup.sh
