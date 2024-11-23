@@ -13,7 +13,7 @@ TEXT_RESET='\e[0m'
 
 # final cleanup
 sudo echo ""
-echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 3
 if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
 bash ~/.shortcut.sh >/dev/null 2>&1
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
