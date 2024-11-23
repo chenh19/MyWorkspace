@@ -356,10 +356,15 @@ if ! grep -q "alias poweroff='systemctl poweroff'" ~/.bashrc ; then echo -e "ali
 if ! grep -q "alias shutdown='systemctl poweroff'" ~/.bashrc ; then echo -e "alias shutdown='systemctl poweroff'" >> ~/.bashrc ; fi
 
 ## alt_rm
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/alt_rm/main/install.sh)"
 
 ## sysupdate
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)"
+
+######################################################################################
+
+# git ssh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)"
 
 #-------------------------------------------------------------------------------------
 
