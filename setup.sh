@@ -32,14 +32,6 @@ unset start0 end0
 ## install wget
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
-## ask for password
-unset password
-until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
-    echo ""
-    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$' \n' password
-done
-echo ""
-
 ## prepare all scripts
 [ ! -f main.zip ] && wget -q "https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip" && sleep 1
 unzip -o -q main.zip && sleep 1 && rm -f main.zip
@@ -53,22 +45,32 @@ sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
 cp -rf ./cfg/template/* ~/Templates/
-[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
-kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
-[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
-7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
-rm -f ~/Licenses/license.zip
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
 kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 rm -rf ./MyWorkspace-main/
 
-## hide files and folders
-echo -e "igv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects" > ~/.hidden
-echo -e "Enpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
-echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
-echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
+## prepare all licenses
+echo ""
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have access to the licenses? [y/n/c]'$TEXT_RESET)"$' \n' choice
+case "$choice" in
+  y|Y ) unset password
+		until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
+    		echo ""
+    		read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$' \n' password
+		done
+		echo ""
+		[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
+		kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
+		[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
+		7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
+		rm -f ~/Licenses/license.zip
+		echo -e " \n${TEXT_GREEN}Licenses unzipped successfully!${TEXT_RESET} \n" && sleep 1
+		;;
+  	* ) echo -e " \n${TEXT_YELLOW}Skipping license unzip step.${TEXT_RESET} \n" && sleep 1
+        ;;
+esac
 
 ## Power Management
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "300"
@@ -83,6 +85,12 @@ kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --gr
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DimDisplay --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key suspendThenHibernate "false"
+
+## hide files and folders
+echo -e "igv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects" > ~/.hidden
+echo -e "Enpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
+echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
+echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
 
 ## for resuming
 echo ""
