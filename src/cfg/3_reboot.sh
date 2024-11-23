@@ -12,8 +12,10 @@ TEXT_RESET='\e[0m'
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/3_reboot.sh+#bash ./cfg/3_reboot.sh+g' ~/.setup_cache/setup.sh
 
 # final cleanup
-echo -e " \n${TEXT_GREEN}The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n"
-echo -e "${TEXT_GREEN}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1;;
+sudo echo ""
+echo -e "${TEXT_GREEN}Finalizing...${TEXT_RESET} \n"
+echo -e "${TEXT_GREEN}The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n"
+echo -e "${TEXT_GREEN}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1
 if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
 bash ~/.shortcut.sh >/dev/null 2>&1
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
