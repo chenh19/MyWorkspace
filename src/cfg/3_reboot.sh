@@ -13,7 +13,7 @@ TEXT_RESET='\e[0m'
 
 # final cleanup
 sudo echo ""
-echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 3
+echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1
 if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
 bash ~/.shortcut.sh >/dev/null 2>&1
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
@@ -22,7 +22,7 @@ echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash
 #echo -e "## Personalization:\n- [ ] Right click on desktop > Configure Desktop and Wallpaper > change wallpaper\n- [ ] System Settings > Workspace Behavior > Screen Locking > Appearance > Configue > change lock screen\n- [ ] System Settings > Startup and Shutdown > Login Screen (SDDM) > select the first one and change background\n- [ ] System Settings > Users > change avatar\n- [ ] Replace ~/.face with your avatar" > ~/Desktop/Personalization.md
 
 # notify end
-echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n"
+echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n" && sleep 3
 
 # reboot
 if [ -f /var/run/reboot-required ]; then
