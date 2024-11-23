@@ -10,6 +10,6 @@
 
 - Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
