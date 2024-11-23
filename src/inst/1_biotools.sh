@@ -75,8 +75,8 @@ case "$choice" in
         ### install RStudio, Jupyter Lab, Quarto
         [ ! -d ./devdeb/ ] && mkdir ./devdeb/
         wget -q "https://www.dropbox.com/scl/fi/3j0gkfvl21wsetqeyxf4d/rstudio.deb?rlkey=2lq1ezrjb39yrfl6hxq9qmn2v" -O rstudio.deb && echo '"RStudio" deb package is downloaded.' && sleep 1
-        wget -q "https://www.dropbox.com/scl/fi/pq48otnj90g7erg0e3udp/quarto.deb?rlkey=tjfdpxhkpjkfl0yic2plswefp" -O quarto.deb && echo '"Quarto" deb package is downloaded.' && sleep 1
         wget -q "https://www.dropbox.com/scl/fi/q8lb22rf1f7ng293svh1u/jupyterlab.deb?rlkey=ptjie4pbjbnzso6okju17yseb" -O jupyterlab.deb && echo '"Jupyter Lab" deb package is downloaded.' && sleep 1
+        wget -q "https://www.dropbox.com/scl/fi/pq48otnj90g7erg0e3udp/quarto.deb?rlkey=tjfdpxhkpjkfl0yic2plswefp" -O quarto.deb && echo '"Quarto" deb package is downloaded.' && sleep 1
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get install -f -y
         [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
