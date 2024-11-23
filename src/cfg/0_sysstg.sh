@@ -265,7 +265,7 @@ kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key Requir
 ######################################################################################
 
 # notify end
-echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 5
+echo -e " \n${TEXT_GREEN}KDE plasma system settings configured!${TEXT_RESET} \n" && sleep 3
 
 #-------------------------------------------------------------------------------------
 
