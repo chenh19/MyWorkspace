@@ -76,7 +76,6 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 # install input method
 
   ## fcitx
-  echo -e " \n${TEXT_YELLOW}Installing input methods...${TEXT_RESET} \n" && sleep 1
   [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
   [ ! -d ~/.config/fcitx5/ ] && mkdir ~/.config/fcitx5/
   [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
