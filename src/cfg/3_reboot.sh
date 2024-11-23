@@ -13,9 +13,8 @@ TEXT_RESET='\e[0m'
 
 # final cleanup
 sudo echo ""
-echo -e "${TEXT_GREEN}Finalizing...${TEXT_RESET} \n"
-echo -e "${TEXT_GREEN}The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n"
-echo -e "${TEXT_GREEN}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET} \n"
 if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
 bash ~/.shortcut.sh >/dev/null 2>&1
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
