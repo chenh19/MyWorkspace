@@ -51,6 +51,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   systemctl --user start resilio-sync
 
   # install apps (downloaded)
+  echo ""
   [ ! -d ./deb/ ] && mkdir ./deb/
 
   ## official redirecting links
