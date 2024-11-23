@@ -20,6 +20,13 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
 ######################################################################################
 
+# Firewall
+
+## System Settings > Firewall > check "Enabled"
+sudo ufw enable
+
+######################################################################################
+
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
 # install textcommand
