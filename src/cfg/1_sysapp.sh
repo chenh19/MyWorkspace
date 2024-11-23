@@ -336,7 +336,7 @@ cp -rf ./cfg/vlc/ ~/.config/
 # windows fonts
 sudo echo ""
 echo -e "${TEXT_YELLOW}Downloading Windows Fonts...${TEXT_RESET} \n" && sleep 1
-[ ! -f windows-fonts.zip ] && wget -q "https://www.dropbox.com/scl/fi/4zqeirfr8rwjnocnm55yt/windows-fonts.zip?rlkey=bowygskln7z8fx483dy1izer9" -O windows-fonts.zip && echo 'Windows Fonts are downloaded.\n' && sleep 1
+[ ! -f windows-fonts.zip ] && wget -q "https://www.dropbox.com/scl/fi/4zqeirfr8rwjnocnm55yt/windows-fonts.zip?rlkey=bowygskln7z8fx483dy1izer9" -O windows-fonts.zip && echo 'Windows Fonts are downloaded.' && sleep 1
 unzip -o -q windows-fonts.zip && sleep 1 && rm -f windows-fonts.zip && sleep 1
 sudo cp -rf ./fonts/windows/ /usr/share/fonts/ && sleep 1
 rm -rf ./fonts/
@@ -344,7 +344,7 @@ rm -rf ./fonts/
 ######################################################################################
 
 # command alias
-
+sudo echo ""
 ## poweroff
 if ! grep -q "alias reboot='systemctl reboot'" ~/.bashrc ; then echo -e "alias reboot='systemctl reboot'" >> ~/.bashrc ; fi
 if ! grep -q "alias poweroff='systemctl poweroff'" ~/.bashrc ; then echo -e "alias poweroff='systemctl poweroff'" >> ~/.bashrc ; fi
@@ -359,7 +359,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/insta
 ######################################################################################
 
 # notify end
-echo -e " \n${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
+echo -e "${TEXT_GREEN}All apps and widgets configured!${TEXT_RESET} \n" && sleep 5
 
 #-------------------------------------------------------------------------------------
 
