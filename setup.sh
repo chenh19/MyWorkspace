@@ -50,6 +50,7 @@ kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folde
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
 kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 rm -rf ./MyWorkspace-main/
+echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 
 ## prepare all licenses
 echo ""
@@ -93,7 +94,6 @@ echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
 ## for resuming
 echo ""
 sed -i 's+Preparing setup scripts+Continue setting up+g' ~/.setup_cache/setup.sh
-echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 start0="$(grep -wn "###>>>sed-i-d-start-0" ~/.setup_cache/setup.sh | head -n 1 | cut -d: -f1)"
 end0="$(grep -wn "###>>>sed-i-d-end-0" ~/.setup_cache/setup.sh | tail -n 1 | cut -d: -f1)"
 sed -i "$start0,$end0"'d' ~/.setup_cache/setup.sh
