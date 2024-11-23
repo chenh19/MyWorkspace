@@ -52,7 +52,6 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
   # install apps (downloaded)
   [ ! -d ./deb/ ] && mkdir ./deb/
-  echo -e " \n${TEXT_YELLOW}Downloading deb packages...${TEXT_RESET} \n" && sleep 1
 
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
