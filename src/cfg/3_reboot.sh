@@ -26,7 +26,7 @@ echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] f
 
 # reboot
 if [ -f /var/run/reboot-required ]; then
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$' \n' choice
+  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$' \n \n' choice
   case "$choice" in
     y|Y ) sudo echo ""
           echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET} \n" && sleep 5
