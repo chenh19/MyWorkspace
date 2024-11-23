@@ -14,8 +14,6 @@ cd ~/.setup_cache/
 #-------------------------------------------------------------------------------------
 
 # notify start
-sudo echo ""
-echo -e "${TEXT_YELLOW}Configuring apps and widgets...${TEXT_RESET} \n" && sleep 1
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 ######################################################################################
