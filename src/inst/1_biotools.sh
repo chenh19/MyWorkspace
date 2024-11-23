@@ -66,8 +66,8 @@ case "$choice" in
         
         ### install R packages
         [ ! -d ./rscript/ ] && mkdir ./rscript/
-        ## not installing: 'workflowr', 'blogdown', 'bookdown'
-        echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'XML', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggplot2', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'svDialogs', 'Rcpp', 'quarto', 'palmerpenguins'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2','EnhancedVolcano','org.Hs.eg.db'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))" > ./rscript/packages.R
+        ## not installing: 'workflowr', 'blogdown', 'bookdown', 'palmerpenguins'
+        echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'XML', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggplot2', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'svDialogs', 'Rcpp', 'quarto'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2','EnhancedVolcano','org.Hs.eg.db'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))" > ./rscript/packages.R
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         echo "" && sudo Rscript ./rscript/packages.R
         echo "" && Rscript ./rscript/webdriver.R
