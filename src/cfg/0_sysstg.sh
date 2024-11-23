@@ -19,11 +19,6 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}" &
 
 ######################################################################################
 
-# git ssh
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
-
-######################################################################################
-
 # Appearance
 
 ## System Settings > Appearance > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
@@ -261,6 +256,11 @@ kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdat
 
 ## ## System Update > Update software > Notification frequency > select "Monthly"
 kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000' #_to_be_updated
+
+######################################################################################
+
+# git ssh
+bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/git_ssh/main/gitssh.sh)
 
 #-------------------------------------------------------------------------------------
 
