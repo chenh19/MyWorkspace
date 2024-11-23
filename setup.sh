@@ -53,6 +53,7 @@ rm -rf ./MyWorkspace-main/
 echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
 
 ## prepare all licenses
+echo ""
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have access to the licenses? [y/n/c]'$TEXT_RESET)"$' \n' choice
 case "$choice" in
   y|Y ) unset password
