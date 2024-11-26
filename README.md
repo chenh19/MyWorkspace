@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v2.5.0 (for X11)*  
+*Current version: v2.5.1 (for X11)*  
 
 ## Introduction
 
@@ -10,6 +10,6 @@
 
 - Simply connect to internet and execute the below command in [**Konsole**](https://konsole.kde.org/) (terminal): 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
