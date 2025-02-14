@@ -28,7 +28,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes -y
+  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
 
 # install apps (ppa)
 
@@ -152,6 +152,10 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
   ## wechat
   [ ! -f /etc/lsb-release ] && sudo touch /etc/lsb-release
+
+  ## solaar
+  [ ! -d ~/.config/solaar/ ] && mkdir ~/.config/solaar/
+  cp -f ./cfg/solaar/* ~/.config/solaar/
 
 # cleanup
 rm -rf ./deb/
