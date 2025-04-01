@@ -21,9 +21,9 @@ case "$choice" in
         sudo apt-get update -qq && sudo apt-get upgrade -y
         if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
         
-        ## install PyMOL/FastQC/Meld
+        ## install PyMOL/FastQC/Meld etc
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install pymol fastqc clustalx meld filezilla -y
+        sudo apt-get install pymol fastqc clustalx meld filezilla sqlitebrowser -y
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
