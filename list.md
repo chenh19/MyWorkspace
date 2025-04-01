@@ -14,6 +14,7 @@ This tool will install and configure:
 - [JupyterLab](https://jupyter.org/)([desktop](https://github.com/jupyterlab/jupyterlab-desktop))
 - [KDevelop](https://kdevelop.org/)
 - [FileZilla](https://filezilla-project.org/)
+- [DB Browser for SQLite](https://sqlitebrowser.org/)
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [Kdenlive](https://kdenlive.org/)
