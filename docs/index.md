@@ -43,7 +43,7 @@
 - Connect to internet
 - Copy the below command, paste in [**Konsole**](https://konsole.kde.org/) (terminal) and press ```Enter```:  
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - Enter user password and press ```Enter``` to run:  
 ![](./images/10.png)
