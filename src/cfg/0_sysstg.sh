@@ -212,6 +212,7 @@ echo -e "clickMethodAreas=false\nclickMethodClickfinger=true\nnaturalScroll=true
 
 # Mouse
 kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
+kwriteconfig5 --file ~/.config/kdeglobals --group QtQuickRendererSettings --key RenderLoop "basic"
 
 ######################################################################################
 
