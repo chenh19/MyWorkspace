@@ -211,7 +211,9 @@ sed -i '2,200d' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false\nclickMethodClickfinger=true\nnaturalScroll=true\npointerAcceleration=0.4\ntapToClick=true" >> ~/.config/touchpadxlibinputrc
 
 # Mouse
+## Double click interval
 kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
+## Plasma Renderer > Render Loop > Basic
 kwriteconfig5 --file ~/.config/kdeglobals --group QtQuickRendererSettings --key RenderLoop "basic"
 
 ######################################################################################
