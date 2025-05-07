@@ -135,9 +135,8 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
 
   ## apt modernize-sources
-  #sudo apt modernize-sources -y
-  
-  ## resilio
+  #sudo apt modernize-sources -y #(for apt 3.0 and above)
+  ### resilio (to be deprecated)
   if dpkg -l | grep -q "^ii.*resilio-sync" && [ ! -f /usr/share/keyrings/pgdg_resilio.gpg ]; then
       resilio_id=3F171DE2
       sudo apt-key export $resilio_id | sudo gpg --dearmour -o /usr/share/keyrings/pgdg_resilio.gpg
