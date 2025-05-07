@@ -44,7 +44,8 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
   [ -f /usr/share/keyrings/pgdg_resilio.gpg ] && sudo rm -f /usr/share/keyrings/pgdg_resilio.gpg
   echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
-  curl -L https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add
+  #curl -L https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add
+  wget -qO- https://linux-packages.resilio.com/resilio-sync/key.asc | sudo tee /etc/apt/trusted.gpg.d/resilio-sync.asc > /dev/null 2>&1
   sudo apt-get update -qq && sudo apt-get install resilio-sync -y
   sudo systemctl disable resilio-sync
   sudo kwriteconfig5 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy "default.target"
