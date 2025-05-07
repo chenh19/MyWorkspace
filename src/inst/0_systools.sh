@@ -22,9 +22,29 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 # install updates
 sudo apt-get update
 if dpkg -l | grep -q "^ii.*raspi-firmware"; then sudo dpkg --purge raspi-firmware; fi
-sudo apt-get remove gimp firefox-esr goldendict akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai -y  && sudo apt-get autoremove -y
-sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
-#sudo apt-get install -t $(lsb_release -cs)-backports linux-image-amd64 -y
+if dpkg -l | grep -q "^ii.*gimp"; then sudo apt-get remove gimp -y; fi
+if dpkg -l | grep -q "^ii.*firefox-esr"; then sudo apt-get remove firefox-esr -y; fi
+if dpkg -l | grep -q "^ii.*goldendict"; then sudo apt-get remove goldendict -y; fi
+if dpkg -l | grep -q "^ii.*akregator"; then sudo apt-get remove akregator -y; fi
+if dpkg -l | grep -q "^ii.*kmousetool"; then sudo apt-get remove kmousetool -y; fi
+if dpkg -l | grep -q "^ii.*kontrast"; then sudo apt-get remove kontrast -y; fi
+if dpkg -l | grep -q "^ii.*kmail"; then sudo apt-get remove kmail -y; fi
+if dpkg -l | grep -q "^ii.*kmailtransport-akonadi"; then sudo apt-get remove kmailtransport-akonadi -y; fi
+if dpkg -l | grep -q "^ii.*dragonplayer"; then sudo apt-get remove dragonplayer -y; fi
+if dpkg -l | grep -q "^ii.*juk"; then sudo apt-get remove juk -y; fi
+if dpkg -l | grep -q "^ii.*kasumi"; then sudo apt-get remove kasumi -y; fi
+if dpkg -l | grep -q "^ii.*konqueror"; then sudo apt-get remove konqueror -y; fi
+if dpkg -l | grep -q "^ii.*kamera"; then sudo apt-get remove kamera -y; fi
+if dpkg -l | grep -q "^ii.*kmouth"; then sudo apt-get remove kmouth -y; fi
+if dpkg -l | grep -q "^ii.*kmag"; then sudo apt-get remove kmag -y; fi
+if dpkg -l | grep -q "^ii.*kfind"; then sudo apt-get remove kfind -y; fi
+if dpkg -l | grep -q "^ii.*mlterm"; then sudo apt-get remove mlterm -y; fi
+if dpkg -l | grep -q "^ii.*mlterm-tools"; then sudo apt-get remove mlterm-tools -y; fi
+if dpkg -l | grep -q "^ii.*mlterm-common"; then sudo apt-get remove mlterm-common -y; fi
+if dpkg -l | grep -q "^ii.*ncurses-term"; then sudo apt-get remove ncurses-term -y; fi
+if dpkg -l | grep -q "^ii.*xiterm+thai"; then sudo apt-get remove xiterm+thai -y; fi
+sudo apt-get autoremove -y && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
+#sudo apt-get install -t $VERSION_CODENAME-backports linux-image-amd64 -y
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
 
 # install apps (apt)
