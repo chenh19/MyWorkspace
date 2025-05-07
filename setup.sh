@@ -52,7 +52,7 @@ kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folde
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
 kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
 rm -rf ./MyWorkspace-main/
-echo -e "${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n" && sleep 1
+echo -e " \n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n"
 
 ## prepare all licenses
 echo ""
