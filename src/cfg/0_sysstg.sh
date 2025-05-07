@@ -203,12 +203,15 @@ kwriteconfig5 --file ~/.config/kdeglobals --group General --key BrowserApplicati
 
 ######################################################################################
 
-# Input Devices (take effect after rebooting)
+# Touchpad (take effect after rebooting)
 cat /proc/bus/input/devices | grep "Touchpad" > ~/.config/touchpadxlibinputrc
 sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
 sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
 sed -i '2,200d' ~/.config/touchpadxlibinputrc
 echo -e "clickMethodAreas=false\nclickMethodClickfinger=true\nnaturalScroll=true\npointerAcceleration=0.4\ntapToClick=true" >> ~/.config/touchpadxlibinputrc
+
+# Mouse
+kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
 
 ######################################################################################
 
