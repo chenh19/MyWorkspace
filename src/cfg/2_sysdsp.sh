@@ -76,6 +76,10 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 239" | sudo tee /etc/sddm.conf.d/dpi.conf
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        # WeChat
+        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U' \
+        /usr/share/applications/wechat.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
@@ -97,6 +101,10 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 192" | sudo tee /etc/sddm.conf.d/dpi.conf
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        # WeChat
+        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 /usr/bin/wechat %U' \
+        /usr/share/applications/wechat.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
@@ -118,6 +126,10 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 144" | sudo tee /etc/sddm.conf.d/dpi.conf
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
+        # WeChat
+        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U' \
+        /usr/share/applications/wechat.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
@@ -139,6 +151,10 @@ case "$choice" in
         echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 96" | sudo tee /etc/sddm.conf.d/dpi.conf
         echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
+        # WeChat
+        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 /usr/bin/wechat %U' \
+        /usr/share/applications/wechat.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
