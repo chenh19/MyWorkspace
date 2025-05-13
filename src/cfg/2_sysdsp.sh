@@ -80,6 +80,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        # EuDic
+        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 XDG_CURRENT_DESKTOP=GNOME /usr/share/eusoft-eudic/AppRun %F' \
+        /usr/share/applications/eusoft-eudic.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
@@ -105,6 +109,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        # EuDic
+        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 XDG_CURRENT_DESKTOP=GNOME /usr/share/eusoft-eudic/AppRun %F' \
+        /usr/share/applications/eusoft-eudic.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
@@ -130,6 +138,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        # EuDic
+        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 XDG_CURRENT_DESKTOP=GNOME /usr/share/eusoft-eudic/AppRun %F' \
+        /usr/share/applications/eusoft-eudic.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
@@ -155,6 +167,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        # EuDic
+        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 XDG_CURRENT_DESKTOP=GNOME /usr/share/eusoft-eudic/AppRun %F' \
+        /usr/share/applications/eusoft-eudic.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
