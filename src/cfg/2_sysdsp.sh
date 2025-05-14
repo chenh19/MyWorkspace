@@ -88,6 +88,10 @@ case "$choice" in
         [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /usr/bin/zoom %U' \
         /usr/share/applications/Zoom.desktop
+        # VLC
+        [ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 QT_SCREEN_SCALE_FACTORS=2.5 /usr/bin/vlc --started-from-file %U' \
+        /usr/share/applications/vlc.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
@@ -121,6 +125,10 @@ case "$choice" in
         [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 /usr/bin/zoom %U' \
         /usr/share/applications/Zoom.desktop
+        # VLC
+        [ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 QT_SCREEN_SCALE_FACTORS=2.0 /usr/bin/vlc --started-from-file %U' \
+        /usr/share/applications/vlc.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
@@ -154,6 +162,10 @@ case "$choice" in
         [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /usr/bin/zoom %U' \
         /usr/share/applications/Zoom.desktop
+        # VLC
+        [ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 QT_SCREEN_SCALE_FACTORS=1.5 /usr/bin/vlc --started-from-file %U' \
+        /usr/share/applications/vlc.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
@@ -187,6 +199,10 @@ case "$choice" in
         [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 /usr/bin/zoom %U' \
         /usr/share/applications/Zoom.desktop
+        # VLC
+        [ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 QT_SCREEN_SCALE_FACTORS=1.0 /usr/bin/vlc --started-from-file %U' \
+        /usr/share/applications/vlc.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
