@@ -1972,7 +1972,7 @@
 #norm-buff-size=20
 
 # Maximal volume level (float)
-#norm-max-level=2.000000
+norm-max-level=10.000000
 
 [spatialaudio] # Ambisonics renderer and binauralizer
 
@@ -3929,7 +3929,7 @@ aout=any
 #role=video
 
 # Audio filters (string)
-#audio-filter=
+audio-filter=normvol
 
 # Audio visualizations (string)
 #audio-visual=none
