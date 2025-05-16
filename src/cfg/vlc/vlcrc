@@ -4061,7 +4061,7 @@ audio-filter=normvol
 #deinterlace-mode=auto
 
 # Video output module (string)
-vout=any
+vout=xcb_xv
 
 # Video filter module (string)
 #video-filter=
