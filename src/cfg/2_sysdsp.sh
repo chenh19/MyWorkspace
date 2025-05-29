@@ -96,6 +96,10 @@ case "$choice" in
         [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 4kvideodownloaderplus' \
         /usr/share/applications/4kvideodownloaderplus.desktop
+        # DavMail
+        [ -f /usr/share/applications/davmail.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env GDK_SCALE=2 /usr/bin/davmail' \
+        /usr/share/applications/davmail.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET} \n"
         ;;
@@ -137,6 +141,10 @@ case "$choice" in
         [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.0 4kvideodownloaderplus' \
         /usr/share/applications/4kvideodownloaderplus.desktop
+        # DavMail
+        [ -f /usr/share/applications/davmail.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env GDK_SCALE=2 /usr/bin/davmail' \
+        /usr/share/applications/davmail.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET} \n"
         ;;
@@ -178,6 +186,10 @@ case "$choice" in
         [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 4kvideodownloaderplus' \
         /usr/share/applications/4kvideodownloaderplus.desktop
+        # DavMail
+        [ -f /usr/share/applications/davmail.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env GDK_SCALE=1 /usr/bin/davmail' \
+        /usr/share/applications/davmail.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET} \n"
         ;;
@@ -219,6 +231,10 @@ case "$choice" in
         [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
           --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.0 4kvideodownloaderplus' \
         /usr/share/applications/4kvideodownloaderplus.desktop
+        # DavMail
+        [ -f /usr/share/applications/davmail.desktop ] && sudo desktop-file-edit \
+          --set-key 'Exec' --set-value 'env GDK_SCALE=2 /usr/bin/davmail' \
+        /usr/share/applications/davmail.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
         ;;
