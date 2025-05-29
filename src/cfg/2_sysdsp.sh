@@ -233,7 +233,7 @@ case "$choice" in
         /usr/share/applications/4kvideodownloaderplus.desktop
         # DavMail
         [ -f /usr/share/applications/davmail.desktop ] && sudo desktop-file-edit \
-          --set-key 'Exec' --set-value 'env GDK_SCALE=2 /usr/bin/davmail' \
+          --set-key 'Exec' --set-value 'env GDK_SCALE=1 /usr/bin/davmail' \
         /usr/share/applications/davmail.desktop
         # notify end
         echo -e " \n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET} \n"
