@@ -51,6 +51,8 @@ cp -rf ./cfg/template/* ~/Templates/
 kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
 kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
+[ ! -d ~/OneDrive/ ] && mkdir ~/OneDrive/
+kwriteconfig5 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon "folder-onedrive"
 rm -rf ./MyWorkspace-main/
 echo -e " \n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n"
 
