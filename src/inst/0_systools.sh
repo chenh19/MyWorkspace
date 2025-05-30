@@ -107,6 +107,8 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
     --set-key 'Type' --set-value 'Application' \
     --remove-key 'Categories' --add-category 'Utility;' \
   /usr/share/applications/onedrivegui.desktop
+  sleep 1
+  cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
 
 # auto config
 
