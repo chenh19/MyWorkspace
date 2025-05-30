@@ -191,7 +191,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
     --remove-key 'Categories' --add-category 'Network;' \
   /usr/share/applications/thunderbird.desktop
   sleep 1
-  cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
+  #cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
 
 # cleanup
 rm -rf ./deb/
