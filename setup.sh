@@ -43,7 +43,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 [ ! -d ./cfg/ ] && mkdir ./cfg/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
-sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
+sudo cp -rf ./cfg/icon/ ./cfg/grub/ ./cfg/Thunderbird/ /opt/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
 cp -rf ./cfg/template/* ~/Templates/
