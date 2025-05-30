@@ -214,7 +214,7 @@ echo -e "clickMethodAreas=false\nclickMethodClickfinger=true\nnaturalScroll=true
 ## Double click interval
 kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
 ## Plasma Renderer > Render Loop > Basic
-kwriteconfig5 --file ~/.config/kdeglobals --group QtQuickRendererSettings --key RenderLoop "basic"
+#kwriteconfig5 --file ~/.config/kdeglobals --group QtQuickRendererSettings --key RenderLoop "basic"
 
 ######################################################################################
 
