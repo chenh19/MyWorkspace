@@ -16,6 +16,7 @@ This tool will install and configure:
 - [KDevelop](https://kdevelop.org/)
 - [FileZilla](https://filezilla-project.org/)
 - [DB Browser for SQLite](https://sqlitebrowser.org/)
+- [Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)([client](https://github.com/jstaf/onedriver))
 - [Krita](https://krita.org/)
 - [Inkscape](https://inkscape.org/)
 - [Kdenlive](https://kdenlive.org/)
