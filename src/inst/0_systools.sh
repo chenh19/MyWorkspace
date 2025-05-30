@@ -109,6 +109,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   /usr/share/applications/onedrivegui.desktop
   sleep 1
   cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
+  cp -rf ./cfg/onedrive-gui/ ~/.config/
 
 # auto config
 
