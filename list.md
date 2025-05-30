@@ -3,6 +3,7 @@
 This tool will install and configure:
 - [Tencent WeChat](https://linux.weixin.qq.com/en)
 - [Google Chrome](https://www.google.com/chrome/)
+- [Thunderbird](https://www.thunderbird.net/)
 - [EuDic](https://www.eudic.net/)
 - [Enpass](https://www.enpass.io/)
 - [SimpleNote](https://simplenote.com/)
