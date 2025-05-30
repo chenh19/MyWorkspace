@@ -89,7 +89,25 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
   unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
   cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
-  
+
+# AppImages
+
+  ## OneDrive
+  wget -q "https://www.dropbox.com/scl/fi/l4s04hw0z0y9su54fzewe/onedrivegui.AppImage?rlkey=tmwf6y38kpovdkl5wvy7pmczk" -O onedrivegui.AppImage && echo '"OneDriveGUI" AppImage package is downloaded.' && sleep 1
+  [ ! -d /opt/onedrivegui/ ] && sudo mkdir /opt/onedrivegui/
+  sudo mv -f ./onedrivegui.AppImage /opt/onedrivegui/ && sleep 1
+  sudo chmod +x /opt/onedrivegui/onedrivegui.AppImage
+  [ ! -f /usr/share/applications/onedrivegui.desktop ] && sudo touch /usr/share/applications/onedrivegui.desktop
+  sudo desktop-file-edit \
+    --set-name 'OneDrive' --set-key 'Name[en_US]' --set-value 'OneDrive' --set-key 'Name[zh_CN]' --set-value 'OneDrive' \
+    --set-generic-name 'Cloud Storage' --set-key 'GenericName[en_US]' --set-value 'Cloud Storage' --set-key 'GenericName[zh_CN]' --set-value '云储存空间' \
+    --set-comment 'OneDrive Client' --set-key 'Comment[en_US]' --set-value 'OneDrive Client' --set-key 'Comment[zh_CN]' --set-value 'OneDrive 客户端' \
+    --set-key 'Exec' --set-value '/opt/onedrivegui/onedrivegui.AppImage' \
+    --set-icon '/opt/icon/onedrive.png' \
+    --set-key 'Type' --set-value 'Application' \
+    --remove-key 'Categories' --add-category 'Utility;' \
+  /usr/share/applications/onedrivegui.desktop
+
 # auto config
 
   ## enable firewall
