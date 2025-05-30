@@ -29,7 +29,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedriver thunderbird kdocker krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
+  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedrive thunderbird kdocker krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
 
 # install apps (ppa)
 
