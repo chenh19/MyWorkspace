@@ -29,7 +29,7 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
+  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba thunderbird krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
 
 # install apps (ppa)
 
@@ -159,6 +159,16 @@ if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-ge
   ## solaar
   [ ! -d ~/.config/solaar/ ] && mkdir ~/.config/solaar/
   cp -f ./cfg/solaar/* ~/.config/solaar/
+
+  ## thunderbird
+  sudo chmod +x /opt/Thunderbird/thunderbird.sh
+  [ -f /usr/share/applications/thunderbird.desktop ] && sudo desktop-file-edit \
+    --set-name 'Thunderbird' --set-key 'Name[en_US]' --set-value 'Thunderbird' --set-key 'Name[zh_CN]' --set-value '邮箱' \
+    --set-generic-name 'Email Client' --set-key 'GenericName[en_US]' --set-value 'Email Client' --set-key 'GenericName[zh_CN]' --set-value '邮件客户端' \
+    --set-comment 'Read/Write Mail/News with Thunderbird' --set-key 'Comment[en_US]' --set-value 'Read/Write Mail/News with Thunderbird' --set-key 'Comment[zh_CN]' --set-value '阅读邮件或新闻' \
+    --set-key 'Exec' --set-value 'bash /opt/Thunderbird/thunderbird.sh' \
+    --remove-key 'Categories' --add-category 'Network;' \
+  /usr/share/applications/thunderbird.desktop
 
 # cleanup
 rm -rf ./deb/
