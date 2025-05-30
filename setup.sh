@@ -73,17 +73,21 @@ case "$choice" in
 esac
 
 ## Power Management
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "300"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "900"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DimDisplay --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key suspendType --delete
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group DPMSControl --key idleTime "600"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group DimDisplay --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group SuspendSession --key idleTime "900000"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group SuspendSession --key suspendThenHibernate "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DPMSControl --key idleTime "300"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group BrightnessControl --key value --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DimDisplay --key idleTime --delete
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
+kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key idleTime "600000"
 kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key suspendThenHibernate "false"
 
 ## hide files and folders
