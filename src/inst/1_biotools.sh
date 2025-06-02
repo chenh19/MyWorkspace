@@ -23,7 +23,7 @@ case "$choice" in
         
         ## install PyMOL/FastQC/Meld etc
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install pymol fastqc fastp seqtk bwa minimap2 samtools clustalx meld filezilla sqlitebrowser -y
+        sudo apt-get install pymol fastqc fastp seqtk cutadapt bwa minimap2 samtools clustalx meld filezilla sqlitebrowser -y
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
