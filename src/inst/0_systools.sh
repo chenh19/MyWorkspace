@@ -26,6 +26,8 @@ sudo apt-get remove gimp firefox-esr goldendict akregator kmousetool kontrast km
 sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
 #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
+if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install nvidia-detect nvidia-driver firmware-misc-nonfree -y; fi
+#note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa
