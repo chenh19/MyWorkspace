@@ -110,8 +110,8 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
     --remove-key 'Categories' --add-category 'Utility;' \
   /usr/share/applications/onedrivegui.desktop
   sleep 1
-  cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
   cp -rf ./cfg/onedrive-gui/ ~/.config/
+  #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
 
 # auto config
 
