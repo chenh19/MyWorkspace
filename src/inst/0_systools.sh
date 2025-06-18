@@ -53,10 +53,19 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
   systemctl --user enable resilio-sync
   systemctl --user start resilio-sync
 
+  ## wine
+  source /etc/os-release
+  sudo dpkg --add-architecture i386
+  sudo mkdir -pm755 /etc/apt/keyrings
+  [ -f /etc/apt/keyrings/winehq-archive.key ] && sudo rm -f /etc/apt/keyrings/winehq-archive.key
+  wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --yes --dearmor --output /etc/apt/keyrings/winehq-archive.key -
+  sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/$VERSION_CODENAME/winehq-$VERSION_CODENAME.sources
+  sudo apt-get update -qq && sudo apt-get install --install-recommends winehq-stable -y
+  
   ## virtualbox
   source /etc/os-release
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-  wget -qO- "https://www.virtualbox.org/download/oracle_vbox_2016.asc" | sudo gpg --dearmor -o /usr/share/keyrings/oracle-virtualbox-2016.gpg >/dev/null 2>&1
+  wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
   sudo apt-get update -qq && sudo apt-get install virtualbox-7.1 -y
 
 # install apps (downloaded)
