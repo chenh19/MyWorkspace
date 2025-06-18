@@ -53,9 +53,15 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
   systemctl --user enable resilio-sync
   systemctl --user start resilio-sync
 
-  # install apps (downloaded)
-  echo ""
-  [ ! -d ./deb/ ] && mkdir ./deb/
+  ## virtualbox
+  source /etc/os-release
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+  wget -qO- "https://www.virtualbox.org/download/oracle_vbox_2016.asc" | sudo gpg --dearmor -o /usr/share/keyrings/oracle-virtualbox-2016.gpg >/dev/null 2>&1
+  sudo apt-get update -qq && sudo apt-get install virtualbox-7.1 -y
+
+# install apps (downloaded)
+echo ""
+[ ! -d ./deb/ ] && mkdir ./deb/
 
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
