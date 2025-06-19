@@ -219,7 +219,7 @@ case "$choice" in
           bioconda::bioconductor-org.hs.eg.db
         
         Rscript -e 'wdman::chrome(version = "latest")'
-        Rscript -e 'tinytex::install_tinytex()'
+        Rscript -e 'tinytex::install_tinytex(force = TRUE)'
         
         ### create alias for work
         if ! grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then echo -e "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.bashrc ; fi
