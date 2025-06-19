@@ -201,7 +201,7 @@ case "$choice" in
         ### activate environment work
         source ~/miniconda3/etc/profile.d/conda.sh
         conda activate work
-        sudo R CMD javareconf
+        R CMD javareconf
         Rscript -e 'wdman::chrome(version = "latest")'
         Rscript -e 'tinytex::install_tinytex(force = TRUE)'
         
