@@ -23,7 +23,7 @@ case "$choice" in
         
         ## install PyMOL/FastQC/Meld etc
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser -y
+        sudo apt-get install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser kdevelop -y
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
@@ -49,6 +49,8 @@ case "$choice" in
             --remove-key 'Categories' --add-category 'Science;' \
         /usr/share/applications/igv.desktop
         rm -rf ./IGV_Linux_*/
+
+        #########################################################################################
         
         ## install R
         ### install dependencies
@@ -89,8 +91,70 @@ case "$choice" in
         ### config Quarto
         quarto install tinytex
         
-        ## install KDevelop
-        sudo apt-get install kdevelop -y
+        #########################################################################################
+        
+        ## install miniconda
+        mkdir -p ~/miniconda3
+        curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh
+        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        rm ~/miniconda3/miniconda.sh
+        
+        ### initialize conda
+        source ~/miniconda3/bin/activate
+        conda init --all
+        
+        ### disable auto-activation of base environment
+        conda config --set auto_activate_base false
+        
+        ### disable conda initialization when opening a shell
+        if [[ -f ~/.bashrc ]]; then
+          start0=$(( $(grep -wn "# >>> conda initialize >>>" ~/.bashrc | head -n 1 | cut -d: -f1) - 1 ))
+          end0=$(( $(grep -wn "# <<< conda initialize <<<" ~/.bashrc | tail -n 1 | cut -d: -f1) + 1 ))
+          if [[ -n "$start0" && -n "$end0" ]]; then sed -i "${start0},${end0}d" ~/.bashrc; fi
+          if ! grep -q "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" ~/.bashrc ; then echo -e "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" >> ~/.bashrc ; fi
+          unset start0 end0
+        fi
+        if [[ -f ~/.zshrc ]]; then
+          start0=$(( $(grep -wn "# >>> conda initialize >>>" ~/.zshrc | head -n 1 | cut -d: -f1) - 1 ))
+          end0=$(( $(grep -wn "# <<< conda initialize <<<" ~/.zshrc | tail -n 1 | cut -d: -f1) + 1 ))
+          if [[ -n "$start0" && -n "$end0" ]]; then sed -i "${start0},${end0}d" ~/.zshrc; fi
+          if ! grep -q "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" ~/.zshrc ; then echo -e "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" >> ~/.zshrc ; fi
+          unset start0 end0
+        fi
+        
+        ### refresh shell config
+        source ~/.bashrc
+        
+        ### set up channels
+        conda config --add channels bioconda
+        conda config --add channels conda-forge
+        conda config --set channel_priority strict
+        
+        ### create a new environment for work
+        conda create -y -n work \
+          conda-forge::r-base \
+          conda-forge::r-littler \
+          conda-forge::r-tidyverse \
+          conda-forge::r-expss \
+          conda-forge::r-filesstrings \
+          conda-forge::r-foreach \
+          conda-forge::r-doparallel \
+          conda-forge::parallel \
+          bioconda::bwa \
+          bioconda::fastqc \
+          bioconda::fastp \
+          bioconda::samtools \
+          bioconda::bamtools
+        
+        ### update conda
+        conda update --all -y
+        
+        ### activate environment work
+        source ~/miniconda3/etc/profile.d/conda.sh
+        conda activate work
+        conda deactivate
+        
+        #########################################################################################
         
         # cleanup
         [ -f ./.Rhistory ] && rm -f ./.Rhistory
