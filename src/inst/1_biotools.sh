@@ -93,7 +93,8 @@ case "$choice" in
         
         #########################################################################################
 
-        ## uninstall previous conda if any
+        ## install conda
+        ### uninstall previous conda if any
         [ -d ~/.conda/ ] && rm -rf ~/.conda/
         [ -d ~/.cache/conda/ ] && rm -rf ~/.cache/conda/
         [ -d ~/.cache/conda-anaconda-tos/ ] && rm -rf ~/.cache/conda-anaconda-tos/
@@ -104,7 +105,7 @@ case "$choice" in
         if grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then sed -i '/alias conda-work=/d' ~/.bashrc ; fi
         if grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then sed -i '/alias conda-work=/d' ~/.zshrc ; fi
         
-        ## install conda
+        ### install miniconda3
         mkdir -p ~/miniconda3
         curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh
         bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
@@ -143,27 +144,11 @@ case "$choice" in
         
         ### create a new environment for work
         conda create -y -n work \
-          #conda-forge::cmake \
-          #conda-forge::pandoc \
-          #conda-forge::openssl \
-          #conda-forge::fontconfig \
-          #conda-forge::libfreetype6 \
-          #conda-forge::fribidi \
-          #conda-forge::harfbuzz \
-          #conda-forge::libjpeg-turbo \
-          #conda-forge::libtiff \
-          #conda-forge::libgit2 \
-          #conda-forge::glpk \
-          #conda-forge::nlopt \
-          #conda-forge::geos \
-          #conda-forge::libv8 \
-          #conda-forge::cairo \
           conda-forge::r-base \
           conda-forge::r-littler \
           conda-forge::r-devtools \
           conda-forge::r-biocmanager \
           conda-forge::r-tidyverse \
-          conda-forge::r-tinytex \
           conda-forge::r-readxl \
           conda-forge::r-writexl \
           conda-forge::r-expss \
@@ -175,13 +160,7 @@ case "$choice" in
           conda-forge::r-doparallel \
           conda-forge::r-rjava \
           conda-forge::r-rselenium \
-          conda-forge::r-xml \
-          conda-forge::r-xml2 \
-          conda-forge::r-base64enc \
-          conda-forge::r-htmltools \
           conda-forge::r-markdown \
-          conda-forge::r-rmarkdown \
-          conda-forge::r-ggplot2 \
           conda-forge::r-ggthemes \
           conda-forge::r-ggpubr \
           conda-forge::r-ggseqlogo \
@@ -191,7 +170,6 @@ case "$choice" in
           conda-forge::r-umap \
           conda-forge::r-seurat \
           conda-forge::r-svdialogs \
-          conda-forge::r-rcpp \
           conda-forge::r-workflowr \
           conda-forge::r-quarto \
           conda-forge::r-gt \
@@ -200,7 +178,9 @@ case "$choice" in
           conda-forge::r-flextable \
           conda-forge::parallel \
           conda-forge::quarto \
-          #bioconda::java-jdk \
+          conda-forge::cmake \
+          conda-forge::nlopt \
+          conda-forge::geos \
           bioconda::bwa \
           bioconda::bowtie2 \
           bioconda::minimap2 \
@@ -217,7 +197,11 @@ case "$choice" in
           bioconda::bioconductor-deseq2 \
           bioconda::bioconductor-enhancedvolcano \
           bioconda::bioconductor-org.hs.eg.db
-        
+
+        ### activate environment work
+        source ~/miniconda3/etc/profile.d/conda.sh
+        conda activate work
+        sudo R CMD javareconf
         Rscript -e 'wdman::chrome(version = "latest")'
         Rscript -e 'tinytex::install_tinytex(force = TRUE)'
         
@@ -228,9 +212,8 @@ case "$choice" in
         ### update conda
         conda update --all -y
         
-        ### activate environment work
-        source ~/miniconda3/etc/profile.d/conda.sh
-        conda activate work
+        ### deactivate environment work
+        conda deactivate
         conda deactivate
         
         #########################################################################################
