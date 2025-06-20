@@ -102,8 +102,8 @@ case "$choice" in
         [ -f ~/.condarc ] && rm -f ~/.condarc
         if grep -q "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" ~/.bashrc ; then sed -i '/alias conda-init=/d' ~/.bashrc ; fi
         if grep -q "alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'" ~/.zshrc ; then sed -i '/alias conda-init=/d' ~/.zshrc ; fi
-        if grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then sed -i '/alias conda-work=/d' ~/.bashrc ; fi
-        if grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then sed -i '/alias conda-work=/d' ~/.zshrc ; fi
+        if grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then sed -i '/alias work=/d' ~/.bashrc ; fi
+        if grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then sed -i '/alias work=/d' ~/.zshrc ; fi
         
         ### install miniconda3
         mkdir -p ~/miniconda3
@@ -206,8 +206,8 @@ case "$choice" in
         Rscript -e 'tinytex::install_tinytex(force = TRUE)'
         
         ### create alias for work
-        if ! grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then echo -e "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.bashrc ; fi
-        if ! grep -q "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then echo -e "alias conda-work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.zshrc ; fi
+        if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.bashrc ; fi
+        if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.zshrc ; fi
         
         ### update conda
         conda update --all -y
