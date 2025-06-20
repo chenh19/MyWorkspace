@@ -109,6 +109,7 @@ case "$choice" in
         mkdir -p ~/miniconda3
         curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh
         bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        [ ! -f ~/.condarc ] && touch ~/.condarc
         rm ~/miniconda3/miniconda.sh
         
         ### initialize conda
