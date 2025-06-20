@@ -209,11 +209,10 @@ case "$choice" in
         if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.bashrc ; fi
         if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.zshrc ; fi
         
-        ### update conda
+        ### update conda and deactivate
         conda update --all -y
-        
-        ### deactivate environment work
         conda deactivate
+        conda update --all -y
         conda deactivate
         
         #########################################################################################
