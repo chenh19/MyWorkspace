@@ -116,7 +116,7 @@ case "$choice" in
         conda init --all
         
         ### disable auto-activation of base environment
-        conda config --set auto_activate_base false
+        if ! grep -q "auto_activate_base: false" ~/.condarc ; then conda config --set auto_activate_base false ; fi
         
         ### disable conda initialization when opening a shell
         if [[ -f ~/.bashrc ]]; then
