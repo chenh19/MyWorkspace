@@ -137,10 +137,11 @@ case "$choice" in
         ### refresh shell config
         source ~/.bashrc
         
-        ### set up channels
+        ### set up channels and update base
         conda config --add channels bioconda
         conda config --add channels conda-forge
         conda config --set channel_priority strict
+        conda update --all -y
         
         ### create a new environment for work
         conda create -y -n work \
@@ -198,21 +199,20 @@ case "$choice" in
           bioconda::bioconductor-enhancedvolcano \
           bioconda::bioconductor-org.hs.eg.db
 
-        ### activate environment work
+        ### activate and update work
         source ~/miniconda3/etc/profile.d/conda.sh
         conda activate work
         R CMD javareconf
         Rscript -e 'wdman::chrome(version = "latest")'
         Rscript -e 'tinytex::install_tinytex(force = TRUE)'
+        conda update --all -y
         
         ### create alias for work
         if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.bashrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.bashrc ; fi
         if ! grep -q "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" ~/.zshrc ; then echo -e "alias work='source ~/miniconda3/etc/profile.d/conda.sh && conda activate work'" >> ~/.zshrc ; fi
         
-        ### update conda and deactivate
-        conda update --all -y
+        ### deactivate ampile and base
         conda deactivate
-        conda update --all -y
         conda deactivate
         
         #########################################################################################
