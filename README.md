@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v2.7.9 (X11 only; Wayland after Debian 13)*  
+*Current version: v2.8.0 (X11 only; Wayland after Debian 13)*  
 
 ## Introduction
 
