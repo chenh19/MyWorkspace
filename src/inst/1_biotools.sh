@@ -83,8 +83,6 @@ case "$choice" in
         echo ""
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get install -f -y
-        
-        ### config Quarto
         quarto install tinytex
                 
         # cleanup
