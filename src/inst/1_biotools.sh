@@ -69,16 +69,15 @@ case "$choice" in
         fi
 
         ### install packages for base
-        conda install -y -n base -c conda-forge python=3.12 parallel cmake nlopt geos
-        conda install -y -n base -c conda-forge r-base r-littler r-devtools r-biocmanager r-rjava r-tidyverse
-        conda install -y -n base -c conda-forge r-readxl r-writexl r-expss r-vcfr r-filesstrings r-r.utils
-        conda install -y -n base -c conda-forge r-car r-foreach r-doparallel r-rselenium r-markdown r-ggthemes
-        conda install -y -n base -c conda-forge r-ggpubr r-ggseqlogo r-cowplot r-pheatmap r-rtsne r-umap r-seurat 
-        conda install -y -n base -c conda-forge r-svdialogs r-workflowr r-quarto r-gt r-reactable r-kableextra r-flextable
-        conda install -y -n base -c conda-forge python=3.13
-        conda install -y -n base -c bioconda bioconductor-genomicranges bioconductor-qvalue bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-org.hs.eg.db
-        conda install -y -n base -c bioconda bwa bowtie2 minimap2 fastqc fastp seqtk samtools bamtools bcftools bedtools
-
+        conda install -y -n base conda-forge::python conda-forge::pip conda-forge::cmake conda-forge::parallel conda-forge::nlopt conda-forge::geos
+        conda install -y -n base conda-forge::r-base conda-forge::r-littler conda-forge::r-devtools conda-forge::r-biocmanager conda-forge::r-rjava conda-forge::r-tidyverse
+        conda install -y -n base conda-forge::r-readxl conda-forge::r-writexl conda-forge::r-expss conda-forge::r-vcfr conda-forge::r-filesstrings conda-forge::r-r.utils
+        conda install -y -n base conda-forge::r-car conda-forge::r-foreach conda-forge::r-doparallel conda-forge::r-rselenium conda-forge::r-markdown conda-forge::r-ggthemes
+        conda install -y -n base conda-forge::r-ggpubr conda-forge::r-ggseqlogo conda-forge::r-cowplot conda-forge::r-pheatmap conda-forge::r-rtsne conda-forge::r-umap conda-forge::r-seurat
+        conda install -y -n base conda-forge::r-svdialogs conda-forge::r-workflowr conda-forge::r-quarto conda-forge::r-gt conda-forge::r-reactable conda-forge::r-kableextra conda-forge::r-flextable
+        conda install -y -n base bioconda::bioconductor-genomicranges bioconda::bioconductor-qvalue bioconda::bioconductor-deseq2 bioconda::bioconductor-enhancedvolcano bioconda::bioconductor-org.hs.eg.db
+        conda install -y -n base bioconda::bwa bioconda::bowtie2 bioconda::minimap2 bioconda::fastqc bioconda::fastp bioconda::seqtk bioconda::samtools bioconda::bamtools bioconda::bcftools bioconda::bedtools
+        
         ### update base
         R CMD javareconf
         Rscript -e 'wdman::chrome(version = "latest")'
