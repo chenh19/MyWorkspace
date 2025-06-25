@@ -73,9 +73,9 @@ case "$choice" in
         conda install -y -n base -c conda-forge r-base r-littler r-devtools r-biocmanager r-rjava r-tidyverse
         conda install -y -n base -c conda-forge r-readxl r-writexl r-expss r-vcfr r-filesstrings r-r.utils
         conda install -y -n base -c conda-forge r-car r-foreach r-doparallel r-rselenium r-markdown r-ggthemes
-        conda install -y -n base -c conda-forge r-ggpubr r-ggseqlogo r-cowplot r-pheatmap r-rtsne r-umap
-        conda install -y -n base -c conda-forge r-seurat r-svdialogs r-workflowr r-quarto r-gt r-reactable
-        conda install -y -n base -c conda-forge r-kableextra r-flextable
+        conda install -y -n base -c conda-forge r-ggpubr r-ggseqlogo r-cowplot r-pheatmap r-rtsne r-umap r-seurat 
+        conda install -y -n base -c conda-forge r-svdialogs r-workflowr r-quarto r-gt r-reactable r-kableextra r-flextable
+        conda install -y -n base -c conda-forge python=3.13
         conda install -y -n base -c bioconda bioconductor-genomicranges bioconductor-qvalue bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-org.hs.eg.db
         conda install -y -n base -c bioconda bwa bowtie2 minimap2 fastqc fastp seqtk samtools bamtools bcftools bedtools
 
