@@ -83,8 +83,6 @@ case "$choice" in
         echo ""
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
         sudo apt-get install -f -y
-        [ ! -d ~/.config/RStudio/ ] && mkdir ~/.config/RStudio/
-        kwriteconfig5 --file ~/.config/RStudio/desktop.ini --group General --key view.zoomLevel "1.1"
         
         ### config Quarto
         quarto install tinytex
