@@ -53,7 +53,7 @@ case "$choice" in
         ## install R
         ### install dependencies
         ## not installing: texlive-latex-extra
-        sudo apt-get install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev -y
+        sudo apt-get install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev libmagick++-dev -y
         
         ### install R from cran
         gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
@@ -68,7 +68,7 @@ case "$choice" in
         ### install R packages
         [ ! -d ./rscript/ ] && mkdir ./rscript/
         ## not installing: 'blogdown', 'bookdown'
-        echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'tinytex', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'XML', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggplot2', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'svDialogs', 'Rcpp', 'workflowr', 'quarto', 'gt', 'reactable', 'kableExtra', 'flextable'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2','EnhancedVolcano','org.Hs.eg.db'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))" > ./rscript/packages.R
+        echo -e "install.packages(c('devtools', 'BiocManager', 'tidyverse', 'tinytex', 'readxl', 'writexl', 'expss', 'vcfR', 'filesstrings', 'R.utils', 'car', 'foreach', 'doParallel', 'rJava', 'RSelenium', 'XML', 'base64enc', 'htmltools', 'markdown', 'rmarkdown', 'ggplot2', 'ggthemes', 'ggpubr', 'ggseqlogo', 'cowplot', 'pheatmap', 'Rtsne', 'umap', 'Seurat', 'svDialogs', 'Rcpp', 'workflowr', 'quarto', 'gt', 'reactable', 'kableExtra', 'flextable', 'magick'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))\nBiocManager::install(c('GenomicRanges','qvalue','DESeq2','EnhancedVolcano','org.Hs.eg.db'), force = TRUE, Ncpus = system('nproc --all', intern = TRUE))" > ./rscript/packages.R
         echo -e "wdman::chrome(version = 'latest')" > ./rscript/webdriver.R
         echo -e "tinytex::install_tinytex()" > ./rscript/tinytex.R
         echo "" && sudo Rscript ./rscript/packages.R
