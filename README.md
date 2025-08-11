@@ -17,5 +17,5 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main
 - Note, for Calamares:
 
 ```
-if ! grep -q "allowWeakPasswords: true" ~/.bashrc ; then echo -e "allowWeakPasswords: true" | sudo tee -a /etc/calamares/modules/users.conf ; fi
+if ! grep -q "allowWeakPasswords: true" /etc/calamares/modules/users.conf ; then echo -e "\nallowWeakPasswords: true" | sudo tee -a /etc/calamares/modules/users.conf ; fi
 ```
