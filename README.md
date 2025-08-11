@@ -13,3 +13,9 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
+
+- Note, for Calamares:
+
+```
+if ! grep -q "allowWeakPasswords: true" ~/.bashrc ; then echo -e "\nallowWeakPasswords: true\n" >> /etc/calamares/modules/users.conf ; fi
+```
