@@ -13,9 +13,3 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
-
-Note:
-
-```
-sudo sed -i '18,$d' /etc/calamares/modules/users.conf && exit
-```
