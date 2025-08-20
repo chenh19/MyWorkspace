@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script downloads all scripts for setup
 
 # set terminal font color
@@ -12,20 +12,20 @@ sudo echo ""
 cd ~/.setup_cache/
 
 # font size
-read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$' \n'
+read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$'\n'
 
 # check internet connection
 echo ""
-echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET} \n"
+echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET}\n"
 until curl -s --head  --request GET www.google.com | grep "200 OK" > /dev/null ; do
-    read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! Please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$' \n'
+    read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! Please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$'\n'
     echo ""
 done
-echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET}\n" && sleep 1
 
 # setup
 echo ""
-echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET}\n" && sleep 1
 ###>>>sed-i-d-start-0
 ## initialize
 unset start0 end0
@@ -56,24 +56,24 @@ kwriteconfig5 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon "f
 [ ! -d ~/Backup/ ] && mkdir ~/Backup/
 kwriteconfig5 --file ~/Backup/.directory --group "Desktop Entry" --key Icon "folder-tar"
 rm -rf ./MyWorkspace-main/
-echo -e " \n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET} \n"
+echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
 ## prepare all licenses
 echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have access to the licenses? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have access to the licenses? [y/n/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   y|Y ) unset password
 	until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
     	  echo ""
-    	  read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$' \n' password
+    	  read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$'\n' password
 	done
 	[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 	kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 	[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
 	7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
 	rm -f ~/Licenses/license.zip
-	echo -e " \n${TEXT_GREEN}Licenses unzipped successfully!${TEXT_RESET} \n" && sleep 1;;
-    * ) echo -e " \n${TEXT_YELLOW}Skipping license unzip step.${TEXT_RESET} \n" && sleep 1;;
+	echo -e "\n${TEXT_GREEN}Licenses unzipped successfully!${TEXT_RESET}\n" && sleep 1;;
+    * ) echo -e "\n${TEXT_YELLOW}Skipping license unzip step.${TEXT_RESET}\n" && sleep 1;;
 esac
 
 ## hide files and folders
