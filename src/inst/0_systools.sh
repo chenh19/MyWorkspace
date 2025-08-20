@@ -29,8 +29,8 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
-  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch
-  sudo apt install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedrive thunderbird kdocker krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
+  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker
+  sudo apt install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
 
 # install apps (ppa)
 
