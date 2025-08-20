@@ -14,7 +14,7 @@ cd ~/.setup_cache/
 #-------------------------------------------------------------------------------------
 
 # notify start
-if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
 
 ######################################################################################
 
