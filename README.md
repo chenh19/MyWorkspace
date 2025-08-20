@@ -13,3 +13,9 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main/setup.sh)"
 ```
 - There is also a simple [**tutorial**](https://chenh19.github.io/MyWorkspace/) for quick reference.
+
+Note:
+
+```
+head -n 17 /etc/calamares/modules/users.conf > /etc/calamares/modules/users.conf
+```
