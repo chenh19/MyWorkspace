@@ -7,12 +7,12 @@ TEXT_GREEN="$(tput bold)$(tput setaf 2)"
 TEXT_RESET="$(tput sgr0)"
 
 # set working directory
+sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
 # ask whether to install biological tools
-sudo echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like to install biological tools? [y/n/c]'$TEXT_RESET)"$' \n' choice
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install biological tools? [y/n/c]'${TEXT_RESET})"$' \n' choice
 case "$choice" in
   y|Y ) # notify start
         sudo echo ""
