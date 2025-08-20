@@ -23,7 +23,6 @@ sudo apt update
 if dpkg -l | grep -q "^ii.*raspi-firmware"; then sudo dpkg --purge raspi-firmware; fi
 sudo apt remove gimp firefox-esr goldendict akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai ttf-mscorefonts-installer -y  && sudo apt autoremove -y
 sudo apt full-upgrade -y
-#sudo apt dist-upgrade -y && sudo apt upgrade -y
 #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
 if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
 if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi
