@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script installs system packages by apt-get and dpkg
 
 # set terminal font color
