@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script configures KDE plasma system apps and widgets
 
 # set terminal font color
