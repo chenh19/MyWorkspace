@@ -16,16 +16,16 @@ read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install biological
 case "$choice" in
   y|Y ) # notify start
         echo -e "\n${TEXT_YELLOW}Installing biological tools...${TEXT_RESET}\n" && sleep 1
-        sudo apt-get update -qq && sudo apt-get upgrade -y
-        if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
+        sudo apt update -qq && sudo apt upgrade -y
+        if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
         
         ## install PyMOL/FastQC/Meld etc
         [ ! -d ~/igv ] && mkdir ~/igv/
-        sudo apt-get install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser kdevelop parallel -y
+        sudo apt install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser kdevelop parallel -y
         
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
-        sudo apt-get update -qq && sudo apt-get install zotero libreoffice-java-common -y
+        sudo apt update -qq && sudo apt install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
         
         ## install IGV
@@ -51,13 +51,13 @@ case "$choice" in
         ## install R
         ### install dependencies
         ## not installing: texlive-latex-extra
-        sudo apt-get install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev libmagick++-dev libpoppler-cpp-dev -y
+        sudo apt install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev libmagick++-dev libpoppler-cpp-dev -y
         
         ### install R from cran
         gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
         gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
         echo -e "deb https://cloud.r-project.org/bin/linux/debian $(lsb_release -cs)-cran40/" | sudo tee /etc/apt/sources.list.d/r-project.list
-        sleep 1 && sudo apt-get update -qq && sudo apt-get install r-base littler -y
+        sleep 1 && sudo apt update -qq && sudo apt install r-base littler -y
         sudo R CMD javareconf
         
         ### config posit package manager
@@ -80,14 +80,14 @@ case "$choice" in
         wget -q "https://www.dropbox.com/scl/fi/pq48otnj90g7erg0e3udp/quarto.deb?rlkey=tjfdpxhkpjkfl0yic2plswefp" -O quarto.deb && echo '"Quarto" deb package is downloaded.' && sleep 1
         echo ""
         mv -f ./*.deb ./devdeb/ && sudo dpkg -i ./devdeb/*.deb && sleep 1
-        sudo apt-get install -f -y
+        sudo apt install -f -y
         quarto install tinytex
                 
         # cleanup
         [ -f ./.Rhistory ] && rm -f ./.Rhistory
         [ -d ./rscript/ ] && rm -rf ./rscript/
         [ -d ./devdeb/ ] && rm -rf ./devdeb/
-        sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
+        sudo apt update -qq && sudo apt autoremove -y && sudo apt clean
         
         # notify end
         echo -e "\n${TEXT_GREEN}Biological tools installed!${TEXT_RESET}\n" && sleep 3;;
