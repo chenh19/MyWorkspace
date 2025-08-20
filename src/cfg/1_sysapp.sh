@@ -2,9 +2,9 @@
 # This script configures KDE plasma system apps and widgets
 
 # set terminal font color
-TEXT_YELLOW='\e[1;33m'
-TEXT_GREEN='\e[1;32m'
-TEXT_RESET='\e[0m'
+TEXT_YELLOW="$(tput bold)$(tput setaf 3)"
+TEXT_GREEN="$(tput bold)$(tput setaf 2)"
+TEXT_RESET="$(tput sgr0)"
 
 # set working directory
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
@@ -237,7 +237,7 @@ kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPage
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,processes.page,history.page,applications.page"
 
 # System monitor: Overview: move CPU to the left
-#echo -e " \n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET} \n" && sleep 1 && plasma-systemmonitor
+#echo -e "\n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET}\n" && sleep 1 && plasma-systemmonitor
 [ ! -d ~/.local/share/plasma-systemmonitor/ ] && mkdir ~/.local/share/plasma-systemmonitor/
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key actionsFace ""
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key loadType ""
