@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v2.8.0 (X11 only; maybe [Wayland](https://wayland.freedesktop.org/) after Debian 13, or continue with [XLibre](https://github.com/X11Libre/xserver))*  
+*Current version: v3.0.0*  
 
 ## Introduction
 
