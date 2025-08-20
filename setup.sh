@@ -43,6 +43,7 @@ cp -rf ./MyWorkspace-main/src/inst/* ./inst/
 cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
 sudo cp -rf ./cfg/icon/ ./cfg/grub/ ./cfg/Thunderbird/ /opt/
+cp -f ./cfg/power/powerdevilrc ~/.config/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
 cp -rf ./cfg/template/* ~/Templates/
@@ -74,24 +75,6 @@ case "$choice" in
 	echo -e " \n${TEXT_GREEN}Licenses unzipped successfully!${TEXT_RESET} \n" && sleep 1;;
     * ) echo -e " \n${TEXT_YELLOW}Skipping license unzip step.${TEXT_RESET} \n" && sleep 1;;
 esac
-
-## Power Management
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DPMSControl --key idleTime "900"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group DimDisplay --key idleTime --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key idleTime --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group AC --group SuspendSession --key suspendType --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group DPMSControl --key idleTime "600"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group DimDisplay --key idleTime --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group SuspendSession --key idleTime "900000"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group Battery --group SuspendSession --key suspendThenHibernate "false"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DPMSControl --key idleTime "300"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group BrightnessControl --key value --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group DimDisplay --key idleTime --delete
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group HandleButtonEvents --key triggerLidActionWhenExternalMonitorPresent "false"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key idleTime "600000"
-kwriteconfig5 --file ~/.config/powermanagementprofilesrc --group LowBattery --group SuspendSession --key suspendThenHibernate "false"
 
 ## hide files and folders
 echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nVirtualBox VMs\nminiconda3\nbin" > ~/.hidden
