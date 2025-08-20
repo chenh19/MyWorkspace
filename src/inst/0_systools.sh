@@ -7,11 +7,11 @@ TEXT_GREEN="$(tput bold)$(tput setaf 2)"
 TEXT_RESET="$(tput sgr0)"
 
 # set working directory
+sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
 # notify start
-sudo echo ""
 echo -e "${TEXT_YELLOW}Installing system tools...${TEXT_RESET} \n" && sleep 1
 
 # edit sources.list
