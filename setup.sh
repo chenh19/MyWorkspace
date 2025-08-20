@@ -15,8 +15,7 @@ cd ~/.setup_cache/
 read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$'\n'
 
 # check internet connection
-echo ""
-echo -e "${TEXT_YELLOW}Checking internet connection...${TEXT_RESET}\n"
+echo -e "\n${TEXT_YELLOW}Checking internet connection...${TEXT_RESET}\n"
 until curl -s --head  --request GET www.google.com | grep "200 OK" > /dev/null ; do
     read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! Please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$'\n'
     echo ""
@@ -24,8 +23,7 @@ done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET}\n" && sleep 1
 
 # setup
-echo ""
-echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET}\n" && sleep 1
+echo -e "\n${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET}\n" && sleep 1
 ###>>>sed-i-d-start-0
 ## initialize
 unset start0 end0
