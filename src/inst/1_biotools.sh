@@ -12,11 +12,10 @@ sudo echo ""
 cd ~/.setup_cache/
 
 # ask whether to install biological tools
-read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install biological tools? [y/n/c]'${TEXT_RESET})"$' \n' choice
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install biological tools? [y/n/c]'${TEXT_RESET})"$'\n' choice
 case "$choice" in
   y|Y ) # notify start
-        sudo echo ""
-        echo -e "${TEXT_YELLOW}Installing biological tools...${TEXT_RESET} \n" && sleep 1
+        echo -e "\n${TEXT_YELLOW}Installing biological tools...${TEXT_RESET}\n" && sleep 1
         sudo apt-get update -qq && sudo apt-get upgrade -y
         if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
         
@@ -91,10 +90,10 @@ case "$choice" in
         sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
         
         # notify end
-        echo -e " \n${TEXT_GREEN}Biological tools installed!${TEXT_RESET} \n" && sleep 3;;
+        echo -e "\n${TEXT_GREEN}Biological tools installed!${TEXT_RESET}\n" && sleep 3;;
         
   * ) # notify cancellation
-        echo -e " \n${TEXT_YELLOW}Biological tools not installed.${TEXT_RESET} \n" && sleep 1;;
+        echo -e "\n${TEXT_YELLOW}Biological tools not installed.${TEXT_RESET}\n" && sleep 1;;
         
 esac
 
