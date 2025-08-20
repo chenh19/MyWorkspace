@@ -2,11 +2,12 @@
 # This script configures KDE plasma settings
 
 # set terminal font color
-TEXT_YELLOW='\e[1;33m'
-TEXT_GREEN='\e[1;32m'
-TEXT_RESET='\e[0m'
+TEXT_YELLOW="$(tput bold)$(tput setaf 3)"
+TEXT_GREEN="$(tput bold)$(tput setaf 2)"
+TEXT_RESET="$(tput sgr0)"
 
 # set working directory
+sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
@@ -14,7 +15,6 @@ cd ~/.setup_cache/
 #-------------------------------------------------------------------------------------
 
 # notify start
-sudo echo ""
 echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET} \n" && sleep 1
 
 ######################################################################################
