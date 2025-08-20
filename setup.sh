@@ -56,13 +56,11 @@ rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
 ## prepare all licenses
-read -n1 -s -r -p "$(echo -e '\n'"$TEXT_YELLOW"'Do you have access to the licenses? [y/n/c]'"$TEXT_RESET)"$'\n' choice
-#read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have access to the licenses? [y/n/c]'$TEXT_RESET)"$'\n' choice
+read -n1 -s -r -p "$(echo -e '\n'${TEXT_YELLOW}'Do you have access to the licenses? [y/n/c]'${TEXT_RESET})"$'\n' choice
 case "$choice" in
   y|Y ) unset password
 	until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
-    	  read -s -p "$(echo -e '\n'"$TEXT_YELLOW"'Please enter the password to unzip the licenses: '"$TEXT_RESET)"$'\n' password
-    	  #read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$'\n' password
+    	  read -s -p "$(echo -e '\n'${TEXT_YELLOW}'Please enter the password to unzip the licenses: '${TEXT_RESET})"$'\n' password
 	done
 	[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
 	kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
