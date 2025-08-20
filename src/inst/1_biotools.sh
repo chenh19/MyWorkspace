@@ -98,6 +98,5 @@ case "$choice" in
         
 esac
 
-
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/1_biotools.sh+#bash ./inst/1_biotools.sh+g' ~/.setup_cache/setup.sh
