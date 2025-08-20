@@ -30,6 +30,12 @@
 - Set user account, then **"Next"**:  
 ![](./images/6.png)
 
+Note:
+
+```
+sudo sed -i '18,$d' /etc/calamares/modules/users.conf && exit
+```
+
 - **"Install"**:  
 ![](./images/7.png)
 
