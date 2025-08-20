@@ -2,15 +2,14 @@
 # This script downloads all scripts for setup
 
 # set terminal font color
-TEXT_YELLOW=$(tput bold; tput setaf 3)
-TEXT_GREEN=$(tput bold; tput setaf 2)
-TEXT_RESET=$(tput sgr0)
+TEXT_YELLOW="$(tput bold)$(tput setaf 3)"
+TEXT_GREEN="$(tput bold)$(tput setaf 2)"
+TEXT_RESET="$(tput sgr0)"
 
 # set working directory
 sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
-
 
 # font size
 read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$' \n'
