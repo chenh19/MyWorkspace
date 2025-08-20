@@ -2,9 +2,9 @@
 # This script downloads all scripts for setup
 
 # set terminal font color
-TEXT_YELLOW='\e[1;33m'
-TEXT_GREEN='\e[1;32m'
-TEXT_RESET='\e[0m'
+TEXT_YELLOW=$(tput bold; tput setaf 3)
+TEXT_GREEN=$(tput bold; tput setaf 2)
+TEXT_RESET=$(tput sgr0)
 
 # set working directory
 sudo echo ""
@@ -109,11 +109,11 @@ unset start0 end0
 ###>>>sed-i-d-end-0
 
 # setup
-bash ./inst/0_systools.sh
-bash ./inst/1_biotools.sh
+#bash ./inst/0_systools.sh
+#bash ./inst/1_biotools.sh
 
 # config
-bash ./cfg/0_sysstg.sh
-bash ./cfg/1_sysapp.sh
-bash ./cfg/2_sysdsp.sh
-bash ./cfg/3_reboot.sh
+#bash ./cfg/0_sysstg.sh
+#bash ./cfg/1_sysapp.sh
+#bash ./cfg/2_sysdsp.sh
+#bash ./cfg/3_reboot.sh
