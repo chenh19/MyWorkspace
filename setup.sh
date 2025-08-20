@@ -32,7 +32,7 @@ echo -e "${TEXT_YELLOW}Preparing setup scripts...${TEXT_RESET} \n" && sleep 1
 unset start0 end0
 
 ## install wget
-if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
 
 ## prepare all scripts
 [ ! -f main.zip ] && wget -q "https://github.com/chenh19/MyWorkspace/archive/refs/heads/main.zip" && sleep 1
