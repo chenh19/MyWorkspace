@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 #-------------------------------------------------------------------------------------
 
 # notify start
-echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET} \n" && sleep 1
+echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}\n" && sleep 1
 
 ######################################################################################
 
