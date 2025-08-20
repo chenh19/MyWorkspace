@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script installs system packages by apt-get and dpkg
+# This script installs system packages by apt and dpkg
 
 # set terminal font color
 TEXT_YELLOW="$(tput bold)$(tput setaf 3)"
@@ -19,18 +19,19 @@ source /etc/os-release
 echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb http://deb.debian.org/debian $VERSION_CODENAME main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian $VERSION_CODENAME-updates main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME-updates main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian-security/ $VERSION_CODENAME-security main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian-security/ $VERSION_CODENAME-security main contrib non-free non-free-firmware\n\n# Backports allow you to install newer versions of software made available for this release\ndeb http://deb.debian.org/debian $VERSION_CODENAME-backports main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME-backports main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
 # install updates
-sudo apt-get update
+sudo apt update
 if dpkg -l | grep -q "^ii.*raspi-firmware"; then sudo dpkg --purge raspi-firmware; fi
-sudo apt-get remove gimp firefox-esr goldendict akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai ttf-mscorefonts-installer -y  && sudo apt-get autoremove -y
-sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y
+sudo apt remove gimp firefox-esr goldendict akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk kasumi konqueror kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai ttf-mscorefonts-installer -y  && sudo apt autoremove -y
+sudo apt full-upgrade -y
+#sudo apt dist-upgrade -y && sudo apt upgrade -y
 #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
-if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt-get update -qq && sudo apt-get install wget -y && sleep 1 ; fi
-if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi
+if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
+if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi
 #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch
-  sudo apt-get install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedrive thunderbird kdocker krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
+  sudo apt install bash-completion systemd-timesyncd ufw plasma-firewall default-jre default-jdk seahorse tree samba onedrive thunderbird kdocker krita krita-l10n inkscape kdenlive libavcodec-extra vlc plymouth-themes solaar -y
 
 # install apps (ppa)
 
@@ -40,7 +41,7 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
   [ -f /etc/apt/trusted.gpg.d/enpass.asc ] && sudo rm -f /etc/apt/trusted.gpg.d/enpass.asc
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
   wget -qO- "https://apt.enpass.io/keys/enpass-linux.key" | sudo tee /etc/apt/trusted.gpg.d/enpass.asc >/dev/null 2>&1
-  sudo apt-get update -qq && sudo apt-get install enpass -y
+  sudo apt update -qq && sudo apt install enpass -y
   [ ! -d ~/Documents/Enpass/ ] && mkdir ~/Documents/Enpass/
   
   ## virtualbox
@@ -49,7 +50,7 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
   source /etc/os-release
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
   wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
-  sudo apt-get update -qq && sudo apt-get install virtualbox-7.1 -y
+  sudo apt update -qq && sudo apt install virtualbox-7.1 -y
   [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
   
   ## wine
@@ -60,7 +61,7 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
   sudo mkdir -pm755 /etc/apt/keyrings
   sudo wget -qNP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/$VERSION_CODENAME/winehq-$VERSION_CODENAME.sources
   wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --yes --dearmor --output /etc/apt/keyrings/winehq-archive.key -
-  sudo apt-get update -qq && sudo apt-get install --install-recommends winehq-stable -y
+  sudo apt update -qq && sudo apt install --install-recommends winehq-stable -y
 
   ## resilio sync
   [ -f /etc/apt/sources.list.d/resilio-sync.list ] && sudo rm -f /etc/apt/sources.list.d/resilio-sync.list
@@ -76,7 +77,7 @@ if lspci | grep -q NVIDIA; then sudo apt-get update -qq && sudo apt-get install 
       sudo rm -f /etc/apt/trusted.gpg.d/resilio-sync.asc*
       unset resilio_id
   fi
-  sudo apt-get update -qq && sudo apt-get install resilio-sync -y
+  sudo apt update -qq && sudo apt install resilio-sync -y
   sudo systemctl disable resilio-sync
   sudo kwriteconfig5 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy "default.target"
   systemctl --user enable resilio-sync
@@ -107,7 +108,7 @@ echo ""
   
   ## install
   echo ""
-  mv -f ./*.deb ./deb/ && sudo apt-get install -f -y ./deb/*.deb
+  mv -f ./*.deb ./deb/ && sudo apt install -f -y ./deb/*.deb
 
 # install input method
 
@@ -117,8 +118,8 @@ echo ""
   [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
   [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
   [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
-  sudo apt-get install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-mozc fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
-  sudo apt-get --fix-missing update && sudo apt-get install -f -y
+  sudo apt install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-mozc fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
+  sudo apt --fix-missing update && sudo apt install -f -y
   [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
   unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
   cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
@@ -224,7 +225,7 @@ rm -rf ./deb/
 rm -rf ./cfg/fcitx5-themes/
 [ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
 [ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
-sudo apt-get update -qq && sudo apt-get autoremove -y && sudo apt-get clean
+sudo apt update -qq && sudo apt autoremove -y && sudo apt clean
 
 # notify end
 echo -e "\n${TEXT_GREEN}System tools installed!${TEXT_RESET}\n" && sleep 3
