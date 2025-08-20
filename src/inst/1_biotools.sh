@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script intsalls biological tools
 
 # set terminal font color
