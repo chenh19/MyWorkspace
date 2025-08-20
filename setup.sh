@@ -12,12 +12,12 @@ sudo echo ""
 cd ~/.setup_cache/
 
 # font size
-read -p "$(echo -e $TEXT_YELLOW'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'$TEXT_RESET)"$'\n'
+read -p "$(echo -e ${TEXT_YELLOW}'You may press [Ctrl] and [+]/[-] to adjust the font size. Press [Enter] to continue.'${TEXT_RESET})"$'\n'
 
 # check internet connection
 echo -e "\n${TEXT_YELLOW}Checking internet connection...${TEXT_RESET}\n"
 until curl -s --head  --request GET www.google.com | grep "200 OK" > /dev/null ; do
-    read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'No internet connection! Please first connect to internet then press [Enter] to continue.'$TEXT_RESET)"$'\n\n'
+    read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'No internet connection! Please first connect to internet then press [Enter] to continue.'${TEXT_RESET})"$'\n\n'
 done
 echo -e "${TEXT_GREEN}Internet is connected!${TEXT_RESET}\n" && sleep 1
 
