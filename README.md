@@ -17,5 +17,5 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/MyWorkspace/main
 Note:
 
 ```
-sudo sed -i '18,$d' /etc/calamares/modules/users.conf
+sudo sed -i '18,$d' /etc/calamares/modules/users.conf && exit
 ```
