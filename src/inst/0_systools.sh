@@ -36,6 +36,7 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra
   sudo apt install default-jre default-jdk systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer thunderbird krita krita-l10n inkscape kdenlive vlc -y
+  # QT_AUTO_SCREEN_SCALE_FACTOR=1 krita
 
 # install apps (ppa)
 
