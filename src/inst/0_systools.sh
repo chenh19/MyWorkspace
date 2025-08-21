@@ -151,9 +151,6 @@ echo ""
     --set-key 'Type' --set-value 'Application' \
     --remove-key 'Categories' --add-category 'Utility;' \
   /usr/share/applications/onedrivegui.desktop
-  sleep 1
-  cp -rf ./cfg/onedrive-gui/ ~/.config/
-  #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
 
   ## qView
   wget -q "https://www.dropbox.com/scl/fi/htussdjx59jobwssy2m2h/qview.AppImage?rlkey=x6cfgmvnpo9fh1wwoymoplw6v" -O qview.AppImage && echo '"qView" AppImage package is downloaded.' && sleep 1
@@ -212,6 +209,10 @@ echo ""
   ## time sync
   sudo timedatectl set-ntp true
   sudo timedatectl status
+
+  ## OneDriveGUI
+  cp -rf ./cfg/onedrive-gui/ ~/.config/
+  #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
   
   ## Touchegg
   #[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
