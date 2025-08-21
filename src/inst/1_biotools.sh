@@ -55,7 +55,7 @@ case "$choice" in
         ## install R
         ### install dependencies
         ## not installing: texlive-latex-extra
-        sudo apt install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev libmagick++-dev libpoppler-cpp-dev -y
+        sudo apt install default-jre default-jdk cmake pandoc libcurl4-openssl-dev libssl-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjpeg-dev libtiff-dev libtiff5-dev libgit2-dev libglpk-dev libnlopt-dev libgeos-dev libxml2-dev libv8-dev libcairo2-dev libmagick++-dev libpoppler-cpp-dev libclang-dev -y
         
         ### install R from cran
         gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
