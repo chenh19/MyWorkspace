@@ -137,7 +137,7 @@ echo ""
 
 # AppImages
 
-  ## OneDrive
+  ## OneDriveGUI
   wget -q "https://www.dropbox.com/scl/fi/l4s04hw0z0y9su54fzewe/onedrivegui.AppImage?rlkey=tmwf6y38kpovdkl5wvy7pmczk" -O onedrivegui.AppImage && echo '"OneDriveGUI" AppImage package is downloaded.' && sleep 1
   [ ! -d /opt/onedrivegui/ ] && sudo mkdir /opt/onedrivegui/
   sudo mv -f ./onedrivegui.AppImage /opt/onedrivegui/ && sleep 1
