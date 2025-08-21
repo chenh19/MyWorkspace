@@ -176,7 +176,8 @@ echo ""
     --set-generic-name 'Bootable USB Creator' --set-key 'GenericName[en_US]' --set-value 'Bootable USB Creator' --set-key 'GenericName[zh_CN]' --set-value '启动盘制作工具' \
     --set-comment 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[en_US]' --set-value 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[zh_CN]' --set-value '简单方便制作U盘启动盘' \
     --set-key 'Exec' --set-value '/opt/balenaEtcher/balena-etcher %U' \
-    --set-key 'StartupNotify' --set-value 'true' \
+    --set-key 'Type' --set-value 'Application' \
+    --set-key 'StartupNotify' --set-value 'false' \
     --set-key 'Terminal' --set-value 'false' \
     --set-key 'TerminalOptions' --set-value '' \
     --set-icon '/opt/icon/etcher.png' \
