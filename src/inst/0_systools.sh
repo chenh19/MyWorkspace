@@ -96,15 +96,14 @@ echo ""
 
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
-  wget -q "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb && echo '"Zoom" deb package is downloaded.' && sleep 1 #x11 scaling
+  wget -q "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
   # QT_SCALE_FACTOR=2 /usr/bin/zoom
-  wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1 #x11 scaling
+  wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
   # QT_SCALE_FACTOR=2 /opt/teamviewer/tv_bin/script/teamviewer
   #wget -q "https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb && echo '"OnlyOffice" deb package is downloaded.' && sleep 1
   
   ## self maintained redirecting links
-  #wget -q "https://www.dropbox.com/scl/fi/i5w10jbmg1a25891castf/etcher.deb?rlkey=bcg1lyuwfo43ejtv6h2nn1htv" -O etcher.deb && echo '"Balena Etcher" deb package is downloaded.' && sleep 1 #dependency issue
-  #wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #x11 scaling
+  wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #x11 scaling
   # QT_SCALE_FACTOR=2 4kvideodownloaderplus
   wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview-old.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
@@ -162,7 +161,28 @@ echo ""
   [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
   wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
   sudo bash ./inst/virtualbox.run
-  
+
+# install apps (.zip)
+
+  ## Etcher
+  [ -d /opt/balenaEtcher/ ] && sudo rm -rf /opt/balenaEtcher/
+  wget -q "https://www.dropbox.com/scl/fi/appud7mczsnhg05gekq6j/etcher.zip?rlkey=55amwyk81b8x4t4yqa0q758wp" -O etcher.zip && echo '"Balena Etcher" zip package is downloaded.' && sleep 1
+  unzip -o -q ./etcher.zip && sleep 1 && rm -f ./etcher.zip
+  [ ! -d /opt/balenaEtcher/ ] && sudo mkdir /opt/balenaEtcher/
+  sudo cp -rf ./balenaEtcher-linux-*/* /opt/balenaEtcher/ && sleep 1
+  [ ! -f /usr/share/applications/balena-etcher.desktop ] && sudo touch /usr/share/applications/balena-etcher.desktop
+  [ -f /usr/share/applications/balena-etcher.desktop ] && sudo desktop-file-edit \
+    --set-name 'Etcher' --set-key 'Name[en_US]' --set-value 'Etcher' --set-key 'Name[zh_CN]' --set-value 'Etcher刻录' \
+    --set-generic-name 'Bootable USB Creator' --set-key 'GenericName[en_US]' --set-value 'Bootable USB Creator' --set-key 'GenericName[zh_CN]' --set-value '启动盘制作工具' \
+    --set-comment 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[en_US]' --set-value 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[zh_CN]' --set-value '简单方便制作U盘启动盘' \
+    --set-key 'Exec' --set-value '/opt/balenaEtcher/balena-etcher %U' \
+    --set-key 'StartupNotify' --set-value 'true' \
+    --set-key 'Terminal' --set-value 'false' \
+    --set-key 'TerminalOptions' --set-value '' \
+    --set-icon '/opt/icon/etcher.png' \
+    --remove-key 'Categories' --add-category 'Utility;' \
+  /usr/share/applications/balena-etcher.desktop
+
 # auto config
 
   ## enable firewall
