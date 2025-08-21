@@ -43,6 +43,15 @@ if dpkg -s mlterm-tools 2>/dev/null | grep -q "Status: install ok installed"; th
 if dpkg -s mlterm-common 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove mlterm-common -y; fi
 if dpkg -s ncurses-term 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove ncurses-term -y; fi
 if dpkg -s xiterm+thai 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove xiterm+thai -y; fi
+
+packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai)
+to_remove=()
+for pkg in "${packages[@]}"; do
+    if dpkg -s "$pkg" 2>/dev/null | grep -q "Status: install ok installed"; then to_remove+=("$pkg"); fi
+done
+if [ ${#to_remove[@]} -gt 0 ]; then echo -e "${to_remove[@]}"; fi
+if [ ${#to_remove[@]} -gt 0 ]; then sudo apt remove -y "${to_remove[@]}"; fi
+
 sudo apt autoremove -y
 sudo apt full-upgrade -y
 #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
