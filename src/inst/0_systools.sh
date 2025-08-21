@@ -35,14 +35,17 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
-  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall
-  ## wait for update or use AppImage: onedrive
+  ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall
   ## troubleshooting: sudo apt install systemd-timesyncd ufw default-jre default-jdk seahorse tree samba thunderbird krita krita-l10n inkscape kdenlive vlc libavcodec-extra plymouth-themes solaar ttf-mscorefonts-installer -y
   sudo apt install default-jre default-jdk -y
 
 # install apps (ppa)
 
 # install apps (source list)
+
+  ## onedrive
+  # https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md#distribution-debian-13
+  
   ## enpass
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
   wget -qO- "https://apt.enpass.io/keys/enpass-linux.key" | sudo tee /etc/apt/trusted.gpg.d/enpass.asc >/dev/null 2>&1
