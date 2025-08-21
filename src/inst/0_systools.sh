@@ -117,7 +117,6 @@ echo ""
   wget -q "https://www.dropbox.com/scl/fi/ohmiilwoep7ugvlpbov8i/freedownloadmanager.deb?rlkey=34tnbu8t68u0ffeeukcrqcq9v" -O freedownloadmanager.deb && echo '"Free Download Manager" deb package is downloaded.' && sleep 1
   #wget -q "https://www.dropbox.com/scl/fi/rufzgb528vzg19w45c5vx/touchegg.deb?rlkey=bjp0q9jaf25oo34vuyu0qzzw1" -O touchegg.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
   
-  
   ## install
   echo ""
   mv -f ./*.deb ./deb/ && sudo apt install -f -y ./deb/*.deb
