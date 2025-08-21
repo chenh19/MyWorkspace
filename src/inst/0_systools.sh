@@ -20,7 +20,8 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 
 # install updates
 sudo apt update
-packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai)
+## troubleshooting: packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai)
+packages=(raspi-firmware)
 to_remove=()
 for pkg in "${packages[@]}"; do
     if dpkg -s "$pkg" 2>/dev/null | grep -q "Status: install ok installed"; then to_remove+=("$pkg"); fi
@@ -35,8 +36,8 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 
 # install apps (apt)
   ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall 
-  ## troubleshooting: systemd-timesyncd ufw libavcodec-extra plymouth-themes
-  sudo apt install default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive vlc solaar ttf-mscorefonts-installer -y
+  ## troubleshooting: sudo apt install systemd-timesyncd ufw default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive vlc libavcodec-extra plymouth-themes solaar ttf-mscorefonts-installer -y
+  sudo apt install default-jre default-jdk -y
 
 # install apps (ppa)
 
