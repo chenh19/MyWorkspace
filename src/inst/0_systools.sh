@@ -46,6 +46,9 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 
   ## onedrive
   # https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md#distribution-debian-13
+  wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_13/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_13/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+  sudo apt update -qq && sudo apt install -y --no-install-recommends --no-install-suggests onedrive
   
   ## enpass
   echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
