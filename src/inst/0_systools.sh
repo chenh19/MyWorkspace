@@ -267,6 +267,7 @@ echo ""
   sudo cp -f ./cfg/solaar/42-logitech-unify-permissions.rules /etc/udev/rules.d
 
   ## thunderbird
+  #sudo cp -rf ./cfg/Thunderbird/ /opt/
   #sudo chmod +x /opt/Thunderbird/thunderbird.sh
   #[ -f /usr/share/applications/thunderbird.desktop ] && sudo desktop-file-edit \
   #  --set-name 'Thunderbird' --set-key 'Name[en_US]' --set-value 'Thunderbird' --set-key 'Name[zh_CN]' --set-value '邮箱' \
