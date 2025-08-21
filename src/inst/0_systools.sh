@@ -20,38 +20,12 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 
 # install updates
 sudo apt update
-if dpkg -s raspi-firmware 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove raspi-firmware -y; fi
-if dpkg -s firefox-esr 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove firefox-esr -y; fi
-if dpkg -s gimp 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove gimp -y; fi
-if dpkg -s goldendict 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove goldendict -y; fi
-if dpkg -s goldendict-ng 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove goldendict-ng -y; fi
-if dpkg -s akregator 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove akregator -y; fi
-if dpkg -s kmousetool 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kmousetool -y; fi
-if dpkg -s kontrast 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kontrast -y; fi
-if dpkg -s kmail 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kmail -y; fi
-if dpkg -s kmailtransport-akonadi 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kmailtransport-akonadi -y; fi
-if dpkg -s dragonplayer 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove dragonplayer -y; fi
-if dpkg -s juk 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove juk -y; fi
-if dpkg -s konqueror 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove konqueror -y; fi
-if dpkg -s kasumi 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kasumi -y; fi
-if dpkg -s kamera 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kamera -y; fi
-if dpkg -s kmouth 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kmouth -y; fi
-if dpkg -s kmag 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kmag -y; fi
-if dpkg -s kfind 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove kfind -y; fi
-if dpkg -s mlterm 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove mlterm -y; fi
-if dpkg -s mlterm-tools 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove mlterm-tools -y; fi
-if dpkg -s mlterm-common 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove mlterm-common -y; fi
-if dpkg -s ncurses-term 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove ncurses-term -y; fi
-if dpkg -s xiterm+thai 2>/dev/null | grep -q "Status: install ok installed"; then sudo apt remove xiterm+thai -y; fi
-
 packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai)
 to_remove=()
 for pkg in "${packages[@]}"; do
     if dpkg -s "$pkg" 2>/dev/null | grep -q "Status: install ok installed"; then to_remove+=("$pkg"); fi
 done
-if [ ${#to_remove[@]} -gt 0 ]; then echo -e "${to_remove[@]}"; fi
 if [ ${#to_remove[@]} -gt 0 ]; then sudo apt remove -y "${to_remove[@]}"; fi
-
 sudo apt autoremove -y
 sudo apt full-upgrade -y
 #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
@@ -60,8 +34,9 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
-  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall libavcodec-extra
-  sudo apt install systemd-timesyncd ufw default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive vlc plymouth-themes solaar ttf-mscorefonts-installer -y
+  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall 
+  ## troubleshooting: systemd-timesyncd ufw libavcodec-extra plymouth-themes
+  sudo apt install default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive vlc solaar ttf-mscorefonts-installer -y
 
 # install apps (ppa)
 
