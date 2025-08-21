@@ -20,15 +20,19 @@ case "$choice" in
         if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
         
         ## install PyMOL/FastQC/Meld etc
-        [ ! -d ~/igv ] && mkdir ~/igv/
         sudo apt install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser kdevelop parallel -y
-        
+        # GDK_SCALE=2 fastqc
+        [ -f /usr/share/applications/clustalx.desktop ] && sudo desktop-file-edit \
+            --set-icon '/opt/icon/clustal.png' \
+        /usr/share/applications/clustalx.desktop
+
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
         sudo apt update -qq && sudo apt install zotero libreoffice-java-common -y
         sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
         
         ## install IGV
+        [ ! -d ~/igv ] && mkdir ~/igv/
         [ -d /opt/igv/ ] && sudo rm -rf /opt/igv/
         wget -q "https://www.dropbox.com/scl/fi/7fs5h4p2i0tckkvqsa3od/igv.zip?rlkey=nb6aopovnu18ssmvri0c6alhz" -O igv.zip && sleep 1
         unzip -o -q ./igv.zip && sleep 1 && rm -f ./igv.zip
@@ -61,7 +65,8 @@ case "$choice" in
         sudo R CMD javareconf
         
         ### config posit package manager
-        if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi
+        #if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi
+        if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/bookworm/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/bookworm/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi # to update
         
         ### install R packages
         [ ! -d ./rscript/ ] && mkdir ./rscript/
