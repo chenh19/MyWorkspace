@@ -20,6 +20,7 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 
 # install updates
 sudo apt update
+## pay attention to autoremove anything containing "lib" "amd"
 ## troubleshooting: packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmouth kmag kfind mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai)
 packages=(raspi-firmware)
 to_remove=()
