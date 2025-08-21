@@ -276,7 +276,6 @@ echo ""
   #  --set-key 'Exec' --set-value 'bash /opt/Thunderbird/thunderbird.sh' \
   #  --remove-key 'Categories' --add-category 'Network;' \
   #/usr/share/applications/thunderbird.desktop
-  #sleep 1
   ##cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
 
 # cleanup
