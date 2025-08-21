@@ -105,7 +105,7 @@ echo ""
   ## self maintained redirecting links
   wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #x11 scaling
   # QT_SCALE_FACTOR=2 4kvideodownloaderplus
-  wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview-old.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
+  #wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview-old.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
   # QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun
   wget -q "https://www.dropbox.com/scl/fi/d55hac9aiwzzc7aq8ky72/simplenote.deb?rlkey=p0lg6vdsefoi16pc04sg1r1n6" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
@@ -155,6 +155,23 @@ echo ""
   cp -rf ./cfg/onedrive-gui/ ~/.config/
   #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
 
+  ## qView
+  wget -q "https://www.dropbox.com/scl/fi/htussdjx59jobwssy2m2h/qview.AppImage?rlkey=x6cfgmvnpo9fh1wwoymoplw6v" -O qview.AppImage && echo '"qView" AppImage package is downloaded.' && sleep 1
+  [ ! -d /opt/qView/ ] && sudo mkdir /opt/qView/
+  sudo mv -f ./qview.AppImage /opt/qView/ && sleep 1
+  sudo chmod +x /opt/qView/qview.AppImage
+  [ ! -f /usr/share/applications/com.interversehq.qView.desktop ] && sudo touch /usr/share/applications/com.interversehq.qView.desktop
+  sudo desktop-file-edit \
+    --set-name 'qView' --set-key 'Name[en_US]' --set-value 'qView' --set-key 'Name[zh_CN]' --set-value '图片浏览器' \
+    --set-generic-name 'Image Viewer' --set-key 'GenericName[en_US]' --set-value 'Image Viewer' --set-key 'GenericName[zh_CN]' --set-value '图片浏览工具' \
+    --set-comment 'Practical and Minimal Image Viewer' --set-key 'Comment[en_US]' --set-value 'Practical and Minimal Image Viewer' --set-key 'Comment[zh_CN]' --set-value '简易图像查看器' \
+    --set-key 'Exec' --set-value '/opt/qView/qview.AppImage' \
+    --set-icon '/opt/icon/qview.png' \
+    --set-key 'Type' --set-value 'Application' \
+    --set-key 'StartupNotify' --set-value 'false' \
+    --remove-key 'Categories' --add-category 'AudioVideo;' \
+/usr/share/applications/com.interversehq.qView.desktop
+
 # install apps (.run)
 
   ## virtualbox (wait for official update)
@@ -171,7 +188,7 @@ echo ""
   [ ! -d /opt/balenaEtcher/ ] && sudo mkdir /opt/balenaEtcher/
   sudo cp -rf ./balenaEtcher-linux-*/* /opt/balenaEtcher/ && sleep 1
   [ ! -f /usr/share/applications/balena-etcher.desktop ] && sudo touch /usr/share/applications/balena-etcher.desktop
-  [ -f /usr/share/applications/balena-etcher.desktop ] && sudo desktop-file-edit \
+  sudo desktop-file-edit \
     --set-name 'Etcher' --set-key 'Name[en_US]' --set-value 'Etcher' --set-key 'Name[zh_CN]' --set-value 'Etcher刻录' \
     --set-generic-name 'Bootable USB Creator' --set-key 'GenericName[en_US]' --set-value 'Bootable USB Creator' --set-key 'GenericName[zh_CN]' --set-value '启动盘制作工具' \
     --set-comment 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[en_US]' --set-value 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[zh_CN]' --set-value '简单方便制作U盘启动盘' \
