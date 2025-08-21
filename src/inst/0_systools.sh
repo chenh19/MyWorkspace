@@ -184,9 +184,9 @@ echo ""
   wget -qO- https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/presets/neofetch.jsonc > ~/.config/fastfetch/config.jsonc
   
   ## Etcher
-  #[ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
-  #echo -e '{\n  "errorReporting": false,\n  "updatesEnabled": true,\n  "desktopNotifications": true,\n  "autoBlockmapping": true,\n  "decompressFirst": true\n}' > ~/.config/balena-etcher/config.json
-
+  [ ! -d ~/.config/balena-etcher/ ] && mkdir ~/.config/balena-etcher/
+  echo -e '{\n  "errorReporting": false,\n  "updatesEnabled": false,\n  "desktopNotifications": true,\n  "autoBlockmapping": true,\n  "decompressFirst": true\n}' > ~/.config/balena-etcher/config.json
+  
   ## zoom auto scaling
   kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
