@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 # This script installs system packages by apt and dpkg
 
 # set terminal font color
@@ -35,8 +35,9 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
-  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall 
-  ## troubleshooting: sudo apt install systemd-timesyncd ufw default-jre default-jdk seahorse tree samba onedrive thunderbird krita krita-l10n inkscape kdenlive vlc libavcodec-extra plymouth-themes solaar ttf-mscorefonts-installer -y
+  ## not installing or installed by Debian by default: kwrite, python3, git, kate, kcalc, partitionmanager, libreoffice, exfatprogs, evolution evolution-ews, elisa, fsearch, kdocker bash-completion plasma-firewall
+  ## wait for update or use AppImage: onedrive
+  ## troubleshooting: sudo apt install systemd-timesyncd ufw default-jre default-jdk seahorse tree samba thunderbird krita krita-l10n inkscape kdenlive vlc libavcodec-extra plymouth-themes solaar ttf-mscorefonts-installer -y
   sudo apt install default-jre default-jdk -y
 
 # install apps (ppa)
