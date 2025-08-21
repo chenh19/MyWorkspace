@@ -58,15 +58,6 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
   [ -f /etc/apt/trusted.gpg.d/enpass.asc ] && sudo rm -f /etc/apt/trusted.gpg.d/enpass.asc
   [ ! -d ~/Documents/Enpass/ ] && mkdir ~/Documents/Enpass/
   
-  ## virtualbox (wait for official update)
-  #[ -f /etc/apt/sources.list.d/virtualbox.list ] && sudo rm -f /etc/apt/sources.list.d/virtualbox.list
-  #[ -f /usr/share/keyrings/oracle-virtualbox-2016.gpg ] && sudo rm -f /usr/share/keyrings/oracle-virtualbox-2016.gpg
-  #source /etc/os-release
-  #echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-  #wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
-  #sudo apt update -qq && sudo apt install virtualbox-7.1 -y
-  #[ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
-  
   ## wine
   [ -f /etc/apt/sources.list.d/winehq-*.sources ] && sudo rm -f /etc/apt/sources.list.d/winehq-*.sources
   [ -f /etc/apt/keyrings/winehq-archive.key ] && sudo rm -f /etc/apt/keyrings/winehq-archive.key
@@ -167,6 +158,13 @@ echo ""
   ## qview
   wget -q "https://www.dropbox.com/scl/fi/htussdjx59jobwssy2m2h/qview.AppImage?rlkey=x6cfgmvnpo9fh1wwoymoplw6v" -O onedrivegui.AppImage && echo '"OneDriveGUI" AppImage package is downloaded.' && sleep 1
 
+# install apps (.run)
+
+  ## virtualbox (wait for official update)
+  wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
+  sudo bash ./inst/virtualbox.run
+  [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
+  
 # auto config
 
   ## enable firewall
