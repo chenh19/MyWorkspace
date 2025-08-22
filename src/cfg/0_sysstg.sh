@@ -47,6 +47,14 @@ kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActiva
 unzip -o -q InputActions.zip -d ./cfg/ && sleep 1 && rm -f InputActions.zip && sleep 1
 ## unzip to a fixed folder name, or just copy ##
 
+#        [ ! -d ./cfg/InputActions/ ] && sudo mkdir ./cfg/InputActions/
+#        sudo cp -rf ./IGV_Linux_*/* /opt/igv/ && sleep 1
+#        rm -rf ./IGV_Linux_*/
+
+#mkdir ./cfg/InputActions/build
+#cmake ./cfg/InputActions -DCMAKE_INSTALL_PREFIX=/usr -DINPUTACTIONS_BUILD_KWIN=ON
+#make -C ./cfg/InputActions/build -j$(nproc)
+#sudo make -C ./cfg/InputActions/build install
 
 cp -rf ./cfg/inputactions/ ~/.config/
 #### Google Chrome
