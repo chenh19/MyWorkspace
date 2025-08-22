@@ -170,7 +170,6 @@ kwriteconfig5 --file ~/.config/kwinrc --group Plugins --key screenedgeEnabled "f
 ### Virtual Desktop > uncheck "Navigation wraps around"
 kwriteconfig5 --file ~/.config/kwinrc --group Windows --key RollOverDesktops "false"
 
-
 ######################################################################################
 
 # Workspace
