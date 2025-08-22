@@ -45,7 +45,7 @@ kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActiva
 #### Global
 sudo apt update -qq && sudo apt install git cmake g++ extra-cmake-modules qt6-tools-dev kwin-wayland kwin-dev libkf6configwidgets-dev gettext libkf6kcmutils-dev libyaml-cpp-dev libxkbcommon-dev pkg-config libevdev-dev -y
 [ ! -f InputActions.zip ] && wget -q "https://www.dropbox.com/scl/fi/q5totw0zok4cwvj0mjr0g/InputActions.zip?rlkey=2n5x30p3n2ghuirse7evjyavx" -O InputActions.zip && sleep 1
-unzip -o -q InputActions.zip -d ./cfg/ && sleep 1 && rm -f InputActions.zip && sleep 1
+#unzip -o -q InputActions.zip -d ./cfg/ && sleep 1 && rm -f InputActions.zip && sleep 1
 ## unzip to a fixed folder name, or just copy ##
 
 #        [ ! -d ./cfg/InputActions/ ] && sudo mkdir ./cfg/InputActions/
