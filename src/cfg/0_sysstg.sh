@@ -19,110 +19,66 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}\n"
 
 ######################################################################################
 
-# Appearance
+# Input & Output
 
-## System Settings > Appearance > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
-kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft "M"
-kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight "IAX"
+## Mouse & Touchpad
+###Touchpad (take effect after rebooting)
+touchpad_info=$(grep "Touchpad" /proc/bus/input/devices | sed 's/^N: Name="//; s/"$//')
+if grep -q "$touchpad_info" ~/.config/kcminputrc ; then
+  sed -i '2,200d' ~/.config/kcminputrc
+  echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=0.3" >> ~/.config/kcminputrc
+fi
+unset touchpad_info
+###Screen Edges > "no actiion" for all corners
+kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate "9"
 
-######################################################################################
+## Virtual Keyboard (take effect after rebooting)
+### Select Fcitx5
+kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
 
-# Workspace Behavior
-
-## System Settings > Workspace Behavior > General Behavior > Clicking files or folders > "Selects them"
-kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key SingleClick "false"
-
-## System Settings > Workspace Behavior > Desktop Effects > uncheck "screen edge"
-kwriteconfig5 --file ~/.config/kwinrc --group Plugins --key screenedgeEnabled "false"
-
-## System Settings > Workspace Behavior > Screen Edges > "no actiion" for all corners
-kwriteconfig5 --file ~/.config/kwinrc --group Effect-windowview --key BorderActivateAll "9"
-
-## System Settings > Workspace Behavior > Virtual Desktop > uncheck "Navigation wraps around"
-kwriteconfig5 --file ~/.config/kwinrc --group Windows --key RollOverDesktops "false"
-
-######################################################################################
-
-# Shotcuts (take effect after rebooting)
-
-## System Settings > Shortcuts > Shortcuts > Add Application:
+## Keyboard (take effect after rebooting)
 ### Konsole: Meta+R
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewTab "none,none,Open a New Tab"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewWindow "Meta+R,none,Open a New Window"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _k_friendly_name "Konsole"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _launch "none,none,Konsole"
-
 ### System Monitor: Ctrl+Shift+Esc
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _k_friendly_name "System Monitor"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc,none,System Monitor"
-
+### System Settings > Shortcuts > Shortcuts > KWin:
+### Close Window > Meta+Q
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+### Switch One Desktop to the Left: Meta+Ctrl+Left
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Left' "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left"
+### Switch One Desktop to the Right: Meta+Ctrl+Right
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Right' "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
+### Toggle Overview: Meta+Tab
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview"
+sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+### spectacle region: Alt+P
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key 'RectangularRegionScreenShot' "Alt+P,Meta+Shift+Print,Capture Rectangular Region"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key '_launch' "Print,Print,Spectacle"
 ## Workspace Behavior > Activities > Switching > Customize two Global shortcuts as "None"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'manage activities' "none,none,Show Activity Switcher"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'next activity' "none,none,Walk through activities"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'previous activity' "none,none,Walk through activities (Reverse)"
 
-## System Settings > Shortcuts > Shortcuts > KWin:
-### Close Window > Meta+Q
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+######################################################################################
 
-### Switch One Desktop to the Left: Meta+Ctrl+Left
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Left' "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left"
+# Appearance & Style
 
-### Switch One Desktop to the Right: Meta+Ctrl+Right
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Right' "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
-
-### Toggle Overview: Meta+Tab
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview"
-sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
-
-### spectacle region: Alt+P
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key 'RectangularRegionScreenShot' "Alt+P,Meta+Shift+Print,Capture Rectangular Region"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key '_launch' "Print,Print,Spectacle"
+## Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
+kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft "M"
+kwriteconfig5 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight "IAX"
 
 ######################################################################################
 
-# Startup and Shutdown
+# Apps & Windows
 
-## System Settings > Startup and Shutdown > Desktop Session > When logging in > Start with an empty session
-kwriteconfig5 --file ~/.config/ksmserverrc --group General --key loginMode "emptySession"
+## Default Applications
+kwriteconfig5 --file ~/.config/kdeglobals --group General --key BrowserApplication "google-chrome.desktop"
 
-######################################################################################
-
-# Search
-
-## System Settings > Search > File Search > check "Enable File Search"
-kwriteconfig5 --file ~/.config/baloofilerc --group Basic --key Indexing-Enabled "Settings"
-kwriteconfig5 --file ~/.config/baloofilerc --group 'Basic Settings' --key Indexing-Enabled "true"
-kwriteconfig5 --file ~/.config/krunnerrc --group PlasmaRunnerManager --key migrated "true"
-kwriteconfig5 --file ~/.config/krunnerrc --group Plugins --key baloosearchEnabled "true"
-
-## System Settings > Search > Plasma Search > Config KRunner... > Position on screen > select "Center"
-kwriteconfig5 --file ~/.config/krunnerrc --group General --key FreeFloating "true"
-
-## System Settings > Search > Plasma Search > Config KRunner... > Activation > uncheck "Activate when pressing any key on desktop"
-kwriteconfig5 --file ~/.config/krunnerrc --group General --key ActivateWhenTypingOnDesktop "false"
-
-## System Settings > Search > Plasma Search > Config KRunner... > History > uncheck "Retain previous search"
-kwriteconfig5 --file ~/.config/krunnerrc --group General --key RetainPriorSearch "false"
-
-######################################################################################
-
-# Notification
-
-## System Settings > Notification > Configure > Other Applications > uncheck "Show popups"
-kwriteconfig5 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' "false"
-
-## Notification > Configure > Network Management > Confirgure Events > uncheck "Show a message in a popup" for "Connection Activated"
-echo -e '[Event/ConnectionActivated]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/NoLongerConnected]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/networkmanagement.notifyrc
-
-## Notification > Configure > Discover > Confirgure Events > uncheck "Show a message in a popup" for "Updates Are Available"
-echo -e '[Event/Update]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/UpdateResart]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/discoverabstractnotifier.notifyrc
-
-######################################################################################
-
-# Applications
-
-## System Settings > Applications > File Associations
+## File ASsociations
 kwriteconfig5 --file ~/.config/mimeapps.list --group 'Added Associations' --key '' ""
 kwriteconfig5 --file ~/.config/mimeapps.list --group 'Added Associations' --key 'application/application.vnd.snapgene.dna' "snapgene-viewer.desktop;snapgene.desktop;"
 kwriteconfig5 --file ~/.config/mimeapps.list --group 'Added Associations' --key 'application/biosequence.embl' "org.kde.kwrite.desktop;snapgene-viewer.desktop;"
@@ -200,53 +156,76 @@ kwriteconfig5 --file ~/.config/mimeapps.list --group 'Default Applications' --ke
 kwriteconfig5 --file ~/.config/mimeapps.list --group 'Default Applications' --key 'x-scheme-handler/tel' "org.kde.kdeconnect.handler.desktop;"
 kwriteconfig5 --file ~/.config/mimeapps.list --group 'Default Applications' --key 'x-scheme-handler/tropy' "Tropy.desktop;"
 
-## System Settings > Applications > Default Applications > Web browser > select "Google Chrome"
-kwriteconfig5 --file ~/.config/kdeglobals --group General --key BrowserApplication "google-chrome.desktop"
+## Notification
+### System Settings > Notification > Configure > Other Applications > uncheck "Show popups"
+kwriteconfig5 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' "false"
+### Notification > Configure > Network Management > Confirgure Events > uncheck "Show a message in a popup" for "Connection Activated"
+echo -e '[Event/ConnectionActivated]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/NoLongerConnected]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/networkmanagement.notifyrc
+### Notification > Configure > Discover > Confirgure Events > uncheck "Show a message in a popup" for "Updates Are Available"
+echo -e '[Event/Update]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/UpdateResart]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/discoverabstractnotifier.notifyrc
+
+## Window Management
+### Desktop Effects > Appearance > uncheck "screen edge"
+kwriteconfig5 --file ~/.config/kwinrc --group Plugins --key screenedgeEnabled "false"
+### Virtual Desktop > uncheck "Navigation wraps around"
+kwriteconfig5 --file ~/.config/kwinrc --group Windows --key RollOverDesktops "false"
+
 
 ######################################################################################
 
-# Touchpad (take effect after rebooting)
-cat /proc/bus/input/devices | grep "Touchpad" > ~/.config/touchpadxlibinputrc
-sed -i 's+N: Name="+[+g' ~/.config/touchpadxlibinputrc
-sed -i 's+"+]+g' ~/.config/touchpadxlibinputrc
-sed -i '2,200d' ~/.config/touchpadxlibinputrc
-echo -e "clickMethodAreas=false\nclickMethodClickfinger=true\nnaturalScroll=true\npointerAcceleration=0.4\ntapToClick=true" >> ~/.config/touchpadxlibinputrc
+# Workspace
 
-# Mouse
-## Double click interval
+## General Behavior
+### Clicking files or folders > "Selects them"
+kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key SingleClick "false"
+### Double-click Interval: 500ms
 kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
-## Plasma Renderer > Render Loop > Basic
-#kwriteconfig5 --file ~/.config/kdeglobals --group QtQuickRendererSettings --key RenderLoop "basic"
+
+## Search
+### File Search > check "Enable File Search"
+kwriteconfig5 --file ~/.config/baloofilerc --group Basic --key Indexing-Enabled "Settings"
+kwriteconfig5 --file ~/.config/baloofilerc --group 'Basic Settings' --key Indexing-Enabled "true"
+kwriteconfig5 --file ~/.config/krunnerrc --group PlasmaRunnerManager --key migrated "true"
+kwriteconfig5 --file ~/.config/krunnerrc --group Plugins --key baloosearchEnabled "true"
+### Plasma Search > Config KRunner... > Position on screen > select "Center"
+kwriteconfig5 --file ~/.config/krunnerrc --group General --key FreeFloating "true"
+### System Settings > Search > Plasma Search > Config KRunner... > Activation > uncheck "Activate when pressing any key on desktop"
+kwriteconfig5 --file ~/.config/krunnerrc --group General --key ActivateWhenTypingOnDesktop "false"
+### System Settings > Search > Plasma Search > Config KRunner... > History > uncheck "Retain previous search"
+kwriteconfig5 --file ~/.config/krunnerrc --group General --key RetainPriorSearch "false"
 
 ######################################################################################
 
-# Display and Monitor
+# Security & Privacy
 
-## Nvidia
+## Screen Locking > Lock screen automatically: 30minutes
+kwriteconfig5 --file ~/.config/kscreenlockerrc --group Daemon --key Timeout "30"
 
 ######################################################################################
 
-# Power Management
-## Power Management > Energy Saving > On AC Power: 15min, 30min
-## Power Management > Energy Saving > On Battery: 10min, 15min
-## Power Management > Energy Saving > Low Battery: 5min, 10min
+# System
+
+## Power Management
+### Power Management > Energy Saving > On AC Power: 15min, 30min
+### Power Management > Energy Saving > On Battery: 10min, 15min
+### Power Management > Energy Saving > Low Battery: 5min, 10min
 cp -f ./cfg/power/powerdevilrc ~/.config/
-
-## Remove Hibernate
+### Remove Hibernate
 if grep -q "#AllowHibernation=yes" /etc/systemd/sleep.conf ; then sudo sed -i 's+#AllowHibernation=yes+AllowHibernation=no+g' /etc/systemd/sleep.conf ; fi
 
-## Sleep deep
-#if ! grep -q "quiet splash mem_sleep_default=deep" /etc/default/grub ; then sudo sed -i 's+quiet splash +quiet splash mem_sleep_default=deep +g' /etc/default/grub && sudo update-grub && echo "" ; fi
+## Software Update
+### Update software > select "Manually"
+### Apply system updates > select "Immediately"
+kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdates "false"
+### Notification frequency > select "Monthly"
+kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000'
+
+## Session
+### Desktop Session > On login, launch apps that were open > select "Start with an empty session"
+kwriteconfig5 --file ~/.config/ksmserverrc --group General --key loginMode "emptySession"
 
 ######################################################################################
 
-# Software Update
-
-## System Update > Update software > select "Manually" and uncheck "Use offline updates"
-kwriteconfig5 --file ~/.config/discoverrc --group Software --key UseOfflineUpdates "false"
-
-## ## System Update > Update software > Notification frequency > select "Monthly"
-kwriteconfig5 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000' #_to_be_updated
 
 #-------------------------------------------------------------------------------------
 
