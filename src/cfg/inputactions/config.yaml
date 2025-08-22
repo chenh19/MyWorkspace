@@ -1,0 +1,68 @@
+touchpad:
+  gestures:
+
+    # global
+
+    - type: swipe
+      direction: up
+      fingers: 3
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,Overview
+
+    - type: swipe
+      direction: down
+      fingers: 3
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,Overview
+
+    - type: swipe
+      direction: left
+      fingers: 3
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,Switch One Desktop to the Right
+
+    - type: swipe
+      direction: right
+      fingers: 3
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,Switch One Desktop to the Left
+
+    - type: swipe
+      direction: up
+      fingers: 4
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,
+
+    - type: swipe
+      direction: down
+      fingers: 4
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,
+
+    - type: swipe
+      direction: left
+      fingers: 4
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,
+
+    - type: swipe
+      direction: right
+      fingers: 4
+
+      actions:
+        - on: end
+          plasma_shortcut: kwin,
