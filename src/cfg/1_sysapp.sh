@@ -28,7 +28,7 @@ sudo ufw enable
 ## install widgets
 # taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
 # install textcommand
-/usr/lib/x86_64-linux-gnu/libexec/kf6/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 #Text Command
+#/usr/lib/x86_64-linux-gnu/libexec/kf6/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/1704465 #Text Command
 
 ## config taskbar widgets (take effect after rebooting)
 # start menu only show file manager and web browser
