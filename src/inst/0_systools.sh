@@ -20,7 +20,7 @@ echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb ht
 
 # debloat
 sudo apt update
-packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmag kmouth kfind kaddressbook korganizer mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai xterm)
+packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmag kmouth kfind kaddressbook korganizer mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai xterm plasma-welcome)
 to_remove=()
 for pkg in "${packages[@]}"; do
     if dpkg -s "$pkg" 2>/dev/null | grep -q "Status: install ok installed"; then to_remove+=("$pkg"); fi
