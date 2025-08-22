@@ -136,6 +136,7 @@ echo ""
 
 # AppImages
 
+  echo ""
   ## OneDriveGUI
   wget -q "https://www.dropbox.com/scl/fi/l4s04hw0z0y9su54fzewe/onedrivegui.AppImage?rlkey=tmwf6y38kpovdkl5wvy7pmczk" -O onedrivegui.AppImage && echo '"OneDriveGUI" AppImage package is downloaded.' && sleep 1
   [ ! -d /opt/onedrivegui/ ] && sudo mkdir /opt/onedrivegui/
@@ -171,13 +172,16 @@ echo ""
 
 # install apps (.run)
 
+  echo ""
   ## virtualbox (wait for official update)
   [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
   wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
   sudo bash ./inst/virtualbox.run
+  sleep 1 && rm ./inst/virtualbox.run
 
 # install apps (.zip)
 
+  echo ""
   ## Etcher
   [ -d /opt/balenaEtcher/ ] && sudo rm -rf /opt/balenaEtcher/
   wget -q "https://www.dropbox.com/scl/fi/appud7mczsnhg05gekq6j/etcher.zip?rlkey=55amwyk81b8x4t4yqa0q758wp" -O etcher.zip && echo '"Balena Etcher" zip package is downloaded.' && sleep 1
@@ -197,6 +201,7 @@ echo ""
     --set-icon '/opt/icon/etcher.png' \
     --remove-key 'Categories' --add-category 'Utility;' \
   /usr/share/applications/balena-etcher.desktop
+  sleep 1 && rm -rf ./balenaEtcher-linux-*/
 
 # auto config
 
@@ -256,7 +261,8 @@ echo ""
   im-config -c -n fcitx5
   if grep -q "# zh_CN.UTF-8 UTF-8" /etc/locale.gen ; then sudo sed -i 's+# zh_CN.UTF-8 UTF-8+zh_CN.UTF-8 UTF-8+g' /etc/locale.gen ; fi
   sudo locale-gen
-  echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+  echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+  kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
 
   ## wechat
   [ ! -f /etc/lsb-release ] && sudo touch /etc/lsb-release
