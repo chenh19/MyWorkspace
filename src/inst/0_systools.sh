@@ -163,12 +163,13 @@ sudo apt autoremove -y
 
 # install apps (.run)
 
-  echo ""
+  #echo ""
   ## virtualbox (wait for official update)
-  [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
-  wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
-  sudo bash ./inst/virtualbox.run
-  sleep 1 && rm ./inst/virtualbox.run
+  #[ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
+  #wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
+  #sudo bash ./inst/virtualbox.run
+  #sleep 1 && rm ./inst/virtualbox.run
+  #sudo usermod -aG vboxusers $USER
 
 # install apps (.zip)
 
@@ -229,9 +230,6 @@ sudo apt autoremove -y
   [ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
   [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
   echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
-
-  ## virtualbox
-  sudo usermod -aG vboxusers $USER
   
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
