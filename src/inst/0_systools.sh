@@ -18,7 +18,7 @@ echo -e "${TEXT_YELLOW}Installing system tools...${TEXT_RESET}\n" && sleep 1
 source /etc/os-release
 echo -e "# See https://wiki.debian.org/SourcesList for more information.\ndeb http://deb.debian.org/debian $VERSION_CODENAME main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian $VERSION_CODENAME-updates main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME-updates main contrib non-free non-free-firmware\n\ndeb http://deb.debian.org/debian-security/ $VERSION_CODENAME-security main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian-security/ $VERSION_CODENAME-security main contrib non-free non-free-firmware\n\n# Backports allow you to install newer versions of software made available for this release\ndeb http://deb.debian.org/debian $VERSION_CODENAME-backports main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian $VERSION_CODENAME-backports main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
-# install updates
+# debloat
 sudo apt update
 packages=(raspi-firmware firefox-esr gimp goldendict goldendict-ng akregator kmousetool kontrast kmail kmailtransport-akonadi dragonplayer juk konqueror kasumi kamera kmag kmouth kfind kaddressbook korganizer mlterm mlterm-tools mlterm-common ncurses-term xiterm+thai xterm)
 to_remove=()
@@ -27,18 +27,20 @@ for pkg in "${packages[@]}"; do
 done
 if [ ${#to_remove[@]} -gt 0 ]; then sudo apt remove -y "${to_remove[@]}"; fi
 sudo apt autoremove -y
-sudo apt full-upgrade -y
-#sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
-if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
-if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi
-#note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
+
+# install updates
+
+  sudo apt full-upgrade -y
+  #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
+  if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
+  if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi
+  #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
+
   ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra
   sudo apt install default-jre default-jdk systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer thunderbird krita krita-l10n inkscape kdenlive vlc -y
   # QT_AUTO_SCREEN_SCALE_FACTOR=1 krita
-
-# install apps (ppa)
 
 # install apps (source list)
 
@@ -91,8 +93,8 @@ if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-d
 
 # install apps (downloaded)
 
-echo ""
-[ ! -d ./deb/ ] && mkdir ./deb/
+  echo ""
+  [ ! -d ./deb/ ] && mkdir ./deb/
 
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
@@ -105,7 +107,6 @@ echo ""
   ## self maintained redirecting links
   wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #x11 scaling
   # QT_SCALE_FACTOR=2 4kvideodownloaderplus
-  #wget -q "https://www.dropbox.com/scl/fi/8s36u19ya5op3msfcngtk/qview-old.deb?rlkey=klsgn6llvqpn9t4nyz8wo9iyg" -O qview.deb && echo '"qView" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
   # QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun
   wget -q "https://www.dropbox.com/scl/fi/d55hac9aiwzzc7aq8ky72/simplenote.deb?rlkey=p0lg6vdsefoi16pc04sg1r1n6" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
@@ -114,7 +115,6 @@ echo ""
   wget -q "https://www.dropbox.com/scl/fi/x8gwrqsas8lqt2ckdyqc6/wechat.deb?rlkey=o0sg577sxwbwr3e68rgi2lney" -O wechat.deb && echo '"WeChat" deb package is downloaded.' && sleep 1
   # QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat
   wget -q "https://www.dropbox.com/scl/fi/ohmiilwoep7ugvlpbov8i/freedownloadmanager.deb?rlkey=34tnbu8t68u0ffeeukcrqcq9v" -O freedownloadmanager.deb && echo '"Free Download Manager" deb package is downloaded.' && sleep 1
-  #wget -q "https://www.dropbox.com/scl/fi/rufzgb528vzg19w45c5vx/touchegg.deb?rlkey=bjp0q9jaf25oo34vuyu0qzzw1" -O touchegg.deb && echo '"Touchegg" deb package is downloaded.' && sleep 1
   
   ## install
   echo ""
@@ -234,13 +234,10 @@ echo ""
   ## zoom auto scaling
   kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
 
-  ## teamviewer wallpaper
+  ## teamviewer
   [ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
   [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
   echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
-
-  ## simplenote quites unexpectedly
-  #sudo sed -i 's+Exec=/opt/Simplenote/simplenote %U+Exec=/opt/Simplenote/simplenote --no-sandbox %U+g' /usr/share/applications/simplenote.desktop
 
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
@@ -251,9 +248,6 @@ echo ""
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
-
-  ## apt modernize-sources
-  #sudo apt modernize-sources -y #(for apt 3.0 and above)
   
   ## fcitx
   cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
@@ -284,6 +278,9 @@ echo ""
   #/usr/share/applications/thunderbird.desktop
   ##cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
 
+  ## apt modernize-sources
+  #sudo apt modernize-sources -y #(for apt 3.0 and above)
+  
 # cleanup
 rm -rf ./deb/
 rm -rf ./cfg/fcitx5-themes/
