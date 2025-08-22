@@ -46,17 +46,19 @@ kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActiva
 kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
 
 ## Keyboard (take effect after rebooting)
-### Konsole: Meta+R
+### spectacle region: Alt+P
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RectangularRegionScreenShot "Alt+P"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key '_launch' "Print,Print,Spectacle"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RecordRegion "Meta+Shift+R"
+### Konsole: Meta+R
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.konsole.desktop --key NewWindow "Meta+R"
 #kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewTab "none,none,Open a New Tab"
 #kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewWindow "Meta+R,none,Open a New Window"
 #kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _k_friendly_name "Konsole"
 #kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _launch "none,none,Konsole"
 ### System Monitor: Ctrl+Shift+Esc
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc,none,System Monitor"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc"
 #kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _k_friendly_name "System Monitor"
-
 ### System Settings > Shortcuts > Shortcuts > KWin:
 ### Close Window > Meta+Q
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
@@ -65,12 +67,8 @@ kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One
 ### Switch One Desktop to the Right: Meta+Ctrl+Right
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Right' "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
 ### Toggle Overview: Meta+Tab
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview"
-sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
-### spectacle region: Alt+P
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key 'RectangularRegionScreenShot' "Alt+P,Meta+Shift+Print,Capture Rectangular Region"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.spectacle.desktop --key '_launch' "Print,Print,Spectacle"
-## Workspace Behavior > Activities > Switching > Customize two Global shortcuts as "None"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview" && sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+### Workspace Behavior > Activities > Switching > Customize two Global shortcuts as "None"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'manage activities' "none,none,Show Activity Switcher"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'next activity' "none,none,Walk through activities"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'previous activity' "none,none,Walk through activities (Reverse)"
