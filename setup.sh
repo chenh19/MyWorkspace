@@ -90,7 +90,7 @@ bash ./inst/0_systools.sh
 bash ./inst/1_biotools.sh
 
 # config
-#bash ./cfg/0_sysstg.sh
+bash ./cfg/0_sysstg.sh
 #bash ./cfg/1_sysapp.sh
 #bash ./cfg/2_sysdsp.sh
 #bash ./cfg/3_reboot.sh
