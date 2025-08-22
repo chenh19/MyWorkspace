@@ -22,14 +22,23 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}\n"
 # Input & Output
 
 ## Mouse & Touchpad
-###Touchpad (take effect after rebooting)
-touchpad_info=$(grep "Touchpad" /proc/bus/input/devices | sed 's/^N: Name="//; s/"$//')
-if grep -q "$touchpad_info" ~/.config/kcminputrc ; then
-  sed -i '2,200d' ~/.config/kcminputrc
-  echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=0.3" >> ~/.config/kcminputrc
-fi
-unset touchpad_info
-###Screen Edges > "no actiion" for all corners
+### Touchpad (take effect after rebooting)
+#### Extract the hex ID of the touchpad
+hex_id=$(grep -i "Touchpad" /proc/bus/input/devices | sed 's/N: Name=".* \(.*\) Touchpad"/\1/')
+#### Split hex_id into two parts
+bus_hex=${hex_id%%:*}
+dev_hex=${hex_id##*:}
+#### Convert hex to decimal
+bus_dec=$((16#$bus_hex))
+dev_dec=$((16#$dev_hex))
+####Get full touchpad name
+touchpad_name=$(grep -i "Touchpad" /proc/bus/input/devices | sed -n 's/^N: Name="//p' | sed 's/"$//')
+####Format the first line
+libinput_line="[Libinput][$bus_dec][$dev_dec][$touchpad_name]"
+####Write touchpad config
+echo -e "$libinput_line" > ~/.config/kcminputrc
+echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=0.3" >> ~/.config/kcminputrc
+### Screen Edges > "no actiion" for all corners
 kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate "9"
 
 ## Virtual Keyboard (take effect after rebooting)
