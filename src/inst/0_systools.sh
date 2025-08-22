@@ -197,6 +197,7 @@ sudo apt autoremove -y
 
 # auto config
 
+  echo ""
   ## enable firewall
   sudo ufw enable
 
