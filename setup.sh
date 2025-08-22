@@ -52,6 +52,8 @@ kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon 
 kwriteconfig5 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon "folder-onedrive"
 [ ! -d ~/Backup/ ] && mkdir ~/Backup/
 kwriteconfig5 --file ~/Backup/.directory --group "Desktop Entry" --key Icon "folder-tar"
+[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
+kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
@@ -62,8 +64,6 @@ echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 #	until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
 #    	  read -s -p "$(echo -e '\n'${TEXT_YELLOW}'Please enter the password to unzip the licenses: '${TEXT_RESET})"$'\n' password
 #	done
-#	[ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
-#	kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
 #	[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
 #	7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
 #	rm -f ~/Licenses/license.zip
