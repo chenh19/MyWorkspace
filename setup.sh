@@ -57,20 +57,6 @@ kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "c
 rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
-## prepare all licenses
-#read -n1 -s -r -p "$(echo -e '\n'${TEXT_YELLOW}'Do you have access to the licenses? [y/n/c]'${TEXT_RESET})"$'\n' choice
-#case "$choice" in
-#  y|Y ) unset password
-#	until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
-#    	  read -s -p "$(echo -e '\n'${TEXT_YELLOW}'Please enter the password to unzip the licenses: '${TEXT_RESET})"$'\n' password
-#	done
-#	[ ! -f ~/Licenses/license.zip ] && wget -q "https://www.dropbox.com/scl/fi/tfjporb5ytmz2drsfsvng/license.zip?rlkey=4j5p50pfi5cdegbm757444lxo" -O ~/Licenses/license.zip && sleep 1
-#	7z x -aoa -p$password ~/Licenses/license.zip -o$HOME/Licenses/
-#	rm -f ~/Licenses/license.zip
-#	echo -e "\n${TEXT_GREEN}Licenses unzipped successfully!${TEXT_RESET}\n" && sleep 1;;
-#    * ) echo -e "\n${TEXT_YELLOW}Skipping license unzip step.${TEXT_RESET}\n" && sleep 1;;
-#esac
-
 ## hide files and folders
 echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nVirtualBox VMs\nminiconda3\nbin" > ~/.hidden
 echo -e "Enpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
