@@ -41,6 +41,15 @@ echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFac
 ### Screen Edges > "no actiion" for all corners
 kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate "9"
 
+### Touchpad gestures
+#### Global
+
+cp -rf ./cfg/inputactions/ ~/.config/
+#### Google Chrome
+[ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
+    --set-key 'Exec' --set-value '/usr/bin/google-chrome-stable --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation,PreferredOzonePlatform %U' \
+/usr/share/applications/google-chrome.desktop
+
 ## Virtual Keyboard (take effect after rebooting)
 ### Select Fcitx5
 kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
