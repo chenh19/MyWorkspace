@@ -239,6 +239,9 @@ sudo apt autoremove -y
   [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
   echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
 
+  ## virtualbox
+  sudo usermod -aG vboxusers $USER
+  
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
   [ -d ~/.config/qView/ ] && rm -rf ~/.config/qView/*
