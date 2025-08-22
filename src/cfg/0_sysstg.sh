@@ -47,13 +47,16 @@ kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/sh
 
 ## Keyboard (take effect after rebooting)
 ### Konsole: Meta+R
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewTab "none,none,Open a New Tab"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewWindow "Meta+R,none,Open a New Window"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _k_friendly_name "Konsole"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _launch "none,none,Konsole"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RecordRegion "Meta+Shift+R"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.konsole.desktop --key NewWindow "Meta+R"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewTab "none,none,Open a New Tab"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key NewWindow "Meta+R,none,Open a New Window"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _k_friendly_name "Konsole"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.konsole.desktop --key _launch "none,none,Konsole"
 ### System Monitor: Ctrl+Shift+Esc
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _k_friendly_name "System Monitor"
-kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc,none,System Monitor"
+kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc,none,System Monitor"
+#kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group org.kde.plasma-systemmonitor.desktop --key _k_friendly_name "System Monitor"
+
 ### System Settings > Shortcuts > Shortcuts > KWin:
 ### Close Window > Meta+Q
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
