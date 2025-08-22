@@ -1,7 +1,7 @@
 # Shell Script Template
 
 ```
-#!/bin/bash
+#!/usr/bin/env bash
 # This script does xxx
 
 # set terminal font color
