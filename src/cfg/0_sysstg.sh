@@ -43,6 +43,10 @@ kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActiva
 
 ### Touchpad gestures
 #### Global
+[ ! -f InputActions.zip ] && wget -q "https://www.dropbox.com/scl/fi/q5totw0zok4cwvj0mjr0g/InputActions.zip?rlkey=2n5x30p3n2ghuirse7evjyavx" -O InputActions.zip && sleep 1
+unzip -o -q InputActions.zip -d ./cfg/ && sleep 1 && rm -f InputActions.zip && sleep 1
+## unzip to a fixed folder name, or just copy ##
+
 
 cp -rf ./cfg/inputactions/ ~/.config/
 #### Google Chrome
