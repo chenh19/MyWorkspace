@@ -49,6 +49,8 @@ showAppsByName=true
 [Containments][2][Applets][3][Configuration][General]
 favorites=applications:org.kde.dolphin.desktop,applications:google-chrome.desktop
 favoritesPortedToKAstats=true
+switchCategoryOnHover=true
+systemFavorites=suspend\\,reboot\\,shutdown
 
 [Containments][2][Applets][3][Configuration][Shortcuts]
 global=Alt+F1
