@@ -238,7 +238,6 @@ sudo apt autoremove -y
   wget -qO- https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/presets/neofetch.jsonc > ~/.config/fastfetch/config.jsonc
   
   ## Etcher
-  [ ! -d ~/.config/balenaEtcher/ ] && mkdir ~/.config/balenaEtcher/
   cp -rf ./cfg/balenaEtcher/ ~/.config/
   
   ## zoom auto scaling
