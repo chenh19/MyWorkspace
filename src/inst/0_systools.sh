@@ -251,12 +251,14 @@ sudo apt autoremove -y
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
   [ -d ~/.config/qView/ ] && rm -rf ~/.config/qView/*
+  kwriteconfig5 --file ~/.config/qView/qView.conf --group General --key firstlaunch "true"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key saverecents "false"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
+  
   
   ## fcitx
   cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
