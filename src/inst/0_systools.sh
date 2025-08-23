@@ -198,6 +198,23 @@ sudo apt autoremove -y
 # auto config
 
   echo ""
+  ## Touchpad gestures
+  ### Global
+  sudo apt update -qq && sudo apt install git cmake g++ extra-cmake-modules qt6-tools-dev kwin-wayland kwin-dev libkf6configwidgets-dev gettext libkf6kcmutils-dev libyaml-cpp-dev libxkbcommon-dev pkg-config libevdev-dev -y
+  [ ! -f InputActions.zip ] && wget -q "https://www.dropbox.com/scl/fi/q5totw0zok4cwvj0mjr0g/InputActions.zip?rlkey=2n5x30p3n2ghuirse7evjyavx" -O InputActions.zip && sleep 1
+  unzip -o -q InputActions.zip -d ./ && sleep 1 && rm -f InputActions.zip && sleep 1
+  mv ./InputActions-*/ ./InputActions/
+  mkdir -p ./InputActions/build/
+  cmake ./InputActions/ -B ./InputActions/build/ -DCMAKE_INSTALL_PREFIX=/usr -DINPUTACTIONS_BUILD_KWIN=ON
+  make -C ./InputActions/build/ -j$(nproc)
+  sudo make -C ./InputActions/build/ install
+  cp -rf ./cfg/inputactions/ ~/.config/
+  rm -rf ./InputActions/
+  ### Google Chrome
+  [ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
+      --set-key 'Exec' --set-value '/usr/bin/google-chrome-stable --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation,PreferredOzonePlatform %U' \
+  /usr/share/applications/google-chrome.desktop
+
   ## enable firewall
   sudo ufw enable
 
