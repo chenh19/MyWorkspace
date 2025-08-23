@@ -41,28 +41,6 @@ echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFac
 ### Screen Edges > "no actiion" for all corners
 kwriteconfig5 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate "9"
 
-### Touchpad gestures
-#### Global
-sudo apt update -qq && sudo apt install git cmake g++ extra-cmake-modules qt6-tools-dev kwin-wayland kwin-dev libkf6configwidgets-dev gettext libkf6kcmutils-dev libyaml-cpp-dev libxkbcommon-dev pkg-config libevdev-dev -y
-[ ! -f InputActions.zip ] && wget -q "https://www.dropbox.com/scl/fi/q5totw0zok4cwvj0mjr0g/InputActions.zip?rlkey=2n5x30p3n2ghuirse7evjyavx" -O InputActions.zip && sleep 1
-#unzip -o -q InputActions.zip -d ./cfg/ && sleep 1 && rm -f InputActions.zip && sleep 1
-## unzip to a fixed folder name, or just copy ##
-
-#        [ ! -d ./cfg/InputActions/ ] && sudo mkdir ./cfg/InputActions/
-#        sudo cp -rf ./IGV_Linux_*/* /opt/igv/ && sleep 1
-#        rm -rf ./IGV_Linux_*/
-
-#mkdir ./cfg/InputActions/build
-#cmake ./cfg/InputActions -DCMAKE_INSTALL_PREFIX=/usr -DINPUTACTIONS_BUILD_KWIN=ON
-#make -C ./cfg/InputActions/build -j$(nproc)
-#sudo make -C ./cfg/InputActions/build install
-
-cp -rf ./cfg/inputactions/ ~/.config/
-#### Google Chrome
-[ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
-    --set-key 'Exec' --set-value '/usr/bin/google-chrome-stable --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation,PreferredOzonePlatform %U' \
-/usr/share/applications/google-chrome.desktop
-
 ## Virtual Keyboard (take effect after rebooting)
 ### Select Fcitx5
 kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
