@@ -239,7 +239,7 @@ sudo apt autoremove -y
   
   ## Etcher
   [ ! -d ~/.config/balenaEtcher/ ] && mkdir ~/.config/balenaEtcher/
-  echo -e '{\n  "errorReporting": false,\n  "updatesEnabled": false,\n  "desktopNotifications": true,\n  "autoBlockmapping": true,\n  "decompressFirst": true\n}' > ~/.config/balenaEtcher/config.json
+  cp -rf ./cfg/balenaEtcher/ ~/.config/
   
   ## zoom auto scaling
   kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
