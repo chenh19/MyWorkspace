@@ -259,7 +259,6 @@ sudo apt autoremove -y
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
   kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
   
-  
   ## fcitx
   cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
   cp -rf ./cfg/fcitx5/* ~/.config/fcitx5/
