@@ -209,6 +209,7 @@ sudo apt autoremove -y
   make -C ./InputActions/build/ -j$(nproc)
   sudo make -C ./InputActions/build/ install
   cp -rf ./cfg/inputactions/ ~/.config/
+  kwriteconfig5 --file ~/.config/kwinrc --group Plugins --key kwin_gesturesEnabled "true"
   rm -rf ./InputActions/
   ### Google Chrome
   [ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
