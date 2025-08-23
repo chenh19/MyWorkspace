@@ -199,7 +199,10 @@ sudo apt autoremove -y
 
   echo ""
   ## Touchpad gestures
-  ### Global
+  ### Touchegg
+  #[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
+  #cp -f ./cfg/touchegg/touchegg.conf ~/.config/touchegg/
+  ### Global (KWin-InputAction)
   sudo apt update -qq && sudo apt install git cmake g++ extra-cmake-modules qt6-tools-dev kwin-wayland kwin-dev libkf6configwidgets-dev gettext libkf6kcmutils-dev libyaml-cpp-dev libxkbcommon-dev pkg-config libevdev-dev -y
   [ ! -f InputActions.zip ] && wget -q "https://www.dropbox.com/scl/fi/q5totw0zok4cwvj0mjr0g/InputActions.zip?rlkey=2n5x30p3n2ghuirse7evjyavx" -O InputActions.zip && sleep 1
   unzip -o -q InputActions.zip -d ./ && sleep 1 && rm -f InputActions.zip && sleep 1
@@ -229,10 +232,6 @@ sudo apt autoremove -y
   ## OneDriveGUI
   cp -rf ./cfg/onedrive-gui/ ~/.config/
   #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
-  
-  ## Touchegg
-  #[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
-  #cp -f ./cfg/touchegg/touchegg.conf ~/.config/touchegg/
   
   ## Fastfetch
   [ ! -d ~/.config/fastfetch/ ] && mkdir ~/.config/fastfetch/
