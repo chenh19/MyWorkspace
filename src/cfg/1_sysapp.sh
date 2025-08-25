@@ -92,6 +92,10 @@ kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "
 [ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
 cp -f ./cfg/dolphin/dolphinui.rc ~/.local/share/kxmlgui5/dolphin/
 
+# Config > Interface > Status & Location bars > Status Bar > check "Full width" and "Show zoom slider"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowStatusBar "FullWidth"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowZoomSlider "true"
+
 # Dolphin window size
 [ ! -d ~/.local/share/dolphin/ ] && mkdir ~/.local/share/dolphin/
 ## layout
