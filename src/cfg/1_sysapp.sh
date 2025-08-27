@@ -179,7 +179,7 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '144
 ### 2 screens
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Width' "803"
 
-## Konsole window height 32 charc
+## Konsole window height 32 charc (previously height=625)
 ### 3840x2400
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Height' "536" #1.0
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Height' "536" #1.5
