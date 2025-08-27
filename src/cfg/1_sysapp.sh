@@ -25,22 +25,8 @@ sudo ufw enable
 
 ######################################################################################
 
-## install widgets
-# taskbar: remove "Pager"; add "Text Command" (for windows, ❐, ⛶); "Better inline clock" by marianarlt and "Window Title Applet" by Psifidotos (for Mac)
-# install textcommand
+## install widgets (take effect after rebooting)
 /usr/lib/x86_64-linux-gnu/libexec/kf6/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/2132554 #Toggle Overview
-
-## config taskbar widgets (take effect after rebooting)
-# start menu only show file manager and web browser
-# pinned apps only show file manager and web browser
-# Change desktop icon settings
-# Right click on Desktop > Icon Size > Small; Arrange In > Columns
-# Right click on Taskbar, Configure Icon-only Task Manager > Behavior > uncheck "Cycles through tasks"
-# Right click on Taskbar > Add Widgets... > add "Text Command" and config with a symbol
-# Configure System Tray > Entries > set always hidden and shown apps
-# System Tray
-# Always shown: "Audio Volume", "Battery and Brightness", "Networks"
-# Shown when relevant: "Disk & Devices", "KDE Connect", "Printers"
 line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
 line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
@@ -104,61 +90,61 @@ kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '
 kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key 'RestorePositionForNextInstance' "false"
 ## Dolphin window Width 900
 ### 3840x2400
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3840x2400 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2560x1600 screen: Width' "900" #1.5
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1920x1200 screen: Width' "900" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1536x960 screen: Width' "900" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3840x2400 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2560x1600 screen: Width' "900" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1920x1200 screen: Width' "900" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1536x960 screen: Width' "900" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3840x2160 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2560x1440 screen: Width' "900" #1.5
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1920x1080 screen: Width' "900" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1536x864 screen: Width' "900" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3840x2160 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2560x1440 screen: Width' "900" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1920x1080 screen: Width' "900" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1536x864 screen: Width' "900" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3000x2000 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1500x1000 screen: Width' "900" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1200x800 screen: Width' "900" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3000x2000 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1500x1000 screen: Width' "900" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1200x800 screen: Width' "900" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3200x1800 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1600x900 screen: Width' "900" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1280x720 screen: Width' "900" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3200x1800 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1600x900 screen: Width' "900" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1280x720 screen: Width' "900" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2880x1800 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Width' "900" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1152x720 screen: Width' "900" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2880x1800 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1440x900 screen: Width' "900" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1152x720 screen: Width' "900" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2160x1350 screen: Width' "900" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Width' "900" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2160x1350 screen: Width' "900" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1440x900 screen: Width' "900" #1.5
 ### 2 screens
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2 screens: Width' "900"
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2 screens: Width' "900"
 
 ## Dolphin window Height 600
 ### 3840x2400
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3840x2400 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2560x1600 screen: Height' "600" #1.5
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1920x1200 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1536x960 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3840x2400 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2560x1600 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1920x1200 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1536x960 screen: Height' "600" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3840x2160 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2560x1440 screen: Height' "600" #1.5
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1920x1080 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1536x864 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3840x2160 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2560x1440 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1920x1080 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1536x864 screen: Height' "600" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3000x2000 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1500x1000 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1200x800 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3000x2000 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1500x1000 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1200x800 screen: Height' "600" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '3200x1800 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1600x900 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1280x720 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3200x1800 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1600x900 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1280x720 screen: Height' "600" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2880x1800 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1152x720 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2880x1800 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1440x900 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1152x720 screen: Height' "600" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2160x1350 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '1440x900 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2160x1350 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '1440x900 screen: Height' "600" #1.5
 ### 2 screens
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '2 screens: Height' "600"
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '2 screens: Height' "600"
 
 ######################################################################################
 
@@ -166,61 +152,61 @@ kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key '
 
 ## Konsole window Width 96 charc
 ### 3840x2400
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3840x2400 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2560x1600 screen: Width' "803" #1.5
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1920x1200 screen: Width' "803" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1536x960 screen: Width' "803" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Width' "803" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1200 screen: Width' "803" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x960 screen: Width' "803" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3840x2160 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2560x1440 screen: Width' "803" #1.5
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1920x1080 screen: Width' "803" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1536x864 screen: Width' "803" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2160 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1440 screen: Width' "803" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1080 screen: Width' "803" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x864 screen: Width' "803" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3000x2000 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1500x1000 screen: Width' "803" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1200x800 screen: Width' "803" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3000x2000 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1500x1000 screen: Width' "803" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1200x800 screen: Width' "803" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3200x1800 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1600x900 screen: Width' "803" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1280x720 screen: Width' "803" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3200x1800 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1600x900 screen: Width' "803" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1280x720 screen: Width' "803" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2880x1800 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Width' "803" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1152x720 screen: Width' "803" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2880x1800 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Width' "803" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1152x720 screen: Width' "803" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2160x1350 screen: Width' "803" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Width' "803" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2160x1350 screen: Width' "803" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Width' "803" #1.5
 ### 2 screens
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2 screens: Width' "803"
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Width' "803"
 
 ## Konsole window height 32 charc
 ### 3840x2400
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3840x2400 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2560x1600 screen: Height' "625" #1.5
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1920x1200 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1536x960 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Height' "625" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1200 screen: Height' "625" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x960 screen: Height' "625" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3840x2160 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2560x1440 screen: Height' "625" #1.5
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1920x1080 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1536x864 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2160 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1440 screen: Height' "625" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1080 screen: Height' "625" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x864 screen: Height' "625" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3000x2000 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1500x1000 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1200x800 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3000x2000 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1500x1000 screen: Height' "625" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1200x800 screen: Height' "625" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '3200x1800 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1600x900 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1280x720 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3200x1800 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1600x900 screen: Height' "625" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1280x720 screen: Height' "625" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2880x1800 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1152x720 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2880x1800 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "625" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1152x720 screen: Height' "625" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2160x1350 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '1440x900 screen: Height' "625" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2160x1350 screen: Height' "625" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "625" #1.5
 ### 2 screens
-kwriteconfig5 --file ~/.config/konsolerc --group MainWindow --key '2 screens: Height' "625"
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Height' "625"
 
 ######################################################################################
 
