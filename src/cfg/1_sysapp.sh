@@ -278,6 +278,8 @@ cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
 
 # Ark
 
+kwriteconfig5 --file ~/.config/arkrc --group 'General' --key 'ShowWelcomeScreenOnStartup' "false"
+
 ## Ark window Width 817
 ### 3840x2400
 kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3840x2400 screen: Width' "817" #1.0
