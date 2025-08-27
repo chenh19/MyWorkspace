@@ -212,6 +212,10 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 s
 
 # kwrite
 
+## window size
+kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Width' "832"
+kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Height' "618"
+
 ## hide minimap
 # Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
 kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
