@@ -280,57 +280,57 @@ cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
 
 ## Ark window Width 817
 ### 3840x2400
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3840x2400 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2560x1600 screen: Width' "817" #1.5
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1920x1200 screen: Width' "817" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1536x960 screen: Width' "817" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3840x2400 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2560x1600 screen: Width' "817" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1920x1200 screen: Width' "817" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1536x960 screen: Width' "817" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3840x2160 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2560x1440 screen: Width' "817" #1.5
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1920x1080 screen: Width' "817" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1536x864 screen: Width' "817" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3840x2160 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2560x1440 screen: Width' "817" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1920x1080 screen: Width' "817" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1536x864 screen: Width' "817" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3000x2000 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1500x1000 screen: Width' "817" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1200x800 screen: Width' "817" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3000x2000 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1500x1000 screen: Width' "817" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1200x800 screen: Width' "817" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3200x1800 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1600x900 screen: Width' "817" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1280x720 screen: Width' "817" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3200x1800 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1600x900 screen: Width' "817" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1280x720 screen: Width' "817" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2880x1800 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1440x900 screen: Width' "817" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1152x720 screen: Width' "817" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2880x1800 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1440x900 screen: Width' "817" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1152x720 screen: Width' "817" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2160x1350 screen: Width' "817" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1440x900 screen: Width' "817" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2160x1350 screen: Width' "817" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1440x900 screen: Width' "817" #1.5
 
 ## Ark window Height 600
 ### 3840x2400
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3840x2400 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2560x1600 screen: Height' "600" #1.5
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1920x1200 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1536x960 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3840x2400 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2560x1600 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1920x1200 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1536x960 screen: Height' "600" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3840x2160 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2560x1440 screen: Height' "600" #1.5
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1920x1080 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1536x864 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3840x2160 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2560x1440 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1920x1080 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1536x864 screen: Height' "600" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3000x2000 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1500x1000 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1200x800 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3000x2000 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1500x1000 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1200x800 screen: Height' "600" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '3200x1800 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1600x900 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1280x720 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '3200x1800 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1600x900 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1280x720 screen: Height' "600" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2880x1800 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1440x900 screen: Height' "600" #2.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1152x720 screen: Height' "600" #2.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2880x1800 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1440x900 screen: Height' "600" #2.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1152x720 screen: Height' "600" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '2160x1350 screen: Height' "600" #1.0
-kwriteconfig5 --file ~/.config/arkrc --group 'MainWindow' --key '1440x900 screen: Height' "600" #1.5
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2160x1350 screen: Height' "600" #1.0
+kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1440x900 screen: Height' "600" #1.5
 
 ######################################################################################
 
