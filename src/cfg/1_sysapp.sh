@@ -181,32 +181,32 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 s
 
 ## Konsole window height 32 charc
 ### 3840x2400
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Height' "625" #1.5
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1200 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x960 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Height' "536" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1200 screen: Height' "536" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x960 screen: Height' "536" #2.5
 ### 3840x2160
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2160 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1440 screen: Height' "625" #1.5
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1080 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x864 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2160 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1440 screen: Height' "536" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1920x1080 screen: Height' "536" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1536x864 screen: Height' "536" #2.5
 ### 3000x2000
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3000x2000 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1500x1000 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1200x800 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3000x2000 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1500x1000 screen: Height' "536" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1200x800 screen: Height' "536" #2.5
 ### 3200x1800
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3200x1800 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1600x900 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1280x720 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3200x1800 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1600x900 screen: Height' "536" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1280x720 screen: Height' "536" #2.5
 ### 2880x1800
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2880x1800 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "625" #2.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1152x720 screen: Height' "625" #2.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2880x1800 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "536" #2.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1152x720 screen: Height' "536" #2.5
 ### 2160x1350
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2160x1350 screen: Height' "625" #1.0
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "625" #1.5
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2160x1350 screen: Height' "536" #1.0
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '1440x900 screen: Height' "536" #1.5
 ### 2 screens
-kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Height' "625"
+kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Height' "536"
 
 ######################################################################################
 
