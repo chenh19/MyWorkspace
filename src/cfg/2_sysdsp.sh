@@ -54,6 +54,8 @@ case "$choice" in
         ;;
 esac
 
+# ~/.config/kwinoutputconfig.json
+
 # scaling (take effect after rebooting; only for x11, will be removed for Wayland)
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e "[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true" | sudo tee /etc/sddm.conf.d/hidpi.conf
