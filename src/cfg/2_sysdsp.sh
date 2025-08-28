@@ -59,39 +59,47 @@ esac
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
 read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
-  a|A ) # Input & Output > Display & Monitor > Scale: 250%
+  a|A ) # System Settings > Input & Output > Display & Monitor > Scale: 250%
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
         # SDDM DPI
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.5.conf /etc/sddm.conf.d/dpi.conf
+        # app specific
+        
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
         ;;
-  b|B ) # Input & Output > Display & Monitor > Scale: 200%
+  b|B ) # System Settings > Input & Output > Display & Monitor > Scale: 200%
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
         # SDDM DPI
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.conf /etc/sddm.conf.d/dpi.conf
+        # app specific
+        
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
         ;;
-  c|C ) # Input & Output > Display & Monitor > Scale: 150%
+  c|C ) # System Settings > Input & Output > Display & Monitor > Scale: 150%
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
         # SDDM DPI
         echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.5.conf /etc/sddm.conf.d/dpi.conf
+        # app specific
+        
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
         ;;
-  * )   # Input & Output > Display & Monitor > Scale: 100%
+  * )   # System Settings > Input & Output > Display & Monitor > Scale: 100%
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
         # SDDM DPI
         echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.conf /etc/sddm.conf.d/dpi.conf
+        # app specific
+        
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
