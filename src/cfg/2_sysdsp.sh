@@ -55,7 +55,11 @@ case "$choice" in
 esac
 
 # sddm scaling factor
-# https://discuss.kde.org/t/ssdm-scaling-and-wayland/18535/4
+sudo mkdir -p /etc/sddm.conf.d/
+sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2.5 /etc/sddm.conf.d/dpi.conf
+sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2 /etc/sddm.conf.d/dpi.conf
+sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1.5 /etc/sddm.conf.d/dpi.conf
+sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1 /etc/sddm.conf.d/dpi.conf
 
 # session scaling factor
 # kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
