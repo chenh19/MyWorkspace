@@ -54,7 +54,14 @@ case "$choice" in
         ;;
 esac
 
-# ~/.config/kwinoutputconfig.json
+# sddm scaling factor
+# https://discuss.kde.org/t/ssdm-scaling-and-wayland/18535/4
+
+# session scaling factor
+# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
+# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
+# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
+# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
 
 # scaling (take effect after rebooting; only for x11, will be removed for Wayland)
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
