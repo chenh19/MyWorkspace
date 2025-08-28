@@ -1,0 +1,60 @@
+<!DOCTYPE gui>
+<gui name="okular_shell" translationDomain="kxmlgui6" version="11">
+ <MenuBar alreadyVisited="1">
+  <Menu alreadyVisited="1" name="file" noMerge="1">
+   <text translationDomain="kxmlgui6">&amp;File</text>
+   <Action name="file_open"/>
+   <Action name="file_open_recent"/>
+   <DefineGroup append="open_merge" name="file_open"/>
+   <Action append="open_merge" name="undo-close-tab"/>
+   <Separator weakSeparator="1"/>
+   <DefineGroup append="save_merge" name="file_save"/>
+   <Separator weakSeparator="1"/>
+   <Action name="file_print"/>
+   <DefineGroup append="print_merge" name="file_print"/>
+   <Separator weakSeparator="1"/>
+   <Action name="file_close"/>
+   <Separator weakSeparator="1"/>
+   <Action name="file_quit"/>
+  </Menu>
+  <Menu name="view" noMerge="1">
+   <text translationDomain="kxmlgui6">&amp;View</text>
+   <Action name="fullscreen"/>
+  </Menu>
+  <Merge/>
+  <Menu alreadyVisited="1" name="settings" noMerge="1">
+   <text translationDomain="kxmlgui6">&amp;Settings</text>
+   <Action name="options_show_menubar"/>
+   <Merge name="StandardToolBarMenuHandler"/>
+   <Merge name="KMDIViewActions"/>
+   <DefineGroup append="show_merge" name="show_merge"/>
+   <Separator weakSeparator="1"/>
+   <Action name="switch_application_language"/>
+   <Action name="options_configure_keybinding"/>
+   <Action name="options_configure_toolbars"/>
+   <DefineGroup append="configure_merge" name="configure_merge"/>
+  </Menu>
+  <Separator weakSeparator="1"/>
+  <Menu alreadyVisited="1" name="help" noMerge="1">
+   <text translationDomain="kxmlgui6">&amp;Help</text>
+   <Action name="help_contents"/>
+   <Action name="help_whats_this"/>
+   <Action name="open_kcommand_bar"/>
+   <Separator weakSeparator="1"/>
+   <Action name="help_report_bug"/>
+   <Separator weakSeparator="1"/>
+   <Action name="help_donate"/>
+   <Separator weakSeparator="1"/>
+   <DefineGroup append="about_merge" name="about_merge"/>
+   <Action name="help_about_app"/>
+   <Action name="help_about_kde"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar alreadyVisited="1" name="mainToolBar" noMerge="1">
+  <text translationDomain="okular">Main Toolbar</text>
+  <!--Action name="file_open_recent" /-->
+  <!--Action name="file_print" /-->
+  <Action name="file_print"/>
+ </ToolBar>
+ <ActionProperties scheme="Default"/>
+</gui>
