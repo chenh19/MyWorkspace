@@ -47,23 +47,23 @@ kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Pane
 
 # Dolphin
 
-## install widgets
+## install widgets  # to update
 # Context Menu > Download New Services... > "Open as root" (by loup), "Mount ISO" (by loup), "Rotate or flip images" (by alex-l), and "Combine *.pdf documents" (by Shaddar)
-[ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
-[ ! -d ~/.local/share/kservices5/ServiceMenus/ ] && mkdir ~/.local/share/kservices5/ServiceMenus/
-echo -e '[Desktop Entry]\nType=Service\n#ServiceTypes=application/x-cd-image;model/x.stl-binary\n#MimeType=all/all;\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/x-cd-image;model/x.stl-binary\nX-KDE-StartupNotify=false\nX-KDE-Priority=TopLevel\nActions=mountiso;\nInitialPreference=99\nVersion=1.0\n\n[Desktop Action mountiso]\nName=Mount the image\nName[ru]=Смонтировать образ\nExec=udisksctl loop-setup -r -f %u\nIcon=media-optical' > ~/.local/share/kservices5/ServiceMenus/mountiso.desktop
-echo -e '[Desktop Entry]\nType=Service\nIcon=system-file-manager\nActions=OpenAsRootKDE5\nServiceTypes=KonqPopupMenu/Plugin,inode/directory,inode/directory-locked\n\n[Desktop Action OpenAsRootKDE5]\nExec=if [ "$XDG_SESSION_TYPE" = "wayland" ]; then xhost +si:localuser:root && pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin %U && xhost -si:localuser:root ; else pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin %U; fi;\nIcon=system-file-manager\nName=Open as Root\nName[ru]=Открыть папку с правами рут\nName[ua]=Відкрити папку з правами рут\nName[zh_CN]=打开具有根权限的文件夹\nName[zh_TW]=打開具有根許可權的資料夾\nName[de]=Öffnen des Ordners mit Root-Berechtigungen\nName[ja]=ルート権限を持つフォルダを開く\nName[ko]=루트 권한이 있는 폴더 열기\nName[fr]=Ouvrez le dossier avec les privilèges root\nName[el]=Ανοίξτε ως Root\nName[es]=Abrir la carpeta con privilegios de root\nName[tr]=Kök ayrıcalıkları olan klasörü açma\nName[he]=פתח תיקיה עם הרשאות שורש\nName[it]=Aprire la cartella con privilegi radice\nName[ar]=فتح المجلد بامتيازات الجذر\nName[pt_BR]=Abrir pasta com privilégios de root\nName[pt_PT]=Abrir pasta com privilégios de root\nName[sv]=Öppna mapp med root-behörigheter\nName[nb]=Åpne mappen med rotprivilegier' > ~/.local/share/kservices5/ServiceMenus/open_as_root.desktop
-echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=left\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action left]\nName=Rotate left\nIcon=object-rotate-left\nExec=convert -rotate 270 %f %f' > ~/.local/share/kservices5/ServiceMenus/rotate_left.desktop
-echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=right\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action right]\nName=Rotate right\nIcon=object-rotate-right\nExec=convert -rotate 90 %f %f' > ~/.local/share/kservices5/ServiceMenus/rotate_right.desktop
-echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/pdf;\nIcon=application-pdf\nActions=combine\nX-KDE-Priority=TopLevel\nX-KDE-RequiredNumberOfUrls=2,3,4,5,6,7,8,9,10\nX-KDE-StartupNotify=false\n\n[Desktop Action combine]\nName=Combine PDF files\nIcon=application-pdf\nTryExec=gs\nExec=gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf %U' > ~/.local/share/kservices5/ServiceMenus/combine_pdf.desktop
+#[ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
+#[ ! -d ~/.local/share/kservices5/ServiceMenus/ ] && mkdir ~/.local/share/kservices5/ServiceMenus/
+#echo -e '[Desktop Entry]\nType=Service\n#ServiceTypes=application/x-cd-image;model/x.stl-binary\n#MimeType=all/all;\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/x-cd-image;model/x.stl-binary\nX-KDE-StartupNotify=false\nX-KDE-Priority=TopLevel\nActions=mountiso;\nInitialPreference=99\nVersion=1.0\n\n[Desktop Action mountiso]\nName=Mount the image\nName[ru]=Смонтировать образ\nExec=udisksctl loop-setup -r -f %u\nIcon=media-optical' > ~/.local/share/kservices5/ServiceMenus/mountiso.desktop
+#echo -e '[Desktop Entry]\nType=Service\nIcon=system-file-manager\nActions=OpenAsRootKDE5\nServiceTypes=KonqPopupMenu/Plugin,inode/directory,inode/directory-locked\n\n[Desktop Action OpenAsRootKDE5]\nExec=if [ "$XDG_SESSION_TYPE" = "wayland" ]; then xhost +si:localuser:root && pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin %U && xhost -si:localuser:root ; else pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin %U; fi;\nIcon=system-file-manager\nName=Open as Root\nName[ru]=Открыть папку с правами рут\nName[ua]=Відкрити папку з правами рут\nName[zh_CN]=打开具有根权限的文件夹\nName[zh_TW]=打開具有根許可權的資料夾\nName[de]=Öffnen des Ordners mit Root-Berechtigungen\nName[ja]=ルート権限を持つフォルダを開く\nName[ko]=루트 권한이 있는 폴더 열기\nName[fr]=Ouvrez le dossier avec les privilèges root\nName[el]=Ανοίξτε ως Root\nName[es]=Abrir la carpeta con privilegios de root\nName[tr]=Kök ayrıcalıkları olan klasörü açma\nName[he]=פתח תיקיה עם הרשאות שורש\nName[it]=Aprire la cartella con privilegi radice\nName[ar]=فتح المجلد بامتيازات الجذر\nName[pt_BR]=Abrir pasta com privilégios de root\nName[pt_PT]=Abrir pasta com privilégios de root\nName[sv]=Öppna mapp med root-behörigheter\nName[nb]=Åpne mappen med rotprivilegier' > ~/.local/share/kservices5/ServiceMenus/open_as_root.desktop
+#echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=left\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action left]\nName=Rotate left\nIcon=object-rotate-left\nExec=convert -rotate 270 %f %f' > ~/.local/share/kservices5/ServiceMenus/rotate_left.desktop
+#echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=right\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action right]\nName=Rotate right\nIcon=object-rotate-right\nExec=convert -rotate 90 %f %f' > ~/.local/share/kservices5/ServiceMenus/rotate_right.desktop
+#echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/pdf;\nIcon=application-pdf\nActions=combine\nX-KDE-Priority=TopLevel\nX-KDE-RequiredNumberOfUrls=2,3,4,5,6,7,8,9,10\nX-KDE-StartupNotify=false\n\n[Desktop Action combine]\nName=Combine PDF files\nIcon=application-pdf\nTryExec=gs\nExec=gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf %U' > ~/.local/share/kservices5/ServiceMenus/combine_pdf.desktop
 
-## config Dolphin widgets
-kbuildsycoca5
-kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 "root"
-kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key mountiso "true"
-kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key left "true"
-kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key right "true"
-kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key combine "true"
+## config Dolphin widgets  # to update
+#kbuildsycoca5
+#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 "root"
+#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key mountiso "true"
+#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key left "true"
+#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key right "true"
+#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key combine "true"
 
 ## Configure Dolphin
 # General > uncheck "show selection marker"
@@ -71,23 +71,24 @@ kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCal
 # Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
 kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
+# Config > Interface > Status & Location bars > Status Bar > check "Full width" and "Show zoom slider"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowStatusBar "FullWidth"
+kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowZoomSlider "true"
 # Details view mode > Zoom > set preview size to "22"
-kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"#
+kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"
 # Config > Config Toolbars... > remove "Split", add "Create Folder" and rename to "New"
 [ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
 [ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
 cp -f ./cfg/dolphin/dolphinui.rc ~/.local/share/kxmlgui5/dolphin/
 
-# Config > Interface > Status & Location bars > Status Bar > check "Full width" and "Show zoom slider"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowStatusBar "FullWidth"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowZoomSlider "true"
 
 # Dolphin window size
 [ ! -d ~/.local/share/dolphin/ ] && mkdir ~/.local/share/dolphin/
 ## layout
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key 'State' "AAAA/wAAAAD9AAAAAwAAAAAAAAC3AAACKvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAACKgAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAACzAAAAioAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA="
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key 'State' "AAAA/wAAAAD9AAAAAwAAAAAAAAC3AAACKvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAuAAACKgAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAACzAAAAioAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA="
+
 ## restore
-kwriteconfig5 --file ~/.local/share/dolphin/dolphinstaterc --group State --key 'RestorePositionForNextInstance' "false"
+kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key 'RestorePositionForNextInstance' "false"
 ## Dolphin window Width 900
 ### 3840x2400
 kwriteconfig5 --file ~/.local/state/dolphinstaterc --group State --key '3840x2400 screen: Width' "900" #1.0
@@ -179,7 +180,7 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '144
 ### 2 screens
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 screens: Width' "803"
 
-## Konsole window height 32 charc (previously height=625)
+## Konsole window height 32 charc
 ### 3840x2400
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '3840x2400 screen: Height' "536" #1.0
 kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2560x1600 screen: Height' "536" #1.5
@@ -213,8 +214,8 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 s
 # kwrite
 
 ## window size
-kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Width' "832"
-kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Height' "618"
+kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Width' "832"  # to update
+kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Height' "618"  # to update
 
 ## hide minimap
 # Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
@@ -226,13 +227,12 @@ kwriteconfig5 --file ~/.config/kwriterc --group 'General' --key 'Show welcome vi
 
 ######################################################################################
 
-## System Monitor
+# System Monitor
 # Edit or remove pages: uncheck "Applications" and list in this order: "Overview", "Processes", "History"
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' "applications.page"
 kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,processes.page,history.page,applications.page"
 
 # System monitor: Overview: move CPU to the left
-#echo -e "\n${TEXT_YELLOW}Please ${TEXT_GREEN}rearrange [CPU/Memory/Disk] order${TEXT_YELLOW} and then close System Monitor to continue.${TEXT_RESET}\n" && sleep 1 && plasma-systemmonitor
 [ ! -d ~/.local/share/plasma-systemmonitor/ ] && mkdir ~/.local/share/plasma-systemmonitor/
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key actionsFace ""
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key loadType ""
@@ -242,12 +242,19 @@ kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group p
 
 ######################################################################################
 
+## System Settings
+
+## window size
+kwriteconfig5 --file ~/.local/state/systemsettingsstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
+
+######################################################################################
+
 # spectacle
 ## Quit after manual Save or Copy
 kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSaveCopyExport' "true"
 ## Default Save Location
-[ ! -d ~/Pictures/Screenshots/ ] && mkdir ~/Pictures/Screenshots/
-kwriteconfig5 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation file:///home/$USER/Pictures/Screenshots/
+#[ ! -d ~/Pictures/Screenshots/ ] && mkdir ~/Pictures/Screenshots/
+#kwriteconfig5 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation file:///home/$USER/Pictures/Screenshots/
 
 ######################################################################################
 
@@ -264,6 +271,9 @@ kwriteconfig5 --file ~/.config/okularpartrc --group 'Core Performance' --key 'Me
 
 # Settings > Configure Okular > Presentation > uncheck "Show progress indicator"
 kwriteconfig5 --file ~/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' "false"
+
+# Text Select
+kwriteconfig5 --file ~/.config/okularpartrc --group 'PageView' --key 'MouseMode' "TextSelect"
 
 # Open and close multiple PDF files, uncheck "Warn me when I attempt to close multiple tabs"
 kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
