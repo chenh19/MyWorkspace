@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 # notify start
 echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
 
-# boot screen
+# boot screen # to update
   ## config plymouth
   sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group boot-up --key UseFirmwareBackground "true"
   sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group shutdown --key UseFirmwareBackground "true"
@@ -34,7 +34,7 @@ echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
   ## update
   sudo update-grub && echo ""
 
-# global theme
+# global theme # to update
 ## System Settings > Appearance > Global Theme > Breeze
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
