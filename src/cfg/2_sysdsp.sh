@@ -54,106 +54,44 @@ case "$choice" in
         ;;
 esac
 
-# sddm scaling factor
-sudo mkdir -p /etc/sddm.conf.d/
-sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2.5 /etc/sddm.conf.d/dpi.conf
-sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2 /etc/sddm.conf.d/dpi.conf
-sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1.5 /etc/sddm.conf.d/dpi.conf
-sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1 /etc/sddm.conf.d/dpi.conf
-
-# session scaling factor
-# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
-# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
-# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
-# kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
-
-# scaling (take effect after rebooting; only for x11, will be removed for Wayland)
+# scaling (take effect after rebooting)
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
-echo -e "[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true" | sudo tee /etc/sddm.conf.d/hidpi.conf
-echo ""
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
+echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
-  a|A ) # Diskplay and Monitor > Display Configuration > Global scale: 250%
+  a|A ) # Input & Output > Display & Monitor > Scale: 250%
         echo ""
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2.5"
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2.5;HDMI-1=2.5;DP-1=2.5;DP-2=2.5;DP3=2.5;DP4=2.5;"
-        kwriteconfig5 --file ~/.config/kcmfonts --group 'General' --key forceFontDPI "240"
-        # Right click on Taskbar, change height to 104
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "104"
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "104"
-        # System Settings > Appearance > Cursors > Size > 48
-        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
-        # Overview button size: 60, 14, 14
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "60"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "14"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "14"
+        kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
         # SDDM DPI
-        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 239" | sudo tee /etc/sddm.conf.d/dpi.conf
-        echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2.5 /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
         ;;
-  b|B ) # Diskplay and Monitor > Display Configuration > Global scale: 200%
+  b|B ) # Input & Output > Display & Monitor > Scale: 200%
         echo ""
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "2"
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=2;HDMI-1=2;DP-1=2;DP-2=2;DP3=2;DP4=2;"
-        kwriteconfig5 --file ~/.config/kcmfonts --group 'General' --key forceFontDPI "192"
-        # Right click on Taskbar, change height to 88
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "88"
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "88"
-        # System Settings > Appearance > Cursors > Size > 48
-        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "48"
-        # Overview button size: 56, 12, 12
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "56"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "12"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "12"
+        kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
         # SDDM DPI
-        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 192" | sudo tee /etc/sddm.conf.d/dpi.conf
-        echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2 /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
         ;;
-  c|C ) # Diskplay and Monitor > Display Configuration > Global scale: 150%
+  c|C ) # Input & Output > Display & Monitor > Scale: 150%
         echo ""
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1.5"
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1.5;HDMI-1=1.5;DP-1=1.5;DP-2=1.5;DP3=1.5;DP4=1.5;"
-        kwriteconfig5 --file ~/.config/kcmfonts --group 'General' --key forceFontDPI "144"
-        # Right click on Taskbar, change height to 70
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "70"
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "70"
-        # System Settings > Appearance > Cursors > Size > 36
-        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "36"
-        # Overview button size: 45, 8, 8
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "45"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "8"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "8"
+        kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
         # SDDM DPI
-        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 143" | sudo tee /etc/sddm.conf.d/dpi.conf
-        echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
+        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1.5 /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
         ;;
-  * )   # Diskplay and Monitor > Display Configuration > Global scale: 100%
+  * )   # Input & Output > Display & Monitor > Scale: 100%
         echo ""
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScaleFactor "1"
-        kwriteconfig5 --file ~/.config/kdeglobals --group KScreen --key ScreenScaleFactors "eDP-1=1;HDMI-1=1;DP-1=1;DP-2=1;DP3=1;DP4=1;"
-        kwriteconfig5 --file ~/.config/kcmfonts --group 'General' --key forceFontDPI "0"
-        # Right click on Taskbar, change height to 44
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness "44"
-        kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Horizontal3840' --key thickness "44"
-        # System Settings > Appearance > Cursors > Size > 24
-        kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorSize "24"
-        # Overview button size: 30, 6, 6
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key fontSize "30"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingLeft "6"
-        kwriteconfig5 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '2' --group 'Applets' --group '25' --group 'Configuration' --group 'Appearance' --key paddingRight "6"
+        kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
         # SDDM DPI
-        echo -e "[X11]\nServerArguments=-nolisten tcp -dpi 96" | sudo tee /etc/sddm.conf.d/dpi.conf
-        echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
         echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
+        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1 /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
