@@ -64,7 +64,7 @@ case "$choice" in
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
         # SDDM DPI
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
-        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2.5 /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/sddm.conf.d/dpi-2.5.conf /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
         ;;
@@ -73,7 +73,7 @@ case "$choice" in
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
         # SDDM DPI
         echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
-        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-2 /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/sddm.conf.d/dpi-2.conf /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
         ;;
@@ -82,7 +82,7 @@ case "$choice" in
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
         # SDDM DPI
         echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
-        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1.5 /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/sddm.conf.d/dpi-1.5.conf /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
         ;;
@@ -91,7 +91,7 @@ case "$choice" in
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
         # SDDM DPI
         echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
-        sudo cp -f ./cfg/sddm.conf.d/dpi.conf-1 /etc/sddm.conf.d/dpi.conf
+        sudo cp -f ./cfg/sddm.conf.d/dpi-1.conf /etc/sddm.conf.d/dpi.conf
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
