@@ -30,7 +30,7 @@ sudo ufw enable
 line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
 line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 unset line
 
 # Clipboard > uncheck "Save clipboard contents on exit"
