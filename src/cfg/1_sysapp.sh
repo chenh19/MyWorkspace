@@ -211,7 +211,7 @@ kwriteconfig5 --file ~/.local/state/konsolestaterc --group MainWindow --key '2 s
 
 ######################################################################################
 
-# kwrite
+# Kwrite
 
 ## window size
 kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Width' "832"  # to update
@@ -239,13 +239,6 @@ kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group p
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-0 --group section-0 --key face "Face-94410266684256"
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-1 --group section-0 --key face "Face-94410222150464"
 kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-2 --group section-0 --key face "Face-94410261307168"
-
-######################################################################################
-
-## System Settings
-
-## window size
-kwriteconfig5 --file ~/.local/state/systemsettingsstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
 
 ######################################################################################
 
@@ -343,6 +336,20 @@ kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1152x
 ### 2160x1350
 kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '2160x1350 screen: Height' "600" #1.0
 kwriteconfig5 --file ~/.local/state/arkstaterc --group 'MainWindow' --key '1440x900 screen: Height' "600" #1.5
+
+######################################################################################
+
+## System Settings
+
+## window size
+kwriteconfig5 --file ~/.local/state/systemsettingsstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
+
+######################################################################################
+
+# Discover
+
+## window size
+kwriteconfig5 --file ~/.local/state/discoverstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
 
 ######################################################################################
 
