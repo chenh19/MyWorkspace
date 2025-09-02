@@ -82,6 +82,15 @@ sudo apt autoremove -y
   [ -f /etc/apt/sources.list.d/resilio-sync.list ] && sudo rm -f /etc/apt/sources.list.d/resilio-sync.list
   [ -f /etc/apt/trusted.gpg.d/resilio-sync.asc* ] && sudo rm -f /etc/apt/trusted.gpg.d/resilio-sync.asc*
 
+  ## virtualbox
+  [ -f /etc/apt/sources.list.d/virtualbox.list ] && sudo rm -f /etc/apt/sources.list.d/virtualbox.list
+  [ -f /usr/share/keyrings/oracle-virtualbox-2016.gpg ] && sudo rm -f /usr/share/keyrings/oracle-virtualbox-2016.gpg
+  source /etc/os-release
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+  wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
+  sudo apt-get update -qq && sudo apt-get install virtualbox-7.1 -y
+  [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
+
 # install apps (downloaded)
 
   echo ""
@@ -160,16 +169,6 @@ sudo apt autoremove -y
     --set-key 'StartupNotify' --set-value 'false' \
     --remove-key 'Categories' --add-category 'AudioVideo;' \
 /usr/share/applications/com.interversehq.qView.desktop
-
-# install apps (.run)
-
-  #echo ""
-  ## virtualbox (wait for official update)
-  #[ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
-  #wget -q "https://www.dropbox.com/scl/fi/ecpe9nup1xu5lsvx6qdnm/virtualbox.run?rlkey=rc2hhdmjfu36ve8b4imifa3nv" -O ./inst/virtualbox.run && echo '"VirtualBox" installer is downloaded.' && sleep 1
-  #sudo bash ./inst/virtualbox.run
-  #sleep 1 && rm ./inst/virtualbox.run
-  #sudo usermod -aG vboxusers $USER
 
 # install apps (.zip)
 
