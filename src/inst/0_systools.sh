@@ -288,7 +288,7 @@ sudo apt autoremove -y
   ##cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
 
   ## apt modernize-sources
-  #sudo apt modernize-sources -y #(for apt 3.0 and above)
+  #sudo apt modernize-sources -y #(for apt 3.0 and above; wait)
   
 # cleanup
 rm -rf ./deb/
