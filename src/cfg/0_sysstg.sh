@@ -67,6 +67,9 @@ kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'man
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'next activity' "none,none,Walk through activities"
 kwriteconfig5 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'previous activity' "none,none,Walk through activities (Reverse)"
 
+## Accessibility > Shake Cursor > set "Magnification" to samllest
+kwriteconfig5 --file ~/.config/kwinrc --group Effect-shakecursor --key Magnification "2"
+
 ######################################################################################
 
 # Appearance & Style
