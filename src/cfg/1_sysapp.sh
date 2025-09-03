@@ -191,6 +191,11 @@ if ! grep -q "alias shutdown='systemctl poweroff'" ~/.bashrc ; then echo -e "ali
 ## sysupdate
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chenh19/sysupdate/main/install.sh)"
 
+## run update scripts once
+bash ~/.update.sh
+bash ~/.shortcut.sh >/dev/null 2>&1
+bash ~/.size-restore.sh >/dev/null 2>&1
+
 # Refresh shell config
 source ~/.bashrc
 
