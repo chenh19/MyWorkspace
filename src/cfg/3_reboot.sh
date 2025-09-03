@@ -15,8 +15,6 @@ TEXT_RESET="$(tput sgr0)"
 sudo echo ""
 echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET}\n" && sleep 1
 if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
-bash ~/.shortcut.sh >/dev/null 2>&1
-bash ~/.size-restore.sh >/dev/null 2>&1
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
 cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop
 echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop
