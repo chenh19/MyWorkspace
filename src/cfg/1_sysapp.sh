@@ -151,13 +151,6 @@ cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
 
 ######################################################################################
 
-## System Settings
-
-## window size
-kwriteconfig5 --file ~/.local/state/systemsettingsstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
-
-######################################################################################
-
 # vlc
 cp -rf ./cfg/vlc/ ~/.config/
 
