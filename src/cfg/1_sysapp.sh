@@ -158,13 +158,6 @@ kwriteconfig5 --file ~/.local/state/systemsettingsstaterc --group MainWindow --k
 
 ######################################################################################
 
-# Discover
-
-## window size
-kwriteconfig5 --file ~/.local/state/discoverstaterc --group MainWindow --key '1440x900 screen: Window-Maximized' "true" # to update
-
-######################################################################################
-
 # vlc
 cp -rf ./cfg/vlc/ ~/.config/
 
