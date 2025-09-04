@@ -164,8 +164,6 @@ if ! grep -q "alias shutdown='systemctl poweroff'" ~/.bashrc ; then echo -e "ali
 
 ## run update scripts once
 bash ~/.update.sh
-bash ~/.shortcut.sh >/dev/null 2>&1
-bash ~/.size-restore.sh >/dev/null 2>&1
 
 # Refresh shell config
 source ~/.bashrc
