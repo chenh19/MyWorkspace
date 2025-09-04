@@ -40,8 +40,8 @@ case "$choice" in
         [ ! -f /usr/share/applications/igv.desktop ] && sudo touch /usr/share/applications/igv.desktop
         sudo desktop-file-edit \
             --set-name 'IGV' --set-key 'Name[en_US]' --set-value 'IGV' --set-key 'Name[zh_CN]' --set-value 'IGV' \
-            --set-generic-name 'Integrative Genomics Viewer' --set-key 'GenericName[en_US]' --set-value 'Integrative Genomics Viewer' --set-key 'GenericName[zh_CN]' --set-value '基因组浏览器' \
-            --set-comment 'High-performance Viewer for Large Genomics Datasets' --set-key 'Comment[en_US]' --set-value 'High-performance Viewer for Large Genomics Datasets' --set-key 'Comment[zh_CN]' --set-value '高性能的基因组可视化工具' \
+            --set-comment 'Integrative Genomics Viewer' --set-key 'Comment[en_US]' --set-value 'Integrative Genomics Viewer' --set-key 'Comment[zh_CN]' --set-value '基因组浏览器' \
+            --set-generic-name 'High-performance Viewer for Large Genomics Datasets' --set-key 'GenericName[en_US]' --set-value 'High-performance Viewer for Large Genomics Datasets' --set-key 'GenericName[zh_CN]' --set-value '高性能的基因组可视化工具' \
             --set-key 'Exec' --set-value '/opt/igv/igv_hidpi.sh' \
             --set-icon '/opt/icon/igv.png' \
             --set-key 'StartupNotify' --set-value 'true' \
