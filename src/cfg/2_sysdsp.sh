@@ -15,7 +15,7 @@ cd ~/.setup_cache/
 # notify start
 echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
 
-# boot screen # to update
+# boot screen
   ## config plymouth
   sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group boot-up --key UseFirmwareBackground --type bool "true"
   sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group shutdown --key UseFirmwareBackground --type bool "true"
