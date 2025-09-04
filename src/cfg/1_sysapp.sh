@@ -25,10 +25,12 @@ sudo ufw enable
 
 ######################################################################################
 
-# Clipboard > uncheck "Save clipboard contents on exit"
+# Widgets
+
+## Clipboard > uncheck "Save clipboard contents on exit"
 kwriteconfig6 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' --type bool "false"
 
-# kde browser integration reminder hide
+## kde browser integration reminder hide
 kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' --type bool "false"
 
 ######################################################################################
