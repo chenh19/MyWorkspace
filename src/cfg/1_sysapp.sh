@@ -38,7 +38,7 @@ kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminde
 # Dolphin
 
 ## install widgets  # to update
-# Context Menu > Download New Services... > "Open as root" (by loup), "Mount ISO" (by loup), "Rotate or flip images" (by alex-l), and "Combine *.pdf documents" (by Shaddar)
+# Context Menu > Download New Services... > "Open as root" (by loup), "Rotate or flip images" (by alex-l), and "Combine *.pdf documents" (by Shaddar) # not installing: "Mount ISO" (by loup)
 #[ ! -d ~/.local/share/kservices5/ ] && mkdir ~/.local/share/kservices5/
 #[ ! -d ~/.local/share/kservices5/ServiceMenus/ ] && mkdir ~/.local/share/kservices5/ServiceMenus/
 #echo -e '[Desktop Entry]\nType=Service\n#ServiceTypes=application/x-cd-image;model/x.stl-binary\n#MimeType=all/all;\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/x-cd-image;model/x.stl-binary\nX-KDE-StartupNotify=false\nX-KDE-Priority=TopLevel\nActions=mountiso;\nInitialPreference=99\nVersion=1.0\n\n[Desktop Action mountiso]\nName=Mount the image\nName[ru]=Смонтировать образ\nExec=udisksctl loop-setup -r -f %u\nIcon=media-optical' > ~/.local/share/kservices5/ServiceMenus/mountiso.desktop
