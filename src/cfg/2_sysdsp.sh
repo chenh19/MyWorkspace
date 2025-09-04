@@ -17,14 +17,14 @@ echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
 
 # boot screen # to update
   ## config plymouth
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group boot-up --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group shutdown --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group reboot --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group updates --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group system-upgrade --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group firmware-upgrade --key UseFirmwareBackground "true"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkHorizontalAlignment "10"
-  sudo kwriteconfig5 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkVerticalAlignment "10"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group boot-up --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group shutdown --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group reboot --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group updates --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group system-upgrade --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group firmware-upgrade --key UseFirmwareBackground --type bool "true"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkHorizontalAlignment --type string "10"
+  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkVerticalAlignment --type string "10"
   if grep -q "Theme=emerald" /usr/share/plymouth/plymouthd.defaults ; then sudo sed -i 's+Theme=emerald+Theme=spinner+g' /usr/share/plymouth/plymouthd.defaults ; fi
   sudo plymouth-set-default-theme -R spinner
   ## config grub (If grub timeout is 0, press Shift+Esc only once at startup to enter grub menu)
