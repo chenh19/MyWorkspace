@@ -34,7 +34,7 @@ echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
   ## update
   sudo update-grub && echo ""
 
-# desktop layout
+# desktop layout # to update
 line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
 line=$((line+2))
 sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
@@ -70,7 +70,7 @@ case "$choice" in
         ;;
 esac
 
-# scaling
+# scaling # to update
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
 read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
