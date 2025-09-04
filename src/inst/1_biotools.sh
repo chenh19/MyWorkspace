@@ -29,7 +29,7 @@ case "$choice" in
         ## install Zotero
         wget -qO- "https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh" | sudo bash
         sudo apt update -qq && sudo apt install zotero libreoffice-java-common -y
-        sudo kwriteconfig5 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment "Bibliography Manager"
+        sudo kwriteconfig6 --file /usr/share/applications/zotero.desktop --group "Desktop Entry" --key Comment --type string "Bibliography Manager"
         
         ## install IGV
         [ ! -d ~/igv ] && mkdir ~/igv/
