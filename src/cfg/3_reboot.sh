@@ -18,8 +18,6 @@ if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
 cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
 cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop
 echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop
-#echo -e "[Desktop Entry]\nIcon=/opt/icon/onedrive.png\nName=OneDrive\nType=Link\nURL[\$e]=file:$HOME/OneDrive/" > ~/Desktop/onedrive.desktop
-#echo -e "## Personalization:\n- [ ] Right click on desktop > Configure Desktop and Wallpaper > change wallpaper\n- [ ] System Settings > Workspace Behavior > Screen Locking > Appearance > Configue > change lock screen\n- [ ] System Settings > Startup and Shutdown > Login Screen (SDDM) > select the first one and change background\n- [ ] System Settings > Users > change avatar\n- [ ] Replace ~/.face with your avatar" > ~/Desktop/Personalization.md
 
 # notify end
 echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 3
