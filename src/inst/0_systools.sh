@@ -145,8 +145,8 @@ sudo apt autoremove -y
   [ ! -f /usr/share/applications/onedrivegui.desktop ] && sudo touch /usr/share/applications/onedrivegui.desktop
   sudo desktop-file-edit \
     --set-name 'OneDrive' --set-key 'Name[en_US]' --set-value 'OneDrive' --set-key 'Name[zh_CN]' --set-value 'OneDrive' \
-    --set-generic-name 'Cloud Storage' --set-key 'GenericName[en_US]' --set-value 'Cloud Storage' --set-key 'GenericName[zh_CN]' --set-value '云储存空间' \
-    --set-comment 'OneDrive Client' --set-key 'Comment[en_US]' --set-value 'OneDrive Client' --set-key 'Comment[zh_CN]' --set-value 'OneDrive 客户端' \
+    --set-comment 'Cloud Storage' --set-key 'Comment[en_US]' --set-value 'Cloud Storage' --set-key 'Comment[zh_CN]' --set-value '云储存空间' \
+    --set-generic-name 'OneDrive Client' --set-key 'GenericName[en_US]' --set-value 'OneDrive Client' --set-key 'GenericName[zh_CN]' --set-value 'OneDrive 客户端' \
     --set-key 'Exec' --set-value '/opt/onedrivegui/onedrivegui.AppImage' \
     --set-icon '/opt/icon/onedrive.png' \
     --set-key 'Type' --set-value 'Application' \
@@ -161,14 +161,14 @@ sudo apt autoremove -y
   [ ! -f /usr/share/applications/com.interversehq.qView.desktop ] && sudo touch /usr/share/applications/com.interversehq.qView.desktop
   sudo desktop-file-edit \
     --set-name 'qView' --set-key 'Name[en_US]' --set-value 'qView' --set-key 'Name[zh_CN]' --set-value '图片浏览器' \
-    --set-generic-name 'Image Viewer' --set-key 'GenericName[en_US]' --set-value 'Image Viewer' --set-key 'GenericName[zh_CN]' --set-value '图片浏览工具' \
-    --set-comment 'Practical and Minimal Image Viewer' --set-key 'Comment[en_US]' --set-value 'Practical and Minimal Image Viewer' --set-key 'Comment[zh_CN]' --set-value '简易图像查看器' \
+    --set-comment 'Image Viewer' --set-key 'Comment[en_US]' --set-value 'Image Viewer' --set-key 'Comment[zh_CN]' --set-value '图片浏览工具' \
+    --set-generic-name 'Practical and Minimal Image Viewer' --set-key 'GenericName[en_US]' --set-value 'Practical and Minimal Image Viewer' --set-key 'GenericName[zh_CN]' --set-value '简易图像查看器' \
     --set-key 'Exec' --set-value '/opt/qView/qview.AppImage' \
     --set-icon '/opt/icon/qview.png' \
     --set-key 'Type' --set-value 'Application' \
     --set-key 'StartupNotify' --set-value 'false' \
     --remove-key 'Categories' --add-category 'AudioVideo;' \
-/usr/share/applications/com.interversehq.qView.desktop
+  /usr/share/applications/com.interversehq.qView.desktop
 
 # install apps (.zip)
 
@@ -182,8 +182,8 @@ sudo apt autoremove -y
   [ ! -f /usr/share/applications/balena-etcher.desktop ] && sudo touch /usr/share/applications/balena-etcher.desktop
   sudo desktop-file-edit \
     --set-name 'Etcher' --set-key 'Name[en_US]' --set-value 'Etcher' --set-key 'Name[zh_CN]' --set-value 'Etcher刻录' \
-    --set-generic-name 'Bootable USB Creator' --set-key 'GenericName[en_US]' --set-value 'Bootable USB Creator' --set-key 'GenericName[zh_CN]' --set-value '启动盘制作工具' \
-    --set-comment 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[en_US]' --set-value 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'Comment[zh_CN]' --set-value '简单方便制作U盘启动盘' \
+    --set-comment 'Bootable USB Creator' --set-key 'Comment[en_US]' --set-value 'Bootable USB Creator' --set-key 'Comment[zh_CN]' --set-value '启动盘制作工具' \
+    --set-generic-name 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'GenericName[en_US]' --set-value 'A cross-platform tool to flash OS images onto SD cards and USB drives safely and easily' --set-key 'GenericName[zh_CN]' --set-value '简单方便制作U盘启动盘' \
     --set-key 'Exec' --set-value '/opt/balenaEtcher/balena-etcher %U' \
     --set-key 'Type' --set-value 'Application' \
     --set-key 'StartupNotify' --set-value 'false' \
@@ -285,8 +285,8 @@ sudo apt autoremove -y
   #sudo chmod +x /opt/Thunderbird/thunderbird.sh
   #[ -f /usr/share/applications/thunderbird.desktop ] && sudo desktop-file-edit \
   #  --set-name 'Thunderbird' --set-key 'Name[en_US]' --set-value 'Thunderbird' --set-key 'Name[zh_CN]' --set-value '邮箱' \
-  #  --set-generic-name 'Email Client' --set-key 'GenericName[en_US]' --set-value 'Email Client' --set-key 'GenericName[zh_CN]' --set-value '邮件客户端' \
-  #  --set-comment 'Read/Write Mail/News with Thunderbird' --set-key 'Comment[en_US]' --set-value 'Read/Write Mail/News with Thunderbird' --set-key 'Comment[zh_CN]' --set-value '阅读邮件或新闻' \
+  #  --set-comment 'Email Client' --set-key 'Comment[en_US]' --set-value 'Email Client' --set-key 'Comment[zh_CN]' --set-value '邮件客户端' \
+  #  --set-generic-name 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[en_US]' --set-value 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[zh_CN]' --set-value '阅读邮件或新闻' \
   #  --set-key 'Exec' --set-value 'bash /opt/Thunderbird/thunderbird.sh' \
   #  --remove-key 'Categories' --add-category 'Network;' \
   #/usr/share/applications/thunderbird.desktop
