@@ -165,7 +165,7 @@ kwriteconfig6 --file ~/.config/mimeapps.list --group 'Default Applications' --ke
 
 ## Notification
 ### System Settings > Notification > Configure > Other Applications > uncheck "Show popups"
-kwriteconfig6 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' --type string "false"
+kwriteconfig6 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' --type bool "false"
 ### Notification > Configure > Network Management > Confirgure Events > uncheck "Show a message in a popup" for "Connection Activated"
 echo -e '[Event/ConnectionActivated]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/NoLongerConnected]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/networkmanagement.notifyrc
 ### Notification > Configure > Discover > Confirgure Events > uncheck "Show a message in a popup" for "Updates Are Available"
