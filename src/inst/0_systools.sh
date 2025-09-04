@@ -236,6 +236,7 @@ sudo apt autoremove -y
   ## OneDriveGUI
   cp -rf ./cfg/onedrive-gui/ ~/.config/
   #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
+  #echo -e "[Desktop Entry]\nIcon=/opt/icon/onedrive.png\nName=OneDrive\nType=Link\nURL[\$e]=file:$HOME/OneDrive/" > ~/Desktop/onedrive.desktop
   
   ## Fastfetch
   [ ! -d ~/.config/fastfetch/ ] && mkdir ~/.config/fastfetch/
