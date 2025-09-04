@@ -34,14 +34,14 @@ cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/
 unset line
 
 # Clipboard > uncheck "Save clipboard contents on exit"
-kwriteconfig5 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' "false"
+kwriteconfig6 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' --type bool "false"
 
 # kde browser integration reminder hide
-kwriteconfig5 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' "false"
+kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' --type bool "false"
 
 # Opacity > Translucent; no Floating
-kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity "1"
-kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating "0"
+kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "1"
+kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
 
 ######################################################################################
 
@@ -59,23 +59,23 @@ kwriteconfig5 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Pane
 
 ## config Dolphin widgets  # to update
 #kbuildsycoca5
-#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 "root"
-#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key mountiso "true"
-#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key left "true"
-#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key right "true"
-#kwriteconfig5 --file ~/.config/kservicemenurc --group Show --key combine "true"
+#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRootKDE5 --type string "root"
+#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key mountiso --type bool "true"
+#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key left --type bool "true"
+#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key right --type bool "true"
+#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key combine --type bool "true"
 
 ## Configure Dolphin
 # General > uncheck "show selection marker"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key OpenExternallyCalledFolderInNewTab "false"
+kwriteconfig6 --file ~/.config/dolphinrc --group General --key OpenExternallyCalledFolderInNewTab --type bool "false"
 # Startup > Show on startup > check "/home/user" and uncheck "Open new folders in tabs"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs "false"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle "false"
+kwriteconfig6 --file ~/.config/dolphinrc --group General --key RememberOpenedTabs --type bool "false"
+kwriteconfig6 --file ~/.config/dolphinrc --group General --key ShowSelectionToggle --type bool "false"
 # Config > Interface > Status & Location bars > Status Bar > check "Full width" and "Show zoom slider"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowStatusBar "FullWidth"
-kwriteconfig5 --file ~/.config/dolphinrc --group General --key ShowZoomSlider "true"
+kwriteconfig6 --file ~/.config/dolphinrc --group General --key ShowStatusBar --type string "FullWidth"
+kwriteconfig6 --file ~/.config/dolphinrc --group General --key ShowZoomSlider --type bool "true"
 # Details view mode > Zoom > set preview size to "22"
-kwriteconfig5 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize "22"
+kwriteconfig6 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize --type string "22"
 # Config > Config Toolbars... > remove "Split", add "Create Folder" and rename to "New"
 [ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
 [ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
@@ -84,42 +84,37 @@ cp -f ./cfg/dolphin/dolphinui.rc ~/.local/share/kxmlgui5/dolphin/
 ######################################################################################
 
 # Kwrite
-
-## window size
-kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Width' "832"  # to update
-kwriteconfig5 --file ~/.local/state/kwritestaterc --group MainWindow --key '1440x900 screen: Height' "618"  # to update
-
 ## hide minimap
 # Setting > Configure KWrite > Appearance > Borders > uncheck "Show minimap"
-kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' "false"
+kwriteconfig6 --file ~/.config/kwriterc --group 'KTextEditor View' --key 'Scroll Bar MiniMap' --type bool "false"
 # Setting > Configure KWrite > Open/Save > Fallback encoding > select "Chinese Simplified (GB18030)"
-kwriteconfig5 --file ~/.config/kwriterc --group 'KTextEditor Editor' --key 'Fallback Encoding' "GB18030"
+kwriteconfig6 --file ~/.config/kwriterc --group 'KTextEditor Editor' --key 'Fallback Encoding' --type string "GB18030"
 # Setting > Configure KWrite > Session > uncheck "Show welcome view for new windows"
-kwriteconfig5 --file ~/.config/kwriterc --group 'General' --key 'Show welcome view for new window' "false"
+kwriteconfig6 --file ~/.config/kwriterc --group 'General' --key 'Show welcome view for new window' --type bool "false"
 
 ######################################################################################
 
 # System Monitor
 # Edit or remove pages: uncheck "Applications" and list in this order: "Overview", "Processes", "History"
-kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' "applications.page"
-kwriteconfig5 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' "overview.page,processes.page,history.page,applications.page"
+kwriteconfig6 --file ~/.config/systemmonitorrc --group General --key 'hiddenPages' --type string "applications.page"
+kwriteconfig6 --file ~/.config/systemmonitorrc --group General --key 'pageOrder' --type string "overview.page,processes.page,history.page,applications.page"
 
 # System monitor: Overview: move CPU to the left
 [ ! -d ~/.local/share/plasma-systemmonitor/ ] && mkdir ~/.local/share/plasma-systemmonitor/
-kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key actionsFace ""
-kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key loadType ""
-kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-0 --group section-0 --key face "Face-94410266684256"
-kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-1 --group section-0 --key face "Face-94410222150464"
-kwriteconfig5 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-2 --group section-0 --key face "Face-94410261307168"
+kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key actionsFace --type string ""
+kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --key loadType --type string ""
+kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-0 --group section-0 --key face --type string "Face-94410266684256"
+kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-1 --group section-0 --key face --type string "Face-94410222150464"
+kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group page --group row-0 --group column-2 --group section-0 --key face --type string "Face-94410261307168"
 
 ######################################################################################
 
 # spectacle
 ## Quit after manual Save or Copy
-kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSaveCopyExport' "true"
+kwriteconfig6 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSaveCopyExport' --type bool "true"
 ## Default Save Location
 #[ ! -d ~/Pictures/Screenshots/ ] && mkdir ~/Pictures/Screenshots/
-#kwriteconfig5 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation file:///home/$USER/Pictures/Screenshots/
+#kwriteconfig6 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation --type string file:///home/$USER/Pictures/Screenshots/
 
 ######################################################################################
 
@@ -129,20 +124,20 @@ kwriteconfig5 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSav
 touch ~/.config/okularpartrc ~/.config/okularrc
 
 # Settings > Configure Okular > General > check "Open new files in tabs"
-kwriteconfig5 --file ~/.config/okularpartrc --group General --key 'ShellOpenFileInTabs' "true"
+kwriteconfig6 --file ~/.config/okularpartrc --group General --key 'ShellOpenFileInTabs' --type bool "true"
 
 # Settings > Configure Okular > Performance > Memory usage > select "Greedy"
-kwriteconfig5 --file ~/.config/okularpartrc --group 'Core Performance' --key 'MemoryLevel' "Greedy"
+kwriteconfig6 --file ~/.config/okularpartrc --group 'Core Performance' --key 'MemoryLevel' --type string "Greedy"
 
 # Settings > Configure Okular > Presentation > uncheck "Show progress indicator"
-kwriteconfig5 --file ~/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' "false"
+kwriteconfig6 --file ~/.config/okularpartrc --group 'Dlg Presentation' --key 'SlidesShowProgress' --type bool "false"
 
 # Text Select
-kwriteconfig5 --file ~/.config/okularpartrc --group 'PageView' --key 'MouseMode' "TextSelect"
+kwriteconfig6 --file ~/.config/okularpartrc --group 'PageView' --key 'MouseMode' --type string "TextSelect"
 
 # Open and close multiple PDF files, uncheck "Warn me when I attempt to close multiple tabs"
-kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' "false"
-kwriteconfig5 --file ~/.config/okularrc --group 'Notification Messages' --key 'presentationInfo' "false"
+kwriteconfig6 --file ~/.config/okularrc --group 'Notification Messages' --key 'ShowTabWarning' --type bool "false"
+kwriteconfig6 --file ~/.config/okularrc --group 'Notification Messages' --key 'presentationInfo' --type bool "false"
 
 # Configure Toolbars
 [ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
