@@ -44,7 +44,7 @@ unset line
 kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "1"
 kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
 
-# global theme # to update
+# global theme
 ## System Settings > Appearance > Global Theme > Breeze
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
