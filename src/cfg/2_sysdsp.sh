@@ -44,7 +44,7 @@ unset line
 kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "1"
 kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
 #  Favorites
-cp -rf ~/.setup_cache/cfg/favorites/kactivitymanagerd-statsrc ~/.config/kactivitymanagerd-statsrc
+cp -f ~/.setup_cache/cfg/favorites/kactivitymanagerd-statsrc ~/.config/kactivitymanagerd-statsrc
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
