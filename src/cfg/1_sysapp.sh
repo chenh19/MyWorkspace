@@ -25,18 +25,11 @@ sudo ufw enable
 
 ######################################################################################
 
-## install widgets (take effect after rebooting)
-/usr/lib/x86_64-linux-gnu/libexec/kf6/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/2132554 #Toggle Overview
-
 # Clipboard > uncheck "Save clipboard contents on exit"
 kwriteconfig6 --file ~/.config/klipperrc --group 'General' --key 'KeepClipboardContents' --type bool "false"
 
 # kde browser integration reminder hide
 kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminder' --key 'autoload' --type bool "false"
-
-# Opacity > Translucent; no Floating
-kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "1"
-kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
 
 ######################################################################################
 
