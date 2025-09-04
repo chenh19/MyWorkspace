@@ -75,10 +75,10 @@ sudo apt autoremove -y
   wget -qO- https://linux-packages.resilio.com/resilio-sync/key.asc | sudo tee /etc/apt/trusted.gpg.d/resilio-sync.asc > /dev/null 2>&1
   sudo apt update -qq && sudo apt install resilio-sync -y
   sudo systemctl disable resilio-sync
-  sudo kwriteconfig5 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy "default.target"
+  sudo kwriteconfig6 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy --type string "default.target"
   systemctl --user enable resilio-sync
   systemctl --user start resilio-sync
-  [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig5 --file ~/Sync/.directory --group "Desktop Entry" --key Icon "folder-cloud"
+  [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig6 --file ~/Sync/.directory --group "Desktop Entry" --key Icon --type string "folder-cloud"
   [ -f /etc/apt/sources.list.d/resilio-sync.list ] && sudo rm -f /etc/apt/sources.list.d/resilio-sync.list
   [ -f /etc/apt/trusted.gpg.d/resilio-sync.asc* ] && sudo rm -f /etc/apt/trusted.gpg.d/resilio-sync.asc*
 
@@ -211,7 +211,7 @@ sudo apt autoremove -y
   make -C ./InputActions/build/ -j$(nproc)
   sudo make -C ./InputActions/build/ install
   cp -rf ./cfg/inputactions/ ~/.config/
-  kwriteconfig5 --file ~/.config/kwinrc --group Plugins --key kwin_gesturesEnabled "true"
+  kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key kwin_gesturesEnabled --type bool "true"
   rm -rf ./InputActions/
   ### Google Chrome
   [ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
@@ -222,7 +222,7 @@ sudo apt autoremove -y
   sudo ufw enable
 
   ## chrome as default
-  kwriteconfig5 --file ~/.config/kdeglobals --group General --key BrowserApplication "google-chrome.desktop"
+  kwriteconfig6 --file ~/.config/kdeglobals --group General --key BrowserApplication --type string "google-chrome.desktop"
 
   ## time sync
   sudo timedatectl set-ntp true
@@ -240,7 +240,7 @@ sudo apt autoremove -y
   cp -rf ./cfg/balenaEtcher/ ~/.config/
   
   ## zoom auto scaling
-  kwriteconfig5 --file ~/.config/zoomus.conf --group General --key autoScale "false"
+  kwriteconfig6 --file ~/.config/zoomus.conf --group General --key autoScale --type bool "false"
 
   ## teamviewer
   [ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
@@ -250,13 +250,13 @@ sudo apt autoremove -y
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
   [ -d ~/.config/qView/ ] && rm -rf ~/.config/qView/*
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group General --key firstlaunch "true"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key updatenotifications "false"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled "false"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key saverecents "false"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key titlebarmode "2"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolor "#dee0e2"
-  kwriteconfig5 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled "true"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group General --key firstlaunch --type bool "true"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key updatenotifications --type bool "false"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key loopfoldersenabled --type bool "false"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key saverecents --type bool "false"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key titlebarmode --type string "2"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key bgcolor --type string "#dee0e2"
+  kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled --type bool "true"
   
   ## fcitx
   cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
@@ -265,7 +265,7 @@ sudo apt autoremove -y
   if grep -q "# zh_CN.UTF-8 UTF-8" /etc/locale.gen ; then sudo sed -i 's+# zh_CN.UTF-8 UTF-8+zh_CN.UTF-8 UTF-8+g' /etc/locale.gen ; fi
   sudo locale-gen
   echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
-  kwriteconfig5 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
+  kwriteconfig6 --file ~/.config/kwinrc --group Wayland --key InputMethod --type string "/usr/share/applications/org.fcitx.Fcitx5.desktop"
 
   ## wechat
   [ ! -f /etc/lsb-release ] && sudo touch /etc/lsb-release
