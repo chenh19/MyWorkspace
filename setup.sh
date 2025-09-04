@@ -42,18 +42,18 @@ cp -rf ./cfg/System/ ~/Pictures/
 sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
 cp -f ./cfg/power/powerdevilrc ~/.config/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
-kwriteconfig5 --file ~/Templates/.directory --group "Desktop Entry" --key Icon "folder-templates"
+kwriteconfig6 --file ~/Templates/.directory --group "Desktop Entry" --key Icon --type string "folder-templates"
 cp -rf ./cfg/template/* ~/Templates/
 [ ! -d ~/snap/ ] && mkdir ~/snap/
-kwriteconfig5 --file ~/snap/.directory --group "Desktop Entry" --key Icon "folder-snap"
+kwriteconfig6 --file ~/snap/.directory --group "Desktop Entry" --key Icon --type string "folder-snap"
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
-kwriteconfig5 --file ~/Developing/.directory --group "Desktop Entry" --key Icon "folder-script"
+kwriteconfig6 --file ~/Developing/.directory --group "Desktop Entry" --key Icon --type string "folder-script"
 [ ! -d ~/OneDrive/ ] && mkdir ~/OneDrive/
-kwriteconfig5 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon "folder-onedrive"
+kwriteconfig6 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon --type string "folder-onedrive"
 [ ! -d ~/Backup/ ] && mkdir ~/Backup/
-kwriteconfig5 --file ~/Backup/.directory --group "Desktop Entry" --key Icon "folder-tar"
+kwriteconfig6 --file ~/Backup/.directory --group "Desktop Entry" --key Icon --type string "folder-tar"
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
-kwriteconfig5 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon "certificate-server"
+kwriteconfig6 --file ~/Licenses/.directory --group "Desktop Entry" --key Icon --type string "certificate-server"
 rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
@@ -76,7 +76,7 @@ bash ./inst/0_systools.sh
 bash ./inst/1_biotools.sh
 
 # config
-bash ./cfg/0_sysstg.sh
-bash ./cfg/1_sysapp.sh
+#bash ./cfg/0_sysstg.sh
+#bash ./cfg/1_sysapp.sh
 #bash ./cfg/2_sysdsp.sh
-bash ./cfg/3_reboot.sh
+#bash ./cfg/3_reboot.sh
