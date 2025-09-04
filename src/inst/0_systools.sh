@@ -194,6 +194,11 @@ sudo apt autoremove -y
   /usr/share/applications/balena-etcher.desktop
   sleep 1 && rm -rf ./balenaEtcher-linux-*/
 
+# install widgets
+
+  ## Toggle Overview
+  /usr/lib/x86_64-linux-gnu/libexec/kf6/kpackagehandlers/knshandler kns://plasmoids.knsrc/api.kde-look.org/2132554
+
 # auto config
 
   echo ""
