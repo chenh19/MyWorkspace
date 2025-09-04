@@ -35,7 +35,7 @@ kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminde
 
 ######################################################################################
 
-# Dolphin
+# Dolphin #to update
 
 ## install widgets
 # Context Menu > Download New Services... > "Open as root" (by loup), "Rotate or flip images" (by alex-l), and "Combine *.pdf documents" (by Shaddar) # not installing: "Mount ISO" (by loup)
