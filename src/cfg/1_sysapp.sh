@@ -47,7 +47,7 @@ echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeT
 #echo -e '' > ~/.local/share/servicemenu-download/setasbackground.desktop
 ## config Dolphin widgets
 #kbuildsycoca6
-kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRoot --type string "root"
+kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRoot --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key CombinePDF --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateLeft --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateRight --type bool "true"
