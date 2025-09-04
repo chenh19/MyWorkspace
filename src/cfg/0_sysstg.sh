@@ -39,44 +39,44 @@ libinput_line="[Libinput][$bus_dec][$dev_dec][$touchpad_name]"
 echo -e "$libinput_line" > ~/.config/kcminputrc
 echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=0.3" >> ~/.config/kcminputrc
 ### Screen Edges > "no actiion" for all corners
-kwriteconfig6 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate "9"
+kwriteconfig6 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate --type string "9"
 
 ## Virtual Keyboard (take effect after rebooting)
 ### Select Fcitx5
-kwriteconfig6 --file ~/.config/kwinrc --group Wayland --key InputMethod "/usr/share/applications/org.fcitx.Fcitx5.desktop"
+kwriteconfig6 --file ~/.config/kwinrc --group Wayland --key InputMethod --type string "/usr/share/applications/org.fcitx.Fcitx5.desktop"
 
 ## Keyboard (take effect after rebooting)
 ### spectacle region: Alt+P
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RectangularRegionScreenShot "Alt+P"
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RecordRegion "Meta+Shift+R"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RectangularRegionScreenShot --type string "Alt+P"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.spectacle.desktop --key RecordRegion --type string "Meta+Shift+R"
 ### Konsole: Meta+R
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.konsole.desktop --key NewWindow "Meta+R"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.konsole.desktop --key NewWindow --type string "Meta+R"
 ### System Monitor: Ctrl+Shift+Esc
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.plasma-systemmonitor.desktop --key _launch "Ctrl+Shift+Esc"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group org.kde.plasma-systemmonitor.desktop --key _launch --type string "Ctrl+Shift+Esc"
 ### System Settings > Shortcuts > Shortcuts > KWin:
 ### Close Window > Meta+Q
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Window Close' --type string "Meta+Q\tAlt+F4,Alt+F4,Close Window" && sed -i '/Window Close/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
 ### Switch One Desktop to the Left: Meta+Ctrl+Left
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Left' "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Left' --type string "Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left"
 ### Switch One Desktop to the Right: Meta+Ctrl+Right
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Right' "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Switch One Desktop to the Right' --type string "Meta+Ctrl+Right,Meta+Ctrl+Right,Switch One Desktop to the Right"
 ### Toggle Overview: Meta+Tab
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' "Meta+Tab\tMeta+W,Meta+W,Toggle Overview" && sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group kwin --key 'Overview' --type string "Meta+Tab\tMeta+W,Meta+W,Toggle Overview" && sed -i '/Overview/s/\\\\t/\\t/g' ~/.config/kglobalshortcutsrc
 ### Workspace Behavior > Activities > Switching > Customize two Global shortcuts as "None"
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'manage activities' "none,none,Show Activity Switcher"
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'next activity' "none,none,Walk through activities"
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'previous activity' "none,none,Walk through activities (Reverse)"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'manage activities' --type string "none,none,Show Activity Switcher"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'next activity' --type string "none,none,Walk through activities"
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group plasmashell --key 'previous activity' --type string "none,none,Walk through activities (Reverse)"
 
 ## Accessibility > Shake Cursor > set "Magnification" to samllest
-kwriteconfig6 --file ~/.config/kwinrc --group Effect-shakecursor --key Magnification "2"
+kwriteconfig6 --file ~/.config/kwinrc --group Effect-shakecursor --key Magnification --type string "2"
 
 ######################################################################################
 
 # Appearance & Style
 
 ## Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
-kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft "M"
-kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight "IAX"
+kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
+kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
 
 ######################################################################################
 
@@ -165,7 +165,7 @@ kwriteconfig6 --file ~/.config/mimeapps.list --group 'Default Applications' --ke
 
 ## Notification
 ### System Settings > Notification > Configure > Other Applications > uncheck "Show popups"
-kwriteconfig6 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' "false"
+kwriteconfig6 --file ~/.config/plasmanotifyrc --group 'Applications' --group '@other' --key 'ShowPopups' --type string "false"
 ### Notification > Configure > Network Management > Confirgure Events > uncheck "Show a message in a popup" for "Connection Activated"
 echo -e '[Event/ConnectionActivated]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/NoLongerConnected]\nExecute=\nLogfile=\nSound=\nTTS=' > ~/.config/networkmanagement.notifyrc
 ### Notification > Configure > Discover > Confirgure Events > uncheck "Show a message in a popup" for "Updates Are Available"
@@ -173,9 +173,9 @@ echo -e '[Event/Update]\nAction=\nExecute=\nLogfile=\nSound=\nTTS=\n\n[Event/Upd
 
 ## Window Management
 ### Desktop Effects > Appearance > uncheck "screen edge"
-kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key screenedgeEnabled "false"
+kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key screenedgeEnabled --type bool "false"
 ### Virtual Desktop > uncheck "Navigation wraps around"
-kwriteconfig6 --file ~/.config/kwinrc --group Windows --key RollOverDesktops "false"
+kwriteconfig6 --file ~/.config/kwinrc --group Windows --key RollOverDesktops --type bool "false"
 
 ######################################################################################
 
@@ -183,29 +183,29 @@ kwriteconfig6 --file ~/.config/kwinrc --group Windows --key RollOverDesktops "fa
 
 ## General Behavior
 ### Clicking files or folders > "Selects them"
-kwriteconfig6 --file ~/.config/kdeglobals --group KDE --key SingleClick "false"
+kwriteconfig6 --file ~/.config/kdeglobals --group KDE --key SingleClick --type bool "false"
 ### Double-click Interval: 500ms
-kwriteconfig6 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval "500"
+kwriteconfig6 --file ~/.config/kdeglobals --group KDE --key DoubleClickInterval --type string "500"
 
 ## Search
 ### File Search > check "Enable File Search"
-kwriteconfig6 --file ~/.config/baloofilerc --group Basic --key Indexing-Enabled "Settings"
-kwriteconfig6 --file ~/.config/baloofilerc --group 'Basic Settings' --key Indexing-Enabled "true"
-kwriteconfig6 --file ~/.config/krunnerrc --group PlasmaRunnerManager --key migrated "true"
-kwriteconfig6 --file ~/.config/krunnerrc --group Plugins --key baloosearchEnabled "true"
+kwriteconfig6 --file ~/.config/baloofilerc --group Basic --key Indexing-Enabled --type string "Settings"
+kwriteconfig6 --file ~/.config/baloofilerc --group 'Basic Settings' --key Indexing-Enabled --type bool "true"
+kwriteconfig6 --file ~/.config/krunnerrc --group PlasmaRunnerManager --key migrated --type bool "true"
+kwriteconfig6 --file ~/.config/krunnerrc --group Plugins --key baloosearchEnabled --type bool "true"
 ### Plasma Search > Config KRunner... > Position on screen > select "Center"
-kwriteconfig6 --file ~/.config/krunnerrc --group General --key FreeFloating "true"
+kwriteconfig6 --file ~/.config/krunnerrc --group General --key FreeFloating --type bool "true"
 ### System Settings > Search > Plasma Search > Config KRunner... > Activation > uncheck "Activate when pressing any key on desktop"
-kwriteconfig6 --file ~/.config/krunnerrc --group General --key ActivateWhenTypingOnDesktop "false"
+kwriteconfig6 --file ~/.config/krunnerrc --group General --key ActivateWhenTypingOnDesktop --type bool "false"
 ### System Settings > Search > Plasma Search > Config KRunner... > History > uncheck "Retain previous search"
-kwriteconfig6 --file ~/.config/krunnerrc --group General --key RetainPriorSearch "false"
+kwriteconfig6 --file ~/.config/krunnerrc --group General --key RetainPriorSearch --type bool "false"
 
 ######################################################################################
 
 # Security & Privacy
 
 ## Screen Locking > Lock screen automatically: 30minutes
-kwriteconfig6 --file ~/.config/kscreenlockerrc --group Daemon --key Timeout "30"
+kwriteconfig6 --file ~/.config/kscreenlockerrc --group Daemon --key Timeout --type string "30"
 
 ######################################################################################
 
@@ -222,13 +222,13 @@ if grep -q "#AllowHibernation=yes" /etc/systemd/sleep.conf ; then sudo sed -i 's
 ## Software Update
 ### Update software > select "Manually"
 ### Apply system updates > select "Immediately"
-kwriteconfig6 --file ~/.config/discoverrc --group Software --key UseOfflineUpdates "false"
+kwriteconfig6 --file ~/.config/discoverrc --group Software --key UseOfflineUpdates --type bool "false"
 ### Notification frequency > select "Monthly"
-kwriteconfig6 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval '2592000'
+kwriteconfig6 --file ~/.config/PlasmaDiscoverUpdates --group Global --key RequiredNotificationInterval --type string '2592000'
 
 ## Session
 ### Desktop Session > On login, launch apps that were open > select "Start with an empty session"
-kwriteconfig6 --file ~/.config/ksmserverrc --group General --key loginMode "emptySession"
+kwriteconfig6 --file ~/.config/ksmserverrc --group General --key loginMode --type string "emptySession"
 
 ######################################################################################
 
