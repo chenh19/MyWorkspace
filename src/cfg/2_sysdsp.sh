@@ -75,6 +75,7 @@ esac
 [ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit \
     --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' \
 /usr/share/applications/org.kde.krita.desktop
+echo '#!/usr/bin/env bash' > ~/.scale.sh
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
 read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
@@ -87,29 +88,17 @@ case "$choice" in
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.5.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
-        [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /usr/bin/zoom %U' \
-        /usr/share/applications/Zoom.desktop
+        echo '[ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 /usr/bin/zoom %U" /usr/share/applications/Zoom.desktop' >> ~/.scale.sh
         ## TeamViewer
-        [ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /opt/teamviewer/tv_bin/script/teamviewer' \
-        /usr/share/applications/com.teamviewer.TeamViewer.desktop
+        echo '[ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 /opt/teamviewer/tv_bin/script/teamviewer" /usr/share/applications/com.teamviewer.TeamViewer.desktop' >> ~/.scale.sh
         ## 4Kvideodownloader
-        [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 4kvideodownloaderplus' \
-        /usr/share/applications/4kvideodownloaderplus.desktop
+        echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2.5 /usr/share/eusoft-eudic/AppRun %F' \
-        /usr/share/applications/eusoft-eudic.desktop
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
-        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U' \
-        /usr/share/applications/wechat.desktop
-        ##FastQC
-        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env GDK_SCALE=2.5 fastqc' \
-        /usr/share/applications/fastqc.desktop
+        echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
+        ## FastQC
+        echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
         ;;
@@ -121,29 +110,17 @@ case "$choice" in
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
-        [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2 /usr/bin/zoom %U' \
-        /usr/share/applications/Zoom.desktop
+        echo '[ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 /usr/bin/zoom %U" /usr/share/applications/Zoom.desktop' >> ~/.scale.sh
         ## TeamViewer
-        [ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2 /opt/teamviewer/tv_bin/script/teamviewer' \
-        /usr/share/applications/com.teamviewer.TeamViewer.desktop
+        echo '[ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 /opt/teamviewer/tv_bin/script/teamviewer" /usr/share/applications/com.teamviewer.TeamViewer.desktop' >> ~/.scale.sh
         ## 4Kvideodownloader
-        [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2 4kvideodownloaderplus' \
-        /usr/share/applications/4kvideodownloaderplus.desktop
+        echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun %F' \
-        /usr/share/applications/eusoft-eudic.desktop
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
-        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat %U' \
-        /usr/share/applications/wechat.desktop
-        ##FastQC
-        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env GDK_SCALE=2 fastqc' \
-        /usr/share/applications/fastqc.desktop
+        echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
+        ## FastQC
+        echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
         ;;
@@ -155,29 +132,17 @@ case "$choice" in
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.5.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
-        [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /usr/bin/zoom %U' \
-        /usr/share/applications/Zoom.desktop
+        echo '[ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 /usr/bin/zoom %U" /usr/share/applications/Zoom.desktop' >> ~/.scale.sh
         ## TeamViewer
-        [ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /opt/teamviewer/tv_bin/script/teamviewer' \
-        /usr/share/applications/com.teamviewer.TeamViewer.desktop
+        echo '[ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 /opt/teamviewer/tv_bin/script/teamviewer" /usr/share/applications/com.teamviewer.TeamViewer.desktop' >> ~/.scale.sh
         ## 4Kvideodownloader
-        [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 4kvideodownloaderplus' \
-        /usr/share/applications/4kvideodownloaderplus.desktop
+        echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1.5 /usr/share/eusoft-eudic/AppRun %F' \
-        /usr/share/applications/eusoft-eudic.desktop
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
-        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U' \
-        /usr/share/applications/wechat.desktop
-        ##FastQC
-        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env GDK_SCALE=1.5 fastqc' \
-        /usr/share/applications/fastqc.desktop
+        echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
+        ## FastQC
+        echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
         ;;
@@ -189,33 +154,22 @@ case "$choice" in
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
-        [ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1 /usr/bin/zoom %U' \
-        /usr/share/applications/Zoom.desktop
+        echo '[ -f /usr/share/applications/Zoom.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 /usr/bin/zoom %U" /usr/share/applications/Zoom.desktop' >> ~/.scale.sh
         ## TeamViewer
-        [ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1 /opt/teamviewer/tv_bin/script/teamviewer' \
-        /usr/share/applications/com.teamviewer.TeamViewer.desktop
+        echo '[ -f /usr/share/applications/com.teamviewer.TeamViewer.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 /opt/teamviewer/tv_bin/script/teamviewer" /usr/share/applications/com.teamviewer.TeamViewer.desktop' >> ~/.scale.sh
         ## 4Kvideodownloader
-        [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1 4kvideodownloaderplus' \
-        /usr/share/applications/4kvideodownloaderplus.desktop
+        echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        [ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_SCALE_FACTOR=1 /usr/share/eusoft-eudic/AppRun %F' \
-        /usr/share/applications/eusoft-eudic.desktop
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
-        [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/bin/wechat %U' \
-        /usr/share/applications/wechat.desktop
-        ##FastQC
-        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
-            --set-key 'Exec' --set-value 'env GDK_SCALE=1 fastqc' \
-        /usr/share/applications/fastqc.desktop
+        echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
+        ## FastQC
+        echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
 esac
+bash ~/.scale.sh
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
