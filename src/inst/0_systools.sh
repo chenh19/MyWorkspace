@@ -275,6 +275,11 @@ sudo apt autoremove -y
   cp -f ./cfg/solaar/rules.yaml ~/.config/solaar/
   sudo cp -f ./cfg/solaar/42-logitech-unify-permissions.rules /etc/udev/rules.d
 
+  ## 4k video downloader+
+  [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
+      --set-icon '4kvideodownloaderplus' \
+  /usr/share/applications/4kvideodownloaderplus.desktop
+
   ## thunderbird
   #sudo cp -rf ./cfg/Thunderbird/ /opt/
   #sudo chmod +x /opt/Thunderbird/thunderbird.sh
