@@ -55,6 +55,7 @@ kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key CombinePDF --ty
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateLeft --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateRight --type bool "true"
 #kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
+kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key wallpaperfileitemaction --type bool "false"
 
 ## Configure Dolphin
 # General > uncheck "show selection marker"
