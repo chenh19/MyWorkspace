@@ -45,7 +45,10 @@ echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeT
 echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=RotateLeft\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action RotateLeft]\nIcon=object-rotate-left\nExec=convert -rotate 270 %f %f\nName=Rotate Left\nName[en_US]=Rotate Left\nName[zh_CN]=向左旋转' > ~/.local/share/kio/servicemenus/rotate_left.desktop
 echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=RotateRight\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action RotateRight]\nIcon=object-rotate-right\nExec=convert -rotate 90 %f %f\nName=Rotate Right\nName[en_US]=Rotate Right\nName[zh_CN]=向右旋转' > ~/.local/share/kio/servicemenus/rotate_right.desktop
 #echo -e '' > ~/.local/share/kio/servicemenus/setasbackground.desktop
-## config Dolphin widgets
+chmod +x ~/.local/share/kio/servicemenus/open_as_root.desktop
+chmod +x ~/.local/share/kio/servicemenus/combine_pdf.desktop
+chmod +x ~/.local/share/kio/servicemenus/rotate_left.desktop
+chmod +x ~/.local/share/kio/servicemenus/rotate_right.desktop
 #kbuildsycoca6
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRoot --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key CombinePDF --type bool "true"
