@@ -133,6 +133,7 @@ kwriteconfig6 --file ~/.config/okularrc --group 'Notification Messages' --key 'p
 [ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
 [ -d ~/.local/share/kxmlgui5/okular/ ] && rm -rf ~/.local/share/kxmlgui5/okular/
 cp -rf ./cfg/okular/ ~/.local/share/kxmlgui5/
+kwriteconfig6 --file ~/.config/okularrc --group 'MainWindow' --group 'Toolbar mainToolBar' --key 'ToolButtonStyle' --type string "IconOnly"
 
 ######################################################################################
 
