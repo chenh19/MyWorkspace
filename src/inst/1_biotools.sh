@@ -21,7 +21,6 @@ case "$choice" in
         
         ## install PyMOL/FastQC/Meld etc
         sudo apt install pymol fastqc fastp seqtk cutadapt bwa bowtie2 minimap2 samtools bamtools clustalx meld filezilla sqlitebrowser kdevelop parallel -y
-        # GDK_SCALE=2 fastqc
         [ -f /usr/share/applications/clustalx.desktop ] && sudo desktop-file-edit \
             --set-icon '/opt/icon/clustal.png' \
         /usr/share/applications/clustalx.desktop
