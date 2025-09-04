@@ -34,6 +34,13 @@ echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
   ## update
   sudo update-grub && echo ""
 
+# desktop layout
+line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
+line=$((line+2))
+sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+unset line
+
 # global theme # to update
 ## System Settings > Appearance > Global Theme > Breeze
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
