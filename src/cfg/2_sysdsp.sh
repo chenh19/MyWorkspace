@@ -106,6 +106,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
             --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        ##FastQC
+        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
+            --set-key 'Exec' --set-value 'env GDK_SCALE=2.5 fastqc' \
+        /usr/share/applications/fastqc.desktop
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
         ;;
@@ -136,6 +140,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
             --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        ##FastQC
+        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
+            --set-key 'Exec' --set-value 'env GDK_SCALE=2 fastqc' \
+        /usr/share/applications/fastqc.desktop
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
         ;;
@@ -166,6 +174,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
             --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        ##FastQC
+        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
+            --set-key 'Exec' --set-value 'env GDK_SCALE=1.5 fastqc' \
+        /usr/share/applications/fastqc.desktop
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
         ;;
@@ -196,6 +208,10 @@ case "$choice" in
         [ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit \
             --set-key 'Exec' --set-value 'env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/bin/wechat %U' \
         /usr/share/applications/wechat.desktop
+        ##FastQC
+        [ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit \
+            --set-key 'Exec' --set-value 'env GDK_SCALE=1 fastqc' \
+        /usr/share/applications/fastqc.desktop
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
