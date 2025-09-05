@@ -5,10 +5,10 @@ src="$1"
 srcname=$(basename "$src")
 filename="${srcname// /_}"
 mkdir -p /usr/share/sddm/themes/breeze/
-cp -f "$src" /usr/share/sddm/themes/breeze/
+cp -f "$src" "/usr/share/sddm/themes/breeze/$filename"
 chmod 644 "/usr/share/sddm/themes/breeze/$filename"
 mkdir -p /usr/share/sddm/themes/debian-breeze/
-cp -f "$src" /usr/share/sddm/themes/debian-breeze/
+cp -f "$src" "/usr/share/sddm/themes/debian-breeze/$filename"
 chmod 644 "/usr/share/sddm/themes/debian-breeze/$filename"
 
 # set sddm
