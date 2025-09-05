@@ -25,7 +25,7 @@ echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash
 # notify end
 echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 1
 
-# reboot
+# check for reboot
 sudo needrestart -b -q >/dev/null 2>&1
 exit_code=$?
 if [ $exit_code -ne 0 ]; then
