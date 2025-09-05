@@ -104,9 +104,6 @@ kwriteconfig6 --file ~/.local/share/plasma-systemmonitor/overview.page --group p
 # spectacle
 ## Quit after manual Save or Copy
 kwriteconfig6 --file ~/.config/spectaclerc --group GuiConfig --key 'quitAfterSaveCopyExport' --type bool "true"
-## Default Save Location
-#[ ! -d ~/Pictures/Screenshots/ ] && mkdir ~/Pictures/Screenshots/
-#kwriteconfig6 --file ~/.config/spectaclerc --group Save --key defaultSaveLocation --type string file:///home/$USER/Pictures/Screenshots/
 
 ######################################################################################
 
