@@ -14,21 +14,16 @@ TEXT_RESET="$(tput sgr0)"
 # final cleanup
 sudo echo ""
 echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET}\n" && sleep 1
-if [ -d ~/.setup_cache/ ]; then rm -rf ~/.setup_cache/; fi
-cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
-cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop
-echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop
+[ -d ~/.setup_cache/ ] && rm -rf ~/.setup_cache/
 
 # notify end
 echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 3
 
 # reboot # to update
-if [ -f /var/run/reboot-required ]; then
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
-  case "$choice" in
-    y|Y ) sudo echo ""
-          echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
-          systemctl reboot;;
-      * ) echo -e "\n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET}\n" && sleep 1;;
-  esac
-fi
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
+case "$choice" in
+  y|Y ) sudo echo ""
+        echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
+        systemctl reboot;;
+    * ) echo -e "\n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET}\n" && sleep 1;;
+esac
