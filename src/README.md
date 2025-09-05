@@ -1,4 +1,4 @@
-# Shell Script Template
+# Bash Script Template
 
 ```
 #!/usr/bin/env bash
