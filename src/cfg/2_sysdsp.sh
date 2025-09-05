@@ -71,7 +71,7 @@ esac
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light (default) or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   d|D ) # global theme
         plasma-apply-lookandfeel --apply org.kde.breezedark.desktop
