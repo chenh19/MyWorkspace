@@ -17,7 +17,7 @@ echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET}\n" && sleep 1
 [ -d ~/.setup_cache/ ] && rm -rf ~/.setup_cache/
 
 # notify end
-echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 3
+echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 1
 
 # reboot # to update
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
