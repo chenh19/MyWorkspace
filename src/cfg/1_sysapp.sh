@@ -38,23 +38,26 @@ kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminde
 # Dolphin #to update
 
 ## install widgets
-# Context Menu > Download New Services... > "Open as root" (by loup), "Rotate or flip images" (by alex-l), and "Combine *.pdf documents" (by Shaddar) # not installing: "Mount ISO" (by loup)
 mkdir -p ~/.local/share/kio/servicemenus/
+# Context Menu > Download New Services... > "Open as root" (by loup)
 echo -e '[Desktop Entry]\nType=Service\nIcon=system-file-manager\nActions=OpenAsRoot\nServiceTypes=KonqPopupMenu/Plugin,inode/directory,inode/directory-locked\nMimeType=inode/directory;inode/directory-locked\n\n[Desktop Action OpenAsRoot]\nExec=if [ "$XDG_SESSION_TYPE" = "wayland" ]; then xhost +si:localuser:root && pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dbus-launch dolphin %U && xhost -si:localuser:root ; else pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin %U; fi;\nIcon=system-file-manager\nName=Open as Root\nName[en_US]=Open as Root\nName[zh_CN]=以管理员身份打开文件夹' > ~/.local/share/kio/servicemenus/open_as_root.desktop
+chmod +x ~/.local/share/kio/servicemenus/open_as_root.desktop
+kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRoot --type bool "true"
+# Context Menu > Download New Services... > "Combine *.pdf documents" (by Shaddar)
 echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=application/pdf;\nIcon=application-pdf\nActions=CombinePDF\nX-KDE-Priority=TopLevel\nX-KDE-RequiredNumberOfUrls=2,3,4,5,6,7,8,9,10\nX-KDE-StartupNotify=false\n\n[Desktop Action CombinePDF]\nIcon=application-pdf\nTryExec=gs\nExec=gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf %U\nName=Combine PDF files\nName[en_US]=Combine PDF files\nName[zh_CN]=合并PDF文件' > ~/.local/share/kio/servicemenus/combine_pdf.desktop
+chmod +x ~/.local/share/kio/servicemenus/combine_pdf.desktop
+kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key CombinePDF --type bool "true"
+# Context Menu > Download New Services... > "Rotate or flip images" (by alex-l)
 echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=RotateLeft\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action RotateLeft]\nIcon=object-rotate-left\nExec=convert -rotate 270 %f %f\nName=Rotate Left\nName[en_US]=Rotate Left\nName[zh_CN]=向左旋转' > ~/.local/share/kio/servicemenus/rotate_left.desktop
 echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;\nIcon=image-png\nActions=RotateRight\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action RotateRight]\nIcon=object-rotate-right\nExec=convert -rotate 90 %f %f\nName=Rotate Right\nName[en_US]=Rotate Right\nName[zh_CN]=向右旋转' > ~/.local/share/kio/servicemenus/rotate_right.desktop
-#echo -e '' > ~/.local/share/kio/servicemenus/setasbackground.desktop
-chmod +x ~/.local/share/kio/servicemenus/open_as_root.desktop
-chmod +x ~/.local/share/kio/servicemenus/combine_pdf.desktop
 chmod +x ~/.local/share/kio/servicemenus/rotate_left.desktop
 chmod +x ~/.local/share/kio/servicemenus/rotate_right.desktop
-#kbuildsycoca6
-kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key OpenAsRoot --type bool "true"
-kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key CombinePDF --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateLeft --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateRight --type bool "true"
-#kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
+# Context Menu > Download New Services... > "Set as Wallpaper"
+echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;image/svg+xml;image/webp;image/avif;\nIcon=preferences-desktop-wallpaper\nActions=SetAsBackground;\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action SetAsBackground]\nIcon=image\nExec=$HOME/.config/background/setasbackground.sh %f\nName=Set as Background\nName[en_US]=Set as Background\nName[zh_CN]=设置为桌面背景' > ~/.local/share/kio/servicemenus/setasbackground.desktop
+chmod +x ~/.local/share/kio/servicemenus/setasbackground.desktop
+kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key wallpaperfileitemaction --type bool "false"
 
 ## Configure Dolphin
