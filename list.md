@@ -31,4 +31,3 @@ This tool will install and configure:
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Solaar](https://github.com/pwr-Solaar/Solaar)
 - [WineHQ](https://www.winehq.org/)
-- [Oracle VirtualBox](https://www.virtualbox.org/)
