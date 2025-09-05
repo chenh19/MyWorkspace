@@ -60,7 +60,8 @@ chmod +x ~/.local/share/kio/servicemenus/setasbackground.desktop
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key wallpaperfileitemaction --type bool "false"
 cp -rf ./cfg/background/ ~/.config/
-chmod +x ~/.config/background/setasbackground.sh
+chmod +x ~/.config/background/wallpaper.sh
+chmod +x ~/.config/background/sddm.sh
 
 ## Configure Dolphin
 # General > uncheck "show selection marker"
