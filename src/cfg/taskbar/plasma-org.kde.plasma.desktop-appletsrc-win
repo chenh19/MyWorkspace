@@ -36,7 +36,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:org.kde.dolphin.desktop,applications:google-chrome.desktop
+launchers=preferred://filemanager,preferred://browser
 wheelEnabled=false
 
 [Containments][2][Applets][6]
