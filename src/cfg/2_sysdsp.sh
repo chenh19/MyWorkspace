@@ -43,13 +43,16 @@ case "$choice" in
         sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-mac >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
-        # Opacity > Translucent; no Floating
+        # Show Panel Configuration > Opacity > Translucent; no Floating
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 32' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 32' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key panelLengthMode --type string "1"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --group 'Defaults' --key thickness --type string "56"
+        # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
+        kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "XIA"
+        kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
         ;;
   * ) 	# desktop layout (win)
         line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
@@ -57,9 +60,12 @@ case "$choice" in
         sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
-        # Opacity > Translucent; no Floating
+        # Show Panel Configuration > Opacity > Translucent; no Floating
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
+        # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
+        kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
+        kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
         ;;
 esac
 
