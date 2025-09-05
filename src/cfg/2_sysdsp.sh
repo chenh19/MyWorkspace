@@ -34,7 +34,7 @@ echo -e "${TEXT_YELLOW}Configuring display settings...${TEXT_RESET}\n" && sleep 
   ## update
   sudo update-grub && echo ""
 
-# desktop layout # to update
+# desktop layout
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like a Windows-style (default) or Mac-style layout? [w/m]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   m|M ) # desktop layout (mac)
