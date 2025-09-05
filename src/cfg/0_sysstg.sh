@@ -72,14 +72,6 @@ kwriteconfig6 --file ~/.config/kwinrc --group Effect-shakecursor --key Magnifica
 
 ######################################################################################
 
-# Appearance & Style
-
-## Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
-kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
-kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
-
-######################################################################################
-
 # Apps & Windows
 
 ## Default Applications
