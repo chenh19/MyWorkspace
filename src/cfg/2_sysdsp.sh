@@ -72,9 +72,7 @@ esac
 
 # scaling
 ## Krita
-[ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit \
-    --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' \
-/usr/share/applications/org.kde.krita.desktop
+[ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' /usr/share/applications/org.kde.krita.desktop >/dev/null 2>&1
 echo '#!/usr/bin/env bash' > ~/.scale.sh
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
