@@ -55,7 +55,7 @@ chmod +x ~/.local/share/kio/servicemenus/rotate_right.desktop
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateLeft --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key RotateRight --type bool "true"
 # Context Menu > Download New Services... > "Set as Wallpaper"
-echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;image/svg+xml;image/webp;image/avif;\nIcon=preferences-desktop-wallpaper\nActions=SetAsBackground;\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action SetAsBackground]\nIcon=viewimage\nExec=$HOME/.config/background/setasbackground.sh %f\nName=Set as Background\nName[en_US]=Set as Background\nName[zh_CN]=设置为桌面背景' > ~/.local/share/kio/servicemenus/setasbackground.desktop
+echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeType=image/jpeg;image/png;image/svg+xml;image/webp;image/avif;\nIcon=preferences-desktop-wallpaper\nActions=SetAsBackground;\nX-KDE-Priority=TopLevel\nX-KDE-StartupNotify=false\n\n[Desktop Action SetAsBackground]\nIcon=viewimage\nExec=pkexec $HOME/.config/background/setasbackground.sh %f\nName=Set as Background\nName[en_US]=Set as Background\nName[zh_CN]=设置为桌面背景' > ~/.local/share/kio/servicemenus/setasbackground.desktop
 chmod +x ~/.local/share/kio/servicemenus/setasbackground.desktop
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key wallpaperfileitemaction --type bool "false"
