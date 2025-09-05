@@ -59,7 +59,7 @@ echo -e '[Desktop Entry]\nType=Service\nServiceTypes=KonqPopupMenu/Plugin\nMimeT
 chmod +x ~/.local/share/kio/servicemenus/setasbackground.desktop
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key SetAsBackground --type bool "true"
 kwriteconfig6 --file ~/.config/kservicemenurc --group Show --key wallpaperfileitemaction --type bool "false"
-mkdir -p ~/.config/background/
+cp -rf ./cfg/background/ ~/.config/
 
 ## Configure Dolphin
 # General > uncheck "show selection marker"
