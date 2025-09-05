@@ -167,7 +167,9 @@ case "$choice" in
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
         ;;
 esac
-bash ~/.scale.sh
+[ -f ~/.scale.sh ] && bash ~/.scale.sh >/dev/null 2>&1
+[ -f ~/.shortcut.sh ] && bash ~/.shortcut.sh >/dev/null 2>&1
+[ -f ~/.size-restore.sh ] && bash ~/.size-restore.sh >/dev/null 2>&1
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
