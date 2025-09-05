@@ -25,9 +25,9 @@ PreloadWeight=85
 popupHeight=450
 popupWidth=396
 
-[Containments][32][Applets][36][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+[Containments][32][Applets][36][Configuration][Appearance]
+dateDisplayFormat=BesideTime
+showDate=false
 
 [Containments][32][Applets][37]
 immutability=1
