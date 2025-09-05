@@ -35,14 +35,33 @@ echo -e "${TEXT_YELLOW}Configuring display settings...${TEXT_RESET}\n" && sleep 
   sudo update-grub && echo ""
 
 # desktop layout # to update
-line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
-line=$((line+2))
-sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-unset line
-# Opacity > Translucent; no Floating
-kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
-kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like a Windows-style (default) or Mac-style layout? [w/m]'$TEXT_RESET)"$'\n' choice
+case "$choice" in
+  m|M ) # desktop layout (mac)
+        line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
+        line=$((line+2))
+        sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+        cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-mac >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+        unset line
+        # Opacity > Translucent; no Floating
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 32' --key panelOpacity --type string "2"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 32' --key floating --type string "0"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key panelOpacity --type string "2"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key floating --type string "0"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --key panelLengthMode --type string "1"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 86' --group 'Defaults' --key thickness --type string "56"
+        ;;
+  * ) 	# desktop layout (win)
+        line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
+        line=$((line+2))
+        sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+        cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+        unset line
+        # Opacity > Translucent; no Floating
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
+        kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
+        ;;
+esac
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
