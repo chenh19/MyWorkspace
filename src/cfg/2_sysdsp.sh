@@ -41,7 +41,7 @@ sed -i "$line,500d" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 unset line
 # Opacity > Translucent; no Floating
-kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "1"
+kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
 kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
 
 # global theme
