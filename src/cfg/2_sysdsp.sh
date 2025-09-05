@@ -13,7 +13,7 @@ cd ~/.setup_cache/
 
 
 # notify start
-echo -e "${TEXT_YELLOW}Setting display options...${TEXT_RESET}\n" && sleep 1
+echo -e "${TEXT_YELLOW}Configuring display settings...${TEXT_RESET}\n" && sleep 1
 
 # boot screen
   ## config plymouth
