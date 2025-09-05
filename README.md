@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v3.0.0 (Wayland; under construction, 90% finished)*  
+*Current version: v3.0.0 (Wayland; under construction, 95% finished)*  
 
 ## Introduction
 
