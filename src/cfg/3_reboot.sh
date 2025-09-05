@@ -22,7 +22,7 @@ echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash
 # notify end
 echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 3
 
-# reboot
+# reboot # to update
 if [ -f /var/run/reboot-required ]; then
   read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
   case "$choice" in
