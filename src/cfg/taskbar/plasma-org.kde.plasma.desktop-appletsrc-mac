@@ -56,7 +56,7 @@ immutability=1
 plugin=com.himdek.kde.plasma.overview
 
 [Containments][32][Applets][95][Configuration][General]
-icon=application-menu-symbolic
+icon=drag-surface
 
 [Containments][32][General]
 AppletOrder=93;33;37;67;36;95
