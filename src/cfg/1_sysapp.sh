@@ -35,7 +35,7 @@ kwriteconfig6 --file ~/.config/kded5rc --group 'Module-browserintegrationreminde
 
 ######################################################################################
 
-# Dolphin #to update
+# Dolphin
 
 ## install widgets
 mkdir -p ~/.local/share/kio/servicemenus/
