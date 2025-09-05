@@ -14,6 +14,9 @@ TEXT_RESET="$(tput sgr0)"
 # final cleanup
 sudo echo ""
 echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET}\n" && sleep 1
+[ -f ~/.scale.sh ] && bash ~/.scale.sh >/dev/null 2>&1
+[ -f ~/.shortcut.sh ] && bash ~/.shortcut.sh >/dev/null 2>&1
+[ -f ~/.size-restore.sh ] && bash ~/.size-restore.sh >/dev/null 2>&1
 [ -d ~/.setup_cache/ ] && rm -rf ~/.setup_cache/
 
 # notify end
