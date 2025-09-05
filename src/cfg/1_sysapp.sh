@@ -174,13 +174,6 @@ if ! grep -q "alias shutdown='systemctl poweroff'" ~/.bashrc ; then echo -e "ali
 # Refresh shell config
 source ~/.bashrc
 
-######################################################################################
-
-# desktop shortcuts
-cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
-cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop
-echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop
-
 #-------------------------------------------------------------------------------------
 
 
