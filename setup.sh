@@ -43,7 +43,8 @@ sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
 cp -f ./cfg/power/powerdevilrc ~/.config/
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig6 --file ~/Templates/.directory --group "Desktop Entry" --key Icon --type string "folder-templates"
-cp -rf ./cfg/template/* ~/Templates/
+[ ! -d ~/Documents/Templates/ ] && mkdir ~/Documents/Templates/
+cp -rf ./cfg/template/* ~/Documents/Templates/
 [ ! -d ~/snap/ ] && mkdir ~/snap/
 kwriteconfig6 --file ~/snap/.directory --group "Desktop Entry" --key Icon --type string "folder-snap"
 [ ! -d ~/Developing/ ] && mkdir ~/Developing/
@@ -59,7 +60,7 @@ echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
 ## hide files and folders
 echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nVirtualBox VMs\nminiconda3\nbin" > ~/.hidden
-echo -e "Enpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
+echo -e "Templates\nEnpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
 echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
 echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
 
