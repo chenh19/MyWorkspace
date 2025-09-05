@@ -86,7 +86,8 @@ sudo apt autoremove -y
   [ -f /usr/share/keyrings/oracle-virtualbox-2016.gpg ] && sudo rm -f /usr/share/keyrings/oracle-virtualbox-2016.gpg
   source /etc/os-release
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-  wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
+  #wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
+  wget -qO- https://www.dropbox.com/scl/fi/og4of00530879jak03nzp/oracle_vbox_2016.asc?rlkey=mjn9tj78kqix7uujp2hdaava6 | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
   sudo apt update -qq && sudo apt install virtualbox-7.1 -y
   [ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
 
