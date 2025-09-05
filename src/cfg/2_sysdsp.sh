@@ -101,6 +101,7 @@ esac
 echo '#!/usr/bin/env bash' > ~/.scale.sh
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
 echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+#xrandr | grep " connected primary" to update
 read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   a|A ) # System Settings > Input & Output > Display & Monitor > Scale: 250%
