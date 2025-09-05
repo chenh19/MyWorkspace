@@ -27,15 +27,11 @@ fi
 # notify end
 echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] folder in case you need them later.${TEXT_RESET}\n\n" && sleep 1
 
-# check for reboot
-sudo needrestart -b -q >/dev/null 2>&1
-exit_code=$?
-if [ $exit_code -ne 0 ]; then
-  read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
-  case "$choice" in
-    y|Y ) sudo echo ""
-          echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
-          systemctl reboot;;
-      * ) echo -e "\n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET}\n" && sleep 1;;
-  esac
-fi
+# reboot
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
+case "$choice" in
+  y|Y ) sudo echo ""
+        echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
+        systemctl reboot;;
+    * ) echo -e "\n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET}\n" && sleep 1;;
+esac
