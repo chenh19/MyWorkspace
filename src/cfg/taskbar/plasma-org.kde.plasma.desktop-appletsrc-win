@@ -71,7 +71,7 @@ immutability=1
 plugin=com.himdek.kde.plasma.overview
 
 [Containments][2][Applets][27][Configuration][General]
-icon=/opt/icon/overview-light.png
+icon=drag-surface
 
 [Containments][2][General]
 AppletOrder=3;27;5;6;7;20;21
