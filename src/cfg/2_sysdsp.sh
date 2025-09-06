@@ -53,6 +53,8 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "XIA"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
+        # notify end
+        echo -e "\n${TEXT_GREEN}Set desktop layout: Mac-style${TEXT_RESET}\n" && sleep 1
         ;;
   * ) 	# desktop layout (win)
         line="$(grep -wn "wallpaperplugin=org.kde.image" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | head -n 1 | cut -d: -f1)"
@@ -66,24 +68,16 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
+        # notify end
+        echo -e "\n${TEXT_GREEN}Set desktop layout: Windows-style (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light (default) or Dark theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
+read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark (default) theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
-  d|D ) # global theme
-        plasma-apply-lookandfeel --apply org.kde.breezedark.desktop
-        # app specific
-        echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0\n[int32] ColorScheme = 2" > ~/.config/teamviewer/client.conf
-        [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{\n    "initial_working_directory": "~",\n    "posix_terminal_shell": "bash",\n    "editor_theme": "Tomorrow Night",\n    "pdf_previewer": "none"\n}' > ~/.config/rstudio/rstudio-prefs.json
-        cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui-dark.conf ~/.config/fcitx5/conf/classicui.conf
-        sed -i '/^icon=\/opt\/icon\/overview-/c\icon=/opt/icon/overview-dark.png' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-        # notify end
-        echo -e "\n${TEXT_GREEN}Set global theme: Breeze Dark${TEXT_RESET}\n" && sleep 1
-        ;;
-  * ) 	# global theme
+  l|L ) # global theme
         plasma-apply-lookandfeel --apply org.kde.breeze.desktop
         # app specific
         echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0\n[int32] ColorScheme = 1" > ~/.config/teamviewer/client.conf
@@ -91,7 +85,17 @@ case "$choice" in
         cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
         sed -i '/^icon=\/opt\/icon\/overview-/c\icon=/opt/icon/overview-light.png' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         # notify end
-        echo -e "\n${TEXT_GREEN}Set global theme: Breeze Light (default)${TEXT_RESET}\n" && sleep 1
+        echo -e "\n${TEXT_GREEN}Set global theme: Breeze Light${TEXT_RESET}\n" && sleep 1
+        ;;
+  * ) 	# global theme
+        plasma-apply-lookandfeel --apply org.kde.breezedark.desktop
+        # app specific
+        echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0\n[int32] ColorScheme = 2" > ~/.config/teamviewer/client.conf
+        [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{\n    "initial_working_directory": "~",\n    "posix_terminal_shell": "bash",\n    "editor_theme": "Tomorrow Night",\n    "pdf_previewer": "none"\n}' > ~/.config/rstudio/rstudio-prefs.json
+        cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui-dark.conf ~/.config/fcitx5/conf/classicui.conf
+        sed -i '/^icon=\/opt\/icon\/overview-/c\icon=/opt/icon/overview-dark.png' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+        # notify end
+        echo -e "\n${TEXT_GREEN}Set global theme: Breeze Dark (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
 
@@ -124,7 +128,7 @@ case "$choice" in
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%.${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n"
         ;;
   b|B ) # System Settings > Input & Output > Display & Monitor > Scale: 200%
         echo ""
@@ -146,7 +150,7 @@ case "$choice" in
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%.${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n"
         ;;
   c|C ) # System Settings > Input & Output > Display & Monitor > Scale: 150%
         echo ""
@@ -168,7 +172,7 @@ case "$choice" in
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%.${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n"
         ;;
   * )   # System Settings > Input & Output > Display & Monitor > Scale: 100%
         echo ""
@@ -190,7 +194,7 @@ case "$choice" in
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 100%.${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
         ;;
 esac
 
