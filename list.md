@@ -22,6 +22,7 @@ This tool will install and configure:
 - [Kdenlive](https://kdenlive.org/)
 - [VLC](https://www.videolan.org/vlc/)
 - [qView](https://interversehq.com/qview/)
+- [Slack](https://slack.com/)
 - [Zoom](https://zoom.us/)
 - [TeamViewer](https://www.teamviewer.com/)
 - [Resilio Sync](https://www.resilio.com/)
