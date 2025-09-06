@@ -84,7 +84,6 @@ case "$choice" in
         echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0\n[int32] ColorScheme = 1" > ~/.config/teamviewer/client.conf
         [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{\n    "initial_working_directory": "~",\n    "posix_terminal_shell": "bash",\n    "pdf_previewer": "none"\n}' > ~/.config/rstudio/rstudio-prefs.json
         cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui.conf ~/.config/fcitx5/conf/classicui.conf
-        sed -i '/^icon=\/opt\/icon\/overview-/c\icon=/opt/icon/overview-light.png' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         # notify end
         echo -e "\n${TEXT_GREEN}Set global theme: Breeze Light${TEXT_RESET}\n" && sleep 1
         ;;
@@ -94,7 +93,6 @@ case "$choice" in
         echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0\n[int32] ColorScheme = 2" > ~/.config/teamviewer/client.conf
         [ -f ~/.config/rstudio/rstudio-prefs.json ] && echo -e '{\n    "initial_working_directory": "~",\n    "posix_terminal_shell": "bash",\n    "editor_theme": "Tomorrow Night",\n    "pdf_previewer": "none"\n}' > ~/.config/rstudio/rstudio-prefs.json
         cp -rf ~/.setup_cache/cfg/fcitx5/conf/classicui-dark.conf ~/.config/fcitx5/conf/classicui.conf
-        sed -i '/^icon=\/opt\/icon\/overview-/c\icon=/opt/icon/overview-dark.png' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         # notify end
         echo -e "\n${TEXT_GREEN}Set global theme: Breeze Dark (default)${TEXT_RESET}\n" && sleep 1
         ;;
