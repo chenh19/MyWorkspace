@@ -63,9 +63,6 @@ popupWidth=396
 immutability=1
 plugin=org.kde.plasma.showdesktop
 
-[Containments][2][Applets][21][Configuration][Appearance]
-fontWeight=400
-
 [Containments][2][Applets][27]
 immutability=1
 plugin=com.himdek.kde.plasma.overview
