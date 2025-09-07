@@ -74,6 +74,8 @@ kwriteconfig6 --file ~/.config/dolphinrc --group General --key ShowStatusBar --t
 kwriteconfig6 --file ~/.config/dolphinrc --group General --key ShowZoomSlider --type bool "true"
 # Details view mode > Zoom > set preview size to "22"
 kwriteconfig6 --file ~/.config/dolphinrc --group DetailsMode --key PreviewSize --type string "22"
+# Not showing Menubar
+kwriteconfig6 --file ~/.config/dolphinrc --group MainWindow --key MenuBar --type string "Disabled"
 # Config > Config Toolbars... > remove "Split", add "Create Folder" and rename to "New"
 [ ! -d ~/.local/share/kxmlgui5/ ] && mkdir ~/.local/share/kxmlgui5/
 [ ! -d ~/.local/share/kxmlgui5/dolphin/ ] && mkdir ~/.local/share/kxmlgui5/dolphin/
