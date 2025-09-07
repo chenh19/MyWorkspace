@@ -44,7 +44,7 @@ case "$choice" in
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-mac >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
         # Show Panel Configuration > Opacity > Translucent; no Floating
-        [ f ~/.config/plasmashellrc ] && rm ~/.config/plasmashellrc
+        [ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelLengthMode --type string "1"
@@ -65,7 +65,7 @@ case "$choice" in
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
         # Show Panel Configuration > Opacity > Translucent; no Floating
-        [ f ~/.config/plasmashellrc ] && rm ~/.config/plasmashellrc
+        [ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness --type string "44"
