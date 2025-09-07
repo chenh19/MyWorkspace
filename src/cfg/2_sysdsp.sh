@@ -58,6 +58,8 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "XIA"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
+        # wallpaper
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
         ## restart plasma shell
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
@@ -78,6 +80,8 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
+        # wallpaper
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
         ## restart plasma shell
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
@@ -216,6 +220,9 @@ esac
 # desktop icon size
 kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
 kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
+## restart plasma shell
+plasmashell --replace >/dev/null 2>&1 & disown
+sleep 3
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
