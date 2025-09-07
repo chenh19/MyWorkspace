@@ -8,76 +8,57 @@ sortMode=-1
 activityId=
 immutability=1
 lastScreen=0
-location=4
+location=3
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
 [Containments][2][Applets][201]
 immutability=1
-plugin=org.kde.plasma.icontasks
-
-[Containments][2][Applets][201][Configuration][General]
-launchers=applications:org.kde.dolphin.desktop,applications:google-chrome.desktop
-wheelEnabled=false
-
-[Containments][2][General]
-AppletOrder=201
-
-[Containments][3]
-activityId=
-immutability=1
-lastScreen=0
-location=3
-plugin=org.kde.panel
-wallpaperplugin=org.kde.image
-
-[Containments][3][Applets][301]
-immutability=1
 plugin=org.kde.plasma.kickoff
 
-[Containments][3][Applets][301][Configuration][General]
+[Containments][2][Applets][201][Configuration][General]
 favorites=applications:org.kde.dolphin.desktop,applications:google-chrome.desktop
 favoritesPortedToKAstats=true
 switchCategoryOnHover=true
 systemFavorites=suspend\\,reboot\\,shutdown
 
-[Containments][3][Applets][302]
+[Containments][2][Applets][202]
 immutability=1
 plugin=org.kde.plasma.appmenu
 
-[Containments][3][Applets][303]
+[Containments][2][Applets][203]
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
-[Containments][3][Applets][304]
+[Containments][2][Applets][204]
 immutability=1
 plugin=org.kde.plasma.systemtray
 
-[Containments][3][Applets][304][Configuration]
+[Containments][2][Applets][204][Configuration]
 SystrayContainmentId=4
 
-[Containments][3][Applets][305]
+[Containments][2][Applets][205]
 immutability=1
 plugin=org.kde.plasma.digitalclock
 
-[Containments][3][Applets][305][Configuration]
+[Containments][2][Applets][205][Configuration]
 PreloadWeight=85
 popupHeight=450
 popupWidth=396
 
-[Containments][3][Applets][305][Configuration][Appearance]
+[Containments][2][Applets][205][Configuration][Appearance]
 dateDisplayFormat=BesideTime
 showDate=false
 
-[Containments][3][Applets][306]
+[Containments][2][Applets][206]
 immutability=1
 plugin=com.himdek.kde.plasma.overview
 
-[Containments][3][Applets][306][Configuration][General]
+[Containments][2][Applets][206][Configuration][General]
 icon=drag-surface
 
-[Containments][3][General]
-AppletOrder=301;302;303;304;305;306
+[Containments][2][General]
+AppletOrder=201;202;203;204;205;206
 
 [Containments][4]
 activityId=
@@ -156,6 +137,25 @@ extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.printmanager,org.kde
 hiddenItems=modem-manager-gui,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,Discover Notifier_org.kde.DiscoverNotifier,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.kupapplet,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.nightcolorcontrol,org.kde.plasma.vault,KDE Daemon,eudic,ibus-ui-gtk3,Enpass,Syncthing,SyncThingy,expandrive,ExpanDrive1,baidunetdisk1,org.kde.kscreen,indicator-solaar,JavaEmbeddedFrame,OneDriveGUI,Free Download Manager,TeamViewer,4K Video Downloader+,zoom,org.kde.plasma.brightness
 knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.clipboard,org.kde.kdeconnect,org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.devicenotifier,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.mediacontroller,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.cameraindicator
 shownItems=org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.networkmanagement,wechat
+
+[Containments][3]
+activityId=
+immutability=1
+lastScreen=0
+location=4
+plugin=org.kde.panel
+wallpaperplugin=org.kde.image
+
+[Containments][3][Applets][301]
+immutability=1
+plugin=org.kde.plasma.icontasks
+
+[Containments][3][Applets][301][Configuration][General]
+launchers=applications:org.kde.dolphin.desktop,applications:google-chrome.desktop
+wheelEnabled=false
+
+[Containments][3][General]
+AppletOrder=301
 
 [ScreenMapping]
 itemsOnDisabledScreens=,
