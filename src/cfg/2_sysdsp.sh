@@ -35,6 +35,9 @@ echo -e "${TEXT_YELLOW}Configuring display settings...${TEXT_RESET}\n" && sleep 
   sudo update-grub && echo ""
 
 # desktop layout
+[ -f ~/Desktop/Dolphin.desktop ] && rm -f ~/Desktop/Dolphin.desktop
+[ -f ~/Desktop/Chrome.desktop ] && rm -f ~/Desktop/Chrome.desktop
+[ -f ~/Desktop/Trash.desktop ] && rm -f ~/Desktop/Trash.desktop
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like a Windows-style (default) or Mac-style layout? [w/m]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   m|M ) # desktop layout (mac)
