@@ -55,6 +55,9 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "XIA"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set desktop layout: Mac-style${TEXT_RESET}\n" && sleep 1
         ;;
@@ -72,13 +75,16 @@ case "$choice" in
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
-        # restart plasma shell
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set desktop layout: Windows-style (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
-## restart plasma shell
-plasmashell --replace >/dev/null 2>&1 & disown
+## set background
+bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
@@ -202,10 +208,6 @@ case "$choice" in
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
         ;;
 esac
-
-# set background
-bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
