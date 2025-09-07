@@ -204,8 +204,8 @@ case "$choice" in
 esac
 
 # set background
-bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png
-sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png
+bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
