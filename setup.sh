@@ -41,6 +41,7 @@ cp -rf ./MyWorkspace-main/src/cfg/* ./cfg/
 cp -rf ./cfg/System/ ~/Pictures/
 sudo cp -rf ./cfg/icon/ ./cfg/grub/ /opt/
 cp -f ./cfg/power/powerdevilrc ~/.config/
+kwriteconfig6 --file ~/.config/kscreenlockerrc --group Daemon --key Timeout --type string "30"
 [ ! -d ~/Templates/ ] && mkdir ~/Templates/
 kwriteconfig6 --file ~/Templates/.directory --group "Desktop Entry" --key Icon --type string "folder-templates"
 [ ! -d ~/Documents/Templates/ ] && mkdir ~/Documents/Templates/
