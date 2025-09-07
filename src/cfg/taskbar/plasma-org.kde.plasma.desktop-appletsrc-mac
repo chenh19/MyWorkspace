@@ -6,7 +6,6 @@ sortMode=-1
 
 [Containments][2]
 activityId=
-formfactor=2
 immutability=1
 lastScreen=0
 location=4
@@ -26,7 +25,6 @@ AppletOrder=201
 
 [Containments][3]
 activityId=
-formfactor=2
 immutability=1
 lastScreen=0
 location=3
@@ -83,7 +81,6 @@ AppletOrder=301;302;303;304;305;306
 
 [Containments][4]
 activityId=
-formfactor=2
 immutability=1
 lastScreen=0
 location=3
