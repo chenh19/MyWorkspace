@@ -44,7 +44,7 @@ case "$choice" in
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-mac >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
         # Show Panel Configuration > Opacity > Translucent; no Floating
-        #[ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
+        [ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness --type string "28"
@@ -65,21 +65,24 @@ case "$choice" in
         cat ~/.setup_cache/cfg/taskbar/plasma-org.kde.plasma.desktop-appletsrc-win >> ~/.config/plasma-org.kde.plasma.desktop-appletsrc
         unset line
         # Show Panel Configuration > Opacity > Translucent; no Floating
-        #[ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
+        [ -f ~/.config/plasmashellrc ] && rm -f ~/.config/plasmashellrc
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key panelOpacity --type string "2"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --key floating --type string "0"
         kwriteconfig6 --file ~/.config/plasmashellrc --group 'PlasmaViews' --group 'Panel 2' --group 'Defaults' --key thickness --type string "44"
         # System Settings > Colors & Themes > Window Decorations > Titlebar Buttons > drag and remove "On all desktops"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --type string "M"
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
+        # restart plasma shell
         # notify end
         echo -e "\n${TEXT_GREEN}Set desktop layout: Windows-style (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
+## restart plasma shell
+plasmashell --replace >/dev/null 2>&1 & disown
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
-read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Would you like Light or Dark (default) theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
+read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'Would you like Light or Dark (default) theme? [l/d/c]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
   l|L ) # global theme
         plasma-apply-lookandfeel --apply org.kde.breeze.desktop
