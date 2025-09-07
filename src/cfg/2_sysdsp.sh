@@ -85,7 +85,8 @@ case "$choice" in
         echo -e "\n${TEXT_GREEN}Set desktop layout: Windows-style (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
-## set background
+
+# background
 bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 
@@ -211,6 +212,10 @@ case "$choice" in
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
         ;;
 esac
+
+# desktop icon size
+kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
+kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
