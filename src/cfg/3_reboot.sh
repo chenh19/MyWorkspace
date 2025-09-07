@@ -18,9 +18,9 @@ echo -e "${TEXT_YELLOW}Cleaning up setup cache...${TEXT_RESET}\n" && sleep 1
 [ -f ~/.shortcut.sh ] && bash ~/.shortcut.sh >/dev/null 2>&1
 [ -f ~/.size-restore.sh ] && bash ~/.size-restore.sh >/dev/null 2>&1
 if grep -q "plugin=org.kde.plasma.showdesktop" ~/.config/plasma-org.kde.plasma.desktop-appletsrc; then
-    cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop
-    cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop
-    echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop
+    cp -f /usr/share/applications/org.kde.dolphin.desktop ~/Desktop/Dolphin.desktop && chmod +x ~/Desktop/Dolphin.desktop && sleep 1
+    cp -f /usr/share/applications/google-chrome.desktop ~/Desktop/Chrome.desktop && chmod +x ~/Desktop/Chrome.desktop && sleep 1
+    echo -e "[Desktop Entry]\nEmptyIcon=user-trash\nIcon=user-trash-full\nName=Trash\nType=Link\nURL[\$e]=trash:/" > ~/Desktop/Trash.desktop && sleep 1
 fi
 [ -d ~/.setup_cache/ ] && rm -rf ~/.setup_cache/
 
