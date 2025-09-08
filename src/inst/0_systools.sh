@@ -41,9 +41,8 @@ sudo apt autoremove -y
     sudo apt install linux-headers-amd64 -y && sleep 1
     sudo apt install nvidia-kernel-dkms nvidia-driver firmware-misc-nonfree -y
     echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
-    echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' | sudo tee /etc/modprobe.d/nvidia-power-management.conf
-    echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1" | sudo tee -a /etc/modprobe.d/nvidia-options.conf
     sleep 1 && sudo update-grub
+    echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1" | sudo tee -a /etc/modprobe.d/nvidia-options.conf
     sudo systemctl enable nvidia-suspend.service
     sudo systemctl enable nvidia-hibernate.service
     sudo systemctl enable nvidia-resume.service
