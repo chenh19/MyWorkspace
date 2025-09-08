@@ -60,7 +60,13 @@ case "$choice" in
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
         # wallpaper
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
-        ## restart plasma shell
+        # restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
+        # wallpaper (cont.)
+        sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+        bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+        # restart plasma shell again
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
@@ -85,18 +91,16 @@ case "$choice" in
         ## restart plasma shell
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
+        # wallpaper (cont.)
+        sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+        bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+        # restart plasma shell again
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set desktop layout: Windows-style (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
-
-# background
-## set background
-sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-## restart plasma shell
-plasmashell --replace >/dev/null 2>&1 & disown
-sleep 3
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
