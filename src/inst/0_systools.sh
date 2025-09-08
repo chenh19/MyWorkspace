@@ -34,6 +34,7 @@ sudo apt autoremove -y
   #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
   if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
   #if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi #bug on wayland, using nouveau
+  if lspci | grep -q NVIDIA; then echo -e "${TEXT_GREEN}Nvidia GPU detected. The system is currently using the Nouveau driver. You may download and install the proprietary NVIDIA driver from: https://www.nvidia.com/drivers/${TEXT_RESET}\n"; fi
   #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
 
 # install apps (apt)
