@@ -39,7 +39,7 @@ sudo apt autoremove -y
   ## NVIDIA graphic driver
   if lspci | grep -q NVIDIA; then
     sudo apt install linux-headers-amd64 -y && sleep 1
-    sudo apt install nvidia-kernel-dkms nvidia-driver firmware-misc-nonfree -y
+    sudo apt install nvidia-kernel-dkms nvidia-driver firmware-misc-nonfree nvidia-detect nvtop -y
     echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
     sleep 1 && sudo update-grub
     echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1" | sudo tee /etc/modprobe.d/nvidia-options.conf
