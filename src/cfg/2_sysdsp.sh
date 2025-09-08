@@ -61,7 +61,6 @@ case "$choice" in
         # wallpaper
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
         ## restart plasma shell
-        sleep 1
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
@@ -84,7 +83,6 @@ case "$choice" in
         # wallpaper
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
         ## restart plasma shell
-        sleep 1
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
@@ -93,8 +91,9 @@ case "$choice" in
 esac
 
 # background
-bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+sleep 1
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
