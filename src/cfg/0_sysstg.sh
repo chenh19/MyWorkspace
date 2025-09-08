@@ -24,7 +24,7 @@ echo -e "${TEXT_YELLOW}Configuring KDE plasma system settings...${TEXT_RESET}\n"
 ## Mouse & Touchpad
 ### Touchpad (take effect after rebooting)
 #### Extract the hex ID of the touchpad
-hex_id=$(grep -i "Touchpad" /proc/bus/input/devices | sed 's/N: Name=".* \(.*\) Touchpad"/\1/')
+hex_id=$(grep -i "Touchpad" /proc/bus/input/devices | sed 's/N: Name=".* \(.*\) Touchpad"/\1/' | head -n 1)
 #### Split hex_id into two parts
 bus_hex=${hex_id%%:*}
 dev_hex=${hex_id##*:}
@@ -32,7 +32,7 @@ dev_hex=${hex_id##*:}
 bus_dec=$((16#$bus_hex))
 dev_dec=$((16#$dev_hex))
 ####Get full touchpad name
-touchpad_name=$(grep -i "Touchpad" /proc/bus/input/devices | sed -n 's/^N: Name="//p' | sed 's/"$//')
+touchpad_name=$(grep -i "Touchpad" /proc/bus/input/devices | sed -n 's/^N: Name="//p' | sed 's/"$//' | head -n 1)
 ####Format the first line
 libinput_line="[Libinput][$bus_dec][$dev_dec][$touchpad_name]"
 ####Write touchpad config
