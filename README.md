@@ -1,9 +1,9 @@
 # MyWorkspace
-*Current version: v3.0.0 (Wayland; under construction, 95% finished)*  
+*Current version: v3.0.0*  
 
 ## Introduction
 
-- This is an automated configuration tool for freshly installed [**Debian 13 (KDE)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/).
+- This is an automated configuration tool for freshly installed [**Debian 13 KDE (Wayland)**](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/).
 - This tool will install and configure these [**applications**](https://github.com/chenh19/MyWorkspace/blob/main/list.md).
 - Feel free to fork and customize it to your needs.
 
