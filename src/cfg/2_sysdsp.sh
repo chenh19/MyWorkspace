@@ -93,7 +93,8 @@ esac
 # background
 sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-sleep 1
+plasmashell --replace >/dev/null 2>&1 & disown
+sleep 3
 
 # global theme
 ## System Settings > Appearance > Global Theme > Breeze
