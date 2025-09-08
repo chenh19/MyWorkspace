@@ -30,13 +30,24 @@ sudo apt autoremove -y
 
 # install updates
 
+  ## full-upgrade
   sudo apt full-upgrade -y
-  #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
+  ## wget
   if ! dpkg -l | grep -q "^ii.*wget" ; then sudo apt update -qq && sudo apt install wget -y && sleep 1 ; fi
-  #if lspci | grep -q NVIDIA; then sudo apt update -qq && sudo apt install nvidia-detect nvidia-driver firmware-misc-nonfree nvtop -y; fi #bug on wayland, using nouveau
-  #if lspci | grep -q NVIDIA; then echo -e "${TEXT_GREEN}Nvidia GPU detected. The system is currently using the Nouveau driver. You may download and install the proprietary NVIDIA driver from: https://www.nvidia.com/drivers/${TEXT_RESET}\n"; fi
-  #if lspci | grep -q NVIDIA; then echo -e "${TEXT_GREEN}Nvidia GPU detected. The system is currently using the Nouveau driver. You may download and install the proprietary NVIDIA driver. Please refer to: https://wiki.debian.org/NvidiaGraphicsDrivers${TEXT_RESET}\n"; fi
-  #note: legacy GPUs like GT 1030 is not supported by the open GPU kernel modules (nvidia-open-kernel-dkms)
+  ## backports linux kernel (if needed)
+  #sudo apt install -y -t $(lsb_release -cs)-backports linux-image-amd64
+  ## NVIDIA graphic driver
+  if lspci | grep -q NVIDIA; then
+    sudo apt install linux-headers-amd64 -y && sleep 1
+    sudo apt install nvidia-kernel-dkms nvidia-driver firmware-misc-nonfree -y
+    echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
+    echo 'options nvidia NVreg_PreserveVideoMemoryAllocations=1' | sudo tee /etc/modprobe.d/nvidia-power-management.conf
+    echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1" | sudo tee -a /etc/modprobe.d/nvidia-options.conf
+    sleep 1 && sudo update-grub
+    sudo systemctl enable nvidia-suspend.service
+    sudo systemctl enable nvidia-hibernate.service
+    sudo systemctl enable nvidia-resume.service
+  fi
 
 # install apps (apt)
 
