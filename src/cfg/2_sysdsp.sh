@@ -91,8 +91,10 @@ case "$choice" in
 esac
 
 # background
+## set background
 sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
 bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
+## restart plasma shell
 plasmashell --replace >/dev/null 2>&1 & disown
 sleep 3
 
