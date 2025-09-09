@@ -137,7 +137,7 @@ esac
 [ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' /usr/share/applications/org.kde.krita.desktop >/dev/null 2>&1
 echo '#!/usr/bin/env bash' > ~/.scale.sh
 [ ! -d /etc/sddm.conf.d/ ] && sudo mkdir /etc/sddm.conf.d/
-echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment
+echo -e 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"\nXMODIFIERS=@im=fcitx' | sudo tee /etc/environment > /dev/null
 #xrandr | grep " connected primary" to update
 read -n1 -s -r -p "$(echo -e '\n'$TEXT_YELLOW'How would you like to set to the system scaling factor, 250% (a), 200% (b), 150% (c) or default 100% (d)? [a/b/c/d]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
@@ -145,7 +145,7 @@ case "$choice" in
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2.5
         # SDDM DPI
-        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment > /dev/null
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.5.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
@@ -173,7 +173,7 @@ case "$choice" in
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
         # SDDM DPI
-        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment
+        echo -e "XCURSOR_SIZE=48" | sudo tee -a /etc/environment > /dev/null
         sudo cp -f ./cfg/sddm.conf.d/dpi-2.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
@@ -201,7 +201,7 @@ case "$choice" in
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
         # SDDM DPI
-        echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment
+        echo -e "XCURSOR_SIZE=36" | sudo tee -a /etc/environment > /dev/null
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.5.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
@@ -229,7 +229,7 @@ case "$choice" in
         echo ""
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
         # SDDM DPI
-        echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment
+        echo -e "XCURSOR_SIZE=24" | sudo tee -a /etc/environment > /dev/null
         sudo cp -f ./cfg/sddm.conf.d/dpi-1.conf /etc/sddm.conf.d/dpi.conf
         # app specific
         ## Zoom
