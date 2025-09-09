@@ -167,7 +167,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n"
+        echo -e "${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n"
         ;;
   b|B ) # System Settings > Input & Output > Display & Monitor > Scale: 200%
         echo ""
@@ -195,7 +195,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n"
+        echo -e "${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n"
         ;;
   c|C ) # System Settings > Input & Output > Display & Monitor > Scale: 150%
         echo ""
@@ -223,7 +223,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n"
+        echo -e "${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n"
         ;;
   * )   # System Settings > Input & Output > Display & Monitor > Scale: 100%
         echo ""
@@ -251,7 +251,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
+        echo -e "${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
         ;;
 esac
 
