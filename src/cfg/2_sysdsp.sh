@@ -160,6 +160,12 @@ case "$choice" in
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
+        # desktop icon size
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n"
         ;;
@@ -182,6 +188,12 @@ case "$choice" in
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
+        # desktop icon size
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n"
         ;;
@@ -204,6 +216,12 @@ case "$choice" in
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
+        # desktop icon size
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n"
         ;;
@@ -226,17 +244,16 @@ case "$choice" in
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
+        # desktop icon size
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
+        kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
+        ## restart plasma shell
+        plasmashell --replace >/dev/null 2>&1 & disown
+        sleep 3
         # notify end
         echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
         ;;
 esac
-
-# desktop icon size
-kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
-kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
-## restart plasma shell
-plasmashell --replace >/dev/null 2>&1 & disown
-sleep 3
 
 # mark setup.sh
 [ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./cfg/2_sysdsp.sh+#bash ./cfg/2_sysdsp.sh+g' ~/.setup_cache/setup.sh
