@@ -153,7 +153,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 250%${TEXT_RESET}\n" && sleep 1
         ;;
   b|B ) # System Settings > Input & Output > Display & Monitor > Scale: 200%
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.2
@@ -180,7 +180,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 200%${TEXT_RESET}\n" && sleep 1
         ;;
   c|C ) # System Settings > Input & Output > Display & Monitor > Scale: 150%
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1.5
@@ -207,7 +207,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 150%${TEXT_RESET}\n" && sleep 1
         ;;
   * )   # System Settings > Input & Output > Display & Monitor > Scale: 100%
         kscreen-doctor output.$(kscreen-doctor -o | grep -m1 "Output:" | cut -d' ' -f3).scale.1
@@ -234,7 +234,7 @@ case "$choice" in
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
-        echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n"
+        echo -e "\n${TEXT_GREEN}Set system scaling factor: 100% (default)${TEXT_RESET}\n" && sleep 1
         ;;
 esac
 
