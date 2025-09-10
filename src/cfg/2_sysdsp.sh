@@ -81,7 +81,7 @@ case "$choice" in
         # wallpaper (cont.)
         sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
         bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-        # restart plasma shell again
+        # restart plasma shell
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
