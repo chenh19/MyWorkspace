@@ -239,8 +239,7 @@ case "$choice" in
 esac
 
 # finalize
-sudo echo ""
-echo -e "${TEXT_YELLOW}Finalizing...${TEXT_RESET}\n" && sleep 1
+echo -e "\n${TEXT_YELLOW}Finalizing...${TEXT_RESET}\n" && sleep 1
 [ -f ~/.scale.sh ] && bash ~/.scale.sh >/dev/null 2>&1
 [ -f ~/.shortcut.sh ] && bash ~/.shortcut.sh >/dev/null 2>&1
 [ -f ~/.size-restore.sh ] && bash ~/.size-restore.sh >/dev/null 2>&1
