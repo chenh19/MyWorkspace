@@ -15,25 +15,6 @@ cd ~/.setup_cache/
 # notify start
 echo -e "${TEXT_YELLOW}Configuring display settings...${TEXT_RESET}\n" && sleep 1
 
-# boot screen
-  ## config plymouth
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group boot-up --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group shutdown --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group reboot --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group updates --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group system-upgrade --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group firmware-upgrade --key UseFirmwareBackground --type bool "true"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkHorizontalAlignment --type string "10"
-  sudo kwriteconfig6 --file /usr/share/plymouth/themes/spinner/spinner.plymouth --group two-step --key WatermarkVerticalAlignment --type string "10"
-  if grep -q "Theme=emerald" /usr/share/plymouth/plymouthd.defaults ; then sudo sed -i 's+Theme=emerald+Theme=spinner+g' /usr/share/plymouth/plymouthd.defaults ; fi
-  sudo plymouth-set-default-theme -R spinner
-  ## config grub (If grub timeout is 0, press Shift+Esc only once at startup to enter grub menu)
-  if grep -q "GRUB_TIMEOUT=5" /etc/default/grub ; then sudo sed -i 's+GRUB_TIMEOUT=5+GRUB_TIMEOUT=1+g' /etc/default/grub ; fi
-  if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's/#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1280x1024/' /etc/default/grub ; fi
-  if ! grep -q "GRUB_BACKGROUND=" /etc/default/grub ; then sudo sed -i '/GRUB_CMDLINE_LINUX=""/a GRUB_BACKGROUND="/opt/grub/grub.png"' /etc/default/grub ; fi
-  ## update
-  sudo update-grub && echo ""
-
 # desktop layout
 [ -f ~/Desktop/Dolphin.desktop ] && rm -f ~/Desktop/Dolphin.desktop
 [ -f ~/Desktop/Chrome.desktop ] && rm -f ~/Desktop/Chrome.desktop
@@ -60,13 +41,16 @@ case "$choice" in
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string ""
         # wallpaper
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
-        # restart plasma shell
-        plasmashell --replace >/dev/null 2>&1 & disown
+        # System Settings > App & Windows > Window Management > Desktop Effects > Appearance > select "Magic Lamp"
+        kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key magiclampEnabled --type bool "true"
+        kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key squashEnabled --type bool "false"
+        # restart kwin
+        kwin_wayland --replace >/dev/null 2>&1 & disown
         sleep 3
         # wallpaper (cont.)
         sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
         bash ~/.config/background/wallpaper.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
-        # restart plasma shell again
+        # restart plasma shell
         plasmashell --replace >/dev/null 2>&1 & disown
         sleep 3
         # notify end
@@ -88,8 +72,11 @@ case "$choice" in
         kwriteconfig6 --file ~/.config/kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --type string "IAX"
         # wallpaper
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'Wallpaper' --group 'org.kde.image' --group 'General' --key Image --type string "file://$HOME/.config/background/13-14inch.png"
-        ## restart plasma shell
-        plasmashell --replace >/dev/null 2>&1 & disown
+        # System Settings > App & Windows > Window Management > Desktop Effects > Appearance > select "Squash"
+        if grep -q "^magiclampEnabled" ~/.config/kwinrc ; then sed -i '/^magiclampEnabled/d' ~/.config/kwinrc ; fi
+        if grep -q "^squashEnabled" ~/.config/kwinrc ; then sed -i '/^squashEnabled/d' ~/.config/kwinrc ; fi
+        # restart kwin
+        kwin_wayland --replace >/dev/null 2>&1 & disown
         sleep 3
         # wallpaper (cont.)
         sudo bash ~/.config/background/sddm.sh ~/Pictures/System/13-14inch.png >/dev/null 2>&1
