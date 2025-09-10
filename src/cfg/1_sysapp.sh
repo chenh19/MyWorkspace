@@ -174,7 +174,7 @@ rm -rf ./fonts/
   if grep -q "#GRUB_GFXMODE=640x480" /etc/default/grub ; then sudo sed -i 's/#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1280x1024/' /etc/default/grub ; fi
   if ! grep -q "GRUB_BACKGROUND=" /etc/default/grub ; then sudo sed -i '/GRUB_CMDLINE_LINUX=""/a GRUB_BACKGROUND="/opt/grub/grub.png"' /etc/default/grub ; fi
   ## update
-  sudo update-grub && echo ""
+  sudo update-grub
   
 ######################################################################################
 
