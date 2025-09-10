@@ -20,8 +20,7 @@ echo -e "${TEXT_GREEN}All done! The copies of licenses remain in [~/Licenses/] f
 # reboot
 read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'System reboot required, would you like to reboot the system now? [y/n]'$TEXT_RESET)"$'\n' choice
 case "$choice" in
-  y|Y ) sudo echo ""
-        echo -e "${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
+  y|Y ) echo -e "\n${TEXT_YELLOW}Rebooting in 5 seconds...${TEXT_RESET}\n" && sleep 5
         systemctl reboot;;
     * ) echo -e "\n${TEXT_YELLOW}Please reboot the system manually later.${TEXT_RESET}\n" && sleep 1;;
 esac
