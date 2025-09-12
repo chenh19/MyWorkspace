@@ -270,7 +270,11 @@ sudo apt autoremove -y
   kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key titlebarmode --type string "2"
   kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key bgcolor --type string "#dee0e2"
   kwriteconfig6 --file ~/.config/qView/qView.conf --group options --key bgcolorenabled --type bool "true"
-  
+
+  ## vlc
+  cp -rf ./cfg/vlc/ ~/.config/
+  [ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key 'StartupNotify' --set-value 'false' /usr/share/applications/vlc.desktop
+
   ## fcitx
   cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/org.fcitx.Fcitx5.desktop
   cp -rf ./cfg/fcitx5/* ~/.config/fcitx5/
