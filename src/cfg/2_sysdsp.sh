@@ -148,6 +148,8 @@ case "$choice" in
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         ## Enpass
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2.5 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
+        ## VLC
+        echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -177,6 +179,8 @@ case "$choice" in
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=2 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         ## Enpass
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
+        ## VLC
+        echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -206,6 +210,8 @@ case "$choice" in
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1.5 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         ## Enpass
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1.5 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
+        ## VLC
+        echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -235,6 +241,8 @@ case "$choice" in
         echo '[ -f /usr/share/applications/fastqc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env GDK_SCALE=1 fastqc" /usr/share/applications/fastqc.desktop' >> ~/.scale.sh
         ## Enpass
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
+        ## VLC
+        echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
