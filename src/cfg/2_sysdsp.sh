@@ -141,7 +141,7 @@ case "$choice" in
         ## 4Kvideodownloader
         echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
@@ -170,7 +170,7 @@ case "$choice" in
         ## 4Kvideodownloader
         echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=2 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
@@ -199,7 +199,7 @@ case "$choice" in
         ## 4Kvideodownloader
         echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1.5 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
@@ -228,7 +228,7 @@ case "$choice" in
         ## 4Kvideodownloader
         echo '[ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 4kvideodownloaderplus" /usr/share/applications/4kvideodownloaderplus.desktop' >> ~/.scale.sh
         ## Eudic
-        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_SCALE_FACTOR=1 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
+        echo '[ -f /usr/share/applications/eusoft-eudic.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/share/eusoft-eudic/AppRun %F" /usr/share/applications/eusoft-eudic.desktop' >> ~/.scale.sh
         ## WeChat
         echo '[ -f /usr/share/applications/wechat.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_IM_MODULE=fcitx QT_SCALE_FACTOR=1 /usr/bin/wechat %U" /usr/share/applications/wechat.desktop' >> ~/.scale.sh
         ## FastQC
