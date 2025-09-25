@@ -61,7 +61,7 @@ rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
 ## hide files and folders
-echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nDropbox\nVirtualBox VMs\nminiconda3\nbin" > ~/.hidden
+echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nDropbox\nVirtualBox VMs\nminiconda3\nbin\nshapemapper" > ~/.hidden
 echo -e "Templates\nEnpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
 echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
 echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
