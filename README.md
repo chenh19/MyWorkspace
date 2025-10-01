@@ -1,5 +1,5 @@
 # MyWorkspace
-*Current version: v3.0.9*  
+*Current version: v3.1.0*  
 
 ## Introduction
 
