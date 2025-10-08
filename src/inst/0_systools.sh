@@ -125,7 +125,7 @@ sudo apt autoremove -y
   
   ## install
   echo ""
-  mv -f ./*.deb ./deb/ && sudo apt install -f -y ./deb/*.deb
+  mv -f ./*.deb ./deb/ && sudo apt install -f -y --allow-downgrades ./deb/*.deb
 
 # install input method
 
