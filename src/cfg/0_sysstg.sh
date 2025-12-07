@@ -38,7 +38,7 @@ if [ ! -z "$hex_id" ]; then
   libinput_line="[Libinput][$bus_dec][$dev_dec][$touchpad_name]"
   ####Write touchpad config
   echo -e "$libinput_line" > ~/.config/kcminputrc
-  echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=0.3" >> ~/.config/kcminputrc
+  echo -e "ClickMethod=2\nNaturalScroll=true\nPointerAcceleration=0.200\nScrollFactor=1" >> ~/.config/kcminputrc
 fi
 ### Screen Edges > "no actiion" for all corners
 kwriteconfig6 --file ~/.config/kwinrc --group Effect-overview --key BorderActivate --type string "9"
