@@ -30,4 +30,4 @@ This tool will install and configure:
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Solaar](https://github.com/pwr-Solaar/Solaar)
 - [WineHQ](https://www.winehq.org/)
-- [Micro (text editor)](https://micro-editor.github.io/)
+- [Micro](https://micro-editor.github.io/)
