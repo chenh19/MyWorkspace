@@ -51,7 +51,7 @@ sudo apt autoremove -y
 # install apps (apt)
 
   ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
-  sudo apt install default-jre default-jdk pkexec systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer thunderbird krita krita-l10n inkscape kdenlive vlc -y
+  sudo apt install micro default-jre default-jdk pkexec systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer thunderbird krita krita-l10n inkscape kdenlive vlc -y
   
 # install apps (source list)
 
