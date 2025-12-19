@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script intsalls winboat
+# This script intsalls winboat (docker version)
 
 # set terminal font color
 TEXT_YELLOW="$(tput bold)$(tput setaf 3)"
@@ -10,15 +10,14 @@ TEXT_RESET="$(tput sgr0)"
 sudo echo ""
 echo -e "${TEXT_YELLOW}Installing WinBoat...${TEXT_RESET}\n" && sleep 1
 
-# winboat docker version
-## Add Docker's official GPG key:
+# add Docker's official GPG key:
 sudo apt update -qq && sudo apt install ca-certificates curl wget -y
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 sleep 1
 
-## Add the repository to Apt sources:
+# add the repository to Apt sources:
 sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
 Types: deb
 URIs: https://download.docker.com/linux/debian
@@ -28,11 +27,11 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 sleep 1
 
-## Install Docker, Docker-Compose, FreeRDP:
+# install Docker, Docker-Compose, FreeRDP:
 sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin freerdp3-x11 -y
 sleep 1
 
-## Download and install:
+# download and install WinBoat:
 echo ""
 wget -q "https://www.dropbox.com/scl/fi/u1ql2pg3ftcq2u61evu9k/winboat.deb?rlkey=be7x3ogc1hhrrv3nn2vr1437v" -O winboat.deb && echo '"WinBoat" deb package is downloaded.' && sleep 1
 echo ""
@@ -40,7 +39,7 @@ sudo apt install ./winboat.deb -y
 sleep 1
 rm -f ./winboat.deb
 
-## Config
+# auto config
 sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
