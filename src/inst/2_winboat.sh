@@ -46,6 +46,9 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+[ -f /etc/apt/keyrings/docker.asc ] && sudo rm -f /etc/apt/keyrings/docker.asc
+[ -f /etc/apt/sources.list.d/docker.sources ] && sudo rm -f /etc/apt/sources.list.d/docker.sources
+sudo apt update -qq
 sleep 1
 
 # notify start
