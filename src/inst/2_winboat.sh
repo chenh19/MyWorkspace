@@ -28,8 +28,8 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 sleep 1
 
-## Install dependencies:
-sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+## Install Docker, Docker-Compose, FreeRDP:
+sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin freerdp3-x11 -y
 sleep 1
 
 ## Download and install:
