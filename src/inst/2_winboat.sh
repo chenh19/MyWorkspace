@@ -50,3 +50,6 @@ sleep 1
 
 # notify start
 echo -e "\n${TEXT_GREEN}Winboat installed!${TEXT_RESET}\n" && sleep 1
+
+# mark setup.sh
+[ -f ~/.setup_cache/setup.sh ] && sed -i 's+bash ./inst/2_winboat.sh+#bash ./inst/2_winboat.sh+g' ~/.setup_cache/setup.sh
