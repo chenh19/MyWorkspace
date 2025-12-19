@@ -36,9 +36,9 @@ sleep 1
 echo ""
 wget -q "https://www.dropbox.com/scl/fi/u1ql2pg3ftcq2u61evu9k/winboat.deb?rlkey=be7x3ogc1hhrrv3nn2vr1437v" -O winboat.deb && echo '"WinBoat" deb package is downloaded.' && sleep 1
 echo ""
-sudo apt install ./docker-desktop.deb ./winboat.deb -y
+sudo apt install ./winboat.deb -y
 sleep 1
-rm -f ./docker-desktop.deb ./winboat.deb
+rm -f ./winboat.deb
 
 ## Config
 sudo groupadd docker
