@@ -29,6 +29,7 @@ sleep 1
 
 # install Docker, Docker-Compose, FreeRDP:
 sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin freerdp3-x11 -y
+## Podman alternative: sudo apt install podman podman-compose freerdp3-x11 -y
 sleep 1
 
 # download and install WinBoat:
