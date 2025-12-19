@@ -31,3 +31,4 @@ This tool will install and configure:
 - [Solaar](https://github.com/pwr-Solaar/Solaar)
 - [WineHQ](https://www.winehq.org/)
 - [Micro](https://micro-editor.github.io/)
+- [WinBoat](https://www.winboat.app/)
