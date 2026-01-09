@@ -120,6 +120,9 @@ case "$choice" in
 esac
 
 # scaling
+## Wine
+WINEPREFIX="$HOME/.wine" wineboot -i
+sleep 30
 ## Krita
 [ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' /usr/share/applications/org.kde.krita.desktop >/dev/null 2>&1
 echo '#!/usr/bin/env bash' > ~/.scale.sh
@@ -150,6 +153,10 @@ case "$choice" in
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2.5 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
+        ## Wine
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 96 /f
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+        sleep 10
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -181,6 +188,10 @@ case "$choice" in
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
+        ## Wine
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 144 /f
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+        sleep 10
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -212,6 +223,10 @@ case "$choice" in
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1.5 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
+        ## Wine
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 192 /f
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+        sleep 10
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
@@ -243,6 +258,10 @@ case "$choice" in
         echo '[ -f /usr/share/applications/enpass.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1 /opt/enpass/Enpass %U" /usr/share/applications/enpass.desktop' >> ~/.scale.sh
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
+        ## Wine
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 240 /f
+        WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+        sleep 10
         # desktop icon size
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --key 'formfactor' --type string "0"
         kwriteconfig6 --file ~/.config/plasma-org.kde.plasma.desktop-appletsrc --group 'Containments' --group '1' --group 'General' --key 'iconSize' --type string "2"
