@@ -121,9 +121,10 @@ esac
 
 # scaling
 ## Wine
-#WINEPREFIX="$HOME/.wine" wineboot -i
-WINEPREFIX="$HOME/.wine" winetricks mono
+WINEPREFIX="$HOME/.wine" wineboot -i
 sleep 30
+WINEPREFIX="$HOME/.wine" winetricks mono
+sleep 10
 ## Krita
 [ -f /usr/share/applications/org.kde.krita.desktop ] && sudo desktop-file-edit --set-key 'Exec' --set-value 'env QT_AUTO_SCREEN_SCALE_FACTOR=1 krita %F' /usr/share/applications/org.kde.krita.desktop >/dev/null 2>&1
 echo '#!/usr/bin/env bash' > ~/.scale.sh
