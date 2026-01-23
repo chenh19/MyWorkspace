@@ -79,7 +79,7 @@ sudo apt autoremove -y
   sudo mkdir -pm755 /etc/apt/keyrings
   sudo wget -qNP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/$VERSION_CODENAME/winehq-$VERSION_CODENAME.sources
   wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --yes --dearmor --output /etc/apt/keyrings/winehq-archive.key -
-  sudo apt update -qq && sudo apt install --install-recommends winehq-stable -y
+  sudo apt update -qq && sudo apt install --install-recommends winehq-stable winetricks -y
 
   ## resilio sync
   echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list >/dev/null 2>&1
