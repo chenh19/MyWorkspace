@@ -154,6 +154,7 @@ case "$choice" in
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         ## Wine
+        echo ""
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 240 /f
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
         sleep 10
@@ -189,6 +190,7 @@ case "$choice" in
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         ## Wine
+        echo ""
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 192 /f
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
         sleep 10
@@ -224,6 +226,7 @@ case "$choice" in
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1.5 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         ## Wine
+        echo ""
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 144 /f
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
         sleep 10
@@ -259,6 +262,7 @@ case "$choice" in
         ## VLC
         echo '[ -f /usr/share/applications/vlc.desktop ] && sudo desktop-file-edit --set-key Exec --set-value "env QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=1 /usr/bin/vlc --started-from-file %U" /usr/share/applications/vlc.desktop' >> ~/.scale.sh
         ## Wine
+        echo ""
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v LogPixels /t REG_DWORD /d 96 /f
         WINEPREFIX="$HOME/.wine" wine reg add "HKCU\\Control Panel\\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
         sleep 10
