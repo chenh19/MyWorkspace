@@ -227,7 +227,7 @@ sudo apt autoremove -y
   rm -rf ./InputActions/
   ### Google Chrome
   [ -f /usr/share/applications/google-chrome.desktop ] && sudo desktop-file-edit \
-      --set-key 'Exec' --set-value '/usr/bin/google-chrome-stable --ozone-platform=wayland --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --disable-features=WaylandWindowDecorations %U' \
+      --set-key 'Exec' --set-value '/usr/bin/google-chrome-stable --ozone-platform=wayland --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --disable-features=WaylandWindowDecorations,WaylandWpColorManagerV1 %U' \
   /usr/share/applications/google-chrome.desktop #--enable-features=TouchpadOverscrollHistoryNavigation,PreferredOzonePlatform
 
   ## enable firewall
