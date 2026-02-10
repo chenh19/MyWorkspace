@@ -53,6 +53,8 @@ kwriteconfig6 --file ~/Developing/.directory --group "Desktop Entry" --key Icon 
 kwriteconfig6 --file ~/OneDrive/.directory --group "Desktop Entry" --key Icon --type string "folder-onedrive"
 [ ! -d ~/Dropbox/ ] && mkdir ~/Dropbox/
 kwriteconfig6 --file ~/Dropbox/.directory --group "Desktop Entry" --key Icon --type string "folder-dropbox"
+[ ! -d ~/Applications/ ] && mkdir ~/Applications/
+kwriteconfig6 --file ~/Applications/.directory --group "Desktop Entry" --key Icon --type string "folder-appimage"
 [ ! -d ~/Backup/ ] && mkdir ~/Backup/
 kwriteconfig6 --file ~/Backup/.directory --group "Desktop Entry" --key Icon --type string "folder-tar"
 [ ! -d ~/Licenses/ ] && mkdir ~/Licenses/
@@ -61,7 +63,7 @@ rm -rf ./MyWorkspace-main/
 echo -e "\n${TEXT_GREEN}All setup scripts ready!${TEXT_RESET}\n"
 
 ## hide files and folders
-echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nDropbox\nVirtualBox VMs\nminiconda3\nbin\nshapemapper\nwinboat" > ~/.hidden
+echo -e "Backup\nigv\nPublic\nR\nLicenses\nTemplates\nsnap\nZotero\nSync\nsync\nDeveloping\ndeveloping\nprojects\ndavmail.log\nOneDrive\nDropbox\nVirtualBox VMs\nminiconda3\nbin\nshapemapper\nwinboat\nApplications" > ~/.hidden
 echo -e "Templates\nEnpass\nWeChat Files\nxwechat_files" > ~/Documents/.hidden
 echo -e "bin\ndev\nlib\nlibx32\nmnt\nproc\nsbin\nswapfile\nusr\nboot\netc\nlib32\nlost+found\nopt\nroot\nsnap\nsys\nvar\ncdrom\nlib64\npackages.expandrive.gpg\nrun\nsrv\ntmp\ninitrd.img\ninitrd.img.old\nvmlinuz\nvmlinuz.old" | sudo tee /.hidden >/dev/null 2>&1
 echo -e "rslsync" | sudo tee /home/.hidden >/dev/null 2>&1
