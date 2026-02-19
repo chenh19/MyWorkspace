@@ -175,7 +175,7 @@ rm -rf ./fonts/
 
 # command alias
 ## poweroff
-[ ! -f ~/.bashrc] ] && touch ~/.bashrc
+[ ! -f ~/.bashrc ] && touch ~/.bashrc
 tail -c 1 ~/.bashrc | read -r _ || echo >> ~/.bashrc
 if ! grep -q "alias reboot='systemctl reboot'" ~/.bashrc ; then echo -e "alias reboot='systemctl reboot'" >> ~/.bashrc ; fi
 if ! grep -q "alias poweroff='systemctl poweroff'" ~/.bashrc ; then echo -e "alias poweroff='systemctl poweroff'" >> ~/.bashrc ; fi
