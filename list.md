@@ -13,6 +13,7 @@ Basic:
 - [VLC](https://www.videolan.org/vlc/)
 - [qView](https://interversehq.com/qview/)
 - [Balena Etcher](https://www.balena.io/etcher)
+- [AnyDesk](https://anydesk.com/)
 - [Sysupdate](https://github.com/chenh19/sysupdate)
 - [Alt_rm](https://github.com/chenh19/alt_rm)
 - [Solaar](https://github.com/pwr-Solaar/Solaar)
