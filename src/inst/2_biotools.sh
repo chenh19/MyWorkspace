@@ -63,8 +63,8 @@ case "$choice" in
         sudo R CMD javareconf
         
         ### config posit package manager
-        if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi # not available
         #if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/manylinux_2_28/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/manylinux_2_28/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi # preview
+        if ! grep -q "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" /etc/R/Rprofile.site ; then echo -e "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/$(lsb_release -cs)/latest'))" | sudo tee -a /etc/R/Rprofile.site ; fi # not available
         
         ### install R packages
         [ ! -d ./rscript/ ] && mkdir ./rscript/
