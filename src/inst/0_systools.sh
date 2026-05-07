@@ -50,7 +50,6 @@ sudo apt autoremove -y
 
 # install apps (apt)
 
-  ## not installing or installed by Debian by default: kwrite thunderbird python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
   sudo apt install micro fastfetch default-jre default-jdk pkexec systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer krita krita-l10n inkscape kdenlive vlc -y
   
 # install apps (source list)
@@ -232,18 +231,6 @@ sudo apt autoremove -y
   [ ! -d ~/.config/solaar/ ] && mkdir ~/.config/solaar/
   cp -f ./cfg/solaar/rules.yaml ~/.config/solaar/
   sudo cp -f ./cfg/solaar/42-logitech-unify-permissions.rules /etc/udev/rules.d
-  
-  ## thunderbird
-  #sudo cp -rf ./cfg/Thunderbird/ /opt/
-  #sudo chmod +x /opt/Thunderbird/thunderbird.sh
-  #[ -f /usr/share/applications/thunderbird.desktop ] && sudo desktop-file-edit \
-  #  --set-name 'Thunderbird' --set-key 'Name[en_US]' --set-value 'Thunderbird' --set-key 'Name[zh_CN]' --set-value '邮箱' \
-  #  --set-comment 'Email Client' --set-key 'Comment[en_US]' --set-value 'Email Client' --set-key 'Comment[zh_CN]' --set-value '邮件客户端' \
-  #  --set-generic-name 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[en_US]' --set-value 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[zh_CN]' --set-value '阅读邮件或新闻' \
-  #  --set-key 'Exec' --set-value 'bash /opt/Thunderbird/thunderbird.sh' \
-  #  --remove-key 'Categories' --add-category 'Network;' \
-  #/usr/share/applications/thunderbird.desktop
-  ##cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
 
   ## apt modernize-sources
   #sudo apt modernize-sources -y #(for apt 3.0 and above; wait)
