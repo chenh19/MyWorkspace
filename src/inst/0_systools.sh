@@ -100,6 +100,12 @@ sudo apt autoremove -y
   sudo chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
   echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
   sudo apt update -qq && sudo apt install anydesk -y
+  [ -f /usr/share/applications/anydesk.desktop ] && sudo desktop-file-edit \
+    --set-name 'AnyDesk' --set-key 'Name[en_US]' --set-value 'AnyDesk' --set-key 'Name[zh_CN]' --set-value '远程协助' \
+    --set-comment 'Remote Control Tool' --set-key 'Comment[en_US]' --set-value 'Remote Control Tool' --set-key 'Comment[zh_CN]' --set-value '远程控制工具' \
+    --set-generic-name 'Remote Desktop Software' --set-key 'GenericName[en_US]' --set-value 'Remote Desktop Software' --set-key 'GenericName[zh_CN]' --set-value '远程桌面协助工具' \
+    --remove-key 'Categories' --add-category 'Network;' \
+  /usr/share/applications/anydesk.desktop
 
   ## virtualbox
   #[ -f /etc/apt/sources.list.d/virtualbox.list ] && sudo rm -f /etc/apt/sources.list.d/virtualbox.list
