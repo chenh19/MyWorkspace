@@ -16,7 +16,7 @@ read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install games? [y/
 case "$choice" in
   y|Y ) # notify start
         echo -e "\n${TEXT_YELLOW}Installing games...${TEXT_RESET}\n" && sleep 1
-        
+
         sudo apt update -qq && sudo apt upgrade -y
         sudo apt install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso 2048-qt -y
 
@@ -33,17 +33,17 @@ case "$choice" in
                 wget -q https://www.dropbox.com/scl/fi/y86120dperk5rpwji59j4/HumanResourceMachine.zip?rlkey=demi1mciz9qoc175di9sncoy3 -O HumanResourceMachine.zip && sleep 1
                 7z x -aoa -p$password HumanResourceMachine.zip -o$HOME/.setup_cache/inst/ && sleep 1
                 rm -f HumanResourceMachine.zip
-                echo -e "\n${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET}\n"
+                echo -e "\n${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET}\n" && sleep 3
                 bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 1;;
             * ) ;;
         esac
-        
+
         # notify end
         echo -e "\n${TEXT_GREEN}Games installed!${TEXT_RESET}\n" && sleep 3;;
-        
+
   * ) # notify cancellation
         echo -e "\n${TEXT_YELLOW}Games not installed.${TEXT_RESET}\n" && sleep 1;;
-        
+
 esac
 
 # mark setup.sh
