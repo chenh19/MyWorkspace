@@ -32,3 +32,4 @@ This tool will install and configure:
 - [WineHQ](https://www.winehq.org/)
 - [Micro](https://micro-editor.github.io/)
 - [WinBoat](https://www.winboat.app/)
+- [iOpenPod](https://therealsavi.github.io/iOpenPod/)
