@@ -212,9 +212,9 @@ case "$choice" in
         echo -e "\n${TEXT_YELLOW}Installing iOpenPod...${TEXT_RESET}\n" && sleep 1
         
         ## iOpenPod
-        [ ! -f iOpenPod-Linux.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/dik3xnklvjdooamhdvv72/iOpenPod-Linux.tar.gz?rlkey=o38bsfrq59pb8tlozfxyvmkiy" -O iOpenPod-Linux.tar.gz && sleep 1
-        [ ! -f ffmpeg.tar.xz ] && wget -q "https://www.dropbox.com/scl/fi/w37apnsoxbqxfl8cj96r9/ffmpeg.tar.xz?rlkey=ktgu63ye13rmq4o4kw5zeqo86" -O ffmpeg.tar.xz && sleep 1
-        [ ! -f fpcalc.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/6o7siid927tkh8rqowslh/fpcalc.tar.gz?rlkey=ekkx4unj1vwhhy23dq9urzyn7" -O fpcalc.tar.gz && sleep 1
+        [ ! -f iOpenPod-Linux.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/dik3xnklvjdooamhdvv72/iOpenPod-Linux.tar.gz?rlkey=o38bsfrq59pb8tlozfxyvmkiy" -O iOpenPod-Linux.tar.gz && echo '"iOpenPod" package is downloaded.' && sleep 1
+        [ ! -f ffmpeg.tar.xz ] && wget -q "https://www.dropbox.com/scl/fi/w37apnsoxbqxfl8cj96r9/ffmpeg.tar.xz?rlkey=ktgu63ye13rmq4o4kw5zeqo86" -O ffmpeg.tar.xz && echo '"ffmpeg" package is downloaded.' && sleep 1
+        [ ! -f fpcalc.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/6o7siid927tkh8rqowslh/fpcalc.tar.gz?rlkey=ekkx4unj1vwhhy23dq9urzyn7" -O fpcalc.tar.gz && echo '"fpcalc" package is downloaded.' && sleep 1
         tar -xzf iOpenPod-Linux.tar.gz && sleep 1 && rm -f iOpenPod-Linux.tar.gz && sleep 1
         tar -xJf ffmpeg.tar.xz && sleep 1 && rm -f ffmpeg.tar.xz && sleep 1
         mv ./ffmpeg-*/ ./ffmpeg/ && sleep 1
