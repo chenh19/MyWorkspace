@@ -94,7 +94,8 @@ sudo apt autoremove -y
   
   ## install
   echo ""
-  mv -f ./*.deb ./deb/ && sudo apt install -f -y --allow-downgrades ./deb/*.deb
+  mv -f ./*.deb ./deb/ && sudo apt install -f -y --allow-downgrades ./deb/*.deb && sleep 1
+  rm -rf ./deb/
 
 # install apps (.zip)
 
@@ -152,6 +153,7 @@ sudo apt autoremove -y
   [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
   unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
   cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
+  rm -rf ./cfg/fcitx5-themes/
 
 # install widgets
 
@@ -247,8 +249,6 @@ sudo apt autoremove -y
   #sudo apt modernize-sources -y #(for apt 3.0 and above; wait)
   
 # cleanup
-rm -rf ./deb/
-rm -rf ./cfg/fcitx5-themes/
 [ -d ~/snap/firefox/ ] && sudo rm -rf ~/snap/firefox/
 [ -d ~/Downloads/firefox.tmp/ ] && sudo rm -rf ~/Downloads/firefox.tmp/
 sudo apt update -qq && sudo apt autoremove -y && sudo apt clean
