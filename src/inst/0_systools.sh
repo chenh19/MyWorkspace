@@ -50,26 +50,10 @@ sudo apt autoremove -y
 
 # install apps (apt)
 
-  ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
-  sudo apt install micro fastfetch default-jre default-jdk pkexec systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer thunderbird krita krita-l10n inkscape kdenlive vlc -y
+  ## not installing or installed by Debian by default: kwrite thunderbird python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
+  sudo apt install micro fastfetch default-jre default-jdk pkexec systemd-timesyncd ufw seahorse tree plymouth-themes solaar ttf-mscorefonts-installer krita krita-l10n inkscape kdenlive vlc -y
   
 # install apps (source list)
-
-  ## onedrive
-  # https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md#distribution-debian-13
-  wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_13/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_13/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
-  sudo apt update -qq && sudo apt install --no-install-recommends --no-install-suggests onedrive -y
-  [ -f /usr/share/keyrings/obs-onedrive.gpg ] && sudo rm -f /usr/share/keyrings/obs-onedrive.gpg
-  [ -f /etc/apt/sources.list.d/onedrive.list ] && sudo rm -f /etc/apt/sources.list.d/onedrive.list
-  
-  ## enpass
-  #echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list >/dev/null 2>&1
-  #wget -qO- "https://apt.enpass.io/keys/enpass-linux.key" | sudo tee /etc/apt/trusted.gpg.d/enpass.asc >/dev/null 2>&1
-  #sudo apt update -qq && sudo apt install enpass -y
-  [ -f /etc/apt/sources.list.d/enpass.list ] && sudo rm -f /etc/apt/sources.list.d/enpass.list
-  [ -f /etc/apt/trusted.gpg.d/enpass.asc ] && sudo rm -f /etc/apt/trusted.gpg.d/enpass.asc
-  [ ! -d ~/Documents/Enpass/ ] && mkdir ~/Documents/Enpass/
   
   ## wine
   [ -f /etc/apt/sources.list.d/winehq-*.sources ] && sudo rm -f /etc/apt/sources.list.d/winehq-*.sources
@@ -80,18 +64,6 @@ sudo apt autoremove -y
   sudo wget -qNP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/$VERSION_CODENAME/winehq-$VERSION_CODENAME.sources
   wget -qO- https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --yes --dearmor --output /etc/apt/keyrings/winehq-archive.key -
   sudo apt update -qq && sudo apt install --install-recommends winehq-stable winetricks -y
-
-  ## resilio sync
-  echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list >/dev/null 2>&1
-  wget -qO- https://linux-packages.resilio.com/resilio-sync/key.asc | sudo tee /etc/apt/trusted.gpg.d/resilio-sync.asc > /dev/null 2>&1
-  sudo apt update -qq && sudo apt install resilio-sync -y
-  sudo systemctl disable resilio-sync
-  sudo kwriteconfig6 --file /usr/lib/systemd/user/resilio-sync.service --group Install --key WantedBy --type string "default.target"
-  systemctl --user enable resilio-sync
-  systemctl --user start resilio-sync
-  [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig6 --file ~/Sync/.directory --group "Desktop Entry" --key Icon --type string "folder-cloud"
-  [ -f /etc/apt/sources.list.d/resilio-sync.list ] && sudo rm -f /etc/apt/sources.list.d/resilio-sync.list
-  [ -f /etc/apt/trusted.gpg.d/resilio-sync.asc* ] && sudo rm -f /etc/apt/trusted.gpg.d/resilio-sync.asc*
   
   ## AnyDesk
   sudo apt update -qq && sudo apt install ca-certificates curl apt-transport-https -y
@@ -107,90 +79,22 @@ sudo apt autoremove -y
     --remove-key 'Categories' --add-category 'Network;' \
   /usr/share/applications/anydesk.desktop
 
-  ## virtualbox
-  #[ -f /etc/apt/sources.list.d/virtualbox.list ] && sudo rm -f /etc/apt/sources.list.d/virtualbox.list
-  #[ -f /usr/share/keyrings/oracle-virtualbox-2016.gpg ] && sudo rm -f /usr/share/keyrings/oracle-virtualbox-2016.gpg
-  #source /etc/os-release
-  #echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $VERSION_CODENAME contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-  #wget -qO- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg -
-  #wget -qO- https://www.dropbox.com/scl/fi/og4of00530879jak03nzp/oracle_vbox_2016.asc?rlkey=mjn9tj78kqix7uujp2hdaava6 | sudo gpg --yes --dearmor --output /usr/share/keyrings/oracle-virtualbox-2016.gpg - # to update
-  #sleep 1 && sudo apt update -qq && sudo apt install virtualbox-7.1 -y
-  #[ ! -d ~/VirtualBox\ VMs/ ] && mkdir ~/VirtualBox\ VMs/
-
-# install apps (downloaded)
+# install apps (.deb)
 
   echo ""
   [ ! -d ./deb/ ] && mkdir ./deb/
 
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
-  wget -q "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
-  #wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
-  #wget -q "https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb && echo '"OnlyOffice" deb package is downloaded.' && sleep 1
   
   ## self maintained redirecting links
-  wget -q "https://www.dropbox.com/scl/fi/nhow2orfr13h2sab1eulj/4kvideodownloader.deb?rlkey=s3a7aj6z6i1bgjjng7uwh5spg" -O 4kvideodownloader.deb && echo -e '"4K Video Downloader+" deb package is downloaded.' && sleep 1 #x11 scaling
   wget -q "https://www.dropbox.com/scl/fi/ohmiilwoep7ugvlpbov8i/freedownloadmanager.deb?rlkey=34tnbu8t68u0ffeeukcrqcq9v" -O freedownloadmanager.deb && echo '"Free Download Manager" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/c8l8p9d570rrtlthbekvz/enpass.deb?rlkey=onpnnrn80njld2n48dk2rerfe" -O enpass.deb && echo '"Enpass" deb package is downloaded.' && sleep 1
-  wget -q "https://www.dropbox.com/scl/fi/d55hac9aiwzzc7aq8ky72/simplenote.deb?rlkey=p0lg6vdsefoi16pc04sg1r1n6" -O simplenote.deb && echo '"Simplenote" deb package is downloaded.' && sleep 1
-  #wget -q "https://www.dropbox.com/scl/fi/s779gps9u2qkr6o7klwk5/fastfetch.deb?rlkey=036z6hfh42y8j232ptgoyi12w" -O fastfetch.deb && echo '"Fastfetch" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/f8z2xbm8zy1p9r2014bq1/eudic.deb?rlkey=3ce5bwl8ltg1xq1e7mqweelwb" -O eudic.deb && echo -e '"EuDic" deb package is downloaded.' && sleep 1
-  #wget -q "https://www.dropbox.com/scl/fi/s0aopqvbu9pz4jxfo23n4/slack.deb?rlkey=2errjlsb9uxl0hkjgfezkczab" -O slack.deb && echo '"Slack" deb package is downloaded.' && sleep 1
   wget -q "https://www.dropbox.com/scl/fi/x8gwrqsas8lqt2ckdyqc6/wechat.deb?rlkey=o0sg577sxwbwr3e68rgi2lney" -O wechat.deb && echo '"WeChat" deb package is downloaded.' && sleep 1
   
   ## install
   echo ""
   mv -f ./*.deb ./deb/ && sudo apt install -f -y --allow-downgrades ./deb/*.deb
-
-# install input method
-
-  ## fcitx
-  [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
-  [ ! -d ~/.config/fcitx5/ ] && mkdir ~/.config/fcitx5/
-  [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
-  [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
-  [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
-  sudo apt install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-mozc fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
-  sudo apt --fix-missing update && sudo apt install -f -y
-  [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
-  unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
-  cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
-
-# AppImages
-
-  echo ""
-  ## OneDriveGUI
-  wget -q "https://www.dropbox.com/scl/fi/l4s04hw0z0y9su54fzewe/onedrivegui.AppImage?rlkey=tmwf6y38kpovdkl5wvy7pmczk" -O onedrivegui.AppImage && echo '"OneDriveGUI" AppImage package is downloaded.' && sleep 1
-  [ ! -d /opt/onedrivegui/ ] && sudo mkdir /opt/onedrivegui/
-  sudo mv -f ./onedrivegui.AppImage /opt/onedrivegui/ && sleep 1
-  sudo chmod +x /opt/onedrivegui/onedrivegui.AppImage
-  [ ! -f /usr/share/applications/onedrivegui.desktop ] && sudo touch /usr/share/applications/onedrivegui.desktop
-  sudo desktop-file-edit \
-    --set-name 'OneDrive' --set-key 'Name[en_US]' --set-value 'OneDrive' --set-key 'Name[zh_CN]' --set-value 'OneDrive' \
-    --set-comment 'Cloud Storage' --set-key 'Comment[en_US]' --set-value 'Cloud Storage' --set-key 'Comment[zh_CN]' --set-value '云储存空间' \
-    --set-generic-name 'OneDrive Client' --set-key 'GenericName[en_US]' --set-value 'OneDrive Client' --set-key 'GenericName[zh_CN]' --set-value 'OneDrive 客户端' \
-    --set-key 'Exec' --set-value '/opt/onedrivegui/onedrivegui.AppImage' \
-    --set-icon '/opt/icon/onedrive.png' \
-    --set-key 'Type' --set-value 'Application' \
-    --remove-key 'Categories' --add-category 'Utility;' \
-  /usr/share/applications/onedrivegui.desktop
-
-  ## qView
-  wget -q "https://www.dropbox.com/scl/fi/htussdjx59jobwssy2m2h/qview.AppImage?rlkey=x6cfgmvnpo9fh1wwoymoplw6v" -O qview.AppImage && echo '"qView" AppImage package is downloaded.' && sleep 1
-  [ ! -d /opt/qView/ ] && sudo mkdir /opt/qView/
-  sudo mv -f ./qview.AppImage /opt/qView/ && sleep 1
-  sudo chmod +x /opt/qView/qview.AppImage
-  [ ! -f /usr/share/applications/com.interversehq.qView.desktop ] && sudo touch /usr/share/applications/com.interversehq.qView.desktop
-  sudo desktop-file-edit \
-    --set-name 'qView' --set-key 'Name[en_US]' --set-value 'qView' --set-key 'Name[zh_CN]' --set-value '图片浏览器' \
-    --set-comment 'Image Viewer' --set-key 'Comment[en_US]' --set-value 'Image Viewer' --set-key 'Comment[zh_CN]' --set-value '图片浏览工具' \
-    --set-generic-name 'Practical and Minimal Image Viewer' --set-key 'GenericName[en_US]' --set-value 'Practical and Minimal Image Viewer' --set-key 'GenericName[zh_CN]' --set-value '简易图像查看器' \
-    --set-key 'Exec' --set-value '/opt/qView/qview.AppImage' \
-    --set-icon '/opt/icon/qview.png' \
-    --set-key 'Type' --set-value 'Application' \
-    --set-key 'StartupNotify' --set-value 'false' \
-    --remove-key 'Categories' --add-category 'AudioVideo;' \
-  /usr/share/applications/com.interversehq.qView.desktop
 
 # install apps (.zip)
 
@@ -216,6 +120,39 @@ sudo apt autoremove -y
   /usr/share/applications/balena-etcher.desktop
   sleep 1 && rm -rf ./balenaEtcher-linux-*/
 
+# AppImages
+
+  ## qView
+  wget -q "https://www.dropbox.com/scl/fi/htussdjx59jobwssy2m2h/qview.AppImage?rlkey=x6cfgmvnpo9fh1wwoymoplw6v" -O qview.AppImage && echo '"qView" AppImage package is downloaded.' && sleep 1
+  [ ! -d /opt/qView/ ] && sudo mkdir /opt/qView/
+  sudo mv -f ./qview.AppImage /opt/qView/ && sleep 1
+  sudo chmod +x /opt/qView/qview.AppImage
+  [ ! -f /usr/share/applications/com.interversehq.qView.desktop ] && sudo touch /usr/share/applications/com.interversehq.qView.desktop
+  sudo desktop-file-edit \
+    --set-name 'qView' --set-key 'Name[en_US]' --set-value 'qView' --set-key 'Name[zh_CN]' --set-value '图片浏览器' \
+    --set-comment 'Image Viewer' --set-key 'Comment[en_US]' --set-value 'Image Viewer' --set-key 'Comment[zh_CN]' --set-value '图片浏览工具' \
+    --set-generic-name 'Practical and Minimal Image Viewer' --set-key 'GenericName[en_US]' --set-value 'Practical and Minimal Image Viewer' --set-key 'GenericName[zh_CN]' --set-value '简易图像查看器' \
+    --set-key 'Exec' --set-value '/opt/qView/qview.AppImage' \
+    --set-icon '/opt/icon/qview.png' \
+    --set-key 'Type' --set-value 'Application' \
+    --set-key 'StartupNotify' --set-value 'false' \
+    --remove-key 'Categories' --add-category 'AudioVideo;' \
+  /usr/share/applications/com.interversehq.qView.desktop
+
+# install input method
+
+  ## fcitx
+  [ ! -d ~/.config/autostart/ ] && mkdir ~/.config/autostart/
+  [ ! -d ~/.config/fcitx5/ ] && mkdir ~/.config/fcitx5/
+  [ ! -d ~/.config/fcitx5/conf/ ] && mkdir ~/.config/fcitx5/conf/
+  [ ! -d ~/.local/share/fcitx5/ ] && mkdir ~/.local/share/fcitx5/
+  [ ! -d ~/.local/share/fcitx5/themes/ ] && mkdir ~/.local/share/fcitx5/themes/
+  sudo apt install fcitx5 fcitx5-pinyin fcitx5-chinese-addons fcitx5-mozc fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 kde-config-fcitx5 fcitx5-config-qt -y
+  sudo apt --fix-missing update && sudo apt install -f -y
+  [ ! -f fcitx5-themes.zip ] && wget -q "https://www.dropbox.com/scl/fi/7fldgym73qz3oq88z4ruh/fcitx5-themes.zip?rlkey=y9ko399f3pxkmne2mdkbxgxo9" -O fcitx5-themes.zip && sleep 1
+  unzip -o -q fcitx5-themes.zip -d ./cfg/ && sleep 1 && rm -f fcitx5-themes.zip && sleep 1
+  cp -rf ./cfg/fcitx5-themes/* ~/.local/share/fcitx5/themes/ && sleep 1
+
 # install widgets
 
   ## Toggle Overview
@@ -223,8 +160,8 @@ sudo apt autoremove -y
 
 # auto config
 
-  echo ""
   ## Touchpad gestures
+  echo ""
   ### Touchegg
   #[ ! -d ~/.config/touchegg/ ] && mkdir ~/.config/touchegg/
   #cp -f ./cfg/touchegg/touchegg.conf ~/.config/touchegg/
@@ -254,11 +191,6 @@ sudo apt autoremove -y
   ## time sync
   sudo timedatectl set-ntp true
   sudo timedatectl status
-
-  ## OneDriveGUI
-  cp -rf ./cfg/onedrive-gui/ ~/.config/
-  #cp -f /usr/share/applications/onedrivegui.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/onedrivegui.desktop
-  #echo -e "[Desktop Entry]\nIcon=/opt/icon/onedrive.png\nName=OneDrive\nType=Link\nURL[\$e]=file:$HOME/OneDrive/" > ~/Desktop/onedrive.desktop
   
   ## Fastfetch
   [ ! -d ~/.config/fastfetch/ ] && mkdir ~/.config/fastfetch/
@@ -266,14 +198,6 @@ sudo apt autoremove -y
   
   ## Etcher
   cp -rf ./cfg/balenaEtcher/ ~/.config/
-  
-  ## zoom auto scaling
-  kwriteconfig6 --file ~/.config/zoomus.conf --group General --key autoScale --type bool "false"
-
-  ## teamviewer
-  #[ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
-  #[ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
-  #echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
   
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
@@ -306,12 +230,7 @@ sudo apt autoremove -y
   [ ! -d ~/.config/solaar/ ] && mkdir ~/.config/solaar/
   cp -f ./cfg/solaar/rules.yaml ~/.config/solaar/
   sudo cp -f ./cfg/solaar/42-logitech-unify-permissions.rules /etc/udev/rules.d
-
-  ## 4k video downloader+
-  [ -f /usr/share/applications/4kvideodownloaderplus.desktop ] && sudo desktop-file-edit \
-      --set-icon '4kvideodownloaderplus' \
-  /usr/share/applications/4kvideodownloaderplus.desktop
-
+  
   ## thunderbird
   #sudo cp -rf ./cfg/Thunderbird/ /opt/
   #sudo chmod +x /opt/Thunderbird/thunderbird.sh
