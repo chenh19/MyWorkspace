@@ -78,8 +78,8 @@ unset start0 end0
 
 # setup
 bash ./inst/0_systools.sh
-bash ./inst/1_biotools.sh
-#bash ./inst/2_winboat.sh
+bash ./inst/1_addtools.sh
+bash ./inst/2_biotools.sh
 
 # config
 bash ./cfg/0_sysstg.sh
