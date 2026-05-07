@@ -17,6 +17,8 @@ case "$choice" in
   y|Y ) # notify start
         echo -e "\n${TEXT_YELLOW}Installing additional tools...${TEXT_RESET}\n" && sleep 1
         sudo apt update -qq && sudo apt upgrade -y
+        ## not installing or installed by Debian by default: kwrite thunderbird python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
+        sudo apt install thunderbird -y
         
         # install apps (source list)
         
@@ -151,6 +153,18 @@ case "$choice" in
           #[ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
           #[ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
           #echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
+          
+          ## thunderbird
+          #sudo cp -rf ./cfg/Thunderbird/ /opt/
+          #sudo chmod +x /opt/Thunderbird/thunderbird.sh
+          #[ -f /usr/share/applications/thunderbird.desktop ] && sudo desktop-file-edit \
+          #  --set-name 'Thunderbird' --set-key 'Name[en_US]' --set-value 'Thunderbird' --set-key 'Name[zh_CN]' --set-value '邮箱' \
+          #  --set-comment 'Email Client' --set-key 'Comment[en_US]' --set-value 'Email Client' --set-key 'Comment[zh_CN]' --set-value '邮件客户端' \
+          #  --set-generic-name 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[en_US]' --set-value 'Read/Write Mail/News with Thunderbird' --set-key 'GenericName[zh_CN]' --set-value '阅读邮件或新闻' \
+          #  --set-key 'Exec' --set-value 'bash /opt/Thunderbird/thunderbird.sh' \
+          #  --remove-key 'Categories' --add-category 'Network;' \
+          #/usr/share/applications/thunderbird.desktop
+          ##cp -f /usr/share/applications/thunderbird.desktop ~/.config/autostart/ && sudo chmod +x ~/.config/autostart/thunderbird.desktop
           
           ## apt modernize-sources
           #sudo apt modernize-sources -y #(for apt 3.0 and above; wait)
