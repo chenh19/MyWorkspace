@@ -27,7 +27,7 @@ case "$choice" in
           y|Y ) unset password
                 until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
                     echo ""
-                    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$'\n' password
+                    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the installer: '$TEXT_RESET)"$'\n' password
                 done
                 [ ! -d ./inst/ ] && mkdir ./inst/
                 wget -q https://www.dropbox.com/scl/fi/y86120dperk5rpwji59j4/HumanResourceMachine.zip?rlkey=demi1mciz9qoc175di9sncoy3 -O HumanResourceMachine.zip && sleep 1
