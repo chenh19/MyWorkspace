@@ -19,7 +19,7 @@ case "$choice" in
 
         # deb
         sudo apt update -qq && sudo apt upgrade -y
-        sudo apt install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso 2048-qt -y
+        sudo apt install 2048-qt kapman kdiamond bovo kigo gcompris-qt stellarium kamoso xournalpp -y
 
         # steam
         sudo dpkg --add-architecture i386
