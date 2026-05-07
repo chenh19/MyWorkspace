@@ -92,6 +92,14 @@ sudo apt autoremove -y
   [ ! -d ~/Sync/ ] && mkdir ~/Sync/ && kwriteconfig6 --file ~/Sync/.directory --group "Desktop Entry" --key Icon --type string "folder-cloud"
   [ -f /etc/apt/sources.list.d/resilio-sync.list ] && sudo rm -f /etc/apt/sources.list.d/resilio-sync.list
   [ -f /etc/apt/trusted.gpg.d/resilio-sync.asc* ] && sudo rm -f /etc/apt/trusted.gpg.d/resilio-sync.asc*
+  
+  ## AnyDesk
+  sudo apt update -qq && sudo apt install ca-certificates curl apt-transport-https -y
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://keys.anydesk.com/repos/DEB-GPG-KEY -o /etc/apt/keyrings/keys.anydesk.com.asc
+  sudo chmod a+r /etc/apt/keyrings/keys.anydesk.com.asc
+  echo "deb [signed-by=/etc/apt/keyrings/keys.anydesk.com.asc] https://deb.anydesk.com all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list > /dev/null
+  sudo apt update -qq && sudo apt install anydesk -y
 
   ## virtualbox
   #[ -f /etc/apt/sources.list.d/virtualbox.list ] && sudo rm -f /etc/apt/sources.list.d/virtualbox.list
@@ -111,7 +119,7 @@ sudo apt autoremove -y
   ## official redirecting links
   wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O chrome.deb && echo '"Google Chrome" deb package is downloaded.' && sleep 1
   wget -q "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb && echo '"Zoom" deb package is downloaded.' && sleep 1
-  wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
+  #wget -q "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb" -O teamviewer.deb && echo '"Teamviewer" deb package is downloaded.' && sleep 1
   #wget -q "https://github.com/ONLYOFFICE/DesktopEditors/releases/latest/download/onlyoffice-desktopeditors_amd64.deb" -O onlyoffice.deb && echo '"OnlyOffice" deb package is downloaded.' && sleep 1
   
   ## self maintained redirecting links
@@ -257,9 +265,9 @@ sudo apt autoremove -y
   kwriteconfig6 --file ~/.config/zoomus.conf --group General --key autoScale --type bool "false"
 
   ## teamviewer
-  [ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
-  [ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
-  echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
+  #[ ! -d ~/.config/teamviewer/ ] && mkdir ~/.config/teamviewer/
+  #[ -d ~/.config/teamviewer/ ] && rm -rf ~/.config/teamviewer/*
+  #echo -e "TeamViewer User Settings\n# It is not recommended to edit this file manually\n\n\n[int32] MainWindowSize = 888 526 510 1032\n[int32] OnboardingTaskState = 1 1 1\n[int32] PilotTabWasEnabled = 1\n[int32] Remote_RemoveWallpaper = 0" > ~/.config/teamviewer/client.conf
   
   ## qView
   [ ! -d ~/.config/qView/ ] && mkdir ~/.config/qView/
