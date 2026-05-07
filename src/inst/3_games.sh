@@ -34,7 +34,9 @@ case "$choice" in
                 7z x -aoa -p$password HumanResourceMachine.zip -o$HOME/.setup_cache/inst/ && sleep 1
                 rm -f HumanResourceMachine.zip
                 echo -e "\n${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET}\n" && sleep 3
-                bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 1;;
+                bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 1
+                sudo mv -f ~/.local/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop /usr/share/applications/
+                ;;
             * ) ;;
         esac
 
