@@ -145,6 +145,65 @@ case "$choice" in
         
 esac
 
+# ask whether to install WinBoat
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install WinBoat? [y/n/c]'${TEXT_RESET})"$'\n' choice
+case "$choice" in
+  y|Y ) # notify start
+        echo -e "\n${TEXT_YELLOW}Installing WinBoat...${TEXT_RESET}\n" && sleep 1
+        
+        # add Docker's official GPG key:
+        sudo apt update -qq && sudo apt install ca-certificates curl wget -y
+        sudo install -m 0755 -d /etc/apt/keyrings
+        sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+        sudo chmod a+r /etc/apt/keyrings/docker.asc
+        sleep 1
+        
+        # add the repository to Apt sources:
+        printf '%s\n' \
+          'Types: deb' \
+          'URIs: https://download.docker.com/linux/debian' \
+          "Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")" \
+          'Components: stable' \
+          'Signed-By: /etc/apt/keyrings/docker.asc' \
+        | sudo tee /etc/apt/sources.list.d/docker.sources >/dev/null
+        sleep 1
+        
+        # install Docker, Docker-Compose, FreeRDP:
+        sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin podman podman-compose freerdp3-x11 -y
+        sleep 1
+        
+        # download and install WinBoat:
+        echo ""
+        wget -q "https://www.dropbox.com/scl/fi/u1ql2pg3ftcq2u61evu9k/winboat.deb?rlkey=be7x3ogc1hhrrv3nn2vr1437v" -O winboat.deb && echo '"WinBoat" deb package is downloaded.' && sleep 1
+        echo ""
+        sudo apt install ./winboat.deb -y
+        sleep 1
+        rm -f ./winboat.deb
+        
+        # auto config
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+        sudo systemctl enable docker.service
+        sudo systemctl enable containerd.service
+        [ -f /etc/apt/keyrings/docker.asc ] && sudo rm -f /etc/apt/keyrings/docker.asc
+        [ -f /etc/apt/sources.list.d/docker.sources ] && sudo rm -f /etc/apt/sources.list.d/docker.sources
+        [ -f /usr/share/applications/winboat.desktop ] && sudo desktop-file-edit \
+            --set-name 'WinBoat' --set-key 'Name[en_US]' --set-value 'WinBoat' --set-key 'Name[zh_CN]' --set-value 'WinBoat' \
+            --set-comment 'Windows for Penguins' --set-key 'Comment[en_US]' --set-value 'Windows for Penguins' --set-key 'Comment[zh_CN]' --set-value '容器Windows' \
+            --set-generic-name 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[en_US]' --set-value 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[zh_CN]' --set-value 'Windows无缝融合' \
+            --remove-key 'Categories' --add-category 'Utility;' \
+        /usr/share/applications/winboat.desktop
+        sudo apt update -qq
+        sleep 1
+        
+        # notify end
+        echo -e "\n${TEXT_GREEN}WinBoat installed!${TEXT_RESET}\n" && sleep 3;;
+        
+  * ) # notify cancellation
+        echo -e "\n${TEXT_YELLOW}WinBoat not installed.${TEXT_RESET}\n" && sleep 1;;
+        
+esac
+
 # ask whether to install iOpenPod
 read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install iOpenPod? [y/n/c]'${TEXT_RESET})"$'\n' choice
 case "$choice" in
@@ -187,65 +246,6 @@ case "$choice" in
         
   * ) # notify cancellation
         echo -e "\n${TEXT_YELLOW}iOpenPod not installed.${TEXT_RESET}\n" && sleep 1;;
-        
-esac
-
-# ask whether to install WinBoat
-read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install WinBoat? [y/n/c]'${TEXT_RESET})"$'\n' choice
-case "$choice" in
-  y|Y ) # notify start
-        echo -e "\n${TEXT_YELLOW}Installing WinBoat...${TEXT_RESET}\n" && sleep 1
-        
-        # add Docker's official GPG key:
-        sudo apt update -qq && sudo apt install ca-certificates curl wget -y
-        sudo install -m 0755 -d /etc/apt/keyrings
-        sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-        sudo chmod a+r /etc/apt/keyrings/docker.asc
-        sleep 1
-        
-        # add the repository to Apt sources:
-        sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
-        Types: deb
-        URIs: https://download.docker.com/linux/debian
-        Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
-        Components: stable
-        Signed-By: /etc/apt/keyrings/docker.asc
-        EOF
-        sleep 1
-        
-        # install Docker, Docker-Compose, FreeRDP:
-        sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin podman podman-compose freerdp3-x11 -y
-        sleep 1
-        
-        # download and install WinBoat:
-        echo ""
-        wget -q "https://www.dropbox.com/scl/fi/u1ql2pg3ftcq2u61evu9k/winboat.deb?rlkey=be7x3ogc1hhrrv3nn2vr1437v" -O winboat.deb && echo '"WinBoat" deb package is downloaded.' && sleep 1
-        echo ""
-        sudo apt install ./winboat.deb -y
-        sleep 1
-        rm -f ./winboat.deb
-        
-        # auto config
-        sudo groupadd docker
-        sudo usermod -aG docker $USER
-        sudo systemctl enable docker.service
-        sudo systemctl enable containerd.service
-        [ -f /etc/apt/keyrings/docker.asc ] && sudo rm -f /etc/apt/keyrings/docker.asc
-        [ -f /etc/apt/sources.list.d/docker.sources ] && sudo rm -f /etc/apt/sources.list.d/docker.sources
-        [ -f /usr/share/applications/winboat.desktop ] && sudo desktop-file-edit \
-            --set-name 'WinBoat' --set-key 'Name[en_US]' --set-value 'WinBoat' --set-key 'Name[zh_CN]' --set-value 'WinBoat' \
-            --set-comment 'Windows for Penguins' --set-key 'Comment[en_US]' --set-value 'Windows for Penguins' --set-key 'Comment[zh_CN]' --set-value '容器Windows' \
-            --set-generic-name 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[en_US]' --set-value 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[zh_CN]' --set-value 'Windows无缝融合' \
-            --remove-key 'Categories' --add-category 'Utility;' \
-        /usr/share/applications/winboat.desktop
-        sudo apt update -qq
-        sleep 1
-        
-        # notify end
-        echo -e "\n${TEXT_GREEN}WinBoat installed!${TEXT_RESET}\n" && sleep 3;;
-        
-  * ) # notify cancellation
-        echo -e "\n${TEXT_YELLOW}WinBoat not installed.${TEXT_RESET}\n" && sleep 1;;
         
 esac
 
