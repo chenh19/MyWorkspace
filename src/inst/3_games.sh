@@ -17,7 +17,8 @@ case "$choice" in
   y|Y ) # notify start
         echo -e "\n${TEXT_YELLOW}Installing games...${TEXT_RESET}\n" && sleep 1
         
-        sudo apt update -qq && sudo apt install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso 2048-qt -y
+        sudo apt update -qq && sudo apt upgrade -y
+        sudo apt install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso 2048-qt -y
 
         # human resource machine
         echo ""
