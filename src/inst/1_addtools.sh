@@ -16,8 +16,8 @@ read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install additional
 case "$choice" in
   y|Y ) # notify start
         echo -e "\n${TEXT_YELLOW}Installing additional productivity tools...${TEXT_RESET}\n" && sleep 1
-        ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
         sudo apt update -qq && sudo apt upgrade -y
+        ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
         sudo apt install thunderbird -y
         
         # install apps (source list)
