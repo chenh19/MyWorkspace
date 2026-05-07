@@ -21,18 +21,18 @@ case "$choice" in
 
         # human resource machine
         echo ""
-        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have the password for Human Resource Machine? [y/n/c]'$TEXT_RESET)"$' \n' choice
+        read -n1 -s -r -p "$(echo -e $TEXT_YELLOW'Do you have the password for Human Resource Machine? [y/n/c]'$TEXT_RESET)"$'\n' choice
         case "$choice" in
           y|Y ) unset password
                 until [[ "$password" == te*ld && ${#password} == 9 ]] ; do
                     echo ""
-                    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$' \n' password
+                    read -s -p "$(echo -e $TEXT_YELLOW'Please enter the password to unzip the licenses: '$TEXT_RESET)"$'\n' password
                 done
                 [ ! -d ./inst/ ] && mkdir ./inst/
                 wget -q https://www.dropbox.com/scl/fi/y86120dperk5rpwji59j4/HumanResourceMachine.zip?rlkey=demi1mciz9qoc175di9sncoy3 -O HumanResourceMachine.zip && sleep 1
                 7z x -aoa -p$password HumanResourceMachine.zip -o$HOME/.setup_cache/inst/ && sleep 1
                 rm -f HumanResourceMachine.zip
-                echo -e "${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET} \n"
+                echo -e "\n${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET}\n"
                 bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 1;;
             * ) ;;
         esac
