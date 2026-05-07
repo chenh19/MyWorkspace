@@ -11,14 +11,13 @@ sudo echo ""
 [ ! -d ~/.setup_cache/ ] && mkdir ~/.setup_cache/
 cd ~/.setup_cache/
 
-# ask whether to install additional tools
-read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install additional tools? [y/n/c]'${TEXT_RESET})"$'\n' choice
+# ask whether to install additional productivity tools
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install additional productivity tools? [y/n/c]'${TEXT_RESET})"$'\n' choice
 case "$choice" in
   y|Y ) # notify start
-        echo -e "\n${TEXT_YELLOW}Installing additional tools...${TEXT_RESET}\n" && sleep 1
-        sudo apt update -qq && sudo apt upgrade -y
+        echo -e "\n${TEXT_YELLOW}Installing additional productivity tools...${TEXT_RESET}\n" && sleep 1
         ## not installing or installed by Debian by default: kwrite python3 git kate kcalc partitionmanager libreoffice exfatprogs evolution evolution-ews elisa fsearch kdocker bash-completion plasma-firewall samba libavcodec-extra needrestart
-        sudo apt install thunderbird -y
+        sudo apt update -qq && sudo apt install thunderbird -y
         
         # install apps (source list)
         
@@ -81,40 +80,6 @@ case "$choice" in
           mv -f ./*.deb ./deb/ && sudo apt install -f -y --allow-downgrades ./deb/*.deb && sleep 1
           rm -rf ./deb/
         
-        # install apps (.zip)
-        
-          echo ""
-          ## iOpenPod
-          [ ! -f iOpenPod-Linux.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/dik3xnklvjdooamhdvv72/iOpenPod-Linux.tar.gz?rlkey=o38bsfrq59pb8tlozfxyvmkiy" -O iOpenPod-Linux.tar.gz && sleep 1
-          [ ! -f ffmpeg.tar.xz ] && wget -q "https://www.dropbox.com/scl/fi/w37apnsoxbqxfl8cj96r9/ffmpeg.tar.xz?rlkey=ktgu63ye13rmq4o4kw5zeqo86" -O ffmpeg.tar.xz && sleep 1
-          [ ! -f fpcalc.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/6o7siid927tkh8rqowslh/fpcalc.tar.gz?rlkey=ekkx4unj1vwhhy23dq9urzyn7" -O fpcalc.tar.gz && sleep 1
-          tar -xzf iOpenPod-Linux.tar.gz && sleep 1 && rm -f iOpenPod-Linux.tar.gz && sleep 1
-          tar -xJf ffmpeg.tar.xz && sleep 1 && rm -f ffmpeg.tar.xz && sleep 1
-          mv ./ffmpeg-*/ ./ffmpeg/ && sleep 1
-          tar -xzf fpcalc.tar.gz && sleep 1 && rm -f fpcalc.tar.gz && sleep 1
-          mv ./chromaprint-fpcalc-*/ ./fpcalc/ && sleep 1
-          cp -f ./ffmpeg/bin/ffmpeg ./fpcalc/fpcalc ./iOpenPod/ && sleep 1
-          rm -rf ./ffmpeg/ ./fpcalc/ && sleep 1
-          sudo cp -f ./iOpenPod/_internal/assets/icons/icon-256.png /opt/icon/iopenpod.png && sleep 1
-          sudo cp -rf ./iOpenPod/ /opt/ && sleep 1
-          rm -rf ./iOpenPod/
-          ## config
-          mkdir -p ~/.config/iOpenPod/
-          echo -e '{\n  "ffmpeg_path": "/opt/iOpenPod/ffmpeg",\n  "fpcalc_path": "/opt/iOpenPod/fpcalc",\n  "lossy_quality": "high",\n  "backup_before_sync": false\n}' > ~/.config/iOpenPod/settings.json
-          ## shortcut
-          [ ! -f /usr/share/applications/iopenpod.desktop ] && sudo touch /usr/share/applications/iopenpod.desktop
-          sudo desktop-file-edit \
-            --set-name 'iOpenPod' --set-key 'Name[en_US]' --set-value 'iOpenPod' --set-key 'Name[zh_CN]' --set-value 'iOpenPod' \
-            --set-comment 'Open-source iPod Sync Tool' --set-key 'Comment[en_US]' --set-value 'Open-source iPod Sync Tool' --set-key 'Comment[zh_CN]' --set-value '开源iPod同步工具' \
-            --set-generic-name 'Manage your iPod without iTunes' --set-key 'GenericName[en_US]' --set-value 'Manage your iPod without iTunes' --set-key 'GenericName[zh_CN]' --set-value '告别 iTunes，重新掌控你的 iPod' \
-            --set-key 'Exec' --set-value '/opt/iOpenPod/iOpenPod' \
-            --set-icon '/opt/icon/iopenpod.png' \
-            --set-key 'StartupNotify' --set-value 'true' \
-            --set-key 'Terminal' --set-value 'false' \
-            --set-key 'Type' --set-value 'Application' \
-            --remove-key 'Categories' --add-category 'AudioVideo;' \
-          /usr/share/applications/iopenpod.desktop
-        
         # AppImages
         
           echo ""
@@ -171,10 +136,116 @@ case "$choice" in
         
         # cleanup
         sudo apt update -qq && sudo apt autoremove -y && sudo apt clean
-        ;;
+
+        # notify end
+        echo -e "\n${TEXT_GREEN}Additional productivity tools installed!${TEXT_RESET}\n" && sleep 3;;
         
   * ) # notify cancellation
-        echo -e "\n${TEXT_YELLOW}Additional tools not installed.${TEXT_RESET}\n" && sleep 1;;
+        echo -e "\n${TEXT_YELLOW}Additional productivity tools not installed.${TEXT_RESET}\n" && sleep 1;;
+        
+esac
+
+# ask whether to install iOpenPod
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install iOpenPod? [y/n/c]'${TEXT_RESET})"$'\n' choice
+case "$choice" in
+  y|Y ) # notify start
+        echo -e "\n${TEXT_YELLOW}Installing iOpenPod...${TEXT_RESET}\n" && sleep 1
+        
+        ## iOpenPod
+        [ ! -f iOpenPod-Linux.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/dik3xnklvjdooamhdvv72/iOpenPod-Linux.tar.gz?rlkey=o38bsfrq59pb8tlozfxyvmkiy" -O iOpenPod-Linux.tar.gz && sleep 1
+        [ ! -f ffmpeg.tar.xz ] && wget -q "https://www.dropbox.com/scl/fi/w37apnsoxbqxfl8cj96r9/ffmpeg.tar.xz?rlkey=ktgu63ye13rmq4o4kw5zeqo86" -O ffmpeg.tar.xz && sleep 1
+        [ ! -f fpcalc.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/6o7siid927tkh8rqowslh/fpcalc.tar.gz?rlkey=ekkx4unj1vwhhy23dq9urzyn7" -O fpcalc.tar.gz && sleep 1
+        tar -xzf iOpenPod-Linux.tar.gz && sleep 1 && rm -f iOpenPod-Linux.tar.gz && sleep 1
+        tar -xJf ffmpeg.tar.xz && sleep 1 && rm -f ffmpeg.tar.xz && sleep 1
+        mv ./ffmpeg-*/ ./ffmpeg/ && sleep 1
+        tar -xzf fpcalc.tar.gz && sleep 1 && rm -f fpcalc.tar.gz && sleep 1
+        mv ./chromaprint-fpcalc-*/ ./fpcalc/ && sleep 1
+        cp -f ./ffmpeg/bin/ffmpeg ./fpcalc/fpcalc ./iOpenPod/ && sleep 1
+        rm -rf ./ffmpeg/ ./fpcalc/ && sleep 1
+        sudo cp -f ./iOpenPod/_internal/assets/icons/icon-256.png /opt/icon/iopenpod.png && sleep 1
+        sudo cp -rf ./iOpenPod/ /opt/ && sleep 1
+        rm -rf ./iOpenPod/
+        ## config
+        mkdir -p ~/.config/iOpenPod/
+        echo -e '{\n  "ffmpeg_path": "/opt/iOpenPod/ffmpeg",\n  "fpcalc_path": "/opt/iOpenPod/fpcalc",\n  "lossy_quality": "high",\n  "backup_before_sync": false\n}' > ~/.config/iOpenPod/settings.json
+        ## shortcut
+        [ ! -f /usr/share/applications/iopenpod.desktop ] && sudo touch /usr/share/applications/iopenpod.desktop
+        sudo desktop-file-edit \
+          --set-name 'iOpenPod' --set-key 'Name[en_US]' --set-value 'iOpenPod' --set-key 'Name[zh_CN]' --set-value 'iOpenPod' \
+          --set-comment 'Open-source iPod Sync Tool' --set-key 'Comment[en_US]' --set-value 'Open-source iPod Sync Tool' --set-key 'Comment[zh_CN]' --set-value '开源iPod同步工具' \
+          --set-generic-name 'Manage your iPod without iTunes' --set-key 'GenericName[en_US]' --set-value 'Manage your iPod without iTunes' --set-key 'GenericName[zh_CN]' --set-value '告别 iTunes，重新掌控你的 iPod' \
+          --set-key 'Exec' --set-value '/opt/iOpenPod/iOpenPod' \
+          --set-icon '/opt/icon/iopenpod.png' \
+          --set-key 'StartupNotify' --set-value 'true' \
+          --set-key 'Terminal' --set-value 'false' \
+          --set-key 'Type' --set-value 'Application' \
+          --remove-key 'Categories' --add-category 'AudioVideo;' \
+        /usr/share/applications/iopenpod.desktop
+        
+        # notify end
+        echo -e "\n${TEXT_GREEN}iOpenPod installed!${TEXT_RESET}\n" && sleep 3;;
+        
+  * ) # notify cancellation
+        echo -e "\n${TEXT_YELLOW}iOpenPod not installed.${TEXT_RESET}\n" && sleep 1;;
+        
+esac
+
+# ask whether to install WinBoat
+read -n1 -s -r -p "$(echo -e ${TEXT_YELLOW}'Would you like to install WinBoat? [y/n/c]'${TEXT_RESET})"$'\n' choice
+case "$choice" in
+  y|Y ) # notify start
+        echo -e "\n${TEXT_YELLOW}Installing WinBoat...${TEXT_RESET}\n" && sleep 1
+        
+        # add Docker's official GPG key:
+        sudo apt update -qq && sudo apt install ca-certificates curl wget -y
+        sudo install -m 0755 -d /etc/apt/keyrings
+        sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+        sudo chmod a+r /etc/apt/keyrings/docker.asc
+        sleep 1
+        
+        # add the repository to Apt sources:
+        sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+        Types: deb
+        URIs: https://download.docker.com/linux/debian
+        Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+        Components: stable
+        Signed-By: /etc/apt/keyrings/docker.asc
+        EOF
+        sleep 1
+        
+        # install Docker, Docker-Compose, FreeRDP:
+        sudo apt update -qq && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin podman podman-compose freerdp3-x11 -y
+        sleep 1
+        
+        # download and install WinBoat:
+        echo ""
+        wget -q "https://www.dropbox.com/scl/fi/u1ql2pg3ftcq2u61evu9k/winboat.deb?rlkey=be7x3ogc1hhrrv3nn2vr1437v" -O winboat.deb && echo '"WinBoat" deb package is downloaded.' && sleep 1
+        echo ""
+        sudo apt install ./winboat.deb -y
+        sleep 1
+        rm -f ./winboat.deb
+        
+        # auto config
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+        sudo systemctl enable docker.service
+        sudo systemctl enable containerd.service
+        [ -f /etc/apt/keyrings/docker.asc ] && sudo rm -f /etc/apt/keyrings/docker.asc
+        [ -f /etc/apt/sources.list.d/docker.sources ] && sudo rm -f /etc/apt/sources.list.d/docker.sources
+        [ -f /usr/share/applications/winboat.desktop ] && sudo desktop-file-edit \
+            --set-name 'WinBoat' --set-key 'Name[en_US]' --set-value 'WinBoat' --set-key 'Name[zh_CN]' --set-value 'WinBoat' \
+            --set-comment 'Windows for Penguins' --set-key 'Comment[en_US]' --set-value 'Windows for Penguins' --set-key 'Comment[zh_CN]' --set-value '容器Windows' \
+            --set-generic-name 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[en_US]' --set-value 'Run Windows apps on Linux with seamless integration' --set-key 'GenericName[zh_CN]' --set-value 'Windows无缝融合' \
+            --remove-key 'Categories' --add-category 'Utility;' \
+        /usr/share/applications/winboat.desktop
+        sudo apt update -qq
+        sleep 1
+        
+        # notify end
+        echo -e "\n${TEXT_GREEN}WinBoat installed!${TEXT_RESET}\n" && sleep 3;;
+        
+  * ) # notify cancellation
+        echo -e "\n${TEXT_YELLOW}WinBoat not installed.${TEXT_RESET}\n" && sleep 1;;
         
 esac
 
