@@ -20,6 +20,15 @@ case "$choice" in
         # deb
         sudo apt update -qq && sudo apt upgrade -y
         sudo apt install kapman kdiamond bovo kigo gcompris-qt stellarium kamoso 2048-qt -y
+
+        # steam
+        sudo dpkg --add-architecture i386
+        sudo apt update -qq && sudo apt install steam-installer mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386 -y
+        #post installation:
+        #sudo cp -f  ~/.setup_cache/cfg/steam/steam.desktop /usr/share/applications/steam-client.desktop
+        #[ -f ~/.steam/debian-installation/deb-installer/steam.desktop ] && sudo cp -f ~/.steam/debian-installation/deb-installer/steam.desktop /usr/share/applications/steam-client.desktop
+        #[ -f /usr/share/applications/steam-client.desktop ] && sudo chmod 644 /usr/share/applications/steam-client.desktop
+        #[ -f /usr/share/applications/steam.desktop ] && sudo rm -f /usr/share/applications/steam.desktop
         
         # human resource machine
         echo ""
@@ -37,15 +46,11 @@ case "$choice" in
                 echo -e "\n${TEXT_YELLOW}You may change the Human Resource Machine installing path as you like.${TEXT_RESET}\n" && sleep 3
                 bash ./inst/HumanResourceMachine-Linux-2016-03-23.sh && sleep 1
                 [ -f ~/.local/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop ] && sudo mv -f ~/.local/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop /usr/share/applications/
-                sudo chmod 644 /usr/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop
+                [ -f /usr/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop ] && sudo chmod 644 /usr/share/applications/tomorrowcorporation_com-HumanResourceMachine_1.desktop
                 ;;
             * ) ;;
         esac
-
-        # steam
-        sudo dpkg --add-architecture i386
-        sudo apt update -qq && sudo apt install steam-installer mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386 -y
-
+        
         # notify end
         echo -e "\n${TEXT_GREEN}Games installed!${TEXT_RESET}\n" && sleep 3;;
 
