@@ -28,6 +28,7 @@ case "$choice" in
         #[ -f ~/.steam/debian-installation/deb-installer/steam.desktop ] && sudo cp -f ~/.steam/debian-installation/deb-installer/steam.desktop /usr/share/applications/steam-client.desktop
         #[ -f /usr/share/applications/steam-client.desktop ] && sudo chmod 644 /usr/share/applications/steam-client.desktop
         #[ -f /usr/share/applications/steam.desktop ] && sudo rm -f /usr/share/applications/steam.desktop
+        #[ -f ~/.local/share/applications/steam.desktop ] && sudo rm -f ~/.local/share/applications/steam.desktop
         
         # human resource machine
         echo ""
