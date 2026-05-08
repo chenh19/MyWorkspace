@@ -80,6 +80,7 @@ unset start0 end0
 bash ./inst/0_systools.sh
 bash ./inst/1_addtools.sh
 bash ./inst/2_biotools.sh
+bash ./inst/3_games.sh
 
 # config
 bash ./cfg/0_sysstg.sh
