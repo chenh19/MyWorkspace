@@ -19,7 +19,7 @@ case "$choice" in
 
         # deb
         sudo apt update -qq && sudo apt upgrade -y
-        sudo apt install 2048-qt kapman kdiamond bovo kigo gcompris-qt stellarium kamoso xournalpp -y
+        sudo apt install 2048-qt kapman kdiamond bovo kigo gcompris-qt stellarium kamoso xournalpp elisa -y
 
         # steam
         sudo dpkg --add-architecture i386
@@ -50,6 +50,9 @@ case "$choice" in
                 ;;
             * ) ;;
         esac
+
+        # elisa
+        kwriteconfig6 --file ~/.config/elisarc --group PlayerSettings --key ShowSystemTrayIcon --type bool "true"
         
         # notify end
         echo -e "\n${TEXT_GREEN}Games installed!${TEXT_RESET}\n" && sleep 3;;
