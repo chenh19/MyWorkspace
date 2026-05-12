@@ -234,7 +234,7 @@ case "$choice" in
         sudo desktop-file-edit \
           --set-name 'iPod' --set-key 'Name[en_US]' --set-value 'iPod' --set-key 'Name[zh_CN]' --set-value 'iPod' \
           --set-comment 'Open-source iPod Sync Tool' --set-key 'Comment[en_US]' --set-value 'Open-source iPod Sync Tool' --set-key 'Comment[zh_CN]' --set-value '开源iPod同步工具' \
-          --set-generic-name 'Manage your iPod without iTunes' --set-key 'GenericName[en_US]' --set-value 'Manage your iPod without iTunes' --set-key 'GenericName[zh_CN]' --set-value '告别 iTunes，重新掌控你的 iPod' \
+          --set-generic-name 'Manage your iPod without iTunes' --set-key 'GenericName[en_US]' --set-value 'Manage your iPod without iTunes' --set-key 'GenericName[zh_CN]' --set-value '告别iTunes，重新掌控你的iPod' \
           --set-key 'Exec' --set-value '/opt/iOpenPod/iOpenPod' \
           --set-icon '/opt/icon/iopenpod.png' \
           --set-key 'StartupNotify' --set-value 'true' \
