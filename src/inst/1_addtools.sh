@@ -212,6 +212,8 @@ case "$choice" in
         echo -e "\n${TEXT_YELLOW}Installing iOpenPod...${TEXT_RESET}\n" && sleep 1
         
         ## iOpenPod
+        [ -d /opt/iOpenPod/ ] && sudo rm -rf /opt/iOpenPod/
+        [ -d /opt/iOpenPod-ext/ ] && sudo rm -rf /opt/iOpenPod-ext/
         [ ! -f iOpenPod-Linux.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/dik3xnklvjdooamhdvv72/iOpenPod-Linux.tar.gz?rlkey=o38bsfrq59pb8tlozfxyvmkiy" -O iOpenPod-Linux.tar.gz && echo '"iOpenPod" package is downloaded.' && sleep 1
         [ ! -f ffmpeg.tar.xz ] && wget -q "https://www.dropbox.com/scl/fi/w37apnsoxbqxfl8cj96r9/ffmpeg.tar.xz?rlkey=ktgu63ye13rmq4o4kw5zeqo86" -O ffmpeg.tar.xz && echo '"ffmpeg" package is downloaded.' && sleep 1
         [ ! -f fpcalc.tar.gz ] && wget -q "https://www.dropbox.com/scl/fi/6o7siid927tkh8rqowslh/fpcalc.tar.gz?rlkey=ekkx4unj1vwhhy23dq9urzyn7" -O fpcalc.tar.gz && echo '"fpcalc" package is downloaded.' && sleep 1
@@ -221,14 +223,15 @@ case "$choice" in
         mv ./ffmpeg-*/ ./ffmpeg/ && sleep 1
         tar -xzf fpcalc.tar.gz && sleep 1 && rm -f fpcalc.tar.gz && sleep 1
         mv ./chromaprint-fpcalc-*/ ./fpcalc/ && sleep 1
-        cp -f ./ffmpeg/bin/ffmpeg ./fpcalc/fpcalc ./iOpenPod/ && sleep 1
+        mkdir -p ./iOpenPod-ext/
+        cp -f ./ffmpeg/bin/ffmpeg ./fpcalc/fpcalc ./iOpenPod-ext/ && sleep 1
         rm -rf ./ffmpeg/ ./fpcalc/ && sleep 1
         sudo cp -f ./iOpenPod/_internal/assets/icons/icon-256.png /opt/icon/iopenpod.png && sleep 1
-        sudo cp -rf ./iOpenPod/ /opt/ && sleep 1
-        rm -rf ./iOpenPod/
+        sudo cp -rf ./iOpenPod/ ./iOpenPod-ext/ /opt/ && sleep 1
+        rm -rf ./iOpenPod/ ./iOpenPod-ext/
         ## config
         mkdir -p ~/.config/iOpenPod/
-        echo -e '{\n  "ffmpeg_path": "/opt/iOpenPod/ffmpeg",\n  "fpcalc_path": "/opt/iOpenPod/fpcalc",\n  "lossy_quality": "high",\n  "backup_before_sync": false\n}' > ~/.config/iOpenPod/settings.json
+        echo -e '{\n  "ffmpeg_path": "/opt/iOpenPod-ext/ffmpeg",\n  "fpcalc_path": "/opt/iOpenPod-ext/fpcalc",\n  "lossy_quality": "high",\n  "backup_before_sync": false\n}' > ~/.config/iOpenPod/settings.json
         ## shortcut
         [ ! -f /usr/share/applications/iopenpod.desktop ] && sudo touch /usr/share/applications/iopenpod.desktop
         sudo desktop-file-edit \
